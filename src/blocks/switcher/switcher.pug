@@ -1,0 +1,43 @@
+//- Все примеси в этом файле должны начинаться c имени блока (switcher)
+
+mixin switcher(data, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +switcher('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' switcher--' + modsList[i].trim();
+      }
+    }
+
+  .switcher-wrapper.hidden.2xl_block.3xl_flex.items-center.h-full.py-3.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
+    .relative.dropdown
+      .switcher.dropdown-toggle.flex.items-center.space-x-1.mr-8.cursor-pointer.active(id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
+        .ml-auto.lg_text-sm.xl_text-base!= data.name
+      .city-select.dropdown-menu.text-black(aria-labelledby="dropdownMenuLink")
+        block
+
+mixin switcher-item(data,mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' switcher__item--' + modsList[i].trim();
+      }
+    }
+
+  li.switcher__item(class=allMods data-name=data.code data-value=data.value)&attributes(attributes)!= data.name
+
+
+

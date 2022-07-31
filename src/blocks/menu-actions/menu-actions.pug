@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu-actions)
+
+mixin menu-actions(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +menu-actions('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' menu-actions--' + modsList[i].trim();
+      }
+    }
+
+  .menu-actions(class=allMods)&attributes(attributes)
+    .menu-actions__inner
+      block
+
+mixin menu-actions-item(font,icon)
+
+  .menu-actions__item&attributes(attributes)
+    i(class="fa-" + font + " fa-"+icon)

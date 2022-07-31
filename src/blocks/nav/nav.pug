@@ -1,0 +1,75 @@
+//- Все примеси в этом файле должны начинаться c имени блока (nav)
+
+mixin nav-add(mods)
+
+  include nav.data.pug
+
+  -
+    var menu = addMenu;
+
+  +nav(menu,mods)
+
+
+mixin nav-main(mods)
+
+  include nav.data.pug
+
+  -
+    var menu = mainMenu;
+
+  +nav(menu,mods)
+
+
+mixin nav(menu)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' nav--' + modsList[i].trim();
+      }
+    }
+
+  nav.nav(class=allMods)&attributes(attributes)
+    .nav-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navSupportedContent" aria-controls="navSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+      span.nav-toggler-icon
+    .collapse.nav-collapse
+      ul.nav__list
+        each menuItem in menu
+          if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
+            +nav-item-dropdown(menuItem,menuItem.childs)
+          else
+            +nav-item(menuItem)
+
+
+mixin nav-item(item)
+
+  -
+    var linkClass="";
+    if (item.isActive) {
+      linkClass="active";
+    }
+
+  li.nav-item&attributes(attributes)
+    a.nav-link(class=linkClass aria-current="page" href=item.url)!= item.name
+
+
+
+mixin nav-item-dropdown(item,childs,isSubmenu)
+
+  -
+    var menuClass="";
+    if (isSubmenu) {
+      menuClass="dropdown-submenu";
+    }
+
+  li.nav-item.dropdown
+    a.nav-link.dropdown-toggle(href=item.url role="button" data-bs-toggle="dropdown" aria-expanded="false")!= item.name
+    ul.dropdown-menu(aria-labelledby=id class=menuClass)
+      each menuItem in childs
+        if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
+          +nav-item-dropdown(menuItem,menuItem.childs,true)
+        else
+          +nav-item(menuItem)(class="dropdown-item")
