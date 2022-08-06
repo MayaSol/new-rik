@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (icon-burger)
+
+mixin icon-burger(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +icon-burger('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' icon-burger--' + modsList[i].trim();
+      }
+    }
+
+  .icon-burger(class=allMods)&attributes(attributes)
+    .icon-burger__inner
+      block

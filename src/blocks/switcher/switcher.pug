@@ -18,11 +18,11 @@ mixin switcher(data, mods)
       }
     }
 
-  .switcher-wrapper.hidden.2xl_block.3xl_flex.items-center.h-full.py-3.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
+  .switcher__wrapper.hidden.xxl_block.items-center.h-full.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
     .relative.dropdown
-      .switcher.dropdown-toggle.flex.items-center.space-x-1.mr-8.cursor-pointer.active(id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
-        .ml-auto.lg_text-sm.xl_text-base!= data.name
-      .city-select.dropdown-menu.text-black(aria-labelledby="dropdownMenuLink")
+      .switcher.dropdown-toggle.flex.items-center.space-x-1.cursor-pointer.active(class="after_right-2.5" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
+        .switcher__value.text-lg.leading-8(class="pl-[10px] pr-[15px]")!= data.name
+      .switcher__select.dropdown-menu.text-black(aria-labelledby="dropdownMenuLink")
         block
 
 mixin switcher-item(data,mods)

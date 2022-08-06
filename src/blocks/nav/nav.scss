@@ -4,7 +4,7 @@
 
 .nav {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   &__list {
     display: flex;
@@ -15,6 +15,45 @@
 
   &-link {
     @apply text-lg text-black py-0;
+
+    &.dropdown-toggle {
+      padding-right: 25px !important;
+    }
+  }
+
+  &--add {
+
+    @media (min-width: $screen-xl) {
+      margin-right: 3px;
+    }
+  }
+
+  &--main {
+
+    .page-header__inner & {
+      margin-right: auto;
+    }
   }
 
 }
+
+.navbar {
+
+  &-collapse {
+    position: absolute;
+    top: 100%;
+  }
+  &-toggler {
+    padding: 0;
+  }
+}
+
+
+@each $point, $value in $grid-breakpoints {
+  @media (min-width: #{$value}) {
+    .navbar-expand-#{$point} .navbar-collapse {
+      position: static;
+    }
+  }
+}
+

@@ -1,13 +1,17 @@
-// В этом файле должны быть стили для БЭМ-блока menu-actions, его элементов,
+// В этом файле должны быть стили для БЭМ-блока hours, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.menu-actions {
+.hours {
 
   $block-name:                &; // #{$block-name}__element
 
-  &__inner {
-    display: flex;
-    align-items: center;
+  span {
+    margin-right: 5px;
+    color: $tw-gray-500;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

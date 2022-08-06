@@ -1,28 +1,29 @@
 //- Все примеси в этом файле должны начинаться c имени блока (nav)
 
-mixin nav-add(mods)
+mixin nav-add(data,mods)
 
   include nav.data.pug
 
   -
     var menu = addMenu;
 
-  +nav(menu,mods)
+  +nav(menu,mods,data,attributes)
 
 
-mixin nav-main(mods)
+mixin nav-main(data,mods)
 
   include nav.data.pug
 
   -
     var menu = mainMenu;
 
-  +nav(menu,mods)
+  +nav(menu,mods,data,attributes)
 
 
-mixin nav(menu)
+mixin nav(menu,mods,data,attr)
 
   -
+    var allClasses = '';
     // список модификаторов
     var allMods = '';
     if(typeof(mods) !== 'undefined' && mods) {
@@ -30,13 +31,21 @@ mixin nav(menu)
       for (var i = 0; i < modsList.length; i++) {
         allMods = allMods + ' nav--' + modsList[i].trim();
       }
+      allClasses = allMods;
+    }
+    var expandClass = '';
+    if (typeof(data.expand) !== 'undefined' && data.expand) {
+      expandClass = 'navbar-expand-' + data.expand;
+      allClasses = allClasses + ' ' + expandClass;
     }
 
-  nav.nav(class=allMods)&attributes(attributes)
-    .nav-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navSupportedContent" aria-controls="navSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-      span.nav-toggler-icon
-    .collapse.nav-collapse
-      ul.nav__list
+
+  nav.nav.navbar(class=allClasses)&attributes(attr)
+    .navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#"+data.id aria-controls=data.id aria-expanded="false" aria-label="Toggle navigation")
+      .icon-burger
+        span
+    .collapse.navbar-collapse(id=data.id)
+      ul.nav__list.navbar-nav
         each menuItem in menu
           if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
             +nav-item-dropdown(menuItem,menuItem.childs)
@@ -65,11 +74,11 @@ mixin nav-item-dropdown(item,childs,isSubmenu)
       menuClass="dropdown-submenu";
     }
 
-  li.nav-item.dropdown
+  li.nav-item.dropdown&attributes(attributes)
     a.nav-link.dropdown-toggle(href=item.url role="button" data-bs-toggle="dropdown" aria-expanded="false")!= item.name
     ul.dropdown-menu(aria-labelledby=id class=menuClass)
       each menuItem in childs
         if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
-          +nav-item-dropdown(menuItem,menuItem.childs,true)
+          +nav-item-dropdown(menuItem,menuItem.childs,true)(class='dropdown-item test-class')
         else
           +nav-item(menuItem)(class="dropdown-item")

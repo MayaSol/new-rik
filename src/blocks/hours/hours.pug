@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (hours)
+
+mixin hours(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +hours('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' hours--' + modsList[i].trim();
+      }
+    }
+
+  .hours.text-sm.text-gray-500(class=allMods)&attributes(attributes)
+    span пн.-пт
+    span 10:00 - 18:00

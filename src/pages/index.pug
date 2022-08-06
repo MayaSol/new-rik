@@ -8,22 +8,32 @@ block meta
 //-   link(rel='stylesheet', href='css/some.css')
 
 block nav
-  +nav-add
-  +nav-main
-  +menu-actions
-    +menu-actions-item('solid','user')
-    +menu-actions-item('solid','magnifying-glass')
+  +main-nav-add()(class='hidden lg_block')
+  //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')(class='hiddenmd_block xl_hidden')
+  +main-nav()(class="hidden lg_block")
+  +burger('Показать мобильное меню', 'nav-mobile', 'main-nav--open')(class='main-nav__toggler order-3 lg_hidden')
+  +main-nav-mobile()(class="lg_hidden order-last")
+  +search-form
+    +action-btn('solid','magnifying-glass','search')(id="btnSearch" class="search-form__btn" type="button")
+  +action-btn('solid','user','user')
   +switcher({name: 'Ru'})
     +switcher-item({name: 'Ru', code: 'ru', value: ''})
     +switcher-item({name: 'En', code: 'en', value: ''})
-  div.info-top
+  div.contact-info.hidden.xl_block
     +phone(class="text-xl") 8 800 200 57 30
+    +hours
+
 
 block content
   h1 Заголовок
   p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
   .container
-
+    include ../blocks/nav/navbar.html
+    include ../blocks/nav/navbar-orig.html
+  //- <div class="search-box">
+  //-   <button class="btn-search"><i class="fas fa-search"></i></button>
+  //-   <input type="text" class="input-search" placeholder="Type to Search...">
+  //- </div>
 
 
 //- block footer

@@ -16,22 +16,34 @@ let config = {
   'addStyleBefore': [
     'bootstrap/scss/_functions.scss',
     'bootstrap/scss/_variables.scss',
+    // 'mdb-ui-kit/src/scss/free/_variables.scss',
+    'src/scss/bs-custom.scss',
+    'src/scss/_tailwind-colours.scss',
+    'src/scss/_tailwind-screens.scss',
     // 'bootstrap/scss/_maps.scss',
     'bootstrap/scss/_mixins.scss',
+    'bootstrap/scss/_transitions.scss',
+    // 'bootstrap/scss/_accordion.scss',
     // 'bootstrap/scss/_root.scss',
     'bootstrap/scss/_dropdown.scss',
-    'bootstrap/scss/_nav.scss',
+    // 'bootstrap/scss/_navbar.scss',
+    // 'mdb-ui-kit/src/scss/free/_navbar.scss',
+    // 'mdb-ui-kit/src/scss/free/_dropdown.scss',
+
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
     // 'src/scss/print.scss',
+    'src/scss/test.scss'
   ],
   'addJsBefore': [
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
     'bootstrap/js/dist/dropdown.js',
-    'bootstrap/js/dist/collapse.js'
+    'bootstrap/js/dist/collapse.js',
+    // 'mdb-ui-kit/src/js/free/dropdown.js',
+    // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
   ],
   'addJsAfter': [
     './script.js',
@@ -40,6 +52,7 @@ let config = {
     'src/fonts/': 'fonts/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
     'src/webfonts/': 'webfonts/',
+    'design/screens/': 'screens/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },

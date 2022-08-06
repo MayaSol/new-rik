@@ -41,6 +41,20 @@
 
   &__content {
     flex-grow: 1;
+
+
+    &::before {
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      // top: -10px; //mobile-menu
+      // top: -815px; //vacancies
+      // top: -275px;
+      //top: -5280px;
+      content: url('../screens/main-mobile.jpg');
+      opacity: 0.4;
+    }
   }
 
   &__footer-wrapper {
@@ -68,7 +82,7 @@ body {
   @apply leading-normal;
   @apply font-sans;
   text-align: left;
-  color: $text-color;
+  @apply text-gray-500;
   background-color: $body-bg;
 
   -webkit-font-smoothing: antialiased;

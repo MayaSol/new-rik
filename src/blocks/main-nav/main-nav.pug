@@ -1,7 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (main-nav)
 //- Структура меню — в main-nav.data.pug
 
-
 mixin main-nav(selectedID)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
@@ -11,78 +10,123 @@ mixin main-nav(selectedID)
     // console.log(attributes);
     // console.log(menu);
 
-  nav.nav#nav&attributes(attributes)
-    +burger('Показать главное меню', 'nav', 'nav--open')(class='nav__toggler')
-    +menuList(selectedID,menu)
+  +makeMainNav(selectedID,menu,attributes)(id='nav' class="nav--main")
 
+  //- Принимает:
+  //-   selectedID {string} - id пункта меню (по умолчанию — из main-nav.data.pug)
+  //- Вызов:
+        +main-nav('1')
 
-
-
-mixin add-nav(selectedID)
+mixin main-nav-add(selectedID)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
   -
     var menu = addMenu;
-    // console.log(attributes);
-    // console.log(menu);
 
-  nav.nav#nav-add&attributes(attributes)
-    +burger('Показать доп меню', 'nav-add', 'nav--open')(class='nav__toggler')
-    +menuList(selectedID,menu)
+  +makeMainNav(selectedID,menu,attributes)(id = 'nav-add' class= 'nav--add')
 
 
-
-mixin makeMainNav(selectedID)
+mixin main-nav-mobile(selectedID)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
   -
-    var menu = mainMenu;
-    // console.log(attributes);
-    // console.log(menu);
+    var menu = mobileMenu;
+
+  +makeMainNav(selectedID,menu,attributes)(id = 'nav-mobile' class= 'nav--mobile')
+    .nav__info.flex.items-center
+      .contact-info.mr-auto
+        +phone(class="text-xl") 8 800 200 57 30
+        +hours
+      .lang-btns
+        +btn('Ru','lang')(class="mr-[8px]" data-name="ru")
+        +btn('Eng','lang')(data-name="en")
 
 
 
-mixin menuList(selectedID,menu,attr)
+mixin makeMainNav(selectedID,menu,attr,isIndex)
 
-    ul.nav__list&attributes(attributes)
-      each menuItem in menu
-        +main-nav-item(selectedID, menuItem, 1)
-          if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
-            +main-nav-sublist-wrapper(2)
-              each menuItem2 in menuItem.childs
-                +main-nav-item(selectedID, menuItem2, 2)
-                  if (typeof(menuItem2.childs) !== 'undefined' && menuItem2.childs)
-                    +main-nav-sublist-wrapper(3)
-                      each menuItem3 in menuItem2.childs
-                        +main-nav-item(selectedID, menuItem3, 3)
+  //- подключаем файл со структурой данных блока
+  //- include main-nav.data.pug
+
+  nav.main-nav&attributes(attr)&attributes(attributes)
+    .main-nav__inner
+      if (attributes.id === 'nav-add')
+        +burger('Показать дополнительное меню', 'nav-add', 'main-nav--open')(class='main-nav__toggler')
+      ul.main-nav__list
+        each menuItem in menu
+          +main-nav-item(selectedID, menuItem, 1)
+            if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
+             +main-nav-sublist-wrapper(2)
+               each menuItem2 in menuItem.childs
+                 +main-nav-item(selectedID, menuItem2, 2)
+                   if (typeof(menuItem2.childs) !== 'undefined' && menuItem2.childs)
+                     +main-nav-sublist-wrapper(3)
+                       each menuItem3 in menuItem2.childs
+                         +main-nav-item(selectedID, menuItem3, 3)
+      block
 
 
 
-mixin main-nav-item(selectedID, item, level)
+mixin main-nav-item(selectedID, item, level, isIndex)
+  -
+    var thisItemClass = 'main-nav__item';
+    var thisLinkClass = 'main-nav__link';
+
+    if (!(typeof item.mod == 'undefined') && item.mod) {
+      thisItemClass += " main-nav__item--" + item.mod;
+    }
+
+    if (selectedID == item.id) {
+      thisItemClass += '  main-nav__item--active';
+    }
+    if (item.childs) {
+      thisItemClass += '  main-nav__item--has-child';
+    }
+    if (level > 1) {
+      thisItemClass += '  main-nav__item--lvl-' + level;
+      thisLinkClass += '  main-nav__link--lvl-' + level;
+    }
+
+
+  li(class= thisItemClass)
+    a(class= thisLinkClass, href=item.url)&attributes(item.attrs)= item.name
+    block
+
+
+mixin nav-item(selectedID, item, level)
   -
     var thisItemClass = 'nav__item';
     var thisLinkClass = 'nav__link';
-    if(selectedID == item.id) {
+
+    if (!(typeof item.mod == 'undefined') && item.mod) {
+      thisItemClass += " nav__item--" + item.mod;
+    }
+
+    if (selectedID == item.id) {
       thisItemClass += '  nav__item--active';
     }
-    if(item.childs) {
+    if (item.childs) {
       thisItemClass += '  nav__item--has-child';
     }
-    if(level > 1) {
+    if (level > 1) {
       thisItemClass += '  nav__item--lvl-' + level;
       thisLinkClass += '  nav__link--lvl-' + level;
     }
 
   li(class= thisItemClass)
-    a(class= thisLinkClass, href=item.url)= item.name
+    a(class= thisLinkClass, href=item.url)&attributes(item.attrs)= item.name
     block
 
 mixin main-nav-sublist-wrapper(level)
   -
-    var divClass = 'nav__sublist-wrapper  nav__sublist-wrapper--lvl-' + level;
-    var listClass = 'nav__list  nav__list--lvl-' + level;
+    var divClass = 'main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-' + level;
+    var listClass = 'main-nav__list  main-nav__list--lvl-' + level;
   div(class= divClass)
     ul(class= listClass)
       block
+
+mixin main-nav-info
+
+  .main-nav__info

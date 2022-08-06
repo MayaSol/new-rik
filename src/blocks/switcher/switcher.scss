@@ -4,5 +4,56 @@
 
 .switcher {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  min-width: 35px;
+
+  &__wrapper {
+    margin-right: 30px;
+  }
+
+  &__select {
+    padding-left: 10px;
+    padding-right: 15px;
+    border-left: 1px solid $tw-gray-200;
+    border-right: 1px solid $tw-gray-200;
+    border-bottom: 1px solid $tw-gray-200;
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    &.show {
+      left: 0 !important;
+      right: 0 !important;
+      top: 100% !important;
+      min-width: auto !important;
+      padding-top: 0;
+      text-align: center;
+      transform: none !important;
+    }
+  }
+
+
+  &__value {
+    min-width: 50px;
+    border: 1px solid $tw-gray-200;
+    border-radius: 1rem;
+
+    #{$block-name}.show & {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-color: transparent;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &--active {
+      display: none;
+    }
+  }
+
+
 }

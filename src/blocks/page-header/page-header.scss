@@ -7,6 +7,27 @@
   &__inner {
     display: flex;
     align-items: center;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    /*!!!delete*/
+    letter-spacing: -0.5px;
+    font-weight: 300;
+
+    @media (min-width: $screen-xl) {
+      padding-top: 20px;
+    }
+
+    @media (max-width: $screen-xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  & .logo {
+    margin-right: auto;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 55px;
+    }
   }
 
 }

@@ -2,50 +2,41 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-
-
-
-.nav {
+.main-nav {
 
   $block-name: &; // #{$block-name}__element
 
   position: relative;
   z-index: 10;
 
-  @mixin nav-burger-list {
-    & {
+
+  &--main {
+    .page-header__inner & {
+      margin-right: auto;
+    }
+  }
+
+  &__inner {
+    .js .nav--mobile & {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s;
 
-      &--lvl-2 {
-        max-height: none;
+      & #{$block-name}__list--lvl-2 {
+        max-height: 0;
       }
     }
 
-  }
-
-  @mixin nav-burger-list-open {
+    .js .nav--mobile.main-nav--open & {
       max-height: 1000px;
       transition: max-height 0.6s;
 
-      &--lvl-2 {
+      & #{$block-name}__list--lvl-2 {
         max-height: none;
       }
-  }
-
-  @mixin nav-full-list {
-    display: flex;
-    flex-wrap: wrap;
-
-    &--lvl-2 {
-      display: block;
-    }
-
-    &--lvl-3 {
-      display: block;
     }
   }
+
 
   // первый уровень
   &__list {
@@ -53,30 +44,76 @@
     padding: 0;
     list-style: none;
 
+    .nav--add & {
+      padding-top: 15px;
+    }
+
+    .nav--mobile & {
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+
+    // мобильный вид списка
+    @media (max-width: ($menu-desktop-width - 1)) {
+
+      // открытие/закрытие меню только в случае работающего JS
+      .js .nav--main & {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s;
+
+        &--lvl-2 {
+          max-height: 0;
+        }
+      }
+
+      .js .nav--main.main-nav--open & {
+        max-height: 1000px;
+        transition: max-height 0.6s;
+
+        &--lvl-2 {
+          max-height: none;
+        }
+      }
+    }
+
     // открытие/закрытие меню только в случае работающего JS
-    @at-root .js .nav--main & {
-      // мобильный вид списка
-      @media (max-width: ($menu-desktop-width - 1)) {
-        @include nav-burger-list;
+    .js .nav--add & {
+      position: absolute;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s;
+
+      &--lvl-2 {
+        max-height: 0;
       }
+    }
 
-      // настольный вид списка
-      @media (min-width: $menu-desktop-width) {
-        @include nav-full-list;
+    .js .nav--add.main-nav--open & {
+      max-height: 1000px;
+      transition: max-height 0.6s;
+
+      &--lvl-2 {
+        max-height: none;
       }
     }
 
-    @at-root .js .nav--add & {
-      @include nav-burger-list;
-    }
+    // настольный вид списка
+    @media (min-width: $menu-desktop-width) {
 
-    @at-root .js .nav--main.nav--open & {
-      @include nav-burger-list-open;
-    }
-    @at-root .js .nav--open & {
-      @include nav-burger-list-open;
-    }
+      .nav--main & {
+        display: flex;
+        flex-wrap: wrap;
 
+        &--lvl-2 {
+          display: block;
+        }
+
+        &--lvl-3 {
+          display: block;
+        }
+      }
+    }
   }
 
   &__item {
@@ -89,37 +126,94 @@
         color: #000;
       }
     }
+
+    &--has-child {
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        margin-left: 5px;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+        border-right: none;
+        right: 15px;
+        top: 50%;
+        transform: rotate(-135deg) translateY(70%);
+
+        .nav--mobile & {
+          top: 0.6em;
+          transform: rotate(-135deg);
+        }
+
+      }
+
+      #{$block-name}__link {
+        padding-right: 1.3em;
+      }
+
+      @at-root &#{$block-name}__item--lvl-2 {
+
+        &::after {
+          transform: rotate(135deg) translateY(70%);
+        }
+      }
+
+    }
+
+
   }
 
   &__link {
     display: block;
-    padding: 0.5em 1em;
+    padding: 0.5em 0.9em;
     text-decoration: none;
     background-color: #fff;
+    color: inherit;
 
     &:hover,
     &:focus {
+      color: inherit;
+      font-weight: 700;
       text-decoration: none;
       background-color: $gray-lightest;
     }
 
-    &--lvl-2 {
-      min-width: 200px;
+    .nav--add & {
+      white-space: nowrap;
+    }
 
-      @at-root .nav--main & {
+    .nav--mobile & {
+      padding: 0.65em 0.9em;
+    }
+
+    &--lvl-2 {
+      white-space: nowrap;
+
+      .nav--main & {
         @media (max-width: ($menu-desktop-width - 1)) {
           padding-left: 2em;
         }
       }
+
+      .nav--mobile & {
+        padding-left: 2em;
+      }
+
     }
 
     &--lvl-3 {
-      min-width: 200px;
+      white-space: nowrap;
 
-      @at-root .nav--main & {
+      .nav--main & {
         @media (max-width: ($menu-desktop-width - 1)) {
           padding-left: 3em;
         }
+      }
+
+      .nav--mobile & {
+        padding-left: 3em;
       }
     }
   }
@@ -127,7 +221,16 @@
   &__sublist-wrapper {
 
     &--lvl-2 {
-      @at-root .nav--main & {
+
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      @media (min-width: $screen-lg) {
+        padding-top: 15px;
+        padding-bottom: 0;
+      }
+
+      .nav--main & {
         @media (min-width: $menu-desktop-width) {
           position: absolute;
           z-index: 1;
@@ -137,22 +240,37 @@
           opacity: 0;
           overflow: hidden;
           transition: opacity $transition-time;
-
-          // stylelint-disable
-          #{$block-name}__item--show-child>&,
-          #{$block-name}__item:hover & {
-            height: auto;
-            overflow: visible;
-            opacity: 1;
-          }
-
-          // stylelint-enable
         }
       }
+
+      // stylelint-disable
+      .nav--main #{$block-name}__item--show-child>&,
+      .nav--main #{$block-name}__item:hover & {
+        @media (min-width: $menu-desktop-width) {
+          height: auto;
+          overflow: visible;
+          opacity: 1;
+        }
+      }
+
+      // stylelint-enable
+
+
     }
 
     &--lvl-3 {
-      @at-root .nav--main & {
+
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      @media (min-width: $screen-lg) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+
+      .nav--main &,
+      .nav--mobile & {
         @media (min-width: $menu-desktop-width) {
           position: absolute;
           z-index: 1;
@@ -162,38 +280,83 @@
           height: 0;
           overflow: hidden;
           transition: opacity $transition-time;
-
-          // stylelint-disable
-          #{$block-name}__item--show-child>&,
-          #{$block-name}__item--lvl-2:hover & {
-            height: auto;
-            overflow: visible;
-            opacity: 1;
-          }
-
           // stylelint-enable
+        }
+      }
+
+
+
+      // stylelint-disable
+      .nav--main #{$block-name}__item--show-child>&,
+      .nav--main #{$block-name}__item--lvl-2:hover & {
+        @media (min-width: $menu-desktop-width) {
+          height: auto;
+          overflow: visible;
+          opacity: 1;
         }
       }
     }
   }
+
+
 
   // переключатель
 
   &__toggler {
     display: inline-block;
     border: none;
-    padding: 0;
     background: none;
 
-    @at-root .nav--main & {
+    .nav--main & {
       @media (min-width: $menu-desktop-width) {
         display: none;
       }
+
     }
 
     .no-js & {
       display: none;
     }
   }
+}
 
+
+@media (max-width: $screen-xl - 1) {
+  .main--nav {
+    width: 100%;
+  }
+}
+
+
+.nav {
+  @apply text-lg text-black py-0;
+
+
+  &--add {
+    @media (min-width: $screen-lg) {
+      margin-right: 15px;
+    }
+  }
+
+  &--main {
+    margin-right: auto;
+  }
+
+  &--mobile {
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: #fff;
+
+    .main-nav__list {
+      padding-top: 10px;
+    }
+
+  }
+
+  &__info {
+    padding: 0 0.9em;
+    margin-top: 55px;
+  }
 }

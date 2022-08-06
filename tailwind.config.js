@@ -7,13 +7,13 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1440px',
+      xxl: '1440px',
     },
     container: {
       center: true,
       padding: {
         DEFAULT: '20px',
-        '2xl': '64px',
+        xxl: '64px',
       },
     },
     colors: ({ colors }) => ({
@@ -42,11 +42,11 @@ module.exports = {
       rose: colors.rose,
       gray: {
         50: '#f9fafb',
-        100: '#f3f4f6',
-        200: '#e5e7eb',
+        100: '#f5f5f5',
+        200: '#ebebeb',
         300: '#d1d5db',
         400: '#9ca3af',
-        500: '#6b7280',
+        500: '#686868',
         600: '#4b5563',
         700: '#374151',
         800: '#1f2937',

@@ -7,7 +7,6 @@
   $block-name:                &; // #{$block-name}__element
 }
 
-
 .dropdown-menu li {
 position: relative;
 }
@@ -23,4 +22,18 @@ left: auto;
 }
 .dropdown-menu > li:hover > .dropdown-submenu {
 display: block;
+}
+
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  border-right: none;
+  right: 15px;
+  top: 50%;
+  transform: rotate(-135deg) translateY(70%);
 }

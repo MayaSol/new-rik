@@ -57,6 +57,16 @@
     }
   }
 
+  &--lang {
+    padding: 0.6em 0.9em;
+    border: 1px solid $tw-gray-200;
+    border-radius: 1.75em;
+
+    &.active {
+      border-color: $tw-black;
+    }
+  }
+
   // &__icon {
   //   display: inline-block;
   //   vertical-align: middle;

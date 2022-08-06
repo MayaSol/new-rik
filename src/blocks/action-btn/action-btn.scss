@@ -1,0 +1,12 @@
+// В этом файле должны быть стили для БЭМ-блока menu-actions, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.action-btn {
+
+  $block-name: &; // #{$block-name}__element
+
+  font-size: 20px;
+  padding: 0 10px;
+
+}

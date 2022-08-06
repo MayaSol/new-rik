@@ -1,0 +1,50 @@
+// В этом файле должны быть стили для БЭМ-блока icon-burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.icon-burger {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  border: none;
+  padding: 0;
+  height: 16px;
+  user-select: none;
+  cursor: pointer;
+  background-image: url('../img/burger-line.png'), url('../img/burger-line.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+
+  // > span { // stylelint-disable-line  selector-combinator-blacklist
+  //   display: inline-block;
+  //   position: relative;
+  //   width: 100%;
+  //   height: 0;
+  //   vertical-align: middle;
+  //   font-size: 0;
+  //   color: transparent;
+  //   background-color: red;
+
+  //   &:before,
+  //   &:after {
+  //     content: '';
+  //     position: absolute;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 2px;
+  //     background-image: url('../img/burger-line.png');
+  //     transform-origin: 50% 50%;
+  //     transition: top $transition-time $transition-time, transform $transition-time;
+  //   }
+
+  //   &:before {
+  //     top: -10px;
+  //   }
+
+  //   &:after {
+  //     top: 10px;
+  //   }
+  // }
+
+}
