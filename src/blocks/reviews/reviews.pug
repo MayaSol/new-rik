@@ -1,0 +1,105 @@
+//- Все примеси в этом файле должны начинаться c имени блока (reviews)
+
+mixin reviews(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +reviews('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews--' + modsList[i].trim();
+      }
+    }
+
+  .reviews(class=allMods)&attributes(attributes)
+    .reviews__inner
+      select#reviews-tab-select.md_hidden(name="reviews-tab-select")
+        option(value="#profs") Профессионалы
+        option(value="#users") Пользователи
+        option(value="#videos") Видео
+      ul#reviewsTab(class="nav nav-tabs hidden md_flex" role="tablist")
+        li(class="nav-item" role="presentation")
+          button.nav-link.active#profs-tab(data-bs-toggle="tab" data-bs-target="#profs" type="button" role="tab" aria-controls="Профессионалы" aria-selected="true") Профессионалы
+        li(class="nav-item" role="presentation")
+          button.nav-link#users-tab(data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="Пользователи" aria-selected="false") Пользователи
+        li(class="nav-item" role="presentation")
+          button.nav-link#videos-tab(data-bs-toggle="tab" data-bs-target="#videos" type="button" role="tab" aria-controls="Видео" aria-selected="false") Видео
+      .tab-content#reviewsTabContent
+        .tab-pane.fade.show.active#profs(role="tabpanel" aria-labelledby="profs-tab")
+          .reviews__slider.reviews__slider--profs
+            +reviews-user-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера',
+                info: 'С. Федосеевка'
+              })
+            +reviews-user-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 2',
+                info: 'С. Федосеевка'
+              })
+            +reviews-user-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 3',
+                info: 'С. Федосеевка'
+              })
+        .tab-pane.fade#users(role="tabpanel" aria-labelledby="users-tab")
+          .reviews__slider reviews__slider--users
+            div Users slide 1
+            div Users slide 2
+            div Users slide 3
+        .tab-pane.fade#videos(role="tabpanel" aria-labelledby="videos-tab")
+          .reviews__slider.reviews__slider--videos
+            div Videos slide 1
+            div Videos slide 2
+            div Videos slide 3
+
+
+
+
+mixin reviews-slider(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews--' + modsList[i].trim();
+      }
+    }
+
+  .reviews-slider(class=allMods)&attributes(attributes)
+    block
+
+
+mixin reviews-user-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews--' + modsList[i].trim();
+      }
+    }
+
+  .reviews__item.reviews__item--user(class=allMods)&attributes(attributes)
+    .reviews__item-author
+      .reviews__item-avatar
+        img(src=props.url)
+      .reviews__item-name= props.name
+      .reviews__item-info= props.info
+    .reviews__item-text
+      block
+    button.btn Подробнее
