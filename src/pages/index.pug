@@ -162,6 +162,40 @@ block content
                 +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
                 +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
                 +areas-item({url: 'img/area-vet.jpg',caption: 'Косметология'})
+    section.section-main.section--catalog(class="mt-[60px]")
+      .section__container.container
+        .section__inner
+          h2.section__title(class="xxl_mb-[10px]") Каталог аппаратов
+          +btn('Все аппараты','show-all')(class="pt-[3px]")
+          .product-list(class="mt-[20px]")
+            +product-card(
+              {
+                url: './img/product.jpg',
+                title: 'РИКТА-04/4',
+                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
+                price: '44 800 ₽'
+              })
+            +product-card(
+              {
+                url: './img/product.jpg',
+                title: 'РИКТА 04/4 (универсальный)',
+                desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С регулировкой мощности',
+                price: '74 600 ₽'
+              })
+            +product-card(
+              {
+                url: './img/product.jpg',
+                title: 'рикта-эсмил(1)а',
+                desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С регулировкой мощности',
+                price: '98 200 ₽'
+              })
+            +product-card(
+              {
+                url: 'http://placekitten.com/300/300',
+                title: 'рикта-тест',
+                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
+                price: '98 200 ₽'
+              })
     section.section-main.section--service(class="mt-[60px]")
       .section__container.container
         .section__inner
@@ -184,6 +218,10 @@ block content
               li.service__item.flex.items-center(class="mb-[20px] xxl_mb-[40px]")
                 i.service-change.shrink-0(class="mr-[15px]")
                 span Обмен старых аппаратов со скидкой
+    section.section-main.section--reviews(class="mt-[60px]")
+      .section__container.container
+        .section__inner
+          h2.section__title Отзывы
 
 
             //- +product-info-item(
@@ -222,40 +260,6 @@ block content
             //-       li.flex.items-center(class="mb-[10px]")
             //-         i.cert.shrink-0(class="mr-[15px]")
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-    section.section-main.section--catalog(class="mt-[60px]")
-      .section__container.container
-        .section__inner
-          h2.section__title(class="xxl_mb-[10px]") Каталог аппаратов
-          +btn('Все аппараты','show-all')(class="pt-[3px]")
-          .product-list(class="mt-[20px]")
-            +product-card(
-              {
-                url: './img/product.jpg',
-                title: 'РИКТА-04/4',
-                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
-                price: '44 800 ₽'
-              })
-            +product-card(
-              {
-                url: './img/product.jpg',
-                title: 'РИКТА 04/4 (универсальный)',
-                desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С регулировкой мощности',
-                price: '74 600 ₽'
-              })
-            +product-card(
-              {
-                url: './img/product.jpg',
-                title: 'рикта-эсмил(1)а',
-                desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С регулировкой мощности',
-                price: '98 200 ₽'
-              })
-            +product-card(
-              {
-                url: 'http://placekitten.com/300/300',
-                title: 'рикта-тест',
-                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
-                price: '98 200 ₽'
-              })
 
 
   h1 Заголовок
