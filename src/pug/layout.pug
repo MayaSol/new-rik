@@ -36,6 +36,11 @@ html(class='page  no-js', lang='ru')
   body
     noscript У вас отключен JavaScript. Это пугает.
 
+    .off-canvas#off-canvas
+      aside.off-canvas__aside(role='complementary', aria-label='Меню')
+        block off-canvas
+      .off-canvas__overlay(data-toggle='off-canvas')
+
     .page__inner
       .page__content
 

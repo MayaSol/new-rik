@@ -1,0 +1,72 @@
+//- Все примеси в этом файле должны начинаться c имени блока (hystory-slider)
+
+mixin slider(props, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +hystory-slider('Текст', 'some-mod')
+
+  -
+    if(typeof(props) === 'undefined') {
+      var props = {};
+    }
+    // список модификаторов блока .slider-wrapper
+    if (typeof(props.class) !== 'undefined' && props.class) {
+      var allWrapperMods = props.class;
+    }
+    else {
+      allWrapperMods = '';
+    }
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allWrapperMods = allWrapperMods + ' slider__wrapper--' + modsList[i].trim();
+      }
+    }
+    // список модификаторов блока .slider
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider--' + modsList[i].trim();
+      }
+    }
+
+
+  .slider__wrapper(class=allWrapperMods)
+    .slider__inner
+      .slider(class=allMods)&attributes(attributes)
+        block
+      +cart('has-goods')
+
+mixin slider-item(props)
+
+  -
+    if (typeof(props) == 'undefined')
+      props = {};
+
+  .slider__item&attributes(attributes)
+    .main-slider__item-inner
+      block
+
+
+mixin slider-item--main(props)
+
+  -
+    if (typeof(props) == 'undefined')
+      props = {};
+
+  .slider__item.slider__item--main&attributes(attributes)
+    .slider__item-inner
+      .slider__media.slider__media--video-bg.embed-responsive.embed-responsive--main-mobile
+          video(width=props.width height=props.height)
+            source(src=props.url type=props.type)
+          .slider__btn-play
+      .container.lg_flex.lg_flex-col.lg_justify-center.xl_block(class="xl_pl-[100px] xl_pr-[60px] xxl_pl-[180px] xxl_pr-[80px]")
+        block
+
+
+
+

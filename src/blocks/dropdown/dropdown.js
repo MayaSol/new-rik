@@ -3,12 +3,7 @@ const Dropdown = require("../../../node_modules/bootstrap/js/dist/dropdown.js");
 
 ready(function(){
 
-  console.log('dropdown.js local');
-  console.log(Dropdown);
-
-  dropdowns = document.querySelectorAll('.dropdown:not(.disabled):not(:disabled)');
-
-  console.log(dropdowns);
+  // dropdowns = document.querySelectorAll('.dropdown:not(.disabled):not(:disabled)');
 
 
   // [...dropdowns].map(dropdownEl => dropdownEl.addEventListener('mouseenter',function() {

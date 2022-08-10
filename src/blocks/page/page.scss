@@ -15,14 +15,22 @@
 
 
 /* stylelint-disable */
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'Circe';
+  src: url('../fonts/Circe_Regular.woff2') format('woff2'),
+       url('../fonts/Circe_Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circe';
+  src: url('../fonts/Circe_Bold.woff2') format('woff2'),
+       url('../fonts/Circe_Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 /* stylelint-enable */
 
 
@@ -42,24 +50,41 @@
   &__content {
     flex-grow: 1;
 
-
-    &::before {
-      z-index: -1;
-      position: absolute;
-      left: 0;
-      top: 0;
-      // top: -10px; //mobile-menu
-      // top: -815px; //vacancies
-      // top: -275px;
-      //top: -5280px;
-      content: url('../screens/main-mobile.jpg');
-      opacity: 0.4;
-    }
+    // &::before {
+    //   z-index: -1;
+    //   position: absolute;
+    //   left: 0;
+    //   top: -2600px; //catalog mobile
+    //   top: -1180px; //new mobile
+    //   top: -1504px; //new mobile whitout image
+    //   top: -1324px; //product 1440
+    //   top: -1668px; //service mobile
+    //   top: -2545px; //service 1440
+    //   // top: -3185px; //catalog main
+    //   // top: -140px; //main test features
+    //   // top: 32px; //mobile test features
+    //   // top: -10px; //mobile-menu
+    //   // top: -815px; //vacancies
+    //   // top: -275px;
+    //   //top: -5280px;
+    //   content: url('../screens/main.jpg');
+    //   opacity: 0.4;
+    // }
   }
 
   &__footer-wrapper {
     flex-shrink: 0;
   }
+
+  &__main {
+    margin-top: 60px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 90px;
+    }
+  }
+
+
 }
 
 *,
@@ -87,6 +112,10 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.noscroll {
+  overflow: hidden;
 }
 
 [tabindex='-1']:focus {
@@ -205,6 +234,10 @@ hr {
   border-top: 1px solid $border-color;
 }
 
+h1 {
+
+}
+
 h1,
 h2,
 h3,
@@ -213,13 +246,28 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 48px;
   line-height: 1.2;
-  color: currentColor;
+  color: $tw-black;
 }
 
-h1 { font-size: $font-size-h1; } // stylelint-disable-line
-h2 { font-size: $font-size-h2; } // stylelint-disable-line
+
+h1,
+h2 {
+  margin-top: 1.2em;
+  font-size: 24px;
+  line-height: 34px;
+  @media (min-width: $screen-lg) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  @media (min-width: $screen-xxl) {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
 h3 { font-size: $font-size-h3; } // stylelint-disable-line
 h4 { font-size: $font-size-h4; } // stylelint-disable-line
 h5 { font-size: $font-size-h5; } // stylelint-disable-line
@@ -345,3 +393,127 @@ pre {
     background: transparent;
   }
 }
+
+
+
+.section-main {
+
+}
+
+
+.section {
+
+  &__title {
+    font-size: 24px;
+    line-height: 34px;
+    color: $tw-black;
+
+    @media (min-width: $screen-md) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    .section--info & {
+      margin-bottom: 0;
+
+      @media (min-width: $screen-xxl) {
+        margin-top: 65px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .section--service & {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__container,
+  &__container.container {
+    @media (min-width: $screen-xl) {
+      padding-left: 140px;
+      max-width: $screen-xxl;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: $screen-xxl) {
+      padding-right: 164px;
+      .section--catalog & {
+        padding-right: 180px;
+        padding-left: 175px;
+      }
+      .section--info & {
+        padding-left: 0;
+      }
+      .section--service & {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &--features {
+  }
+
+  &--catalog,
+  &--info {
+    .tns-controls  {
+      position: absolute;
+      right: 0;
+      top: 10px;
+
+      @media (min-width: $screen-xxl) {
+        top: 30px;
+      }
+
+      & button {
+        background-color: $tw-gray-100;
+        &::before {
+          @include sprite($arrow-right-black-long);
+        }
+      }
+    }
+  }
+
+  &--info .tns-controls {
+    @media (min-width: $screen-xxl) {
+      top: 95px;
+      right: 18px;
+    }
+
+    button[data-controls="next"] {
+      @media (min-width: $screen-xxl) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  // &--info {
+  //   .section__header {
+  //     position: absolute;
+  //     right: 350px;
+  //     z-index: 10;
+  //   }
+
+  //   .tns-controls {
+  //     z-index: 10;
+  //   }
+  // }
+}
+
+
+@include sprites($spritesheet-sprites);
+

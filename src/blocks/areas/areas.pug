@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (areas)
+
+mixin areas(mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' areas--' + modsList[i].trim();
+      }
+    }
+
+  .areas(class=allMods)&attributes(attributes)
+    .areas__inner
+      block
+
+mixin areas-item(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' areas__item--' + modsList[i].trim();
+      }
+    }
+
+  .areas__item(class=allMods)&attributes(attributes)
+    .areas__img
+      img.lazyload(
+        data-sizes="auto"
+        data-src=props.url
+        data-srcset=props.srcset)
+      .areas__caption= props.caption

@@ -8,9 +8,10 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
-    'page'
-    // 'sprite-svg',
-    // 'sprite-png',
+    'sprite-svg',
+    'sprite-png',
+    'page',
+    'btn',
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
@@ -29,6 +30,7 @@ let config = {
     // 'bootstrap/scss/_navbar.scss',
     // 'mdb-ui-kit/src/scss/free/_navbar.scss',
     // 'mdb-ui-kit/src/scss/free/_dropdown.scss',
+    'tiny-slider/dist/tiny-slider.css',
 
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
@@ -36,12 +38,16 @@ let config = {
   ],
   'addStyleAfter': [
     // 'src/scss/print.scss',
+    '../css/fontawesome.min.css',
+    '../css/regular.min.css',
+    '../css/solid.min.css',
     'src/scss/test.scss'
   ],
   'addJsBefore': [
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
     'bootstrap/js/dist/dropdown.js',
     'bootstrap/js/dist/collapse.js',
+    'lazysizes/lazysizes.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
   ],
@@ -50,7 +56,10 @@ let config = {
   ],
   'addAssets': {
     'src/fonts/': 'fonts/',
+    'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/video/*.{mp4,mov}': 'video/',
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

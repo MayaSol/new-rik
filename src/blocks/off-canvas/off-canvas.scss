@@ -2,7 +2,7 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-$off-canvas-width:            250px !default; // ширина этого блока
+$off-canvas-width:            320px !default; // ширина этого блока
 
 .off-canvas {
 
@@ -15,7 +15,7 @@ $off-canvas-width:            250px !default; // ширина этого бло�
 
     #{$block-name}__overlay {
       position: fixed;
-      z-index: 1;
+      z-index: 99;
       opacity: 1;
       visibility: visible;
       transition: opacity $transition-time ease;
@@ -37,16 +37,17 @@ $off-canvas-width:            250px !default; // ширина этого бло�
   }
 
   &__aside {
+    padding-top: 70px;
     max-height: 30vh;
     overflow-y: auto;
     backface-visibility: hidden;
-    background-color: $gray-darkest;
-    color: #fff;
+    background-color: #fff;
+    color: $tw-black;
     transition: transform $transition-time ease;
 
     .js & {
       position: fixed;
-      z-index: 2;
+      z-index: 100;
       width: $off-canvas-width;
       height: 100%;
       max-height: none;
@@ -99,5 +100,11 @@ $off-canvas-width:            250px !default; // ширина этого бло�
     background: rgba(0, 0, 0, 0.2);
     opacity: 0;
     visibility: hidden;
+  }
+
+  &__close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
   }
 }

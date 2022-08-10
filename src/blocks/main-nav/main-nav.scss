@@ -28,8 +28,10 @@
     }
 
     .js .nav--mobile.main-nav--open & {
+      padding-top: 70px;
       max-height: 1000px;
       transition: max-height 0.6s;
+      box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.16);
 
       & #{$block-name}__list--lvl-2 {
         max-height: none;
@@ -43,6 +45,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: #fff;
 
     .nav--add & {
       padding-top: 15px;
@@ -51,6 +54,14 @@
     .nav--mobile & {
       max-height: 400px;
       overflow-y: scroll;
+    }
+
+    .nav--main &--lvl-2 {
+      min-width: 260px;
+    }
+
+    &--lvl-2 {
+      border-radius: 8px;
     }
 
     // мобильный вид списка
@@ -129,24 +140,28 @@
 
     &--has-child {
 
-      &::after {
-        content: '';
-        position: absolute;
-        width: 5px;
-        height: 5px;
-        margin-left: 5px;
-        border-left: 1px solid #000;
-        border-top: 1px solid #000;
-        border-right: none;
-        right: 15px;
-        top: 50%;
-        transform: rotate(-135deg) translateY(70%);
+      &>#{$block-name}__link span {
+        position: relative;
+        padding-right: 10px;
 
-        .nav--mobile & {
-          top: 0.6em;
-          transform: rotate(-135deg);
+        &::after {
+          content: '';
+          position: absolute;
+          width: 5px;
+          height: 5px;
+          margin-left: 5px;
+          border-left: 1px solid #000;
+          border-top: 1px solid #000;
+          border-right: none;
+          right: 0;
+          top: 50%;
+          transform: rotate(-135deg) translateY(70%);
+
+          .nav--mobile & {
+            top: 0.6em;
+            transform: rotate(-135deg);
+          }
         }
-
       }
 
       #{$block-name}__link {
@@ -159,17 +174,71 @@
           transform: rotate(135deg) translateY(70%);
         }
       }
-
     }
 
+    .nav--main & {
 
+      & span {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      & span::before {
+        content: attr(data-content);
+        font-size: inherit;
+        font-weight: 700;
+        height: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      &--lvl-2 {
+        font-size: 16px;
+        line-height: 30px;
+        color: $tw-gray-500;
+      }
+    }
+
+    .nav--mobile & {
+      &--show-child > .main-nav__link span::after {
+        transform: rotate(45deg) translateY(70%);
+        right: -3px;
+      }
+    }
+  }
+
+  &__sublist-header {
+    position: relative;
+    display: flex;
+    padding: 0.5em 0.9em;
+    font-weight: 700;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      padding-right: 12px;
+    }
+
+    span::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      margin-left: 5px;
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+      border-right: none;
+      right: 0;
+      top: 40%;
+      transform: rotate(45deg) translateY(50%);
+    }
   }
 
   &__link {
     display: block;
     padding: 0.5em 0.9em;
     text-decoration: none;
-    background-color: #fff;
     color: inherit;
 
     &:hover,
@@ -177,7 +246,16 @@
       color: inherit;
       font-weight: 700;
       text-decoration: none;
-      background-color: $gray-lightest;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-right: 0.7em;
+      padding-left: 0.7em;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-right: 0.9em;
+      padding-left: 0.9em;
     }
 
     .nav--add & {
@@ -192,6 +270,9 @@
       white-space: nowrap;
 
       .nav--main & {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+
         @media (max-width: ($menu-desktop-width - 1)) {
           padding-left: 2em;
         }
@@ -200,7 +281,6 @@
       .nav--mobile & {
         padding-left: 2em;
       }
-
     }
 
     &--lvl-3 {
@@ -220,13 +300,21 @@
 
   &__sublist-wrapper {
 
+    .nav--main & {
+      box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .nav--mobile & {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: opacity $transition-time;
+    }
+
     &--lvl-2 {
 
-      padding-top: 5px;
-      padding-bottom: 5px;
-
       @media (min-width: $screen-lg) {
-        padding-top: 15px;
         padding-bottom: 0;
       }
 
@@ -234,7 +322,7 @@
         @media (min-width: $menu-desktop-width) {
           position: absolute;
           z-index: 1;
-          top: 100%;
+          top: 0;
           left: 0;
           height: 0;
           opacity: 0;
@@ -253,9 +341,13 @@
         }
       }
 
+      .nav--mobile #{$block-name}__item--show-child>& {
+        height: auto;
+        overflow: visible;
+        opacity: 1;
+      }
+
       // stylelint-enable
-
-
     }
 
     &--lvl-3 {
@@ -267,7 +359,6 @@
         padding-top: 0;
         padding-bottom: 0;
       }
-
 
       .nav--main &,
       .nav--mobile & {
@@ -284,11 +375,9 @@
         }
       }
 
-
-
       // stylelint-disable
       .nav--main #{$block-name}__item--show-child>&,
-      .nav--main #{$block-name}__item--lvl-2:hover & {
+      .nav--mobile #{$block-name}__item--show-child>& .nav--main #{$block-name}__item--lvl-2:hover & {
         @media (min-width: $menu-desktop-width) {
           height: auto;
           overflow: visible;
@@ -306,6 +395,7 @@
     display: inline-block;
     border: none;
     background: none;
+    z-index: 12;
 
     .nav--main & {
       @media (min-width: $menu-desktop-width) {
@@ -332,9 +422,11 @@
   @apply text-lg text-black py-0;
 
 
-  &--add {
-    @media (min-width: $screen-lg) {
-      margin-right: 15px;
+  &--aside {
+    font-size: 18px;
+
+    & .main-nav__link {
+      padding-left: 60px;
     }
   }
 
@@ -345,18 +437,14 @@
   &--mobile {
     width: 100%;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     background-color: #fff;
-
-    .main-nav__list {
-      padding-top: 10px;
-    }
-
   }
 
   &__info {
     padding: 0 0.9em;
+    padding-bottom: 30px;
     margin-top: 55px;
   }
 }

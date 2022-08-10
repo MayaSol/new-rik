@@ -1,0 +1,63 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-info)
+
+mixin product-info(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-info('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-info__list--' + modsList[i].trim();
+      }
+    }
+
+  .product-info(class=allMods)&attributes(attributes)
+    block
+
+
+mixin product-info-text(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-info--' + modsList[i].trim();
+      }
+    }
+
+  .product-info__text-wrapper(class=allMods)&attributes(attributes)
+    .product-info__text
+      h3.product-info__title= props.title
+      .product-info__desc= props.desc
+      .product-info__price= props.price
+      .product-info__features
+        block
+    +product-actions('product-info')
+
+
+
+mixin product-info-view(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-info-view--' + modsList[i].trim();
+      }
+    }
+
+  .product-info__view(class=allMods)&attributes(attributes)
+    p.text-black= props.test
+    .product-info__view-inner
+      .product-info-view-content

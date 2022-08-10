@@ -1,0 +1,54 @@
+// В этом файле должны быть стили для БЭМ-блока product-actions, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.product-actions {
+
+  // В этом файле должны быть стили для БЭМ-блока product-card, его элементов,
+  // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+  // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  margin-top: 16px;
+
+  .product-info & {
+    margin-top: auto;
+    @media (min-width: $screen-lg) {
+      margin-top: 16px;
+    }
+  }
+
+
+  .btn {
+    margin-right: 5px;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .btn--fav {
+    margin-left: auto;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .btn--compare {
+    font-size: 20px;
+    line-height: 1;
+
+    @media (min-width: $screen-xxl) {
+      margin-right: 5px !important;
+    }
+
+    .product-info & {
+      @media (min-width: $screen-xxl) {
+        margin-right: 15px !important;
+      }
+    }
+  }
+
+}

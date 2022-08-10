@@ -5,7 +5,6 @@ ready(function() {
   /*Выпадашка с   языками*/
   try {
     getAllValues();
-    console.log(ALL_VALUES);
     setSwitcherValue('lang');
 
     var switcherItems = document.querySelectorAll('.switcher__item');

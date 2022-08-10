@@ -77,9 +77,9 @@ let postCssPlugins = [
   atImport(),
   tailwindcss(),
   autoprefixer({ grid: true }),
-  mqpacker({
-    sort: true
-  }),
+  // mqpacker({
+  //   sort: true
+  // }),
   inlineSVG(),
   objectFitImages(),
 ];
@@ -201,7 +201,7 @@ function generatePngSprite(cb) {
   let spritePngPath = `${dir.blocks}sprite-png/png/`;
   if (nth.config.alwaysAddBlocks.indexOf('sprite-png') > -1 && fileExist(spritePngPath)) {
     del(`${dir.blocks}sprite-png/img/*.png`);
-    let fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
+    let fileName = 'sprite.png';
     let spriteData = src(spritePngPath + '*.png')
       .pipe(spritesmith({
         imgName: fileName,
@@ -225,6 +225,7 @@ exports.generatePngSprite = generatePngSprite;
 
 function writeSassImportsFile(cb) {
   const newScssImportsList = [];
+  newScssImportsList.push('tailwindcss/base');
   nth.config.addStyleBefore.forEach(function(src) {
     newScssImportsList.push(src);
   });
@@ -238,6 +239,8 @@ function writeSassImportsFile(cb) {
     if (newScssImportsList.indexOf(url) > -1) return;
     newScssImportsList.push(url);
   });
+  newScssImportsList.push('tailwindcss/components');
+  newScssImportsList.push('tailwindcss/utilities');
   nth.config.addStyleAfter.forEach(function(src) {
     newScssImportsList.push(src);
   });
@@ -286,8 +289,8 @@ function compileSass() {
     // .pipe(csso({
     //   restructure: false,
     // }))
-    .pipe(rename('main.css'))
-    .pipe(dest(`${dir.src}css`, { sourcemaps: '.' }))
+    .pipe(rename('style.css'))
+    .pipe(dest(`${dir.build}css`, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
 }
 exports.compileSass = compileSass;
@@ -309,7 +312,7 @@ function compileTailwind() {
     }))
     .pipe(debug({ title: 'Compiles tailwindcss:' }))
     .pipe(postcss(plugins))
-    .pipe(dest(`${dir.src}css`))
+    .pipe(dest(`${dir.src}css`, { sourcemaps: '.' }))
   // .pipe(browserSync.stream());
 }
 exports.compileTailwind = compileTailwind;
@@ -543,8 +546,8 @@ function serve() {
     parallel(writeSassImportsFile, writeJsRequiresFile),
     compileSass,
     buildJs,
-    compileTailwind,
-    concatCss,
+    // compileTailwind,
+    // concatCss,
     reload
   ));
 
@@ -562,8 +565,9 @@ function serve() {
   // Разметка Блоков: изменение
   watch([`${dir.blocks}**/*.pug`], { events: ['change'], delay: 100 }, series(
     compilePug,
-    compileTailwind,
-    concatCss,
+    compileSass,
+    // compileTailwind,
+    // concatCss,
     reload
   ));
 
@@ -571,8 +575,10 @@ function serve() {
   watch([`${dir.blocks}**/*.pug`], { events: ['add'], delay: 100 }, series(
     writePugMixinsFile,
     compilePug,
-    compileTailwind,
-    concatCss,
+    writeSassImportsFile,
+    compileSass,
+    // compileTailwind,
+    // concatCss,
     reload
   ));
 
@@ -584,33 +590,31 @@ function serve() {
     compilePug,
     parallel(writeSassImportsFile, writeJsRequiresFile),
     parallel(compileSass, buildJs),
-    compileSass,
-    buildJs,
-    compileTailwind,
-    concatCss,
+    // compileTailwind,
+    // concatCss,
     reload,
   ));
 
   // Стили Блоков: изменение
   watch([`${dir.blocks}**/*.scss`], { events: ['change'], delay: 100 }, series(
     compileSass,
-    compileTailwind,
-    concatCss
+    // compileTailwind,
+    // concatCss
   ));
 
   // Стили Блоков: добавление
   watch([`${dir.blocks}**/*.scss`], { events: ['add'], delay: 100 }, series(
     writeSassImportsFile,
     compileSass,
-    compileTailwind,
-    concatCss
+    // compileTailwind,
+    // concatCss
   ));
 
   // Стилевые глобальные файлы: все события
   watch([`${dir.src}scss/**/*.scss`, `!${dir.src}scss/style.scss`], { events: ['all'], delay: 100 }, series(
     compileSass,
-    compileTailwind,
-    concatCss
+    // compileTailwind,
+    // concatCss
   ));
 
   // Скриптовые глобальные файлы: все события
@@ -635,8 +639,8 @@ function serve() {
     generatePngSprite,
     copyImg,
     compileSass,
-    compileTailwind,
-    concatCss,
+    // compileTailwind,
+    // concatCss,
     reload,
   ));
 }
@@ -649,9 +653,9 @@ exports.build = series(
   clearCssDir,
   writeTailwindToSass,
   compileSass,
-  compileTailwind,
+  // compileTailwind,
   buildJs,
-  concatCss
+  // concatCss
 );
 
 
@@ -662,9 +666,7 @@ exports.default = series(
   clearCssDir,
   writeTailwindToSass,
   compileSass,
-  compileTailwind,
-  parallel(compileSass, buildJs),
-  concatCss,
+  buildJs,
   serve,
 );
 

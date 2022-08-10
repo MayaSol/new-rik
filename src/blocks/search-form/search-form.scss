@@ -5,18 +5,37 @@
 .search-form {
 
   $block-name: &; // #{$block-name}__element
-   box-sizing: border-box;
-   position: relative;
+    box-sizing: border-box;
+    position: relative;
+
+    @media (min-width: $screen-xl) {
+
+    }
 
    &.active {
       position: absolute;
+      padding: 10px;
+      background-color: #fff;
+      z-index: 100;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 9px 10px;
-      background-color: #fff;
-      z-index: 100;
+
+      @media (min-width: $screen-xl) {
+        display: flex;
+        align-items: center;
+        left: 360px;
+        width: 730px;
+        height: 90px;
+      }
+      @media (min-width: $screen-xxl) {
+        left: 390px;
+      }
+      @media (min-width: $screen-3xl) {
+        width: 1100px;
+      }
    }
+
 
   &__input-wrapper {
     width: fit-content;
@@ -38,11 +57,11 @@
     transition: all .5s ease-in-out;
     padding-right: 40px;
     color: $tw-black;
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    transition: all 500ms;
 
 
-    #{$block-name}.active & {
-      height: 42px;
+    &.active {
+      height: 40px;
       width: 100%;
       background-color: $tw-gray-100;
     }
@@ -68,11 +87,20 @@
     cursor: pointer;
     border-radius: 50%;
     position: absolute;
-    right: 0px;
+    right: 0;
     background-color: transparent;
     pointer-events: painted;
 
     #{$block-name}.active & {
+      right: 102px;
+      transition: all 500ms;
+
+      @media (min-width: $screen-xl) {
+        right: 0;
+      }
+    }
+
+    #{$block-name} &.active{
       right: 20px;
     }
 

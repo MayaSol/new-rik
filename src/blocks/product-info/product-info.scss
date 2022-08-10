@@ -1,0 +1,136 @@
+// В этом файле должны быть стили для БЭМ-блока product-info, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.product-info {
+
+  $block-name: &; // #{$block-name}__element
+
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 500px 1fr;
+    gap: 0 30px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    grid-template-columns: 664px 1fr;
+    gap: 0 70px;
+  }
+
+  .section__header {
+    @media (min-width: $screen-xxl) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  &__views-wrapper {
+    margin-top: 20px;
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex !important;
+    flex-direction: column;
+    @media (min-width: $screen-lg) {
+      grid-column-start: 2;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__inner {}
+
+  &__view {
+    height: 342px;
+
+    @media (min-width: $screen-lg) {
+      width: 664px;
+      height: 771px;
+      align-self: stretch;
+    }
+  }
+
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 30px;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      grid-template-columns: 1fr auto;
+      gap: 0 10px;
+      height: auto;
+    }
+
+     @media (min-width: $screen-xxl) {
+      gap: 0;
+     }
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 24px;
+
+    @media (min-width: $screen-lg) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+
+  &__price {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 28px;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+      margin-right: 12px;
+      grid-row-start: 1;
+      grid-column-start: 2;
+      grid-row-end: 3;
+      align-self: center;
+    }
+  }
+
+  &__features {
+    @media (min-width: $screen-lg) {
+      grid-row-start: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  &--product-info {
+    margin-top: auto;
+  }
+}

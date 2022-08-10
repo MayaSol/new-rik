@@ -3,8 +3,6 @@ const Collapse = require("../../../node_modules/bootstrap/js/dist/collapse.js");
 
 ready(function(){
 
-  console.log(Collapse);
-
     var navCollapsed = document.querySelectorAll('.navbar-collapse');
 
     for (collapsed of navCollapsed) {

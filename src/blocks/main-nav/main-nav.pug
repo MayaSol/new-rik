@@ -17,14 +17,14 @@ mixin main-nav(selectedID)
   //- Вызов:
         +main-nav('1')
 
-mixin main-nav-add(selectedID)
+mixin main-nav-aside(selectedID)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
   -
-    var menu = addMenu;
+    var menu = asideMenu;
 
-  +makeMainNav(selectedID,menu,attributes)(id = 'nav-add' class= 'nav--add')
+  +makeMainNav(selectedID,menu,attributes)(id = 'nav-aside' class= 'nav--aside')
 
 
 mixin main-nav-mobile(selectedID)
@@ -52,13 +52,16 @@ mixin makeMainNav(selectedID,menu,attr,isIndex)
 
   nav.main-nav&attributes(attr)&attributes(attributes)
     .main-nav__inner
-      if (attributes.id === 'nav-add')
-        +burger('Показать дополнительное меню', 'nav-add', 'main-nav--open')(class='main-nav__toggler')
+      // if (attributes.id === 'nav-add')
+      //   +burger('Показать дополнительное меню', 'nav-add', 'main-nav--open')(class='main-nav__toggler')
       ul.main-nav__list
         each menuItem in menu
-          +main-nav-item(selectedID, menuItem, 1)
+          +main-nav-item(selectedID, menuItem, 1, attributes.id === 'nav' ? menuItem.name : '' )
             if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
              +main-nav-sublist-wrapper(2)
+               if (attributes.id === 'nav')
+                 .main-nav__sublist-header
+                    span!= menuItem.name
                each menuItem2 in menuItem.childs
                  +main-nav-item(selectedID, menuItem2, 2)
                    if (typeof(menuItem2.childs) !== 'undefined' && menuItem2.childs)
@@ -69,10 +72,11 @@ mixin makeMainNav(selectedID,menu,attr,isIndex)
 
 
 
-mixin main-nav-item(selectedID, item, level, isIndex)
+mixin main-nav-item(selectedID, item, level, dataContent)
   -
     var thisItemClass = 'main-nav__item';
     var thisLinkClass = 'main-nav__link';
+    var thisDataContent = dataContent ? dataContent : '';
 
     if (!(typeof item.mod == 'undefined') && item.mod) {
       thisItemClass += " main-nav__item--" + item.mod;
@@ -91,7 +95,8 @@ mixin main-nav-item(selectedID, item, level, isIndex)
 
 
   li(class= thisItemClass)
-    a(class= thisLinkClass, href=item.url)&attributes(item.attrs)= item.name
+    a(class= thisLinkClass, href=item.url)&attributes(item.attrs)
+      span('data-content'=thisDataContent)= item.name
     block
 
 

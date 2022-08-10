@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-actions)
+
+mixin product-actions(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-actions('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-actions--' + modsList[i].trim();
+      }
+    }
+
+  .product-actions(class=allMods)&attributes(attributes)
+    +btn('Подробнее','regular')(class="border-gray-200")
+    +btn('<i class="fa-solid fa-cart-shopping"></i><span>Купить</span>','regular, icon')
+    +btn('','fav')
+      i.fa-regular.fa-heart
+    +btn('','compare')
+      i.fa-solid.fa-arrow-right-arrow-left

@@ -1,0 +1,274 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+
+    &--main {
+      font-size: 18px;
+      line-height: 28px;
+      padding-bottom: 30px;
+
+      @media (min-width: $screen-lg) {
+        padding-bottom: 100px;
+      }
+
+      & .tns-controls {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 99;
+
+        @media (min-width: $screen-xl) {
+          top: 70px;
+          right: 65px;
+        }
+
+        & button {
+          @media (min-width: $screen-xl) {
+            width: 55px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    @media (min-width: $screen-lg) {
+      height: 580px;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 630px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      height: 710px;
+    }
+  }
+
+  &__navigation {
+    position: relative;
+    font-size: 0;
+  }
+
+  &__bg-video {}
+
+  &__media {
+
+    &--video-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $tw-gray-500;
+
+      & video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 580px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 720px;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 816px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__item {
+    padding-bottom: 1px;
+
+    &--main {
+      width: 100%;
+      height: 100%;
+
+      & #{$block-name}__item-inner {
+        height: 100%;
+
+        @media (min-width: $screen-lg) {
+          display: flex;
+        }
+      }
+
+      & #{$block-name}__media {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      & #{$block-name}__media--video-bg {
+        @media (min-width: $screen-lg) {
+          left: 0;
+          transform: none;
+          order: 10;
+        }
+      }
+
+      video {
+        max-width: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__btn-play {
+    display: none;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-image: url('../img/play-btn.png');
+    background-size: contain;
+
+    video.playing~& {
+      background-image: url('../img/stop-btn.png');
+    }
+
+    #{$block-name}__media--video-bg:hover & {
+      display: block;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+  }
+
+  &__text-bottom {
+
+    @media (min-width: $screen-xl) {
+      margin-top: 25px;
+    }
+  }
+
+  &--main {
+    // height: 232px !important;
+  }
+}
+
+.tns-controls {
+  position: relative;
+  font-size: 0;
+}
+
+.tns-controls button {
+  @include btn;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 40px;
+  border: solid 1px #bababa;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+  opacity: 1;
+
+  &::before {
+    @include sprite($arrow-right-white);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+
+    &::before {
+      // @include sprite($arrow-right-red);
+    }
+  }
+
+  &[data-controls='prev'] {
+    transform: rotate(180deg);
+  }
+
+  &[data-controls='next'] {
+    margin-left: 10px;
+  }
+}
+
+// &__pagination.swiper-pagination,
+.tns-nav {
+  position: absolute;
+  bottom: 24px;
+  left: $grid-gutter-width;
+
+  @media (min-width: $screen-md) {
+    bottom: 16px;
+  }
+}
+
+// &__pagination.swiper-pagination-bullets {
+//   bottom: 24px;
+
+//   @media (min-width: $screen-md) {
+//     bottom: 16px;
+//   }
+// }
+
+// &__pagination .swiper-pagination-bullet,
+.tns-nav button {}
+
+.tns-nav button[data-controls=next] {
+  margin-left: 10px;
+}
+
+.tns-nav .tns-nav-active {
+  background-color: #fc0202;
+}
+
+/*! Чтобы слайдер внутри grid растягивался по высоте*/
+.tns-outer {
+  height: 100%;
+}
+
+.tns-ovh {
+  height: 100%;
+}
+
+.tns-inner {
+  height: 100%;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.tns-slider {
+  display: flex;
+  height: 100%;
+  padding-bottom: 1px;
+}

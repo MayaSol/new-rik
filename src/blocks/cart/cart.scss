@@ -1,0 +1,134 @@
+// В этом файле должны быть стили для БЭМ-блока cart, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cart {
+
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  justify-content: flex-end;
+  height: 44px;
+  color: $tw-black;
+  cursor: pointer;
+
+  @media (min-width: $screen-lg) {
+    height: 58px;
+  }
+
+  &__inner {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    max-width: 57px;
+    min-width: 57px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 18px;
+    width: 100%;
+    border-radius: 34px;
+    transition: max-width 0.6s;
+    background-color: #fff;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    @media (min-width: $screen-lg) {
+      padding-left: 20px;
+      min-width: 65px;
+    }
+  }
+
+  &--has-goods {
+    #{$block-name}__inner {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $tw-red;
+      }
+    }
+  }
+
+  &--show {
+
+    cursor: auto;
+
+    & #{$block-name}__inner {
+      max-width: 320px;
+    }
+
+    & #{$block-name}__section {
+      max-width: 320px;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .slider__wrapper--main & {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    left: 19px;
+
+    @media (min-width: $screen-lg) {
+      left: auto;
+      bottom: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      right: 65px;
+      bottom: 55px;
+    }
+  }
+
+  &__icon {
+    line-height: 0;
+  }
+
+  &__icon i {
+    font-size: 24px;
+  }
+
+  &__section {
+    position: relative;
+    max-width: 0;
+    overflow: hidden;
+    transition: none;
+    max-height: 100%;
+    transition: all 0.6s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 24px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: currentColor;
+      opacity: 0;
+      transition: all 0.6s;
+    }
+
+    &__inner {}
+  }
+
+  &__goods {
+    font-size: 14px;
+    line-height: 22px;
+    color: $tw-gray-500;
+    white-space: nowrap;
+  }
+
+  &__sum {
+    font-size: 16px;
+    line-height: 22px;
+    color: $tw-black;
+  }
+}

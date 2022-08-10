@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-card)
+
+mixin product-card(props={}, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-card('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-card--' + modsList[i].trim();
+      }
+    }
+
+  .product-card(class=allMods)&attributes(attributes)
+    .product-card__inner
+      .product-card__img
+        img.lazyload(data-src=props.url)
+      .product-card__title= props.title
+      .product-card__desc= props.desc
+      .product-card__price= props.price
+      +product-actions
+      //- .product-card__actions
+      //-   +btn('Подробнее','regular')(class="border-gray-200")
+      //-   +btn('<i class="fa-solid fa-cart-shopping"></i><span>Купить</span>','regular, icon')
+      //-   +btn('','fav')
+      //-     i.fa-regular.fa-heart
+      //-   +btn('','compare')
+      //-     i.fa-solid.fa-arrow-right-arrow-left
+
+

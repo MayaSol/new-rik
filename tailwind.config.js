@@ -3,11 +3,11 @@ module.exports = {
   separator: '_',
   theme: {
     screens: {
-      sm: '360px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
       xxl: '1440px',
+      '3xl': '1800px'
     },
     container: {
       center: true,
@@ -23,7 +23,7 @@ module.exports = {
       black: '#14142B',
       white: colors.white,
       neutral: colors.neutral,
-      red: colors.red,
+      red: '#ff0000',
       orange: colors.orange,
       amber: colors.amber,
       yellow: colors.yellow,
@@ -44,7 +44,7 @@ module.exports = {
         50: '#f9fafb',
         100: '#f5f5f5',
         200: '#ebebeb',
-        300: '#d1d5db',
+        300: '#D3D3D3',
         400: '#9ca3af',
         500: '#686868',
         600: '#4b5563',
@@ -55,10 +55,11 @@ module.exports = {
     }),
     fontFamily: {
       sans: [
-        'ui-sans-serif',
-        'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
+        'Circe',
+        'ui-sans-serif',
+        'system-ui',
         '"Segoe UI"',
         'Roboto',
         '"Helvetica Neue"',
@@ -81,6 +82,16 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+    },
+    boxShadow: {
+      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+      default: '0px 0px 14px rgba(0, 0, 0, 0.1)',
+      md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+      xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+      '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+      inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+      none: 'none',
     },
     extend: {},
   },

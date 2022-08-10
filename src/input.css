@@ -1,6 +1,6 @@
 /*! tailwindcss/base*/
-@import "tailwindcss/base";
-
+/*@import "tailwindcss/base";
+*/
 /*! tailwindcss/main.css*/
 @import "./css/main.css";
 
