@@ -20,19 +20,17 @@ mixin reviews(text, mods)
 
   .reviews(class=allMods)&attributes(attributes)
     .reviews__inner
-      select#reviews-tab-select.md_hidden(name="reviews-tab-select")
-        option(value="#profs") Профессионалы
-        option(value="#users") Пользователи
-        option(value="#videos") Видео
-      ul#reviewsTab(class="nav nav-tabs hidden md_flex" role="tablist")
-        li(class="nav-item" role="presentation")
-          button.nav-link.active#profs-tab(data-bs-toggle="tab" data-bs-target="#profs" type="button" role="tab" aria-controls="Профессионалы" aria-selected="true") Профессионалы
-        li(class="nav-item" role="presentation")
-          button.nav-link#users-tab(data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="Пользователи" aria-selected="false") Пользователи
-        li(class="nav-item" role="presentation")
-          button.nav-link#videos-tab(data-bs-toggle="tab" data-bs-target="#videos" type="button" role="tab" aria-controls="Видео" aria-selected="false") Видео
-      .tab-content#reviewsTabContent
-        .tab-pane.fade.show.active#profs(role="tabpanel" aria-labelledby="profs-tab")
+      div.section__container.md_container
+        ul#reviewsTab(class="nav nav-tabs hidden md_flex" role="tablist")
+          li(class="nav-item" role="presentation")
+            button.nav-link.active#profs-tab(data-bs-toggle="tab" data-bs-target="#profs" type="button" role="tab" aria-controls="Профессионалы" aria-selected="true") Профессионалы
+          li(class="nav-item" role="presentation")
+            button.nav-link#users-tab(data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="Пользователи" aria-selected="false") Пользователи
+          li(class="nav-item" role="presentation")
+            button.nav-link#videos-tab(data-bs-toggle="tab" data-bs-target="#videos" type="button" role="tab" aria-controls="Видео" aria-selected="false") Видео
+      .tab-content#reviewsTabContent.section__container.container
+        // .tab-content__inner()
+        .tab-pane.fade.show.active#profs(role="tabpanel" aria-labelledby="profs-tab" class="-mx-[20px]")
           .reviews__slider.reviews__slider--profs
             +reviews-user-item(
               {
@@ -40,28 +38,72 @@ mixin reviews(text, mods)
                 name: 'Туманина Вера',
                 info: 'С. Федосеевка'
               })
+              h3.text-xl.lg_text-2xl.lg_mt-0(class="xxl_mb-[20px]") Рикта - мой помощник и спаситель
+              .reviews__item-text.ellipsis(data-lines='10')
+                p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию.
+                p От знакомой узнала, что в соседнем небольшом городке Звенигово Республики Марий Эл работает врач, который кроме стандартного лечения применяет чудо-аппарат. Я решила попробовать полечиться этим аппаратом.
+                p Результат был очень быстрым и неожиданно хорошим: через 5 дней я уже могла сидеть, стало меньше болей при ходьбе. Замечательный врач-невропатолог Семакин Валерий Федорович помимо уколов и капельниц делал блокады, мануальную терапию. И сочетал все это с лечением аппаратом МИЛТА. После первого курса лечения я уехала со значительным улучшением состояния. Через 3 месяца мне провели повторный курс, затем через полгода. И на протяжении следующих 5 лет ездила на лечение к этому доктору каждые полгода. Операцию делать не пришлось, несмотря даже на то, что в 2004 г. после падения обнаружилась еще одна грыжа.
             +reviews-user-item(
               {
                 url: '/img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 2',
                 info: 'С. Федосеевка'
               })
+              h3.lg_mt-0 Рикта - мой помощник и спаситель
+              .reviews__item-text.ellipsis(data-lines='10')
+                p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию.
             +reviews-user-item(
               {
                 url: '/img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 3',
                 info: 'С. Федосеевка'
               })
-        .tab-pane.fade#users(role="tabpanel" aria-labelledby="users-tab")
+        .tab-pane.fade#users(role="tabpanel" aria-labelledby="users-tab" class="-mx-[20px]")
           .reviews__slider reviews__slider--users
-            div Users slide 1
-            div Users slide 2
-            div Users slide 3
-        .tab-pane.fade#videos(role="tabpanel" aria-labelledby="videos-tab")
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера',
+                info: 'С. Федосеевка'
+              })
+                div Users slide 1
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 2',
+                info: 'С. Федосеевка'
+              })
+                div Users slide 2
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 3',
+                info: 'С. Федосеевка'
+              })
+                div Users slide 3
+        .tab-pane.fade#videos(role="tabpanel" aria-labelledby="videos-tab" class="-mx-[20px]")
           .reviews__slider.reviews__slider--videos
-            div Videos slide 1
-            div Videos slide 2
-            div Videos slide 3
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера',
+                info: 'С. Федосеевка'
+              })
+                div Videos slide 1
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 2',
+                info: 'С. Федосеевка'
+              })
+                div Videos slide 2
+            +reviews-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера 3',
+                info: 'С. Федосеевка'
+              })
+                div Videos slide 3
 
 
 
@@ -90,16 +132,39 @@ mixin reviews-user-item(props={}, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' reviews--' + modsList[i].trim();
+        allMods = allMods + ' reviews__item--' + modsList[i].trim();
       }
     }
 
-  .reviews__item.reviews__item--user(class=allMods)&attributes(attributes)
-    .reviews__item-author
-      .reviews__item-avatar
-        img(src=props.url)
-      .reviews__item-name= props.name
-      .reviews__item-info= props.info
-    .reviews__item-text
+  .reviews__item.reviews__item--user.slider-card(class=allMods)&attributes(attributes)
+    .reviews__item-inner.slider-card__inner
+      .reviews__item-author
+        .reviews__item-avatar
+          img(src=props.url)
+        .reviews__item-name= props.name
+        .reviews__item-info= props.info
       block
-    button.btn Подробнее
+      +btn('Подробнее','simple')(class="text-md")
+
+
+
+mixin reviews-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews__item--' + modsList[i].trim();
+      }
+    }
+
+  .reviews__item.slider-card(class=allMods)&attributes(attributes)
+    .reviews__item-inner.slider-card__inner
+      .reviews__item-author
+        .reviews__item-avatar
+          img(src=props.url)
+        .reviews__item-name= props.name
+        .reviews__item-info= props.info
+      block

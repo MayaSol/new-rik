@@ -35,8 +35,8 @@ mixin features-item(props={},mods)
       }
     }
 
-  .features__item(class=allMods)&attributes(attributes)
-    .features__item-inner
+  .features__item.slider-card(class=allMods)&attributes(attributes)
+    .features__item-inner.slider-card__inner
       .features__icon
         +svg(props.icon,props.iconClasses)
       .features__header!= props.title

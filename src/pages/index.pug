@@ -51,7 +51,7 @@ block content
             .slider__text-bottom
               +btn('Подробнее','regular')(href="#")
     section.section-main.section--features(class="mt-[60px]")
-      .section__container.container
+      .section__container
         .section__inner
           +features
             +features-item({
@@ -83,18 +83,18 @@ block content
               icon: 'star'
             })
     section.section-main.section--info(class="mt-[60px]")
-      .section__container.container
+      .section__container
         .section__inner
           +product-info
             .section__header
               h2.section__title Новинки
-              +btn('Все аппараты','show-all')(class="pt-[3px]")
+              +btn('Все аппараты','simple')(class="pt-[3px]")
             .product-info__views-wrapper
               .product-info__views-list
                 +product-info-view({test: 'slide 1'})
                 +product-info-view({test: 'slide 2'})
                 +product-info-view({test: 'slide 3'})
-            .product-info__text-wrapper
+            .product-info__text-wrapper.container
               .product-info__text-list
                 +product-info-text(
                   {
@@ -166,7 +166,7 @@ block content
       .section__container.container
         .section__inner
           h2.section__title(class="xxl_mb-[10px]") Каталог аппаратов
-          +btn('Все аппараты','show-all')(class="pt-[3px]")
+          +btn('Все аппараты','simple')(class="pt-[3px]")
           .product-list(class="mt-[20px]")
             +product-card(
               {
@@ -221,8 +221,15 @@ block content
     section.section-main.section--reviews(class="mt-[60px]")
       .section__container.container
         .section__inner
-          h2.section__title Отзывы
-            +reviews()
+          .section__header
+            h2.section__title Отзывы
+            +btn('Все отзывы','simple')(class="")
+          .reviews__tab-select-wrapper.field-select__wrapper.md_container.md_after_hidden
+            select#reviews-tab-select.reviews__tab-select.tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
+              option(value="#profs" role="tab") Профессионалы
+              option(value="#users" role="tab") Пользователи
+              option(value="#videos" role="tab") Видео
+      +reviews()
 
 
 

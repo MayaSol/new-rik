@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-card)
+
+mixin slider-card(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +slider-card('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' slider-card--' + modsList[i].trim();
+      }
+    }
+
+  .slider-card(class=allMods)&attributes(attributes)
+    .slider-card__inner
+      block

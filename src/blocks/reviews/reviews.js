@@ -64,4 +64,5 @@ ready(function() {
     }
     console.log(tabSliders);
   }
+
 });

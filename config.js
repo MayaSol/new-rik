@@ -24,10 +24,9 @@ let config = {
     // 'bootstrap/scss/_maps.scss',
     'bootstrap/scss/_mixins.scss',
     'bootstrap/scss/_transitions.scss',
-    'bootstrap/scss/_nav.scss',
     // 'bootstrap/scss/_accordion.scss',
     // 'bootstrap/scss/_root.scss',
-    // 'bootstrap/scss/_dropdown.scss',
+    'bootstrap/scss/_dropdown.scss',
     // 'bootstrap/scss/_navbar.scss',
     // 'mdb-ui-kit/src/scss/free/_navbar.scss',
     // 'mdb-ui-kit/src/scss/free/_dropdown.scss',
@@ -35,6 +34,7 @@ let config = {
 
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'src/scss/_nav.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -47,7 +47,7 @@ let config = {
   'addJsBefore': [
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
     'lazysizes/lazysizes.js',
-    // 'bootstrap/js/dist/dropdown.js',
+    'bootstrap/js/dist/dropdown.js',
     // 'bootstrap/js/dist/collapse.js',
     'bootstrap/js/dist/tab.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',

@@ -4,25 +4,150 @@
 
 .reviews {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
+
+  &__tab-select-wrapper {
+    margin-top: 20px;
+    margin-bottom: 0;
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 15px;
+    }
+  }
+
+  &__tab-select {
+    width: 100%;
+  }
+
+  &__item {
+    .btn {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-self: start;
+      }
+    }
+  }
+
+  &__item-inner {
+    padding: 30px;
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding: 40px 55px;
+    }
+  }
+
+  &__item-author {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+
+    @media (min-width: $screen-lg) {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 30px;
+    }
+  }
 
   &__item-avatar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     width: 80px;
     height: 80px;
+    margin-right: 20px;
     border-radius: 50%;
     overflow: hidden;
+
+    @media (min-width: $screen-lg) {
+      width: 140px;
+      height: 140px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: $screen-xxl) {
+        width: 170px;
+        height: 170px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__item-name {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: end;
     font-size: 16px;
     line-height: 26px;
     color: $tw-gray-500;
+
+    @media (min-width: $screen-lg) {
+      align-self: center;
+    }
   }
 
   &__item-info {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     font-size: 14px;
     line-height: 24px;
     color: $tw-gray-500;
     opacity: 0.5;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
   }
+
+  &__item-text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  &__item-text>* {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
+
+  &__item-text #{$block-name}__item-excerpt {
+    display: block;
+  }
+
+  &__item-exerpt {}
+
+  .tab-pane {
+    position: relative;
+  }
+
+  .tns-controls {
+    top: -115px;
+
+    @media (min-width: $screen-xxl) {
+      top: -80px;
+      right: 40px;
+    }
+  }
+
 }
