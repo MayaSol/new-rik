@@ -19,10 +19,11 @@ module.exports = {
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      base: ['1rem', { lineHeight: '1.625rem' }],
+      sm: ['14px', { lineHeight: '24px' }],
+      '15': ['15px', { lineHeight: '21px' }],
+      base: ['16px', { lineHeight: '26px' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
+      xl: ['20px', { lineHeight: '30px' }],
       '2xl': ['1.5rem', { lineHeight: '2rem' }],
       '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
       '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
@@ -37,7 +38,8 @@ module.exports = {
       current: colors.current,
       transparent: colors.transparent,
       black: '#14142B',
-      white: colors.white,
+      slate: '#181828',
+      white: '#fff',
       neutral: colors.neutral,
       red: '#ff0000',
       orange: colors.orange,
@@ -98,6 +100,9 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      icon: [
+        '"Font Awesome 6 Free"'
+      ]
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -109,7 +114,26 @@ module.exports = {
       inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
       none: 'none',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '3px':  '3px',
+        '8px': '8px',
+        '10px': '10px',
+        '15px': '15px',
+        '16px': '16px',
+        '20px': '20px',
+        '40px': '40px',
+        '60px': '60px',
+        '80px': '80px',
+        '100px': '100px',
+        '150px': '150px',
+        '170px': '170px',
+        '180px': '180px',
+        '402px': '402px',
+        '466px': '466px',
+        '736px': '736px'
+      },
+    },
   },
   plugins: [],
 }

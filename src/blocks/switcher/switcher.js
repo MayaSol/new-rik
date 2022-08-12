@@ -5,16 +5,20 @@ ready(function() {
   /*Выпадашка с   языками*/
   try {
     getAllValues();
+    console.log(ALL_VALUES);
     setSwitcherValue('lang');
 
-    var switcherItems = document.querySelectorAll('.switcher__item');
-    for (i = 0; i < switcherItems.length; i++) {
-      switcherItems[i].addEventListener('click', function(event) {
-        event.preventDefault();
-        if (this.dataset && this.dataset.name && this.dataset.name != "") {
-          changeSwitcherValue('lang', this.dataset.name);
-        }
-      })
+    var switchers = document.querySelectorAll('.switcher__wrapper');
+    for (switcher of switchers) {
+      var switcherItems = switcher.querySelectorAll('.switcher__item');
+      for (i = 0; i < switcherItems.length; i++) {
+        switcherItems[i].addEventListener('click', function(event) {
+          event.preventDefault();
+          if (this.dataset && this.dataset.name && this.dataset.name != "") {
+            changeSwitcherValue('lang', this.dataset.name);
+          }
+        })
+      }
     }
 
   } catch (e) {
@@ -29,15 +33,18 @@ ready(function() {
   }
 });
 
-/*Выпадашка с городами*/
+/*Выпадашка*/
 var ALL_VALUES = {};
 
 function getAllValues() {
-  var switcherSelect = document.querySelector('.switcher__select');
-  if (switcherSelect) {
-    var switcherOpts = switcherSelect.querySelectorAll('.switcher__item');
-    for (i = 0; i < switcherOpts.length; i++) {
-      ALL_VALUES[switcherOpts[i].dataset.name] = switcherOpts[i].innerText;
+  var switcherList = document.querySelectorAll('.switcher__wrapper');
+  if (switcherList.length > 0) {
+    for (switcher of switcherList) {
+      ALL_VALUES[switcher.id] = {};
+      var switcherOpts = switcher.querySelectorAll('.switcher__select .switcher__item');
+      for (i = 0; i < switcherOpts.length; i++) {
+        ALL_VALUES[switcher.id][switcherOpts[i].dataset.name] = switcherOpts[i].innerText;
+      }
     }
   }
 }
@@ -52,15 +59,24 @@ function setSwitcherValue(cookieName) {
     active = getCookie(cookieName);
 
     if ((typeof active === 'undefined') || (active == "") || (active == "undefined")) {
-      active = Object.keys(ALL_VALUES)[0];
+      // console.log(Object.keys(ALL_VALUES));
+      // console.log(Object.keys(ALL_VALUES)[0]);
+      // console.log(Object.keys(ALL_VALUES[Object.keys(ALL_VALUES)[0]]));
+      active = Object.keys(ALL_VALUES[Object.keys(ALL_VALUES)[0]])[0];
+      // console.log('setSwitcherValue: ' + active);
       setCookie(cookieName, active);
     }
   }
 
   for (var i = 0; i < switchers.length; i++) {
 
+    console.log(switchers[i]);
+    console.log(switchers[i].id);
+
     switcherEl = switchers[i].querySelector('.switcher__value');
-    switcherEl.textContent = ALL_VALUES[active];
+    console.log(switcherEl);
+    console.log(ALL_VALUES[switchers[i].id][active]);
+    switcherEl.textContent = ALL_VALUES[switchers[i].id][active];
 
     var items = switchers[i].querySelectorAll('.switcher__item');
     for (var j = 0; j < items.length; j++) {
@@ -93,7 +109,7 @@ function initLangBtns() {
         let activeBtn = btnGroups[i].querySelector('.btn--lang[data-name=' + active + ']');
         activeBtn.classList.add('active');
       }
-      [...btns].map((btn,i,btns) => {
+      [...btns].map((btn, i, btns) => {
         btn.addEventListener('click', function(event) {
           [...btns].map(btn => { btn.classList.remove('active') });
           this.classList.add('active');

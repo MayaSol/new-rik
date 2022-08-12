@@ -52,6 +52,10 @@
 .btn {
   @include btn;
 
+  &--clean {
+    padding: 0;
+  }
+
   &--regular {
     padding: 7px 16px;
     font-size: 18px;

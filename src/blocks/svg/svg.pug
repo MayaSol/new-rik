@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (svg)
 
-mixin svg(icon='', classes, mods)
+mixin svg(icon='', classes, sizes={width:'30',height:'30'},mods)
 
   -
     // список модификаторов
@@ -15,5 +15,5 @@ mixin svg(icon='', classes, mods)
       }
     }
 
-  svg(class=allMods)&attributes(attributes)
+  svg(class=allMods width=sizes.width height=sizes.height)&attributes(attributes)
     use(xlink:href="img/sprite.svg#" + icon)

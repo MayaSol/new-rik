@@ -18,11 +18,11 @@ mixin switcher(data, mods)
       }
     }
 
-  .switcher__wrapper.hidden.xxl_block.items-center.h-full.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
+  .switcher__wrapper.items-center.h-full.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
     .relative.dropdown
       .switcher.dropdown-toggle.flex.items-center.space-x-1.cursor-pointer.active(class="after_right-2.5" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
-        .switcher__value.text-lg.leading-8(class="pl-[10px] pr-[15px]")!= data.name
-      .switcher__select.dropdown-menu.text-black(aria-labelledby="dropdownMenuLink")
+        .switcher__value.w-full.text-inherit.leading-8.pl-10px.pr-15px!= data.name
+      .switcher__select.dropdown-menu.text-inherit(aria-labelledby="dropdownMenuLink")
         block
 
 mixin switcher-item(data,mods)

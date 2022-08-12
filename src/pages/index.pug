@@ -20,7 +20,7 @@ block nav
   +search-form
     +action-btn('solid','magnifying-glass','search')(id="btnSearch" class="search-form__btn" type="button")
   +action-btn('solid','user','user')
-  +switcher({name: 'Ru'})
+  +switcher({name: 'Ru'})(class="hidden xxl_block text-lg" id="switcherLangTop")
     +switcher-item({name: 'Ru', code: 'ru', value: ''})
     +switcher-item({name: 'En', code: 'en', value: ''})
   div.contact-info.hidden.xl_block
@@ -33,24 +33,24 @@ block content
     .main-slider.bg-gray-100
       +slider({class: "3xl_container"},'main')
         +slider-item--main({url: '/video/dummy.mov', width: 1920, height: 1080, type: 'video/mp4'})
-          .slider__text(class="xl_mt-[150px] xxl_mt-[170px]")
+          .slider__text.xl_mt-150px.xxl_mt-170px
             h2.mt-0 Современная физиотерапия и реабилитация
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
             .slider__text-bottom
               +btn('Подробнее','regular')(href="#")
         +slider-item--main({url: '/video/SampleVideo_360x240_5mb.mp4', width: 360, height: 240, type: 'video/mp4'})
-          .slider__text(class="xl_mt-[150px] xxl_mt-[170px]")
+          .slider__text.xl_mt-150px.xxl_mt-170px
             h2.mt-0 slide 2
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
             .slider__text-bottom
               +btn('Подробнее','regular')(href="#")
         +slider-item--main({url: '/video/banana.mp4', width: 3840, height: 2160, type: 'video/mp4'})
-          .slider__text(class="xl_mt-[150px] xxl_mt-[170px]")
+          .slider__text.xl_mt-150px.xxl_mt-170px
             h2.mt-0 slide 3
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
             .slider__text-bottom
               +btn('Подробнее','regular')(href="#")
-    section.section-main.section--features(class="mt-[60px]")
+    section.section-main.section--features.mt-60px
       .section__container.container
         .section__inner
           +features
@@ -82,13 +82,13 @@ block content
                 "<li>Бесплатный «пробный сеанс» у врача в офисе при производстве</li></ul>",
               icon: 'star'
             })
-    section.section-main.section--info(class="mt-[60px]")
+    section.section-main.section--info.mt-60px
       .section__container.container
         .section__inner
           +product-info
             .section__header
               h2.section__title Новинки
-              +btn('Все аппараты','simple')(class="pt-[3px]")
+              +btn('Все аппараты','simple')(class="pt-3px")
             .product-info__views-wrapper
               .product-info__views-list
                 +product-info-view({test: 'slide 1'})
@@ -103,16 +103,16 @@ block content
                     price: '37 800 ₽'
                   })
                   div
-                    h4.text-xl.leading-7.text-black(class="mb-[15px]") Преимущества
+                    h4.text-xl.leading-7.text-black.mb-15px Преимущества
                     ul.pl-0.text-sm.leading-6
-                      li.flex.items-center(class="mb-[10px] xxl_mb-[15px]")
-                        i.laser.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px.xxl_mb-15px
+                        i.laser.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                      li.flex.items-center(class="mb-[10px] xxl_mb-[15px]")
-                        i.blue-light.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px.xxl_mb-15px
+                        i.blue-light.shrink-0.mr-15px
                         span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
-                      li.flex.items-center(class="mb-[10px] xxl_mb-[15px]")
-                        i.cert.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px.xxl_mb-15px
+                        i.cert.shrink-0.mr-15px
                         span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
                 +product-info-text(
                   {
@@ -121,16 +121,16 @@ block content
                     price: '37 800 ₽'
                   })
                   div
-                    h4.text-xl.leading-7.text-black(class="mb-[15px]") Преимущества
+                    h4.text-xl.leading-7.text-black.mb-15px Преимущества
                     ul.pl-0.text-sm.leading-6
-                      li.flex.items-center(class="mb-[10px]")
-                        i.laser.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.laser.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                      li.flex.items-center(class="mb-[10px]")
-                        i.blue-light.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.blue-light.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                      li.flex.items-center(class="mb-[10px]")
-                        i.cert.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.cert.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
                 +product-info-text(
                   {
@@ -139,18 +139,18 @@ block content
                     price: '37 800 ₽'
                   })
                   div
-                    h4.text-xl.leading-7.text-black(class="mb-[15px]") Преимущества
+                    h4.text-xl.leading-7.text-black.mb-15px Преимущества
                     ul.pl-0.text-sm.leading-6
-                      li.flex.items-center(class="mb-[10px]")
-                        i.laser.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.laser.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                      li.flex.items-center(class="mb-[10px]")
-                        i.blue-light.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.blue-light.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                      li.flex.items-center(class="mb-[10px]")
-                        i.cert.shrink-0(class="mr-[15px]")
+                      li.flex.items-center.mb-10px
+                        i.cert.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-    section.section-main.section--area(class="mt-[60px]")
+    section.section-main.section--area.mt-60px
       .section__container.container
         .section__inner
             .section__header
@@ -162,12 +162,12 @@ block content
                 +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
                 +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
                 +areas-item({url: 'img/area-vet.jpg',caption: 'Косметология'})
-    section.section-main.section--catalog(class="mt-[60px]")
+    section.section-main.section--catalog.mt-60px
       .section__container.container
         .section__inner
-          h2.section__title(class="xxl_mb-[10px]") Каталог аппаратов
-          +btn('Все аппараты','simple')(class="pt-[3px]")
-          .product-list(class="mt-[20px]")
+          h2.section__title.xxl_mb-10px Каталог аппаратов
+          +btn('Все аппараты','simple')(class="pt-3px")
+          .product-list.mt-20px
             +product-card(
               {
                 url: './img/product.jpg',
@@ -196,7 +196,7 @@ block content
                 desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
                 price: '98 200 ₽'
               })
-    section.section-main.section--service(class="mt-[60px]")
+    section.section-main.section--service.mt-60px
       .section__container.container
         .section__inner
           +service(
@@ -206,19 +206,19 @@ block content
                     '/img/service-3x.jpg 1992w'
             })
             ul.service__list.pl-0.text-black
-              li.service__item.flex.items-center(class="mb-[20px] xxl_mb-[40px]")
-                i.service-tech.shrink-0(class="mr-[15px]")
+              li.service__item.flex.items-center.mb-20px.xxl_mb-40px
+                i.service-tech.shrink-0.mr-15px
                 span Тех.обслуживание производителем
-              li.service__item.flex.items-center(class="mb-[20px] xxl_mb-[40px]")
-                i.service-garant.shrink-0(class="mr-[15px]")
+              li.service__item.flex.items-center.mb-20px.xxl_mb-40px
+                i.service-garant.shrink-0.mr-15px
                 span Гарантия два года
-              li.service__item.flex.items-center(class="mb-[20px] xxl_mb-[40px]")
-                i.service-delivery.shrink-0(class="mr-[15px]")
+              li.service__item.flex.items-center.mb-20px.xxl_mb-40px
+                i.service-delivery.shrink-0.mr-15px
                 span Бесплатная доставка
-              li.service__item.flex.items-center(class="mb-[20px] xxl_mb-[40px]")
-                i.service-change.shrink-0(class="mr-[15px]")
+              li.service__item.flex.items-center.mb-20px.xxl_mb-40px
+                i.service-change.shrink-0.mr-15px
                 span Обмен старых аппаратов со скидкой
-    section.section-main.section--reviews(class="mt-[60px]")
+    section.section-main.section--reviews.mt-60px
       .section__container.container
         .section__inner
           .section__header
@@ -230,46 +230,46 @@ block content
               option(value="#users" role="tab") Пользователи
               option(value="#videos" role="tab") Видеоpa
       +reviews()
-    section.section-main.section--articles(class="mt-[60px]")
+    section.section-main.section--articles.mt-60px
       .section__container.container
         .section__inner
-          h2.section__title(class="xxl_mb-[10px]") Новости и статьи
-          +btn('Все статьи','simple')(class="mb-[20px]")
+          h2.section__title.xxl_mb-10px Новости и статьи
+          +btn('Все статьи','simple').mb-20px
           .article-preview__list
-            .article-preview(class="flex xxl_h-[466px] xxl_w-[736px]")
+            .article-preview.flex.xxl_h-466px.xxl_w-736px
               .article-preview__inner.xxl_flex
                 .article-preview__img.shrink-0(class="xxl_w-1/2")
                   img(src="img/article-1.jpg")
                 .article-preview__text
-                  .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+                  .article-preview__date.text-base.mb-10px 15 марта 2022
                   .article-preview__title.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
                   .article-preview__content
-                  +btn('Подробнее','simple')(class="text-md mt-[10px]")
-            .article-preview(class="xxl_h-[466px] xxl_w-[402px]")
+                  +btn('Подробнее','simple')(class="text-md mt-10px")
+            .article-preview.xxl_h-466px.xxl_w-402px
               .article-preview__inner
                 .article-preview__img
                   img(src="img/article-2.jpg")
                 .article-preview__text
-                  .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+                  .article-preview__date.text-base.mb-10px 15 марта 2022
                   .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
                   .article-preview__content
-                  +btn('Подробнее','simple')(class="text-md mt-[10px]")
+                  +btn('Подробнее','simple')(class="text-md mt-10px")
             //- .article-preview
             //-   .article-preview__img
             //-     img(src="img/article-1.jpg")
             //-   .article-preview__text
-            //-     .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+            //-     .article-preview__date.text-base.mb-10px 15 марта 2022
             //-     .article-preview__title.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
             //-     .article-preview__content
-            //-     +btn('Подробнее','simple')(class="text-md mt-[10px]")
+            //-     +btn('Подробнее','simple')(class="text-md mt-10px")
             //- .article-preview
             //-   .article-preview__img
             //-     img(src="img/article-2.jpg")
             //-   .article-preview__text
-            //-     .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+            //-     .article-preview__date.text-base.mb-10px 15 марта 2022
             //-     .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
             //-     .article-preview__content
-            //-     +btn('Подробнее','simple')(class="text-md mt-[10px]")
+            //-     +btn('Подробнее','simple')(class="text-md mt-10px")
 
 
 
@@ -282,16 +282,16 @@ block content
             //-     price: '37 800 ₽'
             //-   })
             //-   div
-            //-     h4.text-xl.leading-7.text-black(class="mb-[10px]") Преимущества
+            //-     h4.text-xl.leading-7.text-black.mb-10px Преимущества
             //-     ul
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.laser.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.laser.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.blue-light.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.blue-light.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.cert.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.cert.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
             //- +product-info-item(
             //-   {
@@ -300,16 +300,16 @@ block content
             //-     price: '37 800 ₽'
             //-   })
             //-   div
-            //-     h4.text-xl.leading-7.text-black(class="mb-[10px]") Преимущества
+            //-     h4.text-xl.leading-7.text-black.mb-10px Преимущества
             //-     ul
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.laser.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.laser.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.blue-light.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.blue-light.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-            //-       li.flex.items-center(class="mb-[10px]")
-            //-         i.cert.shrink-0(class="mr-[15px]")
+            //-       li.flex.items-center.mb-10px
+            //-         i.cert.shrink-0.mr-15px
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
 
 
@@ -325,7 +325,7 @@ block content
 
 
 //- block footer
-  p footer
+//-   p footer
 
 //- block append page-bottom
 //-   script(src='js/some.js')

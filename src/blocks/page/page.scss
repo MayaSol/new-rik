@@ -113,7 +113,7 @@ body {
   min-height: 100%;
   word-break: break-word;
   font-size: $font-size;
-  @apply leading-normal;
+  line-height: 26px;
   @apply font-sans;
   text-align: left;
   @apply text-gray-500;

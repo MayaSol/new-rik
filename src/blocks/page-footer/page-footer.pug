@@ -18,5 +18,27 @@ mixin page-footer(mods)
     }
 
   footer.page-footer(class=allMods, role='contentinfo')&attributes(attributes)
-    .page-footer__inner
+    .page-footer__inner.flex.flex-col.items-center.md_grid.md_items-start
       block
+
+
+mixin page-footer__social-icon(props={},mods)
+
+  //- Принимает:
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+        +page-footer()
+          p «Подвал»
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-footer__social-icon--' + modsList[i].trim();
+      }
+    }
+
+  .page-footer__social-icon.flex.items-center(class=allMods, role='contentinfo')&attributes(attributes)
+    a.flex.items-center(href=props.url)
+      +svg(props.icon, 'text-white', {width: props.w, height: props.h})

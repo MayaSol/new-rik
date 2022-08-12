@@ -1,0 +1,49 @@
+// В этом файле должны быть стили для БЭМ-блока footer-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer-nav {
+
+  $block-name: &; // #{$block-name}__element
+
+  .page-footer & {
+    a {
+      color: $tw-gray-500;
+
+      &:hover,
+      &:focus {
+        color: $tw-white;
+      }
+    }
+  }
+
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  @media (min-width: $screen-xl) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  &--catalog {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  &--customer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  &--info {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  &--coop {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 4;
+    grid-column-end: 5;
+  }
+}

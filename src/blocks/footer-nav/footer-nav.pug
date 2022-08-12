@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer-nav)
+
+mixin footer-nav(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' footer-nav--' + modsList[i].trim();
+      }
+    }
+
+  .footer-nav(class=allMods)&attributes(attributes)
+    .footer-nav__inner
+      .footer-nav__title.mb-20px.text-xl= props.title
+      ul.footer-nav__list.p-0.m-0
+        block
+
+
+mixin footer-nav-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' footer-nav__item--' + modsList[i].trim();
+      }
+    }
+
+  li.footer-nav__item(class=allMods)&attributes(attributes)
+    +btn(props.name,'clean')(href=props.url)
+
+

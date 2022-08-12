@@ -2,4 +2,130 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.page-footer {}
+.page-footer {
+
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 20px;
+  background-color: $tw-slate;
+  color: #fff;
+  text-align: center;
+
+  @media (min-width: $screen-md) {
+    padding: 60px 64px;
+    text-align: left;
+  }
+
+
+  @media (min-width: $screen-xl) {
+    padding: 128px 64px;
+  }
+
+  a {
+    color: $tw-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-white;
+    }
+  }
+
+  &__socials {
+    width: 320px;
+    @media (min-width: $screen-md) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__inner {
+    gap: 30px 0;
+
+    @media (min-width: $screen-md) {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto auto;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-rows: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+    }
+  }
+
+  &__contacts {
+    @media (min-width: $screen-md) {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-column-start:1;
+      grid-column-end:3;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+  }
+
+  &__info {
+    @media (min-width: $screen-md) {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      align-self: end;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+  }
+
+  &__disclaim {
+    @media (min-width: $screen-md) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-column-end: 4;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-row-start: 4;
+      grid-row-end: 5;
+      grid-column-start: 2;
+      grid-column-end: 5;
+    }
+  }
+
+  &__h-line {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    height: 1px;
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    background-color: #fff;
+    opacity: 0.1;
+  }
+}

@@ -55,5 +55,29 @@
     }
   }
 
+}
 
+.page-footer__lang-switcher {
+  min-width: 177px;
+
+  & .dropdown-toggle::after {
+    border-color: $tw-white;
+  }
+
+  & .dropdown-menu {
+    background-color: $tw-slate;
+  }
+
+  & .switcher__value {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '\f0ac';
+        margin-right: 10px;
+        @apply font-icon;
+        font-size: 20px;
+        font-weight: 900;
+      }
+  }
 }
