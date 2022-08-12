@@ -51,7 +51,7 @@ block content
             .slider__text-bottom
               +btn('Подробнее','regular')(href="#")
     section.section-main.section--features(class="mt-[60px]")
-      .section__container
+      .section__container.container
         .section__inner
           +features
             +features-item({
@@ -83,7 +83,7 @@ block content
               icon: 'star'
             })
     section.section-main.section--info(class="mt-[60px]")
-      .section__container
+      .section__container.container
         .section__inner
           +product-info
             .section__header
@@ -94,7 +94,7 @@ block content
                 +product-info-view({test: 'slide 1'})
                 +product-info-view({test: 'slide 2'})
                 +product-info-view({test: 'slide 3'})
-            .product-info__text-wrapper.container
+            .product-info__text-wrapper.container.xl_p-0
               .product-info__text-list
                 +product-info-text(
                   {
@@ -228,8 +228,49 @@ block content
             select#reviews-tab-select.reviews__tab-select.tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
               option(value="#profs" role="tab") Профессионалы
               option(value="#users" role="tab") Пользователи
-              option(value="#videos" role="tab") Видео
+              option(value="#videos" role="tab") Видеоpa
       +reviews()
+    section.section-main.section--articles(class="mt-[60px]")
+      .section__container.container
+        .section__inner
+          h2.section__title(class="xxl_mb-[10px]") Новости и статьи
+          +btn('Все статьи','simple')(class="mb-[20px]")
+          .article-preview__list
+            .article-preview(class="flex xxl_h-[466px] xxl_w-[736px]")
+              .article-preview__inner.xxl_flex
+                .article-preview__img.shrink-0(class="xxl_w-1/2")
+                  img(src="img/article-1.jpg")
+                .article-preview__text
+                  .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+                  .article-preview__title.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
+                  .article-preview__content
+                  +btn('Подробнее','simple')(class="text-md mt-[10px]")
+            .article-preview(class="xxl_h-[466px] xxl_w-[402px]")
+              .article-preview__inner
+                .article-preview__img
+                  img(src="img/article-2.jpg")
+                .article-preview__text
+                  .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+                  .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                  .article-preview__content
+                  +btn('Подробнее','simple')(class="text-md mt-[10px]")
+            //- .article-preview
+            //-   .article-preview__img
+            //-     img(src="img/article-1.jpg")
+            //-   .article-preview__text
+            //-     .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+            //-     .article-preview__title.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
+            //-     .article-preview__content
+            //-     +btn('Подробнее','simple')(class="text-md mt-[10px]")
+            //- .article-preview
+            //-   .article-preview__img
+            //-     img(src="img/article-2.jpg")
+            //-   .article-preview__text
+            //-     .article-preview__date.text-base(class="mb-[10px]") 15 марта 2022
+            //-     .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+            //-     .article-preview__content
+            //-     +btn('Подробнее','simple')(class="text-md mt-[10px]")
+
 
 
 
@@ -272,11 +313,11 @@ block content
             //-         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
 
 
-  h1 Заголовок
-  p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
-  .container
-    include ../blocks/nav/navbar.html
-    include ../blocks/nav/navbar-orig.html
+  //- h1 Заголовок
+  //- p Содержимое. #[a(href='blocks-demo.html') Библиотека блоков].
+  //- .container
+  //-   include ../blocks/nav/navbar.html
+  //-   include ../blocks/nav/navbar-orig.html
   //- <div class="search-box">
   //-   <button class="btn-search"><i class="fas fa-search"></i></button>
   //-   <input type="text" class="input-search" placeholder="Type to Search...">
@@ -284,7 +325,7 @@ block content
 
 
 //- block footer
-//-   p footer
+  p footer
 
 //- block append page-bottom
 //-   script(src='js/some.js')

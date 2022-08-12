@@ -60,11 +60,15 @@
       // top: -2600px; //catalog mobile
       // top: -1180px; //new mobile
       // top: -1504px; //new mobile whitout image
+      // top: -1800px; //new 1440
       // top: -1324px; //product 1440
       // top: -1668px; //service mobile
       // top: -2545px; //service 1440
       // top: -1140px; //reviews mobile
       // top: -2075px; //reviews 1440
+      // top: 0;
+      // top: -1315px; //new 1440
+      // top: -1440px;// areas 1440
       // // top: -3185px; //catalog main
       // // top: -140px; //main test features
       // // top: 32px; //mobile test features
@@ -72,7 +76,7 @@
       // // top: -815px; //vacancies
       // // top: -275px;
       // //top: -5280px;
-      // content: url('../screens/main.jpg');
+      // content: url('../screens/main-new.jpg');
       // opacity: 0.4;
     }
   }
@@ -465,19 +469,10 @@ pre {
   &__container[class$=container] {
     @media (min-width: $screen-xl) {
       padding-left: 140px;
+      padding-right: 64px;
       max-width: $screen-xxl;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    @media (min-width: $screen-xxl) {
-      padding-right: 164px;
-      padding-left: 175px;
-
-      .section--catalog & {
-        // padding-right: 180px;
-        // padding-left: 175px;
-      }
 
       .section--info & {
         padding-left: 0;
@@ -485,6 +480,15 @@ pre {
 
       .section--service & {
         padding-left: 0;
+      }
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-left: 175px;
+      padding-right: 164px;
+      .section--catalog & {
+        // padding-right: 180px;
+        // padding-left: 175px;
       }
     }
   }
@@ -497,15 +501,12 @@ pre {
 
   &--catalog,
   &--info,
-  &--reviews {
+  &--reviews,
+  &--articles {
     .tns-controls {
       position: absolute;
       right: 0;
       top: 10px;
-
-      @media (min-width: $screen-xxl) {
-        top: -170px;
-      }
 
       & button {
         background-color: $tw-gray-100;
@@ -532,6 +533,11 @@ pre {
 
   &--reviews .tns-controls {
     right: 20px;
+
+    @media (min-width: $screen-xxl) {
+      top: -170px;
+    }
+
   }
 
   &--reviews {
