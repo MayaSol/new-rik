@@ -13,13 +13,13 @@ ready(function() {
   //   fitVideo(el);
   // }
 
-  var videos = document.querySelectorAll('.slider__media--video-bg video');
+  var videos = document.querySelectorAll('.slider-main__media--video-bg video');
   console.log(videos);
 
   if (videos.length > 0) {
     for (let video of videos) {
       console.log(video);
-      var playBtn = getParents(video,'.slider__media')[0].querySelector('.slider__btn-play');
+      var playBtn = getParents(video,'.slider-main__media')[0].querySelector('.slider-main__btn-play');
       if (playBtn) {
         playBtn.addEventListener('click',(event) => {
           console.log('playBtn on click');
@@ -76,7 +76,7 @@ ready(function() {
   var customizedFunction = function customizedFunction(info, eventName) {
     // direct access to info object
     console.log(info.event.type, info.container);
-    var playingVideos = document.querySelectorAll('.slider__media--video-bg video.playing');
+    var playingVideos = document.querySelectorAll('.slider-main__media--video-bg video.playing');
 
     if (playingVideos.length > 0) {
       for (var video of playingVideos) {
@@ -87,10 +87,10 @@ ready(function() {
 
 
 
-  if (document.querySelector('.slider--main')) {
+  if (document.querySelector('.slider-main')) {
 
     var sliderMain = tns({
-      container: '.slider--main',
+      container: '.slider-main',
       items: 1,
       slideBy: 1,
       mouseDrag: true,

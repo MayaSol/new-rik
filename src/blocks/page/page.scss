@@ -66,9 +66,9 @@
       // top: -2545px; //service 1440
       // top: -1140px; //reviews mobile
       // top: -2075px; //reviews 1440
-      // top: 0;
       // top: -1315px; //new 1440
       // top: -1440px;// areas 1440
+      // top: 0;
       // // top: -3185px; //catalog main
       // // top: -140px; //main test features
       // // top: 32px; //mobile test features
@@ -83,6 +83,7 @@
 
   &__footer-wrapper {
     flex-shrink: 0;
+    background-color: $tw-slate;
   }
 
   &__main {
@@ -419,10 +420,22 @@ pre {
   }
 }
 
+.slider {
 
+  &__item {
+    padding-bottom: 1px;
+    display: none !important;
 
-.section-main {}
+    &:first-child {
+      display: inline-block !important;
+    }
+  }
 
+  .tns-slider &__item {
+      display: inline-block !important;
+  }
+
+}
 
 .section {
 
@@ -486,6 +499,7 @@ pre {
     @media (min-width: $screen-xxl) {
       padding-left: 175px;
       padding-right: 164px;
+
       .section--catalog & {
         // padding-right: 180px;
         // padding-left: 175px;

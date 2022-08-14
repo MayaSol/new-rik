@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pages)
+
+mixin pages(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pages('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' pages--' + modsList[i].trim();
+      }
+    }
+
+  .pages.hidden.xxl_block(class=allMods)&attributes(attributes)
+    .pages__inner
+      .pages__line.active(data-line="main-slider")
+      .pages__line(data-line="features")
+      .pages__line(data-line="info")
+      .pages__line(data-line="area")
+      .pages__line(data-line="catalog")
+      .pages__line(data-line="service")
+      .pages__line(data-line="reviews")
+      .pages__line(data-line="articles")
+
+

@@ -1,6 +1,6 @@
-//- Все примеси в этом файле должны начинаться c имени блока (hystory-slider)
+//- Все примеси в этом файле должны начинаться c имени блока (slider-main)
 
-mixin slider(props, mods)
+mixin slider-main(props, mods)
 
   //- Принимает:
   //-   text    {string} - текст
@@ -22,7 +22,7 @@ mixin slider(props, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allWrapperMods = allWrapperMods + ' slider__wrapper--' + modsList[i].trim();
+        allWrapperMods = allWrapperMods + ' slider-main__wrapper--' + modsList[i].trim();
       }
     }
     // список модификаторов блока .slider
@@ -30,14 +30,14 @@ mixin slider(props, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' slider--' + modsList[i].trim();
+        allMods = allMods + ' slider-main--' + modsList[i].trim();
       }
     }
 
 
-  .slider__wrapper(class=allWrapperMods)
-    .slider__inner
-      .slider(class=allMods)&attributes(attributes)
+  .slider-main__wrapper(class=allWrapperMods)
+    .slider-main__inner
+      .slider-main.slider(class=allMods)&attributes(attributes)
         block
       +cart('has-goods')
 
@@ -47,8 +47,8 @@ mixin slider-item(props)
     if (typeof(props) == 'undefined')
       props = {};
 
-  .slider__item&attributes(attributes)
-    .main-slider__item-inner
+  .slider-main__item&attributes(attributes)
+    .slider-main__item-inner
       block
 
 
@@ -58,12 +58,12 @@ mixin slider-item--main(props)
     if (typeof(props) == 'undefined')
       props = {};
 
-  .slider__item.slider__item--main&attributes(attributes)
-    .slider__item-inner
-      .slider__media.slider__media--video-bg.embed-responsive.embed-responsive--main-mobile
+  .slider-main__item.slider-item&attributes(attributes)
+    .slider-main__item-inner
+      .slider-main__media.slider-main__media--video-bg.embed-responsive.embed-responsive--main-mobile
           video(width=props.width height=props.height)
             source(src=props.url type=props.type)
-          .slider__btn-play
+          .slider-main__btn-play
       .container.lg_flex.lg_flex-col.lg_justify-center.xl_block.xl_pl-100px.xl_pr-60px.xxl_pl-180px.xxl_pr-80px
         block
 

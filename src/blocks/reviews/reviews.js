@@ -10,7 +10,6 @@ ready(function() {
   var tabsSelect = document.getElementById('reviews-tab-select');
   if (tabsSelect) {
     initSelectTabsTrigger();
-    console.log(tabsSelect.value);
     initTabSlider(tabsSelect.value);
   }
 
@@ -30,11 +29,8 @@ ready(function() {
   function initSelectTabsTrigger() {
     if (document.documentElement.clientWidth < 767) {
       // var tabsSelect = document.getElementById('reviews-tab-select');
-      console.log(tabsSelect);
       tabsSelect.addEventListener('change', function(event) {
-        console.log(event.target.value);
         var trigger = document.querySelector('[data-bs-target="' + event.target.value + '"]');
-        console.log(trigger);
         var tab = new Tab(trigger);
         initTabSlider(event.target.value);
         tab.show();
@@ -43,10 +39,8 @@ ready(function() {
   }
 
   function initTabSlider(tabIdSelector) {
-    console.log(tabIdSelector);
 
     if (typeof tabSliders[tabIdSelector] === 'undefined') {
-      console.log('no slider ' + tabIdSelector + ', lets init it');
       var sliderEl= document.querySelector(tabIdSelector + ' .reviews__slider');
       if (sliderEl) {
         var slider = tns({
@@ -62,7 +56,6 @@ ready(function() {
         tabSliders[tabIdSelector] = slider;
       }
     }
-    console.log(tabSliders);
   }
 
 });

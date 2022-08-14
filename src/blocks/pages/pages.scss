@@ -1,0 +1,41 @@
+// В этом файле должны быть стили для БЭМ-блока pages, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.pages {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: absolute;
+  left: 64px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+
+  &__inner {
+    width: 30px;
+    position: sticky;
+    top: 50vh;
+    left: 64px;
+    transform: translateY(-50%);
+    z-index: 20;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    max-width: 10px;
+    margin-bottom: 25px;
+    background-color: $tw-black;
+    transition: max-width 0.1s;
+
+    &.active {
+      max-width: 30px;
+    }
+  }
+
+
+  &.sticky {
+    position: sticky;
+  }
+}
