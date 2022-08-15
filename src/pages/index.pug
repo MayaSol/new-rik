@@ -12,7 +12,7 @@ block off-canvas
   +burger('Закрыть дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__close burger--closed')
 
 block nav
-  +burger('Показать дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__toggler hidden lg_block')
+  +burger('Показать дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__toggler hidden lg_block mr-15px')
   //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')(class='hiddenmd_block xl_hidden')
   +main-nav()(class="hidden lg_block")
   +burger('Показать мобильное меню', 'nav-mobile', 'main-nav--open')(class='main-nav__toggler burger--animated order-3 lg_hidden')
@@ -31,28 +31,29 @@ block nav
 block content
   main.page__main.relative
     +pages
+    +cart-aside(class="hidden xl_block")
     section.bg-gray-100(data-page='main-slider')
       +slider-main({class: "3xl_container"})
         +slider-item--main({url: '/video/dummy.mov', width: 1920, height: 1080, type: 'video/mp4'})
-          .slider__text.xl_mt-150px.xxl_mt-170px
+          .slider__text.mt-30px.xl_mt-150px.xxl_mt-160px
             h2.mt-0 Современная физиотерапия и реабилитация
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
-            .slider__text-bottom
+            .slider__text-bottom.xxl_mt-30px
               +btn('Подробнее','regular')(href="#")
         +slider-item--main({url: '/video/SampleVideo_360x240_5mb.mp4', width: 360, height: 240, type: 'video/mp4'})
-          .slider__text.xl_mt-150px.xxl_mt-170px
+          .slider__text.mt-30px.xl_mt-150px.xxl_mt-160px
             h2.mt-0 slide 2
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
-            .slider__text-bottom
+            .slider__text-bottom.xxl_mt-30px
               +btn('Подробнее','regular')(href="#")
         +slider-item--main({url: '/video/banana.mp4', width: 3840, height: 2160, type: 'video/mp4'})
-          .slider__text.xl_mt-150px.xxl_mt-170px
+          .slider__text.mt-30px.xl_mt-150px.xxl_mt-160px
             h2.mt-0 slide 3
             p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
-            .slider__text-bottom
+            .slider__text-bottom.xxl_mt-30px
               +btn('Подробнее','regular')(href="#")
-    section.section-main.section--features.mt-60px(data-page='features')
-      .section__container.container
+    section.section-main.section--features.mt-40px(data-page='features')
+      .section__container.xl_container
         .section__inner
           +features
             +features-item({
@@ -92,10 +93,10 @@ block content
               +btn('Все аппараты','simple')(class="pt-3px")
             .product-info__views-wrapper
               .product-info__views-list.slider
-                +product-info-view({test: 'slide 1'})
-                +product-info-view({test: 'slide 2'})
-                +product-info-view({test: 'slide 3'})
-            .product-info__text-wrapper.container.xl_p-0
+                +product-info-view
+                +product-info-view
+                +product-info-view
+            .product-info__text-wrapper
               .product-info__text-list.slider
                 +product-info-text(
                   {
@@ -151,29 +152,30 @@ block content
                       li.flex.items-center.mb-10px
                         i.cert.shrink-0.mr-15px
                         span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-    section.section-main.section--area.mt-60px(data-page="area")
+    section.section-main.section--area.mt-60px(data-page="area" )
       .section__container.container
         .section__inner
             .section__header
-              h2.section__title Области применения
-              +areas
-                +areas-item({url: 'img/area-physio.jpg',caption: 'Физиотерапия'})
-                +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия'})
-                +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология'})
-                +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
-                +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
-                +areas-item({url: 'img/area-vet.jpg',caption: 'Косметология'})
-    section.section-main.section--catalog.mt-60px(data-page='catalog')
+              h2.section__title.mb-20px Области применения
+            +areas
+              +areas-item({url: 'img/area-physio.jpg',caption: 'Физиотерапия'})
+              +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия'})
+              +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология'})
+              +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
+              +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
+              +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария'})
+            input.areas__range(type="range")(class="mt-10px")
+    section.section-main.section--catalog.mt-40px(data-page='catalog')
       .section__container.container
         .section__inner
-          h2.section__title.xxl_mb-10px Каталог аппаратов
+          h2.section__title.mb-0.xxl_mb-5px Каталог аппаратов
           +btn('Все аппараты','simple')(class="pt-3px")
           .product-list.mt-20px
             +product-card(
               {
                 url: './img/product.jpg',
                 title: 'РИКТА-04/4',
-                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности',
+                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С регулировкой мощности.',
                 price: '44 800 ₽'
               })(class="slider__item")
             +product-card(
@@ -229,31 +231,31 @@ block content
             select#reviews-tab-select.reviews__tab-select.tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
               option(value="#profs" role="tab") Профессионалы
               option(value="#users" role="tab") Пользователи
-              option(value="#videos" role="tab") Видеоpa
+              option(value="#videos" role="tab") Видео
       +reviews()
-    section.section-main.section--articles.mt-60px(data-page='articles')
+    section.section-main.section--articles.mt-40px(data-page='articles')
       .section__container.container
         .section__inner
-          h2.section__title.xxl_mb-10px Новости и статьи
+          h2.section__title.mb-0.xxl_mb-10px Новости и статьи
           +btn('Все статьи','simple').mb-20px
           .article-preview__list.slider
             .article-preview.slider__item.flex.xxl_h-466px.xxl_w-736px
               .article-preview__inner.xxl_flex
                 .article-preview__img.shrink-0(class="xxl_w-1/2")
-                  img(src="img/article-1.jpg")
-                .article-preview__text
-                  .article-preview__date.text-base.mb-10px 15 марта 2022
-                  .article-preview__title.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
-                  .article-preview__content
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
+                  img.lazyload(data-src="img/article-1.jpg")
+                .article-preview__text.xxl_pt-30px
+                  .article-preview__date.text-base.mb-10px.xxl_mb-20px 15 марта 2022
+                  .article-preview__title.mb-10px.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
+                  .article-preview__content.hidden.xxl_block.ellipsis(data-lines='9') Рожистое воспаление, рожа (erysipelas – от греч. erythros «красный» и pella«кожа») – инфекционное заболевание, вызываемое бета-гемолитическим стрептококком группы А,  протекающее в острой или хронической форме. В России встречается 10-12 случаев на 10 000 населения. Рожей в основном страдают люди старше 60 лет, причем женщины болеют чаще мужчин.
+                  +btn('Подробнее','simple')(class="text-md mt-10px xxl_mt-20px")
             .article-preview.slider__item.xxl_h-466px.xxl_w-402px
               .article-preview__inner
                 .article-preview__img
-                  img(src="img/article-2.jpg")
-                .article-preview__text
+                  img.lazyload(data-src="img/article-2.jpg")
+                .article-preview__text.xxl_pt-20px
                   .article-preview__date.text-base.mb-10px 15 марта 2022
                   .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content
+                  .article-preview__content.hidden
                   +btn('Подробнее','simple')(class="text-md mt-10px")
             //- .article-preview.slider__item
             //-   .article-preview__img
@@ -328,5 +330,6 @@ block content
 //- block footer
 //-   p footer
 
-//- block append page-bottom
-//-   script(src='js/some.js')
+block prepend page-bottom
+  script(src='https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js')
+

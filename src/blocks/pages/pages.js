@@ -12,7 +12,6 @@ ready(function() {
 
   var pagesEl = document.querySelector('.pages');
   var headerH = document.querySelector('.page-header').clientHeight;
-  console.log('pages.height: ' + pagesEl.clientHeight);
   var pointsArr = [];
   var points = {};
   var prevClosest = 0;
@@ -23,27 +22,25 @@ ready(function() {
 
   function initPagesBar() {
     var sectionsList = document.querySelectorAll('section[data-page]');
-    console.log(sectionsList);
+    // console.log(sectionsList);
     for (section of sectionsList) {
       points[section.offsetTop - headerH] = section.dataset.page;
     }
-    console.log(points);
+    // console.log(points);
     pointsArr = Object.keys(points);
-    console.log(pointsArr);
+    // console.log(pointsArr);
 
     var prevClosest;
     var lines = document.querySelectorAll('.pages__line');
-    console.log(lines);
+    // console.log(lines);
     lineEls = {};
     for (line of lines) {
-      console.log()
       if (!(typeof line.dataset.line === 'undefined')) {
         lineEls[line.dataset.line] = line;
       }
     }
-    console.log('lineEls: ');
-    console.log(lineEls);
-    console.log(Object.keys(lineEls));
+    // console.log(lineEls);
+    // console.log(Object.keys(lineEls));
     touched = true;
   }
 
@@ -57,7 +54,6 @@ ready(function() {
     var closest = pointsArr.reduce(function(prev, curr) {
       return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
     });
-    console.log('closest: ' + closest + ' = ' + points[closest]);
     if (prevClosest != closest) {
       Object.keys(lineEls).map(line => lineEls[line].classList.remove('active'));
       lineEls[points[closest]].classList.add('active');

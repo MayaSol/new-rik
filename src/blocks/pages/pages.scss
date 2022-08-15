@@ -12,6 +12,11 @@
   bottom: 0;
   width: 30px;
 
+  @media (min-width: $screen-3xl) {
+    left: 50%;
+    margin-left: -835px;
+  }
+
   &__inner {
     width: 30px;
     position: sticky;

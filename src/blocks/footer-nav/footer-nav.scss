@@ -25,6 +25,16 @@
     grid-row-end: 3;
   }
 
+  @media (min-width: $screen-xl) {
+    gap: 0 25px;
+  }
+
+  &__item {
+    @media (min-width: $screen-xxl) {
+      margin-bottom: 9px;
+    }
+  }
+
   &--catalog {
     grid-column-start: 1;
     grid-column-end: 2;

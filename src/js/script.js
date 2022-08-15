@@ -2,6 +2,8 @@ const ready = require('./utils/documentReady.js');
 
 ready(function(){
 
+
+
     var ellipsisEls = document.querySelectorAll('.ellipsis');
 
     for (el of ellipsisEls) {

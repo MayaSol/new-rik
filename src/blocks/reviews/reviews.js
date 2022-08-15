@@ -8,6 +8,8 @@ const Tab = require("../../../node_modules/bootstrap/js/dist/tab.js");
 ready(function() {
   var tabSliders = {};
   var tabsSelect = document.getElementById('reviews-tab-select');
+  console.log(tabsSelect);
+  console.log(tabsSelect.value);
   if (tabsSelect) {
     initSelectTabsTrigger();
     initTabSlider(tabsSelect.value);

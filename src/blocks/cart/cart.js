@@ -6,6 +6,12 @@ ready(function() {
 
   for (cart of carts) {
     cart.addEventListener('click',function() {
+      console.log('click cart');
+      let asideParent = getParents(event.target,'.cart-aside');
+      console.log(asideParent);
+      if (asideParent.length > 0) {
+        asideParent[0].classList.add('active');
+      }
       this.classList.add('cart--show');
     });
 

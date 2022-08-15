@@ -27,6 +27,7 @@
 
   &__views-wrapper {
     margin-top: 20px;
+
     @media (min-width: $screen-lg) {
       margin-top: 0;
       grid-column-start: 1;
@@ -38,6 +39,7 @@
   &__text-wrapper {
     display: flex !important;
     flex-direction: column;
+
     @media (min-width: $screen-lg) {
       grid-column-start: 2;
       margin-top: 10px;
@@ -59,10 +61,26 @@
     height: 342px;
 
     @media (min-width: $screen-lg) {
-      width: 664px;
-      height: 771px;
-      align-self: stretch;
+      display: flex;
+      min-height: 771px;
+      background-color: $tw-gray-100;
     }
+  }
+
+  &__view-inner {
+    background-color: $tw-gray-100;
+
+    @media (min-width: $screen-lg) {
+      margin-left: auto;
+      margin-top: 60px;
+      margin-right: 30px;
+      width: 500px;
+      height: auto;
+    }
+  }
+
+  &__view-content {
+    // height: 610px;
   }
 
   &__title {
@@ -79,21 +97,25 @@
     }
   }
 
-  &__text {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  &__text.slider__item {
+
+    @media (min-width: 700px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     @media (min-width: $screen-lg) {
-      display: grid;
+      display: grid !important;
       grid-template-rows: auto auto auto auto;
       grid-template-columns: 1fr auto;
       gap: 0 10px;
       height: auto;
     }
 
-     @media (min-width: $screen-xxl) {
+    @media (min-width: $screen-xxl) {
       gap: 0;
-     }
+    }
   }
 
   &__desc {

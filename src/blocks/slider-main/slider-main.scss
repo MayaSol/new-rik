@@ -144,7 +144,6 @@
   }
 
   &__btn-play {
-    display: none;
     position: absolute;
     width: 48px;
     height: 48px;
@@ -154,6 +153,10 @@
     cursor: pointer;
     background-image: url('../img/play-btn.png');
     background-size: contain;
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
 
     video.playing~& {
       background-image: url('../img/stop-btn.png');
@@ -167,10 +170,6 @@
       width: 80px;
       height: 80px;
     }
-  }
-
-  &__text {
-    margin-top: 30px;
   }
 
   &__text-bottom {

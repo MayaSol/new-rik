@@ -8,10 +8,12 @@ ready(function() {
       container: '.product-info__views-list',
       items: 1,
       slideBy: 1,
-      mouseDrag: true,
+      mouseDrag: false,
       controls: true,
       nav: false,
       loop: false,
+      preventScrollOnTouch: 'force',
+      touch: false,
       responsive: {
         700: {
           items: 2,
@@ -76,6 +78,10 @@ ready(function() {
 
     sliderView.events.on('transitionStart', syncText);
     sliderText.events.on('transitionStart', syncView);
+
+    // if (document.documentElement.clientWidth > 1279) {
+    //     window.CI360.init();
+    // }
 
   }
 });

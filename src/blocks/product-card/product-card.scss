@@ -6,7 +6,10 @@
 
   $block-name: &; // #{$block-name}__element
 
+  &.slider__item {
   display: flex !important;
+  }
+
 
   &__inner {
     display: flex;

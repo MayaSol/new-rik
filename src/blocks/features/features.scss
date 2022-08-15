@@ -33,8 +33,12 @@
   }
 
   &__item {
-    display: flex !important;
-    max-width: 580px;
+    // display: flex !important;
+    // max-width: 580px;
+
+    @media (min-width: 680px) {
+      display: flex !important;
+    }
 
     // @media (min-width: $screen-md) {
     //   padding: 5px 20px;

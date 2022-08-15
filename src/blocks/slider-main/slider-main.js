@@ -14,15 +14,11 @@ ready(function() {
   // }
 
   var videos = document.querySelectorAll('.slider-main__media--video-bg video');
-  console.log(videos);
-
   if (videos.length > 0) {
     for (let video of videos) {
-      console.log(video);
       var playBtn = getParents(video,'.slider-main__media')[0].querySelector('.slider-main__btn-play');
       if (playBtn) {
         playBtn.addEventListener('click',(event) => {
-          console.log('playBtn on click');
           event.preventDefault();
           if (video.classList.contains('playing')) {
             pauseVideo(video);
@@ -48,23 +44,16 @@ ready(function() {
   }
 
   function playVideo(videoEl) {
-    console.log('playVideo');
-    console.log(videoEl);
-    console.log(videoEl.play);
-
     videoEl.play();
     videoEl.controls = true;
   }
 
   function pauseVideo(videoEl) {
-    console.log('pauseVideo');
-
     videoEl.pause();
     videoEl.controls = false;
   }
 
   function onPlay(videoEl) {
-    console.log('onPlay');
     videoEl.classList.add('playing');
   }
 
@@ -73,9 +62,8 @@ ready(function() {
     videoEl.controls = false;
   }
 
-  var customizedFunction = function customizedFunction(info, eventName) {
+  var pauseAll = function customizedFunction(info, eventName) {
     // direct access to info object
-    console.log(info.event.type, info.container);
     var playingVideos = document.querySelectorAll('.slider-main__media--video-bg video.playing');
 
     if (playingVideos.length > 0) {
@@ -100,7 +88,7 @@ ready(function() {
       preventScrollOnTouch: 'force'
     });
 
-    sliderMain.events.on('transitionStart', customizedFunction);
+    sliderMain.events.on('transitionEnd', pauseAll);
 
   }
 

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-aside)
+
+mixin cart-aside(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-aside('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cart-aside--' + modsList[i].trim();
+      }
+    }
+
+  .cart-aside(class=allMods)&attributes(attributes)
+    .cart-aside__inner
+      +cart('has-goods')

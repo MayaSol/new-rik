@@ -40,4 +40,60 @@
     line-height: 28px;
   }
 
+  @mixin range-thumb {
+    position: relative;
+    width: 53px;
+    height: 2px;
+    padding: 10px 0;
+    background-color: $tw-black;
+    background-clip: content-box;
+    cursor: pointer;
+    border: none;
+  }
+
+  @mixin range-track {
+    background: $tw-gray-300;
+    height: 2px;
+    border: 0;
+  }
+
+  &__range {
+    width: 100%;
+    -webkit-appearance: none;
+
+    &::-moz-range-thumb {
+      @include range-thumb;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 53px;
+      height: 0;
+      cursor: pointer;
+      background-color: $tw-black;
+      padding: 1px 0;
+    }
+
+    &::-ms-thumb {
+      @include range-thumb;
+    }
+
+    &::-moz-range-track {
+      @include range-track;
+    }
+
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      @include range-track;
+    }
+
+    &::-ms-track {
+      @include range-track;
+    }
+
+    @media (min-width: 700px) {
+      display: none;
+    }
+  }
+
 }

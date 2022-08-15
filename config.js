@@ -61,6 +61,7 @@ let config = {
     'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/img/3d/new/*.jpg': 'img/3d/',
     'src/video/*.{mp4,mov}': 'video/',
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/'

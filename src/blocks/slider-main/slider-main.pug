@@ -39,7 +39,7 @@ mixin slider-main(props, mods)
     .slider-main__inner
       .slider-main.slider(class=allMods)&attributes(attributes)
         block
-      +cart('has-goods')
+      +cart('has-goods')(class="xl_hidden")
 
 mixin slider-item(props)
 
@@ -64,7 +64,7 @@ mixin slider-item--main(props)
           video(width=props.width height=props.height)
             source(src=props.url type=props.type)
           .slider-main__btn-play
-      .container.lg_flex.lg_flex-col.lg_justify-center.xl_block.xl_pl-100px.xl_pr-60px.xxl_pl-180px.xxl_pr-80px
+      .container.lg_flex.lg_flex-col.lg_justify-center.xl_block.xl_pl-64px.xl_pr-60px.xxl_pl-180px.xxl_pr-80px
         block
 
 

@@ -49,6 +49,11 @@
       grid-template-rows: auto auto auto auto;
       grid-template-columns: auto auto auto auto;
     }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-rows: auto 1fr auto auto;
+      gap: 0 30px;
+    }
   }
 
   &__contacts {
@@ -79,6 +84,9 @@
       grid-column-start: 2;
       grid-column-end: 3;
       align-self: end;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     @media (min-width: $screen-lg) {
@@ -91,6 +99,10 @@
       grid-column-end: 2;
       grid-row-start: 4;
       grid-row-end: 5;
+    }
+
+    @media (min-width: $screen-xxl) {
+      align-items: flex-start;
     }
   }
 

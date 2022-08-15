@@ -55,10 +55,10 @@ html(class='page  no-js', lang='ru')
       .page__footer-wrapper.mt-60px.xxl_mt-100px
         +page-footer()
           block footer
-            .page-footer__contacts
+            .page-footer__contacts.xxl_ml-60px.xxl_justify-self-end.xxl_mt-20px
               .page-footer__phone.text-xl #[a(href='tel:+70000000000') +7 000 000 00 00]
               .page-footer__hours.text-sm.text-gray-500 пн-пт 10:00 – 18:00
-              .page-footer__address 111020, г. Москва, ул. Боровая, д. 7, стр. 7.
+              .page-footer__address.mt-5px 111020, г. Москва, ул. Боровая, д. 7, стр. 7.
               .page-footer__socials.flex.justify-between.mt-20px
                 +page-footer__social-icon({icon: 'mail', url: 'mail.ru', w: '22', h: '19'})
                 +page-footer__social-icon({icon: 'youtube', url: 'mail.ru', w: '19', h: '16'})
@@ -68,17 +68,17 @@ html(class='page  no-js', lang='ru')
                 +page-footer__social-icon({icon: 'ok', url: 'mail.ru', w: '11', h: '18'})
                 +page-footer__social-icon({icon: 'tg', url: 'mail.ru', w: '18', h: '15'})
                 +page-footer__social-icon({icon: 'rutube', url: 'mail.ru', w: '57', h: '14'})
-            .page-footer__disclaim
-              div.mt-40px.md_mt-0.text-15.opacity-30 ВСЯ ИНФОРМАЦИЯ, РАЗМЕЩЕННАЯ НА САЙТЕ, НОСИТ ОЗНАКОМИТЕЛЬНЫЙ ХАРАКТЕР И НЕ МОЖЕТ СЛУЖИТЬ ЗАМЕНОЙ ОЧНОЙ КОНСУЛЬТАЦИИ ВРАЧА
+            .page-footer__disclaim.xxl_mt-110px
+              div.mt-20px.md_mt-0.text-15.xxl_text-2xl.opacity-30 ВСЯ ИНФОРМАЦИЯ, РАЗМЕЩЕННАЯ НА САЙТЕ, НОСИТ ОЗНАКОМИТЕЛЬНЫЙ ХАРАКТЕР И НЕ МОЖЕТ СЛУЖИТЬ ЗАМЕНОЙ ОЧНОЙ КОНСУЛЬТАЦИИ ВРАЧА
               div.mt-10px.xxl_mt-0.font-base Вся представленная на сайте информация, касающаяся наличия на складе, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
             .page-footer__info
-              .flex.mt-40px.md_mt-0
-                +svg('logo-img','',{width: 63, height: 39})
+              .flex.mt-10px.ml-30px.md_mt-0.xxl_ml-0
+                +svg('logo-img','',{width: 63, height: 39})(class="mr-10px")
                 +switcher({name: 'Россия / русский'})(class="page-footer__lang-switcher text-white" id="switcherLangFooter")
                   +switcher-item({name: 'Россия / русский', code: 'ru', value: ''})
                   +switcher-item({name: 'Britain / English', code: 'en', value: ''})
               +btn('Политика конфиденциальности','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
-              .mt-10px © 2022 ООО «Риктамед»
+              .mt-5px © 2022 ООО «Риктамед»
             +footer-nav({title: 'Каталог'},'catalog')(class="hidden md_block")
               +footer-nav-item({name: 'РИКТА-ЭСМИЛ (2А)-01', url: '#'})
               +footer-nav-item({name: 'РИКТА-ЭСМИЛ (2А)-03', url: '#'})
@@ -89,14 +89,14 @@ html(class='page  no-js', lang='ru')
               +footer-nav-item({name: 'Излучатели', url: '#'})
               +footer-nav-item({name: 'Прочие аксессуары', url: '#'})
               +footer-nav-item({name: 'Литература', url: '#'})
-            +footer-nav({title: 'Покупателям'},'customer')(class="hidden md_block")
+            +footer-nav({title: 'Покупателям'},'customer')(class="hidden md_block xxl_ml-20px")
               +footer-nav-item({name: 'Оплата', url: '#'})
               +footer-nav-item({name: 'Доставка', url: '#'})
               +footer-nav-item({name: 'Гарантия', url: '#'})
               +footer-nav-item({name: 'Trade-in', url: '#'})
               +footer-nav-item({name: 'Сервисное обслуживание и ремонт ', url: '#'})
               +footer-nav-item({name: 'Тест-драйв', url: '#'})
-            +footer-nav({title: 'Информация'},'info')(class="hidden lg_block")
+            +footer-nav({title: 'Информация'},'info')(class="hidden lg_block xxl_ml-40px")
               +footer-nav-item({name: 'Как работает лазерный аппарат', url: '#'})
               +footer-nav-item({name: 'Здоровье от А до Я', url: '#'})
               +footer-nav-item({name: 'О лазерной терапии', url: '#'})
@@ -104,7 +104,7 @@ html(class='page  no-js', lang='ru')
               +footer-nav-item({name: 'О компании ', url: '#'})
               +footer-nav-item({name: 'Отзывы', url: '#'})
               +footer-nav-item({name: 'Контакты', url: '#'})
-            +footer-nav({title: 'Сотрудничество'},'coop')(class="hidden xl_block")
+            +footer-nav({title: 'Сотрудничество'},'coop')(class="hidden xl_block xxl_ml-80px")
               +footer-nav-item({name: 'Дилерам', url: '#'})
               +footer-nav-item({name: 'Врачам', url: '#'})
               +footer-nav-item({name: 'Комплектование ЛПУ', url: '#'})

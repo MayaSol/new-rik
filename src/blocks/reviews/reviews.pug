@@ -29,7 +29,6 @@ mixin reviews(text, mods)
           li(class="nav-item" role="presentation")
             button.nav-link#videos-tab(data-bs-toggle="tab" data-bs-target="#videos" type="button" role="tab" aria-controls="Видео" aria-selected="false") Видео
       .tab-content#reviewsTabContent.section__container.container
-        // .tab-content__inner()
         .tab-pane.-mx-20px.fade.show.active#profs(role="tabpanel" aria-labelledby="profs-tab")
           .reviews__slider.reviews__slider--profs
             +reviews-user-item(
@@ -49,7 +48,7 @@ mixin reviews(text, mods)
                 name: 'Туманина Вера 2',
                 info: 'С. Федосеевка'
               })(class="slider__item")
-              h3.lg_mt-0 Рикта - мой помощник и спаситель
+              h3.text-xl.lg_mt-0 Рикта - мой помощник и спаситель
               .reviews__item-text.ellipsis(data-lines='10')
                 p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию.
             +reviews-user-item(
