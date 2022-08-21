@@ -47,6 +47,15 @@
     list-style: none;
     background-color: #fff;
 
+    @media (min-width: $screen-xxl) {
+
+      .nav--main & {
+        min-width: 710px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
     .nav--add & {
       padding-top: 15px;
     }
@@ -58,6 +67,7 @@
 
     .nav--main &--lvl-2 {
       min-width: 260px;
+      padding-bottom: 30px;
     }
 
     &--lvl-2 {
@@ -127,6 +137,7 @@
     }
   }
 
+
   &__item {
     position: relative;
 
@@ -145,27 +156,13 @@
         padding-right: 10px;
 
         &::after {
-          content: '';
-          position: absolute;
-          width: 5px;
-          height: 5px;
-          margin-left: 5px;
-          border-left: 1px solid #000;
-          border-top: 1px solid #000;
-          border-right: none;
-          right: 0;
-          top: 50%;
-          transform: rotate(-135deg) translateY(70%);
+          @include arrow-down;
 
-          .nav--mobile & {
-            top: 0.6em;
-            transform: rotate(-135deg);
-          }
+          // .nav--mobile & {
+          //   top: 0.6em;
+          //   transform: rotate(-135deg);
+          // }
         }
-      }
-
-      #{$block-name}__link {
-        padding-right: 0.5em;
       }
 
       @at-root &#{$block-name}__item--lvl-2 {
@@ -200,39 +197,40 @@
       }
     }
 
-    .nav--mobile & {
-      &--show-child > .main-nav__link span::after {
-        transform: rotate(45deg) translateY(70%);
-        right: -3px;
-      }
-    }
+    // .nav--mobile & {
+    //   &--show-child > .main-nav__link span::after {
+    //     transform: rotate(45deg) translateY(70%);
+    //     right: -3px;
+    //   }
+    // }
   }
 
   &__sublist-header {
     position: relative;
     display: flex;
     padding: 0.5em 0.9em;
+    padding-top: 20px; //для выадашек главного меню
+    padding-left: 30px; //для выадашек главного меню
     font-weight: 700;
     cursor: pointer;
 
+
     span {
       position: relative;
-      padding-right: 12px;
+      padding-right: 10px;
+
+      &::after {
+        @include arrow-down;
+        transition: transform $transition-time;
+
+        .nav--main #{$block-name}__item--show-child>&,
+        .nav--main #{$block-name}__item:hover & {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+
     }
 
-    span::after {
-      content: '';
-      position: absolute;
-      width: 5px;
-      height: 5px;
-      margin-left: 5px;
-      border-left: 1px solid #000;
-      border-top: 1px solid #000;
-      border-right: none;
-      right: 0;
-      top: 40%;
-      transform: rotate(45deg) translateY(50%);
-    }
   }
 
   &__link {
@@ -244,7 +242,7 @@
     &:hover,
     &:focus {
       color: inherit;
-      font-weight: 700;
+      opacity: 0.5;
       text-decoration: none;
     }
 
@@ -272,6 +270,7 @@
       .nav--main & {
         padding-top: 0.2em;
         padding-bottom: 0.2em;
+        padding-left: 30px;
 
         @media (max-width: ($menu-desktop-width - 1)) {
           padding-left: 2em;
@@ -318,12 +317,13 @@
         padding-bottom: 0;
       }
 
+      //выпадашка главного меню
       .nav--main & {
         @media (min-width: $menu-desktop-width) {
           position: absolute;
           z-index: 1;
-          top: 0;
-          left: 0;
+          top: -11px;
+          left: -14px;
           height: 0;
           opacity: 0;
           overflow: hidden;
@@ -338,6 +338,10 @@
           height: auto;
           overflow: visible;
           opacity: 1;
+
+          span::after  {
+            transform: translateY(-50%) rotate(180deg);
+          }
         }
       }
 

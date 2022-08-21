@@ -5,29 +5,41 @@ ready(function() {
   let carts = document.querySelectorAll('.cart');
 
   for (cart of carts) {
-    cart.addEventListener('click',function() {
-      console.log('click cart');
-      let asideParent = getParents(event.target,'.cart-aside');
-      console.log(asideParent);
-      if (asideParent.length > 0) {
-        asideParent[0].classList.add('active');
-      }
-      this.classList.add('cart--show');
+    cart.addEventListener('click', function() {
+      showCart(this);
     });
 
-    document.addEventListener('click',function() {
-      console.log('click cart');
-      let parent = getParents(event.target,'.cart');
-      console.log(parent);
+    cart.addEventListener('mouseenter', function() {
+      showCart(this);
+    })
+
+    document.addEventListener('click', function() {
+      let parent = getParents(event.target, '.cart');
       if (!event.target.classList.contains('cart') && parent.length == 0) {
         for (cart of document.querySelectorAll('.cart')) {
-          if (cart.classList.contains('cart--show')) {
-            cart.classList.remove('cart--show');
-          }
+          hideCart(cart);
         }
       }
     })
+
+    cart.addEventListener('mouseleave', function() {
+      hideCart(this);
+    })
   }
 
+
+  function showCart(cartEl) {
+    let asideParent = getParents(cartEl, '.cart-aside');
+    if (asideParent.length > 0) {
+      asideParent[0].classList.add('active');
+    }
+    cartEl.classList.add('cart--show');
+  }
+
+  function hideCart(cartEl) {
+    if (cartEl.classList.contains('cart--show')) {
+      cartEl.classList.remove('cart--show');
+    }
+  }
 
 });

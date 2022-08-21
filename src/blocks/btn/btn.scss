@@ -20,6 +20,7 @@
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
+  transition: 0.3s;
 
   &:hover,
   &:focus {
@@ -57,13 +58,21 @@
   }
 
   &--regular {
-    padding: 7px 16px;
+    // padding: 9px 20px;
+    padding: 8px 16px;
     font-size: 18px;
     line-height: 28px;
     font-weight: 400;
     color: $tw-black;
     border: 1px solid $tw-black;
     border-radius: 78px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $tw-black;
+      color: #fff;
+    }
   }
 
   &--lang {
@@ -77,15 +86,38 @@
   }
 
   &--simple {
+    position: relative;
     padding: 0;
     font-size: 16px;
     line-height: 26px;
     color: $tw-black;
-    border-bottom: 1px solid $tw-gray-200;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      opacity: 1;
+      background-color: $tw-gray-200;
+      transition: opacity $transition-time;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &:after {
+        opacity: 0;
+      }
+    }
   }
 
   &--icon {
-    i {
+    display: flex;
+    align-items: center;
+    svg {
+      fill:currentColor;
       margin-right: 8px;
     }
   }
@@ -97,6 +129,56 @@
     color: $tw-black;
   }
 
+  &--in-cart {
+    position: relative;
+    color: $tw-blue;
+    border-color: currentColor;
+
+    svg,span {
+      display: none;
+    }
+
+
+    &::before {
+      content: attr(data-content);
+    }
+  }
+
+  &--fav-add {
+    svg {
+      fill: transparent;
+      stroke: $tw-black;
+    }
+  }
+
+  &--in-fav {
+    svg {
+      fill: $tw-blue;
+      stroke: $tw-blue;
+    }
+  }
+
+  &--compare-add {
+    svg {
+      fill: transparent;
+      stroke: $tw-black;
+    }
+  }
+
+  &--in-compare {
+    svg {
+      fill: $tw-blue;
+      stroke: $tw-blue;
+    }
+  }
+
+  // &--cart-add {
+  //   &:hover {
+  //     & .icon_cart {
+  //       @include sprite($cart-white);
+  //     }
+  //   }
+  // }
   // &__icon {
   //   display: inline-block;
   //   vertical-align: middle;

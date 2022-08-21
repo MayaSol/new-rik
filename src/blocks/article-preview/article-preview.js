@@ -22,15 +22,13 @@ ready(function() {
             slideBy: 1,
             gutter: 20
           },
-          1024: {
-            items: 3,
-          },
         }
       });
     } else {
+      console.log('2');
       var slider = tns({
         container: '.article-preview__list',
-        items: 1,
+        items: 2,
         slideBy: 1,
         mouseDrag: true,
         controls: true,

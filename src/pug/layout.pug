@@ -75,8 +75,9 @@ html(class='page  no-js', lang='ru')
               .flex.mt-10px.ml-30px.md_mt-0.xxl_ml-0
                 +svg('logo-img','',{width: 63, height: 39})(class="mr-10px")
                 +switcher({name: 'Россия / русский'})(class="page-footer__lang-switcher text-white" id="switcherLangFooter")
-                  +switcher-item({name: 'Россия / русский', code: 'ru', value: ''})
-                  +switcher-item({name: 'Britain / English', code: 'en', value: ''})
+                  +switcher-item({name: 'Россия / русский', code: 'ru', value: '', check: true})
+                  +switcher-item({name: 'Britain / English', code: 'en', value: '', check: true})
+                  +switcher-item({name: 'Китай / китайский', code: 'ch', value: '', check: true})
               +btn('Политика конфиденциальности','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
               .mt-5px © 2022 ООО «Риктамед»
             +footer-nav({title: 'Каталог'},'catalog')(class="hidden md_block")

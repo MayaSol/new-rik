@@ -79,4 +79,12 @@
       margin-left: 0;
     }
   }
+
+  &__item {
+    border-bottom: 1px solid $tw-gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }

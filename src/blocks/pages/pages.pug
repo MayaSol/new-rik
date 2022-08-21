@@ -20,13 +20,13 @@ mixin pages(text, mods)
 
   .pages.hidden.xxl_block(class=allMods)&attributes(attributes)
     .pages__inner
-      .pages__line.active(data-line="main-slider")
-      .pages__line(data-line="features")
-      .pages__line(data-line="info")
-      .pages__line(data-line="area")
-      .pages__line(data-line="catalog")
-      .pages__line(data-line="service")
-      .pages__line(data-line="reviews")
-      .pages__line(data-line="articles")
+      a.pages__line.active(data-line="main-slider" href="#main-slider")
+      a.pages__line(data-line="features" href="#features")
+      a.pages__line(data-line="info" href="#info")
+      a.pages__line(data-line="area" href="#area")
+      a.pages__line(data-line="catalog" href="#catalog")
+      a.pages__line(data-line="service" href="#service")
+      a.pages__line(data-line="reviews" href="#reviews")
+      a.pages__line(data-line="articles" href="#articles")
 
 

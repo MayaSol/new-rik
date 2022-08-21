@@ -9,13 +9,7 @@
   position: relative;
   min-width: 35px;
 
-  &__wrapper {
-    margin-right: 30px;
-  }
-
   &__select {
-    padding-left: 10px;
-    padding-right: 15px;
     border-left: 1px solid $tw-gray-200;
     border-right: 1px solid $tw-gray-200;
     border-bottom: 1px solid $tw-gray-200;
@@ -29,13 +23,53 @@
       top: 100% !important;
       min-width: auto !important;
       padding-top: 0;
-      text-align: center;
       transform: none !important;
+
+      #{$block-name}__item {
+        padding-left: 10px;
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+
+        .page-footer__lang-switcher & {
+          padding-left: 19px;
+
+          svg {
+            width: 0;
+            padding-right: 15px;
+          }
+
+          &:hover {
+            background-color: $tw-gray-400;
+
+            svg {
+              width: auto;
+              padding-right: 0;
+              margin-right: 9px;
+
+              &.check {
+                fill: transparent;
+                stroke: #fff;
+              }
+            }
+          }
+        }
+
+        .page-header & {
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+      }
+
     }
   }
 
 
   &__value {
+    padding-left: 10px;
+    padding-right: 15px;
     min-width: 50px;
     border: 1px solid $tw-gray-200;
     border-radius: 1rem;
@@ -45,23 +79,29 @@
       border-bottom-left-radius: 0;
       border-bottom-color: transparent;
     }
+
+    .page-footer__lang-switcher & {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
   }
 
   &__item {
     cursor: pointer;
 
+
     &--active {
-      display: none;
+      display: none !important;
     }
   }
 
 }
 
 .page-footer__lang-switcher {
-  min-width: 177px;
+  min-width: 182px;
 
   & .dropdown-toggle::after {
-    border-color: $tw-white;
+    display: none;
   }
 
   & .dropdown-menu {
@@ -69,15 +109,25 @@
   }
 
   & .switcher__value {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
 
-      &::before {
-        content: '\f0ac';
-        margin-right: 10px;
-        @apply font-icon;
-        font-size: 20px;
-        font-weight: 900;
+    svg {
+      &.globe {
+        margin-right: 7px;
       }
+
+      &.angle-down {
+        margin-left: 3px;
+      }
+    }
+
+    // &::before {
+    //   content: '\f0ac';
+    //   margin-right: 10px;
+    //   @apply font-icon;
+    //   font-size: 20px;
+    //   font-weight: 900;
+    // }
   }
 }

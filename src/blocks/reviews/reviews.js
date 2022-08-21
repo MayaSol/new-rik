@@ -6,6 +6,12 @@ const Tab = require("../../../node_modules/bootstrap/js/dist/tab.js");
 
 
 ready(function() {
+
+//!!!
+    // initTabSlider('#profs');
+
+//!!!
+
   var tabSliders = {};
   var tabsSelect = document.getElementById('reviews-tab-select');
   console.log(tabsSelect);
@@ -17,8 +23,8 @@ ready(function() {
 
   var tabsList = document.getElementById('reviewsTab');
   if (tabsList) {
-    // var tabsItemActive = tabsList.querySelector('.nav-link.active');
-    // initTabSlider(tabsItemActive.dataset.bsTarget);
+    var tabsItemActive = tabsList.querySelector('.nav-link.active');
+    initTabSlider(tabsItemActive.dataset.bsTarget);
 
     tabsList.addEventListener('click', function(event) {
       if (event.target.classList.contains('nav-link')) {
@@ -41,19 +47,21 @@ ready(function() {
   }
 
   function initTabSlider(tabIdSelector) {
+    console.log('initTabSlider');
 
     if (typeof tabSliders[tabIdSelector] === 'undefined') {
       var sliderEl= document.querySelector(tabIdSelector + ' .reviews__slider');
       if (sliderEl) {
+        console.log(sliderEl);
         var slider = tns({
           container: tabIdSelector  + ' .reviews__slider',
           items: 1,
           slideBy: 1,
           mouseDrag: true,
           controls: true,
+          // controls: false,
           nav: false,
-          loop: false,
-          preventScrollOnTouch: 'force'
+          loop: false
         });
         tabSliders[tabIdSelector] = slider;
       }

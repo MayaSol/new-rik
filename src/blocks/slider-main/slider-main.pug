@@ -60,7 +60,7 @@ mixin slider-item--main(props)
 
   .slider-main__item.slider-item&attributes(attributes)
     .slider-main__item-inner
-      .slider-main__media.slider-main__media--video-bg.embed-responsive.embed-responsive--main-mobile
+      .slider-main__media.slider-main__media--video-bg
           video(width=props.width height=props.height)
             source(src=props.url type=props.type)
           .slider-main__btn-play
@@ -70,3 +70,4 @@ mixin slider-item--main(props)
 
 
 
+// .slider-main__media.slider-main__media--video-bg.embed-responsive.embed-responsive--main-mobile

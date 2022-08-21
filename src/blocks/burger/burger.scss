@@ -29,7 +29,8 @@
     height: $toggler-part-height;
     background: $toggler-part-bg-color;
     transform-origin: 50% 50%;
-    transition: top $transition-time $transition-time, transform $transition-time;
+    transition: all $transition-time;
+    transition-property: transform, top, bottom;
   }
 
   &:before {
@@ -40,26 +41,44 @@
     bottom: 5px;
   }
 
+  &:hover:not(#{$block-name}--closed):not(#{$block-name}--close) {
+    &:before {
+      top: 10px;
+    }
+
+    &:after {
+      bottom: 10px;
+    }
+  }
+
 
   &--close#{$block-name}--animated,
   &--closed {
 
-        // transition: background $transition-time 0s;
-        // background: transparent;
+    // transition: background $transition-time 0s;
+    // background: transparent;
 
-      &:before,
-      &:after {
-        top: 50%;
-        transition: top $transition-time, transform $transition-time $transition-time;
-      }
+    &:before,
+    &:after {
+      top: 50%;
+      transition: top $transition-time, transform $transition-time $transition-time;
+    }
 
-      &:before {
-        transform: rotate3d(0, 0, 1, 45deg);
-      }
+    &:before {
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
 
-      &:after {
-        transform: rotate3d(0, 0, 1, -45deg);
-      }
+    &:after {
+      transform: rotate3d(0, 0, 1, -45deg);
+    }
 
+  }
+
+  &--closed,
+  &--close {
+    &:hover
+    {
+      opacity: 0.5 !important;
+    }
   }
 }

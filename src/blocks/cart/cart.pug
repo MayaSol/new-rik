@@ -20,19 +20,22 @@ mixin cart(mods)
 
   .cart(class=allMods)&attributes(attributes)
     .cart__inner
-      .cart__icon
-        i.fa-solid.fa-bag-shopping
-      .cart__section(class="text-left")
-        .cart__section-inner.ml-16px.pr-20px
-          .cart__goods <span>1</span> товар на сумму
-          .cart__sum 74600 Р
+      .cart__icon-wrapper
+        .cart__icon
+          +svg('bag','',{width: '20', height: '21'})
+        .cart__section(class="text-left")
+          .cart__section-inner.ml-16px.pr-20px
+            .cart__goods <span>1</span> товар на сумму
+            .cart__sum 74600 Р
       .cart__section(class="")
-        .cart__section-inner(class="text-left text-xl")
-          button.px-20px
-            i.fa-regular.fa-heart
+        .cart__section-inner.px-20px
+          .cart__section-btn.cart__section-btn--has-goods
+            button
+              +svg('heart-full','',{width: '20', height: '18'})
       .cart__section(class="after_hidden")
-        .cart__section-inner(class="text-left text-xl border-0")
-          button.px-20px
-            i.fa-solid.fa-arrow-right-arrow-left
+        .cart__section-inner.px-20px.border-0
+          .cart__section-btn.cart__section-btn--has-goods
+            button
+              +svg('arrows-left-right','',{width: '16', height: '21'})
 
 

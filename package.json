@@ -87,6 +87,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
+    "animated-scroll-to": "^2.3.0",
     "autosize": "^4.0.2",
     "baron": "^3.0.3",
     "bootstrap": "^5.2.0",
@@ -102,7 +103,8 @@
     "sass": "^1.43.5",
     "save-dev": "0.0.1-security",
     "svg4everybody": "^2.1.8",
-    "tiny-slider": "^2.9.4"
+    "tiny-slider": "^2.9.4",
+    "tippy.js": "^6.3.7"
   },
   "husky": {
     "hooks": {

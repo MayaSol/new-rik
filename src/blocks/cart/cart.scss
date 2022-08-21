@@ -24,31 +24,36 @@
     min-width: 57px;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 18px;
     width: 100%;
     border-radius: 34px;
     transition: max-width 0.6s;
     background-color: #fff;
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    // overflow: hidden; //чтобы белый фон не вылезал из под icon-wrapper при ховере
 
     @media (min-width: $screen-lg) {
-      padding-left: 20px;
       min-width: 65px;
     }
+  }
+
+  @mixin has-goods {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $tw-red;
   }
 
   &--has-goods {
     #{$block-name}__inner {
       &::before {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 40px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: $tw-red;
+        @include has-goods;
+        top: 8px;
+        left: 38px;
+        @media (min-width: $screen-xl) {
+          top: 14px;
+        }
       }
     }
   }
@@ -87,13 +92,49 @@
     }
   }
 
-  &__icon {
-    line-height: 0;
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 18px;
+    cursor: pointer;
+    margin-left: -1px; //чтобы белый фон не вылезал из под icon-wrapper при ховере
+
+    @media (min-width: $screen-xl) {
+      padding-left: 20px;
+    }
+
+    &:hover {
+      background-color: $tw-slate;
+      border-radius: 34px;
+
+      .cart__section::after {
+        display: none;
+      }
+      .cart__goods,
+      .cart__sum {
+        color: #fff;
+      }
+
+      svg {
+        fill: #fff !important;
+      }
+    }
   }
 
-  &__icon i {
-    font-size: 24px;
+  &__icon {
+    line-height: 0;
+
+    i {
+      font-size: 24px;
+    }
+
+    svg {
+      fill: $tw-black !important;
+      stroke: none !important;
+    }
   }
+
 
   &__section {
     position: relative;
@@ -101,7 +142,12 @@
     overflow: hidden;
     transition: none;
     max-height: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.6s;
+    line-height: 0;
 
     &::after {
       content: '';
@@ -111,12 +157,30 @@
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      background-color: currentColor;
+      background-color: $tw-gray-200;
       opacity: 0;
       transition: all 0.6s;
     }
 
     &__inner {}
+  }
+
+
+  &__section-btn {
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &--has-goods {
+      position: relative;
+
+      &::after {
+        @include has-goods;
+        right: -8px;
+        top: -6px;
+      }
+    }
   }
 
   &__goods {
@@ -131,4 +195,10 @@
     line-height: 22px;
     color: $tw-black;
   }
+
+  svg {
+    fill: transparent;
+    stroke: $tw-black;
+  }
+
 }

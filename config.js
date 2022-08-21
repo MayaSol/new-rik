@@ -18,9 +18,9 @@ let config = {
     'bootstrap/scss/_functions.scss',
     'bootstrap/scss/_variables.scss',
     // 'mdb-ui-kit/src/scss/free/_variables.scss',
-    'src/scss/bs-custom.scss',
     'src/scss/_tailwind-colours.scss',
     'src/scss/_tailwind-screens.scss',
+    'src/scss/bs-custom.scss',
     // 'bootstrap/scss/_maps.scss',
     'bootstrap/scss/_mixins.scss',
     'bootstrap/scss/_transitions.scss',
@@ -39,9 +39,9 @@ let config = {
   ],
   'addStyleAfter': [
     // 'src/scss/print.scss',
-    '../css/fontawesome.min.css',
-    '../css/regular.min.css',
-    '../css/solid.min.css',
+    // '../css/fontawesome.min.css',
+    // '../css/regular.min.css',
+    // '../css/solid.min.css',
     'src/scss/test.scss'
   ],
   'addJsBefore': [

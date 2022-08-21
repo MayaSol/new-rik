@@ -20,9 +20,9 @@ mixin product-card(props={}, mods)
 
   .product-card(class=allMods)&attributes(attributes)
     .product-card__inner
-      .product-card__img
+      a.product-card__img(href="#")
         img.lazyload(data-src=props.url)
-      .product-card__title= props.title
+      a.product-card__title(href="#")= props.title
       .product-card__desc= props.desc
       .product-card__price= props.price
       +product-actions

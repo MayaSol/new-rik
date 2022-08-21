@@ -207,7 +207,8 @@ function generatePngSprite(cb) {
         imgName: fileName,
         cssName: 'sprite-png.scss',
         padding: 4,
-        imgPath: '../img/' + fileName
+        imgPath: '../img/' + fileName,
+        cssTemplate: 'handlebarsStrDefault.css.handlebars',
       }));
     let imgStream = spriteData.img
       .pipe(buffer())

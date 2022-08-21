@@ -13,6 +13,8 @@ mixin areas(mods)
     }
 
   .areas(class=allMods)&attributes(attributes)
+    .section__header
+    h2.section__title.mb-20px.mt-0 Области применения
     .areas__inner
       block
 
@@ -28,7 +30,7 @@ mixin areas-item(props={},mods)
       }
     }
 
-  .areas__item(class=allMods)&attributes(attributes)
+  a.areas__item(class=allMods href="#")&attributes(attributes)
     .areas__img
       img.lazyload(
         data-sizes="auto"

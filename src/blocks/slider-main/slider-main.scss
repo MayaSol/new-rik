@@ -9,6 +9,7 @@
   height: 100%;
 
   &__wrapper {
+    height: 100%;//!
     position: relative;
     padding-bottom: 30px;
     font-size: 18px;
@@ -26,11 +27,17 @@
       z-index: 99;
 
       @media (min-width: $screen-xl) {
-        top: 70px;
+        top: 65px;
         right: 65px;
       }
 
       & button {
+        background-color: transparent !important;
+
+        &:hover:not(:disabled) {
+          border-width: 2px;
+        }
+
         @media (min-width: $screen-xl) {
           width: 55px;
           height: 50px;
@@ -41,20 +48,21 @@
   }
 
   &__inner {
+    height: 100%;//!
     position: relative;
     overflow: hidden;
 
-    @media (min-width: $screen-lg) {
-      height: 580px;
-    }
+    // @media (min-width: $screen-lg) {
+    //   height: 580px;
+    // }
 
-    @media (min-width: $screen-xl) {
-      height: 630px;
-    }
+    // @media (min-width: $screen-xl) {
+    //   height: 630px;
+    // }
 
-    @media (min-width: $screen-xxl) {
-      height: 710px;
-    }
+    // @media (min-width: $screen-xxl) {
+    //   height: 710px;
+    // }
   }
 
   &__navigation {
@@ -118,6 +126,7 @@
 
       @media (min-width: $screen-lg) {
         display: flex;
+        align-items: center;
       }
     }
 
@@ -155,7 +164,8 @@
     background-size: contain;
 
     @media (min-width: $screen-xl) {
-      display: none;
+      opacity: 0;
+      transition: opacity $transition-time;
     }
 
     video.playing~& {
@@ -163,7 +173,7 @@
     }
 
     #{$block-name}__media--video-bg:hover & {
-      display: block;
+      opacity: 1;
     }
 
     @media (min-width: $screen-xl) {
@@ -180,98 +190,98 @@
   }
 }
 
-.tns-controls {
-  position: relative;
-  font-size: 0;
-}
+// .tns-controls {
+//   position: relative;
+//   font-size: 0;
+// }
 
-.tns-controls button {
-  @include btn;
-  position: relative;
-  display: inline-block;
-  width: 45px;
-  height: 40px;
-  border: solid 1px #bababa;
-  border-radius: 0;
-  cursor: pointer;
-  font-size: 0;
-  padding: 0;
-  background-color: transparent;
-  border: 1px solid #fff;
-  opacity: 1;
+// .tns-controls button {
+//   @include btn;
+//   position: relative;
+//   display: inline-block;
+//   width: 45px;
+//   height: 40px;
+//   border: solid 1px #bababa;
+//   border-radius: 0;
+//   cursor: pointer;
+//   font-size: 0;
+//   padding: 0;
+//   background-color: transparent;
+//   border: 1px solid #fff;
+//   opacity: 1;
 
-  &::before {
-    @include sprite($arrow-right-white);
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+//   &::before {
+//     @include sprite($arrow-right-white);
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
 
-  &:hover {
+//   &:hover {
 
-    &::before {
-      // @include sprite($arrow-right-red);
-    }
-  }
+//     &::before {
+//       // @include sprite($arrow-right-red);
+//     }
+//   }
 
-  &[data-controls='prev'] {
-    transform: rotate(180deg);
-  }
+//   &[data-controls='prev'] {
+//     transform: rotate(180deg);
+//   }
 
-  &[data-controls='next'] {
-    margin-left: 10px;
-  }
-}
+//   &[data-controls='next'] {
+//     margin-left: 10px;
+//   }
+// }
 
-// &__pagination.swiper-pagination,
-.tns-nav {
-  position: absolute;
-  bottom: 24px;
-  left: $grid-gutter-width;
-
-  @media (min-width: $screen-md) {
-    bottom: 16px;
-  }
-}
-
-// &__pagination.swiper-pagination-bullets {
+// // &__pagination.swiper-pagination,
+// .tns-nav {
+//   position: absolute;
 //   bottom: 24px;
+//   left: $grid-gutter-width;
 
 //   @media (min-width: $screen-md) {
 //     bottom: 16px;
 //   }
 // }
 
-// &__pagination .swiper-pagination-bullet,
-.tns-nav button {}
+// // &__pagination.swiper-pagination-bullets {
+// //   bottom: 24px;
 
-.tns-nav button[data-controls=next] {
-  margin-left: 10px;
-}
+// //   @media (min-width: $screen-md) {
+// //     bottom: 16px;
+// //   }
+// // }
 
-.tns-nav .tns-nav-active {
-  background-color: #fc0202;
-}
+// // &__pagination .swiper-pagination-bullet,
+// .tns-nav button {}
 
-/*! Чтобы слайдер внутри grid растягивался по высоте*/
-.tns-outer {
-  height: 100%;
-}
+// .tns-nav button[data-controls=next] {
+//   margin-left: 10px;
+// }
 
-.tns-ovh {
-  height: 100%;
-}
+// .tns-nav .tns-nav-active {
+//   background-color: #fc0202;
+// }
 
-.tns-inner {
-  height: 100%;
-  border-radius: $border-radius;
-  overflow: hidden;
-}
+// /*! Чтобы слайдер внутри grid растягивался по высоте*/
+// .tns-outer {
+//   height: 100%;
+// }
 
-.tns-slider {
-  display: flex;
-  height: 100%;
-  padding-bottom: 1px;
-}
+// .tns-ovh {
+//   height: 100%;
+// }
+
+// .tns-inner {
+//   height: 100%;
+//   border-radius: $border-radius;
+//   overflow: hidden;
+// }
+
+// .tns-slider {
+//   display: flex;
+//   height: 100%;
+//   padding-bottom: 1px;
+// }

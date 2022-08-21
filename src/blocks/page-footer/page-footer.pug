@@ -40,5 +40,5 @@ mixin page-footer__social-icon(props={},mods)
     }
 
   .page-footer__social-icon.flex.items-center(class=allMods, role='contentinfo')&attributes(attributes)
-    a.flex.items-center(href=props.url)
+    a.flex.items-center.hover_opacity-50(href=props.url)
       +svg(props.icon, 'text-white', {width: props.w, height: props.h})

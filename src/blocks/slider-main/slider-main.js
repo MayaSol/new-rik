@@ -81,7 +81,7 @@ ready(function() {
       container: '.slider-main',
       items: 1,
       slideBy: 1,
-      mouseDrag: true,
+      mouseDrag: false,
       controls: true,
       nav: false,
       loop: false,

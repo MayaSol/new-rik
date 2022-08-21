@@ -1,41 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="6"
-   height="4"
    viewBox="0 0 6 4"
    fill="none"
-   version="1.1"
-   id="svg59"
-   sodipodi:docname="angle-down.svg"
-   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    stroke="currentColor"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs63" />
-  <sodipodi:namedview
-     id="namedview61"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="57.487781"
-     inkscape:cx="3.9138752"
-     inkscape:cy="2.1656776"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg59" />
   <path
-     d="m 0.49963679,0.51243649 2.50000001,2.50000001 2.5,-2.50000001"
-     stroke="#14142b"
-     stroke-width="1.2"
-     id="path57" />
+     d="M 0.51192507,0.54928405 3.011925,3.049284 l 2.5,-2.49999995"
+     stroke-width="1.2" />
 </svg>

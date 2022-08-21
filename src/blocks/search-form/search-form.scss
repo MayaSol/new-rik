@@ -5,64 +5,103 @@
 .search-form {
 
   $block-name: &; // #{$block-name}__element
-    box-sizing: border-box;
-    position: relative;
 
-    @media (min-width: $screen-xl) {
+  $transition-time-search: 600ms;
 
-    }
+  position: relative;
+  height: 36px;
+  box-sizing: border-box;
+  width: 0;
+  right: 0;
+  z-index: 30;
+  transition: transform $transition-time-search;
 
-   &.active {
-      position: absolute;
-      padding: 10px;
-      background-color: #fff;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100%;
 
-      @media (min-width: $screen-xl) {
-        display: flex;
-        align-items: center;
-        left: 360px;
-        width: 730px;
-        height: 90px;
-      }
-      @media (min-width: $screen-xxl) {
-        left: 390px;
-      }
-      @media (min-width: $screen-3xl) {
-        width: 1100px;
-      }
-   }
+  &.active {
+    // transform: translateX(116px);
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+    // position: absolute;
+    // left: 0;
+    // width: 100%;
+    // max-width: 700px;
+    // transform: transalteY(30px);
+  }
+
+  // &.active {
+  //    position: absolute;
+  //    padding: 10px;
+  //    background-color: #fff;
+  //    z-index: 100;
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+
+  //    @media (min-width: $screen-xl) {
+  //      display: flex;
+  //      align-items: center;
+  //      left: 360px;
+  //      width: 730px;
+  //      height: 90px;
+  //    }
+  //    @media (min-width: $screen-xxl) {
+  //      left: 390px;
+  //    }
+  //    @media (min-width: $screen-3xl) {
+  //      width: 1100px;
+  //    }
+  // }
 
 
   &__input-wrapper {
-    width: fit-content;
-    height: fit-content;
+    // width: fit-content;
+    // height: fit-content;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 0;
+    right: 0;
+    transition: max-width $transition-time-search;
+    // box-sizing: border-box;
+
+    @media (min-width: $screen-lg) {
+      width: 560px;
+    }
+    @media (min-width: $screen-xl) {
+      width: 620px;
+    }
+    @media (min-width: $screen-xxl) {
+      width: 700px;
+    }
+    @media (min-width: $screen-3xl) {
+      width: 1050px;
+    }
 
     #{$block-name}.active & {
-      width: 100%;
+        max-width: 1100px;
     }
   }
 
   &__input {
-    height: 40px;
-    width: 50px;
     border-style: none;
-    padding: 6px 18px;
     @apply text-base;
     outline: none;
     border-radius: 25px;
-    transition: all .5s ease-in-out;
-    padding-right: 40px;
+    padding: 0;
+    margin: 0 9px;
     color: $tw-black;
-    transition: all 500ms;
+    max-width: 0;
+    // transition: all $transition-time-search;
 
 
-    &.active {
+    #{$block-name}.active & {
       height: 40px;
       width: 100%;
+      max-width: 100%;
+      padding-left: 18px;
+      padding-right: 40px;
       background-color: $tw-gray-100;
     }
 
@@ -78,8 +117,8 @@
   }
 
   &__btn {
-    width: 50px;
-    height: 40px;
+    // width: 45px;
+    // height: 40px;
     border-style: none;
     font-weight: bold;
     outline: none;
@@ -90,18 +129,18 @@
     background-color: transparent;
     pointer-events: painted;
 
-    #{$block-name}.active & {
-      right: 102px;
-      transition: all 500ms;
+    // #{$block-name}.active & {
+    //   right: 102px;
+    //   transition: all $transition-time-search;
 
-      @media (min-width: $screen-xl) {
-        right: 0;
-      }
-    }
+    //   @media (min-width: $screen-xl) {
+    //     right: 0;
+    //   }
+    // }
 
-    #{$block-name} &.active{
-      right: 20px;
-    }
+    // #{$block-name} &.active{
+    //   right: 20px;
+    // }
 
     // &:focus {
     //   outline: 2px solid green;

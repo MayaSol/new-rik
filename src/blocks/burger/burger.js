@@ -15,7 +15,9 @@ ready(function(){
     var targetId = this.getAttribute('data-target-id');
     var targetClassToggle = this.getAttribute('data-target-class-toggle');
     if (targetId && targetClassToggle) {
-      this.classList.toggle('burger--close');
+      if (this.classList.contains('burger--animated')) {
+        this.classList.toggle('burger--close');
+      }
       document.getElementById(targetId).classList.toggle(targetClassToggle);
       console.log(document.documentElement);
       document.body.classList.toggle('noscroll');

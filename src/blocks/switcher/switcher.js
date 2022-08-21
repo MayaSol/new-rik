@@ -5,7 +5,7 @@ ready(function() {
   /*Выпадашка с   языками*/
   try {
     getAllValues();
-    console.log(ALL_VALUES);
+    // console.log(ALL_VALUES);
     setSwitcherValue('lang');
 
     var switchers = document.querySelectorAll('.switcher__wrapper');
@@ -50,6 +50,7 @@ function getAllValues() {
 }
 
 function setSwitcherValue(cookieName) {
+  const SWITCHER_VALUE_SELECTOR = '.switcher__value span';
   var switchers = document.querySelectorAll('.switcher__wrapper');
   var switcherEl;
   var active;
@@ -70,12 +71,12 @@ function setSwitcherValue(cookieName) {
 
   for (var i = 0; i < switchers.length; i++) {
 
-    console.log(switchers[i]);
-    console.log(switchers[i].id);
+    // console.log(switchers[i]);
+    // console.log(switchers[i].id);
 
-    switcherEl = switchers[i].querySelector('.switcher__value');
-    console.log(switcherEl);
-    console.log(ALL_VALUES[switchers[i].id][active]);
+    switcherEl = switchers[i].querySelector(SWITCHER_VALUE_SELECTOR); //!!!
+    // console.log(switcherEl);
+    // console.log(ALL_VALUES[switchers[i].id][active]);
     switcherEl.textContent = ALL_VALUES[switchers[i].id][active];
 
     var items = switchers[i].querySelectorAll('.switcher__item');

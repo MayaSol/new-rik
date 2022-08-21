@@ -1,0 +1,117 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider {
+
+  $block-name:                &; // #{$block-name}__element
+}
+
+
+.tns-controls {
+  position: relative;
+  font-size: 0;
+}
+
+.tns-controls button {
+  @include btn;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 40px;
+  border: solid 1px #bababa;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+  opacity: 1;
+
+  &::before {
+    @include sprite($arrow-right-white);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider-main &:not(:disabled):hover {
+    box-shadow: 0px 0px 0px 1px #fff;
+
+    &::before {
+      // @include sprite($arrow-right-red);
+    }
+  }
+
+  &[data-controls='prev'] {
+    transform: rotate(180deg);
+  }
+
+  &[data-controls='next'] {
+    margin-left: 10px;
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    background-color: $tw-gray-200;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 57px;
+    height: 51px;
+  }
+}
+
+// &__pagination.swiper-pagination,
+.tns-nav {
+  position: absolute;
+  bottom: 24px;
+  left: $grid-gutter-width;
+
+  @media (min-width: $screen-md) {
+    bottom: 16px;
+  }
+}
+
+// &__pagination.swiper-pagination-bullets {
+//   bottom: 24px;
+
+//   @media (min-width: $screen-md) {
+//     bottom: 16px;
+//   }
+// }
+
+// &__pagination .swiper-pagination-bullet,
+.tns-nav button {}
+
+.tns-nav button[data-controls=next] {
+  margin-left: 10px;
+}
+
+.tns-nav .tns-nav-active {
+  background-color: #fc0202;
+}
+
+/*! Чтобы слайдер внутри grid растягивался по высоте*/
+.tns-outer {
+  height: 100%;
+}
+
+.tns-ovh {
+  height: 100%;
+}
+
+.tns-inner {
+  height: 100%;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.tns-slider {
+  display: flex;
+  height: 100%;
+  padding-bottom: 1px;
+}

@@ -6,7 +6,38 @@
 
   $block-name: &; // #{$block-name}__element
 
-  font-size: 22px;
-  padding: 0 10px;
+  width: 36px;
+  height: 36px;
+  position: relative;
+
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    #{$block-name}--user & {
+      @include sprite($user);
+    }
+
+    #{$block-name}--search & {
+      @include sprite($search);
+    }
+  }
+
+  &--user {
+      border-radius: 50%;
+      &:hover {
+        background-color: $tw-gray-100;
+      }
+  }
+
+  &--search {
+      border-radius: 50%;
+      &:hover {
+        background-color: $tw-gray-100;
+      }
+  }
+
 
 }

@@ -88,6 +88,10 @@
       line-height: 26px;
     }
 
+    ul {
+      padding-left: 10px;
+    }
+
     li {
       position: relative;
       padding-left: 1em;
@@ -96,10 +100,11 @@
       &::before {
         content: '';
         position: absolute;
-        width: 0.25em;
-        height: 0.25em;
+        display: block;
+        width: 0.18em;
+        height: 0.18em;
         left: 0;
-        top: 0.85em;
+        top: 0.8em;
         transform: translateY(-50%);
         border-radius: 50%;
         background-color: $tw-gray-300;

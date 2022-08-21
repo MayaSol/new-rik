@@ -53,39 +53,46 @@
   &__content {
     flex-grow: 1;
 
-    // &::before {
-    //   z-index: -1;
-    //   position: absolute;
-    //   left: 0;
-    //   top: -2600px; //catalog mobile
-    //   top: -1180px; //new mobile
-    //   top: -1504px; //new mobile whitout image
-    //   top: -1800px; //new 1440
-    //   top: -1324px; //product 1440
-    //   top: -1668px; //service mobile
-    //   top: -1140px; //reviews mobile
-    //   top: -1245px;//prodcut-info mobile
-    //   top: -1160px;// areas mobile
-    //   top: -1155px;// articles mobile
-    //   top: -872px; //fotter mobile
-    //   top: 0;
-    //   top: -170px; //features 1440
-    //   top: -1332px; //new 1440
-    //   top: -1462px;// areas 1440
-    //   top: -1725px; //catalog main
-    //   top: -1920px; //service 1440
-    //   top: -2115px; //reviews 1440
-    //   top: -2330px;// articles 1440
-    //   top: -2395px; //footer 1440
-    //   // top: -140px; //main test features
-    //   // top: 32px; //mobile test features
-    //   // top: -10px; //mobile-menu
-    //   // top: -815px; //vacancies
-    //   // top: -275px;
-    //   //top: -5280px;
-    //   content: url('../screens/main.jpg');
-    //   opacity: 0.4;
-    // }
+    &::before {
+      //   z-index: -1;
+      //   position: absolute;
+      //   left: 0;
+      //   top: -2600px; //catalog mobile
+      //   top: -1180px; //new mobile
+      //   top: -1504px; //new mobile whitout image
+      //   top: -1800px; //new 1440
+      //   top: -1324px; //product 1440
+      //   top: -1668px; //service mobile
+      //   top: -1140px; //reviews mobile
+      //   top: -1245px;//prodcut-info mobile
+      //   top: -1160px;// areas mobile
+      //   top: -1155px;// articles mobile
+      //   top: -872px; //fotter mobile
+      //   top: -170px; //features 1440
+      //   top: -1332px; //new 1440
+      //   top: -1462px;// areas 1440
+      //   top: -1725px; //catalog main
+      //   top: -1920px; //service 1440
+      //   top: -2115px; //reviews 1440
+      //   top: -2330px;// articles 1440
+      // top: -2395px; //footer 1440
+      //   top: 0;
+      //   top: 1270px; //features page
+      //   top: 2950px; //catalog page
+      //   top: 2193px; //areas page
+      //   top: 3642px; //service page
+      //   top: 4333px; //reviews page
+      //   top: 1885px; //news page
+      //   top: 0;
+      //   // top: -140px; //main test features
+      //   // top: 32px; //mobile test features
+      //   // top: -10px; //mobile-menu
+      //   // top: -815px; //vacancies
+      //   // top: -275px;
+      //   //top: -5280px;
+      //   content: url('../screens/main-slider.jpg');
+      //   opacity: 1;
+    }
   }
 
   &__footer-wrapper {
@@ -199,6 +206,7 @@ textarea {
 
 svg {
   fill: currentColor;
+  strsoke: currentColor;
 
   a &,
   button & {
@@ -208,6 +216,10 @@ svg {
   &:not(:root) {
     overflow: hidden; // Скрыть выступающее за границы в IE
   }
+
+  &.angle-down {
+    fill: transparent;
+  }
 }
 
 img {
@@ -216,13 +228,14 @@ img {
 }
 
 a {
-  color: $link-color;
+  color: inherit;
   background-color: transparent;
-  transition: color 0.3s;
+  transition-time: $transition-time;
+  transition-property: color, opacity;
 
   &:hover,
   &:focus {
-    color: $link-color--hover;
+    color: inherit;
   }
 
   // &:visited {
@@ -431,20 +444,59 @@ pre {
 
   &__item {
     padding-bottom: 1px;
-    display: none !important;
+    // display: none !important;
 
-    &:first-child {
-      display: inline-block !important;
-    }
+    // &:first-child {
+    //   display: inline-block !important;
+    // }
   }
 
-  .tns-slider &__item {
-      display: inline-block !important;
-  }
+  // .tns-slider &__item {
+  //   display: inline-block !important;
+  // }
 
 }
 
+.section-main {
+  @media (min-width: $screen-lg) {
+    height: calc(100vh - 90px);
+    min-height: 600px;
+
+    &.section--catalog {
+      min-height: 700px;
+    }
+
+    &.section--service {
+      min-height: 770px;
+    }
+
+    &.section--reviews .section__content {
+      min-height: 680px;
+    }
+  }
+}
+
 .section {
+
+  &__container {
+    // NOT height: 100% or height: 100vh !!!
+  }
+
+  &__content {
+    // height: 100%; !!! ???
+  }
+
+
+  &__inner {
+    //!!! Нельзя делать display: flex на мобильных - расползается слайдер reviews
+    @media (min-width: $screen-lg) {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
   &__title {
     font-size: 24px;
@@ -464,6 +516,7 @@ pre {
     @media (min-width: $screen-xxl) {
       font-size: 48px;
       line-height: 58px;
+      margin-left: -0.05em;
     }
 
     .section--info & {
@@ -509,11 +562,20 @@ pre {
     }
   }
 
-  &__inner {
-    position: relative;
+
+  &--main-slider {
+    @media (min-width: $screen-lg) {
+      min-height: 600px;
+    }
   }
 
   &--features {}
+
+  &--info {
+    @media (min-width: $screen-xl) {
+      min-height: 772px;
+    }
+  }
 
   &--catalog,
   &--info,
@@ -541,29 +603,36 @@ pre {
     }
   }
 
-   &--catalog {
+  &--catalog {
     .tns-controls {
-      top: 25px;
+      top: 20px;
 
       @media (min-width: $screen-xxl) {
-      right: 20px;
+        right: 0;
       }
     }
-   }
+  }
+
+  &--articles {
+    .tns-controls {
+        top: -80px;
+        right: 0;
+    }
+  }
 
 
 
   &--info .tns-controls {
     @media (min-width: $screen-xxl) {
-      top: 95px;
-      right: 18px;
+      top: 85px;
+      right: 12px;
     }
 
-    button[data-controls="next"] {
-      @media (min-width: $screen-xxl) {
-        margin-left: 20px;
-      }
-    }
+    // button[data-controls="next"] {
+    //   @media (min-width: $screen-xxl) {
+    //     margin-left: 10px;
+    //   }
+    // }
   }
 
   &--reviews .tns-controls {
@@ -584,12 +653,6 @@ pre {
         justify-content: space-between;
         align-items: center;
       }
-
-      .btn--simple {
-        @media (min-width: $screen-xxl) {
-          margin-right: 10px;
-        }
-      }
     }
 
     .section__title {
@@ -599,17 +662,13 @@ pre {
     }
   }
 
-  // &--info {
-  //   .section__header {
-  //     position: absolute;
-  //     right: 350px;
-  //     z-index: 10;
-  //   }
+}
 
-  //   .tns-controls {
-  //     z-index: 10;
-  //   }
-  // }
+//section
+
+
+.product-catalog {
+  position: relative;
 }
 
 

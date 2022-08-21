@@ -20,8 +20,13 @@ mixin switcher(data, mods)
 
   .switcher__wrapper.items-center.h-full.font-medium.flex-shrink-0(class=allMods)&attributes(attributes)
     .relative.dropdown
-      .switcher.dropdown-toggle.flex.items-center.space-x-1.cursor-pointer.active(class="after_right-2.5" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
-        .switcher__value.w-full.text-inherit.leading-8.pl-10px.pr-15px!= data.name
+      .switcher.dropdown-toggle.flex.items-center.space-x-1.cursor-pointer.active(class="after_right-2.5" id="dropdownMenuLink_XXX" data-bs-toggle="dropdown" aria-expanded="false")
+        .switcher__value.w-full.text-inherit.leading-8.pl-10px.pr-15px
+          if (attributes.id === 'switcherLangFooter')
+            +svg('globe','globe',{width: '20', height: '20'})
+          span!= data.name
+          if (attributes.id === 'switcherLangFooter')
+            +svg('angle-down','angle-down',{width: '6', height: '4'})
       .switcher__select.dropdown-menu.text-inherit(aria-labelledby="dropdownMenuLink")
         block
 
@@ -37,7 +42,10 @@ mixin switcher-item(data,mods)
       }
     }
 
-  li.switcher__item(class=allMods data-name=data.code data-value=data.value)&attributes(attributes)!= data.name
+  li.switcher__item(class=allMods data-name=data.code data-value=data.value)&attributes(attributes)
+    if (data.check)
+      +svg('check','check',{width: '6', height: '4'})
+    span!= data.name
 
 
 
