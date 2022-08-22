@@ -6,7 +6,7 @@
 
   $block-name: &; // #{$block-name}__element
 
-  $transition-time-search: 600ms;
+  $transition-time-search: 13s;
 
   position: relative;
   height: 36px;
@@ -14,7 +14,8 @@
   width: 0;
   right: 0;
   z-index: 30;
-  transition: transform $transition-time-search;
+  // transition: transform $transition-time-search;
+
 
   &.active {
   }
@@ -27,7 +28,7 @@
     max-width: 0;
     right: 0;
     transition: max-width $transition-time-search;
-    //
+    // box-sizing: border-box;
 
     @media (min-width: $screen-lg) {
       width: 560px;
@@ -43,7 +44,7 @@
     }
 
     #{$block-name}.active & {
-      max-width: 1100px;
+        max-width: 1100px;
     }
   }
 
@@ -51,29 +52,20 @@
     border-style: none;
     @apply text-base;
     outline: none;
-    width: 100%;
+    border-radius: 25px;
     height: 40px;
     margin: 0 9px;
-    font-size: 16px;
-    line-height: 30px;
-    border-radius: 25px;
     color: $tw-black;
+    width: 100%;
     background-color: $tw-gray-100;
-    transition: padding $transition-time-search;
+    // transition: all $transition-time-search;
 
-    @media (min-width: $screen-lg) {
-      margin: 0;
-    }
 
     #{$block-name}.active & {
       max-width: 100%;
-      padding-left: 18px;
-      padding-right: 40px;
-    }
-
-    &::placeholder {
-      color: $tw-gray-300;
-      opacity: 1;
+      padding: 0 9px;
+      // padding-left: 18px;
+      // padding-right: 40px;
     }
   }
 

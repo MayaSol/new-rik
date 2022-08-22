@@ -10,32 +10,38 @@ ready(function() {
   //   return document.documentElement.scrollTop < el.offsetTop + el.clientHeight;
   // };
 
-  var pagesEl = document.querySelector('.pages');
-  var header = document.querySelector('.page-header');
-  var headerH = header.clientHeight;
-  var pointsArr = [];
-  var points = {};
-  var prevClosest = 0;
-  var firstSection = document.querySelector('section:first-of-type');
-  var firstSectionH = firstSection.clientHeight;
 
-  initPagesBar();
+  // initPagesBar(); //!!!
+
+  var pagesEl = document.querySelector('.pages');
 
   if (pagesEl.clientHeight > 0) {
+    var header = document.querySelector('.page-header');
+    var headerH = header.clientHeight;
+    var pointsArr = [];
+    var points = {};
+    var prevClosest = 0;
+    var firstSection = document.querySelector('section:first-of-type');
+    var firstSectionH = firstSection.clientHeight;
+
+    initPagesBar();
+
+    pagesEl.addEventListener('click', function(event) {
+      event.preventDefault();
+        let pageId = event.target.getAttribute('href');
+        console.log(event.target.getAttribute('href'));
+        if (pageId) {
+          goTo(pageId);
+        }
+    })
+
     window.addEventListener('scroll', throttle(processPagesBar, 100));
     window.addEventListener('resize', throttle(initPagesBar, 100));
   }
 
-  pagesEl.addEventListener('click', function(event) {
-    event.preventDefault();
-      let pageId = event.target.getAttribute('href');
-      console.log(event.target.getAttribute('href'));
-      if (pageId) {
-        goTo(pageId);
-      }
-  })
 
   function initPagesBar() {
+    console.log('initPagesBar');
     var sectionsList = document.querySelectorAll('section[data-page]');
     // console.log(sectionsList);
     for (section of sectionsList) {

@@ -19,4 +19,12 @@ ready(function(){
     document.getElementById('off-canvas').classList.toggle('off-canvas--open');
   }
 
+  document.addEventListener('keydown',function() {
+    if (event.code === 'Escape') {
+      for (canvas of document.querySelectorAll('.off-canvas--open')) {
+        canvas.classList.remove('off-canvas--open');
+      }
+    }
+  })
+
 });

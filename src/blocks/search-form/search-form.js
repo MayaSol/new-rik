@@ -1,38 +1,38 @@
 const ready = require('../../js/utils/documentReady.js');
 const getParents = require('../../js/utils/getParents.js');
 const findPos = require('../../js/utils/findPos.js');
+var throttle = require('lodash.throttle');
 
 ready(function() {
 
+  const INPUT_SELECTOR = '.search-form__input';
 
   //  Открыть поиск
   let btnSearch = document.getElementById('btnSearch');
-  console.log(btnSearch);
   btnSearch.addEventListener('click', function(event) {
-    console.log('btn click');
     let searchForm = getParents(this, '.search-form');
     if (searchForm.length > 0) {
-      mobileSearchOpen(searchForm[0]);
+      if (searchForm[0].classList.contains('active')) {
+        mobileSearchClose(searchForm[0]);
+        searchForm[0].classList.remove('active');
+      }
+      else {
+        mobileSearchOpen(searchForm[0]);
+        searchForm[0].classList.add('active');
+        searchForm[0].querySelector(INPUT_SELECTOR).focus();
+      }
     }
-    console.log(searchForm);
-    if (!searchForm[0].classList.add('active')) {
-      searchForm[0].classList.add('active');
-      // searchForm[0].querySelector('input').classList.add('active');
-      event.stopPropagation();
-    }
+    event.stopPropagation();
   });
 
   // Закрыть поиск по клику вне формы !!! Добавить ESC !!!
   document.addEventListener('click', (event) => {
-    console.log('document click');
     if (event.target.classList.contains('search-form')) {
       if (event.target.classList.contains('active')) {
-        console.log('click on active form');
         return;
       }
     } else {
       let parent = getParents(event.target, '.search-form');
-      console.log(parent);
       if (parent.length > 0) {
         if (parent[0].classList.contains('active')) {
           return;
@@ -40,7 +40,10 @@ ready(function() {
       };
     }
     // клик не внутри формы поиска
-    console.log('click outside form');
+    closeSearchForms();
+  });
+
+  function closeSearchForms() {
     let searchForms = document.querySelectorAll('.search-form');
     if (document.documentElement.clientWidth < 1024) {
       for (form of searchForms) {
@@ -52,8 +55,9 @@ ready(function() {
         form.classList.remove('active');
       }
     }
-  });
+  }
 
+  var mobileSearchOpened = false;
 
   function mobileSearchOpen(searchFormEl) {
     var screenWidth = document.documentElement.clientWidth;
@@ -67,30 +71,51 @@ ready(function() {
       searchFormEl.style.transform = `translateX(${screenWidth - offsetLeft}px)`;
       inputWrapper.style.width = screenWidth + 'px';
       inputWrapper.style.maxWidth = screenWidth + 'px';
+      searchFormEl.classList.add('active');
+      mobileSearchOpened = true;
     }
   }
 
   function mobileSearchClose(searchFormEl) {
       searchFormEl.style.transform = 'none';
       var inputWrapper = searchFormEl.querySelector('.search-form__input-wrapper');
-      inputWrapper.style.width = '';
+      if (mobileSearchOpened) {
+        inputWrapper.addEventListener('transitionend',function(event) {
+          console.log('inputWrapper transitionend');
+          inputWrapper.style.width = '';
+        }, {once: true});
+      }
       inputWrapper.style.maxWidth = '';
       searchFormEl.classList.remove('active');
+      mobileSearchOpened = false;
   }
 
 
-  window.addEventListener('resize', function() {
-    console.log('window resize');
-    var searchForms = document.querySelectorAll('.search-form');
-    console.log(searchForms);
+  var searchForms = document.querySelectorAll('.search-form');
+
+  function onResize() {
     for (var form of searchForms) {
       mobileSearchClose(form);
     }
+  }
+
+  window.addEventListener('resize', throttle(onResize, 200));
+
+  document.addEventListener('keydown', function(event) {
+    console.log(event.code);
+    if (event.code === 'Escape') {
+      closeSearchForms();
+    }
   })
 
-
-
-
+  // window.addEventListener('resize', function() {
+  //   console.log('window resize');
+  //   var searchForms = document.querySelectorAll('.search-form');
+  //   console.log(searchForms);
+  //   for (var form of searchForms) {
+  //     mobileSearchClose(form);
+  //   }
+  // })
 
   // let btnSearch = document.getElementById('btnSearch');
   // console.log(btnSearch);

@@ -62,7 +62,7 @@ let config = {
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/3d/new/*.jpg': 'img/3d/',
-    'src/video/*.{mp4,mov}': 'video/',
+    'src/video/*.{mp4,mov,jpg}': 'video/',
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
