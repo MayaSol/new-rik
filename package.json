@@ -93,6 +93,7 @@
     "bootstrap": "^5.2.0",
     "choices.js": "^9.1.0",
     "closest": "0.0.1",
+    "ease-component": "^1.0.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "lazysizes": "^5.3.2",
@@ -102,6 +103,8 @@
     "object-fit-images": "^3.2.4",
     "sass": "^1.43.5",
     "save-dev": "0.0.1-security",
+    "scroll": "^3.0.1",
+    "scroll-doc": "^0.2.1",
     "svg4everybody": "^2.1.8",
     "tiny-slider": "^2.9.4",
     "tippy.js": "^6.3.7"
