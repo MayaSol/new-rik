@@ -20,6 +20,10 @@
     padding: 128px 64px;
   }
 
+  @media (min-width: $screen-xl) {
+    padding-left: 128px;
+  }
+
   a {
     color: $tw-white;
 

@@ -11,7 +11,6 @@ ready(function() {
   var sliderAreas;
 
   function setupSlider() {
-    console.log('setupSlider ' + document.documentElement.clientWidth);
 
     if (document.querySelector('.areas__inner') && document.documentElement.clientWidth < 1024) {
 

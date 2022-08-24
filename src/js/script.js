@@ -1,17 +1,16 @@
 const ready = require('./utils/documentReady.js');
 
-ready(function(){
+ready(function() {
 
+  var ellipsisEls = document.querySelectorAll('.ellipsis');
 
-
-    var ellipsisEls = document.querySelectorAll('.ellipsis');
-
-    for (el of ellipsisEls) {
-        var lines = el.dataset.lines;
-        if (lines) {
-            truncateElement(el, lines);
-        }
+  for (el of ellipsisEls) {
+    var lines = el.dataset.lines;
+    if (lines) {
+      truncateElement(el, lines);
     }
+  }
+
 
 });
 
@@ -42,9 +41,9 @@ var truncateElement = function(element, lines) {
     // console.log(truncateTextParts.length, maxHeight, element.clientHeight);
     truncateTextParts.pop();
     element.innerHTML = truncateTextParts.join(' ') + '...';
-  //   console.log('element.clientHeight = ' + element.clientHeight);
-  // console.log('maxHeight = ' + maxHeight);
-  //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
+    //   console.log('element.clientHeight = ' + element.clientHeight);
+    // console.log('maxHeight = ' + maxHeight);
+    //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
   }
 }
 

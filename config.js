@@ -35,6 +35,7 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/_nav.scss',
+    'src/scss/onepagescroll.scss'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -52,6 +53,7 @@ let config = {
     'bootstrap/js/dist/tab.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
+    './utils/onepagescroll.js'
   ],
   'addJsAfter': [
     './script.js',
@@ -64,7 +66,8 @@ let config = {
     'src/img/3d/new/*.jpg': 'img/3d/',
     'src/video/*.{mp4,mov,jpg}': 'video/',
     'src/webfonts/': 'webfonts/',
-    'design/screens/': 'screens/'
+    'design/screens/': 'screens/',
+    // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },
