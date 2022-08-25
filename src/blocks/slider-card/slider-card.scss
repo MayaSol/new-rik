@@ -4,17 +4,19 @@
 
 .slider-card {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   padding: 20px;
-
-  // @media (min-width: $screen-xl) {
-  //   padding: 0;
-  // }
 
   &__inner {
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
+  }
+
+  &.features__item {
+    @media (min-width: $screen-lg) {
+      padding: 0;
+    }
   }
 }

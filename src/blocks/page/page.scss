@@ -54,7 +54,6 @@
       position: absolute;
       left: 0;
       top: -2600px; //catalog mobile
-      top: -1180px; //new mobile
       top: -1504px; //new mobile whitout image
       top: -1800px; //new 1440
       top: -1324px; //product 1440
@@ -79,6 +78,7 @@
       top: 1885px; //news page
       top: -170px; //features 1440
       top: 0;
+      top: -1255px; //news mobile
       // top: -140px; //main test features
       // top: 32px; //mobile test features
       // top: -10px; //mobile-menu
@@ -568,7 +568,7 @@ body {}
       margin-bottom: 0;
 
       @media (min-width: $screen-xxl) {
-        margin-top: 75px;
+        margin-top: 55px;
         margin-bottom: 8px;
       }
     }
@@ -735,7 +735,7 @@ body {}
 
   &--info .tns-controls {
     @media (min-width: $screen-xxl) {
-      top: 95px;
+      top: 75px;
       right: 12px;
     }
 
