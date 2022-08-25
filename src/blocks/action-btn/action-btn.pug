@@ -20,3 +20,31 @@ mixin action-btn(font, icon, mods)
 
   button.action-btn(class=allMods)&attributes(attributes)
     .action-btn__inner
+
+
+
+
+mixin action-btn-svg(icon, size = {w: '30', h: '30'}, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +action-btn('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' action-btn--' + modsList[i].trim();
+      }
+    }
+    var sizes = {};
+    sizes.width = size.w;
+    sizes.height = size.h;
+
+  button.action-btn(class=allMods)&attributes(attributes)
+    .action-btn__inner
+      +svg(icon,'',sizes)

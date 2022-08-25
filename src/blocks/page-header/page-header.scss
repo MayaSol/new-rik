@@ -15,6 +15,10 @@
     border-color: #fff;
   }
 
+  @media (min-width: $screen-lg) {
+    min-height: 70px;
+  }
+
   @media (min-width: $screen-xxl) {
     min-height: 90px;
   }
@@ -24,6 +28,7 @@
     align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    min-height: 60px;
     font-size: 18px;
     line-height: 28px;
     position: relative;

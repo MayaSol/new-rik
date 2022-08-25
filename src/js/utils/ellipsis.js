@@ -1,37 +1,31 @@
-const ready = require('./utils/documentReady.js');
-const makeEllipsis = require('./utils/ellipsis.js');
+  const makeEllipsis = function(selector) {
+    var ellipsisEls = document.querySelectorAll(selector);
 
-ready(function() {
-  console.log('script ready');
+    for (el of ellipsisEls) {
+      var lines = el.dataset.lines;
+      if (lines) {
+        truncateElement(el, lines);
+      }
+      else {
+        console.log('truncate by height');
+        console.log(el);
+        var lineHeight = getLineHeight(el);
+        console.log('lineHeight: ' + lineHeight);
+        var elHeight = el.clientHeight;
+        console.log('elHeight: ' + elHeight);
+        console.log('scrollHeight: ' + el.scrollHeight);
+        console.log(elHeight / lineHeight);
+        lines = parseInt(elHeight / lineHeight);
+        console.log(lines);
+        // lines = (lines > 1) ? lines -1 : lines;
+        truncateElement(el, lines);
+        console.log('truncate by height --------------------------');
+      }
+    }
+  }
 
-  // const makeEllipsis = function(selector) {
-  //   var ellipsisEls = document.querySelectorAll(selector);
+  // makeEllipsis('.ellipsis');
 
-  //   for (el of ellipsisEls) {
-  //     var lines = el.dataset.lines;
-  //     if (lines) {
-  //       truncateElement(el, lines);
-  //     }
-  //     else {
-  //       console.log('truncate by height');
-  //       console.log(el);
-  //       var lineHeight = getLineHeight(el);
-  //       console.log('lineHeight: ' + lineHeight);
-  //       var elHeight = el.clientHeight;
-  //       console.log('elHeight: ' + elHeight);
-  //       console.log('scrollHeight: ' + el.scrollHeight);
-  //       console.log(elHeight / lineHeight);
-  //       lines = parseInt(elHeight / lineHeight);
-  //       console.log(lines);
-  //       lines = (lines > 1) ? lines -1 : lines;
-  //       truncateElement(el, lines);
-  //       console.log('truncate by height --------------------------');
-  //     }
-  //   }
-  // }
-
-  makeEllipsis('.ellipsis');
-});
 
 
 var getLineHeight = function getLineHeight(element) {
@@ -90,5 +84,5 @@ var truncateElement = function(element, lines) {
   }
 }
 
-// const $ = require('jquery');
-// $( document ).ready(function() {});
+
+module.exports = makeEllipsis;

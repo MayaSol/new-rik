@@ -86,14 +86,11 @@ let postCssPlugins = [
 
 
 function writePugMixinsFile(cb) {
-  console.log('writePugMixinsFile');
   let allBlocksWithPugFiles = getDirectories('pug');
-  console.log(allBlocksWithPugFiles);
   let pugMixins = '//-' + doNotEditMsg.replace(/\n /gm, '\n  ');
   allBlocksWithPugFiles.forEach(function(blockName) {
     pugMixins += `include ${dir.blocks.replace(dir.src,'../')}${blockName}/${blockName}.pug\n`;
   });
-  console.log(pugMixins);
   fs.writeFileSync(`${dir.src}pug/mixins.pug`, pugMixins);
   cb();
 }
@@ -298,7 +295,6 @@ exports.compileSass = compileSass;
 
 
 function compileTailwind() {
-  console.log('compileTailwind');
   let plugins = [
     atImport(),
     tailwindcss(),
@@ -320,7 +316,6 @@ exports.compileTailwind = compileTailwind;
 
 
 function concatCss() {
-  console.log('concatCss');
   return src([
       `${dir.src}css/input.css`,
       `${dir.src}css/regular.min.css`,

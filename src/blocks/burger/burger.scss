@@ -81,4 +81,14 @@
       opacity: 0.5 !important;
     }
   }
+
+  &.main-nav__toggler {
+    width: 30px;
+    padding-left: 0;
+
+    &::before,
+    &::after {
+      left: 0;
+    }
+  }
 }

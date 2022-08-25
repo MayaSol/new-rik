@@ -8,12 +8,24 @@
 
   position: relative;
 
+  @media (min-width: $onepage-width) {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-right: -10px;
+  }
+
   &__inner {
     @media (min-width: $screen-lg) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 30px 30px;
+      grid-template-rows: 47% 47%;
+      gap: 6% 3%;
+      height: 80%;
+    }
+
+    @media (min-width: $onepage-width) {
+      flex-grow: 1;
     }
   }
 
@@ -42,6 +54,10 @@
       #{$block-name}__item:hover & {
         opacity: 1;
       }
+    }
+
+    @media (min-width: $onepage-width) {
+      height: 100%;
     }
 
     img {

@@ -6,11 +6,19 @@
 
   $block-name: &; // #{$block-name}__element
 
+  @media (min-width: $onepage-width) {
+    height: 100%;
+  }
+
   &__inner {
     @media (min-width: $screen-md) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto 1fr;
+    }
+
+    @media (min-width: $onepage-width) {
+      height: 100%;
     }
 
     @media (min-width: $screen-xxl) {
@@ -37,8 +45,8 @@
       border-radius: 0;
     }
 
-    @media (min-width: $screen-xxl) {
-      height: 710px;
+    @media (min-width: $onepage-width) {
+      height: 100%;
     }
 
     img {
@@ -56,11 +64,14 @@
 
     @media (min-width: $screen-md) {
       margin-top: 60px;
-      margin-left: 20px;
+      margin-left: 30px;
+    }
+
+    @media (min-width: $onepage-width) {
+      margin-top: 28%;
     }
 
     @media (min-width: $screen-xxl) {
-      margin-top: 155px;
       margin-bottom: 40px;
       margin-left: 0;
     }
@@ -68,7 +79,7 @@
 
   &__info {
     @media (min-width: $screen-md) {
-      margin-left: 20px;
+      margin-left: 30px;
       grid-column-start: 2;
       grid-column-end: 3;
       grid-row-start: 2;

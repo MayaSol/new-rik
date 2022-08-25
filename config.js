@@ -67,6 +67,7 @@ let config = {
     'src/video/*.{mp4,mov,jpg}': 'video/',
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/',
+    'src/js/': 'js/',
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

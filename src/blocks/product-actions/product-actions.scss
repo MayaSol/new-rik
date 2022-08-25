@@ -21,8 +21,19 @@
     }
 
     @media (min-width: $screen-lg) {
-      margin-top: 16px;
+      margin-top: 5px;
     }
+
+
+    .btn--regular {
+      padding: 7px 16px;
+    }
+
+    @media (min-width: $screen-lg) {
+      .btn--fav {
+        margin-right: 8px;
+        }
+      }
   }
 
 
@@ -106,7 +117,7 @@
 
   .product-card & {
     .btn--regular {
-      padding: 6px 16px;
+      padding: 7px 16px;
     }
 
     .btn--compare {

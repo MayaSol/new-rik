@@ -51,6 +51,10 @@
       height: 335px;
     }
 
+    @media (min-width: $screen-xxl) {
+      height: 50%;
+    }
+
     // @media (min-width: $screen-md) {
     //   height: auto;
     // }

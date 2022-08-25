@@ -3,17 +3,23 @@
 //   outline: 1px solid red;
 // }
 
-// body  * {
-//   background-color: transparent !important;
-//   // outline: 1px solid red;
-// }
+body  * {
+  background-color: transparent !important;
+  outline: 1px solid red;
+  color: red !important;
+}
 
-// .section__inner {
-//   outline: 2px solid green !important;
-// }
+.section__inner {
+  outline: 2px solid green !important;
+}
 
-// img {
+img {
+  opacity: 0;
+}
+
+// .product-info__view {q
 //   opacity: 0;
+//   outline: 1px solid red;
 // }
 
 // video {
@@ -27,6 +33,19 @@
 // .cart__section {
 //   max-width: none;
 // }
+
+// .test-wrapper {
+//   position: relative;
+// }
+
+// .test {
+//   position: absolute;
+//   opacity: 0;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+// }
+
 
 
 

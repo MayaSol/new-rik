@@ -1,6 +1,6 @@
 body, html {
   margin: 0;
-  overflow: hidden;
+  // overflow: hidden;
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -11,7 +11,7 @@ body, .onepage-wrapper, html {
   position: static;
   padding: 0;
   width: 100%;
-  height: 100%;
+  // height: 100%;
 }
 
 .onepage-wrapper {
@@ -44,8 +44,12 @@ body, .onepage-wrapper, html {
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-top: 65px;
+    // padding-top: 85px;
     z-index: 10;
+  }
+  @media (min-width: $screen-3xl) {
+    left: 50%;
+    margin-left: -835px;
   }
 }
 .onepage-pagination li {

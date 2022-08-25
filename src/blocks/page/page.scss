@@ -39,50 +39,55 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-size-adjust: 100%; // stylelint-disable-line
-  min-width: 320px;
+  min-width: 360px;
   min-height: 100%;
 
+  &.index {
+    @media (min-width: $onepage-width) {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
 
-    // &::before {
-    //     z-index: -1;
-    //     position: absolute;
-    //     left: 0;
-    //     top: -2600px; //catalog mobile
-    //     top: -1180px; //new mobile
-    //     top: -1504px; //new mobile whitout image
-    //     top: -1800px; //new 1440
-    //     top: -1324px; //product 1440
-    //     top: -1668px; //service mobile
-    //     top: -1140px; //reviews mobile
-    //     top: -1245px;//prodcut-info mobile
-    //     top: -1160px;// areas mobile
-    //     top: -1155px;// articles mobile
-    //     top: -872px; //fotter mobile
-    //     top: -170px; //features 1440
-    //     top: -1332px; //new 1440
-    //     top: -1462px;// areas 1440
-    //     top: -1725px; //catalog main
-    //     top: -1920px; //service 1440
-    //     top: -2115px; //reviews 1440
-    //     top: -2330px;// articles 1440
-    //   top: -2395px; //footer 1440
-    //     top: 0;
-    //     top: 1270px; //features page
-    //     top: 2950px; //catalog page
-    //     top: 2193px; //areas page
-    //     top: 3642px; //service page
-    //     top: 4333px; //reviews page
-    //     top: 1885px; //news page
-    //     top: 0;
-    //     // top: -140px; //main test features
-    //     // top: 32px; //mobile test features
-    //     // top: -10px; //mobile-menu
-    //     // top: -815px; //vacancies
-    //     // top: -275px;
-    //     //top: -5280px;
-    //     content: url('../screens/main-slider.jpg');
-    //     opacity: 1;
-    // }
+  &::before {
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: -2600px; //catalog mobile
+      top: -1180px; //new mobile
+      top: -1504px; //new mobile whitout image
+      top: -1800px; //new 1440
+      top: -1324px; //product 1440
+      top: -1668px; //service mobile
+      top: -1140px; //reviews mobile
+      top: -1245px;//prodcut-info mobile
+      top: -1160px;// areas mobile
+      top: -1155px;// articles mobile
+      top: -872px; //fotter mobile
+      top: -1332px; //new 1440
+      top: -1462px;// areas 1440
+      top: -1725px; //catalog main
+      top: -1920px; //service 1440
+      top: -2115px; //reviews 1440
+      top: -2330px;// articles 1440
+      top: -2395px; //footer 1440
+      top: 1270px; //features page
+      top: 2950px; //catalog page
+      top: 2193px; //areas page
+      top: 3642px; //service page
+      top: 4333px; //reviews page
+      top: 1885px; //news page
+      top: -170px; //features 1440
+      top: 0;
+      // top: -140px; //main test features
+      // top: 32px; //mobile test features
+      // top: -10px; //mobile-menu
+      // top: -815px; //vacancies
+      // top: -275px;
+      //top: -5280px;
+      content: url('../screens/main-mobile.jpg');
+      opacity: 1;
+  }
 
   &__inner {
     min-height: 100vh;
@@ -139,18 +144,30 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+
+    @media (min-width: $onepage-width) {
+      height: 100%;
+      overflow: hidden;
+    }
   }
 }
 
 .wrapper {
-  height: 100% !important;
-  margin: 0 auto;
-  overflow: hidden;
-  padding-top: 90px;
+
+  padding-top: 60px;
+
+  @media (min-width: $onepage-width) {
+    height: 100% !important;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 70px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding-top: 90px;
+  }
 }
 
 .noscroll {
@@ -496,11 +513,14 @@ pre {
 // }
 
 
-body {
-
-}
+body {}
 
 .section {
+
+  @media (min-width: $onepage-width) {
+    overflow: hidden;
+  }
+
 
   &__container {
     // NOT height: 100% or height: 100vh !!!
@@ -512,6 +532,7 @@ body {
 
 
   &__inner {
+
     //!!! Нельзя делать display: flex на мобильных - расползается слайдер reviews
     @media (min-width: $screen-lg) {
       position: relative;
@@ -528,16 +549,16 @@ body {
     color: $tw-black;
 
     @media (min-width: $screen-md) {
-      font-size: 30px;
-      line-height: 40px;
-    }
-
-    @media (min-width: $screen-xl) {
       font-size: 40px;
       line-height: 48px;
     }
 
-    @media (min-width: $screen-xxl) {
+    // @media (min-width: $screen-xl) {
+    //   font-size: 40px;
+    //   line-height: 48px;
+    // }
+
+    @media (min-width: $screen-lg) {
       font-size: 48px;
       line-height: 58px;
       margin-left: -0.05em;
@@ -547,7 +568,7 @@ body {
       margin-bottom: 0;
 
       @media (min-width: $screen-xxl) {
-        margin-top: 65px;
+        margin-top: 75px;
         margin-bottom: 8px;
       }
     }
@@ -564,6 +585,7 @@ body {
 
   &__container,
   &__container[class$=container] {
+
     @media (min-width: $screen-xl) {
       padding-left: 64px;
       padding-right: 140px;
@@ -571,12 +593,22 @@ body {
       margin-left: auto;
       margin-right: auto;
 
-      .section--info & {
-        padding-left: 0;
-      }
+      // .section--info & {
+      //   padding-left: 0;
+      // }
 
       .section--service & {
         padding-left: 0;
+      }
+    }
+
+    .section--info & {
+      @media (min-width: $screen-md) {
+        padding-left: 0;
+        max-width: none;
+      }
+      @media (min-width: $screen-3xl) {
+        max-width: $screen-3xl;
       }
     }
 
@@ -587,19 +619,19 @@ body {
   }
 
 
-  &--main-slider {
-    @media (min-width: $screen-lg) {
-      min-height: 600px;
-    }
-  }
+  // &--main-slider {
+  //   @media (min-width: $screen-lg) {
+  //     min-height: 600px;
+  //   }
+  // }
 
   &--features {}
 
-  &--info {
-    @media (min-width: $screen-xl) {
-      min-height: 772px;
-    }
-  }
+  // &--info {
+  //   @media (min-width: $screen-xl) {
+  //     min-height: 772px;
+  //   }
+  // }
 
   &--catalog,
   &--info,
@@ -625,6 +657,22 @@ body {
     .tns-controls {
       top: 0;
     }
+
+    @media (min-width: $onepage-width) {
+      .section__content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &--service {
+    @media (min-width: $onepage-width) {
+      .section__content {
+        height: 100%;
+      }
+    }
   }
 
   &--catalog {
@@ -637,10 +685,49 @@ body {
     }
   }
 
-  &--articles {
+  &--reviews {
+
     .tns-controls {
-        top: -80px;
-        right: 0;
+      top: -115px;
+      right: 20px;
+
+      @media (min-width: $screen-lg) {
+      }
+
+      @media (min-width: $screen-xxl) {
+        top: -105px;
+
+      }
+    }
+  }
+
+  &--articles {
+
+    @media (min-width: $onepage-width) {
+      .section__content {
+        height: 82%;
+        display: flex;
+        flex-direction: column;
+      }
+      .btn {
+        align-self: flex-start;
+      }
+
+      .article-preview__list-wrapper {
+        // flex-grow: 1;
+        height: 82%;
+      }
+
+    }
+
+    .tns-controls {
+      top: -80px;
+      right: 0;
+
+      @media (min-width: $screen-xxl) {
+        top: -90px;
+        right: 10px;
+      }
     }
   }
 
@@ -648,7 +735,7 @@ body {
 
   &--info .tns-controls {
     @media (min-width: $screen-xxl) {
-      top: 85px;
+      top: 95px;
       right: 12px;
     }
 
@@ -659,14 +746,14 @@ body {
     // }
   }
 
-  &--reviews .tns-controls {
-    right: 20px;
+  // &--reviews .tns-controls {
+  //   right: 20px;
 
-    @media (min-width: $screen-xxl) {
-      top: -170px;
-    }
+  //   @media (min-width: $screen-xxl) {
+  //     top: -170px;
+  //   }
 
-  }
+  // }
 
   &--reviews {
     position: relative;

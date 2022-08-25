@@ -9,6 +9,7 @@
   width: 36px;
   height: 36px;
   position: relative;
+  overflow: hidden;
 
   &__inner {
     position: absolute;
@@ -16,12 +17,8 @@
     left: 50%;
     transform: translate(-50%,-50%);
 
-    #{$block-name}--user & {
-      @include sprite($user);
-    }
-
-    #{$block-name}--search & {
-      @include sprite($search);
+    svg {
+      fill: none;
     }
   }
 
