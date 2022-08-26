@@ -34,4 +34,8 @@
     transform: translateY(-50%);
     z-index: 20;
   }
+
+  .viewing-page-9 & {
+    display: none;
+  }
 }

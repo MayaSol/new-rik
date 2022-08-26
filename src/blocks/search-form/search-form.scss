@@ -13,10 +13,15 @@
   box-sizing: border-box;
   width: 0;
   right: 0;
-  z-index: 30;
+  z-index: 9;
   transition: transform $transition-time-search;
 
+  @media (min-width: $screen-lg) {
+    z-index: 20;
+  }
+
   &.active {
+    z-index: 20;
   }
 
   &__input-wrapper {

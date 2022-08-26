@@ -50,43 +50,46 @@
   }
 
   &::before {
-      z-index: -1;
-      position: absolute;
-      left: 0;
-      top: -2600px; //catalog mobile
-      top: -1504px; //new mobile whitout image
-      top: -1800px; //new 1440
-      top: -1324px; //product 1440
-      top: -1668px; //service mobile
-      top: -1140px; //reviews mobile
-      top: -1245px;//prodcut-info mobile
-      top: -1160px;// areas mobile
-      top: -1155px;// articles mobile
-      top: -872px; //fotter mobile
-      top: -1332px; //new 1440
-      top: -1462px;// areas 1440
-      top: -1725px; //catalog main
-      top: -1920px; //service 1440
-      top: -2115px; //reviews 1440
-      top: -2330px;// articles 1440
-      top: -2395px; //footer 1440
-      top: 1270px; //features page
-      top: 2950px; //catalog page
-      top: 2193px; //areas page
-      top: 3642px; //service page
-      top: 4333px; //reviews page
-      top: 1885px; //news page
-      top: -170px; //features 1440
-      top: 0;
-      top: -1255px; //news mobile
-      // top: -140px; //main test features
-      // top: 32px; //mobile test features
-      // top: -10px; //mobile-menu
-      // top: -815px; //vacancies
-      // top: -275px;
-      //top: -5280px;
-      content: url('../screens/main-mobile.jpg');
-      opacity: 1;
+      // z-index: -1;
+      // position: absolute;
+      // left: 0;
+      // top: -1504px; //new mobile whitout image
+      // top: -1800px; //new 1440
+      // top: -1324px; //product 1440
+      // top: -1668px; //service mobile
+      // top: -1140px; //reviews mobile
+      // top: -1245px;//prodcut-info mobile
+      // top: -1160px;// areas mobile
+      // top: -1155px;// articles mobile
+      // top: -872px; //fotter mobile
+      // top: -1332px; //new 1440
+      // top: -1462px;// areas 1440
+      // top: -1725px; //catalog main
+      // top: -1920px; //service 1440
+      // top: -2115px; //reviews 1440
+      // top: -2330px;// articles 1440
+      // top: -2395px; //footer 1440
+      // top: 1270px; //features page
+      // top: 2950px; //catalog page
+      // top: 3642px; //service page
+      // top: 4333px; //reviews page
+      // top: 1885px; //news page
+      // top: -170px; //features 1440
+      // top: -2600px; //catalog mobile
+      // top: -63px; //news widthoug align-items: center
+      // top: -1290px; //articles mobile
+      // top: -1250px; //footer mobile
+      // top: -1230px; //news mobile
+      // top: 0;
+      // // left: 64px;//footer main
+      // // top: -140px; //main test features
+      // // top: 32px; //mobile test features
+      // // top: -10px; //mobile-menu
+      // // top: -815px; //vacancies
+      // // top: -275px;
+      // //top: -5280px;
+      // content: url('../screens/news.jpg');
+      // opacity: 1;
   }
 
   &__inner {
@@ -103,6 +106,11 @@
   &__footer-wrapper {
     flex-shrink: 0;
     background-color: $tw-slate;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__main {
@@ -568,8 +576,8 @@ body {}
       margin-bottom: 0;
 
       @media (min-width: $screen-xxl) {
-        margin-top: 55px;
-        margin-bottom: 8px;
+        margin-top: 30px;
+        margin-bottom: 0;
       }
     }
 
@@ -607,6 +615,11 @@ body {}
         padding-left: 0;
         max-width: none;
       }
+
+      @media (min-width: $screen-lg) {
+        height: 100%;
+      }
+
       @media (min-width: $screen-3xl) {
         max-width: $screen-3xl;
       }
@@ -677,9 +690,10 @@ body {}
 
   &--catalog {
     .tns-controls {
-      top: 20px;
+      top: 10px;
 
       @media (min-width: $screen-xxl) {
+        top: 20px;
         right: 0;
       }
     }
@@ -688,15 +702,23 @@ body {}
   &--reviews {
 
     .tns-controls {
-      top: -115px;
+      top: -110px;
       right: 20px;
 
       @media (min-width: $screen-lg) {
+        top: -115px;
       }
 
       @media (min-width: $screen-xxl) {
         top: -105px;
 
+      }
+    }
+
+    .section__content {
+
+      @media (min-width: $screen-xxl) {
+        margin-top: 20px;
       }
     }
   }
@@ -721,12 +743,12 @@ body {}
     }
 
     .tns-controls {
-      top: -80px;
+      top: -70px;
       right: 0;
 
       @media (min-width: $screen-xxl) {
         top: -90px;
-        right: 10px;
+        right: 0;
       }
     }
   }
@@ -735,7 +757,7 @@ body {}
 
   &--info .tns-controls {
     @media (min-width: $screen-xxl) {
-      top: 75px;
+      top: 90px;
       right: 12px;
     }
 

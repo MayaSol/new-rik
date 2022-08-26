@@ -2,6 +2,8 @@ design/
 build/*
 archive/
 !build/readme.md
+test.html
+test.css
 
 src/pug/mixins.pug
 src/js/entry.js

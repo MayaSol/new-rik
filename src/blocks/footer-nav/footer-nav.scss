@@ -30,8 +30,11 @@
   }
 
   &__item {
-    @media (min-width: $screen-xxl) {
-      margin-bottom: 9px;
+    @media (min-width: $screen-lg) {
+      margin-bottom: 8px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-bottom: 11px;
     }
   }
 
@@ -55,5 +58,23 @@
     grid-row-end: 2;
     grid-column-start: 4;
     grid-column-end: 5;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: flex-end;
+
+      #{$block_name}__inner {
+        min-width: 320px;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-self: start;
+    }
+
+    @media (min-width: $screen-xxl) {
+      justify-self: stretch;
+    }
+
   }
 }

@@ -26,7 +26,14 @@
   }
 
   &__item {
+    padding-top: 10px;
     cursor: pointer;
+
+    @media (min-width: $screen-lg) {
+      min-height: 386px;
+      padding-top: 20px;
+    }
+
     .btn {
       @media (min-width: $screen-lg) {
         grid-column-start: 2;
@@ -34,10 +41,6 @@
         justify-self: start;
         margin-top: 20px;
       }
-    }
-
-    @media (min-width: $screen-lg) {
-      min-height: 386px;
     }
   }
 
@@ -51,7 +54,7 @@
     }
 
     @media (min-width: $screen-xxl) {
-      padding: 40px 55px;
+      padding: 20px 55px 40px 30px ;
     }
   }
 
@@ -136,12 +139,17 @@
   }
 
   &__item-text {
+    margin-top: 10px;
     font-size: 16px;
     line-height: 26px;
     color: $tw-gray-500;
 
     p {
       margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
     }
   }
 
@@ -173,7 +181,8 @@
   }
 
   .tab-content {
-    margin-top: 20px;
+    // margin-top: 20px;
+    margin-top: 0;
 
     @media (min-width: $screen-lg) {
       margin-top: 40px;

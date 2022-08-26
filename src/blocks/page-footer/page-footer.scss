@@ -16,8 +16,8 @@
     text-align: left;
   }
 
-  @media (min-width: $screen-xl) {
-    padding: 128px 64px;
+  @media (min-width: $screen-lg) {
+    padding: 38px 64px 64px 128px;
   }
 
   @media (min-width: $screen-xl) {
@@ -46,8 +46,14 @@
 
     @media (min-width: $screen-md) {
       grid-template-rows: auto auto auto;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
     }
+
+    @media (min-width: $screen-lg) {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
 
     @media (min-width: $screen-xl) {
       grid-template-rows: auto auto auto auto;
@@ -56,7 +62,7 @@
 
     @media (min-width: $screen-xxl) {
       grid-template-rows: auto 1fr auto auto;
-      gap: 0 30px;
+      gap: 0 20px;
     }
   }
 
@@ -96,6 +102,7 @@
     @media (min-width: $screen-lg) {
       grid-column-start: 3;
       grid-column-end: 4;
+      justify-self: start;
     }
 
     @media (min-width: $screen-xl) {

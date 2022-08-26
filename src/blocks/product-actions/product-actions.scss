@@ -29,11 +29,15 @@
       padding: 7px 16px;
     }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xl) {
       .btn--fav {
         margin-right: 8px;
         }
       }
+  }
+
+  .product-card  & {
+    margin-top: 18px;
   }
 
 
@@ -58,11 +62,26 @@
   }
 
   .btn--fav {
+    margin-left: auto;
+    font-size: 20px;
+    line-height: 1;
+    margin-right: 3px;
 
     &:hover,
     &:focus,
     &:active {
       opacity: 0.3;
+    }
+
+    .product-card & {
+      svg {
+        width: 21px;
+        height: 19px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-right: 8px;
+      }
     }
   }
 
@@ -93,12 +112,6 @@
     }
   }
 
-  .btn--fav {
-    margin-left: auto;
-    font-size: 20px;
-    line-height: 1;
-  }
-
   .btn--compare {
     font-size: 20px;
     line-height: 1;
@@ -117,13 +130,22 @@
 
   .product-card & {
     .btn--regular {
-      padding: 7px 16px;
+      padding: 7px 15px;
+      margin-right: 9px;
+
+      @media (min-width: $screen-xxl) {
+        margin-right: 12px;
+      }
     }
 
     .btn--compare {
       @media (min-width: $screen-xxl) {
         margin-right: 10px !important;
       }
+    }
+
+    .btn--cart-add {
+      padding: 7px 16px;
     }
   }
 

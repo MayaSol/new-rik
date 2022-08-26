@@ -19,7 +19,7 @@
     background-size: 7px 5px;
     background-repeat: no-repeat;
     background-color: $tw-gray-100;
-    background-position: right 10px top 50%;
+    background-position: right 15px top 50%;
 
     // &::after {
     //   content: '\f107';
@@ -34,7 +34,7 @@
     // }
 
     select {
-      padding: 6px 15px;
+      padding: 6px 15px 6px 10px;
       font-size: 18px;
       line-height: 28px;
       color: $tw-black;
