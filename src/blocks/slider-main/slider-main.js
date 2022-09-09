@@ -81,11 +81,11 @@ ready(function() {
       container: '.slider-main',
       items: 1,
       slideBy: 1,
-      mouseDrag: false,
+      // mouseDrag: false,
       controls: true,
       nav: false,
       loop: false,
-      preventScrollOnTouch: 'force'
+      // preventScrollOnTouch: 'force'
     });
 
     sliderMain.events.on('transitionEnd', pauseAll);

@@ -5,6 +5,7 @@ var throttle = require('lodash.throttle');
 
 ready(function() {
 
+
   const INPUT_SELECTOR = '.search-form__input';
 
   //  Открыть поиск
@@ -15,8 +16,7 @@ ready(function() {
       if (searchForm[0].classList.contains('active')) {
         mobileSearchClose(searchForm[0]);
         searchForm[0].classList.remove('active');
-      }
-      else {
+      } else {
         mobileSearchOpen(searchForm[0]);
         searchForm[0].classList.add('active');
         searchForm[0].querySelector(INPUT_SELECTOR).focus();
@@ -25,7 +25,7 @@ ready(function() {
     event.stopPropagation();
   });
 
-  // Закрыть поиск по клику вне формы !!! Добавить ESC !!!
+  // Закрыть поиск по клику вне формы
   document.addEventListener('click', (event) => {
     if (event.target.classList.contains('search-form')) {
       if (event.target.classList.contains('active')) {
@@ -43,14 +43,20 @@ ready(function() {
     closeSearchForms();
   });
 
+
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'Escape') {
+      closeSearchForms();
+    }
+  })
+
   function closeSearchForms() {
     let searchForms = document.querySelectorAll('.search-form');
     if (document.documentElement.clientWidth < 1024) {
       for (form of searchForms) {
         mobileSearchClose(form);
       }
-    }
-    else {
+    } else {
       for (form of searchForms) {
         form.classList.remove('active');
       }
@@ -61,13 +67,9 @@ ready(function() {
 
   function mobileSearchOpen(searchFormEl) {
     var screenWidth = document.documentElement.clientWidth;
-    console.log('mobileSearchOpen screenWidth: ' + screenWidth);
     if (screenWidth < 1024) {
-      console.log(searchFormEl.offsetLeft);
-      console.log(screenWidth - searchFormEl.offsetLeft);
       var offsetLeft = findPos(searchFormEl)[0];
       var inputWrapper = searchFormEl.querySelector('.search-form__input-wrapper');
-      console.log(`translateX(${screenWidth - searchFormEl.offsetLeft})px`);
       searchFormEl.style.transform = `translateX(${screenWidth - offsetLeft}px)`;
       inputWrapper.style.width = screenWidth + 'px';
       inputWrapper.style.maxWidth = screenWidth + 'px';
@@ -80,10 +82,10 @@ ready(function() {
       searchFormEl.style.transform = 'none';
       var inputWrapper = searchFormEl.querySelector('.search-form__input-wrapper');
       if (mobileSearchOpened) {
-        inputWrapper.addEventListener('transitionend',function(event) {
+        inputWrapper.addEventListener('transitionend', function(event) {
           console.log('inputWrapper transitionend');
           inputWrapper.style.width = '';
-        }, {once: true});
+        }, { once: true });
       }
       inputWrapper.style.maxWidth = '';
       searchFormEl.classList.remove('active');
@@ -93,20 +95,22 @@ ready(function() {
 
   var searchForms = document.querySelectorAll('.search-form');
 
+  var screenPrev = document.documentElement.clientWidth;
+
   function onResize() {
-    for (var form of searchForms) {
-      mobileSearchClose(form);
+    var screenNext = document.documentElement.clientWidth;
+    if (screenPrev != screenNext) {
+      for (var form of searchForms) {
+        mobileSearchClose(form);
+      }
     }
+    screenPrev = screenNext;
   }
 
   window.addEventListener('resize', throttle(onResize, 200));
 
-  document.addEventListener('keydown', function(event) {
-    console.log(event.code);
-    if (event.code === 'Escape') {
-      closeSearchForms();
-    }
-  })
+
+  //---------------------old
 
   // window.addEventListener('resize', function() {
   //   console.log('window resize');

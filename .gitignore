@@ -12,6 +12,7 @@ src/scss/style.scss
 src/blocks/sprite-svg/img/sprite.svg
 src/blocks/sprite-png/sprite-png.scss
 src/blocks/sprite-png/img/sprite-*.png
+src/img/3d/new/
 
 __MACOSX
 .Saved/

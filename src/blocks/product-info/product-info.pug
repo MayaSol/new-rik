@@ -59,7 +59,8 @@ mixin product-info-view(props={}, mods)
 
   .product-info__view.slider__item(class=allMods)&attributes(attributes)
     .product-info__view-inner
-      .product-info__view-content.cloudimage-360#gurkha-suv(data-folder="img/3d/" data-filename-x="{index}_rikta_3d_w500.jpg" data-amount-x="36" data-keys="true" data-bottom-circle)
+      .product-info__view-content.lazyload.cloudimage-360-w1024(data-folder="img/3d/" data-filename-x="{index}_rikta_3d_w500.jpg" data-amount-x="36" data-keys="true" data-bottom-circle data-width="1024" id=`${props.id}_w1024`)
+      .product-info__view-content.lazyload.cloudimage-360-w360(data-folder="img/3d/" data-filename-x="{index}_rikta_3d_w256.jpg" data-amount-x="36" data-keys="true" data-bottom-circle data-width="360" id=`${props.id}_w360`)
         // .cloudimage__buttons
         //   button.cloudimage-360-left cloudimage-360-left
         //   button.cloudimage-360-right cloudimage-360-right

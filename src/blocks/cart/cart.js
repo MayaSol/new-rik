@@ -4,6 +4,19 @@ const getParents = require('../../js/utils/getParents.js');
 ready(function() {
   let carts = document.querySelectorAll('.cart');
 
+  var css = '.cart__icon-wrapper,.cart__section {pointer-events: none}';
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  if (style.styleSheet) {
+    // This is required for IE8 and below.
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+
+  // head.appendChild(style);
+
   for (cart of carts) {
     cart.addEventListener('click', function() {
       showCart(this);
@@ -33,6 +46,11 @@ ready(function() {
     if (asideParent.length > 0) {
       asideParent[0].classList.add('active');
     }
+
+    cartEl.appendChild(style);
+    cartEl.addEventListener('transitionend', function() {
+      style.remove();
+    },{once: true});
     cartEl.classList.add('cart--show');
   }
 

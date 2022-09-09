@@ -2,14 +2,15 @@ https://www.figma.com/file/MX5DAlqowZvTcOwn2DJhiS/Куски-Рикты?node-id=
 
 ФОто для 3д https://disk.yandex.ru/d/M_VR4vSRfeBLpA
 
-https://www.innovatione.pro/
-
 https://docs.google.com/document/d/1tX4ya9fhRdgv9JVv8iHqUd9QbDmTSzOIEY8mbxMEDzY/edit
 
 Главное меню - по наведению
 Дополнительное меню гамбургер - по клику
 
-Анимация
+Анимация для мобилы
+https://www.multiradiance.com/media/1474/cascadeeffect-with-blue-light_with-01-01.png?width=634
+
+https://www.multiradiance.com/technology/
 
 
 
@@ -41,6 +42,8 @@ https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub
 - в меню по tab не должно быть перехода на зыкрытые вложенные
 - при resize для articles пересчет высоты должен быть только, если мы на этой странице и при переходе на нее
 - что-то со шрифтом (не сразу загружается ?)
+- поверить почему цвет шрифта другой при перелистывании
+- посмотреть как писать логи из js на сервер
 ==========================================================
 3d foto
 =========================================================

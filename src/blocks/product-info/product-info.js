@@ -79,6 +79,29 @@ ready(function() {
     sliderView.events.on('transitionStart', syncText);
     sliderText.events.on('transitionStart', syncView);
 
+
+    document.addEventListener('lazybeforeunveil', function(e){
+      console.log('lazybeforeunveil');
+      console.log(e.target);
+      if (e.target.dataset.folder != 'undefined') {
+        var width = e.target.dataset.width;
+        console.log(width);
+        if (document.documentElement.clientWidth >= width) {
+          if (window.CI360._viewers.length = 0) {
+            window.CI360.init();
+          }
+          e.target.classList.add('cloudimage-360');
+          window.CI360.add(e.target.id);
+        }
+      }
+
+        // var bg = e.target.getAttribute('data-bg');
+        // if(bg){
+        //     e.target.style.backgroundImage = 'url(' + bg + ')';
+        // }
+    });
+
+
     // if (document.documentElement.clientWidth > 1279) {
     //     window.CI360.init();
     // }

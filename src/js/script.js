@@ -31,6 +31,18 @@ ready(function() {
   // }
 
   makeEllipsis('.ellipsis');
+
+
+
+  function addtouchclass() { // first time user touches the screen
+    console.log('touch start');
+      document.documentElement.classList.remove('no-touch');
+      document.documentElement.classList.add('touch'); // add "can-touch" class to document root using classList API
+      document.removeEventListener('touchstart', addtouchclass, false) // de-register touchstart event
+  }
+
+  document.addEventListener('touchstart', addtouchclass, false);
+
 });
 
 

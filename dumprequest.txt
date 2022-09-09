@@ -1,0 +1,9 @@
+
+Request body:
+initial width: 360
+
+Request body:
+btnSearch click: searchOpened = false, 1, open
+
+Request body:
+onresize: 360

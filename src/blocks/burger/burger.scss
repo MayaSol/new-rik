@@ -4,7 +4,6 @@
 
 .burger {
 
-
   $block-name: &; // #{$block-name}__element
 
   display: inline-block;
@@ -41,7 +40,7 @@
     bottom: 5px;
   }
 
-  &:hover:not(#{$block-name}--closed):not(#{$block-name}--close) {
+  @at-root .no-touch &:hover:not(#{$block-name}--closed):not(#{$block-name}--close) {
     &:before {
       top: 10px;
     }
@@ -50,6 +49,16 @@
       bottom: 10px;
     }
   }
+
+  // @at-root .touch &:active:not(#{$block-name}--closed):not(#{$block-name}--close) {
+  //   &:before {
+  //     top: 10px;
+  //   }
+
+  //   &:after {
+  //     bottom: 10px;
+  //   }
+  // }
 
 
   &--close#{$block-name}--animated,
@@ -71,7 +80,6 @@
     &:after {
       transform: rotate3d(0, 0, 1, -45deg);
     }
-
   }
 
   &--closed,

@@ -7,19 +7,13 @@
         truncateElement(el, lines);
       }
       else {
-        console.log('truncate by height');
-        console.log(el);
+        // console.log('truncate by height');
         var lineHeight = getLineHeight(el);
-        console.log('lineHeight: ' + lineHeight);
         var elHeight = el.clientHeight;
-        console.log('elHeight: ' + elHeight);
-        console.log('scrollHeight: ' + el.scrollHeight);
-        console.log(elHeight / lineHeight);
         lines = parseInt(elHeight / lineHeight);
-        console.log(lines);
         // lines = (lines > 1) ? lines -1 : lines;
         truncateElement(el, lines);
-        console.log('truncate by height --------------------------');
+        // console.log('truncate by height --------------------------');
       }
     }
   }
@@ -46,10 +40,10 @@ var truncateElement = function(element, lines) {
   var lineHeight = getLineHeight(element);
   var maxHeight = lines * lineHeight;
 
-  console.log('lineHeight = ' + lineHeight);
-  console.log('lines = ' + lines);
-  console.log('maxHeight = ' + maxHeight);
-  console.log('element.clientHeight =' + element.clientHeight);
+  // console.log('lineHeight = ' + lineHeight);
+  // console.log('lines = ' + lines);
+  // console.log('maxHeight = ' + maxHeight);
+  // console.log('element.clientHeight =' + element.clientHeight);
 
 
   // let div = document.createElement('div');
@@ -76,8 +70,8 @@ var truncateElement = function(element, lines) {
     truncateTextParts.pop();
     element.innerHTML = truncateTextParts.join(' ') + '...';
     // initial.innerHTML = div.innerHTML;
-    console.log(truncateTextParts.length, maxHeight, element.clientHeight);
-    console.log(element.innerHTML);
+    // console.log(truncateTextParts.length, maxHeight, element.clientHeight);
+    // console.log(element.innerHTML);
     //   console.log('element.clientHeight = ' + element.clientHeight);
     // console.log('maxHeight = ' + maxHeight);
     //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
