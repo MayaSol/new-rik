@@ -38,7 +38,15 @@
 
   .product-card  & {
     margin-top: 18px;
+
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-top: 10px;
+      }
+    }
+
   }
+
 
 
   .btn {

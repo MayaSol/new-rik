@@ -72,7 +72,8 @@ ready(function() {
         }
       }
 
-    } else {
+    }
+    else {
 
       if (sliderAreas && sliderAreas.destroy) {
         sliderAreas.destroy();

@@ -1,0 +1,49 @@
+//- Все примеси в этом файле должны начинаться c имени блока (form-filter)
+
+mixin form-filter(mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-filter--' + modsList[i].trim();
+      }
+    }
+
+  form.form-filter(class=allMods)&attributes(attributes)
+    block
+
+
+mixin form-filter-item(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-filter__item--' + modsList[i].trim();
+      }
+    }
+
+  .form-filter__item(class=allMods)&attributes(attributes)
+    +btn('','clean,collapse')(class="collapsed form-filter__btn" type="button" data-bs-toggle="collapse" data-bs-target=`#${props.targetId}` aria-expanded="false" aria-controls="collapseExample")
+      span.form-filter__item-title= props.title
+
+
+mixin form-filter-content(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' form-filter__item-content--' + modsList[i].trim();
+      }
+    }
+
+  .form-filter__item-content.collapse(id=props.id)(class=allMods)&attributes(attributes)
+    block

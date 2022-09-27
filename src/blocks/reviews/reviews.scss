@@ -12,6 +12,12 @@
     margin-top: 15px;
   }
 
+  @media (min-width: $onepage-width) {
+    .screen-low & {
+      margin-top: 0;
+    }
+  }
+
   &__tab-select-wrapper {
     margin-top: 20px;
     margin-bottom: 0;
@@ -19,10 +25,6 @@
     @media (min-width: $screen-md) {
       margin-top: 0;
     }
-  }
-
-  &__tab-select {
-    width: 100%;
   }
 
   &__item {
@@ -34,6 +36,13 @@
       padding-top: 20px;
     }
 
+     @media (min-width: $onepage-width) {
+      .screen-low & {
+        min-height: 300px;
+        padding-top: 0 !important;
+      }
+     }
+
     .btn {
       @media (min-width: $screen-lg) {
         grid-column-start: 2;
@@ -41,6 +50,12 @@
         justify-self: start;
         margin-top: 20px;
       }
+
+     @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-top: 10px;
+      }
+     }
     }
   }
 
@@ -52,6 +67,13 @@
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
     }
+
+     @media (min-width: $onepage-width) {
+      .screen-low & {
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+      }
+     }
 
     @media (min-width: $screen-xxl) {
       padding: 20px 55px 40px 30px ;
@@ -187,6 +209,13 @@
     @media (min-width: $screen-lg) {
       margin-top: 40px;
     }
+
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-top: 20px;
+      }
+    }
+
   }
 
   .nav-tabs {
@@ -201,6 +230,17 @@
       width: 80%;
       background-color: $tw-gray-200;
       z-index: -1;
+    }
+
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-bottom: 0;
+
+        .nav-link {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
     }
   }
 

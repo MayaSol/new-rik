@@ -1,0 +1,37 @@
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="21.11684"
+   height="28.183725"
+   viewBox="0 0 21.11684 28.183725"
+   enable-background="new 0 0 47 47"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1416" />
+<g
+   id="g1411"
+   transform="rotate(180,17.064986,18.833015)">
+	<g
+   id="g1409">
+		<polygon
+   class="tens_line_1"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.5"
+   stroke-miterlimit="10"
+   points="20.893,28.895 18.63,28.895 19.534,36.234 13.427,23.866 15.574,23.866 13.427,19.782 16.142,19.782 15.35,10.894 21.344,23.866 18.856,23.866 "
+   id="polygon1405" />
+		<polygon
+   class="tens_line_2"
+   fill="none"
+   stroke="#000000"
+   stroke-width="0.5"
+   stroke-miterlimit="10"
+   points="33.287,28.895 31.026,28.895 31.931,36.234 25.821,23.866 27.97,23.866 25.821,19.782 28.537,19.782 27.743,10.894 33.739,23.866 31.253,23.866 "
+   id="polygon1407" />
+	</g>
+</g>
+</svg>

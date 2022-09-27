@@ -7,13 +7,17 @@
   $block-name: &; // #{$block-name}__element
 
   &.slider__item {
-  display: flex !important;
+    display: flex !important;
   }
 
 
   &__inner {
     display: flex;
     flex-direction: column;
+
+    @media (min-width: $onepage-width) {
+      height: 100%;
+    }
   }
 
   &__img {
@@ -28,8 +32,15 @@
       transition: transform $transition-time-img;
     }
 
+
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        height: 170px;
+      }
+    }
+
     @media (min-width: $screen-xxl) {
-      height: 242px;
+      // height: 242px; !!!!
 
       &:hover {
         img {
@@ -54,6 +65,12 @@
     &:active {
       color: currentColor;
       opacity: 0.7;
+    }
+
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-top: 12px;
+      }
     }
 
     @media (min-width: $screen-xxl) {

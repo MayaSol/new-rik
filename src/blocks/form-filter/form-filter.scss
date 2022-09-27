@@ -1,0 +1,21 @@
+// В этом файле должны быть стили для БЭМ-блока form-filter, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.form-filter {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__item-wrapper {
+    padding: 25px 0;
+    border-bottom: 1px solid $tw-gray-200;
+  }
+
+  .field-toggler {
+    margin-top: 14px;
+  }
+
+  .field-checkbox:first-child {
+    margin-top: 14px;
+  }
+}

@@ -33,8 +33,25 @@
     @media (min-width: $screen-lg) {
       margin-bottom: 8px;
     }
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-bottom: 0;
+      }
+    }
     @media (min-width: $screen-xl) {
       margin-bottom: 11px;
+      .screen-low & {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__title {
+    @media (min-width: $onepage-width) {
+      .screen-low & {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
     }
   }
 

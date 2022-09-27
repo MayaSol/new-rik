@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (contacts-others)
+
+mixin contacts-others(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-others--' + modsList[i].trim();
+      }
+    }
+
+  .container.contacts__others.mt-60px.lg_mt-50px.lg_flex.justify-between(class=allMods)&attributes(attributes)
+    block
+
+
+mixin contacts-others-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-others--' + modsList[i].trim();
+      }
+    }
+
+  .contacts__others-item.pb-20px.mb-20px
+    .mb-10px.text-gray-500!= props.name
+    .text-lg.whitespace-nowrap
+      a.mr-5px(href=props.tel)= props.tel_text
+      -
+        var text = "доб." +  props.add
+      span.text-sm.text-gray-500= text
+    a.block(href=props.mailto)= props.mail

@@ -19,6 +19,7 @@
 
     @media (min-width: $onepage-width) {
       height: 100%;
+      grid-template-rows: 30% 70%;
     }
 
     @media (min-width: $screen-xxl) {
@@ -68,7 +69,7 @@
     }
 
     @media (min-width: $onepage-width) {
-      margin-top: 28.5%;
+      margin-top: auto;
     }
 
     @media (min-width: $screen-xxl) {

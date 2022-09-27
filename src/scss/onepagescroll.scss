@@ -57,12 +57,25 @@ body, .onepage-wrapper, html {
   display: flex;
   align-items: center;
   text-align: center;
+
+  &:last-child {
+    display: none;
+  }
 }
-.onepage-pagination li a{
+
+.onepage-pagination li a {
   display: block;
   position: relative;
   height: 27px;
   width: 100%;
+
+  &:hover {
+
+    &::before {
+      background-color: $tw-blue_link;
+      width: 100%;
+    }
+  }
 }
 
 .onepage-pagination li a:before{
@@ -77,6 +90,7 @@ body, .onepage-wrapper, html {
 }
 
 .onepage-pagination li a.active:before{
+  background-color: $tw-blue_link;
   width: 100%;
 }
 

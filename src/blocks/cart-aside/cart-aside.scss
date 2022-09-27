@@ -17,7 +17,7 @@
   }
 
    @media (min-width: $screen-xxl) {
-    padding-top: 600px;
+    padding-top: 90vh;
    }
 
   @media (min-width: $screen-3xl) {
@@ -35,7 +35,7 @@
     z-index: 20;
   }
 
-  .viewing-page-9 & {
+  .viewing-page-10 & {
     display: none;
   }
 }

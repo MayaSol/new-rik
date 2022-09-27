@@ -11,14 +11,14 @@ ready(function(){
   var findLinkClassName = new RegExp(linkClassName);
   // Слежение за всплывшим событием focus (нужно добавить класс, показывающий потомков)
   document.addEventListener('focus', function(event) {
-    console.log('main-nav.js focus');
-    console.log(event.target);
+    // console.log('main-nav.js focus');
+    // console.log(event.target);
     var parentLink = getParents(event.target,'.main-nav__link');
     // Если событие всплыло от одной из ссылок гл. меню
     if (parentLink.length >0 && findLinkClassName.test(parentLink.className)) {
       // И если это главное меню
       var parentNavMain = getParents(event.target,'.nav--main');
-      console.log(parentNavMain);
+      // console.log(parentNavMain);
       if (parentNavMain.length > 0) {
         // Добавим классы, показывающие списки вложенных уровней, на всех родителей
         var parents = getParents(event.target, '.main-nav__item');
@@ -27,7 +27,7 @@ ready(function(){
         }
       }
     }
-    console.log('----------------------');
+    // console.log('----------------------');
   }, true);
   // Слежение за всплывшим событием blur (нужно убрать класс, показывающий потомков)
   document.addEventListener('blur', function(event) {
@@ -44,17 +44,15 @@ ready(function(){
 
 
   var navMobile = document.querySelector('.nav--mobile');
-  console.log(navMobile);
 
   navMobile.addEventListener('click', function(event) {
-    console.log('navMobile click');
-    console.log(event.target);
+    // console.log('navMobile click');
+    // console.log(event.target);
     var parentLink = getParents(event.target,'.main-nav__link');
-    console.log(parentLink);
+    // console.log(parentLink);
     if (parentLink.length > 0 && parentLink[0].classList.contains('main-nav__link')) {
-      console.log('1');
         var parents = getParents(event.target, '.main-nav__item--has-child');
-        console.log(parents);
+        // console.log(parents);
         if (parents.length > 0) {
           event.preventDefault();
           // var sublist = parents[0].querySelector('.main-nav__sublist-wrapper');

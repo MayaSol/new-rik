@@ -4,6 +4,7 @@ archive/
 !build/readme.md
 test.html
 test.css
+tmp/
 
 src/pug/mixins.pug
 src/js/entry.js

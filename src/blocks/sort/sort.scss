@@ -1,0 +1,63 @@
+// В этом файле должны быть стили для БЭМ-блока sort, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.sort {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__icon {
+    width: 12px;
+    height: 10px;
+    position: relative;
+
+    span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 12px;
+      height: 1px;
+      background-color: $tw-black;
+      border-radius: 50%;
+
+      .sort-asc & {
+        width: 4px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 8px;
+        height: 1px;
+        background-color: $tw-black;
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 1px;
+        background-color: $tw-black;
+        border-radius: 50%;
+
+        .sort-asc & {
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    color: $tw-gray-300;
+
+    &--active {
+      color: $tw-black;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+// В этом файле должны быть стили для БЭМ-блока range-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.range-slider {
+
+  $block-name:                &; // #{$block-name}__element
+
+
+  &__wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &.noUi-target {
+    height: 1px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .noUi-connects {
+    background-color: $tw-gray-200;
+  }
+
+  .noUi-connect {
+    background-color: $tw-green;
+  }
+
+  .noUi-handle {
+    width: 10px;
+    height: 10px;
+    top: 0;
+    right: -5px;
+    border: 2px solid $tw-green;
+    border-radius: 3px;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

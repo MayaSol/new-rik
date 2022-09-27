@@ -1,5 +1,6 @@
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 const ready = require('../../js/utils/documentReady.js');
+const closest = require('closest');
 
 ready(function() {
   if (document.querySelector('.product-info__views-list') && document.querySelector('.product-info__text-list')) {
@@ -14,21 +15,6 @@ ready(function() {
       loop: false,
       preventScrollOnTouch: 'force',
       touch: false,
-      // responsive: {
-      //   700: {
-      //     items: 2,
-      //     slideBy: 1,
-      //     gutter: 20
-      //   },
-      //   1024: {
-      //     items: 1,
-      //     gutter: 0
-      //   },
-      //   1440: {
-      //     items: 1,
-      //     gutter: 0
-      //   }
-      // }
     });
 
     var sliderText = tns({
@@ -39,21 +25,6 @@ ready(function() {
       controls: false,
       nav: false,
       loop: false,
-      // responsive: {
-      //   700: {
-      //     items: 2,
-      //     slideBy: 1,
-      //     gutter: 20
-      //   },
-      //   1024: {
-      //     items: 1,
-      //     gutter: 0
-      //   },
-      //   1440: {
-      //     items: 1,
-      //     gutter: 0
-      //   }
-      // }
     });
 
     var transition = false;
@@ -76,17 +47,30 @@ ready(function() {
       }
     }
 
-    sliderView.events.on('transitionStart', syncText);
+
+
+
+    sliderView.events.on('transitionStart', function(info) {
+      syncText;
+      init3dView(info);
+    });
     sliderText.events.on('transitionStart', syncView);
 
 
     document.addEventListener('lazybeforeunveil', function(e){
-      console.log('lazybeforeunveil');
-      console.log(e.target);
+
+      // (async () => {
+      //   // await new Promise(resolve => setTimeout(() => resolve('1'), 1000))
+      //  await import('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js')
+      //   .then( (result) => {
+      //     console.log('result: ' + result);
+      //   })
+      // })();
+
       if (e.target.dataset.folder != 'undefined') {
         var width = e.target.dataset.width;
-        console.log(width);
-        if (document.documentElement.clientWidth >= width) {
+        var activeSlide = closest(e.target,'.tns-slide-active');
+        if (document.documentElement.clientWidth >= width && activeSlide) {
           if (window.CI360._viewers.length = 0) {
             window.CI360.init();
           }
@@ -95,16 +79,21 @@ ready(function() {
         }
       }
 
-        // var bg = e.target.getAttribute('data-bg');
-        // if(bg){
-        //     e.target.style.backgroundImage = 'url(' + bg + ')';
-        // }
     });
 
+    function init3dView(info) {
+      // console.log(info);
+      // console.log(info.slideItems[info.displayIndex-1]);
+      var viewContent = info.slideItems[info.displayIndex-1].querySelector('.product-info__view-content');
+      // console.log(viewContent);
+      if (!viewContent.classList.contains('.cloudimage-360')) {
+        viewContent.classList.add('cloudimage-360');
+        window.CI360.add(viewContent.id);
+      }
 
-    // if (document.documentElement.clientWidth > 1279) {
-    //     window.CI360.init();
-    // }
+    }
+
+
 
 
     //range

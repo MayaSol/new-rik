@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (structure-tabs)
+
+mixin structure-tabs(props = {}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' structure-tabs--' + modsList[i].trim();
+      }
+    }
+
+  .structure-tabs(class=allMods)&attributes(attributes)
+    .structure-tabs__inner
+      .nav.flex.flex-col.nav-pills#structure-tabs(role="tablist" aria-orientation="vertical")
+        .structure-tabs__item
+          +structure-tabs-btn({target: "#structure-tab--01", text: "Лазерное излучение", id: "structure-btn-01"})(class="active")
+          +structure-tabs-pane({id: "structure-tab--01", labelledby: "structure-btn-01"})(class="active")
+            p Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+            p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        .structure-tabs__item
+          +structure-tabs-btn({target: "#structure-tab--02", text: "Инфракрасное излучение", id: "structure-btn-02"})
+          +structure-tabs-pane({id: "structure-tab--02", labelledby: "structure-btn-02"})
+            p Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+            p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+
+
+mixin structure-tabs-btn(props,mods)
+
+  button.structure-tabs__btn.nav-link.text-base(data-bs-toggle="pill" data-bs-target=props.target type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" id=props.id)&attributes(attributes)
+    span!= props.text
+
+
+
+mixin structure-tabs-pane(props,mods)
+
+  .structure-tabs__pane.tab-pane.show(id=props.id role="tabpanel" aria-labelledby=props.labelledby tabindex="0")&attributes(attributes)
+    .structure-tabs__pane-inner
+      block
+      +btn('Подробнее')

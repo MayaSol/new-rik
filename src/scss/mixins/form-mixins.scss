@@ -1,18 +1,20 @@
 // stylelint-disable plugin/selector-bem-pattern
 
+
+
 @mixin field-text {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  min-height: calc(#{$field-line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
   margin: 0;
-  border: 1px solid $border-color;
+  border: 1px solid $tw-gray-100;
   border-radius: $border-radius;
   padding: $field-padding-vertical  $field-padding-horizontal;
-  line-height: $line-height;
+  @apply text-base;
   font-size: 1em;
   font-family: inherit;
-  background-color: #fff;
+  background-color: $tw-gray-100;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
 
@@ -23,7 +25,7 @@
   &[disabled],
   &[readonly] {
     cursor: not-allowed;
-    background-color: $gray-lighter;
+    background-color: $tw-gray-50;
   }
 
   &::-webkit-search-cancel-button,
@@ -38,7 +40,7 @@
   }
 
   &::placeholder {
-    color: $text-color-muted;
+    color: $tw-gray-500;
     opacity: 1;
   }
 }
@@ -47,9 +49,9 @@
 @mixin field-help-text {
   display: block;
   padding-top: 0.4em;
-  font-size: $font-size-sm;
   line-height: 1.2em;
   color: $text-color-muted;
+  @apply text-sm;
 
   &:empty { // stylelint-disable-line
     display: none;

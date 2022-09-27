@@ -21,7 +21,7 @@ mixin service(props={}, mods)
   .service(class=allMods)&attributes(attributes)
     .service__inner
       .service__img
-        img.lazyload(data-src=props.url srcset = props.srcset)
+        img.lazyload(data-src=props.url data-srcset = props.srcset)
       h2.section__title Сервис
       .service__info
         block

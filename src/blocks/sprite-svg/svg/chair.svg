@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW 2018 (64-Bit) -->
+
+<svg
+   xml:space="preserve"
+   width="27.037502"
+   height="27.140762"
+   version="1.1"
+   shape-rendering="geometricPrecision"
+   text-rendering="geometricPrecision"
+   image-rendering="optimizeQuality"
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   viewBox="0 0 36.985438 37.126691"
+   id="svg230"
+   sodipodi:docname="chair.svg"
+   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs234" /><sodipodi:namedview
+   id="namedview232"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="28.034483"
+   inkscape:cx="13.50123"
+   inkscape:cy="13.572571"
+   inkscape:window-width="1848"
+   inkscape:window-height="1016"
+   inkscape:window-x="72"
+   inkscape:window-y="27"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Слой_x0020_1" />
+ <g
+   id="Слой_x0020_1"
+   inkscape:label="Слой 1"
+   inkscape:groupmode="layer"
+   transform="translate(-1.367931,-1.2887874)">
+  <metadata
+   id="CorelCorpID_0Corel-Layer" />
+  <line
+   fill="none"
+   stroke="#14142b"
+   stroke-width="1.5"
+   stroke-miterlimit="10"
+   x1="10.53"
+   y1="37.400002"
+   x2="29.299999"
+   y2="37.400002"
+   id="line217" />
+  <path
+   fill="none"
+   stroke="#2460d4"
+   stroke-width="1.5"
+   stroke-miterlimit="10"
+   d="m 14.18,19.92 h 11.48 c 2,0 3.64,1.64 3.64,3.64 v 3.65 H 10.53 v -3.65 c 0,-2 1.64,-3.64 3.65,-3.64 z"
+   id="path219" />
+  <path
+   fill="none"
+   stroke="#14142b"
+   stroke-width="1.5"
+   stroke-miterlimit="10"
+   d="M 31.33,13.3 V 7.87 C 31.33,4.88 28.88,2.44 25.9,2.44 H 13.94 c -2.99,0 -5.43,2.44 -5.43,5.43 v 5.43"
+   id="path221" />
+  <path
+   fill="none"
+   stroke="#14142b"
+   stroke-width="1.5"
+   stroke-miterlimit="10"
+   d="m 6.48,12.75 v 0 c 2.23,0 4.05,1.82 4.05,4.05 V 37.4 H 6.48 C 4.26,37.4 2.44,35.58 2.44,33.35 V 16.8 c 0,-2.23 1.82,-4.05 4.04,-4.05 z"
+   id="path223" />
+  <path
+   fill="none"
+   stroke="#14142b"
+   stroke-width="1.5"
+   stroke-miterlimit="10"
+   d="m 33.35,12.75 v 0 c -2.23,0 -4.05,1.82 -4.05,4.05 v 20.6 h 4.05 c 2.23,0 4.05,-1.82 4.05,-4.05 V 16.8 c 0,-2.23 -1.82,-4.05 -4.05,-4.05 z"
+   id="path225" />
+  <rect
+   fill="none"
+   width="36.985439"
+   height="37.12669"
+   id="rect227"
+   x="1.367931"
+   y="1.2887874"
+   style="stroke-width:0.934106" />
+ </g>
+</svg>

@@ -1,8 +1,9 @@
 const ready = require('./utils/documentReady.js');
 const makeEllipsis = require('./utils/ellipsis.js');
+const throttle = require('lodash.throttle');
+
 
 ready(function() {
-  console.log('script ready');
 
   // const makeEllipsis = function(selector) {
   //   var ellipsisEls = document.querySelectorAll(selector);
@@ -43,6 +44,9 @@ ready(function() {
 
   document.addEventListener('touchstart', addtouchclass, false);
 
+  detectChangeHeight();
+  window.onresize = throttle(detectChangeHeight,500);
+
 });
 
 
@@ -55,6 +59,15 @@ var getLineHeight = function getLineHeight(element) {
     return parseFloat(lineHeight);
   }
 };
+
+var detectChangeHeight = function() {
+  if (document.documentElement.clientHeight < 750) {
+    document.documentElement.classList.add('screen-low');
+  }
+  else {
+    document.documentElement.classList.remove('screen-low');
+  }
+}
 
 var truncateElement = function(element, lines) {
   // console.log('truncateElement');
@@ -69,25 +82,15 @@ var truncateElement = function(element, lines) {
   console.log('maxHeight = ' + maxHeight);
   console.log('element.clientHeight =' + element.clientHeight);
 
-
   // let div = document.createElement('div');
   // div.className = 'test';
   // div.innerHTML = truncateText;
-  // console.log(div);
-
   // let parent = document.querySelector('.test-wrapper');
-
   // parent.append(div);
 
-  // console.log(parent);
-
   // var initial = element;
-
   // var element = div;
-
   // let test = document.querySelector('.test');
-
-  // console.log(test);
 
   //!!! while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {
   while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {

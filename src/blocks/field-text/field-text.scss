@@ -7,7 +7,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: $typo-margin-vertical;
+  margin-bottom: 10px;
 
   &__name {
     @include field-name;
@@ -46,4 +46,36 @@
       background-color: lighten($color-danger, 35%);
     }
   }
+
+  &--price {
+    #{$block-name}__input-wrap {
+      position: relative;
+        &::after {
+        content: '\0440\2E';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        color: $tw-gray-300;
+        transform: translateY(-50%);
+      }
+    }
+
+    #{$block-name}__input {
+      position: relative;
+      width: 122px;
+      padding: 10px 35px 10px 20px;
+      border :none;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+  }
+
+  &--price-from {
+    justify-self: start;
+  }
+
+  &--price-to {
+    justify-self: end;
+  }
+
 }

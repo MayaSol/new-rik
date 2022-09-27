@@ -1,0 +1,36 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="36.327px" height="100.479px" viewBox="0 0 36.327 100.479" enable-background="new 0 0 36.327 100.479"
+	 xml:space="preserve">
+<g opacity="0.8">
+		<linearGradient id="blueGradient" gradientUnits="userSpaceOnUse" x1="352.6641" y1="130.2163" x2="352.6641" y2="34.0576" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -343.2939 42.4362)">
+		<stop  offset="0" style="stop-color:#D8E5F2;stop-opacity:0.2743"/>
+		<stop  offset="0.125" style="stop-color:#C5D9EC;stop-opacity:0.4093"/>
+		<stop  offset="0.325" style="stop-color:#AECAE5;stop-opacity:0.6253"/>
+		<stop  offset="0.5122" style="stop-color:#A0C1E1;stop-opacity:0.8274"/>
+		<stop  offset="0.672" style="stop-color:#9BBEDF"/>
+		<stop  offset="0.9516" style="stop-color:#86A7CE"/>
+	</linearGradient>
+    <linearGradient id="blueGradientAnimate" gradientUnits="userSpaceOnUse" x1="352.6641" y1="130.2163" x2="352.6641" y2="34.0576" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -343.2939 42.4362)">
+    <stop  offset="0" style="stop-color:#D8E5F2;stop-opacity:0.2743">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.125" style="stop-color:#C5D9EC;stop-opacity:0.4093">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.325" style="stop-color:#AECAE5;stop-opacity:0.6253">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.5122" style="stop-color:#A0C1E1;stop-opacity:0.8274">
+       <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.672" style="stop-color:#9BBEDF">
+       <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.9516" style="stop-color:#86A7CE">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+  </linearGradient>
+	<path class="ray" fill="url(#blueGradient)" d="M0.012,88.086c0.015-0.262,19-78.078,19-78.078C20.083-3.19,37.351-3.408,36.279,9.79
+		c0,0-6.998,82.123-7,82.177C28.612,104.891-0.677,100.911,0.012,88.086z"/>
+</g>
+</svg>

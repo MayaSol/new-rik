@@ -33,7 +33,7 @@ mixin reviews(text, mods)
           .reviews__slider.reviews__slider--profs
             +reviews-user-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -43,7 +43,7 @@ mixin reviews(text, mods)
                 p Результат был очень быстрым и неожиданно хорошим: через 5 дней я уже могла сидеть, стало меньше болей при ходьбе. Замечательный врач-невропатолог Семакин Валерий Федорович помимо уколов и капельниц делал блокады, мануальную терапию. И сочетал все это с лечением аппаратом МИЛТА. После первого курса лечения я уехала со значительным улучшением состояния. Через 3 месяца мне провели повторный курс, затем через полгода. И на протяжении следующих 5 лет ездила на лечение к этому доктору каждые полгода. Операцию делать не пришлось, несмотря даже на то, что в 2004 г. после падения обнаружилась еще одна грыжа.
             +reviews-user-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 2',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -52,7 +52,7 @@ mixin reviews(text, mods)
                 p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию.
             +reviews-user-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 3',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -62,7 +62,7 @@ mixin reviews(text, mods)
           .reviews__slider.slider.reviews__slider--users
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -70,7 +70,7 @@ mixin reviews(text, mods)
               .reviews__item-text.ellipsis(data-lines='8')
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 2',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -78,7 +78,7 @@ mixin reviews(text, mods)
               .reviews__item-text.ellipsis(data-lines='8')
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 3',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -88,7 +88,7 @@ mixin reviews(text, mods)
           .reviews__slider.reviews__slider--videos
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -96,7 +96,7 @@ mixin reviews(text, mods)
               .reviews__item-text.ellipsis(data-lines='8')
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 2',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -104,7 +104,7 @@ mixin reviews(text, mods)
               .reviews__item-text.ellipsis(data-lines='8')
             +reviews-item(
               {
-                url: '/img/user-reviews-avatar.jpg',
+                url: 'img/user-reviews-avatar.jpg',
                 name: 'Туманина Вера 3',
                 info: 'С. Федосеевка'
               })(class="slider__item")
@@ -146,7 +146,7 @@ mixin reviews-user-item(props={}, mods)
     .reviews__item-inner.slider-card__inner
       .reviews__item-author
         .reviews__item-avatar
-          img(src=props.url)
+          img.lazyload(data-src=props.url)
         .reviews__item-name= props.name
         .reviews__item-info= props.info
       block
@@ -170,7 +170,7 @@ mixin reviews-item(props={}, mods)
     .reviews__item-inner.slider-card__inner
       .reviews__item-author
         .reviews__item-avatar
-          img(src=props.url)
+          img.lazyload(data-src=props.url)
         .reviews__item-name= props.name
         .reviews__item-info= props.info
       block

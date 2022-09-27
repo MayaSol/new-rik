@@ -1,0 +1,120 @@
+//- Все примеси в этом файле должны начинаться c имени блока (structure)
+
+mixin structure(props = {}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' structure--' + modsList[i].trim();
+      }
+    }
+
+  .structure.structure(class=allMods)&attributes(attributes)
+    .structure__inner.structure__inner
+      .structure__features#structureFeatures
+        //- .structure__features-item
+        //-   h2.structure__features-header#heading-01
+        //-     button.structure__features-btn.text-base(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-01" aria-expanded="true" aria-controls="collapse-01")
+        //-       i.block.structure__features-icon
+        //-         +svg('laser','',{width: 41, height: 26})
+        //-       span Лазерное излучение
+        //-   .structure__features-collpase.collapse.show#collapse-01(aria-labelledby="heading-01" data-bs-parent="#structureFeatures")
+        //-     .structure__features-content
+        //-       p Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+        //-       p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-01",
+          target_id: "collapse-01",
+          name: 'Лазерное излучение',
+          icon: 'laser',
+          icon_width: 41,
+          icon_height: 26,
+          show: true
+        })
+          p Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-02",
+          target_id: "collapse-02",
+          name: 'Инфракрасное излучение',
+          icon: 'infrared',
+          icon_width: 41,
+          icon_height: 32,
+        })
+          p 2 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-03",
+          target_id: "collapse-03",
+          name: 'Красный свет',
+          icon: 'red-light',
+          icon_width: 41,
+          icon_height: 32
+        })
+          p 3 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-04",
+          target_id: "collapse-04",
+          name: 'Cиний свет',
+          icon: 'blue-light',
+          icon_width: 41,
+          icon_height: 32
+        })
+          p 4 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-05",
+          target_id: "collapse-05",
+          name: 'Магнитное поле',
+          icon: 'magnet',
+          icon_width: 40,
+          icon_height: 40
+        })
+          p 5 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+        +structure-item({
+          header_id: "heading-06",
+          target_id: "collapse-06",
+          name: 'TENS-терапия',
+          icon: 'tens',
+          icon_width: 40,
+          icon_height: 40
+        })
+          p 6 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
+          p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
+      .structure__btns
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-01" aria-expanded="true" aria-controls="collapse-01")
+          +svg('laser','',{width: 41, height: 26})
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-02" aria-expanded="true" aria-controls="collapse-02")
+          +svg('infrared','',{width: 41, height: 32})
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-03" aria-expanded="true" aria-controls="collapse-03")
+          +svg('red-light','',{width: 41, height: 32})
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-04" aria-expanded="true" aria-controls="collapse-04")
+          +svg('blue-light','',{width: 41, height: 32})
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-05" aria-expanded="true" aria-controls="collapse-05")
+          +svg('magnet','',{width: 40, height: 40})
+        button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#collapse-06" aria-expanded="true" aria-controls="collapse-06")
+          +svg('tens','',{width: 36, height: 38})
+
+
+mixin structure-item(props,mods)
+
+  -
+    var collapseClasses = "structure__features-collpase collapse text-sm";
+    if (props.show) {
+      collapseClasses += " show";
+    }
+
+  .structure__features-item&attributes(attributes)
+    h2.structure__features-header(id=props.header_id)
+      button.structure__features-btn.text-base(type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
+        i.block.structure__features-icon
+          +svg(props.icon,'',{width: props.icon_width, height: props.icon_height})
+        span!= props.name
+    div(id = props.target_id class=collapseClasses aria-labelledby=props.header_id data-bs-parent="#structureFeatures")
+      .structure__features-content
+        block

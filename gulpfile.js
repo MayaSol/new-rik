@@ -44,7 +44,9 @@ const path = require('path');
 const tailwindcss = require('tailwindcss');
 const concat = require('gulp-concat');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminPngquant = require('imagemin-pngquant');
+// import imagemin from 'imagemin';
 
 // Глобальные настройки этого запуска
 // const buildLibrary = process.env.BUILD_LIBRARY == 'yes' ? true : false;
@@ -176,14 +178,68 @@ function copyImg(cb) {
 }
 exports.copyImg = copyImg;
 
+// function minifyImgs(cb) {
+//   let minifyImgs = [];
+//   nth.blocksFromHtml.forEach(function(block) {
+//     let src = `${dir.blocks}${block}/img`;
+//     if (fileExist(src)) minifyImgs.push(src);
+//   });
+//   nth.config.alwaysAddBlocks.forEach(function(block) {
+//     let src = `${dir.blocks}${block}/img`;
+//     if (fileExist(src)) minifyImgs.push(src);
+//   });
+//   if (minifyImgs.length) {
+//     for (let src of minifyImgs) {
+//       (async () => {
+//         await imagemin(src, {
+//           destination: src,
+//           plugins: [
+//             imageminJpegtran(),
+//             imageminPngquant({
+//               quality: [0.6, 0.8]
+//             })
+//           ]
+//         });
+//       })();
+//     }
+//     cb();
+//   }
+//   else {
+//     cb();
+//   }
+// }
+// exports.minifyImgs = minifyImgs;
+
+
+function minifyImgs(cb) {
+  (async () => {
+     const files = await imagemin(['src/img/*.{png,jpg}'], {
+      destination: 'src/img/test/',
+      plugins: [
+        imageminJpegtran(),
+        imageminPngquant({
+          quality: [0.6, 0.8]
+        })
+      ]
+    });
+       console.log(files);
+
+  })();
+  cb();
+}
+exports.minifyImgs = minifyImgs;
+
 
 function generateSvgSprite(cb) {
   let spriteSvgPath = `${dir.blocks}sprite-svg/svg/`;
   if (nth.config.alwaysAddBlocks.indexOf('sprite-svg') > -1 && fileExist(spriteSvgPath)) {
     return src(spriteSvgPath + '*.svg')
-      .pipe(svgmin(function() {
-        return { plugins: [{ cleanupIDs: { minify: true } }] }
-      }))
+      // .pipe(svgmin(function() {
+      //   return { plugins: [
+      //     { cleanupIDs: { minify: true } },
+      //     { removeViewBox: { active: false } }
+      //   ]}
+      // }))
       .pipe(svgstore({ inlineSvg: true }))
       .pipe(rename('sprite.svg'))
       .pipe(dest(`${dir.blocks}sprite-svg/img/`));
@@ -192,6 +248,23 @@ function generateSvgSprite(cb) {
   }
 }
 exports.generateSvgSprite = generateSvgSprite;
+
+
+function generateInlineSvgSprite(cb) {
+  let spriteSvgPath = `${dir.blocks}sprite-svg-inline/svg/`;
+  if (nth.config.alwaysAddBlocks.indexOf('sprite-svg-inline') > -1 && fileExist(spriteSvgPath)) {
+    return src(spriteSvgPath + '*.svg')
+      .pipe(svgmin(function() {
+        return { plugins: [{ cleanupIDs: { minify: true } }] }
+      }))
+      .pipe(svgstore({ inlineSvg: true }))
+      .pipe(rename('sprite-inline.svg'))
+      .pipe(dest(`${dir.blocks}sprite-svg-inline/img/`));
+  } else {
+    cb();
+  }
+}
+exports.generateInlineSvgSprite = generateInlineSvgSprite;
 
 
 function generatePngSprite(cb) {
@@ -284,9 +357,9 @@ function compileSass() {
     .pipe(debug({ title: 'Compiles:' }))
     .pipe(sass({ includePaths: [__dirname + '/', 'node_modules'] }))
     .pipe(postcss(postCssPlugins))
-    // .pipe(csso({
-    //   restructure: false,
-    // }))
+    .pipe(csso({
+      restructure: false,
+    }))
     .pipe(rename('style.css'))
     .pipe(dest(`${dir.build}css`, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
@@ -644,7 +717,7 @@ function serve() {
 
 exports.build = series(
   parallel(clearBuildDir, writePugMixinsFile),
-  parallel(compilePugFast, copyAssets, generateSvgSprite, generatePngSprite),
+  parallel(compilePugFast, copyAssets, generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
   parallel(copyImg, writeSassImportsFile, writeJsRequiresFile),
   clearCssDir,
   writeTailwindToSass,
@@ -657,7 +730,7 @@ exports.build = series(
 
 exports.default = series(
   parallel(clearBuildDir, writePugMixinsFile),
-  parallel(compilePugFast, copyAssets, generateSvgSprite, generatePngSprite),
+  parallel(compilePugFast, copyAssets, generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
   parallel(copyImg, writeSassImportsFile, writeJsRequiresFile),
   clearCssDir,
   writeTailwindToSass,

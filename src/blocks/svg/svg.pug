@@ -1,19 +1,26 @@
 //- Все примеси в этом файле должны начинаться c имени блока (svg)
 
-mixin svg(icon='', classes, sizes={width:'30',height:'30'},mods)
+mixin svg(icon="", classes, sizes={width:"30",height:"30"},mods,inline=false)
 
   -
     // список модификаторов
-    var allMods = '';
-    if (!(typeof classes === 'unefined') && classes ) {
+    var allMods = "";
+    if (!(typeof classes === "unefined") && classes ) {
       allMods = classes;
     }
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
+    if(typeof(mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' svg--' + modsList[i].trim();
+        allMods = allMods + " svg--" + modsList[i].trim();
       }
     }
 
-  svg(class=allMods width=sizes.width height=sizes.height)&attributes(attributes)
-    use(xlink:href="img/sprite.svg#" + icon)
+    var href = "";
+    if (inline) {
+      href = "#" + icon;
+    } else {
+      href = "img/sprite.svg#" + icon;
+    }
+
+  svg(class=allMods width=sizes.width height=sizes.height aria-hidden="true" focusable="false")&attributes(attributes)
+    use(xlink:href=href)

@@ -3,11 +3,16 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .breadcrumbs {
+  display: none;
   list-style: none;
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
   padding: 0;
   color: $text-color;
+
+  @media (min-width: $screen-lg) {
+    display: block;
+  }
 
   a {
     color: $text-color;

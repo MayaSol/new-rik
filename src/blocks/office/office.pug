@@ -1,0 +1,42 @@
+//- Все примеси в этом файле должны начинаться c имени блока (office)
+
+mixin office(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +office('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' office--' + modsList[i].trim();
+      }
+    }
+
+  .office(class=allMods)&attributes(attributes)
+    block
+
+
+mixin office-item(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' office__item--' + modsList[i].trim();
+      }
+    }
+
+  .office__item(class=allMods href="#")&attributes(attributes)
+    .office__img
+      img.lazyload(
+        data-sizes="auto"
+        data-src=props.url
+        data-srcset=props.srcset)

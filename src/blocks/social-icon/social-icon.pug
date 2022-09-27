@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (social-icon)
+
+mixin social-icon(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social-icon--' + modsList[i].trim();
+      }
+    }
+
+  .social-icon.flex.items-center(class=allMods, role='contentinfo')&attributes(attributes)
+    a.social-icon__link.flex.items-center.hover_opacity-50(href=props.url)
+      +svg(props.icon, '', {width: props.w, height: props.h})

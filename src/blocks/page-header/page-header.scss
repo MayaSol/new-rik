@@ -8,10 +8,12 @@
   left: 0;
   right: 0;
   z-index: 50;
+  display: flex;
+  align-items: center;
   background-color: #fff;
   border-bottom: 1px solid $tw-gray-200;
 
-  &.first-page {
+  .viewing-page-1 & {
     border-color: #fff;
   }
 
@@ -21,25 +23,36 @@
 
   @media (min-width: $screen-xxl) {
     min-height: 90px;
+
+    .screen-low & {
+      min-height: 80px;
+    }
   }
 
   &__inner {
     display: flex;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 8px;
     min-height: 60px;
     font-size: 18px;
     line-height: 28px;
     position: relative;
 
     @media (min-width: $screen-xl) {
-      padding-top: 17px;
-      padding-bottom: 18px;
+      flex-wrap: wrap;
+
+      @media (min-width: $onepage-width) {
+        .screen-low & {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
     }
 
-    @media (max-width: $screen-xl) {
-      flex-wrap: wrap;
+    @media (min-width: $screen-xxl) {
+      padding-top: 17px;
+      padding-bottom: 18px;
     }
   }
 

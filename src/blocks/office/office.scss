@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока office, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.office {
+
+  $block-name:                &; // #{$block-name}__element
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
+  }
+
+  &__item {
+    display: none !important;
+
+    &:first-child {
+      display: block !important;
+    }
+
+    #{$block-name}.tns-slider & {
+      display: inline-block !important;
+    }
+  }
+
+  &__range {
+    display: none;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}

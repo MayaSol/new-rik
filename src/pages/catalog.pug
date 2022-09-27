@@ -1,0 +1,197 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'contacts';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Каталог')
+    section.section.catalog.mt-20px.lg_mt-20px.mb-60px.lg_mb-64px
+      .container.tab.grid(class="grid-cols-[1fr_auto]")
+        .section__title.mb-20px.col-start-1.col-end-3 Продукция
+        .tab__select-wrapper.tab__select-wrapper--catalog.field-select__wrapper.md_container.md_after_hidden.col-start-1.col-end-3.mb-24px
+          select#catalog-tab-select.catalog__tab-select.field-select.md_hidden(name='catalog-tab-select' role='tablist')
+            option(value='#catalog_device' role='tab') Аппараты
+            option(value='#catalog_optical' role='tab') Оптические насадки
+            option(value='#catalog_radiator' role='tab') Излучатели
+            option(value='#catalog_misc' role='tab') Прочие аксессуары
+            option(value='#catalog_books' role='tab') Литература
+        .tab__items-wrapper.col-start-1.col-end-3
+          +tab-items()
+            +tab-item({id: 'catalog_device', targetId: 'catalog_device_pane', name: 'Аппараты', isActive: true})
+            +tab-item({id: 'catalog_optical', targetId: 'catalog_optical_pane', name: 'Оптические насадки'})
+            +tab-item({id: 'catalog_radiator', targetId: 'catalog_radiator_pane', name: 'Излучатели'})
+            +tab-item({id: 'catalog_misc', targetId: 'catalog_misc_pane', name: 'Прочие аксессуары'})
+            +tab-item({id: 'catalog_books', targetId: 'catalog_books_pane', name: 'Литература'})
+        .sort.flex.items-center.mr-auto.col-start-1.col-end-2
+          +btn('','clean,sort')(class="mr-10px")
+            .sort__icon
+              span
+          .sort__item.sort__item--active.mr-12px
+            +btn('По цене','clean')
+          .sort__item
+            +btn('По названию','clean')
+        +btn('','clean,round,filter')(class='catalog__filter col-start-2 col-end-3' data-micromodal-toggle='modal-catalog-filter')
+          +svg('filter','',{width: '16',height: '15'})(class='fill-transparent')
+          span.close
+        .filter.modal.modal--catalog#modal-catalog-filter
+          .modal__container(role='dialog' aria-modal='true' aria-labelledby='filter')
+            .modal__inner
+               +form-filter
+                  main.modal__content
+                    .form-filter__item-wrapper
+                      +form-filter-item({title:'Цена',targetId: 'filter-price'})
+                      +form-filter-content({id: 'filter-price'},'price')(class='grid grid-cols-[1fr_1fr]')
+                        .range-slider__wrapper(class='mb-20px mt-14px col-start-1 col-end-3')
+                          +range-slider({},'catalog')(data-min='0' data-max='200000')
+                        +field-text({
+                          mods: 'price, price-from',
+                          val: '',
+                          attrs: {
+                            name: 'price-from',
+                            class: 'col-start-1 col-end-2'
+                          }
+                        })
+                        +field-text({
+                          mods: 'price, price-to',
+                          val: '',
+                          attrs: {
+                            name: 'price-to',
+                            class: 'col-start-2 col-end-3'
+                          }
+                        })
+                    .form-filter__item-wrapper
+                      +form-filter-item({title:'Регулировка мощности',targetId: 'filter-power'})
+                      +form-filter-content({id: 'filter-power'},'power')
+                        +field-toggler([
+                          {
+                            attrs: {
+                              name: 'filter-power-check',
+                            }
+                          },
+                        ])
+                    .form-filter__item-wrapper
+                      +form-filter-item({title:'Без возрастных ограничений',targetId: 'filter-age'})
+                      +form-filter-content({id: 'filter-age'},'age')
+                        +field-toggler([
+                          {
+                            attrs: {
+                              name: 'filter-age-check',
+                            }
+                          },
+                        ])
+                    .form-filter__item-wrapper
+                      +form-filter-item({title:'Тип',targetId: 'filter-type'})
+                      +form-filter-content({id: 'filter-type'},'type')
+                        +field-checkbox([
+                          {
+                            title: 'Настольный',
+                            attrs: {
+                              name: 'filter-type-desk',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Портативный',
+                            attrs: {
+                              name: 'portable',
+                            }
+                          },
+                        ])
+                    .form-filter__item-wrapper
+                      +form-filter-item({title:'Факторы воздействия',targetId: 'filter-factors'})
+                      +form-filter-content({id: 'filter-factors'},'factors')
+                        +field-checkbox([
+                          {
+                            title: 'Инфракрасное излучение',
+                            attrs: {
+                              name: 'filter-factors-infrared',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Красный свет',
+                            attrs: {
+                              name: 'filter-factors-red',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Лазер',
+                            attrs: {
+                              name: 'filter-factors-laser',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Магнит',
+                            attrs: {
+                              name: 'filter-factors-magnet',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Красный свет',
+                            attrs: {
+                              name: 'filter-factors-red',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Синий свет',
+                            attrs: {
+                              name: 'filter-factors-blue',
+                            }
+                          },
+                        ])
+                        +field-checkbox([
+                          {
+                            title: 'Электротерапия',
+                            attrs: {
+                              name: 'filter-factors-electro',
+                            }
+                          },
+                        ])
+        +tab-content('catalog')
+          +tab-pane({id: 'catalog_device_pane', itemId: 'catalog_device', isShow: true})
+            p device
+          +tab-pane({id: 'catalog_optical_pane', itemId: 'catalog_optical'})
+            p optical
+          +tab-pane({id: 'catalog_radiator_pane', itemId: 'catalog_radiator'})
+            p radiator
+          +tab-pane({id: 'catalog_misc_pane', itemId: 'catalog_misc'})
+            p misc
+          +tab-pane({id: 'catalog_books_pane', itemId: 'catalog_books'})
+            p books
+      .contacts__info.container
+        .text-lg.lg_text-2xl ООО 'Риктамед', АО 'Милта-ПКП ГИТ'
+        .mt-10px.lg_mt-20px Мы производим и продаем аппараты РИКТА.
+        .mt-10px.text-gray-500 Наш офис, производственная площадка и магазин при производстве<br class='xxl_hide'> находятся по адресу: 111020, г. Москва, ул. Боровая, д.&nbsp;7, стр.&nbsp;7.
+        +btn('Скачать все реквизиты','regular')(class='mt-20px lg_mt-15px border-gray-200 text-base' href='#')
+
+
+
+//- block footer
+//-   p footer
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (sprite-svg-inline)
+
+mixin sprite-svg-inline(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +sprite-svg-inline('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' sprite-svg-inline--' + modsList[i].trim();
+      }
+    }
+
+  .sprite-svg-inline(class=allMods)&attributes(attributes)
+    .sprite-svg-inline__inner
+      block

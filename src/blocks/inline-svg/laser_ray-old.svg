@@ -1,0 +1,42 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="41.5px" height="221.898px" viewBox="0 0 41.5 221.898" enable-background="new 0 0 41.5 221.898" xml:space="preserve">
+<g id="laserRayG" opacity="0.4">
+		<linearGradient id="laserGradient" gradientUnits="userSpaceOnUse" x1="361.2305" y1="252.834" x2="361.2305" y2="30.856" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -367.8773 46.5561)">
+		<stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516"/>
+		<stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089"/>
+		<stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411"/>
+		<stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696"/>
+		<stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917"/>
+		<stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047"/>
+		<stop  offset="0.7527" style="stop-color:#DA00F9"/>
+		<stop  offset="0.9624" style="stop-color:#DA00F9"/>
+	</linearGradient>
+    <linearGradient id="laserGradientAnimate" gradientUnits="userSpaceOnUse" x1="361.2305" y1="252.834" x2="361.2305" y2="30.856" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -367.8773 46.5561)">
+    <stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.7527" style="stop-color:#DA00F9">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.9624" style="stop-color:#DA00F9">
+      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+  </linearGradient>
+	<path class="ray" fill="url(#laserGradient)" d="M12,212.355L0,9.727C0-3.487,16-3.116,17,10.098l24,201.273C42,225.037,14,226.156,12,212.355z"/>
+</g>
+</svg>

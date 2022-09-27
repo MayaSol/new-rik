@@ -1,0 +1,79 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tab)
+
+mixin tab-content(mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tab--' + modsList[i].trim();
+      }
+    }
+
+  .tab__content-wrapper.tab-content(class=allMods)&attributes(attributes)
+    block
+
+mixin tab-items(mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tab__items--' + modsList[i].trim();
+      }
+    }
+
+  ul.tab__items(class="nav nav-tabs hidden md_flex" role="tablist")
+    block
+
+
+
+mixin tab-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tab__item--' + modsList[i].trim();
+      }
+    }
+
+
+    if ((typeof props.isActive) === 'undefined') {
+      props.isActive = false;
+    }
+
+    var linkClass="";
+    if (props.isActive) {
+      linkClass="active";
+    }
+
+  li.tab__item.nav-item(role="presentation")
+    button.btn.nav-link(id=props.id data-bs-toggle="tab" data-bs-target="#" + props.targetId type="button" role="tab" aria-controls=props.name aria-selected="true" class=linkClass)= props.name
+
+
+mixin tab-pane(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tab__pane--' + modsList[i].trim();
+      }
+    }
+
+    var paneClass="";
+    if (props.isShow) {
+      paneClass="show active";
+    }
+
+  .tab-pane.fade(id = props.id role="tabpanel" aria-labelledby=props.itemId class=paneClass)
+    block

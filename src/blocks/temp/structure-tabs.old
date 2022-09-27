@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока structure-tabs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.structure-tabs {
+
+  $block-name:                &; // #{$block-name}__element
+
+
+  &__item {
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  &__btn {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 17px 20px 17px 16px;
+    text-align: start;
+    border-radius: 4px;
+    background-color: #fff;
+
+    &.active {
+      margin-bottom: 0;
+      // box-shadow: none;
+    }
+  }
+
+  &__pane {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    transition: max-height 0.2s;
+
+
+    &.active {
+      max-height: 1000px;
+      transition: max-height 0.6s;
+    }
+  }
+
+
+
+}
