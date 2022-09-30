@@ -131,7 +131,7 @@ block content
                       include ../blocks/sprite-svg-inline/svg/radiation.svg
                     .layer.wave.wave3
                       include ../blocks/sprite-svg-inline/svg/radiation.svg
-                .structure__text.mt-20px.text-sm.text-gray-500
+                .structure__text.mt-20px.text-sm.text-gray-500(id="structureText")
                   p РИКТА — результат 30-летних научных изысканий, реализованный в новаторском подходе к светотерапии. Инновационность заключена в применении мультиволновой энергетической комбинации излучений. Эти излучения усиливают эффективность действия терапевтического лазера, который остается безопасным для пациента и врача.
               +structure(class="mt-30px")
       section.section.section-main.section--info(data-page='info' id='info')
@@ -216,12 +216,61 @@ block content
         .section__inner
           .section__content.section__container.container
             +areas
-              +areas-item({url: 'img/area-physio.jpg',caption: 'Физиотерапия'})
-              +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия'})
-              +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология'})
-              +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
-              +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
-              +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария'})
+              +areas-item({url: 'img/area-physio_340x.jpg',caption: 'Физиотерапия',
+                srcset:
+                'img/area-physio_340x.jpg 340w,' +
+                'img/area-physio_440x.jpg 440w,' +
+                'img/area-physio_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'
+              })
+              +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия',
+                srcset:
+                'img/area-pediatr_340x.jpg 340w,' +
+                'img/area-pediatr_440x.jpg 440w,' +
+                'img/area-pediatr_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'              })
+              +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология',
+                srcset:
+                'img/area-cosmo_340x.jpg 340w,' +
+                'img/area-cosmo_440x.jpg 440w,' +
+                'img/area-cosmo_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'              })
+              +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология',
+                srcset:
+                'img/area-stomatol_340x.jpg 340w,' +
+                'img/area-stomatol_440x.jpg 440w,' +
+                'img/area-stomatol_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'              })
+              +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт',
+                srcset:
+                'img/area-sport_340x.jpg 340w,' +
+                'img/area-sport_440x.jpg 440w,' +
+                'img/area-sport_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'              })
+              +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария',
+                srcset:
+                'img/area-vet_340x.jpg 340w,' +
+                'img/area-vet_440x.jpg 440w,' +
+                'img/area-vet_700x.jpg 700w,',
+                sizes: '(max-width: 380px) 340px,' +
+                      '(max-width: 479px) 440px,' +
+                      '(max-width: 699px) 700px,' +
+                      '(min-width: 700px) 440px,'              })
             input.areas__range.field-range(type="range" class="mt-10px")
       section.section.section-main.section--catalog.pt-50px.lg_pt-0(data-page='catalog' id='catalog')
         .section__inner
@@ -261,12 +310,7 @@ block content
       section.section.section-main.section--service.pt-60px.lg_pt-0(data-page='service' id='service')
         .section__inner
           .section__content.section__container.container
-            +service(
-              {
-                url:'img/service-sm.jpg',
-                srcset:'img/service-2x.jpg 640w,' +
-                      'img/service-3x.jpg 1992w'
-              })
+            +service
               ul.service__list.pl-0.text-black
                 li.service__item.flex.items-center.mb-18px.lg_mb-20px.lg_pb-18px.lg_mb-20px
                   i.icon_service-tech.shrink-0.mr-12px.lg_mr-20px

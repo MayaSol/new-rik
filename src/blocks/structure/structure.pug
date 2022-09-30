@@ -35,6 +35,7 @@ mixin structure(props = {}, mods)
           icon: 'infrared',
           icon_width: 41,
           icon_height: 32,
+          collapsed: true
         })
           p 2 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
           p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
@@ -44,7 +45,8 @@ mixin structure(props = {}, mods)
           name: 'Красный свет',
           icon: 'red-light',
           icon_width: 41,
-          icon_height: 32
+          icon_height: 32,
+          collapsed: true
         })
           p 3 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
           p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
@@ -54,7 +56,8 @@ mixin structure(props = {}, mods)
           name: 'Cиний свет',
           icon: 'blue-light',
           icon_width: 41,
-          icon_height: 32
+          icon_height: 32,
+          collapsed: true
         })
           p 4 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
           p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
@@ -64,7 +67,8 @@ mixin structure(props = {}, mods)
           name: 'Магнитное поле',
           icon: 'magnet',
           icon_width: 40,
-          icon_height: 40
+          icon_height: 40,
+          collapsed: true
         })
           p 5 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
           p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
@@ -74,62 +78,45 @@ mixin structure(props = {}, mods)
           name: 'TENS-терапия',
           icon: 'tens',
           icon_width: 40,
-          icon_height: 40
+          icon_height: 40,
+          collapsed: true
         })
           p 6 Технология RIKTA-TENS — оригинальная технология нейроадаптивной чрескожной электростимуляции.
           p Одновременное применение чрескожной электронейростимуляции с лазерным излучением впервые в мире реализовано в аппаратах РИКТА. Не имеет идентичных аналогов. Позволяет получить быстрый и устойчивый обезболивающий и противовоспалительный эффект.
       .structure__btns
         +structure-btn-icon({
           target_id: "collapse-01",
-          icon: "laser",
-          icon_width: 42,
-          icon_height: 26,
           text: "Лазерное<br> излучение",
           animate_target: "#laser_ray"
         })
           include ../inline-svg/laser.svg
         +structure-btn-icon({
           target_id: "collapse-02",
-          icon: "infrared",
-          icon_width: 41,
-          icon_height: 32,
           text: "Инфракрасное<br> излучение",
           animate_target: "#infrared_ray"
         })
-          include ../inline-svg/red-light.svg
+          include ../inline-svg/infrared.svg
           .structure__btns-bottom-text Мультиволновая энергетическая комбинация
         +structure-btn-icon({
           target_id: "collapse-03",
-          icon: "red-light",
-          icon_width: 41,
-          icon_height: 32,
           text: "Красный<br> свет",
           animate_target: "#red_ray"
         })
           include ../inline-svg/red-light.svg
         +structure-btn-icon({
           target_id: "collapse-04",
-          icon: "blue-light",
-          icon_width: 41,
-          icon_height: 32,
           text: "Cиний<br> свет",
           animate_target: "#blue_ray"
         })
           include ../inline-svg/blue-light.svg
         +structure-btn-icon({
           target_id: "collapse-05",
-          icon: "magnet",
-          icon_width: 40,
-          icon_height: 40,
           text: "Магнитное<br> поле",
           animate_target: ".wave"
         })
           include ../inline-svg/magnet.svg
         +structure-btn-icon({
           target_id: "collapse-06",
-          icon: "tens",
-          icon_width: 36,
-          icon_height: 38,
           text: "TENS-терапия",
         })
           include ../inline-svg/tens.svg
@@ -144,9 +131,14 @@ mixin structure-item(props,mods)
       collapseClasses += " show";
     }
 
+    var btnClasses = '';
+    if (props.collapsed) {
+      btnClasses = 'collapsed';
+    }
+
   .structure__features-item&attributes(attributes)
     h2.structure__features-header(id=props.header_id)
-      button.structure__features-btn.text-base(type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
+      button.structure__features-btn.text-base(class=btnClasses type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
         i.block.structure__features-icon
           +svg(props.icon,'',{width: props.icon_width, height: props.icon_height})
         span!= props.name
@@ -162,10 +154,10 @@ mixin structure-item(props,mods)
 
 mixin structure-btn-icon(props,mods)
 
+
   button.structure__btn-icon(type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.target_id data-animate=props.animate_target)
     .structure__btn-icon-inner
       block
-      //- +svg(props.icon,'',{width: props.icon_width, height: props.icon_height})
       span.structure__btn-text!=props.text
 
 

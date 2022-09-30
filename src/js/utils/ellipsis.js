@@ -18,9 +18,6 @@
     }
   }
 
-  // makeEllipsis('.ellipsis');
-
-
 
 var getLineHeight = function getLineHeight(element) {
   var lineHeight = window.getComputedStyle(element)['line-height'];

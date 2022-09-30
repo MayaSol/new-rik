@@ -1,0 +1,43 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="30.5px" height="167.391px" viewBox="0 0 30.5 167.391" enable-background="new 0 0 30.5 167.391" xml:space="preserve">
+<g opacity="0.4">
+		<linearGradient id="lilacGradient" gradientUnits="userSpaceOnUse" x1="351.3145" y1="197.6304" x2="351.3145" y2="32.1885" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
+		<stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516"/>
+		<stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089"/>
+		<stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411"/>
+		<stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696"/>
+		<stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917"/>
+		<stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047"/>
+		<stop  offset="0.7527" style="stop-color:#DA00F9"/>
+		<stop  offset="0.9624" style="stop-color:#DA00F9"/>
+	</linearGradient>
+    <linearGradient id="lilacGradientAnimate" gradientUnits="userSpaceOnUse" x1="351.3145" y1="197.6304" x2="351.3145" y2="32.1885" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
+    <stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.7527" style="stop-color:#DA00F9">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+    <stop  offset="0.9624" style="stop-color:#DA00F9">
+      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    </stop>
+  </linearGradient>
+	<path fill="url(#lilacGradient)" class="ray" d="M1.959,157.323c-0.003-0.075-1-147.523-1-147.523C0.397-3.43,17.975-3.183,18.537,10.046
+		c0,0,11.996,146.342,12,146.437C31.012,169.825,2.429,170.652,1.959,157.323z"/>
+</g>
+</svg>

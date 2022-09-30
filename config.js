@@ -37,7 +37,7 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/_nav.scss',
-    // 'src/scss/onepagescroll.scss'
+    'src/scss/onepagescroll.scss'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -55,7 +55,7 @@ let config = {
     'bootstrap/js/dist/tab.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
-    // './utils/onepagescroll.js'
+    './utils/onepagescroll.js'
   ],
   'addJsAfter': [
     './script.js',

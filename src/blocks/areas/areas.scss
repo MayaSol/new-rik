@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     margin-right: -10px;
+    justify-content: center;
   }
 
   @media (min-width: $screen-lg) {
@@ -30,6 +31,10 @@
 
     @media (min-width: $onepage-width) {
       flex-grow: 1;
+    }
+
+    @media (min-width: $screen-lg) {
+      max-height: 480px; //картинки слишком растягиваются по высоте
     }
   }
 
@@ -58,6 +63,14 @@
       #{$block-name}__item:hover & {
         opacity: 1;
       }
+    }
+
+    @media (min-width: 481px) {
+      height: 300px;
+    }
+
+    @media (min-width: 700px) {
+      height: 236px;
     }
 
     @media (min-width: $onepage-width) {

@@ -61,7 +61,7 @@ mixin slider-item--main(props)
   .slider-main__item.slider-item&attributes(attributes)
     .slider-main__item-inner
       .slider-main__media.slider-main__media--video-bg
-          video(width=props.width height=props.height preload="none" poster="video/" + props.poster)
+          video(width=props.width height=props.height preload="none" poster="video/" + props.poster muted)
             source(src=props.url type=props.type)
           .slider-main__btn-play
       .container.lg_flex.lg_flex-col.lg_justify-center.lg_px-64px.xl_block.xl_pl-130px.xl_pr-60px.xxl_pl-180px.xxl_pr-80px

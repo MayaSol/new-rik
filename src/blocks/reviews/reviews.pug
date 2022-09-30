@@ -44,8 +44,8 @@ mixin reviews(text, mods)
             +reviews-user-item(
               {
                 url: 'img/user-reviews-avatar.jpg',
-                name: 'Туманина Вера 2',
-                info: 'С. Федосеевка'
+                name: 'Антонова Алла: «Воистину умный целитель»',
+                info: 'Бронницы'
               })(class="slider__item")
               a.block.mt-20px.text-xl.text-black.lg_text-2xl.lg_mt-0.xxl_mb-20px.hover_opacity-70(href="#") Рикта - мой помощник и спаситель
               .reviews__item-text.ellipsis(data-lines='8')
@@ -93,7 +93,13 @@ mixin reviews(text, mods)
                 info: 'С. Федосеевка'
               })(class="slider__item")
               a.block.mt-20px.text-xl.text-black.lg_text-2xl.lg_mt-0.xxl_mb-20px.hover_opacity-70(href="#") Рикта - мой помощник и спаситель
-              .reviews__item-text.ellipsis(data-lines='8')
+              +video-yt({
+                url: 'img/review-video-poster-01-w360.jpg',
+                srcset:
+                'img/review-video-poster-01-w480.jpg 361w,' +
+                'img/review-video-poster-01.jpg 560w'
+              })
+                <iframe class="video-yt__frame" id="video-yt__frame" width="560" height="315" src="https://www.youtube.com/embed/F0JM6d28n30?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             +reviews-item(
               {
                 url: 'img/user-reviews-avatar.jpg',

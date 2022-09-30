@@ -5,35 +5,7 @@ const throttle = require('lodash.throttle');
 
 ready(function() {
 
-  // const makeEllipsis = function(selector) {
-  //   var ellipsisEls = document.querySelectorAll(selector);
-
-  //   for (el of ellipsisEls) {
-  //     var lines = el.dataset.lines;
-  //     if (lines) {
-  //       truncateElement(el, lines);
-  //     }
-  //     else {
-  //       console.log('truncate by height');
-  //       console.log(el);
-  //       var lineHeight = getLineHeight(el);
-  //       console.log('lineHeight: ' + lineHeight);
-  //       var elHeight = el.clientHeight;
-  //       console.log('elHeight: ' + elHeight);
-  //       console.log('scrollHeight: ' + el.scrollHeight);
-  //       console.log(elHeight / lineHeight);
-  //       lines = parseInt(elHeight / lineHeight);
-  //       console.log(lines);
-  //       lines = (lines > 1) ? lines -1 : lines;
-  //       truncateElement(el, lines);
-  //       console.log('truncate by height --------------------------');
-  //     }
-  //   }
-  // }
-
   makeEllipsis('.ellipsis');
-
-
 
   function addtouchclass() { // first time user touches the screen
     console.log('touch start');

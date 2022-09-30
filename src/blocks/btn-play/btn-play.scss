@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока btn-play, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.btn-play {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-image: url('../img/play-btn.png');
+  background-size: contain;
+  z-index: 10;
+
+  @media (min-width: $screen-xl) {
+    // opacity: 0;
+    transition: opacity $transition-time;
+  }
+
+  video.playing~& {
+    background-image: url('../img/stop-btn.png');
+  }
+
+  #{$block-name}__media--video-bg:hover & {
+    opacity: 1;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 80px;
+    height: 80px;
+  }
+
+}

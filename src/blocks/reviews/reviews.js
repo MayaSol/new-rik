@@ -9,7 +9,7 @@ ready(function() {
 
 
   var tabSliders = {};
-  var tabsSelect = document.getElementById('reviews-tab-select');
+  const tabsSelect = document.getElementById('reviews-tab-select');
   if (tabsSelect) {
     initSelectTabsTrigger();
     initTabSlider(tabsSelect.value);
@@ -30,18 +30,21 @@ ready(function() {
 
   function initSelectTabsTrigger() {
     if (document.documentElement.clientWidth < 767) {
-      // var tabsSelect = document.getElementById('reviews-tab-select');
+      showActiveTab();
       tabsSelect.addEventListener('change', function(event) {
-        var trigger = document.querySelector('[data-bs-target="' + event.target.value + '"]');
-        var tab = new Tab(trigger);
-        initTabSlider(event.target.value);
-        tab.show();
+        showActiveTab();
       });
     }
   }
 
+  function showActiveTab() {
+        var trigger = document.querySelector('[data-bs-target="' + tabsSelect.value + '"]');
+        var tab = new Tab(trigger);
+        initTabSlider(tabsSelect.value);
+        tab.show();
+  }
+
   function initTabSlider(tabIdSelector) {
-    console.log('initTabSlider');
 
     if (typeof tabSliders[tabIdSelector] === 'undefined') {
       var sliderEl= document.querySelector(tabIdSelector + ' .reviews__slider');

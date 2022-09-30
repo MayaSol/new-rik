@@ -57,7 +57,7 @@ ready(function() {
     sliderText.events.on('transitionStart', syncView);
 
 
-    document.addEventListener('lazybeforeunveil', function(e){
+    document.addEventListener('lazybeforeunveil', function(e) {
 
       // (async () => {
       //   // await new Promise(resolve => setTimeout(() => resolve('1'), 1000))
@@ -66,11 +66,16 @@ ready(function() {
       //     console.log('result: ' + result);
       //   })
       // })();
-
       if (e.target.dataset.folder != 'undefined') {
         var width = e.target.dataset.width;
-        var activeSlide = closest(e.target,'.tns-slide-active');
-        if (document.documentElement.clientWidth >= width && activeSlide) {
+        console.log(e.target);
+        // console.log(e);
+        // console.log(width);
+        // console.log(document.documentElement.clientWidth);
+        // var slide = closest(e.target, '.tns-item');
+        // console.log(slide);
+        if (width && document.documentElement.clientWidth >= width && closest(e.target, '.tns-item').classList.contains('tns-slide-active')) {
+          console.log('1');
           if (window.CI360._viewers.length = 0) {
             window.CI360.init();
           }
@@ -82,15 +87,25 @@ ready(function() {
     });
 
     function init3dView(info) {
+      console.log('init3dView');
       // console.log(info);
       // console.log(info.slideItems[info.displayIndex-1]);
-      var viewContent = info.slideItems[info.displayIndex-1].querySelector('.product-info__view-content');
-      // console.log(viewContent);
-      if (!viewContent.classList.contains('.cloudimage-360')) {
-        viewContent.classList.add('cloudimage-360');
-        window.CI360.add(viewContent.id);
+      console.log(info);
+      var viewContents = info.slideItems[info.displayIndex - 1].querySelectorAll('.product-info__view-content');
+      console.log(viewContents);
+      for (var content of viewContents) {
+        if (
+          !content.classList.contains('.cloudimage-360') &&
+          content.dataset.width &&
+          document.documentElement.clientWidth >= content.dataset.width
+        ) {
+          console.log('2');
+          content.classList.add('cloudimage-360');
+          window.CI360.add(content.id);
+        }
+        // if (!viewContent.classList.contains('.cloudimage-360')) {
+        // }
       }
-
     }
 
 

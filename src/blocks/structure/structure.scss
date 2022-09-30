@@ -168,6 +168,7 @@
     padding-bottom: 20px;
 
     @media (min-width: $screen-lg) {
+      margin-top: -40px;
       padding: 20px;
       border-radius: 4px;
       background-color: #fff;
@@ -178,7 +179,7 @@
       padding: 30px;
     }
 
-    #structure2 & {
+    #structure & {//!!!
       @media (min-width: $screen-lg) {
         box-shadow: none;
         position: relative;
@@ -198,9 +199,9 @@
 
     &:first-of-type {
       @media (min-width: $screen-lg) {
-        padding-right: 40px;
+        // padding-right: 40px;
 
-        #structure2 & {
+        #structure & {//!!!
           padding-right: 45px;
         }
       }
@@ -232,12 +233,11 @@
 
   &__btn-icon {
     width: 100%;
-    height: 122px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: -1px;
-    margin-bottom: 8px;
     border: 1px solid $tw-gray-200;
     border-right: none;
     border-bottom: none;
@@ -357,7 +357,7 @@
       content: '';
       position: absolute;
       left: 0;
-      right: -1px;
+      right: 0;
       bottom: 0;
       height: 10px;
       grid-column-start: 1;
@@ -571,7 +571,7 @@
 
     &.active {
       path {
-        fill: #fff;
+        fill: #fff !important;
       }
     }
   }
@@ -583,7 +583,7 @@
     animation-name: pulse_scale;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
-    transform-origin: center;
+    transform-origin: 57% 50%;
   }
 
   .laser-ray {
@@ -605,7 +605,7 @@
 
   .tens_line_1,
   .tens_line_2 {
-    stroke: #749bc5;
+    // stroke: #749bc5;
     animation-name: pulse_tens;
     -webkit-animation-name: pulse_tens;
     animation-duration: 0.7s;
@@ -738,7 +738,7 @@
 
 @keyframes pulse_scale {
   0% {
-    transform: scale(0.1);
+    transform: scale(0.3);
   }
 
 
@@ -862,7 +862,7 @@
   height: 366px;
   z-index: 1;
   left: 0;
-  top: 0;
+  top: 10px;
   transform: scale(0.4);
 
 
@@ -965,7 +965,6 @@
   animation-iteration-count: infinite;
 }
 
-
 @keyframes pulse_opacity {
   0% {
     opacity: 1;
@@ -1008,9 +1007,3 @@
   }
 }
 
-
-#structureText {
-  @media (min-width: $screen-lg) {
-    margin-top: -20px;
-  }
-}

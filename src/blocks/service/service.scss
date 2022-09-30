@@ -11,7 +11,7 @@
   }
 
   &__inner {
-    @media (min-width: $screen-md) {
+    @media (min-width: 700px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto 1fr;
@@ -37,8 +37,8 @@
       height: 300px;
     }
 
-    @media (min-width: $screen-md) {
-      height: 400px;
+    @media (min-width: 700px) {
+      height: 389px;
       grid-row-start: 1;
       grid-row-end: 3;
       grid-column-start: 1;
@@ -63,7 +63,7 @@
     grid-row-start: 1;
     grid-row-end: 2;
 
-    @media (min-width: $screen-md) {
+    @media (min-width: 700px) {
       margin-top: 60px;
       margin-left: 30px;
     }
@@ -79,7 +79,7 @@
   }
 
   &__info {
-    @media (min-width: $screen-md) {
+    @media (min-width: 700px) {
       margin-left: 30px;
       grid-column-start: 2;
       grid-column-end: 3;

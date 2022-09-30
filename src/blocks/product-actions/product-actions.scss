@@ -32,11 +32,11 @@
     @media (min-width: $screen-xl) {
       .btn--fav {
         margin-right: 8px;
-        }
       }
+    }
   }
 
-  .product-card  & {
+  .product-card & {
     margin-top: 18px;
 
     @media (min-width: $onepage-width) {
@@ -44,9 +44,27 @@
         margin-top: 10px;
       }
     }
-
   }
 
+  .product-card--catalog & {
+    margin-top: 10px;
+  }
+
+  .product-card--info & {
+    padding: 0 20px;
+
+    .btn {
+      border-color: #fff;
+      background-color: #fff;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $tw-black;
+        border-color: $tw-black;
+      }
+    }
+  }
 
 
   .btn {
@@ -156,8 +174,6 @@
       padding: 7px 16px;
     }
   }
-
-
 
 }
 

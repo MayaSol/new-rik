@@ -44,10 +44,10 @@
 
   &.index {
     //!!!
-    // @media (min-width: $onepage-width) {
-    //   height: 100%;
-    //   overflow: hidden;
-    // }
+    @media (min-width: $onepage-width) {
+      height: 100%;
+      overflow: hidden;
+    }
   }
 
   &::before {
@@ -85,7 +85,7 @@
     top: 28px; //animation block mobile 2
     top: -1770px; //animation page
     top: -47px; //contacts wide
-    top: -10px; //contacts mobile
+    top: -6px; //contacts mobile
     // left: 64px;//footer main
     // top: -140px; //main test features
     // top: 32px; //mobile test features
@@ -163,8 +163,8 @@ body {
 
     @media (min-width: $onepage-width) {
       //!!!
-      // height: 100%;
-      // overflow: hidden;
+      height: 100%;
+      overflow: hidden;
     }
   }
 }

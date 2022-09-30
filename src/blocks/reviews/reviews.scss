@@ -32,7 +32,7 @@
     cursor: pointer;
 
     @media (min-width: $screen-lg) {
-      min-height: 386px;
+      min-height: 398px;
       padding-top: 20px;
     }
 
@@ -87,6 +87,7 @@
     grid-template-rows: auto auto;
 
     @media (min-width: $screen-lg) {
+      width: 140px;
       grid-row-start: 1;
       grid-row-end: 3;
       display: flex;
@@ -96,6 +97,7 @@
     }
 
     @media (min-width: $screen-xxl) {
+      width: 170px;
       margin-left: 20px;
     }
   }

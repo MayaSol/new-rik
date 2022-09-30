@@ -15,19 +15,19 @@ ready(function() {
     // trigger: 'click' //!!!
   };
 
-  var btnsAll = document.querySelectorAll('#structure [data-bs-target]');
-  if (document.documentElement.clientWidth >= 1024) {
-    for (btn of btnsAll) {
-      tippyOptions.content = document.querySelector(btn.dataset.bsTarget).innerHTML;
-      tippy(btn, tippyOptions);
-      btn.addEventListener('mouseenter', function(event) {
-        iconAnimationStart(this);
-      });
-      btn.addEventListener('mouseleave', function(event) {
-        iconAnimationEnd(this);
-      });
-    }
-  }
+  // var btnsAll = document.querySelectorAll('#structure [data-bs-target]');
+  // if (document.documentElement.clientWidth >= 1024) {
+  //   for (btn of btnsAll) {
+  //     tippyOptions.content = document.querySelector(btn.dataset.bsTarget).innerHTML;
+  //     tippy(btn, tippyOptions);
+  //     btn.addEventListener('mouseenter', function(event) {
+  //       iconAnimationStart(this);
+  //     });
+  //     btn.addEventListener('mouseleave', function(event) {
+  //       iconAnimationEnd(this);
+  //     });
+  //   }
+  // }
 
   //!!!!!!!!!!!!!!!!
   var timerId;
@@ -35,7 +35,7 @@ ready(function() {
   if (container) {
 
     var contentOld = container.innerHTML;
-    var btnsAll = document.querySelectorAll('#structure2 [data-bs-target]');
+    var btnsAll = document.querySelectorAll('#structure [data-bs-target]');
     if (document.documentElement.clientWidth >= 1024) {
       for (btn of btnsAll) {
         // tippyOptions.content = document.querySelector(btn.dataset.bsTarget).innerHTML;
@@ -62,7 +62,7 @@ ready(function() {
           //!!! clearTimeout(timerId);
           timerId = setTimeout(() => {
             container.innerHTML = contentOld;
-          }, 3000); //!!!!
+          }, 30000); //!!!!
         }
       }
     }
@@ -82,20 +82,20 @@ ready(function() {
     });
   }
 
-  var btns = document.querySelectorAll('#structure [data-animate]');
-  for (btn of btns) {
-    btn.addEventListener('mouseenter', function(event) {
-      rayAnimationStart(this);
-      // iconAnimationStart(this);
-    });
-    btn.addEventListener('mouseleave', function(event) {
-      rayAnimationEnd(this);
-      // iconAnimationEnd(this);
-    });
-  }
+  // var btns = document.querySelectorAll('#structure [data-animate]');
+  // for (btn of btns) {
+  //   btn.addEventListener('mouseenter', function(event) {
+  //     rayAnimationStart(this);
+  //     // iconAnimationStart(this);
+  //   });
+  //   btn.addEventListener('mouseleave', function(event) {
+  //     rayAnimationEnd(this);
+  //     // iconAnimationEnd(this);
+  //   });
+  // }
 
   //!!!!
-  var btns = document.querySelectorAll('#structure2 [data-animate]');
+  var btns = document.querySelectorAll('#structure [data-animate]');
   for (btn of btns) {
     btn.addEventListener('mouseenter', function(event) {
       rayAnimationStart(this);

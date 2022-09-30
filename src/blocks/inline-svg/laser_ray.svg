@@ -13,35 +13,35 @@
 	</linearGradient>
     <linearGradient id="laserGradientAnimate" gradientUnits="userSpaceOnUse" x1="361.2305" y1="252.834" x2="361.2305" y2="30.856" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -367.8773 46.5561)">
     <stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#EE8CFC; #FFFFFF; #FFFFFF; #EE8CFC;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089">
-       <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+       <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#EB77FC; #FFFFFF; #FFFFFF; #EB77FC;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#E54DFB; #FFFFFF; #FFFFFF; #E54DFB;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#E02BFA; #FFFFFF; #FFFFFF; #E02BFA;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#DD13F9; #FFFFFF; #FFFFFF; #DD13F9;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#DB05F9; #FFFFFF; #FFFFFF; #DB05F9;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.7527" style="stop-color:#DA00F9">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#DA00F9; #FFFFFF; #FFFFFF; #DA00F9;" repeatCount="indefinite" />
     </stop>
     <stop  offset="0.9624" style="stop-color:#DA00F9">
-      <animate attributeName="stop-opacity" values="0.4; 1; 1; 0.4" dur="2s" repeatCount="indefinite"></animate>
+      <animate attributeName="stop-opacity" values="0.4; 0.6; 0.6; 0.4" dur="2s" repeatCount="indefinite"></animate>
       <animate attributeName="stop-color" dur="2s" values="#DA00F9; #FFFFFF; #FFFFFF; #DA00F9;" repeatCount="indefinite" />
     </stop>
   </linearGradient>

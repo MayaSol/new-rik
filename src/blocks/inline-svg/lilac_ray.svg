@@ -1,43 +1,176 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="30.5px" height="167.391px" viewBox="0 0 30.5 167.391" enable-background="new 0 0 30.5 167.391" xml:space="preserve">
-<g opacity="0.4">
-		<linearGradient id="lilacGradient" gradientUnits="userSpaceOnUse" x1="351.3145" y1="197.6304" x2="351.3145" y2="32.1885" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
-		<stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516"/>
-		<stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089"/>
-		<stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411"/>
-		<stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696"/>
-		<stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917"/>
-		<stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047"/>
-		<stop  offset="0.7527" style="stop-color:#DA00F9"/>
-		<stop  offset="0.9624" style="stop-color:#DA00F9"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="30.5px"
+   height="167.391px"
+   viewBox="0 0 30.5 167.391"
+   enable-background="new 0 0 30.5 167.391"
+   xml:space="preserve"
+   sodipodi:docname="lilac_ray-new.svg"
+   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs3229" /><sodipodi:namedview
+   id="namedview3227"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="5.0779311"
+   inkscape:cx="12.603558"
+   inkscape:cy="52.482004"
+   inkscape:window-width="1452"
+   inkscape:window-height="752"
+   inkscape:window-x="111"
+   inkscape:window-y="195"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+<g
+   opacity="0.4"
+   id="g3224">
+		<linearGradient
+   id="lilacGradient"
+   gradientUnits="userSpaceOnUse"
+   x1="351.3145"
+   y1="197.6304"
+   x2="351.3145"
+   y2="32.1885"
+   gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
+		<stop
+   offset="0"
+   style="stop-color:#fc95fa;stop-opacity:0.35294119;"
+   id="stop3188" />
+		<stop
+   offset="0.0665"
+   style="stop-color:#fb83f9;stop-opacity:0.40784314;"
+   id="stop3190" />
+		<stop
+   offset="0.2199"
+   style="stop-color:#f456f9;stop-opacity:0.54110003;"
+   id="stop3192" />
+		<stop
+   offset="0.3691"
+   style="stop-color:#f218f2;stop-opacity:0.67058825;"
+   id="stop3194" />
+		<stop
+   offset="0.5108"
+   style="stop-color:#da12f6;stop-opacity:0.79170001;"
+   id="stop3196" />
+		<stop
+   offset="0.6421"
+   style="stop-color:#DB05F9;stop-opacity:0.9047"
+   id="stop3198" />
+		<stop
+   offset="0.7527"
+   style="stop-color:#DA00F9"
+   id="stop3200" />
+		<stop
+   offset="0.9624"
+   style="stop-color:#DA00F9"
+   id="stop3202" />
 	</linearGradient>
-    <linearGradient id="lilacGradientAnimate" gradientUnits="userSpaceOnUse" x1="351.3145" y1="197.6304" x2="351.3145" y2="32.1885" gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
-    <stop  offset="0" style="stop-color:#EE8CFC;stop-opacity:0.3516">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <linearGradient
+   id="lilacGradientAnimate"
+   gradientUnits="userSpaceOnUse"
+   x1="351.3145"
+   y1="197.6304"
+   x2="351.3145"
+   y2="32.1885"
+   gradientTransform="matrix(0.979 -0.2038 0.2038 0.979 -356.9998 43.1697)">
+    <stop
+   offset="0"
+   style="stop-color:#EE8CFC;stop-opacity:0.3516"
+   id="stop3205">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.0665" style="stop-color:#EB77FC;stop-opacity:0.4089">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.0665"
+   style="stop-color:#EB77FC;stop-opacity:0.4089"
+   id="stop3207">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.2199" style="stop-color:#E54DFB;stop-opacity:0.5411">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.2199"
+   style="stop-color:#E54DFB;stop-opacity:0.5411"
+   id="stop3209">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.3691" style="stop-color:#E02BFA;stop-opacity:0.6696">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.3691"
+   style="stop-color:#E02BFA;stop-opacity:0.6696"
+   id="stop3211">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.5108" style="stop-color:#DD13F9;stop-opacity:0.7917">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.5108"
+   style="stop-color:#DD13F9;stop-opacity:0.7917"
+   id="stop3213">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.6421" style="stop-color:#DB05F9;stop-opacity:0.9047">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.6421"
+   style="stop-color:#DB05F9;stop-opacity:0.9047"
+   id="stop3215">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.7527" style="stop-color:#DA00F9">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.7527"
+   style="stop-color:#DA00F9"
+   id="stop3217">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
-    <stop  offset="0.9624" style="stop-color:#DA00F9">
-      <animate attributeName="stop-opacity" values="0.3; 1; 1; 0.3" dur="2s" repeatCount="indefinite"></animate>
+    <stop
+   offset="0.9624"
+   style="stop-color:#DA00F9"
+   id="stop3219">
+      <animate
+   attributeName="stop-opacity"
+   values="0.3; 1; 1; 0.3"
+   dur="2s"
+   repeatCount="indefinite" />
     </stop>
   </linearGradient>
-	<path fill="url(#lilacGradient)" class="ray" d="M1.959,157.323c-0.003-0.075-1-147.523-1-147.523C0.397-3.43,17.975-3.183,18.537,10.046
-		c0,0,11.996,146.342,12,146.437C31.012,169.825,2.429,170.652,1.959,157.323z"/>
+	<path
+   fill="url(#lilacGradient)"
+   class="ray"
+   d="M1.959,157.323c-0.003-0.075-1-147.523-1-147.523C0.397-3.43,17.975-3.183,18.537,10.046   c0,0,11.996,146.342,12,146.437C31.012,169.825,2.429,170.652,1.959,157.323z"
+   id="path3222" />
 </g>
 </svg>

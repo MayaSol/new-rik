@@ -2,11 +2,46 @@
 
 mixin product-card(props={}, mods)
 
-  //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
-  //- Вызов:
-        +product-card('Текст', 'some-mod')
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-card--' + modsList[i].trim();
+      }
+    }
+
+    if (props.status_class) {
+      var statusClass = 'product-card__status--' + props.status_class;
+    }
+
+  .product-card(class=allMods)&attributes(attributes)
+    .product-card__inner
+      a.product-card__img(href="#")
+        img.lazyload(data-src=props.url)
+        if (props.top && props.top.length > 0)
+          .product-card__top-list
+            each item in props.top
+              span.product-card__top-item= item
+        if (props.bottom)
+          .product-card__bottom= props.bottom
+      a.product-card__title(href="#")!= props.title
+      .product-card__desc!= props.desc
+      if (props.status)
+        .product-card__status(class=statusClass)
+          +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
+          span= props.status
+      if (props.text)
+        .product-card__text.ellipsis(data-lines='2')= props.text
+      .product-card__price-wrapper
+        if (props.price_old)
+          .product-card__price.product-card__price--old!= props.price_old
+        .product-card__price!= props.price
+      +product-actions
+
+
+mixin product-card-info(props={}, mods)
 
   -
     // список модификаторов
@@ -18,20 +53,62 @@ mixin product-card(props={}, mods)
       }
     }
 
-  .product-card(class=allMods)&attributes(attributes)
+  .product-card.product-card--info(class=allMods)&attributes(attributes)
     .product-card__inner
       a.product-card__img(href="#")
         img.lazyload(data-src=props.url)
-      a.product-card__title(href="#")= props.title
+      a.product-card__title(href="#")!= props.title
       .product-card__desc!= props.desc
-      .product-card__price= props.price
-      +product-actions
-      //- .product-card__actions
-      //-   +btn('Подробнее','regular')(class="border-gray-200")
-      //-   +btn('<i class="fa-solid fa-cart-shopping"></i><span>Купить</span>','regular, icon')
-      //-   +btn('','fav')
-      //-     i.fa-regular.fa-heart
-      //-   +btn('','compare')
-      //-     i.fa-solid.fa-arrow-right-arrow-left
+      .product-actions
+        +btn('Подробнее','regular')(class="border-gray-200")
+
+
+mixin catalog-products
+
+  +product-card({
+    title: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии рикта-эсмил(1)а',
+    desc: 'Портативный. Работает от аккумулятора',
+    status: 'В наличии',
+    status_icon: 'check-2',
+    status_icon_sizes: [8,8],
+    status_class: 'available',
+    top: ['Бесплатная доставка','Акция'],
+    bottom: 'Лучший выбор',
+    price: '120 680 &#8381;',
+    url: './img/product1.jpg',
+    text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
+  },'catalog')
+  +product-card({
+    title: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии рикта-эсмил(1)а',
+    desc: 'Портативный. Работает от аккумулятора',
+    status: 'В наличии',
+    status_icon: 'wait',
+    status_icon_sizes: [14,14],
+    status_class: 'wait',
+    top: ['Бесплатная доставка','Акция'],
+    bottom: 'Лучший выбор',
+    price: '37 800 &#8381;',
+    price_old: '28 600 ₽',
+    url: './img/product1.jpg',
+    text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
+  },'catalog')
+  +product-card-info({
+    title: 'Бесплатная доставка курьером при&nbsp;заказе от&nbsp;10&nbsp;000₽!',
+    desc: 'Закажи товаров на сумму не меньше&nbsp;10&nbsp;000₽ и&nbsp;получи доставку до квартиры курьером абсолютно бесплатно!',
+    url: './img/delivery.jpg'
+  },'catalog')
+  +product-card({
+    title: 'РИКТА-ЭСМИЛ (2А)-03',
+    desc: 'Мощность лазера - 45 Вт. Наличие TENS и синего света.',
+    status: 'В наличии',
+    status_icon: 'none',
+    status_icon_sizes: [6,6],
+    status_class: 'none',
+    top: ['Бесплатная доставка','Акция'],
+    bottom: 'Лучший выбор',
+    price: '37 800 &#8381;',
+    url: './img/product1.jpg',
+    text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
+  },'catalog')
 
 
