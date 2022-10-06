@@ -1,0 +1,58 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-main)
+
+mixin product-main(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+
+    if (props.status_class) {
+      var statusClass = 'product-card__status--' + props.status_class;
+    }
+
+  .product-main.product-card(class=allMods)&attributes(attributes)
+    .product-card__status(class=statusClass)
+      +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
+      span= props.status
+    .product-card__credit.flex.text-sm.text-gray-500
+      +svg('wallet', '', sizes={width:'20',height:'20'})(class="fill-transparent mr-5px")
+      div В кредит <span class="product-card__credit-sum">679</span> рублей в месяц
+    h1.product-main__title.mt-0.mb-20px.text-xl РИКТА 04/4
+    .product-main__slider-wrapper
+      .product-main__slider
+        +product-main-item-video({
+          url: '/video/dummy.mov',
+          width: '1920',
+          height: '1080',
+          poster: '/img/product-main-slider-poster.jpg'
+        })
+      .product-main__slider-previews
+
+
+mixin product-main-item-video(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+
+
+  .product-main__slider-item(class=allMods)&attributes(attributes)
+    +video({
+      url: props.url,
+      width: props.width,
+      height: props.height,
+      poster: props.poster,
+      btn_mod: 'filled'
+    })

@@ -1,0 +1,55 @@
+//- Все примеси в этом файле должны начинаться c имени блока (page-links)
+
+mixin page-links(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +page-links('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-links--' + modsList[i].trim();
+      }
+    }
+
+  ul.page-links(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin page-links-item(props={},mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +page-links('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' page-links--' + modsList[i].trim();
+      }
+    }
+
+    if ((typeof props.isActive) === 'undefined') {
+      props.isActive = false;
+    }
+
+    var linkClass="";
+    if (props.isActive) {
+      linkClass="active";
+    }
+
+  li.page-links__item.nav-item(class=allMods)&attributes(attributes)
+    +btn(props.name)(href=props.href aria-selected="true" class="page-links__link nav-link " + linkClass)
+

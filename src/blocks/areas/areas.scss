@@ -101,11 +101,11 @@
     border-radius: 78px;
     font-size: 18px;
     line-height: 28px;
-    transition: transform 600ms;
+    // transition: transform 600ms;
 
-    #{$block-name}__item:hover & {
-      transform: translateX(-200%);
-    }
+    // #{$block-name}__item:hover & {
+    //   transform: translateX(-200%);
+    // }
   }
 
   @mixin range-thumb {

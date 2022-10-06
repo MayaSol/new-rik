@@ -4,5 +4,41 @@
 
 .filter {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
+
+  &.modal--catalog {
+    @media (min-width: $screen-xl) {
+      display: block;
+      position: static;
+      width: 360px;
+      margin: 0;
+      justify-self: end;
+    }
+    @media (min-width: $screen-xxl) {
+      width: 400px;
+      margin-left: 48px;
+    }
+  }
+
+  .field-checkbox {
+    @media (min-width: $screen-lg) {
+      padding-left: 5px;
+    }
+
+    &__name-text {
+      @media (min-width: $screen-lg) {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .field-text--price {
+    .field-text__input {
+      padding-top: 14px;
+    }
+  }
+
+  .field-checkbox__name-text::after {
+    color: $tw-black;
+  }
 }

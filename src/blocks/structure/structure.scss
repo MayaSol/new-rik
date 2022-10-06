@@ -303,7 +303,7 @@
         width: 6px;
         height: 6px;
         right: 0;
-        bottom: -10px;
+        bottom: -3px;
         border: 1px solid $tw-gray-500;
         border-left-color: transparent;
         border-top-color: transparent;
@@ -372,8 +372,8 @@
   &__btns-bottom-text {
     position: absolute;
     display: inline-block;
-    left: 0;
-    bottom: -40px;
+    left: 20px;
+    bottom: -30px;
     white-space: nowrap;
   }
 

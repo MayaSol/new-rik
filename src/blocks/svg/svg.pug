@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (svg)
 
-mixin svg(icon="", classes, sizes={width:"30",height:"30"},mods,inline=false)
+mixin svg(icon='', classes, sizes={width:'30',height:'30'},mods,inline=false)
 
   -
     // список модификаторов
@@ -15,12 +15,12 @@ mixin svg(icon="", classes, sizes={width:"30",height:"30"},mods,inline=false)
       }
     }
 
-    var href = "";
+    var href = '';
     if (inline) {
       href = "#" + icon;
     } else {
-      href = "img/sprite.svg#" + icon;
+      href = "/img/sprite.svg#" + icon;
     }
 
-  svg(class=allMods width=sizes.width height=sizes.height aria-hidden="true" focusable="false")&attributes(attributes)
+  svg(class=allMods width=sizes.width height=sizes.height aria-hidden='true' focusable='false')&attributes(attributes)
     use(xlink:href=href)

@@ -10,7 +10,6 @@
 
   display: none;
 
-  border: 1px solid red;
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
@@ -27,6 +26,7 @@
     right: 0;
 
     #{$block-name}__container {
+      margin-left: auto;
       padding-top: 5px;
       padding-bottom: 5px;
     }
@@ -53,6 +53,23 @@
     box-sizing: border-box;
     background-color: $tw-gray-75;
     box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+
+    .filter & {
+      @media (min-width: $screen-xl) {
+        max-width: 400px;
+        max-height: none;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-shadow: none;
+      }
+
+      @media (min-width: $screen-xxl) {
+        max-width: 500px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
   }
 
   &__inner {

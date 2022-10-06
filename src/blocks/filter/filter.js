@@ -1,9 +1,21 @@
 const ready = require('../../js/utils/documentReady.js');
 var MicroModal = require("../../../node_modules/micromodal/dist/micromodal");
 // var MicroModal = require("../../js/micromodal.js");
-
+const Collapse = require("../../../node_modules/bootstrap/js/dist/collapse.js");
 
 ready(function() {
+
+  if (document.documentElement.clientWidth >= 1280) {
+    var filterBtns = document.querySelectorAll('#modal-catalog-filter .form-filter__item-content');
+    var bsCollapse = [];
+    for (var i=0; i<filterBtns.length; i++) {
+      bsCollapse[i] = Collapse.getOrCreateInstance(filterBtns[i]);
+    }
+    for (var i=0; i<bsCollapse.length; i++) {
+      console.log(bsCollapse[i]);
+      bsCollapse[i].show();
+    }
+  }
 
   const MODAL_TOGGLE_ATTR = 'data-micromodal-toggle';
 
@@ -13,7 +25,6 @@ ready(function() {
   };
 
   MicroModal.init(options);
-
 
   const btns = document.querySelectorAll(`[${ MODAL_TOGGLE_ATTR }]`);
   for (btn of btns) {
@@ -50,8 +61,6 @@ ready(function() {
       }
     })
   })
-
-
 
   function checkFiltersAll() {
     console.log('checkFiltersAll');

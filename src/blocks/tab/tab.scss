@@ -4,15 +4,29 @@
 
 .tab {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   &__items {
     display: flex;
     border-bottom: 1px solid $tw-gray-200;
   }
 
+  &__items-wrapper {
+    .catalog & {
+      @media(min-width: $screen-lg) {
+        margin-top: 3px;
+      }
+    }
+  }
+
   &__item {
     margin-bottom: -1px;
+
+    &:first-child {
+      .nav-link {
+        margin-left: 0;
+      }
+    }
   }
 
   .nav-link {

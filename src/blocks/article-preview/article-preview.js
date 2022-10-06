@@ -7,7 +7,6 @@ const closest = require('closest');
 ready(function() {
   var sliderEl = document.querySelector('.article-preview__list');
   if (sliderEl) {
-    console.log(document.documentElement.clientWidth);
     if (document.documentElement.clientWidth < 1440) {
       var slider = tns({
         container: '.article-preview__list',
@@ -43,6 +42,23 @@ ready(function() {
         }
       });
     }
+
+    slider.events.on('transitionStart', function(info) {
+      if (info.displayIndex > 1) {
+        sliderEl.classList.add('not-first-page');
+      } else {
+        sliderEl.classList.remove('not-first-page');
+      }
+    });
+
+    slider.events.on('transitionEnd', function(info) {
+      var btnNext = info.controlsContainer.querySelector('button[data-controls="next"]');
+      if (info.slideCount - info.displayIndex <= 2) {
+        btnNext.setAttribute('disabled','');
+      } else {
+        btnNext.removeAttribute('disabled');
+      }
+    });
   }
 
 });
@@ -71,4 +87,4 @@ function makeArticleEllipsis() {
   makeEllipsis('.article-preview__ellipsis');
 }
 
-window.addEventListener('resize',makeArticleEllipsis);
+window.addEventListener('resize', makeArticleEllipsis);

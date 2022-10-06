@@ -48,6 +48,7 @@
   }
 
   &--price {
+    margin-bottom: 0;
     #{$block-name}__input-wrap {
       position: relative;
         &::after {
@@ -64,6 +65,7 @@
       position: relative;
       width: 122px;
       padding: 10px 35px 10px 20px;
+      color: $tw-gray-500;
       border :none;
       background-color: #fff;
       border-radius: 8px;
@@ -72,6 +74,15 @@
 
   &--price-from {
     justify-self: start;
+
+    &::before {
+      content: '-';
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+    }
+
   }
 
   &--price-to {

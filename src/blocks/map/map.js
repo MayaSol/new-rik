@@ -6,7 +6,7 @@ ready(function() {
     ymaps.ready(function() {
       var myMap = new ymaps.Map('map', {
           center: [55.768355, 37.717474],
-          zoom: 13
+          zoom: 12
         }, {
           searchControlProvider: 'yandex#search'
         }),
@@ -51,7 +51,7 @@ ready(function() {
           // hintLayout: HintLayout,
           iconLayout: 'default#image',
           // Custom image for the placemark icon.
-          iconImageHref: 'img/mapImage.svg',
+          iconImageHref: '/img/mapImage.svg',
           // The size of the placemark.
           iconImageSize: [56, 68],
           /**

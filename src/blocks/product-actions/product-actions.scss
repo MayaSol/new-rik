@@ -48,10 +48,18 @@
 
   .product-card--catalog & {
     margin-top: 10px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
   }
 
   .product-card--info & {
     padding: 0 20px;
+
+    @media (min-width: $screen-lg) {
+      padding: 0;
+    }
 
     .btn {
       border-color: #fff;
@@ -75,7 +83,7 @@
       margin-right: 10px;
     }
 
-    &:last-of-type {
+    &:last-child {
       margin-right: 0;
     }
 

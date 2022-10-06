@@ -4,7 +4,7 @@
 
 .catalog {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   &__filter {
     &--active {
@@ -32,7 +32,59 @@
 
   &__list {
     margin-top: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 760px;
+    }
+    @media (min-width: $screen-xxl) {
+      width: 864px;
+    }
+
+    @media (min-width: $screen-3xl) {
+      width: auto;
+    }
   }
 
 
+  &__content-wrapper {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      order: -1;
+    }
+  }
+
+  &__actions {
+    @media (min-width: $screen-lg) {
+      margin-top: 20px;
+      margin-bottom: 18px;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__info {
+    p {
+      overflow: hidden;
+      /* fix for Firefox */
+      break-inside: avoid-column;
+      -webkit-column-break-inside: avoid;
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    .nav-link {
+      padding: 30px 0;
+      margin: 0 32px;
+    }
+  }
 }

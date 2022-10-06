@@ -1,0 +1,35 @@
+extends ../pug/layout.pug
+
+block meta
+  title Каталог
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'contacts';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Каталог','#')
+      +breadcrumbs-item('Аппарат магнито-инфракрасный лазерный терапевтический рикта 04/4')
+    section.section.section--product-main.mt-30px.lg_mt-20px.lg_mb-64px
+      .container
+        +product-main({
+          status: 'В наличии',
+          status_class: 'available',
+          status_icon: 'check-2',
+          status_icon_sizes: [8,8]
+        })
+
+
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+

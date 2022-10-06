@@ -26,11 +26,11 @@ ready(function() {
     var filterPrice = document.querySelector('.form-filter__item-content--price');
     var inputFrom = filterPrice.querySelector('.field-text--price-from .field-text__input');
     var inputTo = filterPrice.querySelector('.field-text--price-to .field-text__input');
-    console.log(inputFrom);
+    // console.log(inputFrom);
 
 
     sliderCatalog.noUiSlider.on('update', function(values, handle) {
-      console.log("noUiSlider.on('update'");
+      // console.log("noUiSlider.on('update'");
 
       var value = values[handle];
       var inputEl = (handle) ? inputTo : inputFrom;
@@ -40,10 +40,8 @@ ready(function() {
       let parent = inputEl.closest('.form-filter__item-content');
       if (handle) {
         if (+inputEl.value.replace(/\s/g, '') < +range.max) {
-          console.log(1);
           inputEl.dataset.active = true;
         } else {
-          console.log(2);
           inputEl.removeAttribute('data-active');
         };
         if (checkboxGroup(parent)) {
@@ -53,10 +51,8 @@ ready(function() {
         }
       } else {
         if (+inputEl.value.replace(/\s/g, '') > +range.min) {
-          console.log(3);
           inputEl.dataset.active = true;
         } else {
-          console.log(4);
           inputEl.removeAttribute('data-active');
         };
         if (checkboxGroup(parent)) {
@@ -77,13 +73,13 @@ ready(function() {
     });
 
     function checkboxGroup(groupEl) {
-      console.log('checkbosGroup');
-      console.log(groupEl);
+      // console.log('checkbosGroup');
+      // console.log(groupEl);
       var inputs = groupEl.querySelectorAll('input');
       var filterActive = [...inputs].reduce((prev, cur, i, inputs) => {
         return prev || (inputs[i].dataset.active ? inputs[i].dataset.active : false);
       }, false);
-      console.log('checkbosGroup result: ' + filterActive);
+      // console.log('checkbosGroup result: ' + filterActive);
       return filterActive;
     }
 

@@ -29,8 +29,12 @@ mixin form-filter-item(props={},mods)
     }
 
   .form-filter__item(class=allMods)&attributes(attributes)
-    +btn('','clean,collapse')(class="collapsed form-filter__btn" type="button" data-bs-toggle="collapse" data-bs-target=`#${props.targetId}` aria-expanded="false" aria-controls="collapseExample")
-      span.form-filter__item-title= props.title
+    +btn('','clean,collapse')(class="collapsed form-filter__btn" type='button' data-bs-toggle='collapse' data-bs-target=`#${props.targetId}` aria-expanded="false" aria-controls='collapseExample')
+      .form-filter__item-info
+        span.form-filter__item-title= props.title
+        if props.isTip
+          .form-filter__item-info-tip(data-content='Всплывающая подсказка')
+            +svg('info','',{width:'14',height:'14'})(class="filter__info")
 
 
 mixin form-filter-content(props={},mods)
@@ -45,5 +49,5 @@ mixin form-filter-content(props={},mods)
       }
     }
 
-  .form-filter__item-content.collapse(id=props.id)(class=allMods)&attributes(attributes)
+  .form-filter__item-content.collapse(id=props.id class=allMods)&attributes(attributes)
     block

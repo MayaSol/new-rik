@@ -32,7 +32,7 @@
     cursor: pointer;
 
     @media (min-width: $screen-lg) {
-      min-height: 398px;
+      min-height: 547px;
       padding-top: 20px;
     }
 
@@ -205,16 +205,15 @@
   }
 
   .tab-content {
-    // margin-top: 20px;
     margin-top: 0;
 
     @media (min-width: $screen-lg) {
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     @media (min-width: $onepage-width) {
       .screen-low & {
-        margin-top: 20px;
+        margin-top: 10px;
       }
     }
 

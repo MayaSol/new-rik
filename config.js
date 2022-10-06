@@ -33,6 +33,7 @@ let config = {
     // 'mdb-ui-kit/src/scss/free/_dropdown.scss',
     'tiny-slider/dist/tiny-slider.css',
     'nouislider/dist/nouislider.css',
+    'tippy.js/dist/tippy.css',
 
     'src/scss/variables.scss',
     'src/scss/mixins.scss',

@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block meta
-  title Главная
+  title Каталог
   meta(name='description', content='')
 
 //- block append head
@@ -16,37 +16,37 @@ block content
     +breadcrumbs(class='container')
       +breadcrumbs-item('Главная','#')
       +breadcrumbs-item('Каталог')
-    section.section.catalog.mt-20px.lg_mt-20px.mb-60px.lg_mb-64px
+    section.section.catalog.mt-30px.lg_mt-20px.lg_mb-64px
       .container.tab.grid(class="grid-cols-[1fr_auto]")
-        .section__title.mb-20px.col-start-1.col-end-3 Продукция
-        .tab__select-wrapper.tab__select-wrapper--catalog.field-select__wrapper.md_container.md_after_hidden.col-start-1.col-end-3.mb-20px
-          select#catalog-tab-select.catalog__tab-select.field-select.md_hidden(name='catalog-tab-select' role='tablist')
-            option(value='#catalog_device' role='tab') Аппараты
-            option(value='#catalog_optical' role='tab') Оптические насадки
-            option(value='#catalog_radiator' role='tab') Излучатели
-            option(value='#catalog_misc' role='tab') Прочие аксессуары
-            option(value='#catalog_books' role='tab') Литература
-        .tab__items-wrapper.col-start-1.col-end-3
-          +tab-items()
-            +tab-item({id: 'catalog_device', targetId: 'catalog_device_pane', name: 'Аппараты', isActive: true})
-            +tab-item({id: 'catalog_optical', targetId: 'catalog_optical_pane', name: 'Оптические насадки'})
-            +tab-item({id: 'catalog_radiator', targetId: 'catalog_radiator_pane', name: 'Излучатели'})
-            +tab-item({id: 'catalog_misc', targetId: 'catalog_misc_pane', name: 'Прочие аксессуары'})
-            +tab-item({id: 'catalog_books', targetId: 'catalog_books_pane', name: 'Литература'})
-        #arrFilterAuto
-          .catalog__actions.col-start-1.col-end-3.flex.items-center
+        h1.section__title.mb-20px.col-start-1.col-end-3.row-start-1.row-end-2 Продукция
+        .page-select.page-select--catalog.field-select__wrapper.md_container.md_after_hidden.lg_hidden.col-start-1.col-end-3.row-start-2.row-end-3.mb-20px
+          select#catalog-page-select.catalog__page-select.page-select__input.field-select.md_hidden(role='tablist')
+            option(value='/catalog.html#1' selected) Аппараты
+            option(value='/catalog.html#2') Оптические насадки
+            option(value='/catalog.html#3') Излучатели
+            option(value='/catalog.html#4') Прочие аксессуары
+            option(value='/catalog.html#5') Литература
+        .page-links__wrapper.col-start-1.col-end-3.lg_row-start-2.lg_row-end-3
+          +page-links()(class='nav nav-tabs hidden md_flex')
+            +page-links-item({ href: '#1', name: 'Аппараты', isActive: true})
+            +page-links-item({ href: '#2', name: 'Оптические насадки'})
+            +page-links-item({ href: '#3', name: 'Излучатели'})
+            +page-links-item({ href: '#4', name: 'Прочие аксессуары'})
+            +page-links-item({ href: '#5', name: 'Литература'})
+        #arrFilterAuto.catalog__content-wrapper.lg_grid
+          .catalog__actions.flex.items-center.lg_row-start-1.lg_row-end-2.lg_col-start-1.lg_col-end-3
             .sort.mr-auto.flex.items-center
-              +btn('','clean,sort')(class="mr-10px")(href="#")
+              +btn('','clean,sort')(class="mr-10px" href="#")
                 .sort__icon
                   span
               .sort__item.sort__item--active.mr-12px
                 +btn('По цене','clean')(href='#')
               .sort__item
                 +btn('По названию','clean')(href='#')
-            +btn('','clean,round,filter')(class='catalog__filter' data-micromodal-toggle='modal-catalog-filter')
+            +btn('','clean,round,filter')(class='catalog__filter xl_hidden' data-micromodal-toggle='modal-catalog-filter')
               +svg('filter','',{width: '16',height: '15'})(class='fill-transparent')
               span.close
-          .filter.modal.modal--catalog#modal-catalog-filter
+          .filter.modal.modal--catalog#modal-catalog-filter.lg_row-start-2.lg_row-end-3.lg_col-start-2
             .modal__container(role='dialog' aria-modal='true' aria-labelledby='filter')
               .modal__inner
                  +form-filter(name='_form' action="/catalog/laser-therapy-devices/" method="get" class="smartfilter")
@@ -54,28 +54,29 @@ block content
                       .form-filter__item-wrapper
                         +form-filter-item({title:'Цена',targetId: 'filter-price'})
                         +form-filter-content({id: 'filter-price'},'price')(class='grid grid-cols-[1fr_1fr]')
-                          .range-slider__wrapper(class='mb-20px mt-14px col-start-1 col-end-3')
+                          .range-slider__wrapper(class='mb-20px lg_mb-25px mt-14px col-start-1 col-end-3')
                             +range-slider({},'catalog')(data-min='0' data-max='200000')
-                          +field-text({
-                            mods: 'price, price-from',
-                            val: '',
-                            attrs: {
-                              name: 'arrFilter_P1_MIN',
-                              class: 'col-start-1 col-end-2',
-                              id: "arrFilter_P1_MIN"
-                            }
-                          })
-                          +field-text({
-                            mods: 'price, price-to',
-                            val: '',
-                            attrs: {
-                              name: 'arrFilter_P1_MAX',
-                              class: 'col-start-2 col-end-3',
-                              id: "arrFilter_P1_MAX"
-                            }
-                          })
+                          .form-filter__fields-wrapper
+                            +field-text({
+                              mods: 'price, price-from',
+                              val: '',
+                              attrs: {
+                                name: 'arrFilter_P1_MIN',
+                                class: 'col-start-1 col-end-2',
+                                id: "arrFilter_P1_MIN"
+                              }
+                            })
+                            +field-text({
+                              mods: 'price, price-to',
+                              val: '',
+                              attrs: {
+                                name: 'arrFilter_P1_MAX',
+                                class: 'col-start-2 col-end-3',
+                                id: "arrFilter_P1_MAX"
+                              }
+                            })
                       .form-filter__item-wrapper
-                        +form-filter-item({title:'Регулировка мощности',targetId: 'filter-power'})
+                        +form-filter-item({title:'Регулировка мощности',targetId: 'filter-power',isTip: true})
                         +form-filter-content({id: 'filter-power'},'power')
                           +field-toggler([
                             {
@@ -87,7 +88,7 @@ block content
                             },
                           ])
                       .form-filter__item-wrapper
-                        +form-filter-item({title:'Без возрастных ограничений',targetId: 'filter-age'})
+                        +form-filter-item({title:'Без возрастных ограничений',targetId: 'filter-age',isTip: true})
                         +form-filter-content({id: 'filter-age'},'age')
                           +field-toggler([
                             {
@@ -184,24 +185,12 @@ block content
                               }
                             },
                           ])
-          +tab-content('catalog')
-            +tab-pane({id: 'catalog_device_pane', itemId: 'catalog_device', isShow: true})
-              .catalog__list
-                +catalog-products
-            +tab-pane({id: 'catalog_optical_pane', itemId: 'catalog_optical'})
-              .catalog__list
-                +catalog-products
-            +tab-pane({id: 'catalog_radiator_pane', itemId: 'catalog_radiator'})
-              .catalog__list
-                +catalog-products
-            +tab-pane({id: 'catalog_misc_pane', itemId: 'catalog_misc'})
-              .catalog__list
-                +catalog-products
-            +tab-pane({id: 'catalog_books_pane', itemId: 'catalog_books'})
-              .catalog__list
-                +catalog-products
-      .catalog__info.container.text-gray-500
-        h2.text-xl.text-color-black.mt-0.mb-20px  «Рикта» – это лучшие материалы, качественные российские комплектующие и лаконичный целесообразный дизайн
+          .catalog__list
+            +catalog-products
+      .catalog__info.container.text-gray-500.col-start-1.col-end-3.row-start-4.lg_columns-2
+        h2.text-xl.text-color-black.mt-0.mb-20px.lg_text-2xl  «Рикта» – это лучшие материалы, качественные российские комплектующие и лаконичный целесообразный дизайн
+        p Аппаратная физиотерапия – один из самых щадящих способов лечения и профилактики заболеваний. Нередко её рекомендуют как часть комплексной терапии.  «Рикта» специализируется на производстве физиотерапестических аппаратов с 1980 года.
+        p Наша медицинская техника изготавливается по европейским стандартам качества ISO и применяется в травматологии, ортопедии, неврологии, терапии, офтальмологии и других областях медицины. Наша медицинская техника изготавливается по европейским стандартам качества ISO и применяется в травматологии, ортопедии,
         p Аппаратная физиотерапия – один из самых щадящих способов лечения и профилактики заболеваний. Нередко её рекомендуют как часть комплексной терапии.  «Рикта» специализируется на производстве физиотерапестических аппаратов с 1980 года.
         p Наша медицинская техника изготавливается по европейским стандартам качества ISO и применяется в травматологии, ортопедии, неврологии, терапии, офтальмологии и других областях медицины. Наша медицинская техника изготавливается по европейским стандартам качества ISO и применяется в травматологии, ортопедии,
 

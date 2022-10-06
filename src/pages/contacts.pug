@@ -18,7 +18,7 @@ block content
       +breadcrumbs-item('Контакты')
     section.section.contacts.mt-20px.lg_mt-20px.mb-60px.lg_mb-64px
       .container.lg_grid.gap-x-20px.xxl_gap-x-30px(class="lg_grid-cols-[1fr_52%] xxl_grid-cols-[1fr_57%]")
-        .section__title.mb-20px.col-start-1.col-end-3 Контакты
+        h1.section__title.mb-20px.col-start-1.col-end-3 Контакты
         .contacts__info.col-start-1
           .text-lg.lg_text-2xl ООО "Риктамед", АО "Милта-ПКП ГИТ"
           .mt-10px.lg_mt-20px Мы производим и продаем аппараты РИКТА.
@@ -43,48 +43,50 @@ block content
             span.block пн-пт 10:00 – 18:00
             span.block сб, вс выходной
             span.text-gray-500 Заказы на сайте принимаются круглосуточно
-        form.form.relative.form--question.col-start-2.row-start-2.row-span-4.lg_flex.lg_flex-col
-          .contacts__title.mt-30px.mb-20px.lg_mt-0 Мы ответим на все интересующие ваши вопросы
-          +field-text({
-            attrs: {
-              name: 'name',
-              placeholder: 'Имя',
-              type: 'text'
-            }
-          })
-          +field-text({
-            attrs: {
-              name: 'phone',
-              placeholder: 'Телефон',
-              type: 'text'
-            }
-          })
-          +field-text({
-            attrs: {
-              name: 'email',
-              placeholder: 'E-mail',
-              type: 'text'
-            }
-          })
-          +field-text({
-            attrs: {
-              name: 'name',
-              placeholder: 'Тема обращения',
-              type: 'text'
-            }
-          })
-          +field-text({
-              isTextarea: true,
-            attrs: {
-              name: 'name',
-              placeholder: 'Ваше сообщение',
-              type: 'text',
-              rows: 5
-            }
-          })(class="contacts__question-msg relative grow")
-            button.btn.btn--form-tg.absolute.right-0.bottom-0.flex.items-center.justify-center
-              +svg('tg-outline','',{width: 18, height: 18})
-              span Отправить
+        #comp_5afb8bec3eb492a81bc638ca2c9b76d6
+          #contact_page_form
+            form.form.relative.form--question.col-start-2.row-start-2.row-span-4.lg_flex.lg_flex-col
+              .contacts__title.mt-30px.mb-20px.lg_mt-0 Мы ответим на все интересующие ваши вопросы
+              +field-text({
+                attrs: {
+                  name: 'name',
+                  placeholder: 'Имя',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'phone',
+                  placeholder: 'Телефон',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'email',
+                  placeholder: 'E-mail',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'name',
+                  placeholder: 'Тема обращения',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                  isTextarea: true,
+                attrs: {
+                  name: 'name',
+                  placeholder: 'Ваше сообщение',
+                  type: 'text',
+                  rows: 5
+                }
+              })(class="contacts__question-msg relative grow")
+                button.btn.btn--form-tg.absolute.right-0.bottom-0.flex.items-center.justify-center
+                  +svg('tg-outline','',{width: 18, height: 18})
+                  span Отправить
       +contacts-others
         +contacts-others-item({
           name: 'Сервисная служба',

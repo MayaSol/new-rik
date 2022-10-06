@@ -19,13 +19,15 @@ mixin product-card(props={}, mods)
   .product-card(class=allMods)&attributes(attributes)
     .product-card__inner
       a.product-card__img(href="#")
-        img.lazyload(data-src=props.url)
+        img.lazyload(data-src=props.url
+        data-srcset= props.srcset,
+        data-sizes= props.sizes)
         if (props.top && props.top.length > 0)
           .product-card__top-list
             each item in props.top
               span.product-card__top-item= item
-        if (props.bottom)
-          .product-card__bottom= props.bottom
+        if (props.add)
+          .product-card__add= props.add
       a.product-card__title(href="#")!= props.title
       .product-card__desc!= props.desc
       if (props.status)
@@ -39,6 +41,9 @@ mixin product-card(props={}, mods)
           .product-card__price.product-card__price--old!= props.price_old
         .product-card__price!= props.price
       +product-actions
+      if (props.add)
+        .product-card__add= props.add
+
 
 
 mixin product-card-info(props={}, mods)
@@ -73,9 +78,9 @@ mixin catalog-products
     status_icon_sizes: [8,8],
     status_class: 'available',
     top: ['Бесплатная доставка','Акция'],
-    bottom: 'Лучший выбор',
+    add: 'Лучший выбор',
     price: '120 680 &#8381;',
-    url: './img/product1.jpg',
+    url: '/img/product1.jpg',
     text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
   },'catalog')
   +product-card({
@@ -86,16 +91,16 @@ mixin catalog-products
     status_icon_sizes: [14,14],
     status_class: 'wait',
     top: ['Бесплатная доставка','Акция'],
-    bottom: 'Лучший выбор',
+    add: 'Лучший выбор',
     price: '37 800 &#8381;',
     price_old: '28 600 ₽',
-    url: './img/product1.jpg',
+    url: '/img/product1.jpg',
     text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
   },'catalog')
   +product-card-info({
     title: 'Бесплатная доставка курьером при&nbsp;заказе от&nbsp;10&nbsp;000₽!',
     desc: 'Закажи товаров на сумму не меньше&nbsp;10&nbsp;000₽ и&nbsp;получи доставку до квартиры курьером абсолютно бесплатно!',
-    url: './img/delivery.jpg'
+    url: '/img/delivery.jpg'
   },'catalog')
   +product-card({
     title: 'РИКТА-ЭСМИЛ (2А)-03',
@@ -105,9 +110,9 @@ mixin catalog-products
     status_icon_sizes: [6,6],
     status_class: 'none',
     top: ['Бесплатная доставка','Акция'],
-    bottom: 'Лучший выбор',
+    add: 'Лучший выбор',
     price: '37 800 &#8381;',
-    url: './img/product1.jpg',
+    url: '/img/product1.jpg',
     text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности. '
   },'catalog')
 

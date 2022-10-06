@@ -1,11 +1,13 @@
 const ready = require('../../js/utils/documentReady.js');
 const closest = require('closest');
+import tippy from 'tippy.js';
+
 
 ready(function() {
 
   const filterCheckboxes = document.querySelectorAll('.form-filter input[type="checkbox"]');
 
-  for (input of filterCheckboxes) {
+  for (var input of filterCheckboxes) {
     checkboxOnChange(input);
     input.addEventListener('change',function(event) {
       checkboxOnChange(this);
@@ -37,6 +39,18 @@ ready(function() {
     input.addEventListener('change',inputOnChange);
   }
 
+  var filterInfos = document.querySelectorAll('.form-filter__item-info-tip');
+
+  for (var info of filterInfos) {
+    var contentId = info.dataset.content;
+    if (contentId) {
+      tippy(info, {
+        content: contentId,
+        theme: 'filter',
+        interactive: true,
+      })
+    }
+  }
 
 
 
