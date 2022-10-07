@@ -358,6 +358,10 @@
     &:last-child {
       margin-right: 0;
     }
+
+    svg {
+      stroke: currentColor;
+    }
   }
 
   &__add {
@@ -388,6 +392,10 @@
     @media (min-width: $screen-xxl) {
       margin-right: 5px !important;
     }
+  }
+
+  &__credit {
+    justify-self: end;
   }
 
 }

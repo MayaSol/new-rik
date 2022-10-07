@@ -4,7 +4,7 @@
 
 .cart-aside {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   position: absolute;
   right: 64px;
@@ -16,9 +16,9 @@
     width: auto;
   }
 
-   @media (min-width: $screen-xxl) {
+  @media (min-width: $screen-xxl) {
     padding-top: 90vh;
-   }
+  }
 
   @media (min-width: $screen-3xl) {
     right: 50%;
@@ -38,4 +38,37 @@
   .viewing-page-10 & {
     display: none;
   }
+}
+
+
+.page:not(.index) div[class*='basket'] {
+  .cart-aside {
+    position: fixed;
+    right: 20px;
+    top: 88vh;
+    width: auto;
+    padding-top: 0;
+    z-index: 99;
+
+    @media (min-width: 1800px) {
+      right: 50%;
+      margin-right: -900px;
+    }
+
+    @media (min-width: 1800px) {
+      margin-right: -950px;
+    }
+  }
+
+
+  .cart-aside__inner {
+    position: absolute;
+    right: 20px;
+    top: auto;
+    left: auto;
+  }
+
+
+
+
 }

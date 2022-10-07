@@ -34,7 +34,7 @@ let config = {
     'tiny-slider/dist/tiny-slider.css',
     'nouislider/dist/nouislider.css',
     'tippy.js/dist/tippy.css',
-
+    'choices.js/src/styles/choices.scss',
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/_nav.scss',

@@ -21,22 +21,146 @@ mixin product-main(props={}, mods)
       +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
       span= props.status
     .product-card__credit.flex.text-sm.text-gray-500
-      +svg('wallet', '', sizes={width:'20',height:'20'})(class="fill-transparent mr-5px")
-      div В кредит <span class="product-card__credit-sum">679</span> рублей в месяц
+      +svg('wallet', '', sizes={width:'20',height:'20'})(class='fill-transparent mr-5px')
+      div В кредит <span class='product-card__credit-sum'>679</span> рублей в месяц
     h1.product-main__title.mt-0.mb-20px.text-xl РИКТА 04/4
-    .product-main__slider-wrapper
-      .product-main__slider
-        +product-main-item-video({
-          url: '/video/dummy.mov',
-          width: '1920',
-          height: '1080',
-          poster: '/img/product-main-slider-poster.jpg'
-        })
-      .product-main__slider-previews
-
+    .product-main__sliders
+      .product-main__slider-wrapper.slider__wrapper
+        .product-main__slider.slider#product-main
+          +product-main-item-video({
+            url: '/video/dummy.mov',
+            width: '1920',
+            height: '1080',
+            poster: '/img/product-main-slider-poster.jpg'
+          })(data-slide='0')
+            .product-card__top-list
+              span.product-card__top-item
+                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
+                span Гарантия 2 года
+              span.product-card__top-item
+                span Акция
+          +product-main-item-video({
+            url: '/video/banana.mp4',
+            width: '1920',
+            height: '1080',
+            poster: '/img/product-main-slider-poster.jpg'
+          })(data-slide='1')
+            .product-card__top-list
+              span.product-card__top-item
+                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
+                span Гарантия 2 года
+          +product-main-item-video({
+            url: '/video/dummy.mov',
+            width: '1920',
+            height: '1080',
+            poster: '/img/product-main-slider-poster.jpg'
+          })(data-slide='2')
+            .product-card__top-list
+              span.product-card__top-item
+                span Акция
+          +product-main-item-video({
+            url: '/video/dummy.mov',
+            width: '1920',
+            height: '1080',
+            poster: '/img/product-main-slider-poster.jpg'
+          })(data-slide='3')
+            .product-card__top-list
+              span.product-card__top-item
+                span Акция 2
+          +product-main-item-video({
+            url: '/video/banana.mp4',
+            width: '1920',
+            height: '1080',
+            poster: '/img/product-main-slider-poster.jpg'
+          })(data-slide='4')
+            .product-card__top-list
+              span.product-card__top-item
+                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
+                span Гарантия 3 года
+        .product-main__controls.slider__controls.slider__controls--center(aria-label="Carousel Navigation" tabindex="0")
+          button.slider__controls-btn.slider__controls-btn--prev(type="button" data-controls="prev" tabindex="-1" aria-controls="tns1")
+            +svg('arrow','',{width: 19,height:19})
+          button.slider__controls-btn.slider__controls-btn--next(type="button" data-controls="next" tabindex="-1" aria-controls="tns1")
+            +svg('arrow','',{width: 19,height:19})
+      .product-main__previews-wrapper.slider__wrapper
+        .product-main__previews.slider#product-previews
+          +product-main-item-preview({url: '/img/product-preview.jpg'})(data-slide='0')
+          +product-main-item-preview({url: '/img/product-preview.jpg'})(data-slide='1')
+          +product-main-item-preview({url: '/img/product-preview.jpg'})(data-slide='2')
+          +product-main-item-preview({url: '/img/product-preview.jpg'})(data-slide='3')
+          +product-main-item-preview({url: '/img/product-preview.jpg'})(data-slide='4')
+        .product-main__previews-controls.slider__controls.slider__controls--center(aria-label="Carousel Navigation" tabindex="0")
+          button.slider__controls-btn.slider__controls-btn--prev(type="button" data-controls="prev" tabindex="-1" aria-controls="tns1")
+            +svg('angle','',{width: 7,height:14})
+          button.slider__controls-btn.slider__controls-btn--next(type="button" data-controls="next" tabindex="-1" aria-controls="tns1")
+            +svg('angle','',{width: 7,height:14})
+    .product-main__price-wrapper.mt-12px.mb-25px
+      .product-main__price.mr-10px 44 800 ₽
+      .product-main__price-old 28 600 ₽
+    +product-options({
+      title: '<div class="mb-10px text-lg text-black">Дополнительно</div>'
+    })(class='product-main__options')
+    .product-actions.product-actions--product-main
+      +btn(
+        '<svg class="icon" width="18" height="18"><use xlink:href="img/sprite.svg#cart"></use></svg> <span>Купить</span>',
+        'regular, icon, cart-add')(data-content="Добавлено")
+      +btn('','fav, fav-add')
+        +svg('heart-full','',{width: '22', height: '21'})
+      +btn('','compare, compare-add')
+        +svg('arrows-left-right','',{width: '18', height: '23'})
+    +btn(
+      '<svg class="icon" width="18" height="18"><use xlink:href="img/sprite.svg#mouse-square"></use></svg> <span>Задать вопрос врачу</span>',
+      'regular, icon, question')(class='product-main__question mt-10px')
+    .product-main__special.mt-20px
+      div.text-sm Спец. условия для юр лиц. Скидка 10% от 5 шт.
+      +btn('Запросить КП','small,special')(data-modal-open='modal-special-offer')
+    .modal.modal--regular.modal--special#modal-special-offer
+      .modal__overlay(tabindex='-1' data-modal-close)
+        .modal__container(role='dialog' aria-modal='true' aria-labelledby='Специальное предложение')
+          header.modal__header
+            .modal__title Запросить коммерческое предложение
+            +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-modal-close)
+          .modal__inner
+            form.form-special
+              +field-text({
+                attrs: {
+                  name: 'name',
+                  placeholder: 'Ваше имя',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'phone',
+                  placeholder: 'Телефон',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'email',
+                  placeholder: 'E-mail',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'company',
+                  placeholder: 'Название организации',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                  isTextarea: true,
+                attrs: {
+                  name: 'msg',
+                  placeholder: 'Комментарий',
+                  type: 'text',
+                  rows: 5
+                }
+              })(class="form-special__msg")
 
 mixin product-main-item-video(props={}, mods)
-
   -
     // список модификаторов
     var allMods = '';
@@ -47,7 +171,6 @@ mixin product-main-item-video(props={}, mods)
       }
     }
 
-
   .product-main__slider-item(class=allMods)&attributes(attributes)
     +video({
       url: props.url,
@@ -55,4 +178,21 @@ mixin product-main-item-video(props={}, mods)
       height: props.height,
       poster: props.poster,
       btn_mod: 'filled'
-    })
+    })(class='product-main__video')
+    block
+
+
+mixin product-main-item-preview(props={}, mods)
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+
+  .product-main__previews-item(class=allMods)&attributes(attributes)
+    .product-main__preview-img
+      img(src=props.url)

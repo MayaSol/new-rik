@@ -183,6 +183,21 @@
     }
   }
 
+  //! В подробной карточке товара
+  &--product-main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    .btn--cart-add {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      color: #fff;
+      border-color: $tw-blue;
+      background-color: $tw-blue;
+    }
+  }
+
 }
 
 

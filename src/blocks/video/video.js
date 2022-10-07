@@ -1,23 +1,28 @@
 const ready = require('../../js/utils/documentReady.js');
 const videoUtils = require('../../js/utils/videoUtils.js');
+const closest = require('closest');
 
 ready(function() {
-  console.log(videoUtils);
 
-
-      var playBtn = document.querySelector('.video__btn-play');
-      if (playBtn) {
-        playBtn.addEventListener('click',(event) => {
-          event.preventDefault();
-          if (video.classList.contains('playing')) {
-            videoUtils.pauseVideo(video);
-          }
-          else {
-            videoUtils.playVideo(video);
-          }
-        });
+  var playBtns = document.querySelectorAll('.video__btn-play');
+  for (btn of playBtns) {
+    btn.addEventListener('click',function(event) {
+      console.log('click');
+      event.preventDefault();
+      var video = closest(this,'.video');
+      if (video.classList.contains('playing')) {
+        videoUtils.pauseVideo(video.querySelector('video'));
       }
+      else {
+        console.log('play');
+        console.log(video.querySelector('video'));
+        videoUtils.playVideo(video.querySelector('video'));
+      }
+    });
+  }
 
-  var video = document.querySelector('video');
-  videoUtils.addEvents(video);
+  var videos = document.querySelectorAll('.video video');
+  for (video of videos) {
+    videoUtils.addEvents(video);
+  }
 });

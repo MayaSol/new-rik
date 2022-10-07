@@ -18,9 +18,9 @@ mixin cart(mods)
       }
     }
 
-  a.cart(class=allMods href="#")&attributes(attributes)
+  .cart(class=allMods href="#")&attributes(attributes)
     .cart__inner
-      .cart__icon-wrapper
+      a(href="#").flex.cart__icon-wrapper
         .cart__icon
           +svg('bag','',{width: '20', height: '21'})
         .cart__section(class="text-left")

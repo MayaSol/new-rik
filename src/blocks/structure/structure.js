@@ -62,7 +62,7 @@ ready(function() {
           //!!! clearTimeout(timerId);
           timerId = setTimeout(() => {
             container.innerHTML = contentOld;
-          }, 30000); //!!!!
+          }, 3000); //!!!!
         }
       }
     }

@@ -18,6 +18,7 @@
 
   &__inner {
     .js .nav--mobile & {
+      display: block !important;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.2s;
@@ -28,7 +29,6 @@
     }
 
     .js .nav--mobile.main-nav--open & {
-      padding-top: 70px;
       max-height: 1000px;
       transition: max-height 0.6s;
       box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.16);
@@ -61,6 +61,7 @@
     }
 
     .nav--mobile & {
+      padding-top: 60px;
       max-height: 400px;
       overflow-y: scroll;
     }

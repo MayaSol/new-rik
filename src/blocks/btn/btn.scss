@@ -272,4 +272,20 @@
     }
   }
 
+  &--small {
+    padding: 3px 6px;
+    font-size: 14px;
+    line-height: 18px;
+    border: 1px solid $tw-blue_link;
+    border-radius: 4px;
+    color: $tw-blue_link;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $tw-blue_link;
+      color: #fff;
+    }
+  }
+
 }

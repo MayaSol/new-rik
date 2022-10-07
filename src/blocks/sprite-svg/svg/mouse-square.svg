@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="21.5"
+   height="21.522604"
+   viewBox="0 0 21.5 21.522604"
+   fill="none"
+   version="1.1"
+   id="svg170"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <path
+     d="m 20.75,10.75 v -3 c 0,-5 -2,-7 -7,-7 h -6 c -5,0 -7,2 -7,7 v 6 c 0,5 2,7 7,7 h 3"
+     stroke="currentColor"
+     fill="none"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path166" />
+  <path
+     d="m 19.7097,16.59 -1.63,0.55 c -0.45,0.15 -0.81,0.5 -0.96,0.96 l -0.55,1.63 c -0.47,1.41 -2.45,1.38 -2.89,-0.03 l -1.85,-5.95 c -0.36,-1.18 0.73,-2.28 1.9,-1.91 l 5.96,1.85 c 1.4,0.44 1.42,2.43 0.02,2.9 z"
+     stroke="currentColor"
+     fill="none"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path168" />
+</svg>

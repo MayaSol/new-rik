@@ -3,30 +3,27 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .close {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-
-
-  &:hover {
-  }
-
-  &:before,
-  &:after {
-    position: absolute;
-    left: 50%;
-    content: ' ';
-    height: 13px;
-    width: 1px;
-    background-color: $tw-black;
-    transform-origin: center;
-  }
-
-  &:before {
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    transform: rotate(-45deg);
-  }
+  position: relative;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
 }
+.close:hover {
+  opacity: 0.4;
+}
+.close:before, .close:after {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: $tw-black;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+

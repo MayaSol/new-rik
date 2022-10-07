@@ -50,8 +50,14 @@ mixin makeMainNav(selectedID,menu,attr,isIndex)
   //- подключаем файл со структурой данных блока
   //- include main-nav.data.pug
 
+  -
+    var innerStyle = '';
+    if (attributes.id === 'nav-mobile') {
+      innerStyle = 'display: none;'
+    }
+
   nav.main-nav&attributes(attr)&attributes(attributes)
-    .main-nav__inner
+    .main-nav__inner(style=innerStyle)
       // if (attributes.id === 'nav-add')
       //   +burger('Показать дополнительное меню', 'nav-add', 'main-nav--open')(class='main-nav__toggler')
       ul.main-nav__list

@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (close)
+
+mixin close(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' close--' + modsList[i].trim();
+      }
+    }
+
+  button.close(class=allMods, type='button', aria-label=props.title, title=props.title)&attributes(attributes)
+    if (props.label)
+      span= label

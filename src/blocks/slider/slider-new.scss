@@ -4,36 +4,50 @@
 
 .slider {
 
-  $block-name: &; // #{$block-name}__element
+  $block-name:                &; // #{$block-name}__element
 
   &__wrapper {
     position: relative;
   }
 
   &__controls {
-    &--center {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-    }
-  }
 
-
-  &__controls {
-    &--center {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-    }
   }
 }
 
 
 .tns-controls {
-  position: relative;
-  font-size: 0;
+
+  &--center {
+     position: absolute;
+     left: 0;
+     right: 0;
+     top: 50%;
+     transform: translateY(-50%);
+
+     .tns-controls__btn {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: 10;
+     }
+
+     .tns-controls__btn--prev {
+        left: -15px;
+
+        svg {
+          transform: rotate(180deg);
+        }
+     }
+     .tns-controls__btn--next {
+        right: -15px;
+     }
+  }
 }
 
 .tns-controls button {
@@ -51,30 +65,6 @@
   border: 1px solid #fff;
   opacity: 1;
 
-  &::before {
-    @include sprite($arrow-right-white);
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .slider-main &:not(:disabled):hover {
-    box-shadow: 0px 0px 0px 1px #fff;
-
-    &::before {
-      // @include sprite($arrow-right-red);
-    }
-  }
-
-  &[data-controls='prev'] {
-    transform: rotate(180deg);
-  }
-
-  &[data-controls='next'] {
-    margin-left: 10px;
-  }
 
   &:not(:disabled):hover,
   &:not(:disabled):focus,
@@ -82,12 +72,10 @@
     background-color: $tw-gray-200;
   }
 
-  @media (min-width: $screen-md) {
-    width: 57px;
-    height: 51px;
-  }
+
 }
 
+// &__pagination.swiper-pagination,
 .tns-nav {
   position: absolute;
   bottom: 24px;
@@ -98,6 +86,15 @@
   }
 }
 
+// &__pagination.swiper-pagination-bullets {
+//   bottom: 24px;
+
+//   @media (min-width: $screen-md) {
+//     bottom: 16px;
+//   }
+// }
+
+// &__pagination .swiper-pagination-bullet,
 .tns-nav button {}
 
 .tns-nav button[data-controls=next] {

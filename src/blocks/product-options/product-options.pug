@@ -1,0 +1,21 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-options)
+
+mixin product-options(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-options--' + modsList[i].trim();
+      }
+    }
+
+  .product-options(class=allMods)&attributes(attributes)
+    if (props.title)
+      != props.title
+    select.product-options__select
+      option(value='1') test 1
+
+

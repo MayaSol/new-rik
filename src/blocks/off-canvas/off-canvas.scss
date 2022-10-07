@@ -37,7 +37,6 @@ $off-canvas-width:            320px !default; // ширина этого бло�
   }
 
   &__aside {
-    display: block !important;
     padding-top: 70px;
     max-height: 30vh;
     overflow-y: auto;
@@ -47,6 +46,7 @@ $off-canvas-width:            320px !default; // ширина этого бло�
     transition: transform $transition-time ease;
 
     .js & {
+      display: block !important;
       position: fixed;
       width: $off-canvas-width;
       height: 100%;

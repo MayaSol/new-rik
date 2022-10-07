@@ -84,10 +84,9 @@
   &__title {
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.25;
-    color: #00449e;
+    font-size: 20px;
+    line-height: 25px;
+    color: $tw-black;
     box-sizing: border-box;
   }
 
@@ -96,9 +95,9 @@
     border: 0;
   }
 
-  &__header &__close:before {
-    content: "\2715";
-  }
+  // &__header &__close:before {
+  //   content: "\2715";
+  // }
 
   &__content {
   }

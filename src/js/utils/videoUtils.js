@@ -1,41 +1,47 @@
+var closest = require('closest');
+
+//Класс playing добавляется к элементу с классом .video (проверяет тег <video/> и его родителей)
+
 var videoUtils = {};
 
-
-var playVideo=function(videoEl) {
-  var result = videoEl.play();
-  videoEl.controls = true;
+var playVideo=function(video) {
+  // var result = videoEl.play();
+  console.log('playVideo');
+  console.log(video);
+  video.play();
+  video.setAttribute('controls',true);
 }
 
 videoUtils.playVideo = playVideo;
 
-var pauseVideo=function(videoEl) {
-    videoEl.pause();
-    videoEl.controls = false;
+var pauseVideo=function(video) {
+    video.pause();
+    video.controls = false;
 }
 
 videoUtils.pauseVideo = pauseVideo;
 
 
 var onPlay = function(video) {
-  video.classList.add('playing');
+  console.log('onPlay');
+  var elem = closest(video,'.video',true);
+  elem.classList.add('playing');
 }
 
 videoUtils.onPlay = onPlay;
 
 var onStop = function(video) {
-  video.classList.remove('playing');
+  var elem = closest(video,'.video',true);
+  elem.classList.remove('playing');
   video.controls = false;
 }
 
 videoUtils.onStop = onStop;
 
 var onEnded = function (video) {
-  video.classList.remove('playing');
+  var elem = closest(video,'.video',true);
+  elem.classList.remove('playing');
   video.controls = false;
-  var info = sliderMain.getInfo();
-  if (info.index < info.slideCount-1) {
-    sliderMain.goTo(info.index + 1);
-  }
 }
 
 videoUtils.onEnded = onEnded;
