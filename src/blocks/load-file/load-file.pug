@@ -1,0 +1,19 @@
+//- Все примеси в этом файле должны начинаться c имени блока (load-file)
+
+mixin load-file(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' load-file--' + modsList[i].trim();
+      }
+    }
+
+  .load-file(class=allMods)&attributes(attributes)
+    input.load-file__input(type="file" id=props.id name=props.name)
+    label.btn.load-file__btn(for=props.id class=props.btn_classes)
+      block
+    .load-file__info.text-sm.text-gray-500 Прикрепите файл спецификации

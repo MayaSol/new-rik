@@ -80,8 +80,20 @@ ready(function() {
   var options = {
     openTrigger: 'data-modal-open',
     closeTrigger: 'data-modal-close',
-    openClass: 'is-open'
+    openClass: 'is-open',
+    onShow: modal => modalOnShow(),
+    onClose: modal => modalOnClose(),
   };
 
   MicroModal.init(options);
+
+  var modalOnShow = function() {
+    document.body.classList.add('modal-open');
+  };
+
+  var modalOnClose = function() {
+    document.body.classList.remove('modal-open');
+  };
+
+  // MicroModal.show('modal-ask-doctor');
 });

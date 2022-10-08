@@ -1,0 +1,12 @@
+// В этом файле должны быть стили для БЭМ-блока load-file, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.load-file {
+
+  $block-name:                &; // #{$block-name}__element
+
+  input {
+    display: none;
+  }
+}

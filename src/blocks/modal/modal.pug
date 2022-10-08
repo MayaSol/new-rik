@@ -1,17 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (modal)
 
-mixin modal(id, title, mods)
-
-  //- Принимает:
-  //-   id      {string} - идентификатор
-  //-   title   {string} - заголовок
-  //-   mods    {string} - список модификаторов
-  //- Вызов:
-        +modal('modal-demo-01', 'Заголовок', 'some')
-          .modal__body
-            p Текст
-          .modal__footer
-            button.btn(type='button', data-dismiss='modal') Закрыть
+mixin modal(props={}, mods)
 
   -
     // список модификаторов
@@ -23,10 +12,13 @@ mixin modal(id, title, mods)
       }
     }
 
-  .modal(id=id, class=allMods, tabindex='-1', role='dialog')&attributes(attributes)
-    .modal__dialog(role='document')
-        .modal__content
-          .modal__header
-            span.close.modal__close(data-dismiss='modal', aria-label='Закрыть') #[span]
-            h4.modal__title!= title
+  .modal.modal--regular(class=allMods id=props.id)&attributes(attributes)
+    .modal__overlay(tabindex='-1' data-modal-close)
+      .modal__container(role='dialog' aria-modal='true' aria-labelledby= props.title)
+        header.modal__header
+          .modal__title= props.title
+          +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-modal-close)
+        .modal__inner
           block
+
+

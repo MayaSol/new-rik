@@ -110,7 +110,7 @@ mixin product-main(props={}, mods)
         +svg('arrows-left-right','',{width: '18', height: '23'})
     +btn(
       '<svg class="icon" width="18" height="18"><use xlink:href="img/sprite.svg#mouse-square"></use></svg> <span>Задать вопрос врачу</span>',
-      'regular, icon, question')(class='product-main__question mt-10px')
+      'regular, icon, question')(class='product-main__question mt-10px' data-modal-open='modal-ask-doctor')
     .product-main__special.mt-20px
       div.text-sm Спец. условия для юр лиц. Скидка 10% от 5 шт.
       +btn('Запросить КП','small,special')(data-modal-open='modal-special-offer')
@@ -121,7 +121,7 @@ mixin product-main(props={}, mods)
             .modal__title Запросить коммерческое предложение
             +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-modal-close)
           .modal__inner
-            form.form-special
+            form.form.form--special
               +field-text({
                 attrs: {
                   name: 'name',
@@ -158,7 +158,44 @@ mixin product-main(props={}, mods)
                   type: 'text',
                   rows: 5
                 }
-              })(class="form-special__msg")
+              })(class='form-special__msg relative')
+                +btn-send
+            +load-file({id: 'special-file', btn_classes: 'btn--icon btn--regular border-gray-300 mb-5px inline-flex'})
+              +svg('paperclip','',{width: 20,height:19})
+              span Прикрепить файл
+    +modal({
+      id: 'modal-ask-doctor',
+      title: 'Задать вопрос о приборе. '
+    },'ask-doctor')
+      +author({
+        name: 'Иванова Анна Ивановна',
+        text: 'Ответит врач',
+      },'ask')
+      form.form.form--ask-doctor
+        +field-text({
+          attrs: {
+            name: 'name',
+            placeholder: 'Имя',
+            type: 'text'
+          }
+        })
+        +field-text({
+          attrs: {
+            name: 'phone',
+            placeholder: 'Телефон',
+            type: 'text'
+          }
+        })
+        +field-text({
+            isTextarea: true,
+          attrs: {
+            name: 'msg',
+            placeholder: 'Сообщение',
+            type: 'text',
+            rows: 5
+          }
+        })(class='form-special__msg relative')
+          +btn-send
 
 mixin product-main-item-video(props={}, mods)
   -
