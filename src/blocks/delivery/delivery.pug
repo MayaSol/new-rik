@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (delivery)
+
+mixin delivery(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' delivery--' + modsList[i].trim();
+      }
+    }
+
+  .delivery(class=allMods)&attributes(attributes)
+    block

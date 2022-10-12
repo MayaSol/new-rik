@@ -12,7 +12,7 @@ mixin tab-content(mods)
       }
     }
 
-  .tab__content-wrapper.tab-content(class=allMods)&attributes(attributes)
+  .tab-content(class=allMods)&attributes(attributes)
     block
 
 mixin tab-items(mods)
@@ -27,7 +27,7 @@ mixin tab-items(mods)
       }
     }
 
-  ul.tab__items(class="nav nav-tabs hidden md_flex" role="tablist")
+  ul.tab__items(class="nav nav-tabs" role="tablist")(class=allMods)&attributes(attributes)
     block
 
 
@@ -72,7 +72,10 @@ mixin tab-pane(props={}, mods)
 
     var paneClass="";
     if (props.isShow) {
-      paneClass="show active";
+      paneClass="show active ";
+    }
+    if (props.paneClasses) {
+      paneClass += props.paneClasses;
     }
 
   .tab-pane.fade(id = props.id role="tabpanel" aria-labelledby=props.itemId class=paneClass)

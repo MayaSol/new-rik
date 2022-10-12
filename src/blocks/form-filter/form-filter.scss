@@ -65,4 +65,10 @@
   border-radius: 4px;
   background-color: #fff;
   @apply shadow-default;
+
+  .tippy-arrow {
+    &::before {
+      border-top-color: #fff;
+    }
+  }
 }

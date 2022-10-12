@@ -9,6 +9,15 @@
 
   &__title {
     @apply text-2xl;
+    color: $tw-black;
+  }
+
+  &__info {
+    color: $tw-black;
+  }
+
+  &__hours {
+    color: $tw-black;
   }
 
   &__question-msg {
@@ -24,6 +33,10 @@
         height: 230px !important;
       }
     }
+  }
+
+  &__others {
+    color: $tw-black;
   }
 
   &__others-item {
@@ -68,6 +81,10 @@
         height: 30px;
       }
     }
+  }
+
+  &__main-contacts {
+    color: $tw-black;
   }
 
   &__main-contacts + div {

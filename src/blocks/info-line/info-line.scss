@@ -1,0 +1,31 @@
+// В этом файле должны быть стили для БЭМ-блока info-line, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.info-line {
+
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+
+  &::after {
+    content: "";
+    display: block;
+    margin: 0 3px 8px;
+    flex-grow: 1;
+    border-bottom: 1px dashed #d3d3d3;
+  }
+
+  &__value {
+    font-weight: 700;
+    order: 2;
+  }
+
+  &__caption {
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      @apply text-lg;
+    }
+  }
+}

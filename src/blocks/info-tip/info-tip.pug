@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (info-tip)
+
+mixin info-tip(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-tip--' + modsList[i].trim();
+      }
+    }
+
+  .info-tip(class=allMods)&attributes(attributes)
+    +svg('info','',{width:'14',height:'14'})(class="filter__info")

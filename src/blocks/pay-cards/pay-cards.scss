@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока pay-cards, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.pay-cards {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+
+  @media (min-width: $screen-lg) {
+    justify-content: start;
+  }
+
+  &__item {
+    margin-right: 11px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+     @media (min-width: $screen-lg) {
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+     }
+    i {
+      display: inline-block;
+    }
+  }
+}

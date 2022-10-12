@@ -9,6 +9,27 @@
   margin-bottom: 0;
   border-bottom: 1px solid $tw-gray-200;
 
+  &--delivery {
+
+    .nav-item {
+      .nav-link {
+        margin: 0 15px !important;
+        padding: 10px 0 !important;
+
+        @media (min-width: $screen-lg) {
+          padding: 24px 0 !important;
+          margin: 0 24px !important;
+        }
+      }
+
+      &:first-child {
+        .nav-link {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+
 
 
   &__link {

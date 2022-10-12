@@ -1,0 +1,27 @@
+// В этом файле должны быть стили для БЭМ-блока delivery, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.delivery {
+
+  $block-name:                &; // #{$block-name}__element
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 52px;
+    }
+  }
+
+  &__others {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

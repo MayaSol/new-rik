@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока info-tip, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.info-tip {
+
+  $block-name: &; // #{$block-name}__element
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+
+  svg {
+    fill: none;
+    stroke: $tw-gray-300;
+  }
+}
+
+.tippy-box[data-theme~='info-tip'] {
+  padding: 5px 10px;
+  color: $tw-black;
+  border-radius: 4px;
+  background-color: #fff;
+  color: $tw-gray-400;
+  @apply shadow-default;
+
+  &[data-placement^="top"] {
+    .tippy-arrow {
+      &::before {
+        border-top-color: #fff;
+      }
+    }
+  }
+
+  &[data-placement^="right"] {
+    .tippy-arrow {
+      &::before {
+        border-right-color: #fff;
+        border-width: 8px 8px 0px 0;
+      }
+    }
+  }
+
+  .delivery & {
+    .tippy-content {
+      @media (min-width: $screen-xxl) {
+        width: 300px;
+      }
+    }
+  }
+}

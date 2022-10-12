@@ -88,7 +88,7 @@
     top: -47px; //contacts wide
     top: -6px; //contacts mobile
     top: 0;
-    left: -110px; //product.jpg
+    left: 0; //product.jpg
     // top: -58px;
     // left: 64px;//footer main
     // top: -140px; //main test features
@@ -97,7 +97,7 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    // content: url('../screens/product.jpg');
+    // content: url('../screens/delivery-page.jpg');
     opacity: 1;
   }
 
@@ -157,6 +157,7 @@ body {
   // -webkit-font-smoothing: antialiased;
   // -moz-osx-font-smoothing: grayscale;
   @apply text-base;
+  @apply text-gray-500;
 
   .index & {
     position: relative;
@@ -392,12 +393,12 @@ figure {
 }
 
 p {
-  // http://clagnut.com/blog/2395
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
-  hyphenate-limit-lines: 2;
-  hyphenate-limit-last: always;
-  hyphenate-limit-zone: 8%;
+  //!!! http://clagnut.com/blog/2395
+  // hyphens: auto;
+  // hyphenate-limit-chars: 6 3 3;
+  // hyphenate-limit-lines: 2;
+  // hyphenate-limit-last: always;
+  // hyphenate-limit-zone: 8%;
 }
 
 address {

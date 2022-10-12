@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block meta
-  title Продукт
+  title Доставка и оплата
   meta(name='description', content='')
 
 //- block append head
@@ -17,276 +17,105 @@ block content
       +breadcrumbs-item('Главная','#')
       +breadcrumbs-item('Каталог','#')
       +breadcrumbs-item('Аппарат магнито-инфракрасный лазерный терапевтический рикта 04/4')
-    section.section.section--product-main.mt-20px.lg_mt-40px
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.section.delivery.section--delivery.mt-30px.lg_mt-20px.mb-60px
       .container
-        +product-main({
-          status: 'В наличии',
-          status_class: 'available',
-          status_icon: 'check-2',
-          status_icon_sizes: [8,8]
-        })
-    section.section.section--product-data.product-data.mt-40px.lg_mt-30px.lg_mb-64px
-      .container
-        .page-select.page-select--product-data.field-select__wrapper.md_container.md_after_hidden.lg_hidden.col-start-1.col-end-3.row-start-2.row-end-3.mb-20px
-          select#product-main-select.catalog__page-select.field-select.md_hidden.anchor-select(role='tablist' data-select-anchor)
-            option(value='#desc' selected) Описание продукта
-            option(value='#tech') Технические характеристики
-            option(value='#kit') Комплектация
-            option(value='#doc') Документация
-            option(value='#reviews') Отзывы пользователей
+        h1.section__title.mb-20px Доставка и оплата
         .page-links__wrapper.col-start-1.col-end-3.lg_row-start-2.lg_row-end-3
-          +page-links()(class='nav nav-tabs hidden md_flex' data-tabs-anchor)
-            +page-links-item({ name: 'Описание продукта', isActive: true, anchor: '#desc'})
-            +page-links-item({ name: 'Технические характеристики', anchor: '#tech'})
-            +page-links-item({ name: 'Комплектация', anchor: '#kit'})
-            +page-links-item({ name: 'Документация', anchor: '#doc'})
-            +page-links-item({ name: 'Отзывы пользователей', anchor: '#reviews'})
-        .product-data__content
-          h2#desc.product-data__title.mt-20px.mb-20px Настольный аппарат лазерной магнитно-инфракрасной терапии рикта 04/4
-          p Воздействие аппаратом происходит на биологические активные зоны человека одновременно четырьмя базовыми факторами: лазер, инфракрасное излучение, красный свет и магнит, за счёт чего стимулируются собственные жизненные силы организма на борьбу с широким кругом заболеваний.
-          p Лазерная терапия улучшает кровообращение, активизирует иммунную систему, способствует регенерации тканей, оказывает на организм противовоспалительное и обезболивающее действие.
-          p В отличие от привычных всем лекарств (таблеток, микстур и т.п.), данный вид лечения устраняет не симптомы, а причину заболеваний.
-          p Один излучатель Т1 входит в базовый комплект поставки вместе с подробным методическим пособием.
-          p Сам аппарат имеет возможность подключения второго (дополнительного) излучателя и их одновременной работы.
-          p В приборе есть возможность регулировки мощности излучений, что позволяет применять его для лечения детей, начиная с грудного возраста, а также лиц пожилого возраста (старше восьмидесяти) с некоторыми острыми и хроническими заболеваниями. Внимательно ознакомьтесь с методическими рекомендациями, идущими в комплекте к каждому аппарату!
-          h2.product-data__title.mt-30px.mb-20px Терапевтические факторы
-          ul.list-regular.pb-10px
-            li Импульсное инфракрасное лазерное излучение (905 нм., 16Вт в импульсе)
-            li Пульсирующее широкополосное инфракрасное излучение (875 нм)
-            li Пульсирующий красный свет (640 нм)
-            li Постоянное магнитное поле (35 мТл).
-          h2#tech.product-data__title.mt-30px.mb-20px  Технические характеристики
-          +product-data-item({
-            caption: 'Конструкция',
-            value: 'Настольный'
-          })
-          +product-data-item({
-            caption: 'Возрастные ограничения пациентов:',
-            value: '0+'
-          })
-          +product-data-item({
-            caption: 'Производитель',
-            value: 'ЗАО "МИЛТА-ПКП ГИТ"'
-          })
-          +product-data-item({
-            caption: 'Страна происхождения',
-            value: 'Россия'
-          })
-          h3.product-data__subtitle Лечебные факторы
-          +product-data-item({
-            caption: 'Лазерная терапия',
-            value: 'Есть'
-          })
-          +product-data-item({
-            caption: 'Инфракрасная терапия',
-            value: 'Есть'
-          })
-          +product-data-item({
-            caption: 'Длина волны, (нм) лазерного инфракрасного излучения',
-            value: '905'
-          })
-          +product-data-item({
-            caption: 'Магнитотерапия',
-            value: 'Есть'
-          })
-          +product-data-item({
-            caption: 'Светотерапия',
-            value: 'Есть'
-          })
-          +product-data-item({
-            caption: 'Длина волны, (нм) красного видимого излучения ',
-            value: '640'
-          })
-          +product-data-item({
-            caption: 'Длина волны, (нм) широкополосного инфракрасного излучения ',
-            value: '875'
-          })
-          +product-data-item({
-            caption: 'Электротерапия',
-            value: 'Нет (опционально, можно докупить доп. излучатель).'
-          })
-          h3.product-data__subtitle Частота повторения импульсов, Гц лазерного широкополосного инфракрасного излучения
-          +product-data-item({
-            caption: 'постоянная:',
-            value: '5, 50, 1000'
-          })
-          +product-data-item({
-            caption: 'переменная',
-            value: '1 - 250'
-          })
-          +product-data-item({
-            caption: 'красного излучения:',
-            value: '2'
-          })
-          +product-data-item({
-            caption: 'Длительность процедуры лечения, мин: ',
-            value: '1; 2; 5; 10'
-          })
-          +product-data-item({
-            caption: 'Питание аппарата',
-            value: 'От сети переменного тока 220 В, 50 Гц'
-          })
-          +product-data-item({
-            caption: 'Питание аппарата',
-            value: 'От сети переменного тока 220 В, 50 Гц'
-          })
-          +product-data-item({
-            caption: 'Мощность потребления, Вт',
-            value: '20'
-          })
-          +product-data-item({
-            caption: 'Габаритные размеры, мм',
-            value: ' 245х220х95'
-          })
-          +product-data-item({
-            caption: 'Масса нетто, кг.',
-            value: '1,5'
-          })
-          +product-data-item({
-            caption: 'Электробезопасность по ГОСТ Р50267.0-92',
-            value: 'Класс защиты II'
-          })
-          +product-data-item({
-            caption: 'Лазерная безопасность по ГОСТ Р50723-94',
-            value: 'Класс 1.'
-          })
-          h3.product-data__subtitle Излучатель
-          +product-data-item({
-            caption: 'Лазерная безопасность по ГОСТ Р50723-94',
-            value: 'Класс 1.'
-          })
-          +product-data-item({
-            caption: 'Импульсная мощность лазерного излучения, Вт',
-            value: '10'
-          })
-          +product-data-item({
-            caption: 'Средняя мощность инфракрасного диодного излучения, мВт',
-            value: '60'
-          })
-          +product-data-item({
-            caption: 'Площадь выходного отверстия излучателя, кв. см',
-            value: '4'
-          })
-          +product-data-item({
-            caption: 'Магнитная индукция, мТл',
-            value: '35'
-          })
-          h2#kit.product-data__title Комплектация
-          +product-data-item({
-            caption: 'Электронный блок управления',
-            value: '1 шт.'
-          })
-          +product-data-item({
-            caption: 'Излучатель Т1-04',
-            value: '1 шт.'
-          })
-          +product-data-item({
-            caption: 'Методическое пособие по применению аппарата ',
-            value: '1 шт.'
-          })
-          +product-data-item({
-            caption: 'Паспорт и гарантийный талон',
-            value: '1 шт.'
-          })
-          +product-data-item({
-            caption: 'Упаковочная коробка',
-            value: '1 шт.'
-          })
-          h2.product-data__title Гарантия
-          +product-data-item({
-            caption: 'Срок гарантийного обслуживания',
-            value: ' 2 года'
-          })
-          h2#doc.product-data__title Документация
-          .product-data__download-list
-            +btn-download({
-              text: 'Декларация ЕАС <i>(8.5 мб)</i>',
-              href: 'http://example.com/files/myfile.pdf',
-              classes: 'product-data__download'
-            })
-            +btn-download({
-              text: 'Регистрационное удостоверение <i>(12.3 мб)</i>',
-              href: 'http://example.com/files/myfile.pdf',
-              classes: 'product-data__download'
-            })
-            +btn-download({
-              text: 'Руководство пользователя<i>(5.6 мб)</i>',
-              href: 'http://example.com/files/myfile.pdf',
-              classes: 'product-data__download'
-            })
-          h2.product-data__title.mt-40px Назначение аппарата рикта
-          p Аппарат “РИКТА 04/4” – это аппарат лазерной терапии, проверенный временем и применяемый в тысячах медицинских учреждений. Методистами, врачами-лазерологами были разработаны методики лечения заболеваний опорно-двигательного аппарата, нервной, сердечно-сосудистой, бронхолегочной, мочеполовой и других систем организма.
-          p Использование аппаратов способствует омоложению, поддержанию хорошего самочувствия у лиц пожилого возраста и долголетию. Благодаря высокому терапевтическому эффекту, удобству и простоте использования, аппарат "Рикта" рекомендован для домашнего применения и широко используется в медицинских учреждениях различной направленности.
-          p Аппараты "РИКТА" - это здоровье, стойкий иммунитет, избавление от хронических недугов, высокое качество жизни. Они просты и удобны в использовании.
-          p Благодаря лазерным аппаратам “РИКТА”, можно избавиться от очереди в поликлинику и сэкономить на лекарствах.
-          .lg_flex
-            +btn('Варианты доставки','regular')(class='border-gray-200 w-full lg_w-auto mb-10px lg_mb-0 lg_mr-10px' href='#')
-            +btn('Способы оплаты','regular')(class='border-gray-200 w-full lg_w-auto' href='#')
-        section.section.section--reviews.section--reviews-product-page.pt-20px.lg_pt-0
-          .section__header#reviews
-            h2.product-data__title(class='w-[200px] lg_w-auto') Отзывы пользователей <span>о товаре</span>
-            +btn('Все отзывы','simple')(class='')
-          .reviews__tab-select-wrapper.field-select__wrapper.md_after_hidden
-            select#reviews-tab-select.reviews__tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
-              option(value="#profs" role="tab") Профессионалы
-              option(value="#users" role="tab") Пользователи
-              option(value="#videos" role="tab") Видео
-          +reviews('','',false)
-    section.section.section--catalog.pt-50px.lg_pt-0.lg_mb-64px
-      .section__inner
-        .container
-          .product-catalog
-            h2.section__title.mb-0.mt-0.xxl_mb-7px Похожие товары
-            +btn('Все аппараты','simple')(class="pt-3px")
-            .product-list.mt-20px
-              +product-card(
-                {
-                  url: './img/product.jpg',
-                  srcset:
-                  'img/product_320x200.jpg 320w,' +
-                  'img/product_345x242.jpg 345w,',
-                  sizes: '(max-width: 1023) 320px,' +
-                        '(min-width: 1024px) 345px,',
-                  title: 'РИКТА-04/4',
-                  desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
-                  price: '44 800 ₽'
-                })(class="slider__item")
-              +product-card(
-                {
-                  url: './img/product.jpg',
-                  srcset:
-                  'img/product_320x200.jpg 320w,' +
-                  'img/product_345x242.jpg 345w,',
-                  sizes: '(max-width: 1023) 320px,' +
-                        '(min-width: 1024px) 345px,',
-                  title: 'РИКТА 04/4 (универсальный)',
-                  desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
-                  price: '74 600 ₽'
-                })(class="slider__item")
-              +product-card(
-                {
-                  url: './img/product.jpg',
-                  srcset:
-                  'img/product_320x200.jpg 320w,' +
-                  'img/product_345x242.jpg 345w,',
-                  sizes: '(max-width: 1023) 320px,' +
-                        '(min-width: 1024px) 345px,',
-                  title: 'рикта-эсмил(1)а',
-                  desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
-                  price: '98 200 ₽'
-                })(class="slider__item")
-              +product-card(
-                {
-                  url: 'http://placekitten.com/300/300',
-                  srcset:
-                  'img/product_320x200.jpg 320w,' +
-                  'img/product_345x242.jpg 345w,',
-                  sizes: '(max-width: 1023) 320px,' +
-                        '(min-width: 1024px) 345px,',
-                  title: 'рикта-тест',
-                  desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
-                  price: '98 200 ₽'
-                })(class="slider__item")
+          +page-links('delivery')(class='nav nav-tabs flex')
+            +page-links-item({ name: 'Доставка', isActive: true, href: '#'})
+            +page-links-item({ name: 'Оплата', href: '#'})
+        // +tab-items(id='deliveryTab' class='lg_mb-40px')
+        //   +tab-item({
+        //     id: 'delivery-tab',
+        //     targetId: 'delivery',
+        //     name: 'Доставка',
+        //     isActive: true
+        //   })
+        //   +tab-item({
+        //     id: 'pay-tab',
+        //     targetId: 'pay',
+        //     name: 'Оплата'
+        //   })
+        // +tab-content(id='deliverTabContent')
+        //   +tab-pane({
+        //     id: 'delivery',
+        //     itemId: 'delivery-tab',
+        //     isShow: true,
+        //     paneClasses: 'delivery__content delivery__content--delivery'
+        //   })
+        .delivery__content.delivery__content--delivery.mt-30px.lg_mt-40px
+          .delivery__moscow.p-22px.bg-gray-100.lg_p-40px(class='rounded-[20px]')
+            h2.mt-0.mb-20px.text-2xl Как получить товар в&nbsp;Москве
+            h3.mt-0.text-lg Самовывоз
+            p Вы можете самостоятельно забрать свой заказ, приехав в наш офис продаж, расположенный прямо при заводе-изготовителе в&nbsp;городе Москва по&nbsp;адресу <a href='#'>ул.&nbsp;Боровая, д.&nbsp;7, стр.&nbsp;7</a> с&nbsp;понедельника по&nbsp;пятницу 10:00&nbsp;до&nbsp;18:00.
+            h3.mt-20px.text-lg Курьерская доставка
+            p Доставка осуществляется, как правило, через день после оформления заказа.
+            .info-line.mt-30px.mb-20px
+              .info-line__caption.relative.pr-20px
+                span От&nbsp;15&nbsp;000&nbsp;руб.
+                +info-tip(class='info-tip--right' data-content='Бесплатная доставка за МКАД осуществляется при условии предоплаты.')
+              .info-line__value.text-green
+                span Бесплатно
+            p Если Ваш заказ на меньшую сумму, то стоимость доставки составит:
+            .info-line.mb-10px
+              .info-line__caption
+                span Москва в пределах МКАД
+              .info-line__value
+                span 500&nbsp;руб.
+            .info-line
+              .info-line__caption.relative.pr-20px
+                span Москва за МКАД
+                +info-tip(class='info-tip--right' data-content='Бутово, Жулебино, Коммунарка, Кожухово, Куркино, Митино, Некрасовка, Новокосино, Соларьево, Солнцево и пр.')
+              .info-line__value
+                span 750&nbsp;руб.
+          .delivery__others.mt-40px
+            h2.mt-0.mb-10px.text-2xl Доставка по&nbsp;России
+            p Доставка осуществляется курьерской службой.
+            p <b>Средний срок доставки:</b> 1–3 дня.
+            p Если сумма заказа от <b>15000 руб.</b> (при условии предоплаты) - <b>бесплатно</b>
+            p в остальных случаях (при отправке наложенным платежом или при сумме заказа меньше 15000 руб.) - 1800 руб.
+            p Обратите внимание! Курьер нашего партнёра только доставляет Вам заказанный товар. Передача товара от курьера возможна только после оплаты. При обнаружении в последствии какого-либо дефекта или неисправности, действовать следует в соответствии с правилами гарантийного ремонта.
+            h2.mt-20px.mb-10px.text-2xl Доставка за пределы РФ
+            p Доставка за рубеж осуществляется службой EMS по тарифу службы.
+            p Отгрузка происходит строго по 100% предоплате.
+            p <b>Средний срок доставки:</b> 10–25 дней после оплаты заказа.
+          // +tab-pane({
+          //   id: 'pay',
+          //   itemId: 'pay-tab',
+          //   paneClasses: 'delivery__content delivery__content--pay'
+          // })
+          //   .delivery__pay-info.mt-30px
+          //     p <b>Вниманию иностранных покупателей!</b> Цены в рублях действительны только для России и стран СНГ.<br>(<b>Attention of foreign buyers!</b> Prices in rubles are valid only for Russia and CIS countries).
+          //     h2.mt-0.text-2xl Оплата банковскими картами
+          //     +pay-cards
+          //       +pay-cards-item({iconClass: 'icon_card-mir'})
+          //       +pay-cards-item({iconClass: 'icon_card-visa'})
+          //       +pay-cards-item({iconClass: 'icon_card-mastercard'})
+          //       +pay-cards-item({iconClass: 'icon_card-maestro'})
+          //     p При заказе по электронной почте или по телефону вы получаете на указанный e-mail счет на оплату, который можно оплатить в любом отделении удобного вам банка или через интернет-банк. Для вашего удобства и простоты на счете имеется QR-код.
+          //     p Оплатить заказ вы можете онлайн, сразу после его оформления на нашем сайте через систему безопасных платежей CloudPayments. К оплате принимаются карты МИР, Visa, MasterCard, Maestro.
+          //     p Обратите внимание! Предоплаченные 100% заказы доставляются физическим лицам по РФ бесплатно!
+          //     h2.mt-0.text-2xl Безналичный перевод, оплата через отделение банка
+          //     p Данный вид оплаты возможен для физических и юридических лиц.
+          //     p При заказе по электронной почте или по телефону вы получаете на указанный e-mail счет на оплату, который можно оплатить в любом отделении удобного вам банка или через интернет-банк. Для вашего удобства и простоты на счете имеется QR-код.
+          //     p Оформляя заказ через интернет-магазин, пожалуйста, указывайте ваши реквизиты как можно подробнее.
+          //     p <b>Обратите внимание!</b> Предоплаченные 100% заказы доставляются физическим лицам по РФ бесплатно!
+          //     h2.mt-0.text-2xl Наличными рублями при получении заказа
+          //     p Данный вариант оплаты возможен при доставке заказов по РФ транспортными компаниями физическим лицам, проживающим в регионах, на которые распространяется услуга оплаты вложения (уточняйте у оператора).
+          //   .delivery__pay-details.p-22px.bg-gray-100.lg_pt-40px(class='rounded-[20px]')
+          //     h2.mt-0.text-2xl Реквизиты ООО "РИКТАМЕД":
+          //     p ИНН 7722709014
+          //     p КПП 772201001
+          //     p Юридический адрес: 111020, РОССИЯ, г. Москва,  ул. Боровая, д. 7 стр. 7, 2 этаж, офис 29
+          //     p Р/счет  № 40702810738000085080 в «Сбербанк» (ПАО) г. Москва
+          //     p К/счет № 30101810400000000225
+          //     p БИК 044525225
+          //     p ОГРН 1107746094224
+          //     +btn('Скачать все реквизиты','regular')(class='border-gray-500' href='#')
+
+
 
 block prepend page-bottom
   .inline-svg-sprite
