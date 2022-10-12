@@ -16,6 +16,12 @@
       grid-template-columns: 1fr 1fr;
       gap: 0 52px;
     }
+
+    &--pay {
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 530px;
+      }
+    }
   }
 
   &__others {
@@ -24,4 +30,5 @@
       flex-direction: column;
     }
   }
+
 }

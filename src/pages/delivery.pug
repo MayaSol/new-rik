@@ -15,13 +15,12 @@ block content
   .wrapper
     +breadcrumbs(class='container')
       +breadcrumbs-item('Главная','#')
-      +breadcrumbs-item('Каталог','#')
-      +breadcrumbs-item('Аппарат магнито-инфракрасный лазерный терапевтический рикта 04/4')
+      +breadcrumbs-item('Доставка и оплата')
     #bx_basketFKauiI.bx-basket.bx-opener
       +cart-aside(class='hidden xl_block')
-    section.section.delivery.section--delivery.mt-30px.lg_mt-20px.mb-60px
+    section.section.delivery.section--delivery.mt-30px.lg_mt-0.lg_mb-64px
       .container
-        h1.section__title.mb-20px Доставка и оплата
+        h1.section__title.mt-20px.mb-20px.lg_mt-5px Доставка и оплата
         .page-links__wrapper.col-start-1.col-end-3.lg_row-start-2.lg_row-end-3
           +page-links('delivery')(class='nav nav-tabs flex')
             +page-links-item({ name: 'Доставка', isActive: true, href: '#'})
@@ -74,7 +73,7 @@ block content
             h2.mt-0.mb-10px.text-2xl Доставка по&nbsp;России
             p Доставка осуществляется курьерской службой.
             p <b>Средний срок доставки:</b> 1–3 дня.
-            p Если сумма заказа от <b>15000 руб.</b> (при условии предоплаты) - <b>бесплатно</b>
+            p Если сумма заказа от 15000 руб. (при условии предоплаты) - <b>бесплатно</b>
             p в остальных случаях (при отправке наложенным платежом или при сумме заказа меньше 15000 руб.) - 1800 руб.
             p Обратите внимание! Курьер нашего партнёра только доставляет Вам заказанный товар. Передача товара от курьера возможна только после оплаты. При обнаружении в последствии какого-либо дефекта или неисправности, действовать следует в соответствии с правилами гарантийного ремонта.
             h2.mt-20px.mb-10px.text-2xl Доставка за пределы РФ

@@ -15,22 +15,21 @@ block content
   .wrapper
     +breadcrumbs(class='container')
       +breadcrumbs-item('Главная','#')
-      +breadcrumbs-item('Каталог','#')
-      +breadcrumbs-item('Аппарат магнито-инфракрасный лазерный терапевтический рикта 04/4')
+      +breadcrumbs-item('Доставка и оплата')
     #bx_basketFKauiI.bx-basket.bx-opener
       +cart-aside(class='hidden xl_block')
-    section.section.delivery.section--delivery.mt-20px.lg_mt-40px.mb-60px
+    section.section.delivery.section--delivery.mt-20px.lg_mt-0.lg_mb-64px
       .container
-        h1.section__title.mb-20px Доставка и оплата
+        h1.section__title.mt-30px.mb-20px.lg_mt-5px Доставка и оплата
         .page-links__wrapper.col-start-1.col-end-3.lg_row-start-2.lg_row-end-3
-          +page-links()(class='nav nav-tabs flex')
+          +page-links('delivery')(class='nav nav-tabs flex')
             +page-links-item({ name: 'Доставка', href: '#'})
             +page-links-item({ name: 'Оплата', isActive: true, href: '#'})
         .delivery__content.delivery__content--pay.mt-30px.lg_mt-40px
-          .delivery__pay-info.mt-30px
-            p <b>Вниманию иностранных покупателей!</b> Цены в рублях действительны только для России и стран СНГ.<br>(<b>Attention of foreign buyers!</b> Prices in rubles are valid only for Russia and CIS countries).
-            h2.mt-0.text-2xl Оплата банковскими картами
-            +pay-cards
+          p.lg_col-start-1.lg_col-end-3 <b>Вниманию иностранных покупателей!</b> Цены в рублях действительны только для России и стран СНГ.<br>(<b>Attention of foreign buyers!</b> Prices in rubles are valid only for Russia and CIS countries).
+          .delivery__pay-info.mt-20px.lg_mt-30px
+            h2.mt-20px.lg_mt-0.mb-15px.text-2xl Оплата банковскими картами
+            +pay-cards(class='mb-15px')
               +pay-cards-item({url: '/img/card-mir.png'})
               +pay-cards-item({url: '/img/card-visa.png'})
               +pay-cards-item({url: '/img/card-mastercard.png'})
@@ -38,23 +37,23 @@ block content
             p При заказе по электронной почте или по телефону вы получаете на указанный e-mail счет на оплату, который можно оплатить в любом отделении удобного вам банка или через интернет-банк. Для вашего удобства и простоты на счете имеется QR-код.
             p Оплатить заказ вы можете онлайн, сразу после его оформления на нашем сайте через систему безопасных платежей CloudPayments. К оплате принимаются карты МИР, Visa, MasterCard, Maestro.
             p Обратите внимание! Предоплаченные 100% заказы доставляются физическим лицам по РФ бесплатно!
-            h2.mt-0.text-2xl Безналичный перевод, оплата через отделение банка
+            h2.mt-30px.text-2xl Безналичный перевод, оплата через отделение банка
             p Данный вид оплаты возможен для физических и юридических лиц.
             p При заказе по электронной почте или по телефону вы получаете на указанный e-mail счет на оплату, который можно оплатить в любом отделении удобного вам банка или через интернет-банк. Для вашего удобства и простоты на счете имеется QR-код.
             p Оформляя заказ через интернет-магазин, пожалуйста, указывайте ваши реквизиты как можно подробнее.
             p <b>Обратите внимание!</b> Предоплаченные 100% заказы доставляются физическим лицам по РФ бесплатно!
-            h2.mt-0.text-2xl Наличными рублями при получении заказа
+            h2.mt-30px.text-2xl Наличными рублями при получении заказа
             p Данный вариант оплаты возможен при доставке заказов по РФ транспортными компаниями физическим лицам, проживающим в регионах, на которые распространяется услуга оплаты вложения (уточняйте у оператора).
-          .delivery__pay-details.p-22px.bg-gray-100.lg_pt-40px(class='rounded-[20px]')
-            h2.mt-0.text-2xl Реквизиты ООО "РИКТАМЕД":
-            p ИНН 7722709014
-            p КПП 772201001
-            p Юридический адрес: 111020, РОССИЯ, г. Москва,  ул. Боровая, д. 7 стр. 7, 2 этаж, офис 29
-            p Р/счет  № 40702810738000085080 в «Сбербанк» (ПАО) г. Москва
-            p К/счет № 30101810400000000225
-            p БИК 044525225
-            p ОГРН 1107746094224
-            +btn('Скачать все реквизиты','regular')(class='border-gray-500' href='#')
+          .delivery__pay-details.mt-40px.p-22px.bg-gray-100.lg_mt-30px.lg_p-40px.lg_self-start(class='rounded-[20px]')
+            h2.mb-10px.mt-0.text-2xl Реквизиты ООО "РИКТАМЕД":
+            div ИНН 7722709014
+            div КПП 772201001
+            div Юридический адрес: 111020, РОССИЯ, г. Москва,  ул. Боровая, д. 7 стр. 7, 2 этаж, офис 29
+            div Р/счет  № 40702810738000085080 в «Сбербанк» (ПАО) г. Москва
+            div К/счет № 30101810400000000225
+            div БИК 044525225
+            div ОГРН 1107746094224
+            +btn('Скачать все реквизиты','regular')(class='mt-20px py-7px text-base border-gray-500' href='#')
 
 
 
