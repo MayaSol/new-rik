@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока list-regular, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.list-regular {
+
+  $block-name: &; // #{$block-name}__element
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+
+  li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0.25em;
+      height: 0.25em;
+      left: 0;
+      top: 0.8em;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: $tw-gray-300;
+
+      @media (min-width: $screen-lg) {
+        width: 0.18em;
+        height: 0.18em;
+        left: 5px;
+      }
+    }
+  }
+}

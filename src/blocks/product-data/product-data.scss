@@ -1,0 +1,107 @@
+// В этом файле должны быть стили для БЭМ-блока product-data, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.product-data {
+
+  $block-name: &; // #{$block-name}__element
+
+  color: $tw-gray-500;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 34px;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      font-size: 36px;
+      line-height: 53px;
+    }
+
+    span {
+      display: none;
+      @media (min-width: $screen-lg) {
+        display: inline;
+      }
+    }
+
+  }
+
+  &__subtitle {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    @apply text-xl;
+    @media (min-width: $screen-lg) {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    color: $tw-gray-500;
+    border: 1px solid $tw-gray-200;
+    border-radius: $border-radius;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      padding: 0;
+      border: none;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 16px;
+        margin: 0 5px;
+        flex-grow: 1;
+        border-bottom: 1px dashed $tw-gray-300;
+      }
+    }
+  }
+
+  &__item-caption {
+    position: relative;
+    padding-bottom: 3px;
+    @apply text-sm;
+    border-bottom: 1px solid $tw-gray-200;
+
+    @media (min-width: $screen-lg) {
+      padding-bottom: 0;
+      border: none;
+    }
+  }
+
+  &__item-value {
+    padding-top: 3px;
+    font-weight: 700;
+    order: 2;
+  }
+
+  &__download {
+    margin-bottom: 9px;
+
+    @media (min-width: $screen-lg) {
+      margin-right: 10px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__download-list {
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+  }
+
+  &__content {
+    max-width: 998px;
+  }
+}

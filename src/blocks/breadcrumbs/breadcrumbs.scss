@@ -20,14 +20,18 @@
   }
 
   a {
-    color: $text-color;
+    color: $tw-black;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      color: $text-color;
+      color: $tw-black;
       text-decoration: none;
     }
+  }
+
+  span {
+    color: #929292;
   }
 
   &__item {

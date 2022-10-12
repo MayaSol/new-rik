@@ -43,6 +43,7 @@
   min-height: 100%;
 
   &.index {
+
     //!!!
     @media (min-width: $onepage-width) {
       height: 100%;
@@ -87,6 +88,8 @@
     top: -47px; //contacts wide
     top: -6px; //contacts mobile
     top: 0;
+    left: -110px; //product.jpg
+    // top: -58px;
     // left: 64px;//footer main
     // top: -140px; //main test features
     // top: 32px; //mobile test features
@@ -94,7 +97,7 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    // content: url('../screens/catalog-page.jpg');
+    // content: url('../screens/product.jpg');
     opacity: 1;
   }
 
@@ -733,6 +736,7 @@ body {}
 
     .section__title {
       margin-top: 0;
+
       @media (min-width: $onepage-width) {
         grid-row-start: 1;
         grid-row-end: 2;
@@ -756,50 +760,7 @@ body {}
     }
   }
 
-  &--reviews {
 
-    .tns-controls {
-      top: -110px;
-      right: 20px;
-
-      @media (min-width: $screen-lg) {
-        top: -115px;
-      }
-
-      @media (min-width: $onepage-width) {
-        .screen-low & {
-          top: -85px;
-        }
-      }
-
-      @media (min-width: $screen-xxl) {
-        top: -105px;
-
-      }
-    }
-
-    .section__title {
-      @media (min-width: $onepage-width) {
-        .screen-low & {
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    .section__content {
-
-      @media (min-width: $onepage-width) {
-        .screen-low & {
-          margin-top: 0;
-        }
-      }
-
-      @media (min-width: $screen-xxl) {
-        margin-top: 20px;
-      }
-    }
-  }
 
   &--articles {
 
@@ -858,14 +819,6 @@ body {}
 
   }
 
-  // &--reviews .tns-controls {
-  //   right: 20px;
-
-  //   @media (min-width: $screen-xxl) {
-  //     top: -170px;
-  //   }
-
-  // }
 
   &--reviews {
     position: relative;
@@ -878,11 +831,81 @@ body {}
       }
     }
 
+    .tns-controls {
+      top: -110px;
+      right: 20px;
+
+      @media (min-width: $screen-lg) {
+        top: -115px;
+      }
+
+      @media (min-width: $onepage-width) {
+        .screen-low & {
+          top: -85px;
+        }
+      }
+
+      @media (min-width: $screen-xxl) {
+        top: -105px;
+
+      }
+    }
+
     .section__title {
+      @media (min-width: $onepage-width) {
+        .screen-low & {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+
       @media (min-width: $screen-xxl) {
         margin-top: 0;
       }
+
     }
+
+    .section__content {
+
+      @media (min-width: $onepage-width) {
+        .screen-low & {
+          margin-top: 0;
+        }
+      }
+
+      @media (min-width: $screen-xxl) {
+        margin-top: 20px;
+      }
+    }
+
+  }
+
+
+  &--reviews-product-page {
+    max-width: 998px;
+
+    @media (min-width: $screen-lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    .tns-controls {
+      top: -130px;
+    }
+
+    .section__subtitle {
+      span {
+        display: none;
+
+        @media (min-width: $screen-lg) {
+          display: inline;
+          width: auto;
+        }
+      }
+    }
+
   }
 
 

@@ -15,7 +15,38 @@ mixin product-options(props={}, mods)
   .product-options(class=allMods)&attributes(attributes)
     if (props.title)
       != props.title
-    select.product-options__select
-      option(value='1') test 1
+    .btn--collapse.collapsed.product-options__btn.flex(data-modal-open='modal-options')
+      .product-options__label.product-options__label--amount <span class="product-options__add-text">Выбрано</span> <span class='product-options__amount'>0 доп. опции</span>
+      .product-options__label.product-options__label--clear.hidden
+        button.btn.btn--clear.p-0 Удалить
+      .product-options__label.product-options__label--edit
+        button.btn.btn--clear.p-0 <span class='product-options__lbl-add'>Добавить</span><span class='product-options__lbl-change hidden'>Изменить</span>
+    //- +btn('<span>Добавить</span>','regular, options-add')(class='product-options__add self-center' data-modal-open='modal-options')
+
+
+mixin product-options-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-options__item--' + modsList[i].trim();
+      }
+    }
+
+  label.product-options__item(class=allMods)&attributes(attributes)
+    .product-options__check
+      +field-checkbox([
+        {
+          attrs: {
+            name: 'product1',
+          }
+        },
+      ])
+    .product-options__img
+      img.lazyload(data-src=props.src)
+    .product-options__desc!= props.desc
 
 

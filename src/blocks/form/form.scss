@@ -4,28 +4,90 @@
 
 .form {
 
-  &__fieldset {
-    min-width: 0;
-    margin: 0;
-    border: 0;
-    padding: 0;
+  $block-name: &; // #{$block-name}__element
 
-    &:not(:last-child) {
-      margin-bottom: $typo-margin-vertical;
+  &--ask-doctor {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      width: 100%;
+      gap: 0 10px;
+      grid-column-start: 1;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+    #{$block-name}__msg {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      .field-text__input-wrap {
+        @media (min-width: $screen-lg) {
+          height: 100%;
+        }
+
+        textarea {
+          @media (min-width: $screen-lg) {
+            height: 100%;
+          }
+        }
+      }
     }
   }
 
-  &__legend {
-    display: block;
-    width: 100%;
-    max-width: 100%; // Привет IE
-    margin-top: 0;
-    margin-bottom: $typo-margin-vertical;
-    font-size: $font-size-h3;
-    font-family: $font-family;
-    font-weight: 700;
-    line-height: $line-height;
-    white-space: normal; // Привет IE
-    color: currentColor;
+  &--special {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      width: 100%;
+      gap: 0 10px;
+      grid-column-start: 1;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    #{$block-name}__msg {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      .field-text__input-wrap {
+        @media (min-width: $screen-lg) {
+          height: 100%;
+        }
+
+        textarea {
+          @media (min-width: $screen-lg) {
+            height: 100%;
+          }
+        }
+      }
+    }
   }
+
+  &--options {
+    height: 100%;
+    .field-checkbox__name-text {
+      &::before {
+        background-color: $tw-gray-100;
+        border-color: $tw-gray-100;
+      }
+
+      &::after {
+        color: $tw-black;
+      }
+    }
+
+    .product-options__item--checked .field-checkbox__name-text {
+
+      &::before {
+        background-color: #fff;
+        border-color: #fff;
+      }
+    }
+
+  }
+
+  .form-special__msg {}
 }

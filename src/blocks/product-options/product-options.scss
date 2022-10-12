@@ -2,7 +2,171 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
+// Дополнительные опции
 .product-options {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
+
+  @media (min-width: 480px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  &__btn {
+    @include field-text;
+    box-sizing: border-box;
+    min-height: 24px;
+    margin: 0;
+    border: 0;
+    padding: 0 18px;
+    user-select: none;
+    font-style: normal;
+    text-decoration: none;
+    background-image: none;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: #000;
+    }
+
+    &:active,
+    &:focus {}
+
+    &--disabled,
+    &:disabled {
+      opacity: $opacity;
+      cursor: not-allowed;
+
+      @at-root a.btn--disabled {
+        pointer-events: none;
+      }
+    }
+
+    &::after {
+      margin-left: 0;
+    }
+  }
+
+  &__label {
+    padding: 11px 0;
+
+    &--amount {
+      margin-right: auto;
+    }
+
+    &--clear {
+      position: relative;
+      margin-right: 10px;
+      color: $tw-gray-500;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 1px;
+        height: 8px;
+        background-color: currentColor;
+      }
+
+      &::before {
+        transform: translateY(-40%) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(-40%) rotate(-45deg);
+      }
+
+      &:hover {
+        color: $tw-black;
+      }
+    }
+
+    &--edit {
+      margin-right: 10px;
+      color: $tw-blue_link;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $tw-blue_link;
+      }
+    }
+  }
+
+  &__add-text {
+    display: none;
+
+    @media (min-width: $screen-xxl) {
+      display: inline;
+    }
+  }
+
+  &__add {
+    margin-top: 10px;
+
+    @media (min-width: 480px) {
+      margin-top: 0;
+      margin-left: 10px;
+      align-selft: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid $tw-gray-200;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--checked {
+      background-color: $tw-gray-200;
+    }
+  }
+
+  &__check {
+    .field-checkbox {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin-right: 16px;
+    border-radius: 14px;
+    border: 1px solid $tw-gray-200;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+
+  &__desc {
+    color: $tw-gray-500;
+    font-size: 14px;
+    line-height: 19px;
+
+    span {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+  }
+
 }

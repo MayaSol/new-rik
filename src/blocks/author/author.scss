@@ -29,7 +29,7 @@
     color: $tw-gray-500;
   }
 
-  &--ask {
+  &--ask-doctor {
     margin-bottom: 20px;
 
     @media (min-width: $screen-lg) {
@@ -38,7 +38,17 @@
       #{$block-name}__img {
         width: 219px;
         height: 219px;
+        margin-right: 30px;
+        margin-bottom: 20px;
         border-radius: 24px;
+      }
+
+      #{$block-name}__text {
+        @apply text-xl;
+      }
+
+      #{$block-name}__name {
+        @apply text-xl;
       }
     }
 

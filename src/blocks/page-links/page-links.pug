@@ -51,5 +51,8 @@ mixin page-links-item(props={},mods)
     }
 
   li.page-links__item.nav-item(class=allMods)&attributes(attributes)
-    +btn(props.name)(href=props.href aria-selected="true" class="page-links__link nav-link " + linkClass)
+    if (props.anchor)
+      a(href=props.href aria-selected="true" class="page-links__link nav-link " + linkClass data-anchor=props.anchor)!= props.name
+    else
+      +btn(props.name)(href=props.href aria-selected="true" class="page-links__link nav-link " + linkClass)
 

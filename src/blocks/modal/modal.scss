@@ -26,10 +26,10 @@
     right: 0;
 
     #{$block-name}__container {
-      margin-left: auto;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      border-radius: 4px;
+      // margin-left: auto;
+      // padding-top: 5px;
+      // padding-bottom: 5px;
+      // border-radius: 4px;
     }
   }
 
@@ -73,11 +73,82 @@
     }
 
     #{$block-name}--ask-doctor & {
-      min-width: 964px;
+      width: 320px;
+      @media (min-width: $screen-lg) {
+        width: 964px;
+        max-width: none;
+      }
+    }
+
+    #{$block-name}--catalog & {
+      margin-left: auto;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 4px;
+    }
+
+    #{$block-name}--special & {
+      width: 320px;
+      @media (min-width: $screen-lg) {
+        width: 821px;
+        max-width: none;
+      }
+    }
+
+    #{$block-name}--options & {
+      width: 320px;
+      padding-left: 20px;
+      padding-right: 40px;
+      // max-height: 444px;
+      background-color: #fff;
+      overflow: hidden;
+      @media (min-width: $screen-lg) {
+        width: 581px;
+        // max-height: 626px;
+        max-width: none;
+      }
     }
   }
 
   &__inner {
+
+    #{$block-name}--ask-doctor & {
+      @media (min-width: $screen-lg) {
+        display: flex;
+      }
+    }
+
+    #{$block-name}--options & {
+      max-height: 360px;
+      overflow: auto;
+      padding: 10px;
+      padding-right: 43px;
+      box-shadow: 0px 0px 7px #0000001a inset;
+      border-radius: 4px;
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 2px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        width: 1px;
+        background-color: $tw-gray-200;
+        border-radius: 4px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: $tw-gray-300;
+        border-radius: 4px;
+      }
+
+
+      @media (min-width: $screen-lg) {
+        height: 500px;
+      }
+    }
   }
 
   &__header {
@@ -85,6 +156,10 @@
     justify-content: space-between;
     align-items: start;
     margin-bottom: 10px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -94,16 +169,19 @@
     line-height: 25px;
     color: $tw-black;
     box-sizing: border-box;
+
+    @media (min-width: $screen-lg) {
+      @apply text-36px;
+    }
   }
 
   &__close {
     background: transparent;
     border: 0;
+    width: 23px;
+    height: 23px;
   }
 
-  // &__header &__close:before {
-  //   content: "\2715";
-  // }
 
   &__content {
   }

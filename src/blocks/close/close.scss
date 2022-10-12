@@ -4,9 +4,17 @@
 
 .close {
   position: relative;
-  width: 32px;
-  height: 32px;
   opacity: 1;
+
+  &.modal__close {
+    width: 23px;
+    height: 23px;
+
+    &::before,
+    &::after {
+      height: 23px;
+    }
+  }
 }
 .close:hover {
   opacity: 0.4;
@@ -14,11 +22,11 @@
 .close:before, .close:after {
   position: absolute;
   top: 0;
-  left: 15px;
+  left: 50%;
   content: ' ';
-  height: 33px;
   width: 2px;
   background-color: $tw-black;
+  transform: translateX(-50%);
 }
 .close:before {
   transform: rotate(45deg);

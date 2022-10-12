@@ -56,7 +56,8 @@ let config = {
     'bootstrap/js/dist/tab.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
-    './utils/onepagescroll.js'
+    './utils/onepagescroll.js',
+    './utils/anchor-select.js'
   ],
   'addJsAfter': [
     './script.js',

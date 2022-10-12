@@ -4,9 +4,24 @@
 
 .load-file {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   input {
     display: none;
+  }
+
+  .modal--special & {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__btn {
+    .modal--special & {
+      @media (min-width: $screen-lg) {
+        margin-right: 12px;
+      }
+    }
   }
 }

@@ -546,7 +546,7 @@ Object.extend = function(orig) {
       // the browser's width is less than 600, the fallback will kick in.
     });
 
-    var lastPageNum = document.querySelector('.main .section:last-child').dataset.index;
+    var lastPageNum = document.querySelector('.page__footer-wrapper').dataset.index;
     console.log(lastPageNum);
     var css = `.viewing-page-${lastPageNum} .onepage-pagination li a::before { ` +
     `background-color: #fff;` +

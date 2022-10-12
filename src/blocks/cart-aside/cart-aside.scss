@@ -41,7 +41,7 @@
 }
 
 
-.page:not(.index) div[class*='basket'] {
+.page:not(.index) {
   .cart-aside {
     position: fixed;
     right: 20px;
@@ -59,16 +59,11 @@
       margin-right: -950px;
     }
   }
-
-
   .cart-aside__inner {
     position: absolute;
     right: 20px;
     top: auto;
     left: auto;
   }
-
-
-
 
 }

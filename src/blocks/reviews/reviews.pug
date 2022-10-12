@@ -1,6 +1,6 @@
 //- Все примеси в этом файле должны начинаться c имени блока (reviews)
 
-mixin reviews(text, mods)
+mixin reviews(text, mods, isIndex=true, props={})
 
   //- Принимает:
   //-   text    {string} - текст
@@ -18,9 +18,13 @@ mixin reviews(text, mods)
       }
     }
 
+    var containersClasses = (isIndex) ? 'section__container md_container' : '';
+    var tabContentClasses = (isIndex) ? 'section__container container' : '';
+
+
   .reviews(class=allMods)&attributes(attributes)
     .reviews__inner
-      div.section__container.md_container
+      div(class=containersClasses)
         ul#reviewsTab(class="nav nav-tabs hidden md_flex" role="tablist")
           li(class="nav-item" role="presentation")
             button.nav-link.active#profs-tab(data-bs-toggle="tab" data-bs-target="#profs" type="button" role="tab" aria-controls="Профессионалы" aria-selected="true") Профессионалы
@@ -28,7 +32,7 @@ mixin reviews(text, mods)
             button.nav-link#users-tab(data-bs-toggle="tab" data-bs-target="#users" type="button" role="tab" aria-controls="Пользователи" aria-selected="false") Пользователи
           li(class="nav-item" role="presentation")
             button.nav-link#videos-tab(data-bs-toggle="tab" data-bs-target="#videos" type="button" role="tab" aria-controls="Видео" aria-selected="false") Видео
-      .tab-content#reviewsTabContent.section__container.container
+      .tab-content#reviewsTabContent(class=tabContentClasses)
         .tab-pane.-mx-20px.fade.show.active#profs(role="tabpanel" aria-labelledby="profs-tab")
           .reviews__slider.reviews__slider--profs
             +reviews-user-item(

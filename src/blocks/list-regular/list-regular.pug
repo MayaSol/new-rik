@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (list-regular)
+
+mixin list-regular(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' list-regular--' + modsList[i].trim();
+      }
+    }
+
+  ul.list-regular(class=allMods)&attributes(attributes)
+      block

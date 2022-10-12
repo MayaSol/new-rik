@@ -188,6 +188,7 @@
     }
   }
 
+  &--form-send,
   &--form-tg {
     max-width: 56px;
     height: 40px;
@@ -285,6 +286,37 @@
     &:active {
       background-color: $tw-blue_link;
       color: #fff;
+    }
+  }
+
+  &--download {
+    background-color: $tw-blue;
+    border-color: $tw-blue;
+    display: flex;
+    justify-content: center;
+    @apply text-sm;
+    padding: 6px 13px;
+
+    &:hover {
+      border-color: $tw-black;
+    }
+
+    svg {
+      margin-bottom: 3px;
+    }
+
+    i {
+      font-style: normal;
+      opacity: 0.6;
+    }
+  }
+
+  &--question {
+    svg {
+      @media (min-width: $screen-lg) {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 

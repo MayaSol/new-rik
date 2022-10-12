@@ -6,7 +6,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 100%;
-  min-height: calc(#{$field-line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  min-height: calc(#{$field-line-height} + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
   margin: 0;
   border: 1px solid $tw-gray-100;
   border-radius: $border-radius;

@@ -106,6 +106,7 @@
     "object-fit-images": "^3.2.4",
     "sass": "^1.43.5",
     "save-dev": "0.0.1-security",
+    "simple-scrollbar": "^0.4.0",
     "svg4everybody": "^2.1.8",
     "tiny-slider": "^2.9.4",
     "tippy.js": "^6.3.7"

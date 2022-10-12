@@ -187,14 +187,57 @@
   &--product-main {
     grid-column-start: 1;
     grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      margin-top: 13px !important;
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+
+    @media (min-width: $screen-xxl) {
+      max-width: 600px;
+    }
+
+    .btn {
+      align-self: end;
+    }
 
     .btn--cart-add {
       display: flex;
       justify-content: center;
       flex-grow: 1;
+      margin-right: 12px !important;
       color: #fff;
       border-color: $tw-blue;
       background-color: $tw-blue;
+
+      @media (min-width: $screen-lg) {
+        flex-grow: 0;
+      }
+    }
+
+    .btn--fav-add {
+      margin-right: 5px !important;
+
+      @media (min-width: $screen-lg) {
+        order: 2;
+      }
+    }
+
+    .btn--compare {
+      margin-right: 10px !important;
+
+      @media (min-width: $screen-lg) {
+        order: 3;
+      }
+    }
+
+    .btn--question {
+      grid-column-start: 1;
+      grid-column-end: 4;
     }
   }
 

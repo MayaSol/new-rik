@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-data)
+
+mixin product-data(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-data--' + modsList[i].trim();
+      }
+    }
+
+  .product-data(class=allMods)&attributes(attributes)
+    block
+
+
+mixin product-data-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-data--' + modsList[i].trim();
+      }
+    }
+
+  .product-data__item(class=allMods)&attributes(attributes)
+    .product-data__item-caption!= props.caption
+    .product-data__item-value!= props.value
