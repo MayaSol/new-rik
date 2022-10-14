@@ -1,0 +1,26 @@
+// В этом файле должны быть стили для БЭМ-блока list-num, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.list-num {
+
+  $block-name:                &; // #{$block-name}__element
+
+  counter-reset: num;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 21px;
+    margin-bottom: 20px;
+    &::before {
+      content: counter(num)'.';
+      counter-increment: num;
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: $tw-black;
+    }
+  }
+}

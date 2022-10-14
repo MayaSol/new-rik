@@ -1,0 +1,36 @@
+// В этом файле должны быть стили для БЭМ-блока article, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.article {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__img {
+    border-radius: 8px;
+    overflow: hidden;
+    &--main {
+      border-radius: 10px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__contents {
+    padding: 20px;
+    background-color: $tw-slate-200;
+  }
+
+  &__contents-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: num-counter;
+
+    & li::before {
+      content: counter(num-counter)'.';
+      counter-increment: num-counter;
+      margin-right: 7px;
+    }
+  }
+}

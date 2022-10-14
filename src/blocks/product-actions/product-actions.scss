@@ -48,6 +48,7 @@
 
   .product-card--catalog & {
     margin-top: 10px;
+    align-self: end;
 
     @media (min-width: $screen-lg) {
       margin-bottom: 20px;

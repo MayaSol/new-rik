@@ -42,7 +42,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: $tw-red;
+    background-color: $tw-red-900;
   }
 
   &--has-goods {
@@ -108,7 +108,7 @@
     }
 
     &:hover {
-      background-color: $tw-slate;
+      background-color: $tw-slate-800;
       border-radius: 34px;
 
       .cart__section::after {

@@ -33,7 +33,8 @@
   }
 
   .field-text--price {
-    .field-text__input {
+    .field-text__input,
+    .field-text__view-input {
       padding-top: 14px;
     }
   }

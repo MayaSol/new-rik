@@ -86,7 +86,7 @@
     }
 
     @at-root input:checked ~ &::before {
-      background-color: $tw-green;
+      background-color: $tw-green-500;
     }
 
     @at-root input:disabled ~ &::after {

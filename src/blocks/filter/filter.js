@@ -12,7 +12,6 @@ ready(function() {
       bsCollapse[i] = Collapse.getOrCreateInstance(filterBtns[i]);
     }
     for (var i=0; i<bsCollapse.length; i++) {
-      console.log(bsCollapse[i]);
       bsCollapse[i].show();
     }
   }
@@ -63,15 +62,13 @@ ready(function() {
   })
 
   function checkFiltersAll() {
-    console.log('checkFiltersAll');
     var filters = document.querySelectorAll('.form-filter .form-filter__item-content');
-    console.log(filters);
     var result =  [...filters].reduce((prev, cur, i, filters) => {
-      console.log(filters[i].dataset.active);
-      console.log(prev || (filters[i].dataset.active ? filters[i].dataset.active : false));
+      // console.log(filters[i].dataset.active);
+      // console.log(prev || (filters[i].dataset.active ? filters[i].dataset.active : false));
       return prev || (filters[i].dataset.active ? filters[i].dataset.active : false);
     }, false);
-    console.log('result = ' + result);
+    // console.log('result = ' + result);
     return result;
   }
 

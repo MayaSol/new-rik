@@ -58,10 +58,22 @@
         top: 50%;
         color: $tw-gray-300;
         transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      #{$block-name}__view-input {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
       }
     }
 
-    #{$block-name}__input {
+    #{$block-name}__input,
+    #{$block-name}__view-input,
+     {
       position: relative;
       width: 122px;
       padding: 10px 35px 10px 20px;

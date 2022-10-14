@@ -55,3 +55,25 @@ mixin btn-download(props={},mods)
   +btn(
     `<svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#folder-cloud"></use></svg> <span>${props.text}</span>`,
     'regular, icon, download')(class='text-white bg-blue ' + allMods + ' ' + props.classes href=props.href target="_blank")&attributes(attributes)
+
+
+
+mixin btn-download-light(props={},mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' btn--' + modsList[i].trim();
+      }
+    }
+
+    if (typeof props.classes === 'undefined') {
+      props.classes = '';
+    }
+
+  +btn(
+    `<svg class="icon" width="24" height="24"><use xlink:href="img/sprite.svg#folder-cloud"></use></svg> <span>${props.text}</span>`,
+    'regular, icon, download')(class='text-black bg-white border-white' + allMods + ' ' + props.classes href=props.href target="_blank")&attributes(attributes)

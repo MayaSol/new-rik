@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (fragment-special)
+
+mixin fragment-special(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' fragment-special--' + modsList[i].trim();
+      }
+    }
+
+  .fragment-special(class=allMods)&attributes(attributes)
+    .fragment-special__inner
+      block

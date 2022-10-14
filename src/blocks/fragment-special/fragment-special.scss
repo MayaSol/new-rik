@@ -1,0 +1,20 @@
+// В этом файле должны быть стили для БЭМ-блока fragment-special, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.fragment-special {
+
+  $block-name:                &; // #{$block-name}__element
+  position: relative;
+  padding-left: 30px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: currentColor;
+  }
+}

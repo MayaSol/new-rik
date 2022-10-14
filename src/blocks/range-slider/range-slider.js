@@ -35,7 +35,8 @@ ready(function() {
       var value = values[handle];
       var inputEl = (handle) ? inputTo : inputFrom;
 
-      inputEl.value = new Intl.NumberFormat('ru-RU').format(parseInt(value));
+      inputEl.value = parseInt(value);
+      setViewField(inputEl);
 
       let parent = inputEl.closest('.form-filter__item-content');
       if (handle) {
@@ -66,10 +67,22 @@ ready(function() {
 
     inputFrom.addEventListener('change', function() {
       sliderCatalog.noUiSlider.set([this.value, null]);
+      console.log(this.value);
+      setViewField(this);
     });
 
     inputTo.addEventListener('change', function() {
+      console.log('on input ' + event.target);
       sliderCatalog.noUiSlider.set([null, this.value]);
+      setViewField(this);
+    });
+
+    inputFrom.addEventListener('blur',function(event) {
+      fromInput(event.target);
+    });
+
+    inputTo.addEventListener('blur',function(event) {
+      fromInput(event.target);
     });
 
     function checkboxGroup(groupEl) {
@@ -79,8 +92,40 @@ ready(function() {
       var filterActive = [...inputs].reduce((prev, cur, i, inputs) => {
         return prev || (inputs[i].dataset.active ? inputs[i].dataset.active : false);
       }, false);
-      // console.log('checkbosGroup result: ' + filterActive);
       return filterActive;
+    }
+
+    //!!!
+    var viewFields = document.querySelectorAll('.field-text__view-input');
+    console.log(viewFields);
+    for (var view of viewFields) {
+      view.addEventListener('click',function(event) {
+        toInput(event);
+      });
+      view.addEventListener('focus',function(event) {
+        toInput(event);
+      });
+    }
+
+    function toInput(event) {
+      event.target.classList.add('hidden');
+      var parent = event.target.parentNode;
+      var input = event.target.parentNode.querySelector('input');
+      input.focus();
+    }
+
+    function fromInput(input) {
+      var inputView = input.closest('.field-text__input-wrap').querySelector('.field-text__view-input');
+      if (inputView) {
+        inputView.classList.remove('hidden');
+      }
+    }
+
+    function setViewField(input) {
+      var viewInput = input.closest('.field-text__input-wrap').querySelector('.field-text__view-input');
+      if (viewInput) {
+        viewInput.value = new Intl.NumberFormat('ru-RU').format(parseInt(input.value));
+      }
     }
 
   }

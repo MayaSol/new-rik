@@ -22,3 +22,24 @@ mixin author(props={}, mods)
       if (props.text)
       .author__text!= props.text
       .author__name= props.name
+
+
+mixin author2(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' author--' + modsList[i].trim();
+      }
+    }
+
+  .author(class=allMods)&attributes(attributes)
+    .author__img
+      block
+    .author__info
+      .author__name= props.name
+      if (props.text)
+        .author__text!= props.text

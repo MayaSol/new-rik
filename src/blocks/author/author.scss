@@ -29,6 +29,10 @@
     color: $tw-gray-500;
   }
 
+  &__name {
+    color: $tw-black;
+  }
+
   &--ask-doctor {
     margin-bottom: 20px;
 
@@ -51,7 +55,14 @@
         @apply text-xl;
       }
     }
+  }
 
-
+  &--article {
+    #{$block-name}__name {
+      @apply text-lg;
+    }
+    #{$block-name}__text {
+      @pplay text-sm;
+    }
   }
 }

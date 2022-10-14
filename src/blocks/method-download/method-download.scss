@@ -1,0 +1,33 @@
+// В этом файле должны быть стили для БЭМ-блока method-download, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.method-download {
+
+  $block-name:                &; // #{$block-name}__element
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: -13px;
+    width: 94px;
+    height: 138px;
+    background-image: url('/img/method.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: -13px;
+    width: 94px;
+    height: 138px;
+    background:  linear-gradient(330.51deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 33.6%, rgba(255, 255, 255, 0) 62.55%, rgba(255, 255, 255, 0.15) 99.25%);
+  }
+}

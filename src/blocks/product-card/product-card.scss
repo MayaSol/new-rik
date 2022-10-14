@@ -274,15 +274,15 @@
     @apply text-sm;
 
     &--available {
-      color: $tw-green;
+      color: $tw-green-500;
     }
 
     &--wait {
-      color: $tw-yellow;
+      color: $tw-yellow-500;
     }
 
     &--none {
-      color: $tw-red;
+      color: $tw-red-900;
     }
 
     svg {

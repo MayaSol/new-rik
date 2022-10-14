@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока list-dots, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.list-dots {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 4px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: $tw-green-500;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}
