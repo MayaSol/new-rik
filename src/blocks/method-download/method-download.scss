@@ -4,10 +4,35 @@
 
 .method-download {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   position: relative;
+  padding: 20px;
+  padding-left: 124px;
+  background-color: #7ABAC6;
+  border-radius: 10px;
+  line-height: 20px;
+  color: #fff;
   overflow: hidden;
+
+
+  &:not(.method-download--lg-small) {
+    @media (min-width: $screen-lg) {
+      height: 301px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      padding-right: 32px;
+      padding-left: 280px;
+      @apply text-2xl;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-right: 64px;
+      padding-left: 392px;
+    }
+  }
 
   &::before {
     content: '';
@@ -16,9 +41,28 @@
     bottom: -13px;
     width: 94px;
     height: 138px;
+    border-radius: 10px;
+    overflow: hidden;
     background-image: url('/img/method.jpg');
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  &:not(.method-download--lg-small)::before {
+    @media (min-width: $screen-lg) {
+      width: 200px;
+      height: 300px;
+      bottom: auto;
+      left: 0;
+      top: 60px;
+      transform: rotate(20deg);
+      @apply shadow-default;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 293px;
+      height: 392px;
+    }
   }
 
   &::after {
@@ -28,6 +72,53 @@
     bottom: -13px;
     width: 94px;
     height: 138px;
-    background:  linear-gradient(330.51deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 33.6%, rgba(255, 255, 255, 0) 62.55%, rgba(255, 255, 255, 0.15) 99.25%);
+    background: linear-gradient(330.51deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 33.6%, rgba(255, 255, 255, 0) 62.55%, rgba(255, 255, 255, 0.15) 99.25%);
+
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
   }
+
+
+  .btn {
+    color: $tw-black;
+    font-weight: 400;
+  }
+
+  &:not(.method-download--lg-small) .btn {
+    @media (min-width: $screen-lg) {
+      @apply text-lg;
+      padding: 9px 24px;
+      margin-top: 20px;
+    }
+  }
+
+
+  &--lg-small {
+    max-width: 416px;
+    flex-shrink: 0;
+
+    @media (min-width: $screen-lg) {
+      padding-left: 176px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .btn {
+      @media (min-width: $screen-lg) {
+        display: inline-flex;
+      }
+    }
+
+    &::before {
+      @media (min-width: $screen-lg) {
+        width: 132px;
+        height: 162px;
+        bottom: -25px;
+        left: 22px;
+      }
+    }
+  }
+
+
 }

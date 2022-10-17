@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока consult, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.consult {
+
+  $block-name: &; // #{$block-name}__element
+
+  padding: 30px;
+  background-color: $tw-slate-200;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .author {
+    margin-bottom: 30px;
+    &__img {
+      width: 84px;
+      height: 84px;
+    }
+
+    &__name {
+      @apply text-lg;
+    }
+  }
+}

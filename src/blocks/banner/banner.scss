@@ -1,0 +1,16 @@
+// В этом файле должны быть стили для БЭМ-блока banner, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.banner {
+
+  $block-name:                &; // #{$block-name}__element
+
+  height: 262px;
+  border: 1px solid gray;
+
+  &__wrapper {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+}

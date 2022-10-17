@@ -1,0 +1,16 @@
+//- Все примеси в этом файле должны начинаться c имени блока (banner)
+
+mixin banner(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' banner--' + modsList[i].trim();
+      }
+    }
+
+  .banner(class=allMods)&attributes(attributes)
+    block

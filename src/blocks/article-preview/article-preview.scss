@@ -119,7 +119,23 @@
   }
 
 
+  .tns-controls {
+    position: absolute;
+    top: -60px;
+    right: 0;
 
+    @media (min-width: $screen-md) {
+      top: -70px;
+    }
+
+    & button {
+      background-color: $tw-gray-100;
+
+      &::before {
+        @include sprite($arrow-right-black-long);
+      }
+    }
+  }
 
 
 }

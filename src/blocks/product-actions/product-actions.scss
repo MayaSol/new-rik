@@ -212,8 +212,8 @@
       flex-grow: 1;
       margin-right: 12px !important;
       color: #fff;
-      border-color: $tw-blue;
-      background-color: $tw-blue;
+      border-color: $tw-blue-900;
+      background-color: $tw-blue-900;
 
       @media (min-width: $screen-lg) {
         flex-grow: 0;
@@ -280,7 +280,7 @@
 
     span {
       font-weight: 700;
-      color: $tw-blue;
+      color: $tw-blue-900;
     }
   }
 }

@@ -6,14 +6,15 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  margin: 0;
-  padding: 0;
+  margin: 0 0 25px 0;
+  padding: 0 0 0 15px;
   list-style: none;
 
   li {
     position: relative;
     padding-left: 15px;
     margin-bottom: 16px;
+    line-height: 1.375em;
 
     &::before {
       content: '';

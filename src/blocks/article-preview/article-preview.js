@@ -68,7 +68,7 @@ function makeArticleEllipsis() {
 
 
   var articleEllipsis = document.querySelectorAll('.article-preview__ellipsis');
-  for (el of articleEllipsis) {
+  for (var el of articleEllipsis) {
     var hiddenText = closest(el, '.article-preview__content').querySelector('.hidden');
     // console.log(closest(el, '.article-preview__content'));
     // console.log('hidden: ');

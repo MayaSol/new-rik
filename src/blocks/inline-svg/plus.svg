@@ -1,0 +1,22 @@
+<svg
+   width="12"
+   height="12"
+   viewBox="0 0 12 12"
+   xmlns="http://www.w3.org/2000/svg">
+    <rect
+        fill='currentColor'
+        stroke-width="0"
+       id="vert"
+       width="1.5"
+       height="12"
+       x="5.2500005"
+       y="0" />
+    <rect
+        fill='currentColor'
+        stroke-width="0"
+       id="hor"
+       width="12"
+       height="1.5"
+       x="0"
+       y="5.2500005" />
+</svg>

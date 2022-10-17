@@ -30,6 +30,7 @@
   background-color: #fff;
   color: $tw-gray-400;
   @apply shadow-default;
+  @apply text-base;
 
   &[data-placement^="top"] {
     .tippy-arrow {

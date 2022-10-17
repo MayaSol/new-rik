@@ -1,0 +1,51 @@
+//- Все примеси в этом файле должны начинаться c имени блока (question)
+
+mixin question(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' question--' + modsList[i].trim();
+      }
+    }
+
+    var collapseClasses = "structure__features-collpase collapse text-sm";
+    if (props.show) {
+      collapseClasses += " show";
+    }
+
+    var btnClasses = '';
+    if (props.collapsed) {
+      btnClasses = 'collapsed';
+    }
+
+  .question(class=allMods)&attributes(attributes)
+    block
+
+
+mixin question-item(props,mods)
+
+  -
+    var collapseClasses = "question__collpase collapse";
+    if (props.show) {
+      collapseClasses += " show";
+    }
+
+    var btnClasses = '';
+    if (props.collapsed) {
+      btnClasses = 'collapsed';
+    }
+
+  .question__item&attributes(attributes)
+    h3.question__header(id=props.header_id)
+      button.question__btn.text-base(class=btnClasses type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
+        span.text-lg.text-black.lg_text-xl!= props.name
+        include ../../blocks/inline-svg/plus.svg
+    .text-lg(id = props.target_id class=collapseClasses aria-labelledby=props.header_id data-bs-parent="#structureFeatures")
+      .question__collapse-inner
+        .question__content.pl-30px.border-l.border-gray-300
+          block
+          +btn('Читать далее','link')(class='text-lg')

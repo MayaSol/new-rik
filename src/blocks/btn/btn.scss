@@ -71,7 +71,8 @@
     &:focus,
     &:active {
       background-color: $tw-black;
-      color: #fff;
+      color: #fff !important;
+      text-decoration: none !important;
     }
   }
 
@@ -146,7 +147,7 @@
 
   &--in-cart {
     position: relative;
-    color: $tw-blue;
+    color: $tw-blue-900;
     border-color: currentColor;
 
     svg,
@@ -169,8 +170,8 @@
 
   &--in-fav {
     svg {
-      fill: $tw-blue;
-      stroke: $tw-blue;
+      fill: $tw-blue-900;
+      stroke: $tw-blue-900;
     }
   }
 
@@ -183,8 +184,8 @@
 
   &--in-compare {
     svg {
-      fill: $tw-blue;
-      stroke: $tw-blue;
+      fill: $tw-blue-900;
+      stroke: $tw-blue-900;
     }
   }
 
@@ -290,8 +291,8 @@
   }
 
   &--download {
-    background-color: $tw-blue;
-    border-color: $tw-blue;
+    background-color: $tw-blue-900;
+    border-color: $tw-blue-900;
     display: flex;
     justify-content: center;
     @apply text-sm;

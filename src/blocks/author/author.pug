@@ -43,3 +43,29 @@ mixin author2(props={}, mods)
       .author__name= props.name
       if (props.text)
         .author__text!= props.text
+      if (props.phone)
+        .author__phone!= props.phone
+
+
+
+mixin author3(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' author--' + modsList[i].trim();
+      }
+    }
+
+  .author(class=allMods)&attributes(attributes)
+    .author__img
+      img.lazyload(data-src=props.url, alt='')
+    .author__info
+      .author__name= props.name
+      if (props.text)
+        .author__text!= props.text
+      if (props.phone)
+        .author__phone!= props.phone

@@ -1,6 +1,6 @@
 //all
 
-// html  * {
+// html * {
 //   color: red !important;
 // }
 
@@ -15,6 +15,68 @@
 // .bg-gray-100 {
 //   outline: 1px solid red;
 //   background-color: transparent !important;
+// }
+
+// // article
+// .article {
+
+//   &__img {
+//     outline: 1px solid red;
+
+//     img {
+//       opacity: 0;
+//     }
+//   }
+
+//   &__contents {
+//     background-color: transparent;
+//   }
+
+//   .rounded-24px {
+//     background-color: transparent;
+//     outline: 1px solid red;
+
+//     svg {
+//       stroke: red !important;
+//     }
+//   }
+
+//   &__note {
+//     outline: 1px solid red;
+//     background-color: transparent;
+//   }
+// }
+
+// .method-download {
+//   background-color: transparent;
+//   outline: 1px solid red;
+
+//   .btn {
+//     background-color: transparent;
+//   }
+// }
+
+// .question__item-wrapper {
+//   background-color: transparent;
+//   outline: 1px solid red;
+// }
+
+// .question__item {
+//   border-color: red;
+// }
+
+// .article__consult {
+//   background-color: transparent;
+//   outline: 1px solid red;
+// }
+// .question__item-wrapper {
+//   outline: 1px solid red;
+//   background-color: transparent;
+// }
+
+// .question svg {
+//   stroke: red;
+//   fill: red !important;
 // }
 
 
@@ -215,6 +277,3 @@
 //   border-bottom:1px solid red;
 //   transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 // }
-
-
-

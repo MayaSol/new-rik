@@ -8,19 +8,24 @@
 
   counter-reset: num;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 10px;
 
   li {
     position: relative;
     padding-left: 21px;
     margin-bottom: 20px;
+
     &::before {
       content: counter(num)'.';
       counter-increment: num;
       position: absolute;
       left: 0;
-      font-weight: 700;
-      color: $tw-black;
+      font-weight: 400;
+      color: $tw-gray-500;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

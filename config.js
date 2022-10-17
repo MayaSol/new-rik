@@ -38,7 +38,8 @@ let config = {
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
     'src/scss/_nav.scss',
-    'src/scss/onepagescroll.scss'
+    'src/scss/onepagescroll.scss',
+    'rateyo/lib/iife/rateyo.min.css'
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -49,6 +50,7 @@ let config = {
     'src/scss/test.scss'
   ],
   'addJsBefore': [
+    './utils/sticky-sidebar.js',
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
     'lazysizes/lazysizes.js',
     'bootstrap/js/dist/dropdown.js',
@@ -57,7 +59,9 @@ let config = {
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
     './utils/onepagescroll.js',
-    './utils/anchor-select.js'
+    './utils/anchor-select.js',
+    'rateyo/lib/iife/rateyo.min.js'
+
   ],
   'addJsAfter': [
     './script.js',

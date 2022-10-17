@@ -33,6 +33,11 @@
     color: $tw-black;
   }
 
+  &__phone {
+    @apply text-xl;
+    color: $tw-black;
+  }
+
   &--ask-doctor {
     margin-bottom: 20px;
 

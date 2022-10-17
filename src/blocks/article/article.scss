@@ -4,33 +4,232 @@
 
 .article {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
+
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-columns: auto auto 320px;
+    gap: 0 30px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    grid-template-columns: auto auto 400px;
+    gap: 0 48px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: $tw-blue_link;
+    font-weight: 700;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-blue_link;
+      text-decoration: underline;
+    }
+  }
+
+  &__main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+  }
 
   &__img {
     border-radius: 8px;
     overflow: hidden;
+
     &--main {
       border-radius: 10px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
+      height: 160px;
+
+      @media (min-width: 361px) {
+        height: 240px;
+      }
+
+      @media (min-width: 481px) {
+        height: 400px;
+      }
+
+      @media (min-width: 801px) {
+        height: 499px;
+      }
+
+      @media (min-width: $screen-xl) {
+        height: 303px;
+        border-radius: 10px;
+      }
+
+      @media (min-width: 1280px) {
+        height: 345px;
+      }
+
+      @media (min-width: 1441px) {
+        height: 473px;
+      }
     }
   }
 
   &__contents {
     padding: 20px;
     background-color: $tw-slate-200;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    @media (min-width: $screen-lg) {
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    // @media (min-width: $screen-lg) {
+    //   grid-column-start: 3;
+    //   grid-column-end: 4;
+    //   grid-row-start: 3;
+    //   grid-row-end: 8;
+    //   align-self: start;
+    // }
   }
 
   &__contents-list {
     margin: 0;
     padding: 0;
+    padding-left: 3px;
     list-style: none;
     counter-reset: num-counter;
 
-    & li::before {
-      content: counter(num-counter)'.';
-      counter-increment: num-counter;
-      margin-right: 7px;
+    @media (min-width: $screen-lg) {
+      padding-left: 20px !important;
+    }
+
+    & li {
+      margin-bottom: 7px;
+
+      &::before {
+        content: counter(num-counter)'.';
+        counter-increment: num-counter;
+        margin-right: 7px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ya-share2__item {
+      margin-right: 10px !important;
+    }
+
+    .ya-share2__badge {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .ya-share2__icon {
+      width: 30px !important;
+      height: 30px !important;
+      background-size: 30px 30px !important;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 7;
+      grid-row-end: 8;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 7;
+      grid-row-end: 8;
+    }
+  }
+
+  &__question {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  &__consult {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      align-self: start;
+    }
+  }
+
+  &__banner {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      align-self: start;
+    }
+  }
+
+  &__dates {
+    @media (min-width: $screen-lg) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .date-line {
+      &:first-child {
+        margin-right: 40px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    border-radius: 24px;
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0 20px;
+      text-align: left;
+    }
+  }
+
+  &__note-icon {
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      align-self: center;
+      margin-bottom: 0;
     }
   }
 }

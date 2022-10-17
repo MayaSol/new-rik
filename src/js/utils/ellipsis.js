@@ -1,7 +1,7 @@
   const makeEllipsis = function(selector) {
     var ellipsisEls = document.querySelectorAll(selector);
 
-    for (el of ellipsisEls) {
+    for (var el of ellipsisEls) {
       var lines = el.dataset.lines;
       if (lines) {
         truncateElement(el, lines);
