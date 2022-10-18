@@ -63,7 +63,7 @@ block content
                               hasViewField: true,
                               attrs: {
                                 name: 'arrFilter_P1_MIN',
-                                class: 'col-start-1 col-end-2 test',
+                                class: 'col-start-1 col-end-2',
                                 id: 'arrFilter_P1_MIN',
                                 onkeyup: 'test(this)'
                               }
@@ -75,7 +75,8 @@ block content
                               attrs: {
                                 name: 'arrFilter_P1_MAX',
                                 class: 'col-start-2 col-end-3',
-                                id: "arrFilter_P1_MAX"
+                                id: "arrFilter_P1_MAX",
+                                onkeyup: 'test(this)'
                               }
                             })
                       .form-filter__item-wrapper
@@ -204,5 +205,8 @@ block prepend page-bottom
   .inline-svg-sprite
     include ../blocks/sprite-svg-inline/img/sprite-inline.svg
   script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+  script.
+    function test() {console.log('test');}
+
 
 

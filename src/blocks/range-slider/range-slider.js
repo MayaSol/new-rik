@@ -65,6 +65,12 @@ ready(function() {
 
     });
 
+    sliderCatalog.noUiSlider.on('end', function(values, handle) {
+      var value = values[handle];
+      var inputEl = (handle) ? inputTo : inputFrom;
+      inputEl.dispatchEvent(new Event('keyup'));
+    });
+
     inputFrom.addEventListener('change', function() {
       sliderCatalog.noUiSlider.set([this.value, null]);
       console.log(this.value);

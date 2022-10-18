@@ -50,11 +50,17 @@
       &::before {
         @include has-goods;
         top: 8px;
-        left: 38px;
+        left: 40px;
 
         @media (min-width: $screen-xl) {
           top: 14px;
         }
+      }
+    }
+
+    &.cart--show #{$block-name}__inner {
+      &::before {
+        display: none;
       }
     }
   }
@@ -104,7 +110,7 @@
     margin-left: -1px; //чтобы белый фон не вылезал из под icon-wrapper при ховере
 
     @media (min-width: $screen-xl) {
-      padding-left: 20px;
+      padding-left: 23px;
     }
 
     &:hover {
@@ -122,6 +128,20 @@
 
       svg {
         fill: #fff !important;
+      }
+    }
+
+    &--has-goods {
+      position: relative;
+
+      &::after {
+        @include has-goods;
+        top: 8px;
+        left: 40px;
+
+        @media (min-width: $screen-xl) {
+          top: 14px;
+        }
       }
     }
   }
@@ -205,8 +225,14 @@
     fill: transparent;
     stroke: $tw-black;
   }
-
 }
+
+
+div[class*="basket"] {
+  position: relative;
+  z-index: 999;
+}
+
 
 
 

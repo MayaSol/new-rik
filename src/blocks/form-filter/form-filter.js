@@ -8,7 +8,6 @@ ready(function() {
   const filterCheckboxes = document.querySelectorAll('.form-filter input[type="checkbox"]');
 
   for (var input of filterCheckboxes) {
-    checkboxOnChange(input);
     input.addEventListener('change',function(event) {
       checkboxOnChange(this);
     });

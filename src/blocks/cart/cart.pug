@@ -23,18 +23,18 @@ mixin cart(mods)
       a(href="#").flex.cart__icon-wrapper
         .cart__icon
           +svg('bag','',{width: '20', height: '21'})
-        .cart__section(class="text-left")
+        .cart__section.text-left
           .cart__section-inner.ml-16px.pr-20px
             .cart__goods <span>1</span> товар на сумму
             .cart__sum 74600 Р
-      .cart__section(class="")
+      .cart__section.cart__section--fav
         .cart__section-inner.px-20px
-          .cart__section-btn.cart__section-btn--has-goods
+          .cart__section-btn
             button
               +svg('heart-full','',{width: '20', height: '18'})
-      .cart__section(class="after_hidden")
+      .cart__section.cart__section--compare.after_hidden
         .cart__section-inner.px-20px.border-0
-          .cart__section-btn.cart__section-btn--has-goods
+          .cart__section-btn
             button
               +svg('arrows-left-right','',{width: '16', height: '21'})
 

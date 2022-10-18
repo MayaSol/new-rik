@@ -1,7 +1,10 @@
 const ready = require('../../js/utils/documentReady.js');
+const {Cart} = require('../cart/cart.js');
+
 // import tippy from 'tippy.js';
 
 ready(function() {
+  console.log(Cart);
   // var tippyOptionsDefault = {
   //   content: 'replace it',
   //   allowHTML: true,
@@ -35,9 +38,11 @@ ready(function() {
       //   var tippyInstance = tippy(btn, tippyOptionsCart);
       // }
       btn.addEventListener('click', function(event) {
+        console.log('btn add cart click');
         event.preventDefault();
         if (!this.classList.contains('btn--in-cart')) {
           this.classList.add('btn--in-cart');
+          Cart.setCartHasGoods(true);
           // tippyInstance = tippy(btn, tippyOptionsCart);
           // tippyInstance.show();
           // var timerId = setTimeout(tippyInstance.hide, 2000);
@@ -78,6 +83,7 @@ ready(function() {
         event.preventDefault();
         if (!this.classList.contains('btn--in-fav')) {
           this.classList.add('btn--in-fav');
+          Cart.setFavHasGoods(true);
           // var tippyInstance = tippy(btn, tippyOptionsFav);
           // tippyInstance.show();
           // var timerId = setTimeout(tippyInstance.hide, 2000);
