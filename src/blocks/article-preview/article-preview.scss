@@ -11,8 +11,10 @@
   &.slider__item {
     flex-shrink: 0;
 
-    @media (min-width: $items2-width) {
-      display: flex !important;
+    .index & {
+      @media (min-width: $items2-width) {
+        display: flex !important;
+      }
     }
   }
 
@@ -28,7 +30,7 @@
     }
 
     @media (min-width: $screen-xxl) {
-      &.not-first-page {
+      @at-root .index &.not-first-page {
         .tns-slide-active {
           width: 380px !important;
         }
@@ -71,8 +73,10 @@
       height: 380px;
     }
 
-    @media (min-width: $screen-xxl) {
-      height: 50%;
+    .index & {
+      @media (min-width: $screen-xxl) {
+        height: 50%;
+      }
     }
 
     // @media (min-width: $screen-md) {
@@ -103,7 +107,6 @@
     padding: 20px 30px 30px;
 
     @media (min-width: $items2-width) {
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -115,6 +118,12 @@
 
     @media (min-width: $screen-xxl) {
       padding-left: 40px;
+    }
+
+    .index & {
+       @media (min-width: $items2-width) {
+        flex-grow: 1;
+       }
     }
   }
 

@@ -109,21 +109,21 @@
 }
 
 /*! Чтобы слайдер внутри grid растягивался по высоте*/
-.tns-outer {
+.index .tns-outer {
   height: 100%;
 }
 
-.tns-ovh {
+.index .tns-ovh {
   height: 100%;
 }
 
-.tns-inner {
+.index .tns-inner {
   height: 100%;
   border-radius: $border-radius;
   overflow: hidden;
 }
 
-.tns-slider {
+.index .tns-slider {
   display: flex;
   height: 100%;
   padding-bottom: 1px;
