@@ -61,14 +61,14 @@ ready(function() {
       }
     });
 
-    slider.events.on('transitionEnd', function(info) {
-      var btnNext = info.controlsContainer.querySelector('button[data-controls="next"]');
-      if (info.slideCount - info.displayIndex <= 2) {
-        btnNext.setAttribute('disabled', '');
-      } else {
-        btnNext.removeAttribute('disabled');
-      }
-    });
+    // slider.events.on('transitionEnd', function(info) {
+    //   var btnNext = info.controlsContainer.querySelector('button[data-controls="next"]');
+    //   if (info.slideCount - info.displayIndex <= 2) {
+    //     btnNext.setAttribute('disabled', '');
+    //   } else {
+    //     btnNext.removeAttribute('disabled');
+    //   }
+    // });
   }
 
 });

@@ -16,8 +16,8 @@ block content
     +breadcrumbs(class='container')
       +breadcrumbs-item('Главная','#')
       +breadcrumbs-item('Информация')
-    section.section--article.mt-30px.lg_mt-20px.lg_mb-64px
-      .article.container
+    section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
+      .article.container.mb-64px
         h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
         .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
           img.lazyload(
@@ -32,19 +32,19 @@ block content
           )
         .article__contents.text-blue.font-bold.mb-24px.lg_hidden
           .mb-10px.text-xl.text-black.font-normal.lg_text-2xl Содержание
-          ul.article__contents-list.m-0.p-0.list-none
+          ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor)
             li
-              a(href='#') Что собой представляет патология
+              a.article__contents-link(href='#' data-anchor='#desc') Что собой представляет патология
             li
-              a(href='#') Причины возникновения
+              a.article__contents-link(href='#' data-anchor='#cause') Причины возникновения
             li
-              a(href='#') Стадии развития
+              a.article__contents-link(href='#' data-anchor='#stad') Стадии развития
             li
-              a(href='#') Диагностика
+              a.article__contents-link(href='#' data-anchor='#diag') Диагностика
             li
-              a(href='#') Лечение
+              a.article__contents-link(href='#' data-anchor='#cure') Лечение
             li
-              a(href='#') Профилактика
+              a.article__contents-link(href='#' data-anchor='#prof') Профилактика
         .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
         +author2({
           name: 'Катерина Григорьевна',
@@ -67,7 +67,7 @@ block content
               p Артрит коленных суставов относят к часто встречающимся патологиям воспалительного характера. Причины их развития бывают разнообразными. Суставные патологии при артрите всегда сопровождаются болевыми ощущениями. Из-за болезненности снижается объем движений в суставе.
           p(class='!mb-25px') Проявления заболевания существенно снижают качество жизни пациента. Артрит нередко служит причиной развития инвалидности в относительно молодом возрасте. Чтобы не возникло этих проблем, при появлении начальных признаков заболевания необходимо сразу обращаться за медицинской помощью.
           p Если вы уже давно страдаете воспалением коленных суставов, не стоит отчаиваться. Сейчас разработано множество эффективных методов терапии этой болезни, которые помогают даже при хронических запущенных формах артрита.
-          h2.text-xl.lg_text-36px.mt-40px.mb-20px.lg_mt-70px.lg_mb-25px Что собой представляет патология
+          h2#desc.text-xl.lg_text-36px.mt-40px.mb-20px.lg_mt-70px.lg_mb-25px Что собой представляет патология
           .article__img.img-cover.h-200px.lg_h-auto.mb-35px.lg_mb-30px
             img.lazyload(
             data-sizes="auto",
@@ -101,7 +101,7 @@ block content
                 href: 'http://example.com/files/myfile.pdf',
                 classes: 'mt-10px'
             })
-          h3.text-xl.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Причины возникновения
+          h2#cause.text-xl.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Причины возникновения
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
@@ -137,7 +137,7 @@ block content
               li болезни опорно-двигательного аппарата;
               li переохлаждение
           p Развитию артрита способствуют профессиональные и бытовые сверхнагрузки на суставы, включающие перенос тяжестей. Еще на это влияет однообразная работа в неудобной позе.
-          h3.text-xl.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Симптомы
+          h2.text-xl.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Симптомы
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
@@ -161,7 +161,7 @@ block content
             li кожные покровы (сыпь и прочее).
           p Артрит колена иногда сочетается с воспалительным поражением <a href='#'>голеностопного сустава, лучезапястного, плечевого, локтевого и других.</a> Гнойную патологию сопровождает выраженный интоксикационный синдром, который проявляется такими симптомами, как лихорадка, озноб, головная боль, ощущение дискомфорта в мышцах.
           p При нарастании отека суставные контуры приобретают нечеткость. У пациента появляется ощущение распирания в области колена. Боль приобретает выраженный характер. Она проявляется и в покое, и при движениях. Больной для облегчения болевых ощущений придает ноге вынужденное положение, при котором он держит конечность полусогнутой в суставе.
-          h2.text-2xl.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Стадии развития
+          h2#stad.text-2xl.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Стадии развития
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
@@ -181,7 +181,7 @@ block content
             +svg('info-thin','',{width:38,height:38})(class='article__note-icon text-yellow-400')
             .text-lg.text-black.mb-5px.lg_text-xl.lg_self-start Рикта рекомендует
             p(class='!mb-0') При третьей и четвертой стадии болезни суставов требуется немедленно обратиться за медицинской помощью.
-          h2.text-2xl.text-black.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Диагностика
+          h2#diag.text-2xl.text-black.mt-40px.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Диагностика
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
@@ -202,7 +202,7 @@ block content
             +svg('info-thin','',{width:48,height:48})(class='article__note-icon text-red-500')
             .text-lg.text-black.mb-5px.lg_text-xl.lg_self-start Обратите внимание
             p(class='!mb-0') Если диагностика проведена несвоевременно и некачественно, лечение вовремя не назначается. Болезнь приобретает хроническое течение.
-          h2.text-2xl.text-black.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Лечение
+          h2#cure.text-2xl.text-black.mb-20px.lg_text-36px.lg_mt-70px.lg_mb-25px Лечение
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
@@ -420,7 +420,7 @@ block content
           .article__note.bg-blue-50.mt-20px.mb-40px
             +svg('laser-device','',{width:46,height:47})(class='article__note-icon')
             p(class='!mb-0') Сейчас лазеротерапию делают не только с помощью громоздких аппаратов для медицинских учреждений. Теперь не нужно ходить в поликлинику, возможно лечение артрита колена в домашних условиях с помощью портативных аппаратов. Их регулярное применение улучшает функционирование коленного сустава.
-          h3.text-xl.text-black.mt-40px.mb-20px.lg_text-2xl Профилактика
+          h2#prof.text-xl.text-black.mt-40px.mb-20px.lg_text-2xl Профилактика
           .grid.grid-cols-2.gap-x-20px.mb-20px
             .article__img.img-cover.h-100px(class='lg_h-[248px]')
               img.lazyload(
@@ -458,27 +458,27 @@ block content
             .article__float-container
               .article__contents.text-blue.font-bold.mb-24px
                 .mb-10px.text-xl.text-black.font-normal.lg_text-2xl.lg_mb-15px Содержание
-                ul.article__contents-list.m-0.p-0.list-none
+                ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor data-tab-class='a')
                   li
-                    a(href='#') Что собой представляет патология
+                    a.article__contents-link(href='#' data-anchor='#desc') Что собой представляет патология
                   li
-                    a(href='#') Причины возникновения
+                    a.article__contents-link(href='#' data-anchor='#cause') Причины возникновения
                   li
-                    a(href='#') Стадии развития
+                    a.article__contents-link(href='#' data-anchor='#stad') Стадии развития
                   li
-                    a(href='#') Диагностика
+                    a.article__contents-link(href='#' data-anchor='#diag') Диагностика
                   li
-                    a(href='#') Лечение
+                    a.article__contents-link(href='#' data-anchor='#cure') Лечение
                   li
-                    a(href='#') Профилактика
+                    a.article__contents-link(href='#' data-anchor='#prof') Профилактика
+              .banner__wrapper.article__banner
+                .banner Баннер
               +consult({
                 url: '/img/author_87x87.jpg',
                 name: 'Иван Фабричный',
                 text: 'Врач кардиолог',
                 phone: '8 800 200 57 30'
               })(class='article__consult')
-              .banner__wrapper.article__banner
-                .banner Баннер
 
         .article__socials.lg_justify-self-start
           .text-lg.text-black.text-center.mb-7px Поделиться в соц. сетях
@@ -491,37 +491,44 @@ block content
         .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px
           +svg('warning','',{width:45,height:43})(class='article__note-icon fill-slate-400')
           p(class='!mb-0') Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.
-        .question.article__question
-          h3.text-xl.text-black.mb-30px.lg_text-36px Часто задаваемые вопросы по заболеванию
-          +question-item({
-            header_id: 'question_01',
-            target_id: 'answer_01',
-            name: 'Бывает ли, что рикта не помогает?',
-            show: true
-          })
-            p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
-          .question__item-wrapper.bg-gray-200.rounded-10px
+        .question.article__question#article-question
+          h3.text-xl.text-black.mb-5px.lg_text-36px Часто задаваемые вопросы по заболеванию
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_01',
+              target_id: 'answer_01',
+              name: 'Бывает ли, что рикта не помогает?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+          .question__item-wrapper
             +question-item({
               header_id: 'question_02',
               target_id: 'answer_02',
               name: 'Применяется ли аппарат рикта при отморожениях?',
+              parent: '#article-question',
               show: false
             })
               p Да, применяется. Использование аппарата РИКТА способствует восстановлению микроциркуляции пораженных тканей, купированию или ослаблению болевого синдрома, снижению интоксикации и сокращению сроков лечения. Усиление эффекта наблюдается в комплексе с медикаментозной терапией.
-          +question-item({
-            header_id: 'question_03',
-            target_id: 'answer_03',
-            name: 'Как выбрать лазерный аппарат для дома?',
-            show: true
-          })(class='pb-30px border-b border-gray-200')
-            p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
-          +question-item({
-            header_id: 'question_04',
-            target_id: 'answer_04',
-            name: 'Можно ли лечить акушерско-гинекологические заболевания самостоятельно?',
-            show: true
-          })
-            p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_03',
+              target_id: 'answer_03',
+              name: 'Как выбрать лазерный аппарат для дома?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_04',
+              target_id: 'answer_04',
+              name: 'Можно ли лечить акушерско-гинекологические заболевания самостоятельно?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
         +consult({
           url: '/img/author_87x87.jpg',
           name: 'Иван Фабричный',

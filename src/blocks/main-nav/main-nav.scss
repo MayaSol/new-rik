@@ -64,6 +64,10 @@
       padding-top: 60px;
       max-height: 400px;
       overflow-y: scroll;
+
+      &--lvl-2 {
+        padding-top: 0;
+      }
     }
 
     .nav--main &--lvl-2 {

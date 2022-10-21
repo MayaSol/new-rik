@@ -29,13 +29,13 @@ mixin question(props={}, mods)
 mixin question-item(props,mods)
 
   -
-    var collapseClasses = "question__collpase collapse";
+    var collapseClasses = "question__collapse collapse";
     if (props.show) {
       collapseClasses += " show";
     }
 
     var btnClasses = '';
-    if (props.collapsed) {
+    if (!props.show) {
       btnClasses = 'collapsed';
     }
 
@@ -44,7 +44,7 @@ mixin question-item(props,mods)
       button.question__btn.text-base(class=btnClasses type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
         span.text-lg.text-black.lg_text-xl!= props.name
         include ../../blocks/inline-svg/plus.svg
-    .text-lg(id = props.target_id class=collapseClasses aria-labelledby=props.header_id data-bs-parent="#structureFeatures")
+    .text-lg(id = props.target_id class=collapseClasses aria-labelledby=props.header_id data-bs-parent=(props.parent) ? props.parent : '')
       .question__collapse-inner
         .question__content.pl-30px.border-l.border-gray-300
           block

@@ -44,20 +44,10 @@
 .page:not(.index) {
   .cart-aside {
     position: fixed;
-    right: 20px;
     top: 88vh;
     width: auto;
     padding-top: 0;
     z-index: 99;
-
-    @media (min-width: 1800px) {
-      right: 50%;
-      margin-right: -900px;
-    }
-
-    @media (min-width: 1800px) {
-      margin-right: -950px;
-    }
   }
   .cart-aside__inner {
     position: absolute;

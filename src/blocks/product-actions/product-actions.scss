@@ -75,6 +75,29 @@
     }
   }
 
+  .product-card--wishlist & {
+    .btn {
+      &--fav {
+        margin-right: 0 !important;
+      }
+
+      &--compare.btn {
+        margin-right: 0 !important;
+        @media (min-width: $screen-xxl) {
+          margin-right: 0 !important;
+        }
+      }
+
+      &--regular.btn {
+        margin-right: 5px;
+      }
+
+      &--buy {
+        margin-right: auto !important;
+      }
+    }
+  }
+
 
   .btn {
     flex-shrink: 0;

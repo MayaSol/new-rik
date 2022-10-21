@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (results)
+
+mixin results(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' results--' + modsList[i].trim();
+      }
+    }
+
+  .results(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin results-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' results--' + modsList[i].trim();
+      }
+    }
+
+    var dateString = `Изменено: ${props.date}`;
+
+  .results__item
+    h2.results__title!= props.title
+    .results__text.ellipsis(data-lines='7' data-lg-lines='2')
+      block
+    .results__date.text-sm!= dateString

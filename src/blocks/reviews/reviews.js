@@ -3,6 +3,7 @@ const ready = require('../../js/utils/documentReady.js');
 // const Choices = require('choices.js');
 const Tab = require("../../../node_modules/bootstrap/js/dist/tab.js");
 // var throttle = require('lodash.throttle');
+const makeEllipsis = require('../../js/utils/ellipsis.js');
 
 
 ready(function() {
@@ -49,7 +50,6 @@ ready(function() {
     if (typeof tabSliders[tabIdSelector] === 'undefined') {
       var sliderEl= document.querySelector(tabIdSelector + ' .reviews__slider');
       if (sliderEl) {
-        console.log(sliderEl);
         var slider = tns({
           container: tabIdSelector  + ' .reviews__slider',
           items: 1,
@@ -58,7 +58,21 @@ ready(function() {
           controls: true,
           // controls: false,
           nav: false,
-          loop: false
+          loop: false,
+          onInit: function(info) {
+            var ellipsis = document.querySelector(tabIdSelector + ' .reviews__item-text.ellipsis');
+            var timerId;
+            function setEllipsis() {
+              if (!ellipsis.clientHeight > 0) {
+                timerId = setTimeout(setEllipsis, 300);
+              }
+              else {
+                makeEllipsis(tabIdSelector + ' .ellipsis');
+              }
+            }
+            timerId = setTimeout(() => {setEllipsis()}, 300);
+            var timerId2 = setTimeout(() => {clearTimeout(timerId)},5000);
+          }
         });
         tabSliders[tabIdSelector] = slider;
       }

@@ -1,9 +1,12 @@
-// В этом файле должны быть стили для БЭМ-блока product-list, его элементов,
+// В этом файле должны быть стили для БЭМ-блока products, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.product-list {
+.products {
 
   $block-name:                &; // #{$block-name}__element
 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+  gap: 30px 20px;
 }

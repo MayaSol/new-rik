@@ -2,11 +2,8 @@ const ready = require('../../js/utils/documentReady.js');
 import RateYo from 'rateyo';
 
 ready(function() {
-  console.log(RateYo);
   var ratings = document.querySelectorAll('.rating__stars--view');
-  console.log(ratings);
   for (var rating of ratings) {
-    console.log(rating);
     if (rating.dataset.value) {
       RateYo(rating,{
         rating: rating.dataset.value,

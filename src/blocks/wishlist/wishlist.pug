@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (wishlist)
+
+mixin wishlist(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' wishlist--' + modsList[i].trim();
+      }
+    }
+
+  .wishlist(class=allMods)&attributes(attributes)
+    .wishlist__inner
+      block

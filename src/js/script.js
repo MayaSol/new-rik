@@ -5,7 +5,7 @@ const throttle = require('lodash.throttle');
 
 ready(function() {
 
-  makeEllipsis('.ellipsis');
+  // makeEllipsis('.ellipsis');
 
   function addtouchclass() { // first time user touches the screen
     console.log('touch start');

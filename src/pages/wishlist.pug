@@ -1,0 +1,29 @@
+extends ../pug/layout.pug
+
+block meta
+  title Избранное
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'wishlist';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Избранное')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.section.wishlist.mt-20px.mb-60px.lg_mb-128px
+      .container
+        h1.section__title.mb-20px Избранное
+        +products({},'wishlist')
+
+
+block prepend page-bottom
+  script(src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e")
+

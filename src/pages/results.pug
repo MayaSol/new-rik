@@ -1,0 +1,60 @@
+extends ../pug/layout.pug
+
+block meta
+  title Поиск по сайту
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'results';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Поиск по сайту')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.section.results.mt-20px.lg_mt-20px.mb-60px.lg_mb-64px
+      .container
+        h1.section__title.mb-20px Результаты поиска
+        span По запросу <b class='text-black'>"<span class='result__request'>рикта 04</span>"</b>: <span class='result__number'>99</span> соотвествий
+        .results__top.mt-20px
+          +search-form2('results')
+            .field-select__wrapper
+              select.results__select.field-select
+                option(value='/catalog.html#1' selected) По релевантности
+                option(value='/catalog.html#2') По алфавиту
+        .results__list
+          +results-item({
+            title: 'Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4',
+            date: '02.03.2022'
+          })
+            p Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое, а ...
+          +results-item({
+            title: 'Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4',
+            date: '02.03.2022'
+          })
+            p Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое, а ...
+          +results-item({
+            title: 'Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4',
+            date: '02.03.2022'
+          })
+            p Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое, а ...
+          +results-item({
+            title: 'Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4',
+            date: '02.03.2022'
+          })
+            p Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое, а Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое
+
+
+
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e")
+

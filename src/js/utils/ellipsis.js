@@ -1,19 +1,24 @@
   const makeEllipsis = function(selector) {
+    console.log('makeEllipsis');
+    console.log(ellipsisEls);
     var ellipsisEls = document.querySelectorAll(selector);
 
     for (var el of ellipsisEls) {
-      var lines = el.dataset.lines;
-      if (lines) {
-        truncateElement(el, lines);
+      var lines;
+      if (document.documentElement.clientWidth >= 1024 && el.dataset.lgLines) {
+        lines=el.dataset.lgLines;
       }
       else {
-        // console.log('truncate by height');
-        var lineHeight = getLineHeight(el);
-        var elHeight = el.clientHeight;
-        lines = parseInt(elHeight / lineHeight);
-        // lines = (lines > 1) ? lines -1 : lines;
+        lines = el.dataset.lines;
+        if (!lines) {
+          var lineHeight = getLineHeight(el);
+          var elHeight = el.clientHeight;
+          lines = parseInt(elHeight / lineHeight);
+        }
+      }
+      console.log('lines = ' + lines);
+      if (lines) {
         truncateElement(el, lines);
-        // console.log('truncate by height --------------------------');
       }
     }
   }
@@ -32,6 +37,7 @@ var getLineHeight = function getLineHeight(element) {
 var truncateElement = function(element, lines) {
   // console.log('truncateElement');
   // console.log(element);
+  // console.log(lines);
   var truncateText = element.innerHTML;
   var truncateTextParts = truncateText.split(' ');
   var lineHeight = getLineHeight(element);

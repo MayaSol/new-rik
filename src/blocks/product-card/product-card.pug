@@ -33,7 +33,7 @@ mixin product-card(props={}, mods)
       if (props.status)
         .product-card__status(class=statusClass)
           +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
-          span= props.status
+          span!= props.status
       if (props.text)
         .product-card__text.ellipsis(data-lines='2')= props.text
       .product-card__price-wrapper
@@ -43,6 +43,10 @@ mixin product-card(props={}, mods)
       +product-actions
       if (props.add)
         .product-card__add= props.add
+      if ( mods && mods.indexOf('wishlist') !== -1)
+        +btn('','icon,clean,delete')
+          +svg('none','',{width: 12, height: 12})
+          span Удалить
 
 
 
@@ -105,10 +109,10 @@ mixin catalog-products
   +product-card({
     title: 'РИКТА-ЭСМИЛ (2А)-03',
     desc: 'Мощность лазера - 45 Вт. Наличие TENS и синего света.',
-    status: 'В наличии',
-    status_icon: 'none',
-    status_icon_sizes: [6,6],
-    status_class: 'none',
+    status: 'Осталось <span>3</span> шт.',
+    status_icon: 'bell',
+    status_icon_sizes: [14,14],
+    status_class: 'few',
     top: ['Бесплатная доставка','Акция'],
     add: 'Лучший выбор',
     price: '37 800 &#8381;',
