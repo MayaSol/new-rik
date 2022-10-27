@@ -87,8 +87,9 @@
     top: -1770px; //animation page
     top: -47px; //contacts wide
     top: -6px; //contacts mobile
-    top: -5px;
+    top: 0px;
     left: 0; //product.jpg
+    // top: -252px;
     // top: -58px;
     // left: 64px;//footer main
     // top: -140px; //main test features
@@ -97,7 +98,7 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    // content: url('../screens/article-mobile.jpg');
+    // content: url('../screens/cure-mobile.jpg');
     opacity: 1;
   }
 
@@ -393,6 +394,7 @@ figure {
 }
 
 p {
+  word-break: break-word;
   //!!! http://clagnut.com/blog/2395
   // hyphens: auto;
   // hyphenate-limit-chars: 6 3 3;
@@ -614,6 +616,12 @@ body {}
 
     .section--reviews & {
       margin-bottom: 5px;
+    }
+
+    .section--catalog & {
+       @media (min-width: $screen-lg) {
+        max-width: 85%;
+      }
     }
   }
 

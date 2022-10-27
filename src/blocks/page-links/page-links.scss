@@ -30,6 +30,12 @@
     }
   }
 
+  &--news {
+    #{$block-name}__link {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+  }
 
 
   &__link {

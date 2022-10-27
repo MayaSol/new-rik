@@ -18,9 +18,9 @@ block content
       +breadcrumbs-item('Поиск по сайту')
     #bx_basketFKauiI.bx-basket.bx-opener
       +cart-aside(class='hidden xl_block')
-    section.section.results.mt-20px.lg_mt-20px.mb-60px.lg_mb-64px
+    section.section.results.mt-30px.lg_mt-20px.mb-60px.lg_mb-64px
       .container
-        h1.section__title.mb-20px Результаты поиска
+        h1.section__title.mb-5px Результаты поиска
         span По запросу <b class='text-black'>"<span class='result__request'>рикта 04</span>"</b>: <span class='result__number'>99</span> соотвествий
         .results__top.mt-20px
           +search-form2('results')
@@ -49,6 +49,16 @@ block content
             date: '02.03.2022'
           })
             p Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое, а Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое Популярный комплект для домашнего применения для всей семьи. Возможности аппарата <b class='text-black'>РИКТА 04/4</b> расширены за счет дополнительного излучателя Т1-04, благодаря которому время проведения терапевтических процедур сокращается вдвое
+        +pagination()(class='mt-35px lg_mt-45px')
+          +pagination-item('Пред.','#','','prev')(disabled)
+          +pagination-item('1','#1',true,'num')
+          +pagination-item('2','#2','','num')
+          +pagination-item('3','#3','','num')
+          +pagination-item('4','#4','','num')(class='hidden lg_flex')
+          +pagination-item('5','#5','','num')(class='hidden lg_flex')
+          +pagination-item('...')
+          +pagination-item('9','#9','','num')
+          +pagination-item('След.','#','','next')
 
 
 

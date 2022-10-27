@@ -12,8 +12,12 @@ mixin load-file(props={}, mods)
       }
     }
 
+    if (!props.text) {
+      props.text = 'Прикрепите файл спецификации';
+    }
+
   .load-file(class=allMods)&attributes(attributes)
     input.load-file__input(type="file" id=props.id name=props.name)
     label.btn.load-file__btn(for=props.id class=props.btn_classes)
       block
-    .load-file__info.text-sm.text-gray-500 Прикрепите файл спецификации
+    .load-file__info.text-sm.text-gray-500!= props.text

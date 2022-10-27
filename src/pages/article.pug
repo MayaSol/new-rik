@@ -471,24 +471,24 @@ block content
                     a.article__contents-link(href='#' data-anchor='#cure') Лечение
                   li
                     a.article__contents-link(href='#' data-anchor='#prof') Профилактика
-              .banner__wrapper.article__banner
-                .banner Баннер
-              +consult({
-                url: '/img/author_87x87.jpg',
-                name: 'Иван Фабричный',
-                text: 'Врач кардиолог',
-                phone: '8 800 200 57 30'
-              })(class='article__consult')
+              // .banner__wrapper.article__banner
+              //   .banner Баннер
+              // +consult({
+              //   url: '/img/author_87x87.jpg',
+              //   name: 'Иван Фабричный',
+              //   text: 'Врач кардиолог',
+              //   phone: '8 800 200 57 30'
+              // })(class='article__consult')
 
         .article__socials.lg_justify-self-start
           .text-lg.text-black.text-center.mb-7px Поделиться в соц. сетях
           <div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'></div>
-        .article__rating.rating.rating.text-lg.text-center.mt-20px.mb-40px.lg_justify-self-end
+        .article__rating.rating.rating.text-lg.text-center.mt-20px.lg_justify-self-end
           .article__rating-text.mb-5-px
             span.text-black 4.3/5&#32;
             span (5 286 оценок)
           .rating__stars--view#rateYo(data-value='4.3')
-        .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px
+        .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px.lg_mt-60px
           +svg('warning','',{width:45,height:43})(class='article__note-icon fill-slate-400')
           p(class='!mb-0') Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.
         .question.article__question#article-question

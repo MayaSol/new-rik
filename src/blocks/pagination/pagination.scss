@@ -3,44 +3,159 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .pagination {
+
+  $block-name:                &; // #{$block-name}__element
+
   display: flex;
   flex-wrap: wrap;
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
+  justify-content: center;
+  padding: 15px 0;
+
+  &__inner {
+    display: inline-flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 20px;
+    @apply shadow-default;
+    border-radius: 34px;
+
+    @media (min-width: $screen-lg) {
+      padding: 10px 24px;
+    }
+
+    #{$block-name}--catalog & {
+      margin-left: 0;
+
+      @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+  }
 
   &__item {
-    display: block;
-    min-width: 2em;
-    // border: 1px solid $border-color;
-    padding: 0.3em 0.6em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    min-width: 32px; //line-height + paddings
+    margin-right: 4px;
     text-decoration: none;
     text-align: center;
-    color: $text-color;
+    color: $tw-black;
 
-    & + & {
-      border-left: 0;
+    @media (min-width: $screen-lg) {
+      min-height: 38px;
+      min-width: 38px;
     }
 
     &:hover,
     &:focus {
       text-decoration: none;
-      color: $text-color;
+      color: #000;
     }
 
-    @at-root a#{&} {
+    &--active {
+      background-color: $tw-blue_link;
+      color: #fff;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+
+    &[disabled] {
+      color: $tw-gray-300;
+      pointer-events: none;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    @at-root span#{&} {
+      padding-right: 0;
+      padding-left: 0;
+      margin-right: -5px;
+      margin-left: -5px;
+
+      &+a {
+        margin-left: 5px;
+      }
+    }
+
+    &--prev {
+      margin-right: 10px;
+
+      @media (min-width: $screen-lg) {
+        margin-right: 20px;
+      }
+    }
+
+    &--next {
+      margin-left: 5px;
+
+      @media (min-width: $screen-lg) {
+        margin-left: 15px;
+      }
+    }
+
+
+    @at-root a#{&}--num {
+
+      padding: 0.15em;
+      border-radius: 50%;
 
       &:hover,
       &:focus {
-        background-color: $gray-lightest;
+        background-color: $tw-blue_link;
+        color: #fff;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 15px;
+        width: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $tw-gray-200;
+      }
+
+      &::before {
+        left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:before {
+          display: none;
+        }
       }
     }
 
     @at-root span#{&} {
       cursor: default;
     }
+  }
 
-    &--active {
-      background-color: $gray-lightest;
+  &--reviews {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
     }
   }
 }

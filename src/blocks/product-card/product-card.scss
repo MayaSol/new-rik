@@ -25,6 +25,10 @@
       overflow: hidden;
     }
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &#{$block-name}--info {
       #{$block-name}__inner {
 
@@ -209,6 +213,13 @@
         grid-column-start: 2;
         grid-column-end: 3;
         margin-right: 0;
+      }
+    }
+
+
+    .product-catalog--inner-page & {
+      @media (min-width: $screen-lg) {
+        height: 300px;
       }
     }
   }

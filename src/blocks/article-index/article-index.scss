@@ -1,0 +1,103 @@
+// В этом файле должны быть стили для БЭМ-блока article-index, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.article-index {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__letter-active {
+    font-size: 50px;
+    line-height: 1;
+    color: $tw-blue_link;
+    border-bottom: 1px solid rgba(0, 124, 211, 0.1);
+  }
+
+  &__alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    margin-right: -10px;
+    padding-left: 0;
+    @apply text-lg;
+    font-weight: 700;
+    color: $tw-blue_link;
+  }
+
+  &__letter {
+    margin-right: 7px;
+
+    &.active {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -2px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $tw-red-900;
+      }
+    }
+  }
+
+  &__tabs {
+    margin-top: 24px;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: 1px solid $tw-gray-200;
+    overflow: hidden;
+  }
+
+
+  &__tab-content {
+    margin-top: 30px;
+
+    a {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 1.1;
+      color: $tw-blue_link;
+    }
+  }
+
+  &__tab-pane {
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 196px;
+    gap: 0 20px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &.active {
+      display: flex ;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 57px;
+    height: 50px;
+    background-color: $tw-gray-100;
+    &--prev {
+      margin-right: 10px;
+      transform: rotate(180deg);
+    }
+  }
+}

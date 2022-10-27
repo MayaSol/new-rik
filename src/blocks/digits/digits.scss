@@ -1,0 +1,40 @@
+// В этом файле должны быть стили для БЭМ-блока digits, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.digits {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-top: -1px;
+    padding: 20px;
+    border: 1px solid $tw-gray-200;
+
+    &:last-child {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  }
+
+  &__value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    @apply text-lg;
+    color: #fff;
+    background-color: $tw-blue_link;
+  }
+}

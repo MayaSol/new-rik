@@ -23,5 +23,27 @@
         margin-right: 12px;
       }
     }
+
+    #{$block-name}--reviews & {
+      @apply text-base;
+    }
   }
+
+  &__info {
+    #{$block-name}--reviews & {
+      margin-right: auto;
+      margin-left: auto;
+
+      @media (min-width: $screen-lg) {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  &--reviews {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 }

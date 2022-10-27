@@ -1,0 +1,100 @@
+// В этом файле должны быть стили для БЭМ-блока faq, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.faq {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-columns: 1fr 30px 400px;
+    gap: 0;
+  }
+
+  @media (min-width: $screen-xxl) {
+    grid-template-columns: 1fr 58px 390px;
+  }
+
+  &__header {
+     @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+     }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    @apply text-xl;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+      @apply text-36px;
+    }
+  }
+
+  &__question {
+    margin-bottom: 60px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 45px;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    @media (min-width: $screen-lg) {
+      @apply text-xl;
+    }
+  }
+
+  &__question-inner {
+    padding-left: 20px;
+    border-left: 1px solid $tw-gray-200;
+
+    @media (min-width: $screen-lg) {
+      padding-left: 39px;
+    }
+  }
+
+  &__answer {
+    padding: 30px 20px;
+    background-color: $tw-gray-100;
+
+    @media (min-width: $screen-lg) {
+      padding: 30px 40px;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+
+    p {
+      // margin-bottom: 10px;
+      // @media (min-width: $screen-lg) {
+      //   margin-bottom: 20px;
+      // }
+    }
+  }
+
+  &__add {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+
+  &__aside {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 5;
+    }
+  }
+}

@@ -47,3 +47,29 @@ mixin search-form2(mods)
       input.search-form__input(type="text" placeholder="Введите ваш поисковой запрос" name="q")
       +action-btn-svg('search', {w: '21', h: '20'}, 'search')(id="btnSearch" class="search-form__btn" type="button")
     block
+
+
+
+mixin search-form-articles(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-form('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' search-form--' + modsList[i].trim();
+      }
+    }
+
+
+  form.search-form.search-form--articles(action="/poisk/" class=allMods)&attributes(attributes)
+    .search-form__input-wrapper
+      input.search-form__input(type="text" placeholder="Поиск по всем статьям" name="q")
+      +action-btn-svg('search', {w: '21', h: '20'}, 'search')(id="btnSearch" class="search-form__btn" type="button")

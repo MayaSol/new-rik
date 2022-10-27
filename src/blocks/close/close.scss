@@ -24,14 +24,15 @@
   top: 0;
   left: 50%;
   content: ' ';
-  width: 2px;
+  width: 14px;
+  height: 1px;
   background-color: $tw-black;
   transform: translateX(-50%);
 }
 .close:before {
-  transform: rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
 }
 .close:after {
-  transform: rotate(-45deg);
+  transform: translateX(-50%) rotate(-45deg);
 }
 

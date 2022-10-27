@@ -163,6 +163,28 @@ mixin reviews-user-item(props={}, mods)
       +btn('Подробнее','simple')(class="text-md")
 
 
+mixin reviews-page-user-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews__item--' + modsList[i].trim();
+      }
+    }
+
+  .reviews__item.reviews__item--user(class=allMods)&attributes(attributes)
+    .reviews__item-inner
+      .reviews__item-author
+        .reviews__item-avatar
+          img.lazyload(data-src=props.url)
+        .reviews__item-name= props.name
+        .reviews__item-info= props.info
+      block
+      +btn('Подробнее','simple')(class="text-md")
+
 
 mixin reviews-item(props={}, mods)
 
@@ -178,6 +200,28 @@ mixin reviews-item(props={}, mods)
 
   .reviews__item.slider-card(class=allMods)&attributes(attributes)
     .reviews__item-inner.slider-card__inner
+      .reviews__item-author
+        .reviews__item-avatar
+          img.lazyload(data-src=props.url)
+        .reviews__item-name= props.name
+        .reviews__item-info= props.info
+      block
+
+
+mixin reviews-page-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' reviews__item--' + modsList[i].trim();
+      }
+    }
+
+  .reviews__item(class=allMods)&attributes(attributes)
+    .reviews__item-inner
       .reviews__item-author
         .reviews__item-avatar
           img.lazyload(data-src=props.url)

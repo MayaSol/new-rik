@@ -1,0 +1,115 @@
+// В этом файле должны быть стили для БЭМ-блока aside-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.aside-nav {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__item {
+    margin-top: -1px;
+    border-top: 1px solid $tw-gray-200;
+    border-bottom: 1px solid $tw-gray-200;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--active {
+      &>#{$block-name}__item-title {
+        background-color: $tw-gray-100;
+
+        span {
+          color: $tw-black !important;
+        }
+      }
+    }
+
+
+    &--lvl-2 {
+      #{$block-name}__btn {
+        padding-left: 30px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        @apply text-sm;
+
+        span {
+          color: $tw-gray-500;
+
+          &:hover,
+          &:focus,
+          &:active {
+            color: $tw-black;
+          }
+        }
+      }
+
+      &:last-child {
+        padding-bottom: 20px;
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__item-title {
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $tw-gray-100;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    padding: 20px 30px 20px 20px;
+    line-height: 1.2;
+    text-align: left;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none !important;
+    }
+
+    &--has-submenu {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        width: 6px;
+        height: 4px;
+        background-image: url(../img/angle-down.svg);
+        background-repeat: no-repeat;
+        transform: translateY(-50%) rotate(180deg);
+        transition: transform .3s;
+      }
+
+      &.collapsed {
+        &::after {
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      min-height: 24px;
+      font-weight: 400;
+      color: $tw-black;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $tw-black;
+      }
+    }
+  }
+
+
+}

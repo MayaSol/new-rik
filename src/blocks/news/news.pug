@@ -1,0 +1,44 @@
+//- Все примеси в этом файле должны начинаться c имени блока (news)
+
+mixin news(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' news--' + modsList[i].trim();
+      }
+    }
+
+  .news(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin news-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' news--' + modsList[i].trim();
+      }
+    }
+
+  .news__item(class=allMods)&attributes(attributes)
+    .news__tags
+      .news__tag= props.tag
+    .news__img
+      img.lazyload(data-src=props.url data-sizes='auto' data-srcset=props.srcset alt=props.alt)
+    .news__date= props.date
+    h2.news__title= props.title
+    .news__text(data-lines='3')
+      block
+    +btn('Подробнее','simple')(class="text-md")
+
+
+

@@ -7,7 +7,7 @@ ready(function() {
       containerSelector: '.article__aside',
       innerWrapperSelector: '.article__float-container',
       resizeSensor: true,
-      topSpacing: 50,
+      topSpacing: 100,
     //   topSpacing: 20,
     //   bottomSpacing: 20
     });

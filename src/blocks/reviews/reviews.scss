@@ -13,7 +13,7 @@
   }
 
   @media (min-width: $onepage-width) {
-    .screen-low & {
+    .index.screen-low & {
       margin-top: 0;
     }
   }
@@ -42,12 +42,12 @@
       padding-top: 20px;
     }
 
-     @media (min-width: $onepage-width) {
-      .screen-low & {
+    @media (min-width: $onepage-width) {
+      .index.screen-low & {
         min-height: 300px;
         padding-top: 0 !important;
       }
-     }
+    }
 
     .btn {
       margin-top: auto;
@@ -60,10 +60,16 @@
       }
 
      @media (min-width: $onepage-width) {
-      .screen-low & {
+      .index.screen-low & {
         margin-top: 10px;
       }
      }
+    }
+
+    #{$block-name}--reviews-page & {
+      padding-top: 0;
+      margin-bottom: 20px;
+      @apply shadow-default;
     }
   }
 
@@ -81,7 +87,7 @@
     }
 
      @media (min-width: $onepage-width) {
-      .screen-low & {
+      .index.screen-low & {
         padding-top: 10px !important;
         padding-bottom: 20px !important;
       }
@@ -90,6 +96,12 @@
 
     @media (min-width: $screen-xxl) {
       padding: 20px 55px 40px 30px ;
+    }
+
+    #{$block-name}--reviews-page & {
+      @media (min-width: $screen-lg) {
+        padding-top: 40px;
+      }
     }
   }
 
@@ -189,6 +201,14 @@
     @media (min-width: $screen-lg) {
       margin-top: 0;
     }
+
+    #{$block-name}--reviews-page & {
+      margin-top: 10px;
+
+      @media (min-width: $screen-lg) {
+        margin-top: 0;
+      }
+    }
   }
 
   &__item-text>* {
@@ -226,7 +246,7 @@
     }
 
     @media (min-width: $onepage-width) {
-      .screen-low & {
+      .index.screen-low & {
         margin-top: 10px;
       }
     }
@@ -248,7 +268,7 @@
     }
 
     @media (min-width: $onepage-width) {
-      .screen-low & {
+      .index.screen-low & {
         margin-bottom: 0;
 
         .nav-link {

@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (digits)
+
+mixin digits(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' digits--' + modsList[i].trim();
+      }
+    }
+
+  .digits(class=allMods)&attributes(attributes)
+    ul.digits__list
+      block
+
+
+mixin digits-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' digits--' + modsList[i].trim();
+      }
+    }
+
+  li.digits__item(class=allMods)&attributes(attributes)
+    .digits__value= props.value
+    .digits__caption= props.caption

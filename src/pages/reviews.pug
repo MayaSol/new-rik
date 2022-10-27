@@ -1,0 +1,181 @@
+extends ../pug/layout.pug
+
+block meta
+  title Отзывы и истории применения
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'reviews';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Отзывы и истории применения')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.section.reviews-section.mt-30px.lg_mt-20px.mb-50px.lg_mb-64px
+      .container
+        h1.section__title.mb-20px Отзывы и истории применения
+        .page-select.page-select--reviews.field-select__wrapper
+          select.reviews-section__page-select.page-select__input.field-select.md_hidden(role='tablist')
+            option(value='/reviews.html#all' selected) Все отзывы
+            option(value='/reviews.html#profs') Профессионалы
+            option(value='/reviews.html#users') Пользователи
+            option(value='/reviews.html#video') Видео
+        .page-links__wrapper.hidden.md_block
+          +page-links('reviews')(class='nav nav-tabs flex')
+            +page-links-item({ name: 'Все отзывы', isActive: true, href: '#all'})
+            +page-links-item({ name: 'Профессионалы', href: '#profs'})
+            +page-links-item({ name: 'Пользователи', href: '#users'})
+            +page-links-item({ name: 'Видео', href: '#video'})
+        .reviews-section__content.mt-20px.lg_mt-40px
+          .reviews.reviews--reviews-page.lg_mt-6px
+            +reviews-page-user-item(
+              {
+                url: '/img/user-reviews-avatar-02.jpg',
+                name: 'Андрей Турманоев',
+                info: 'С. Добринка'
+              })(class="slider__item")
+              a.block.mt-20px.text-xl.text-black.lg_text-2xl.lg_mt-0.xxl_mb-20px.hover_opacity-70(href="#") Рикта - мой помощник и спаситель
+              .reviews__item-text.ellipsis(data-lines='8')
+                p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию. От знакомой узнала, что в соседнем небольшом городке Звенигово Республики Марий Эл работает врач, который кроме стандартного лечения применяет чудо-аппарат. Я решила попробовать полечиться этим аппаратом.
+                p Результат был очень быстрым и неожиданно хорошим: через 5 дней я уже могла сидеть, стало меньше болей при ходьбе. Замечательный врач-невропатолог Семакин Валерий Федорович помимо уколов и капельниц делал блокады, мануальную терапию. И сочетал все это с лечением аппаратом МИЛТА. После первого курса лечения я уехала со значительным улучшением состояния. Через 3 месяца мне провели повторный курс, затем через полгода. И на протяжении следующих 5 лет ездила на лечение к этому доктору каждые полгода. Операцию делать не пришлось, несмотря даже на то, что в 2004 г. после падения обнаружилась еще одна грыжа.
+            +reviews-page-item(
+              {
+                url: '/img/user-reviews-avatar.jpg',
+                name: 'Туманина Вера',
+                info: 'С. Федосеевка'
+              })(class="slider__item")
+              a.block.mt-20px.text-xl.text-black.lg_text-2xl.lg_mt-0.xxl_mb-20px.hover_opacity-70(href="#") Рикта - мой помощник и спаситель
+              +video-yt({
+                url: '/img/review-video-poster-01-w360.jpg',
+                srcset:
+                '/img/review-video-poster-01-w480.jpg 361w,' +
+                '/img/review-video-poster-01.jpg 560w'
+              })
+                <iframe class="video-yt__frame" id="video-yt__frame" width="560" height="315" src="https://www.youtube.com/embed/F0JM6d28n30?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            +reviews-page-user-item(
+              {
+                url: '/img/user-reviews-avatar-03.jpg',
+                name: 'Туманина Вера',
+                info: 'С. Федосеевка'
+              })(class="slider__item")
+              a.block.mt-20px.text-xl.text-black.lg_text-2xl.lg_mt-0.xxl_mb-20px.hover_opacity-70(href="#") Рикта - мой помощник и спаситель
+              .reviews__item-text.ellipsis(data-lines='8')
+                p.reviews__item-excerpt В 1998 г. я очень сильно болела. Постоянно болела спина, ноги из-за двух межпозвонковых грыж. Я с большим трудом передвигалась, совсем не могла сидеть из-за усиливающихся болей. Я постоянно проходила курсы лечения, но боли продолжались, и мне настойчиво предлагали сделать операцию. От знакомой узнала, что в соседнем небольшом городке Звенигово Республики Марий Эл работает врач, который кроме стандартного лечения применяет чудо-аппарат. Я решила попробовать полечиться этим аппаратом.
+                p Результат был очень быстрым и неожиданно хорошим: через 5 дней я уже могла сидеть, стало меньше болей при ходьбе. Замечательный врач-невропатолог Семакин Валерий Федорович помимо уколов и капельниц делал блокады, мануальную терапию. И сочетал все это с лечением аппаратом МИЛТА. После первого курса лечения я уехала со значительным улучшением состояния. Через 3 месяца мне провели повторный курс, затем через полгода. И на протяжении следующих 5 лет ездила на лечение к этому доктору каждые полгода. Операцию делать не пришлось, несмотря даже на то, что в 2004 г. после падения обнаружилась еще одна грыжа.
+          +pagination('reviews')(class='mt-35px lg_mt-30px')
+            +pagination-item('Пред.','#','','prev')(disabled)
+            +pagination-item('1','#1',true,'num')
+            +pagination-item('2','#2','','num')
+            +pagination-item('3','#3','','num')
+            +pagination-item('4','#4','','num')(class='hidden lg_flex')
+            +pagination-item('5','#5','','num')(class='hidden lg_flex')
+            +pagination-item('...')
+            +pagination-item('9','#9','','num')
+            +pagination-item('След.','#','','next')
+          .form__wrapper.form__wrapper--reviews
+            #comp_5afb8bec3eb492a81bc638ca2c9b76d6
+              #contact_page_form
+                form.form.relative.form--question.lg_flex.lg_flex-col
+                  .contacts__title.mt-30px.mb-20px.text-xl.lg_mt-0 Оставить свой отзыв
+                  +field-text({
+                    attrs: {
+                      name: 'name',
+                      placeholder: 'Ф.И.О. / Название мед. учреждения',
+                      type: 'text'
+                    }
+                  })
+                  +field-text({
+                    attrs: {
+                      name: 'city',
+                      placeholder: 'Город',
+                      type: 'text'
+                    }
+                  })
+                  +field-text({
+                    attrs: {
+                      name: 'email',
+                      placeholder: 'E-mail',
+                      type: 'text'
+                    }
+                  })
+                  +field-text({
+                    isTextarea: true,
+                    attrs: {
+                      name: 'name',
+                      placeholder: 'Текст отзыва',
+                      type: 'text',
+                      rows: 8
+                    }
+                  })(class="contacts__question-msg relative grow")
+                    button.btn.btn--form-tg.absolute.right-0.bottom-0.flex.items-center.justify-center
+                      +svg('tg-outline','',{width: 18, height: 18})
+                      span Отправить
+                  +load-file({
+                    id: 'special-file',
+                    btn_classes: 'btn--icon btn--regular border-gray-300 mb-5px inline-flex',
+                    text: 'Файл не выбран'
+                  },'reviews')(class='mt-20px lg_mt-10px')
+                    +svg('paperclip','',{width: 20,height:19})
+                    span Прикрепить файл
+    section.section.section--catalog.section--catalog-reviews.lg_pt-0.lg_mb-128px
+      .section__inner
+        .container
+          .product-catalog
+            h2.section__title.mb-0.mt-0 Рекомендуем <span class='hidden lg_inline'>обратить внимание на аппараты</span>
+            +btn('Все аппараты','simple')(class="pt-3px")
+            .product-list.mt-20px
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА-04/4',
+                  desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
+                  price: '44 800 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА 04/4 (универсальный)',
+                  desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '74 600 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-эсмил(1)а',
+                  desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: 'http://placekitten.com/300/300',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-тест',
+                  desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")

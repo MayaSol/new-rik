@@ -86,7 +86,15 @@
         border-color: #fff;
       }
     }
+  }
 
+  &__wrapper--reviews {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
   }
 
   .form-special__msg {}

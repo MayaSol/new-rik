@@ -1,0 +1,124 @@
+//- Все примеси в этом файле должны начинаться c имени блока (aside-nav)
+
+mixin aside-nav(mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' aside-nav--' + modsList[i].trim();
+      }
+    }
+
+  .aside-nav(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin aside-nav__item(props,mods)
+  //- name        {string}
+  //- hasSub      {boolean}
+  //- show        {boolean}
+  //- target_id   {string}
+  //- header_id   {string}
+  //- href        {string}
+  //- isActive    {boolean}
+
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' aside-nav__item--' + modsList[i].trim();
+      }
+    }
+
+    var collapseClasses = 'collapse';
+    if (props.show) {
+      collapseClasses += ' show';
+    }
+
+    var btnClasses = '';
+    if (typeof(props.collapsed) === 'undefined' || props.collapsed) {
+      btnClasses = 'collapsed';
+    }
+
+  .aside-nav__item(class=allMods)&attributes(attributes)
+    if (props.hasSub)
+      .aside-nav__item-title
+        button.aside-nav__btn.aside-nav__btn--has-submenu(class=btnClasses type='button' data-bs-toggle='collapse' data-bs-target='#'+props.target_id aria-expanded='true' aria-controls=props.header_id)
+          span!= props.name
+      .aside-nav__collapse(id = props.target_id class=collapseClasses aria-labelledby=props.header_id)
+        .aside-nav__collapse-inner
+          block
+    else
+      .aside-nav__item-title
+        a.aside-nav__btn(class=btnClasses href=props.href)
+          span!= props.name
+
+
+
+mixin aside-nav-full(mods)
+
+
+  +aside-nav(mods)&attributes(attributes)
+    +aside-nav__item({
+      name: 'Исследования',
+      href: '#'
+    })
+    +aside-nav__item({
+      name: 'Что такое лазерная медицина?',
+      header_id: 'menu-02',
+      target_id: 'submenu-02',
+      hasSub: true
+    })
+      +aside-nav__item({
+        name: 'Лазерная медицина 1',
+        href: '#'
+      },'lvl-2')
+      +aside-nav__item({
+        name: 'Лазерная медицина 2',
+        href: '#'
+      },'lvl-2')
+    +aside-nav__item({
+      name: 'Основные принципы',
+      href: '#'
+    },'active')
+    +aside-nav__item({
+      name: 'Эффективность применения лазерной терапии',
+      header_id: 'menu-03',
+      target_id: 'submenu-03',
+      hasSub: true
+    })
+      +aside-nav__item({
+        name: 'Пункт меню для примера 1',
+        href: '#'
+      },'lvl-2')
+      +aside-nav__item({
+        name: 'Пункт меню для примера 2',
+        href: '#'
+      },'lvl-2')
+      +aside-nav__item({
+        name: 'Пункт меню для примера 3',
+        href: '#'
+      },'lvl-2')
+      +aside-nav__item({
+        name: 'Пункт меню для примера 4',
+        href: '#'
+      },'lvl-2')
+      +aside-nav__item({
+        name: 'Пункт меню для примера 5',
+        href: '#'
+      },'lvl-2')
+    +aside-nav__item({
+      name: 'Часто задаваемые вопросы',
+      href: '#'
+    })
+    +aside-nav__item({
+      name: 'Истоки',
+      href: '#'
+    })

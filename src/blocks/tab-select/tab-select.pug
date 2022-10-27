@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tab-select)
+
+mixin tab-select(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tab-select--' + modsList[i].trim();
+      }
+    }
+
+  .tab-select(class=allMods)&attributes(attributes)
+    .tab-select__inner
+      block

@@ -1,0 +1,146 @@
+extends ../pug/layout.pug
+
+block meta
+  title Новости
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Новости')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.news.mt-30px.lg_mt-20px.mb-50px
+      .container
+        h1.section__title.mb-20px Новости
+        .page-select.page-select--news.field-select__wrapper
+          select.news__page-select.page-select__input.field-select.md_hidden(role='tablist')
+            option(value='/news.html#all' selected) Все новости
+            option(value='/news.html#events') События
+            option(value='/news.html#cat2') Категория 2
+            option(value='/news.html#cat3') Категория 3
+        .page-links__wrapper.hidden.md_block
+          +page-links('news')(class='nav nav-tabs flex')
+            +page-links-item({ name: 'Все новости', isActive: true, href: '#all'})
+            +page-links-item({ name: 'События', href: '#events'})
+            +page-links-item({ name: 'Категория 2', href: '#cat2'})
+            +page-links-item({ name: 'Категория 3', href: '#cat3'})
+        .news__content.mt-20px.lg_mt-40px
+          .news__list
+            +news-item({
+              url: '/img/news-01_304x.jpg',
+              srcset: '/img/news-01_320x.jpg 320w,' +
+                      '/img/news-01_440x.jpg 321w,' +
+                      '/img/news-01_738x.jpg 481w,' +
+                      '/img/news-01_304x.jpg 304w',
+              date: '5 Августа 2022',
+              title: 'Обучение врачей работе с аппаратами «рикта»',
+              tag: 'Событие'
+            })
+              p В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара) «Лазерная медицина» «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара) «Лазерная медицина»«МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара) «Лазерная медицина» ов (МИПК) кафедрцау
+            +news-item({
+              url: '/img/news-02_304x.jpg',
+              srcset: '/img/news-02_320x.jpg 320w,' +
+                      '/img/news-02_440x.jpg 321w,' +
+                      '/img/news-02_738x.jpg 481w,' +
+                      '/img/news-02_304x.jpg 304w',
+              date: '18 Июля 2022',
+              title: 'Выпуск аппарата РИКТА-ЭСМИЛ (2А) прекращен',
+              tag: 'Категория 2'
+            })
+              p В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара) «Лазерная медицина»
+            +news-item({
+              url: '/img/news-03_304x.jpg',
+              srcset: '/img/news-03_320x.jpg 320w,' +
+                      '/img/news-03_440x.jpg 321w,' +
+                      '/img/news-03_738x.jpg 481w,' +
+                      '/img/news-03_304x.jpg 304w',
+              date: '19 Июня 2022',
+              title: '19 июня — День медицинского работника',
+              tag: 'Категория 3'
+            })
+              p В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+            +news-item({
+              url: '/img/news-04_304x.jpg',
+              srcset: '/img/news-04_320x.jpg 320w,' +
+                      '/img/news-04_440x.jpg 321w,' +
+                      '/img/news-04_738x.jpg 481w,' +
+                      '/img/news-04_304x.jpg 304w',
+              date: '16 Июня 2022',
+              title: 'Лекция: Лазерная терапия в педиатрии',
+              tag: 'Категория 2'
+            })
+              p В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара) «Лазерная медицина»
+          +pagination('reviews')(class='mt-35px lg_mt-50px')
+            +pagination-item('Пред.','#','','prev')(disabled)
+            +pagination-item('1','#1',true,'num')
+            +pagination-item('2','#2','','num')
+            +pagination-item('3','#3','','num')
+            +pagination-item('4','#4','','num')(class='hidden lg_flex')
+            +pagination-item('5','#5','','num')(class='hidden lg_flex')
+            +pagination-item('...')
+            +pagination-item('9','#9','','num')
+            +pagination-item('След.','#','','next')
+    section.section.section--catalog.section--catalog-news.lg_pt-0.lg_mb-128px
+      .section__inner
+        .container
+          .product-catalog.product-catalog--inner-page
+            h2.section__title.mb-0.mt-0 Рекомендуем <span class='hidden lg_inline'>обратить внимание на аппараты</span>
+            +btn('Все аппараты','simple')(class="pt-3px")
+            .product-list.mt-20px
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА-04/4',
+                  desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
+                  price: '44 800 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА 04/4 (универсальный)',
+                  desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '74 600 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-эсмил(1)а',
+                  desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: 'http://placekitten.com/300/300',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-тест',
+                  desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")

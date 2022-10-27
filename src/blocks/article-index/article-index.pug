@@ -1,0 +1,64 @@
+//- Все примеси в этом файле должны начинаться c имени блока (article-index)
+
+mixin article-index(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' article-index--' + modsList[i].trim();
+      }
+    }
+
+  .article-index(class=allMods)&attributes(attributes)
+    block
+
+mixin article-index-alphabet(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' article-index__alphabet' + modsList[i].trim();
+      }
+    }
+    var alphabet = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ'.split('');
+    console.log(alphabet);
+
+  ul.article-index__alphabet(class=allMods)&attributes(attributes)
+    each letter in alphabet
+      li
+        a.article-index__letter(href='/')= letter
+
+
+
+mixin article-index-tab(props={}, mods)
+
+  //- id
+  //isActive
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' article-index__content-item' + modsList[i].trim();
+      }
+    }
+    if (props.isActive) {
+      allMods = allMods + ' article-index__content-item--active';
+    }
+
+  ul.article-index__content-item(class=allMods id=props.id role="tabpanel")&attributes(attributes)
+
+
+mixin article-index-name(props={}, mods)
+
+  li
+    a(href='#')= name
+

@@ -176,6 +176,7 @@ module.exports = {
       spacing: {
         '3px': '3px',
         '5px': '5px',
+        '6px': '6px',
         '7px': '7px',
         '8px': '8px',
         '10px': '10px',
@@ -196,6 +197,7 @@ module.exports = {
         '42px': '42px',
         '45px': '45px',
         '50px': '50px',
+        '55px': '55px',
         '56px': '56px',
         '60px': '60px',
         '64px': '64px',

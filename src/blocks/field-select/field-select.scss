@@ -23,17 +23,9 @@
     background-color: $tw-gray-100;
     background-position: right 15px top 50%;
 
-    // &::after {
-    //   content: '\f107';
-    //   position: absolute;
-    //   right: 15px;
-    //   top: 50%;
-    //   @apply font-icon;
-    //   font-weight: 900;
-    //   font-size: 10px;
-    //   color: $tw-black;
-    //   transform: translateY(-50%);
-    // }
+    .article-index__tabs & {
+      border-radius: 4px;
+    }
 
     select {
       padding: 6px 15px 6px 10px;

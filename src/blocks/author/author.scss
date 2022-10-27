@@ -13,6 +13,7 @@
   &__img {
     width: 87px;
     height: 87px;
+    flex-shrink: 0;
     margin-right: 16px;
     border-radius: 50%;
     overflow: hidden;
@@ -67,7 +68,32 @@
       @apply text-lg;
     }
     #{$block-name}__text {
-      @pplay text-sm;
+      @applay text-sm;
+    }
+  }
+
+  &--faq {
+    align-items: flex-start;
+    @media (min-width: $screen-lg) {
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    #{$block-name}__name {
+      @apply text-lg;
+      @media (min-width: $screen-lg) {
+        @apply text-xl;
+      }
+    }
+    #{$block-name}__text {
+      @apply text-base;
+      line-height: 26px;
+      margin-bottom: 3px;
+    }
+    #{$block-name}__img {
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
     }
   }
 }

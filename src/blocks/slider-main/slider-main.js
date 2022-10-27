@@ -4,6 +4,7 @@ const getParents = require('../../js/utils/getParents.js');
 var closest = require('closest');
 
 ready(function() {
+  //!!! В <video> должен быть атрибут muted, чтобы разешить автозапуск и play из js
 
   // var videos = document.querySelectorAll('.slider__bg-video video');
 
@@ -13,6 +14,8 @@ ready(function() {
   //   console.log(el);
   //   fitVideo(el);
   // }
+
+
 
   var videos = document.querySelectorAll('.slider-main__media--video-bg video');
   if (videos.length > 0) {

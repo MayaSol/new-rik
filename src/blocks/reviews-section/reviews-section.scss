@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока reviews-section, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.reviews-section {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__content {
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 30px 390px;
+    }
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 58px 390px;
+    }
+  }
+
+  .video-yt {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}

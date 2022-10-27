@@ -45,9 +45,9 @@
     color: $tw-gray-300;
   }
 
-  &__select {
-    @media (min-width: $screen-md) {
-
+  &__text {
+    p {
+      margin-bottom: 10px;
     }
   }
 }

@@ -1,6 +1,4 @@
   const makeEllipsis = function(selector) {
-    console.log('makeEllipsis');
-    console.log(ellipsisEls);
     var ellipsisEls = document.querySelectorAll(selector);
 
     for (var el of ellipsisEls) {
@@ -16,7 +14,6 @@
           lines = parseInt(elHeight / lineHeight);
         }
       }
-      console.log('lines = ' + lines);
       if (lines) {
         truncateElement(el, lines);
       }
@@ -49,36 +46,16 @@ var truncateElement = function(element, lines) {
   // console.log('element.clientHeight =' + element.clientHeight);
 
 
-  // let div = document.createElement('div');
-  // div.className = 'test';
-  // div.innerHTML = truncateText;
-  // console.log(div);
-
-  // let parent = document.querySelector('.test-wrapper');
-
-  // parent.append(div);
-
-  // console.log(parent);
-
-  // var initial = element;
-
-  // var element = div;
-
-  // let test = document.querySelector('.test');
-
-  // console.log(test);
-
-  //!!! while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {
+  // console.log('------------while-------------------');
   while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {
     truncateTextParts.pop();
     element.innerHTML = truncateTextParts.join(' ') + '...';
-    // initial.innerHTML = div.innerHTML;
-    // console.log(truncateTextParts.length, maxHeight, element.clientHeight);
-    // console.log(element.innerHTML);
     //   console.log('element.clientHeight = ' + element.clientHeight);
-    // console.log('maxHeight = ' + maxHeight);
     //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
+    // console.log(element.innerHTML);
   }
+    // console.log('---------------------------------------------');
+
 }
 
 
