@@ -1,0 +1,61 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-page-total)
+
+mixin cart-page-total(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cart-page-total--' + modsList[i].trim();
+      }
+    }
+
+  .cart-page__total.cart-page-total#bx-soa-total(class=allMods + ' tanais-sidebar-block bx-soa-sidebar')&attributes(attributes)
+    <div class="bx-soa-cart-total-ghost"></div>
+    <div class="bx-soa-cart-total" style="">
+      <div class="bx-soa-cart-total-data">
+        <div class="bx-soa-cart-total-line"><span class="bx-soa-cart-t">3 товара</span><span class="bx-soa-cart-d">127 400 руб</span></div>
+        <div class="bx-soa-cart-total-line"><span class="bx-soa-cart-t">Доставка</span><span class="bx-soa-cart-d"><span class="bx-soa-price-free">бесплатно</span></span></div>
+        <div class="bx-soa-cart-total-line bx-soa-cart-total-line-total"><span class="bx-soa-cart-t">Итого</span><span class="bx-soa-cart-d" style="font-size: 27px;">24 242 ₽</span></div>
+        <div class='text-sm'>Добавьте к заказу товаров на <b class='text-green-500'>40₽</b>,</br> чтобы получить бесплатную доставку</div>
+        <div class="bx-total-coupon-container">
+          <div class="bx-soa-coupon">
+            <div class="bx-soa-coupon-block">
+              <div class="bx-soa-coupon-input"><input class="tanais-form-control bx-ios-fix" type="text" placeholder='Введите промокод'><span class="bx-soa-coupon-btn"></span></div><span class="bx-soa-coupon-item"></span>
+            </div>
+          </div>
+        </div>
+        <div class="cart-page__bonus">
+          <div class="cart-page__bonus-img">
+            <img src='/img/bonus.jpg'>
+          </div>
+          <div class="cart-page__bonus-text">
+            <b class="text-lg text-black leading-6">В подарок</b></br>
+            <span class="text-base leading-4">Комплект очков для Rikta</span>
+          </div>
+        </div>
+        <div class="bx-soa-cart-total-button-container"><a href="javascript:void(0)" class="btn btn-outline-primary btn-order-one-click">Купить в 1 клик</a><a href="javascript:void(0)" class="btn btn-default btn-order-save">Оформить заказ</a></div>
+      </div>
+      <div class="bx-soa-cart-total-form">
+        <a onclick="BX.Sale.OrderAjaxComponent.buyOneClickFormHide();" class="bx-soa-cart-total-form-close-btn"></a>
+        <div class="bx-soa-cart-total-form-title">
+          <p>Покупка в 1 клик</p>
+        </div>
+        <div class="bx-soa-cart-total-form-message-box"></div>
+        <div class="bx-soa-cart-total-form-field">
+          <span>ФИО: <i>*</i></span>
+          <input type="text" required="" class="tanais-form-control" name="full_name">
+        </div>
+        <div class="bx-soa-cart-total-form-field">
+          <span>Телефон: <i>*</i></span>
+          <input type="text" required="" class="tanais-form-control" name="phone" autocomplete="tel">
+        </div>
+        <div class="bx-soa-cart-total-form-field">
+          <span>E-mail: <i>*</i></span>
+          <input type="email" required="" class="tanais-form-control" name="email">
+        </div>
+        <a onclick="BX.Sale.OrderAjaxComponent.buyOneClickFormSend(this);" class="btn btn-default">Купить</a>
+      </div>
+    </div>

@@ -2,7 +2,7 @@ const ready = require('../../js/utils/documentReady.js');
 const getParents = require('../../js/utils/getParents.js');
 
 ready(function() {
-  let carts = document.querySelectorAll('.cart');
+  let carts = document.querySelectorAll('.bx-basket:not(#tanais-basket-root)');
 
   var css = '.cart__icon-wrapper,.cart__section {pointer-events: none}';
   var head = document.head || document.getElementsByTagName('head')[0];
@@ -64,7 +64,7 @@ ready(function() {
 });
 
 
-  const carts = document.querySelectorAll('.cart');
+  // const carts = document.querySelectorAll('.cart');
 
 
   // function isAnyGoods(cart) {

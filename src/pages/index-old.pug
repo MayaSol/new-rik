@@ -1,0 +1,354 @@
+extends ../pug/layout-first-page.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block off-canvas
+  +main-nav-aside()
+  +burger('Закрыть дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__close burger--closed burger--closed')
+
+block nav
+  +burger('Показать дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__toggler hidden lg_block mr-15px')
+  //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')(class='hiddenmd_block xl_hidden')
+  +main-nav()(class="hidden lg_block")
+  +burger('Показать мобильное меню', 'nav-mobile', 'main-nav--open')(class='main-nav__toggler burger--animated order-3 lg_hidden')
+  +main-nav-mobile()(class="lg_hidden order-last")
+  +search-form
+    +action-btn-svg('search', {w: '21', h: '20'}, 'search')(id="btnSearch" class="search-form__btn" type="button")
+  +action-btn-svg('user', {w: '18', h: '20'},'user')(class="mr-18px lg_mr-15px")
+  +switcher({name: 'Ru'})(class="mr-25px hidden xxl_block text-lg" id="switcherLangTop")
+    +switcher-item({name: 'Ru', code: 'ru', value: ''})
+    +switcher-item({name: 'En', code: 'en', value: ''})
+    +switcher-item({name: 'Ch', code: 'ch', value: ''})
+  div.contact-info.hidden.xl_block
+    +phone(class="text-xl") 8 800 200 57 30
+    +hours
+
+
+block content
+  .wrapper
+    //- +pages
+    +cart-aside(class='hidden xl_block')
+    .main
+      section.section.section-main.section--main-slider.bg-gray-100(data-page='main-slider' id='main-slider')
+        +slider-main({class: "3xl_container"})
+          +slider-item--main({url: '/video/dummy.mov', width: 1920, height: 1080, type: 'video/mp4', poster: 'poster_001.jpg'})
+            .slider-main__text.mt-30px.lg_mt-0
+              h2.mt-0.md_text-40px.lg_text-48px Современная физиотерапия и&nbsp;реабилитация
+              p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
+              .slider-main__text-bottom.xxl_mt-25px
+                +btn('Подробнее','regular')(href="#")
+          +slider-item--main({url: '/video/SampleVideo_360x240_5mb.mp4', width: 360, height: 240, type: 'video/mp4', poster: 'poster_002.jpg'})
+            .slider-main__text.mt-30px.lg_mt-0
+              h2.mt-0.md_text-40px.lg_text-48px slide 2
+              p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
+              .slider-main__text-bottom.xxl_mt-25px
+                +btn('Подробнее','regular')(href="#")
+          +slider-item--main({url: '/video/banana.mp4', width: 3840, height: 2160, type: 'video/mp4', poster: 'poster_003.jpg'})
+            .slider-main__text.mt-30px.lg_mt-0
+              h2.mt-0.md_text-40px.lg_text-48px slide 3
+              p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
+              .slider-main__text-bottom.xxl_mt-25px
+                +btn('Подробнее','regular')(href="#")
+      section.section.section-main.section--features.mt-35px.lg_mt-0(data-page='features' id='features')
+          .section__inner
+            .section__content.section__container.xl_container
+              +features
+                +features-item({
+                  title: 'Эффективность',
+                  text: "<ul class='m-0 p-0 list-none'><li>Аппараты используются свыше чем 5&nbsp;000 ведущих клиник</li>" +
+                    "<li>Входят в стандарты оснащения ЛПУ (коды 317670, 317660)</li>" +
+                    "<li>Сотни инновационных запатентованных методик лечения</li></ul>",
+                  icon: 'graph'
+                 })
+                +features-item({
+                  title: 'Удобство',
+                  text: "<ul class='m-0 p-0 list-none'><li>Медико-консультативная поддержка</li>" +
+                    "<li>Оперативный прием заявок на гарантийный ремонт</li>" +
+                    "<li>Бесплатный «пробный сеанс» у врача в офисе при производстве</li></ul>",
+                  icon: 'filter'
+                })
+                +features-item({
+                  title: 'Безопасность',
+                  text: "<ul class='m-0 p-0 list-none'><li>Соответствуют всем требованиям и стандартам</li>" +
+                    "<li>Относятся к классу полной безопасности применения согласно IEC 60825-1</li>" +
+                    "<li>Без возрастных ограничений</li></ul>",
+                  icon: 'lock'
+                })
+                +features-item({
+                  title: 'Качество',
+                  text: "<ul class='m-0 p-0 list-none'><li>Производство соответствует требованиями мировых стандартов&nbsp;(сертификат ISO)</li>" +
+                    "<li>Наша аппаратура поставляется в 38 стран мира</li>" +
+                    "<li>Двойной контроль качества обеспечивает высокую надежность и&nbsp;долговечность</li></ul>",
+                  icon: 'star'
+                })
+      section.section.section-main.section--info(data-page='info' id='info')
+        .section__inner
+         .section__content.section__container.container
+            +product-info
+              .section__header
+                h2.section__title Новинки
+                +btn('Все аппараты','simple')(class="pt-3px")
+              .product-info__views-wrapper
+                .product-info__views-list.slider
+                  +product-info-view
+                  +product-info-view
+                  +product-info-view
+                //- input.product-info__range.field-range(type="range" class="mt-10px")
+              .product-info__text-wrapper
+                .product-info__text-list.slider
+                  +product-info-text(
+                    {
+                      title: 'РИКТА-ЭСМИЛ (2А)-03',
+                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+                      price: '37 800 ₽'
+                    })
+                    div
+                      h4.text-xl.leading-7.text-black.mb-15px Преимущества
+                      ul.pl-0.text-sm.leading-6
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_laser.shrink-0.mr-18px
+                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_blue-light.shrink-0.mr-18px
+                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_cert.shrink-0.mr-18px
+                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+                  +product-info-text(
+                    {
+                      title: '2. РИКТА-ЭСМИЛ (2А)-03',
+                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+                      price: '37 800 ₽'
+                    })
+                    div
+                      h4.text-xl.leading-7.text-black.mb-15px Преимущества
+                      ul.pl-0.text-sm.leading-6
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_laser.shrink-0.mr-18px
+                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_blue-light.shrink-0.mr-18px
+                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_cert.shrink-0.mr-18px
+                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+                  +product-info-text(
+                    {
+                      title: '3. РИКТА-ЭСМИЛ (2А)-03',
+                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии. Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+                      price: '37 800 ₽'
+                    })
+                    div
+                      h4.text-xl.leading-7.text-black.mb-15px Преимущества
+                      ul.pl-0.text-sm.leading-6
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_laser.shrink-0.mr-18px
+                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_blue-light.shrink-0.mr-18px
+                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+                        li.flex.items-center.mb-10px.lg_mb-16px
+                          i.icon_cert.shrink-0.mr-18px
+                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+      section.section.section-main.section--area.pt-35px.lg_pt-0(data-page='area' id='area')
+        .section__inner
+          .section__content.section__container.container
+            +areas
+              +areas-item({url: 'img/area-physio.jpg',caption: 'Физиотерапия'})
+              +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия'})
+              +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология'})
+              +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология'})
+              +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт'})
+              +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария'})
+            input.areas__range.field-range(type="range" class="mt-10px")
+      section.section.section-main.section--catalog.pt-50px.lg_pt-0(data-page='catalog' id='catalog')
+        .section__inner
+          .section__content.section__container.container
+            .product-catalog
+              h2.section__title.mb-0.mt-0.xxl_mb-7px Каталог аппаратов
+              +btn('Все аппараты','simple')(class="pt-3px")
+              .product-list.mt-20px
+                +product-card(
+                  {
+                    url: './img/product.jpg',
+                    title: 'РИКТА-04/4',
+                    desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
+                    price: '44 800 ₽'
+                  })(class="slider__item")
+                +product-card(
+                  {
+                    url: './img/product.jpg',
+                    title: 'РИКТА 04/4 (универсальный)',
+                    desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                    price: '74 600 ₽'
+                  })(class="slider__item")
+                +product-card(
+                  {
+                    url: './img/product.jpg',
+                    title: 'рикта-эсмил(1)а',
+                    desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                    price: '98 200 ₽'
+                  })(class="slider__item")
+                +product-card(
+                  {
+                    url: 'http://placekitten.com/300/300',
+                    title: 'рикта-тест',
+                    desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
+                    price: '98 200 ₽'
+                  })(class="slider__item")
+      section.section.section-main.section--service.pt-60px.lg_pt-0(data-page='service' id='service')
+        .section__inner
+          .section__content.section__container.container
+            +service(
+              {
+                url:'/img/service-sm.jpg',
+                srcset:'/img/service-2x.jpg 640w,' +
+                      '/img/service-3x.jpg 1992w'
+              })
+              ul.service__list.pl-0.text-black
+                li.service__item.flex.items-center.mb-18px.lg_mb-20px.lg_pb-18px.lg_mb-20px
+                  i.icon_service-tech.shrink-0.mr-12px.lg_mr-20px
+                  span Тех.обслуживание производителем
+                li.service__item.flex.items-center.mb-18px.lg_mb-20px.lg_pb-18px.lg_mb-20px
+                  i.icon_service-garant.shrink-0.mr-12px.lg_mr-20px
+                  span Гарантия два года
+                li.service__item.flex.items-center.mb-18px.lg_mb-20px.lg_pb-18px.lg_mb-20px
+                  i.icon_service-delivery.shrink-0.mr-12px.lg_mr-20px
+                  span Бесплатная доставка
+                li.service__item.flex.items-center.mb-18px.lg_mb-20px.lg_pb-18px.lg_mb-20px
+                  i.icon_service-change.shrink-0.mr-12px.lg_mr-20px
+                  span Обмен старых аппаратов со скидкой
+      section.section.section-main.section--reviews.pt-20px.lg_pt-0(data-page='reviews' id='reviews')
+        .section__inner
+          .section__content
+            .section__container.container
+              .section__header
+                h2.section__title Отзывы
+                +btn('Все отзывы','simple')(class="")
+              .reviews__tab-select-wrapper.field-select__wrapper.md_container.md_after_hidden
+                select#reviews-tab-select.reviews__tab-select.tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
+                  option(value="#profs" role="tab") Профессионалы
+                  option(value="#users" role="tab") Пользователи
+                  option(value="#videos" role="tab") Видео
+            +reviews()
+      section.section.section-main.section--articles.pt-40px.lg_pt-0(data-page='articles' id='articles')
+        .section__inner
+          .section__content.section__container.container
+              h2.section__title.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px Новости и статьи
+              +btn('Все статьи','simple').mb-20px.shrink-0
+              .article-preview__list-wrapper
+                .article-preview__list.slider
+                  .article-preview.slider__item.flex.xxl_w-736px
+                    .article-preview__inner.xxl_flex.xxl_h-full
+                      .article-preview__img.xxl_shrink-0(class="xxl_w-1/2 xxl_h-full")
+                        img.lazyload(data-src="img/article-1.jpg")
+                      .article-preview__text.xxl_pt-40px
+                        .article-preview__date.text-base.text-gray-300.mb-10px.xxl_mb-10px 15 марта 2022
+                        .article-preview__title.mb-10px.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
+                        .article-preview__content.hidden.xxl_block.xxl_flex-grow.xxl_overflow-hidden.xxl_w-full.xxl_mb-30px
+                          .article-preview__content-inner.text-base.text-gray-500.max-h-full.article-preview__ellipsis.xl_pr-10px Рожистое воспаление, рожа (erysipelas – от греч. erythros «красный» и pella«кожа») – инфекционное заболевание, вызываемое бета-гемолитическим стрептококком группы А,  протекающее в острой или хронической форме. В России встречается 10-12 случаев на 10 000 населения. Рожей в основном страдают люди старше 60 лет, причем женщины болеют чаще мужчин.
+                        +btn('Подробнее','simple')(class="text-md mt-10px xxl_mt-20px xxl_shrink-0")
+                  .article-preview.slider__item.xxl_w-397px
+                    .article-preview__inner.xxl_flex.xxl_flex-col.xxl_h-full
+                      .article-preview__img.xxl_shrink(class="xxl_h-[57%]")
+                        img.lazyload(data-src="img/article-2.jpg")
+                      .article-preview__text.xxl_pt-30px.xxl_shrink-0
+                        .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                        .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                        .article-preview__content.hidden
+                        +btn('Подробнее','simple')(class="text-md mt-10px")
+                  .article-preview.slider__item.flex.xxl_w-736px
+                    .article-preview__inner.xxl_flex.xxl_h-full
+                      .article-preview__img.xxl_shrink-0(class="xxl_w-1/2 xxl_h-full")
+                        img.lazyload(data-src="img/article-1.jpg")
+                      .article-preview__text.xxl_pt-40px
+                        .article-preview__date.text-base.text-gray-300.mb-10px.xxl_mb-10px 15 марта 2022
+                        .article-preview__title.mb-10px.text-lg.text-black Лазерная терапия в комплексном лечении рожистого воспаления
+                        .article-preview__content.hidden.xxl_block.xxl_flex-grow.xxl_overflow-hidden.xxl_w-full.xxl_mb-30px
+                          .article-preview__content-inner.text-base.text-gray-500.max-h-full.article-preview__ellipsis.xl_pr-10px Рожистое воспаление, рожа (erysipelas – от греч. erythros «красный» и pella«кожа») – инфекционное заболевание, вызываемое бета-гемолитическим стрептококком группы А,  протекающее в острой или хронической форме. В России встречается 10-12 случаев на 10 000 населения. Рожей в основном страдают люди старше 60 лет, причем женщины болеют чаще мужчин.
+                        +btn('Подробнее','simple')(class="text-md mt-10px xxl_mt-20px")
+                  .article-preview.slider__item.xxl_w-397px
+                    .article-preview__inner.xxl_flex.xxl_flex-col.xxl_h-full
+                      .article-preview__img.xxl_shrink(class="xxl_h-[57%]")
+                        img.lazyload(data-src="img/article-2.jpg")
+                      .article-preview__text.xxl_pt-30px.xxl_shrink-0
+                        .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                        .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                        .article-preview__content.hidden
+                        +btn('Подробнее','simple')(class="text-md mt-10px")
+                //- .article-preview.slider__item
+                //-   .article-preview__img
+                //-     img(src="img/article-2.jpg")
+                //-   .article-preview__text
+                //-     .article-preview__date.text-base.mb-10px 15 марта 2022
+                //-     .article-preview__title.text-lg.text-black Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                //-     .article-preview__content
+                //-     +btn('Подробнее','simple')(class="text-md mt-10px")
+      .section.page__footer-wrapper.mt-60px.lg_mt-0
+        +page-footer()
+          .page-footer__contacts.xxl_ml-60px.xxl_justify-self-end.xxl_mt-20px
+            .page-footer__phone.text-xl #[a(href='tel:+70000000000') 8 800 200 57 30]
+            .page-footer__hours.text-sm.text-gray-500 пн-пт 10:00 – 18:00
+            .page-footer__address.mt-7px 111020, г. Москва, <br class="hidden xxl_block"/>ул. Боровая, д. 7, стр. 7.
+            .page-footer__socials.flex.justify-between.mt-24px
+              +page-footer__social-icon({icon: 'mail', url: 'mail.ru', w: '22', h: '19'})
+              +page-footer__social-icon({icon: 'youtube', url: 'mail.ru', w: '19', h: '16'})
+              +page-footer__social-icon({icon: 'fb', url: 'mail.ru', w: '17', h: '18'})
+              +page-footer__social-icon({icon: 'insta', url: 'mail.ru', w: '17', h: '18'})
+              +page-footer__social-icon({icon: 'vk', url: 'mail.ru', w: '22', h: '13'})
+              +page-footer__social-icon({icon: 'ok', url: 'mail.ru', w: '11', h: '18'})
+              +page-footer__social-icon({icon: 'tg', url: 'mail.ru', w: '18', h: '15'})
+              +page-footer__social-icon({icon: 'rutube', url: 'mail.ru', w: '57', h: '14'})
+          .page-footer__disclaim.xxl_mt-115px
+            div.mt-12px.md_mt-0.text-15.xxl_text-2xl.opacity-30 ВСЯ ИНФОРМАЦИЯ, РАЗМЕЩЕННАЯ НА САЙТЕ, НОСИТ ОЗНАКОМИТЕЛЬНЫЙ ХАРАКТЕР И НЕ МОЖЕТ СЛУЖИТЬ ЗАМЕНОЙ ОЧНОЙ КОНСУЛЬТАЦИИ ВРАЧА
+            div.mt-10px.xxl_mt-5px.text-base Вся представленная на сайте информация, касающаяся наличия на складе, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
+          .page-footer__info
+            .flex.mt-10px.md_mt-0.xxl_ml-0
+              +svg('logo-img','',{width: 63, height: 39})(class="mr-10px")
+              +switcher({name: 'Россия / русский'})(class="page-footer__lang-switcher text-white" id="switcherLangFooter")
+                +switcher-item({name: 'Россия / русский', code: 'ru', value: '', check: true})
+                +switcher-item({name: 'Britain / English', code: 'en', value: '', check: true})
+                +switcher-item({name: 'Китай / китайский', code: 'ch', value: '', check: true})
+            +btn('Политика конфиденциальности','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
+            .mt-10px © 2022 ООО «Риктамед»
+          +footer-nav({title: 'Каталог'},'catalog')(class="hidden md_block")
+            +footer-nav-item({name: 'РИКТА-ЭСМИЛ (2А)-01', url: '#'})
+            +footer-nav-item({name: 'РИКТА-ЭСМИЛ (2А)-03', url: '#'})
+            +footer-nav-item({name: 'РИКТА-ЭСМИЛ 03/2', url: '#'})
+            +footer-nav-item({name: 'РИКТА 04/4', url: '#'})
+            +footer-nav-item({name: 'РИКТА-ВЕТ ', url: '#'})
+            +footer-nav-item({name: 'Оптические насадки', url: '#'})
+            +footer-nav-item({name: 'Излучатели', url: '#'})
+            +footer-nav-item({name: 'Прочие аксессуары', url: '#'})
+            +footer-nav-item({name: 'Литература', url: '#'})
+          +footer-nav({title: 'Покупателям'},'customer')(class="hidden md_block xxl_ml-20px")
+            +footer-nav-item({name: 'Оплата', url: '#'})
+            +footer-nav-item({name: 'Доставка', url: '#'})
+            +footer-nav-item({name: 'Гарантия', url: '#'})
+            +footer-nav-item({name: 'Trade-in', url: '#'})
+            +footer-nav-item({name: 'Сервисное обслуживание и ремонт ', url: '#'})
+            +footer-nav-item({name: 'Тест-драйв', url: '#'})
+          +footer-nav({title: 'Информация'},'info')(class="hidden lg_block xxl_ml-40px")
+            +footer-nav-item({name: 'Как работает лазерный аппарат', url: '#'})
+            +footer-nav-item({name: 'Здоровье от А до Я', url: '#'})
+            +footer-nav-item({name: 'О лазерной терапии', url: '#'})
+            +footer-nav-item({name: 'FAQ', url: '#'})
+            +footer-nav-item({name: 'О компании ', url: '#'})
+            +footer-nav-item({name: 'Отзывы', url: '#'})
+            +footer-nav-item({name: 'Контакты', url: '#'})
+          +footer-nav({title: 'Сотрудничество'},'coop')(class="hidden xl_flex")
+            +footer-nav-item({name: 'Дилерам', url: '#'})
+            +footer-nav-item({name: 'Врачам', url: '#'})
+            +footer-nav-item({name: 'Комплектование ЛПУ', url: '#'})
+          .page-footer__h-line.hidden.xxl__block
+
+//- block footer
+//-   p footer
+
+block prepend page-bottom
+  script(src='https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js')

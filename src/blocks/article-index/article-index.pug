@@ -27,12 +27,11 @@ mixin article-index-alphabet(props={}, mods)
       }
     }
     var alphabet = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ'.split('');
-    console.log(alphabet);
 
   ul.article-index__alphabet(class=allMods)&attributes(attributes)
     each letter in alphabet
       li
-        a.article-index__letter(href='/')= letter
+        a.article-index__letter(href='/' class= (letter == 'А') ? 'active' : '')= letter
 
 
 

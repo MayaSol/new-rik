@@ -24,3 +24,28 @@ mixin video(props={}, mods)
       img(src=props.poster)
     .video__btn-play(class=btnClass)
 
+
+
+mixin video-product(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' video--' + modsList[i].trim();
+      }
+    }
+
+    var btnClass=''
+    if (typeof(props.btn_mod) != 'undefined') {
+      btnClass='video__btn-play--' + props.btn_mod;
+    }
+
+  .video(class=allMods)&attributes(attributes)
+    video.video__item(width=props.width height=props.height preload='none' muted)
+      source(src=props.url type=props.type)
+    .product-main__poster.video__poster
+      img(src=props.poster)
+    .video__btn-play(class=btnClass)

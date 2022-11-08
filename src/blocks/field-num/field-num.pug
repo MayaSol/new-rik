@@ -39,6 +39,7 @@ mixin field-num(props)
         allMods = allMods + ' field-num--' + modsList[i].trim();
       }
     }
+    if(typeof(props.attrs) === 'undefined') { props.attrs = {}; }
     if(props.attrs.disabled) allMods = allMods + ' field-num--disabled';
     var val = parseInt(props.val);
     if(isNaN(val)) val = 0;

@@ -11,6 +11,10 @@
     line-height: 1;
     color: $tw-blue_link;
     border-bottom: 1px solid rgba(0, 124, 211, 0.1);
+
+    @media (min-width: $screen-lg) {
+      font-size: 100px;
+    }
   }
 
   &__alphabet {
@@ -19,14 +23,26 @@
     margin-top: 18px;
     margin-bottom: 12px;
     margin-right: -10px;
+    margin-left: -5px;
     padding-left: 0;
-    @apply text-lg;
+    @apply text-xl;
     font-weight: 700;
     color: $tw-blue_link;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
   }
 
   &__letter {
-    margin-right: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+
+    @media (min-width: $screen-xl) {
+      padding-left: 3px;
+      padding-right: 4px;
+      @apply text-lg;
+    }
 
     &.active {
       position: relative;
@@ -35,7 +51,7 @@
         content: '';
         position: absolute;
         top: 0;
-        right: -2px;
+        right: 3px;
         width: 4px;
         height: 4px;
         border-radius: 50%;
@@ -46,22 +62,39 @@
 
   &__tabs {
     margin-top: 24px;
-    padding: 20px;
+    padding: 20px 25px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     border: 1px solid $tw-gray-200;
-    overflow: hidden;
+
+    @media (min-width: $screen-lg) {
+      padding-top: 12px;
+    }
   }
 
+  &__nav-tabs {
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+
+    .nav-item {
+      display: flex;
+    }
+  }
 
   &__tab-content {
     margin-top: 30px;
+    overflow: hidden;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 40px;
+    }
 
     a {
       display: block;
-      margin-bottom: 12px;
+      margin-bottom: 19px;
       font-size: 18px;
-      line-height: 1.1;
+      line-height: 20px;
       color: $tw-blue_link;
     }
   }
@@ -70,34 +103,77 @@
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 196px;
-    gap: 0 20px;
+    height: 273px;
+    padding: 0;
     padding-left: 0;
     list-style: none;
     margin: 0;
     padding: 0;
+    @media (min-width: $screen-md) {
+      gap: 0 20px;
+    }
+    @media (min-width: $screen-xxl) {
+      gap: 0 21px;
+    }
+    @media (min-width: $screen-4xl) {
+      gap: 0 20px;
+    }
 
     &.active {
       display: flex ;
+    }
+
+    li {
+      width: 100%;
+      @media (min-width: $screen-md) {
+        width: 328px;
+      }
+      @media (min-width: $screen-lg) {
+        padding-left: 15px;
+        width: 281px;
+      }
+      @media (min-width: $screen-xl) {
+        width: 365px;
+      }
+      @media (min-width: $screen-xxl) {
+        width: 409px;
+      }
+      @media (min-width: $screen-3xl) {
+        width: 589px;
+      }
+      @media (min-width: $screen-4xl) {
+        width: 650px;
+      }
     }
   }
 
   &__btns {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 18px;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 30px;
+      margin-bottom: 18px;
+    }
   }
 
-  &__nav {
+  &__nav-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 57px;
     height: 50px;
     background-color: $tw-gray-100;
+
     &--prev {
       margin-right: 10px;
       transform: rotate(180deg);
     }
+
+   &:disabled {
+    opacity: $opacity;
+    pointer-events: none;
+   }
   }
 }

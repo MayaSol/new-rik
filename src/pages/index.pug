@@ -31,7 +31,8 @@ block nav
 block content
   .wrapper
     //- +pages
-    +cart-aside(class='hidden xl_block')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
     .main
       section.section.section-main.section--main-slider.bg-gray-100(data-page='main-slider' id='main-slider')
         +slider-main({class: "4xl_container"})
@@ -426,8 +427,11 @@ block content
             .page-footer__phone.text-xl #[a(href='tel:+70000000000') 8 800 200 57 30]
             .page-footer__hours.text-sm.text-gray-500 пн-пт 10:00 – 18:00
             .page-footer__address.mt-7px 111020, г. Москва, <br class="hidden xxl_block"/>ул. Боровая, д. 7, стр. 7.
-            .page-footer__socials.flex.justify-between.mt-24px
-              <div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,viber,whatsapp'></div>
+            .page-footer__socials.flex.justify-center.md_justify-start.mt-24px
+              +page-footer__social-icon({icon: 'youtube', url: 'mail.ru', w: '19', h: '16'})
+              +page-footer__social-icon({icon: 'vk', url: 'mail.ru', w: '22', h: '13'})
+              +page-footer__social-icon({icon: 'ok', url: 'mail.ru', w: '11', h: '18'})
+              +page-footer__social-icon({icon: 'rutube', url: 'mail.ru', w: '57', h: '14'})
           .page-footer__disclaim.xxl_mt-115px
             div.mt-12px.md_mt-0.text-15.xxl_text-2xl.opacity-30 ВСЯ ИНФОРМАЦИЯ, РАЗМЕЩЕННАЯ НА САЙТЕ, НОСИТ ОЗНАКОМИТЕЛЬНЫЙ ХАРАКТЕР И НЕ МОЖЕТ СЛУЖИТЬ ЗАМЕНОЙ ОЧНОЙ КОНСУЛЬТАЦИИ ВРАЧА
             div.mt-10px.xxl_mt-5px.text-base Вся представленная на сайте информация, касающаяся наличия на складе, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.

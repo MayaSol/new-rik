@@ -68,6 +68,9 @@
 
   &--options {
     height: 100%;
+    .cart-page & {
+      height: auto;
+    }
     .field-checkbox__name-text {
       &::before {
         background-color: $tw-gray-100;

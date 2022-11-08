@@ -1,0 +1,356 @@
+// В этом файле должны быть стили для БЭМ-блока cart-page, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cart-page {
+
+  $block-name: &; // #{$block-name}__element
+
+  .bx-soa-section-title {
+    font-family: 'Circe';
+    font-weight: 400;
+  }
+
+  .bx-soa-section-title-text {
+    @apply text-2xl;
+  }
+
+  .bx-sls .dropdown-block {
+    padding-left: 16px;
+    border-color: $tw-gray-200;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  &__back {
+    margin-right: auto;
+    color: $tw-blue_link;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-blue_link;
+    }
+  }
+
+  &__pane {
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(229, 242, 251, 0.5);
+  }
+
+  &__delivery {
+    box-shadow: none !important;
+    background-color: $tw-gray-70;
+
+    .style-checkbox {
+      position: relative;
+      width: 18px !important;
+      height: 18px !important;
+      margin-top: 0.2em;
+      border-radius: 50% !important;
+      border: 1px solid $tw-gray-300 !important;
+
+      &::after {
+        content: '';
+        width: 8px !important;
+        height: 8px !important;
+        top: 0 !important;
+        left: 0 !important;
+        border-radius: 50% !important;
+        background-color: $tw-green-500 !important;
+        transform: translate(50%, 50%);
+        opacity: 0;
+      }
+    }
+
+    .bx-soa-pp-item-container .bx-selected .style-checkbox {
+      border-color: $tw-green-500;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    .bx-soa-pp-company-smalltitle {
+      font-family: 'Circe';
+      font-weight: 400;
+      @apply  text-lg;
+      color: $tw-black;
+    }
+
+    .bx-soa-pp-delivery-cost {
+      display: flex;
+      line-height: 28px;
+      font-weight: 700;
+      color: $tw-gray-500;
+      flex-grow: 1;
+      &::after {
+        content: '';
+        display: block;
+        margin: 0 3px 8px;
+        border-bottom: 1px dashed $tw-gray-300;
+        flex-grow: 1;
+        order: -1;
+      }
+    }
+
+    .bx-soa-pp-company-smalldescr {
+      margin-top: 10px !important;
+      font-size: 14px;
+      line-height: 18px;
+      color: $tw-gray-500;
+    }
+  }
+
+  &__cost {
+    display: flex;
+    width: 100%;
+  }
+
+  &__paysystem {
+    box-shadow: none !important;
+    background-color: $tw-gray-70;
+  }
+
+
+  .bx-soa-pp-company {
+    z-index: 1 !important;
+  }
+
+  .tanais-form-group.person-type {
+    display: flex;
+    margin-bottom: 24px;
+    input {
+      display: none;
+    }
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      white-space: nowrap;
+      color: $tw-black;
+
+    }
+    .tanais-radio-inline {
+      margin: 0 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.checked label {
+        border-bottom: 1px solid $tw-black;
+      }
+    }
+  }
+
+  // .tanais-form-group.bx-soa-location-input-container {
+  .tanais-form-group {
+    position: relative;
+    margin-bottom: 30px;
+
+    input,
+    textarea {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+      border: 1px solid $tw-gray-100;
+      border-radius: $border-radius;
+      padding: 10px;
+      @apply text-base #{!important};
+      font-family: inherit;
+      color: $tw-black;
+      background-color: #fff;
+      -moz-appearance: textfield; // stylelint-disable-line
+      appearance: textfield;
+    }
+
+    textarea {
+      height: 130px !important;
+    }
+
+    .bx-soa-custom-label,
+    .bx-soa-customer-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 4px;
+      padding-right: 15px;
+      @apply text-sm;
+      color: $tw-gray-500;
+      background-color: #fff;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &::after {
+        content: '\002A';
+        position: absolute;
+        right: 5px;
+        top: 0;
+        font-family: 'Montserrat';
+        color: $tw-red-900;
+      }
+    }
+
+    .bx-sls .bx-ui-sls-container {
+      min-height: 51px;
+    }
+  }
+
+
+  .bx-soa-coupon-block {
+    position: relative;
+  }
+
+  .bx-soa-coupon-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: $tw-green-500;
+    border-radius: 10px;
+    background-image: url('../img/check-2-white.svg');
+    background-size: 12px 10px;
+    transform: translateY(-50%);
+    &:hover {
+      transition: none;
+      background-color: $tw-green-500;
+
+    }
+  }
+
+  .bx-soa-coupon-input .tanais-form-control {
+    min-height: 51px;
+  }
+
+  #bx-soa-paysystem {
+    margin-top: 40px;
+  }
+
+  #bx-soa-delivery .bx-soa-section-content,
+  #bx-soa-paysystem .bx-soa-section-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .bx-soa-pp-item-container {
+    padding-left: 0;
+  }
+
+  .bx-soa-pp-company-inner-block {
+    padding-left: 26px;
+  }
+
+  .bx-soa-pp-item-container .bx-soa-pp-company-graf-container .style-checkbox {
+    left: -26px;
+  }
+
+  /*!!! Промокод*/
+  .bx-soa-coupon-input input[type="text"].tanais-form-control {
+    border: none;
+
+    &::placeholder {
+      color: $tw-gray-500;
+    }
+  }
+
+  .bx-soa-coupon-block {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__buyer {
+    box-shadow: none !important;
+
+    .bx-soa-section-title-container {
+      padding: 0 !important;
+    }
+
+    .bx-soa-section-content {
+      padding: 0;
+    }
+
+    .btn--submit {
+      margin-left: auto;
+      padding: 7px 20px;
+    }
+  }
+
+  &__total {
+
+    .bx-soa-cart-total {
+      border-radius: 5px;
+      box-shadow: none;
+      background-color: $tw-gray-70;
+    }
+
+    .bx-soa-cart-total-line {
+      margin-bottom: 7px;
+      border-bottom-style: dashed;
+    }
+
+    .bx-soa-cart-total-line-total {
+      .bx-soa-cart-d {
+        @apply text-xl #{!important};
+        color: $tw-black;
+      }
+    }
+
+    .bx-soa-cart-t, .bx-soa-cart-d {
+      background-color: $tw-gray-70;
+    }
+
+    .bx-soa-cart-t {
+      @apply text-base;
+    }
+
+    .btn-order-one-click {
+      margin-bottom: 10px;
+      @include btn-regular;
+    }
+
+    .btn-order-save {
+      @include btn-regular;
+      background-color: $tw-blue_link;
+      color: #fff;
+      border-color: $tw-blue_link;
+    }
+  }
+
+  &__bonus {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__bonus-img {
+    width: 127px;
+    height: 106px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__bonus-text {
+    line-height: 24px;
+  }
+
+}
+
+
+

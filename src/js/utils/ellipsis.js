@@ -1,6 +1,8 @@
   const makeEllipsis = function(selector) {
+    console.log('makeEllipsis');
+    console.log(selector);
     var ellipsisEls = document.querySelectorAll(selector);
-
+    console.log(ellipsisEls);
     for (var el of ellipsisEls) {
       var lines;
       if (document.documentElement.clientWidth >= 1024 && el.dataset.lgLines) {
@@ -32,9 +34,9 @@ var getLineHeight = function getLineHeight(element) {
 };
 
 var truncateElement = function(element, lines) {
-  // console.log('truncateElement');
-  // console.log(element);
-  // console.log(lines);
+  console.log('truncateElement');
+  console.log(element);
+  console.log(lines);
   var truncateText = element.innerHTML;
   var truncateTextParts = truncateText.split(' ');
   var lineHeight = getLineHeight(element);

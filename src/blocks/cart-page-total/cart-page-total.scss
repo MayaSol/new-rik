@@ -1,0 +1,8 @@
+// В этом файле должны быть стили для БЭМ-блока cart-page-total, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cart-page-total {
+
+  $block-name:                &; // #{$block-name}__element
+}

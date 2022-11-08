@@ -43,7 +43,7 @@ module.exports = {
         50: '#f8fafc',
         100: '#EDF0F6',
         200: '#EBF3F6',
-        300: '#cbd5e1',
+        300: '#E5F2FB',
         400: '#96a3bb',
         500: '#64748b',
         600: '#475569',
@@ -117,6 +117,7 @@ module.exports = {
       rose: colors.rose,
       gray: {
         50: '#f9fafb',
+        70: '#F7F7F7',
         75: '#f8f8f8',
         100: '#f5f5f5',
         200: '#ebebeb',
@@ -229,6 +230,7 @@ module.exports = {
         '736px': '736px'
       },
       borderRadius: {
+        '4px':  '4px',
         '10px': '10px',
         '24px': '24px'
       },

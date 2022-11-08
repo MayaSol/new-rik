@@ -12,8 +12,12 @@
   box-sizing: border-box;
   width: 0;
   right: 0;
-  z-index: 9;
+  z-index: 11;
   transition: transform $transition-time-search;
+
+  .main-nav--open ~ & {
+    right: -50px;
+  }
 
   @media (min-width: $screen-lg) {
     z-index: 20;
@@ -27,6 +31,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
+    align-items: start;
 
     @media (min-width: $screen-md) {
       flex-direction: row;
@@ -104,6 +109,11 @@
 
     #{$block-name}--results & {
       margin-bottom: 30px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 0;
+      }
+
     }
   }
 
@@ -157,6 +167,10 @@
       margin-right: 0;
       padding: 5px 15px;
       background-color: #fff;
+
+      @media (min-width: $screen-lg) {
+        background-color: $tw-gray-100;
+      }
     }
   }
 

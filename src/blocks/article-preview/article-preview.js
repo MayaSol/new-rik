@@ -5,11 +5,11 @@ const closest = require('closest');
 
 
 ready(function() {
-  var sliderEl = document.querySelector('.article-preview__list');
+  var sliderEl = document.querySelector('.article-preview__list.slider');
   if (sliderEl) {
     if (document.documentElement.clientWidth < 1440) {
       var slider = tns({
-        container: '.article-preview__list',
+        container: '.article-preview__list.slider',
         items: 1,
         slideBy: 1,
         mouseDrag: true,
@@ -36,7 +36,7 @@ ready(function() {
         console.log(autoWidth);
 
       var slider = tns({
-        container: '.article-preview__list',
+        container: '.article-preview__list.slider',
         items: 2,
         slideBy: 1,
         mouseDrag: true,
@@ -60,16 +60,41 @@ ready(function() {
         sliderEl.classList.remove('not-first-page');
       }
     });
-
-    // slider.events.on('transitionEnd', function(info) {
-    //   var btnNext = info.controlsContainer.querySelector('button[data-controls="next"]');
-    //   if (info.slideCount - info.displayIndex <= 2) {
-    //     btnNext.setAttribute('disabled', '');
-    //   } else {
-    //     btnNext.removeAttribute('disabled');
-    //   }
-    // });
   }
+
+  var sliderElLg = document.querySelector('.article-preview__list.slider-lg');
+  if (sliderElLg) {
+    if (document.documentElement.clientWidth < 1024) {
+      var slider = tns({
+        container: '.article-preview__list.slider-lg',
+        items: 1,
+        slideBy: 1,
+        mouseDrag: true,
+        controls: true,
+        nav: false,
+        loop: false,
+        preventScrollOnTouch: 'force',
+        responsive: {
+          600: {
+            items: 2,
+            gutter: 20
+          },
+        }
+      });
+    }
+  }
+
+  makeEllipsis('.article-preview__ellipsis--cure');
+
+  // document.querySelector('.cure .btn--show-more').addEventListener('click', function(event) {
+  //   var parent = this.closest('.article-preview__list');
+  //   if (parent.classList.contains('article-preview__list--show-all')) {
+  //     parent.classList.remove('article-preview__list--show-all');
+  //   }
+  //   else {
+  //     parent.classList.add('article-preview__list--show-all');
+  //   }
+  // })
 
 });
 

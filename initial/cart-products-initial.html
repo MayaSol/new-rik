@@ -1,0 +1,1380 @@
+<div id="comp_845b29d952f14affc1218c4691160d6e">
+    <tr class="basket-items-list-item-container{{#SHOW_RESTORE}} basket-items-list-item-container-expend{{/SHOW_RESTORE}}"
+        id="basket-item-{{ID}}" data-entity="basket-item" data-id="{{ID}}">
+        {{#SHOW_RESTORE}}
+            <td class="basket-items-list-item-notification" colspan="4">
+                <div class="basket-items-list-item-notification-inner basket-items-list-item-notification-removed" id="basket-item-height-aligner-{{ID}}">
+                    {{#SHOW_LOADING}}
+                        <div class="basket-items-list-item-overlay"></div>
+                    {{/SHOW_LOADING}}
+                    <div class="basket-items-list-item-removed-container">
+                        <div>
+                            Товар <strong>{{NAME}}</strong> был удален из корзины.
+                        </div>
+                        <div class="basket-items-list-item-removed-block">
+                            <a href="javascript:void(0)" data-entity="basket-item-restore-button">
+                                Восстановить                            </a>
+                            <span class="basket-items-list-item-clear-btn" data-entity="basket-item-close-restore-button"></span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        {{/SHOW_RESTORE}}
+        {{^SHOW_RESTORE}}
+            <td class="basket-items-list-item-descriptions">
+                <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-{{ID}}">
+                                            <div class="basket-item-block-image">
+                            {{#DETAIL_PAGE_URL}}
+                                <a href="{{DETAIL_PAGE_URL}}" class="basket-item-image-link">
+                            {{/DETAIL_PAGE_URL}}
+
+                            <img class="basket-item-image" alt="{{NAME}}"
+                                src="{{{IMAGE_URL}}}{{^IMAGE_URL}}/bitrix/templates/.default/components/bitrix/sale.basket.basket/tanais.basket.basket/images/no_photo.png{{/IMAGE_URL}}">
+
+                            {{#SHOW_LABEL}}
+                                <div class="basket-item-label-text basket-item-label-big  basket-item-label-top basket-item-label-left">
+                                    {{#LABEL_VALUES}}
+                                        <div{{#HIDE_MOBILE}} class="d-none d-sm-block"{{/HIDE_MOBILE}}>
+                                            <span title="{{NAME}}">{{NAME}}</span>
+                                        </div>
+                                    {{/LABEL_VALUES}}
+                                </div>
+                            {{/SHOW_LABEL}}
+
+                            {{#DETAIL_PAGE_URL}}
+                                </a>
+                            {{/DETAIL_PAGE_URL}}
+                        </div>
+                                            <div class="basket-item-block-info">
+                        <h2 class="basket-item-info-name">
+                            {{#DETAIL_PAGE_URL}}
+                                <a href="{{DETAIL_PAGE_URL}}" class="basket-item-info-name-link">
+                            {{/DETAIL_PAGE_URL}}
+
+                            <span data-entity="basket-item-name">{{NAME}}</span>
+
+                            {{#DETAIL_PAGE_URL}}
+                                </a>
+                            {{/DETAIL_PAGE_URL}}
+                        </h2>
+
+                                                    {{#DISCOUNT_PRICE_PERCENT}}
+                                <div class="basket-item-property-custom-under-title">
+                                    <div class="basket-item-property-custom-single">
+                                        <div class="basket-item-property-custom-single-value">
+                                            {{DISCOUNT_PRICE_PERCENT_FORMATED}}
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/DISCOUNT_PRICE_PERCENT}}
+
+                        {{#NOT_AVAILABLE}}
+                            <div class="basket-items-list-item-warning-container">
+                                <div class="alert alert-warning text-center">
+                                    В данный момент этот товар не доступен.
+                                </div>
+                            </div>
+                        {{/NOT_AVAILABLE}}
+                        {{#DELAYED}}
+                            <div class="basket-items-list-item-warning-container">
+                                <div class="alert alert-warning text-center">
+                                    Товар отложен.
+                                    <a href="javascript:void(0)" data-entity="basket-item-remove-delayed">
+                                        Добавить к заказу?                                  </a>
+                                </div>
+                            </div>
+                        {{/DELAYED}}
+                        {{#WARNINGS.length}}
+                            <div class="basket-items-list-item-warning-container">
+                                <div class="alert alert-warning alert-dismissable" data-entity="basket-item-warning-node">
+                                    <span class="close" data-entity="basket-item-warning-close">&times;</span>
+                                        {{#WARNINGS}}
+                                            <div data-entity="basket-item-warning-text">{{{.}}}</div>
+                                        {{/WARNINGS}}
+                                </div>
+                            </div>
+                        {{/WARNINGS.length}}
+                        <div class="basket-item-block-properties">
+                                                                        {{#SKU_BLOCK_LIST}}
+                                                {{#IS_IMAGE}}
+                                                    <div class="basket-item-property basket-item-property-scu-image"
+                                                        data-entity="basket-item-sku-block">
+                                                        <div class="basket-item-property-name">{{NAME}}</div>
+                                                        <div class="basket-item-property-value">
+                                                            <ul class="basket-item-scu-list">
+                                                                {{#SKU_VALUES_LIST}}
+                                                                    <li class="basket-item-scu-item{{#SELECTED}} selected{{/SELECTED}}
+                                                                        {{#NOT_AVAILABLE_OFFER}} not-available{{/NOT_AVAILABLE_OFFER}}"
+                                                                        title="{{NAME}}"
+                                                                        data-entity="basket-item-sku-field"
+                                                                        data-initial="{{#SELECTED}}true{{/SELECTED}}{{^SELECTED}}false{{/SELECTED}}"
+                                                                        data-value-id="{{VALUE_ID}}"
+                                                                        data-sku-name="{{NAME}}"
+                                                                        data-property="{{PROP_CODE}}">
+                                                                                <span class="basket-item-scu-item-inner"
+                                                                                    style="background-image: url({{PICT}});"></span>
+                                                                    </li>
+                                                                {{/SKU_VALUES_LIST}}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                {{/IS_IMAGE}}
+
+                                                {{^IS_IMAGE}}
+                                                    <div class="basket-item-property basket-item-property-scu-text"
+                                                        data-entity="basket-item-sku-block">
+                                                        <div class="basket-item-property-name">{{NAME}}</div>
+                                                        <div class="basket-item-property-value">
+                                                            <ul class="basket-item-scu-list">
+                                                                {{#SKU_VALUES_LIST}}
+                                                                    <li class="basket-item-scu-item{{#SELECTED}} selected{{/SELECTED}}
+                                                                        {{#NOT_AVAILABLE_OFFER}} not-available{{/NOT_AVAILABLE_OFFER}}"
+                                                                        title="{{NAME}}"
+                                                                        data-entity="basket-item-sku-field"
+                                                                        data-initial="{{#SELECTED}}true{{/SELECTED}}{{^SELECTED}}false{{/SELECTED}}"
+                                                                        data-value-id="{{VALUE_ID}}"
+                                                                        data-sku-name="{{NAME}}"
+                                                                        data-property="{{PROP_CODE}}">
+                                                                        <span class="basket-item-scu-item-inner">{{NAME}}</span>
+                                                                    </li>
+                                                                {{/SKU_VALUES_LIST}}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                {{/IS_IMAGE}}
+                                            {{/SKU_BLOCK_LIST}}
+
+                                            {{#HAS_SIMILAR_ITEMS}}
+                                                <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                                                    <div class="alert alert-info alert-dismissable text-center">
+                                                        {{#USE_FILTER}}
+                                                            <a href="javascript:void(0)"
+                                                                class="basket-items-list-item-double-anchor"
+                                                                data-entity="basket-item-show-similar-link">
+                                                        {{/USE_FILTER}}
+                                                        Этот товар{{#USE_FILTER}}</a>{{/USE_FILTER}}
+                                                        уже есть в корзине в количестве                                                     {{SIMILAR_ITEMS_QUANTITY}} {{MEASURE_TEXT}}
+                                                        <br>
+                                                        <a href="javascript:void(0)" class="basket-items-list-item-double-anchor"
+                                                            data-entity="basket-item-merge-sku-link">
+                                                            Объединить товары в одну позицию c количеством                                                          {{TOTAL_SIMILAR_ITEMS_QUANTITY}} {{MEASURE_TEXT}}?
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {{/HAS_SIMILAR_ITEMS}}
+                                                                                        {{#COLUMN_LIST}}
+                                                {{#IS_IMAGE}}
+                                                    <div class="basket-item-property-custom basket-item-property-custom-photo
+                                                        {{#HIDE_MOBILE}}d-none d-sm-block{{/HIDE_MOBILE}}"
+                                                        data-entity="basket-item-property">
+                                                        <div class="basket-item-property-custom-name">{{NAME}}</div>
+                                                        <div class="basket-item-property-custom-value">
+                                                            {{#VALUE}}
+                                                                <span>
+                                                                    <img class="basket-item-custom-block-photo-item"
+                                                                        src="{{{IMAGE_SRC}}}" data-image-index="{{INDEX}}"
+                                                                        data-column-property-code="{{CODE}}">
+                                                                </span>
+                                                            {{/VALUE}}
+                                                        </div>
+                                                    </div>
+                                                {{/IS_IMAGE}}
+
+                                                {{#IS_TEXT}}
+                                                    <div class="basket-item-property-custom basket-item-property-custom-text
+                                                        {{#HIDE_MOBILE}}d-none d-sm-block{{/HIDE_MOBILE}}"
+                                                        data-entity="basket-item-property">
+                                                        <div class="basket-item-property-custom-name">{{NAME}}</div>
+                                                        <div class="basket-item-property-custom-value"
+                                                            data-column-property-code="{{CODE}}"
+                                                            data-entity="basket-item-property-column-value">
+                                                            {{VALUE}}
+                                                        </div>
+                                                    </div>
+                                                {{/IS_TEXT}}
+
+                                                {{#IS_LINK}}
+                                                    <div class="basket-item-property-custom basket-item-property-custom-text
+                                                        {{#HIDE_MOBILE}}d-none d-sm-block{{/HIDE_MOBILE}}"
+                                                        data-entity="basket-item-property">
+                                                        <div class="basket-item-property-custom-name">{{NAME}}</div>
+                                                        <div class="basket-item-property-custom-value"
+                                                            data-column-property-code="{{CODE}}"
+                                                            data-entity="basket-item-property-column-value">
+                                                            {{#VALUE}}
+                                                            {{{LINK}}}{{^IS_LAST}}<br>{{/IS_LAST}}
+                                                            {{/VALUE}}
+                                                        </div>
+                                                    </div>
+                                                {{/IS_LINK}}
+                                            {{/COLUMN_LIST}}
+                                                                    </div>
+                    </div>
+                    {{#SHOW_LOADING}}
+                        <div class="basket-items-list-item-overlay"></div>
+                    {{/SHOW_LOADING}}
+                </div>
+            </td>
+                        <td class="basket-items-list-item-amount">
+                <div class="basket-item-block-amount{{#NOT_AVAILABLE}} disabled{{/NOT_AVAILABLE}}"
+                    data-entity="basket-item-quantity-block">
+                    <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                    <div class="basket-item-amount-filed-block">
+                        <input type="text" class="basket-item-amount-filed" value="{{QUANTITY}}"
+                            {{#NOT_AVAILABLE}} disabled="disabled"{{/NOT_AVAILABLE}}
+                            data-value="{{QUANTITY}}" data-entity="basket-item-quantity-field"
+                            id="basket-item-quantity-{{ID}}">
+                    </div>
+                    <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+
+
+                    {{#SHOW_LOADING}}
+                        <div class="basket-items-list-item-overlay"></div>
+                    {{/SHOW_LOADING}}
+                </div>
+            </td>
+                            <td class="basket-items-list-item-price">
+                    <div class="basket-item-block-price">
+                        {{#SHOW_DISCOUNT_PRICE}}
+                            <div class="basket-item-price-old">
+                                <span class="basket-item-price-old-text" id="basket-item-sum-price-old-{{ID}}">
+                                    {{{SUM_FULL_PRICE_FORMATED}}}
+                                </span>
+                            </div>
+                        {{/SHOW_DISCOUNT_PRICE}}
+
+                        <div class="basket-item-price-current">
+                            <span class="basket-item-price-current-text" id="basket-item-sum-price-{{ID}}">
+                                {{{SUM_PRICE_FORMATED}}}
+                            </span>
+                        </div>
+
+                                                    {{#QUANTITY_GT_ONE}}
+                                <div class="basket-item-amount-field-description">
+                                    {{#SHOW_PRICE_FOR}}
+                                        {{QUANTITY}} {{MEASURE_TEXT}} x
+                                        <span id="basket-item-price-{{ID}}">{{{PRICE_FORMATED}}}</span>
+                                    {{/SHOW_PRICE_FOR}}
+                                    {{^SHOW_PRICE_FOR}}
+                                        {{MEASURE_TEXT}}
+                                    {{/SHOW_PRICE_FOR}}
+                                </div>
+                            {{/QUANTITY_GT_ONE}}
+
+                        {{#SHOW_DISCOUNT_PRICE}}
+                            <div class="basket-item-price-difference">
+                                Экономия                                <span id="basket-item-sum-price-difference-{{ID}}" style="white-space: nowrap;">
+                                    {{{SUM_DISCOUNT_PRICE_FORMATED}}}
+                                </span>
+                            </div>
+                        {{/SHOW_DISCOUNT_PRICE}}
+
+                        {{#SHOW_LOADING}}
+                            <div class="basket-items-list-item-overlay"></div>
+                        {{/SHOW_LOADING}}
+                    </div>
+                </td>
+                                <td class="basket-items-list-item-remove">
+                    <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                        {{#SHOW_LOADING}}
+                            <div class="basket-items-list-item-overlay"></div>
+                        {{/SHOW_LOADING}}
+                    </div>
+                </td>
+                        {{/SHOW_RESTORE}}
+    </tr>
+
+  <script id="basket-total-template" type="text/html">
+    <div class="basket-checkout-container" data-entity="basket-checkout-aligner">
+                <div class="basket-checkout-section">
+            <div class="basket-checkout-section-inner justify-content-between">
+                <div class="basket-checkout-block basket-checkout-block-total">
+                    <div class="basket-checkout-block-total-inner">
+                        <div class="basket-checkout-block-total-title">Итого:</div>
+                        <div class="basket-checkout-block-total-description">
+                            {{#WEIGHT_FORMATED}}
+                                Общий вес: {{{WEIGHT_FORMATED}}}
+                                {{#SHOW_VAT}}<br>{{/SHOW_VAT}}
+                            {{/WEIGHT_FORMATED}}
+                            {{#SHOW_VAT}}
+                                Сумма НДС: {{{VAT_SUM_FORMATED}}}
+                            {{/SHOW_VAT}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="basket-checkout-block basket-checkout-block-total-price">
+                    <div class="basket-checkout-block-total-price-inner">
+                        {{#DISCOUNT_PRICE_FORMATED}}
+                            <div class="basket-coupon-block-total-price-old">
+                                {{{PRICE_WITHOUT_DISCOUNT_FORMATED}}}
+                            </div>
+                        {{/DISCOUNT_PRICE_FORMATED}}
+
+                        <div class="basket-coupon-block-total-price-current" data-entity="basket-total-price">
+                            {{{PRICE_FORMATED}}}
+                        </div>
+
+                        {{#DISCOUNT_PRICE_FORMATED}}
+                            <div class="basket-coupon-block-total-price-difference">
+                                Экономия                                <span style="white-space: nowrap;">{{{DISCOUNT_PRICE_FORMATED}}}</span>
+                            </div>
+                        {{/DISCOUNT_PRICE_FORMATED}}
+                    </div>
+                </div>
+
+                <div class="basket-checkout-block basket-checkout-block-btn">
+                    <button class="btn btn-lg btn-primary basket-btn-checkout{{#DISABLE_CHECKOUT}} disabled{{/DISABLE_CHECKOUT}}"
+                        data-entity="basket-checkout-button">
+                        Оформить заказ                  </button>
+                </div>
+            </div>
+        </div>
+
+            </div>
+</script>
+  <div id="tanais-basket-root" class="bx-basket bx-site bx-step-opacity" style="opacity: 1;">
+    <div class="row">
+      <div class="col">
+        <div class="alert alert-warning alert-dismissable" id="basket-warning" style="display: none;">
+          <span class="close" data-entity="basket-items-warning-notification-close">×</span>
+          <div data-entity="basket-general-warnings" style="display: none;"></div>
+          <div data-entity="basket-item-warnings" style="display: none;">
+            В вашей корзине <a href="javascript:void(0)" data-entity="basket-items-warning-count"></a> требует внимания. </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="mb-3 basket-items-list-wrapper basket-items-list-wrapper-height-fixed basket-items-list-wrapper-light" id="basket-items-list-wrapper">
+          <div class="basket-items-list-header" data-entity="basket-items-list-header">
+            <div class="basket-items-search-field" data-entity="basket-filter">
+              <div class="form input-group">
+                <input type="text" class="form-control" placeholder="Фильтр" data-entity="basket-filter-input">
+              </div>
+              <button class="basket-items-search-clear-btn" type="button" data-entity="basket-filter-clear-btn">×</button>
+            </div>
+            <div class="basket-items-list-header-filter">
+              <a href="javascript:void(0)" class="basket-items-list-header-filter-item active" data-entity="basket-items-count" data-filter="all" style="">В корзине 19 товаров</a>
+              <a href="javascript:void(0)" class="basket-items-list-header-filter-item" data-entity="basket-items-count" data-filter="similar" style="display: none;"></a>
+              <a href="javascript:void(0)" class="basket-items-list-header-filter-item" data-entity="basket-items-count" data-filter="warning" style="display: none;"></a>
+              <a href="javascript:void(0)" class="basket-items-list-header-filter-item" data-entity="basket-items-count" data-filter="delayed" style="display: none;"></a>
+              <a href="javascript:void(0)" class="basket-items-list-header-filter-item" data-entity="basket-items-count" data-filter="not-available" style="display: none;"></a>
+            </div>
+          </div>
+          <div class="basket-items-list-container" id="basket-items-list-container">
+            <div class="basket-items-list-overlay" id="basket-items-list-overlay" style="display: none;"></div>
+            <div class="basket-items-list" id="basket-item-list">
+              <div class="basket-search-not-found" id="basket-item-list-empty-result" style="display: none;">
+                <div class="basket-search-not-found-icon"></div>
+                <div class="basket-search-not-found-text">По данному запросу товаров не найдено</div>
+              </div>
+              <table class="basket-items-list-table" id="basket-item-table">
+                <tbody>
+                  <tr class="basket-items-list-item-container" id="basket-item-813457" data-entity="basket-item" data-id="813457">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813457">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813457">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813457">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813458" data-entity="basket-item" data-id="813458">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813458">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813458">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813458">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813459" data-entity="basket-item" data-id="813459">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813459">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813459">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813459">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813460" data-entity="basket-item" data-id="813460">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813460">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813460">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813460">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813461" data-entity="basket-item" data-id="813461">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813461">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813461">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813461">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813462" data-entity="basket-item" data-id="813462">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813462">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813462">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813462">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813463" data-entity="basket-item" data-id="813463">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813463">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813463">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813463">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813464" data-entity="basket-item" data-id="813464">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813464">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813464">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813464">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813465" data-entity="basket-item" data-id="813465">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813465">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813465">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813465">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813466" data-entity="basket-item" data-id="813466">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813466">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813466">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813466">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813467" data-entity="basket-item" data-id="813467">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813467">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813467">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813467">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813468" data-entity="basket-item" data-id="813468">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813468">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-04-4-universal/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4" src="/upload/resize_cache/iblock/8d1/110_110_1/8d1dd2e558292de51a98329fea34d135.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-04-4-universal/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат магнито-инфракрасный лазерный терапевтический РИКТА 04/4</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813468">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813468">
+                            74 600 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813470" data-entity="basket-item" data-id="813470">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813470">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813470">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813470">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813473" data-entity="basket-item" data-id="813473">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813473">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813473">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813473">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813474" data-entity="basket-item" data-id="813474">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813474">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813474">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813474">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813475" data-entity="basket-item" data-id="813475">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813475">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813475">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813475">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813476" data-entity="basket-item" data-id="813476">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813476">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813476">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813476">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813477" data-entity="basket-item" data-id="813477">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813477">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813477">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813477">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="basket-items-list-item-container" id="basket-item-813478" data-entity="basket-item" data-id="813478">
+                    <td class="basket-items-list-item-descriptions">
+                      <div class="basket-items-list-item-descriptions-inner" id="basket-item-height-aligner-813478">
+                        <div class="basket-item-block-image">
+                          <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-image-link">
+                            <img class="basket-item-image" alt="Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03" src="/upload/resize_cache/iblock/3a2/110_110_1/3a2105074ed2146e7ad12741faa6aceb.jpg">
+                          </a>
+                        </div>
+                        <div class="basket-item-block-info">
+                          <h2 class="basket-item-info-name">
+                            <a href="/catalog/laser-therapy-devices/rikta-esmil-2a-03/" class="basket-item-info-name-link">
+                              <span data-entity="basket-item-name">Аппарат электро-свето-магнито-инфракрасной лазерной терапии РИКТА-ЭСМИЛ (2А)-03</span>
+                            </a>
+                          </h2>
+                          <div class="basket-item-block-properties">
+                            <div class="basket-items-list-item-double" data-entity="basket-item-sku-notification">
+                              <div class="alert alert-info alert-dismissable text-center">
+                                Этот товар
+                                уже есть в корзине в количестве 17 шт
+                                <br>
+                                <a href="javascript:void(0)" class="basket-items-list-item-double-anchor" data-entity="basket-item-merge-sku-link">
+                                  Объединить товары в одну позицию c количеством 18 шт?
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-amount">
+                      <div class="basket-item-block-amount" data-entity="basket-item-quantity-block">
+                        <span class="basket-item-amount-btn-minus" data-entity="basket-item-quantity-minus"></span>
+                        <div class="basket-item-amount-filed-block">
+                          <input type="text" class="basket-item-amount-filed" value="1" data-value="1" data-entity="basket-item-quantity-field" id="basket-item-quantity-813478">
+                        </div>
+                        <span class="basket-item-amount-btn-plus" data-entity="basket-item-quantity-plus"></span>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-price">
+                      <div class="basket-item-block-price">
+                        <div class="basket-item-price-current">
+                          <span class="basket-item-price-current-text" id="basket-item-sum-price-813478">
+                            37 800 руб
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="basket-items-list-item-remove">
+                      <div class="basket-item-block-actions">
+                        <span class="basket-item-actions-remove" data-entity="basket-item-delete"></span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

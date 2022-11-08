@@ -35,17 +35,23 @@
 
   &__item {
     padding-top: 10px;
-    cursor: pointer;
 
     @media (min-width: $screen-lg) {
       min-height: 547px;
       padding-top: 20px;
+
+      .reviews-section & {
+        min-height: auto;
+      }
     }
 
     @media (min-width: $onepage-width) {
       .index.screen-low & {
         min-height: 300px;
         padding-top: 0 !important;
+      }
+      .index.screen-low .reviews-section & {
+        min-height: auto;
       }
     }
 

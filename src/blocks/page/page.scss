@@ -33,6 +33,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/MontserratRegular.woff2') format('woff2'),
+    url('../fonts/MontserratRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* stylelint-enable */
 
 .page {
@@ -98,7 +107,7 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    // content: url('../screens/cure-mobile.jpg');
+    // content: url('../screens/cure-page.jpg');
     opacity: 1;
   }
 
@@ -632,7 +641,7 @@ body {}
     @media (min-width: $screen-xl) {
       padding-left: 64px;
       padding-right: 140px;
-      max-width: $screen-xxl;
+      max-width: $screen-xl;
       margin-left: auto;
       margin-right: auto;
 
@@ -643,6 +652,10 @@ body {}
       .section--service & {
         padding-left: 0;
       }
+    }
+
+    @media (min-width: $screen-xxl) {
+      max-width: $screen-xxl;
     }
 
     .section--info & {

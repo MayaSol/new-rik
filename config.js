@@ -13,6 +13,7 @@ let config = {
     'sprite-png',
     'page',
     'btn',
+    'icon-svg'
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
@@ -50,7 +51,7 @@ let config = {
     'src/scss/test.scss'
   ],
   'addJsBefore': [
-    './utils/sticky-sidebar.js',
+    './utils/onepagescroll.js',
     // 'somePackage/dist/somePackage.js', // для 'node_modules/somePackage/dist/somePackage.js',
     'lazysizes/lazysizes.js',
     'bootstrap/js/dist/dropdown.js',
@@ -58,10 +59,9 @@ let config = {
     'bootstrap/js/dist/tab.js',
     // 'mdb-ui-kit/src/js/free/dropdown.js',
     // 'mdb-ui-kit/src/js/bootstrap/mdb-prefix/collapse.js',
-    './utils/onepagescroll.js',
     './utils/anchor-select.js',
-    'rateyo/lib/iife/rateyo.min.js'
-
+    'rateyo/lib/iife/rateyo.min.js',
+    './utils/sticky-sidebar.js',
   ],
   'addJsAfter': [
     './script.js',
@@ -78,6 +78,7 @@ let config = {
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/',
     'src/js/': 'js/',
+    'initial/cart-payment.css': 'css/'
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

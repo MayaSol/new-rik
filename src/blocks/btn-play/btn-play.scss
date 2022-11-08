@@ -35,4 +35,13 @@
     height: 80px;
   }
 
+  &--product {
+    @include btn-play-filled;
+    background-image: none;
+  }
+
+  .video-yt & {
+    opacity: 0;
+  }
+
 }

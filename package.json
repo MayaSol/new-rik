@@ -19,7 +19,7 @@
     "lint-staged": "lint-staged"
   },
   "browserslist": [
-    "defaults"
+    "defaults","ie 11","ff 52"
   ],
   "lint-staged": {
     "*.{js,pug,md}": "editorconfig-cli",

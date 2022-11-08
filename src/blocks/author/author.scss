@@ -23,6 +23,12 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .cure__consult & {
+      @media (min-width: $screen-xxl) {
+        margin-right: 21px;
+      }
+    }
   }
 
   &__text {

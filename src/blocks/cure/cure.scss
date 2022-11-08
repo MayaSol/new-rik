@@ -1,0 +1,66 @@
+// В этом файле должны быть стили для БЭМ-блока cure, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cure {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__content {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 20px 320px;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 30px 320px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 48px 373px;
+    }
+  }
+
+  &__article-index {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  }
+
+  &__tabs {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      margin-top: 0;
+    }
+  }
+
+  &__digits {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+  }
+
+  &__consult {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      align-self: end;
+      padding-left: 40px;
+    }
+
+    .author + div {
+      @media (min-width: $screen-lg) {
+        font-size: 20px;
+      }
+    }
+  }
+}

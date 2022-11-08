@@ -1,0 +1,52 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-product)
+
+mixin cart-product(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cart-product--' + modsList[i].trim();
+      }
+    }
+
+  .cart-product.product-card(class=allMods)&attributes(attributes)
+    .cart-product__img
+      img.lazyload(data-src=props.url
+        data-srcset= props.srcset,
+        data-sizes= props.sizes)
+    .cart-product__price= props.price
+    +field-num({
+      attrs: {
+        name: 'amount',
+        max: '99',
+        min: '0',
+        step: '1',
+      }
+    })(class='cart-product__amount')
+    .cart-product__status.product-card__status.product-card__status--available
+      +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
+      span!= props.status
+    .cart-product__title= props.title
+    .cart-product__desc= props.desc
+    .cart-product__text(data-lines='2')= props.text
+    block
+
+
+
+mixin cart-product-add(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cart-product--' + modsList[i].trim();
+      }
+    }
+
+  form.form--options.cart-product__add(class=allMods)&attributes(attributes)
+    block

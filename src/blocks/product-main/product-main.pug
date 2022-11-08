@@ -27,11 +27,8 @@ mixin product-main(props={}, mods)
     .product-main__sliders
       .product-main__slider-wrapper.slider__wrapper
         .product-main__slider.slider#product-main
-          +product-main-item-video({
-            url: '/video/dummy.mov',
-            width: '1920',
-            height: '1080',
-            poster: '/img/product-main-slider-poster.jpg'
+          +product-main-item-video-yt({
+            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
           })(data-slide='0')
             .product-card__top-list
               span.product-card__top-item
@@ -39,20 +36,20 @@ mixin product-main(props={}, mods)
                 span Гарантия 2 года
               span.product-card__top-item
                 span Акция
-              //- span.product-card__top-item
-              //-   span 1
-          +product-main-item-video({
-            url: '/video/banana.mp4',
-            width: '1920',
-            height: '1080',
-            poster: '/img/product-main-slider-poster.jpg'
+          +product-main-item-img({
+            sizes: "auto",
+            src: '/img/product_382x.jpg',
+            srcset: '/img/product_382x.jpg 360w, '  +
+                    '/img/product_600x.jpg 383w, '  +
+                    '/img/product_732x423.jpg 768w, ' +
+                    '/img/product_996x.jpg 1800w, '
           })(data-slide='1')
             .product-card__top-list
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
                 span Гарантия 2 года
-              //- span.product-card__top-item
-              //-   span 2
+              span.product-card__top-item
+                span Акция
           +product-main-item-video({
             url: '/video/dummy.mov',
             width: '1920',
@@ -158,7 +155,7 @@ mixin product-main(props={}, mods)
       +btn('','compare, compare-add')
         +svg('arrows-left-right','',{width: '18', height: '23'})
       +btn(
-        '<svg class="icon" width="18" height="18"><use xlink:href="img/sprite.svg#mouse-square"></use></svg> <span>Задать вопрос врачу</span>',
+        '<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#mouse-square"></use></svg> <span>Задать вопрос врачу</span>',
         'regular, icon, question')(class='product-main__question mt-10px lg_mt-0' data-modal-open='modal-ask-doctor')
     .product-main__special.mt-20px
       div.text-sm.lg_text-base Спец. условия для юр лиц. Скидка 10% от 5 шт.
@@ -315,6 +312,45 @@ mixin product-main-item-video(props={}, mods)
       btn_mod: 'filled'
     })(class='product-main__video')
     block
+
+mixin product-main-item-video-yt(props={}, mods)
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+
+  .product-main__slider-item(class=allMods)&attributes(attributes)
+    .video-yt
+      .video-yt__poster
+        img.lazyload(data-src=props.src data-srcset=props.srcset)
+        .btn-play.btn-play--product
+      <iframe class="video-yt__frame" id="video-yt__frame"  width="560" height="315" src="https://www.youtube.com/embed/5Q2Pc-e-8Qc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+mixin product-main-item-img(props={}, mods)
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+
+  .product-main__slider-item(class=allMods)&attributes(attributes)
+    img.lazyload(
+      data-src=props.url
+      data-srcset= props.srcset,
+      data-sizes= props.sizes
+    )
+    block
+
 
 
 mixin product-main-item-preview(props={}, mods)

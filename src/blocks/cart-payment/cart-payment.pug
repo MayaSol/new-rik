@@ -1,0 +1,86 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-payment)
+
+mixin cart-payment(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cart-payment--' + modsList[i].trim();
+      }
+    }
+
+  #bx-soa-paysystem.cart-page__paysystem.cart-payment.bx-soa-section.bx-active(class=allMods data-visited="true")&attributes(attributes)
+    <div class="bx-soa-section-title-container">
+      <h2 class="bx-soa-section-title">
+        <div class="bx-soa-section-title-text">Оплата </div>
+      </h2>
+    </div>
+    <div class="bx-soa-section-content container-fluid">
+      <div style="display: none;" class="alert alert-danger"></div>
+      <div class="bx-soa-pp">
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company bx-selected">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_5" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="5"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">ЮMoney</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится в ЮMoney, через сервис ЮKassa. Подтверждением вашей оплаты является электронное почтовое уведомление, пришедшее после оплаты.</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">Банковские карты</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится в ЮMoney, через сервис ЮKassa. Подтверждением вашей оплаты является электронное почтовое уведомление, пришедшее после оплаты..</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">Терминалы</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится через Терминалы с использованием сервиса ЮKassa. Подтверждением вашей оплаты является электронное почтовое уведомление, пришедшее после оплаты.</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">Наличные курьеру</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится наличными деньгами, в момент получения заказа. Подтверждением вашей оплаты является фискальный кассовый чек, вручаемый во время получения и оплаты заказа.</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">Наложенный платеж</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится наличными деньгами, в момент получения заказа. Подтверждением вашей оплаты является фискальный кассовый чек, вручаемый во время получения и оплаты заказа.</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-soa-pp-item-container">
+          <div class="bx-soa-pp-company">
+            <div class="bx-soa-pp-company-inner-block">
+              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span></div>
+              <div class="bx-soa-pp-company-smalltitle">Сбербанк</div>
+              <div class="bx-soa-pp-company-smalldescr">Оплата производится наличными деньгами, в момент получения заказа. Подтверждением вашей оплаты является фискальный кассовый чек, вручаемый во время получения и оплаты заказа.</div>
+            </div>
+          </div>
+        </div>
+        <div class="bx-total-coupon-container">
+          <div class="bx-soa-coupon">
+            <div class="bx-soa-coupon-block">
+              <div class="bx-soa-coupon-input"><input class="tanais-form-control bx-ios-fix" type="text" placeholder='Введите промокод'><span class="bx-soa-coupon-btn"></span></div><span class="bx-soa-coupon-item"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

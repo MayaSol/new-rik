@@ -55,13 +55,17 @@
   }
 
   &__slider-wrapper {
-    flex-grow: 1;
+    margin-bottom: auto;
   }
 
   &__slider-item {
     display: none;
     position: relative;
     height: 221px;
+
+    @media (min-width: 500px) {
+      height: 360px;
+    }
 
     @media (min-width: $screen-lg) {
       height: auto;
@@ -77,6 +81,21 @@
 
     &.tns-item {
       display: inline-block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-yt {
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-yt__poster {
+      height: 100%;
     }
   }
 

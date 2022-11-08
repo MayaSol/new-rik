@@ -23,8 +23,7 @@
     }
 
     @media (min-width: $screen-xxl) {
-      grid-template-columns: 664px 1fr;
-      gap: 0 70px;
+      grid-template-columns: 664px 70px 1fr;
     }
   }
 
@@ -73,6 +72,8 @@
     }
 
     @media (min-width: $screen-xxl) {
+      grid-column-start: 3;
+      grid-column-end: 4;
       margin-bottom: 40px;
       margin-left: 0;
     }
@@ -88,6 +89,8 @@
     }
 
     @media (min-width: $screen-xxl) {
+      grid-column-start: 3;
+      grid-column-end: 4;
       margin-left: 0;
     }
   }

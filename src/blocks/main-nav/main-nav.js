@@ -46,18 +46,24 @@ ready(function(){
   var navMobile = document.querySelector('.nav--mobile');
 
   navMobile.addEventListener('click', function(event) {
-    // console.log('navMobile click');
-    // console.log(event.target);
+    console.log('navMobile click');
+    console.log(event.target);
     var parentLink = getParents(event.target,'.main-nav__link');
     // console.log(parentLink);
     if (parentLink.length > 0 && parentLink[0].classList.contains('main-nav__link')) {
+      console.log(parentLink);
+      console.log(parentLink[0].classList.contains('main-nav__link--lvl-2'));
+      if (!parentLink[0].classList.contains('main-nav__link--lvl-2')) {
         var parents = getParents(event.target, '.main-nav__item--has-child');
         // console.log(parents);
         if (parents.length > 0) {
+          console.log('parents');
+          console.log(parents);
           event.preventDefault();
           // var sublist = parents[0].querySelector('.main-nav__sublist-wrapper');
           parents[0].classList.toggle('main-nav__item--show-child');
         }
+      }
     }
   });
 

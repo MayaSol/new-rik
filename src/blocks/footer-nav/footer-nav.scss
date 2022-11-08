@@ -25,9 +25,12 @@
     grid-row-end: 3;
   }
 
-  @media (min-width: $screen-xl) {
-    gap: 0 25px;
+  @media (min-width: $screen-xxl) {
+    grid-row-end: 3;
   }
+  // @media (min-width: $screen-xl) {
+  //   gap: 0 25px;
+  // }
 
   &__item {
     @media (min-width: $screen-lg) {
@@ -61,20 +64,20 @@
   }
 
   &--customer {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
   }
 
   &--info {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 5;
+    grid-column-end: 6;
   }
 
   &--coop {
     grid-row-start: 1;
     grid-row-end: 2;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 7;
+    grid-column-end: 8;
 
     @media (min-width: $screen-lg) {
       display: flex;

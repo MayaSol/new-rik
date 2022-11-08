@@ -222,7 +222,7 @@ function minifyImgs(cb) {
         })
       ]
     });
-       console.log(files);
+       // console.log(files);
 
   })();
   cb();
@@ -848,7 +848,7 @@ function getClassesToBlocksList(file, enc, cb) {
       // Добавляем класс в список
       nth.blocksFromHtml.push(item);
     }
-    console.log('---------- Used HTML blocks: ' + nth.blocksFromHtml.join(', '));
+    // console.log('---------- Used HTML blocks: ' + nth.blocksFromHtml.join(', '));
     file.contents = new Buffer.from(fileContent);
   }
   this.push(file);

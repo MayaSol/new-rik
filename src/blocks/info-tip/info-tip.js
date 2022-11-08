@@ -19,6 +19,8 @@ ready(function() {
         interactive: true,
         placement: placement,
         maxWidth: 468,
+        // delay: [null, 10000],
+        // trigger: 'click'
       })
     }
   }

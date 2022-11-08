@@ -19,6 +19,10 @@
     &.dropdown-toggle {
       padding-right: 25px !important;
     }
+
+    .article-index__nav-tabs & {
+      line-height: 1.1;
+    }
   }
 
   &--add {

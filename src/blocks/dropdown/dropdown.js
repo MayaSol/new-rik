@@ -1,5 +1,4 @@
 const ready = require('../../js/utils/documentReady.js');
-const Dropdown = require("../../../node_modules/bootstrap/js/dist/dropdown.js");
 
 ready(function(){
 

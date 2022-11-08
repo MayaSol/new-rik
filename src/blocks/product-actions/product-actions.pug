@@ -21,7 +21,7 @@ mixin product-actions(mods)
   .product-actions(class=allMods)&attributes(attributes)
     +btn('Подробнее','regular')(class="border-gray-200")
     +btn(
-      '<svg class="icon" width="18" height="18"><use xlink:href="img/sprite.svg#cart"></use></svg> <span>Купить</span>',
+      '<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#cart"></use></svg> <span>Купить</span>',
       'regular, icon, cart-add')(data-content="Добавлено")
     +btn('','fav, fav-add')
       +svg('heart-full','',{width: '22', height: '21'})

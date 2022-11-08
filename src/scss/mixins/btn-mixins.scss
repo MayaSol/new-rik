@@ -1,0 +1,18 @@
+@mixin btn-regular {
+  padding: 8px 16px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: $tw-black;
+  border: 1px solid $tw-black;
+  border-radius: 78px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $tw-black;
+    border-color: $tw-black;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
