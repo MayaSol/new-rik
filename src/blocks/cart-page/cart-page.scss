@@ -6,6 +6,82 @@
 
   $block-name: &; // #{$block-name}__element
 
+  @media (min-width: $screen-lg) {
+    margin-bottom: 34px;
+  }
+
+  .container {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 20px 320px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 48px 400px;
+    }
+  }
+
+  .section__title--product-info {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__location {
+    @media (min-width: $screen-lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__location-address {
+    .tanais-form-group {
+      width: 100%;
+    }
+  }
+
+  &__buyer-info {
+    margin-top: 65px;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      display: grid;
+      grid-template-columns: 1fr 20px 1fr;
+      margin-top: 10px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 32px 1fr;
+    }
+
+    .bx_soa_location {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+    }
+  }
+
+  .section__title--buyer-info {
+    margin-bottom: 0;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      margin-top: 0;
+      margin-bottom: 10px;
+      @apply text-36px;
+    }
+  }
+
   .bx-soa-section-title {
     font-family: 'Circe';
     font-weight: 400;
@@ -13,6 +89,10 @@
 
   .bx-soa-section-title-text {
     @apply text-2xl;
+
+    @media (min-width: $screen-lg) {
+      @apply text-36px;
+    }
   }
 
   .bx-sls .dropdown-block {
@@ -26,23 +106,76 @@
     margin-right: auto;
     color: $tw-blue_link;
 
+    span {
+      border-bottom: 1px solid transparent;
+    }
+
     &:hover,
     &:focus,
     &:active {
       color: $tw-blue_link;
+
+      span {
+        border-color: $tw-blue_link;
+      }
     }
   }
 
   &__pane {
     display: flex;
+    margin-bottom: 25px;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: rgba(229, 242, 251, 0.5);
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      margin-bottom: 30px;
+    }
+  }
+
+  .bx-soa-pp-company-smalltitle {
+    font-family: 'Circe';
+    font-weight: 400;
+    @apply text-lg;
+    color: $tw-black;
+  }
+
+  .bx-soa-pp-company-smalldescr {
+    margin-top: 10px !important;
+    font-size: 14px;
+    line-height: 18px;
+    color: $tw-gray-500;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__delivery {
+    margin-top: 40px;
     box-shadow: none !important;
     background-color: $tw-gray-70;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      align-self: start;
+      margin-top: 0;
+    }
+
+    .bx-soa-section-title-container {
+      padding-top: 20px !important;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 20px;
+      }
+    }
 
     .style-checkbox {
       position: relative;
@@ -73,12 +206,12 @@
       }
     }
 
-    .bx-soa-pp-company-smalltitle {
-      font-family: 'Circe';
-      font-weight: 400;
-      @apply  text-lg;
-      color: $tw-black;
-    }
+    // .bx-soa-pp-company-smalltitle {
+    //   font-family: 'Circe';
+    //   font-weight: 400;
+    //   @apply  text-lg;
+    //   color: $tw-black;
+    // }
 
     .bx-soa-pp-delivery-cost {
       display: flex;
@@ -86,6 +219,7 @@
       font-weight: 700;
       color: $tw-gray-500;
       flex-grow: 1;
+
       &::after {
         content: '';
         display: block;
@@ -96,12 +230,16 @@
       }
     }
 
-    .bx-soa-pp-company-smalldescr {
-      margin-top: 10px !important;
-      font-size: 14px;
-      line-height: 18px;
-      color: $tw-gray-500;
-    }
+    // .bx-soa-pp-company-smalldescr {
+    //   margin-top: 10px !important;
+    //   font-size: 14px;
+    //   line-height: 18px;
+    //   color: $tw-gray-500;
+
+    //   p:last-child {
+    //     margin-bottom: 0;
+    //   }
+    // }
   }
 
   &__cost {
@@ -110,21 +248,42 @@
   }
 
   &__paysystem {
+    margin-top: 40px;
     box-shadow: none !important;
     background-color: $tw-gray-70;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      align-self: start;
+    }
+
+    .bx-soa-section-title-container {
+      padding-top: 20px !important;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 20px;
+      }
+    }
   }
 
 
-  .bx-soa-pp-company {
+  .bx-soa-pp .bx-soa-pp-company {
+    margin-bottom: 10px;
     z-index: 1 !important;
   }
 
   .tanais-form-group.person-type {
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 35px;
+
     input {
       display: none;
     }
+
     label {
       display: inline-block;
       vertical-align: middle;
@@ -133,12 +292,20 @@
       white-space: nowrap;
       color: $tw-black;
 
+      @media (min-width: $screen-lg) {
+        padding-top: 22px;
+        padding-bottom: 22px;
+        @apply text-lg;
+      }
     }
+
     .tanais-radio-inline {
       margin: 0 15px;
+
       &:first-child {
         margin-left: 0;
       }
+
       &:last-child {
         margin-right: 0;
       }
@@ -150,9 +317,14 @@
   }
 
   // .tanais-form-group.bx-soa-location-input-container {
+
   .tanais-form-group {
     position: relative;
     margin-bottom: 30px;
+
+    &.bx-soa-customer-field:last-child {
+      margin-bottom: 20px;
+    }
 
     input,
     textarea {
@@ -204,6 +376,17 @@
     }
   }
 
+  .bx-soa-location-input-container {
+    margin-bottom: 25px;
+  }
+
+  .bx-soa-coupon {
+    padding-top: 0;
+
+    &.bx-soa-coupon--bonus {
+      display: none;
+    }
+  }
 
   .bx-soa-coupon-block {
     position: relative;
@@ -218,12 +401,13 @@
     background-color: $tw-green-500;
     border-radius: 10px;
     background-image: url('../img/check-2-white.svg');
-    background-size: 12px 10px;
+    background-size: 15px 12px;
     transform: translateY(-50%);
+
     &:hover {
       transition: none;
-      background-color: $tw-green-500;
-
+      // background-color: #02c094;
+      background-color: #018d6d;
     }
   }
 
@@ -231,14 +415,22 @@
     min-height: 51px;
   }
 
-  #bx-soa-paysystem {
-    margin-top: 40px;
-  }
-
   #bx-soa-delivery .bx-soa-section-content,
   #bx-soa-paysystem .bx-soa-section-content {
+    padding-top: 0;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 30px;
+  }
+
+  #bx-soa-paysystem {
+    .bx-soa-pp-company-smalldescr {
+      margin-top: 0 !important;
+    }
+
+    .bx-soa-pp-company {
+      margin-bottom: 20px;
+    }
   }
 
   .bx-soa-pp-item-container {
@@ -250,11 +442,15 @@
   }
 
   .bx-soa-pp-item-container .bx-soa-pp-company-graf-container .style-checkbox {
+    top: 4px;
     left: -26px;
   }
 
   /*!!! Промокод*/
   .bx-soa-coupon-input input[type="text"].tanais-form-control {
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 31px;
     border: none;
 
     &::placeholder {
@@ -270,12 +466,46 @@
   &__buyer {
     box-shadow: none !important;
 
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      margin-top: 40px;
+    }
+
     .bx-soa-section-title-container {
       padding: 0 !important;
+      margin-bottom: 14px;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 20px;
+      }
     }
 
     .bx-soa-section-content {
       padding: 0;
+    }
+
+    .bx-soa-customer {
+      @media (min-width: $screen-lg) {
+        display: grid;
+        grid-template-columns: 1fr 20px 1fr;
+
+        .tanais-form-group {
+          &:nth-child(2n-1) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+          }
+
+          &:nth-child(2n) {
+            grid-column-start: 3;
+            grid-column-end: 4;
+          }
+        }
+      }
+
+      @media (min-width: $screen-xxl) {
+        grid-template-columns: 1fr 32px 1fr;
+      }
     }
 
     .btn--submit {
@@ -284,27 +514,47 @@
     }
   }
 
-  &__total {
+  &__aside {
+    margin-top: 60px;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 8;
+      margin-top: 0;
+    }
 
     .bx-soa-cart-total {
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
       border-radius: 5px;
       box-shadow: none;
       background-color: $tw-gray-70;
+
+      .bx-total-coupon-container {
+        margin-top: 20px;
+      }
     }
 
     .bx-soa-cart-total-line {
-      margin-bottom: 7px;
+      margin-bottom: 9px;
       border-bottom-style: dashed;
     }
 
     .bx-soa-cart-total-line-total {
+      margin-top: 0;
+      margin-bottom: 15px !important;
+
       .bx-soa-cart-d {
         @apply text-xl #{!important};
         color: $tw-black;
       }
     }
 
-    .bx-soa-cart-t, .bx-soa-cart-d {
+    .bx-soa-cart-t,
+    .bx-soa-cart-d {
       background-color: $tw-gray-70;
     }
 
@@ -315,6 +565,11 @@
     .btn-order-one-click {
       margin-bottom: 10px;
       @include btn-regular;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
     }
 
     .btn-order-save {
@@ -322,6 +577,78 @@
       background-color: $tw-blue_link;
       color: #fff;
       border-color: $tw-blue_link;
+    }
+
+    .bx-soa-cart-total-button-container {
+      @media (min-width: $screen-lg) {
+        display: flex;
+      }
+    }
+
+    .bx-soa-sidebar {
+      height: auto;
+    }
+
+    &--bonus {
+      .bx-soa-coupon {
+        display: none;
+
+        &.bx-soa-coupon--bonus {
+          display: block;
+          position: relative;
+        }
+      }
+
+      .bx-soa-coupon-block {
+        padding: 24px 30px;
+        background-color: #fff;
+        border-radius: 24px;
+        border: 1px dashed $tw-black;
+        overflow: hidden;
+      }
+
+      .bx-soa-coupon-bonus-name {
+        color: $tw-gray-500;
+        line-height: 1.2;
+      }
+
+      .bx-soa-coupon-bonus-value {
+        color: $tw-gray-500;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .bx-soa-coupon-title-bonus {
+        margin-bottom: 5px;
+        @apply text-xl;
+        color: $tw-black;
+      }
+
+      .bx-soa-coupon-delete {
+        position: absolute;
+        bottom: 24px;
+        right: 30px;
+        color: $tw-red-900;
+        line-height: 1.1;
+        border-bottom: 1px dashed $tw-red-900;
+      }
+    }
+  }
+
+  .bx-soa-cart-total-form {
+    .btn-default {
+      @include btn-regular;
+      background-color: $tw-blue_link;
+      color: #fff;
+      border-color: $tw-blue_link;
+    }
+
+    .bx-soa-cart-total-form-close-btn::before, .bx-soa-cart-total-form-close-btn::after {
+      background: $tw-black;
+    }
+
+    .bx-soa-cart-total-form-field span i {
+      font-family: 'Montserrat';
     }
   }
 
@@ -350,7 +677,5 @@
     line-height: 24px;
   }
 
+
 }
-
-
-

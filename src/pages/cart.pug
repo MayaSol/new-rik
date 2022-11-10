@@ -15,12 +15,12 @@ block content
   .wrapper
     +breadcrumbs(class='container')
       +breadcrumbs-item('Главная','#')
-      +breadcrumbs-item('Оформление заказа')
+      +breadcrumbs-item('Мои заказы')
     section.cart-page.mt-30px.lg_mt-20px
       .container
-        h2.section__title.mb-20px Оформление заказа
-        .cart-page__pane.mb-20px
-          +btn-angle-left({text: 'Вернуться к покупкам'})(class='cart-page__back')
+        h2.section__title.section__title--product-info.mb-20px Оформление заказа
+        .cart-page__pane
+          +btn-angle-left({text: 'Вернуться к покупкам'})(class='cart-page__back' href='#')
           +btn('','print,clean')(class='mr-15px')
             +svg('printer','',{width: '20',height: '22'},'')
           +btn('','document-cloud,clean')
@@ -44,15 +44,15 @@ block content
             desc: 'Портативный. Работает от аккумулятора',
             text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности.'
           })
-            +cart-product-add()(class='mt-20px')
+            +cart-product-add()(class='mt-20px lg_mt-0')
               .cart-product__add-title Комплектующие к товару
               +product-options-item({
                 src: '/img/product_50x50.jpg',
-                desc: 'Комплект насадок для акушерства и&nbsp;гинекологии <span>(+17 400.00р.)</span>'
+                desc: 'Комплект насадок для оториноларингологии <span>(+12 000.00р.)</span>'
               })
               +product-options-item({
                 src: '/img/product_50x50.jpg',
-                desc: 'Комплект насадок для оториноларингологии <span>(+12 000.00р.)</span>'
+                desc: 'Комплект насадок для акушерства и&nbsp;гинекологии <span>(+17 400.00р.)</span>'
               })
               +product-options-item({
                 src: '/img/product_50x50.jpg',
@@ -82,108 +82,111 @@ block content
             desc: 'Портативный. Работает от аккумулятора',
             text: 'Обладает тем же терапевтическим эффектом, что и аппарат Рикта 04/4, однако не имеет функции регулировки мощности.',
           },'deleted')
-          button.cart-product__label.cart-product__label--deleted Вернуть в корзину
-        h2.section__title.mb-20px Тип покупателя и регион доставки
-        <div class="bx_soa_location">
-          <div>
-            <div class="tanais-form-group person-type">
+          button.cart-product__label.cart-product__label--deleted
+            span Вернуть в корзину
+        .cart-page__buyer-info
+          h2.section__title--buyer-info Тип покупателя и регион доставки
+          <div class="bx_soa_location cart-page__location">
+            <div class="tanais-form-group person-type cart-page__person-type">
               <div class="tanais-radio-inline checked"><label><input checked="true" type="radio" name="PERSON_TYPE" value="1">Физическое лицо</label></div>
               <div class="tanais-radio-inline"><label><input type="radio" name="PERSON_TYPE" value="2">Юридическое лицо</label></div><input type="hidden" name="PERSON_TYPE_OLD" value="1">
             </div>
-            <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container has-error"><label class="bx-soa-custom-label" for="soa-property-4">Местоположение</label>
-              <div id="tooltip-soa-property-4" class="bx-soa-tooltip bx-soa-tooltip-static bx-soa-tooltip-danger tooltip top" data-state="opened" style="opacity: 1; display: block;">
-                <div class="tooltip-arrow"></div>
-                <div class="tooltip-inner">Поле обязательно для заполнения</div>
-              </div>
-              <div id="sls-83208" class="bx-sls ">
-                <div class="dropdown-block bx-ui-sls-input-block">
-                  <span class="dropdown-icon"></span>
-                  <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
-                  <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
-                  <div class="dropdown-fade2white"></div>
-                  <div class="bx-ui-sls-loader"></div>
-                  <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
-                  <div class="bx-ui-sls-pane" style="overflow: hidden auto;">
-                    <div class="bx-ui-sls-variants"></div>
+            <div class="cart-page__location-address">
+              <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container has-error"><label class="bx-soa-custom-label" for="soa-property-4">Местоположение</label>
+                // <div id="tooltip-soa-property-4" class="bx-soa-tooltip bx-soa-tooltip-static bx-soa-tooltip-danger tooltip top" data-state="opened" style="opacity: 1; display: block;">
+                //   <div class="tooltip-arrow"></div>
+                //   <div class="tooltip-inner">Поле обязательно для заполнения</div>
+                // </div>
+                <div id="sls-83208" class="bx-sls ">
+                  <div class="dropdown-block bx-ui-sls-input-block">
+                    <span class="dropdown-icon"></span>
+                    <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
+                    <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
+                    <div class="dropdown-fade2white"></div>
+                    <div class="bx-ui-sls-loader"></div>
+                    <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
+                    <div class="bx-ui-sls-pane" style="overflow: hidden auto;">
+                      <div class="bx-ui-sls-variants"></div>
+                    </div>
+                  </div>
+                  <div class="bx-ui-sls-error-message">
                   </div>
                 </div>
-                <div class="bx-ui-sls-error-message">
-                </div>
-              </div>
-            </div><input type="hidden" name="RECENT_DELIVERY_VALUE" value="false">
-          </div>
-        </div>
-        <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container"><label class="bx-soa-custom-label" for="soa-property-4">Индекс</label>
-          <div id="sls-69216" class="bx-sls ">
-            <div class="dropdown-block bx-ui-sls-input-block">
-              <span class="dropdown-icon"></span>
-              <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
-              <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
-              <div class="dropdown-fade2white"></div>
-              <div class="bx-ui-sls-loader"></div>
-              <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
-              <div class="bx-ui-sls-pane" style="overflow: hidden auto; display: none;">
-                <div class="bx-ui-sls-variants"></div>
-              </div>
+              </div><input type="hidden" name="RECENT_DELIVERY_VALUE" value="false">
+              // <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container"><label class="bx-soa-custom-label" for="soa-property-4">Индекс</label>
+              //   <div id="sls-69216" class="bx-sls ">
+              //     <div class="dropdown-block bx-ui-sls-input-block">
+              //       <span class="dropdown-icon"></span>
+              //       <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
+              //       <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
+              //       <div class="dropdown-fade2white"></div>
+              //       <div class="bx-ui-sls-loader"></div>
+              //       <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
+              //       <div class="bx-ui-sls-pane" style="overflow: hidden auto; display: none;">
+              //         <div class="bx-ui-sls-variants"></div>
+              //       </div>
+              //     </div>
+              //     <div class="bx-ui-sls-error-message">
+              //     </div>
+              //   </div>
+              // </div>
+          </div></div>
+          //- Доставка
+          <div id="bx-soa-delivery" data-visited="true" class="cart-page__delivery bx-soa-section bx-active">
+            <div class="bx-soa-section-title-container">
+              <h2 class="bx-soa-section-title">
+                <div class="bx-soa-section-title-text">Доставка </div>
+              </h2>
             </div>
-            <div class="bx-ui-sls-error-message">
-            </div>
-          </div>
-        </div>
-        //- Доставка
-        <div id="bx-soa-delivery" data-visited="true" class="cart-page__delivery bx-soa-section bx-active">
-          <div class="bx-soa-section-title-container">
-            <h2 class="bx-soa-section-title">
-              <div class="bx-soa-section-title-text">Доставка </div>
-            </h2>
-          </div>
-          <div class="bx-soa-section-content container-fluid">
-            <div style="display: none;" class="alert alert-danger"></div>
-            <div class="bx-soa-pp">
-              <div class="bx-soa-pp-item-container">
-                <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company bx-selected">
-                  <div class="bx-soa-pp-company-inner-block">
-                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27"><span class="style-checkbox"></span>
-                      <div class='cart-page__cost'>
-                        <div class="bx-soa-pp-company-smalltitle"><span>Доставка курьером</span></div>
-                        <div class="bx-soa-pp-delivery-cost"><span>500 ₽</span></div>
+            <div class="bx-soa-section-content container-fluid">
+              <div style="display: none;" class="alert alert-danger"></div>
+              <div class="bx-soa-pp">
+                <div class="bx-soa-pp-item-container">
+                  <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company bx-selected">
+                    <div class="bx-soa-pp-company-inner-block">
+                      <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27"><span class="style-checkbox"></span>
+                        <div class='cart-page__cost'>
+                          <div class="bx-soa-pp-company-smalltitle"><span>Доставка курьером</span></div>
+                          <div class="bx-soa-pp-delivery-cost"><span>500 ₽</span></div>
+                        </div>
+                      </div>
+                      <div class="bx-soa-pp-company-smalldescr">
+                        <p>Доставка осуществляется в течение дня в удобное для вас время.</p>
                       </div>
                     </div>
-                    <div class="bx-soa-pp-company-smalldescr">
-                      <p>Доставка осуществляется в течение дня в удобное для вас время.</p>
-                    </div>
                   </div>
-                </div>
-                <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company">
-                  <div class="bx-soa-pp-company-inner-block">
-                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27"><span class="style-checkbox"></span>
-                      <div class='cart-page__cost'>
-                        <div class="bx-soa-pp-company-smalltitle"><span>Самовывоз</span></div>
+                  <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company">
+                    <div class="bx-soa-pp-company-inner-block">
+                      <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27"><span class="style-checkbox"></span>
+                        <div class='cart-page__cost'>
+                          <div class="bx-soa-pp-company-smalltitle"><span>Самовывоз</span></div>
+                        </div>
+                      </div>
+                      <div class="bx-soa-pp-company-smalldescr">
+                        <p>Вы можете самостоятельно забрать заказ из нашего магазина.</p>
                       </div>
                     </div>
-                    <div class="bx-soa-pp-company-smalldescr">
-                      <p>Вы можете самостоятельно забрать заказ из нашего магазина.</p>
-                    </div>
                   </div>
+                  <div class="bx-total-coupon-container"><div class="bx-soa-coupon">
+                  <div class="bx-soa-coupon-block"><div class="bx-soa-coupon-input"><input class="tanais-form-control bx-ios-fix" type="text" placeholder='Введите промокод'><span class="bx-soa-coupon-btn"></span></div><span class="bx-soa-coupon-item"></span></div></div></div>
                 </div>
-                <div class="bx-total-coupon-container"><div class="bx-soa-coupon">
-                <div class="bx-soa-coupon-block"><div class="bx-soa-coupon-input"><input class="tanais-form-control bx-ios-fix" type="text" placeholder='Введите промокод'><span class="bx-soa-coupon-btn"></span></div><span class="bx-soa-coupon-item"></span></div></div></div>
               </div>
             </div>
           </div>
-        </div>
-        //- Оплата
-        +cart-payment()
-        //- Покупатель
-        +cart-buyer()
+          //- Оплата
+          +cart-payment()
+          //- Покупатель
+          +cart-buyer()
         //- Итого
-        +cart-page-total()
+        .cart-page__aside
+          +cart-page-total()
       </div>
 
 
 block prepend page-bottom
   .inline-svg-sprite
     include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='js/core.min.js')
   script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
 
 

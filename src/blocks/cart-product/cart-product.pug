@@ -29,9 +29,10 @@ mixin cart-product(props={}, mods)
     .cart-product__status.product-card__status.product-card__status--available
       +svg(props.status_icon, '', sizes={width:props.status_icon_sizes[0],height:props.status_icon_sizes[1]})
       span!= props.status
-    .cart-product__title= props.title
-    .cart-product__desc= props.desc
-    .cart-product__text(data-lines='2')= props.text
+    .cart-product__info
+      a.cart-product__title(href="#")= props.title
+      .cart-product__desc= props.desc
+      .cart-product__text(data-lines='2')= props.text
     block
 
 

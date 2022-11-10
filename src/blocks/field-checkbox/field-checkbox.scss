@@ -26,6 +26,42 @@
         color: $color-danger;
       }
     }
+
+    &--user-content {
+      #{$block-name}__name-text {
+        font-size: 12px;
+        line-height: 14px;
+
+        @media (min-width: $screen-lg) {
+          display: flex;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        &::before {
+          position: static;
+          float: left;
+          margin-right: 10px;
+          transform: none;
+          background-color: $tw-gray-100;
+          border-color: $tw-gray-100;
+
+          @media (min-width: $screen-lg) {
+            float: none;
+            flex-shrink: 0;
+          }
+        }
+
+        &::after {
+          top: 7px;
+          color: $tw-black;
+        }
+      }
+
+      #{$block-name}__name {
+        padding-left: 0;
+      }
+    }
   }
 
   &__name {
@@ -36,6 +72,10 @@
     font-weight: 400;
     line-height: $line-height;
     cursor: pointer;
+
+    .cart-page & {
+      margin-right: 5px;
+    }
   }
 
   &__name-text {
@@ -137,4 +177,5 @@
   &__help-text {
     @include field-help-text;
   }
+
 }

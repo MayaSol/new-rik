@@ -191,6 +191,7 @@
       overflow: hidden;
       color: $tw-white;
       transition: max-width $transition-time;
+
       &::before {
         content: '';
         padding-left: 10px;
@@ -203,6 +204,7 @@
 
     &:hover {
       max-width: 300px;
+
       span {
         max-width: 300px;
       }
@@ -231,6 +233,7 @@
       .close {
         display: block;
       }
+
       svg {
         display: none;
       }
@@ -308,10 +311,26 @@
 
   &--print {
     color: $tw-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        color: $tw-blue_link;
+      }
+    }
   }
 
   &--document-cloud {
     color: $tw-black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        color: $tw-blue_link;
+      }
+    }
   }
 
   &--angle-left {

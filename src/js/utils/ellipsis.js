@@ -42,19 +42,19 @@ var truncateElement = function(element, lines) {
   var lineHeight = getLineHeight(element);
   var maxHeight = lines * lineHeight;
 
-  // console.log('lineHeight = ' + lineHeight);
-  // console.log('lines = ' + lines);
-  // console.log('maxHeight = ' + maxHeight);
-  // console.log('element.clientHeight =' + element.clientHeight);
+  console.log('lineHeight = ' + lineHeight);
+  console.log('lines = ' + lines);
+  console.log('maxHeight = ' + maxHeight);
+  console.log('element.clientHeight =' + element.clientHeight);
 
 
   // console.log('------------while-------------------');
   while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {
     truncateTextParts.pop();
     element.innerHTML = truncateTextParts.join(' ') + '...';
-    //   console.log('element.clientHeight = ' + element.clientHeight);
-    //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
-    // console.log(element.innerHTML);
+      console.log('element.clientHeight = ' + element.clientHeight);
+      console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
+    console.log(element.innerHTML);
   }
     // console.log('---------------------------------------------');
 

@@ -22,24 +22,30 @@ mixin cart-buyer(props={}, mods)
       <div style="display: none;" class="alert alert-danger"></div>
       <div>
         <div class="bx-soa-customer">
-          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="1"><label for="soa-property-1" class="bx-soa-custom-label">ФИО</label>
+          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="1"><label for="soa-property-1" class="bx-soa-custom-label">Ф.И.О.</label>
             <div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_1" id="soa-property-1" autocomplete="name" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div>
           </div>
-          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="2"><label for="soa-property-2" class="bx-soa-custom-label">Email</label>
+          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="2"><label for="soa-property-2" class="bx-soa-custom-label">E-mail</label>
             <div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_2" id="soa-property-2" autocomplete="email" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div>
           </div>
           <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="3"><label for="soa-property-3" class="bx-soa-custom-label">Телефон</label>
             <div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_3" id="soa-property-3" autocomplete="tel" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div>
           </div>
-          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="86"><label for="soa-property-86" class="bx-soa-custom-label">Индекс</label>
-            <div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_86" id="soa-property-86" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div>
-          </div>
           <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="6"><label for="soa-property-6" class="bx-soa-custom-label">Адрес доставки</label>
             <div class="soa-property-container has-soa-address-suggest"><input type="text" size="30" name="ORDER_PROP_6" id="soa-property-6" autocomplete="new-password" placeholder="ул. Большая Полянка, д.7" class="tanais-form-control bx-soa-customer-input bx-ios-fix"><span class="soa-suggests-container"><span class="soa-suggests-block"></span></span></div>
           </div>
-        </div>
-        <div>
           <div class="tanais-form-group bx-soa-customer-field"><label for="orderDescription" class="bx-soa-customer-label">Комментарии к заказу:</label><textarea id="orderDescription" cols="8" class="tanais-form-control bx-soa-customer-textarea bx-ios-fix" name="ORDER_DESCRIPTION"></textarea></div>
+        </div>
+        <div class="cart-page__user-content user-content">
+          +field-checkbox([
+              {
+                title: 'Нажимая кнопку «Оформить заказ», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных',
+                mods: 'user-content',
+                attrs: {
+                  name: 'cart-page-user-content',
+                }
+              },
+            ])
         </div>
         <div class='flex'>
           <button class="btn btn--regular btn--blue btn--submit">

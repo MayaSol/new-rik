@@ -4,15 +4,32 @@
 
 .cart-product {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   position: relative;
   display: grid;
-  grid-template-columns: 47% 1fr 1fr;
+  grid-template-columns: 53% 1fr 1fr;
   grid-template-rows: 1fr auto auto auto auto auto;
 
+  @media (min-width: $screen-lg) {
+    grid-template-columns: 225px 1fr auto;
+    // grid-template-rows: auto auto auto auto 1fr auto;
+    // grid-template-rows: auto auto auto 1fr auto auto;
+    grid-template-rows: 70px 42px auto 1fr auto auto;
+    border: 1px solid $tw-gray-200;
+    border-radius: 10px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    grid-template-rows: 54px 42px auto 1fr auto auto;
+  }
+
+  // @media (min-width: $screen-xxl) {
+  //   padding-right: 50px;
+  // }
+
   &--deleted {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   &__img {
@@ -22,9 +39,16 @@
     grid-row-end: 3;
     margin-right: 18px;
 
+    @media (min-width: $screen-lg) {
+      width: 225px;
+      height: 225px;
+      grid-row-end: 4;
+    }
+
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
 
     .cart-page & {
@@ -41,6 +65,19 @@
     align-self: end;
     @apply text-lg;
     color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      @apply text-2xl;
+      align-self: end;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-right: 50px;
+    }
   }
 
   &__amount {
@@ -48,6 +85,20 @@
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      align-self: start;
+      margin-top: 8px;
+      padding-right: 10px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-right: 50px;
+    }
   }
 
   &__status {
@@ -57,55 +108,148 @@
     grid-row-end: 3;
     white-space: nowrap;
     margin-bottom: 0 !important;
+    margin-left: 8px;
 
-    .cart-page & span {
-      font-size: 11px;
-      line-height: 18px;
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      margin-left: 0;
+      align-self: center;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-right: 50px;
+    }
+
+    .cart-page & {
+
+      @media (min-width: $screen-lg) {
+        margin-top: 5px;
+        align-self: start;
+      }
+
+      @media (min-width: $screen-xl) {
+      }
+
+      span {
+        font-size: 11px;
+        line-height: 18px;
+
+        @media (min-width: $screen-lg) {
+          @apply text-sm;
+        }
+      }
     }
   }
 
-  &__title {
+  &__info {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
+
+    @media (min-width: $screen-lg) {
+      grid-row-start: 1;
+      grid-row-end: 6;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+
+  &__title {
+    display: block;
     margin-top: 10px;
     margin-bottom: 5px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: currentColor;
+      opacity: 0.7;
+    }
+
+    @media (min-width: $screen-lg) {
+      @apply text-xl;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 20px;
+      margin-left: 40px;
+      margin-right: 30px;
+    }
   }
 
   &__desc {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 5;
     margin-bottom: 14px;
     @apply text-sm;
     color: $tw-gray-500;
+
+
+    @media (min-width: $screen-lg) {
+      margin-left: 20px;
+      margin-bottom: 7px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-left: 40px;
+      margin-bottom: 14px;
+    }
+
+    .cart-page & {
+      @media (min-width: $screen-lg) {
+      }
+    }
   }
 
   &__text {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 5;
-    grid-row-end: 6;
     @apply text-sm;
     color: $tw-gray-500;
+
+
+    @media (min-width: $screen-lg) {
+      margin-left: 20px;
+      align-self: start;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-left: 40px;
+    }
   }
 
   &__add {
     grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    padding: 20px;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    padding: 18px;
     border: 1px solid $tw-gray-200;
     border-radius: 10px;
+
+    @media (min-width: $screen-lg) {
+      grid-row-start: 4;
+      grid-row-end: 5;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: none;
+      border-top: 1px solid $tw-gray-200;
+      border-radius: 0;
+    }
   }
 
   &__add-title {
     margin-bottom: 10px;
     @apply text-xl;
     color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   }
 
   &__close {
@@ -115,35 +259,63 @@
     width: 24px;
     height: 24px;
     background-color: $tw-gray-100;
+
+    @media (min-width: $screen-lg) {
+      width: 30px;
+      height: 30px;
+    }
+
     .close {
       position: absolute;
       top: 0;
       right: 0;
       width: 24px;
       height: 24px;
+
       &::before,
       &::after {
         top: 50%;
+      }
+
+      @media (min-width: $screen-lg) {
+        width: 30px;
+        height: 30px;
       }
     }
   }
 
   &__label {
     position: absolute;
-    right: 0;
+    right: 4px;
     top: 0;
+    padding: 3px 0;
     font-size: 14px;
     line-height: 18px;
-    opacity: 1;
+    opacity: 0.7;
 
     &--deleted {
-      color: red;
-      border-bottom: 1px dashed currentColor;
+
+      span {
+        color: red;
+        border-bottom: 1px dashed currentColor;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 1;
+      }
     }
   }
 
   &__wrapper {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
+
+    @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-bottom: 60px;
+    }
   }
 }

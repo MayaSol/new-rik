@@ -69,6 +69,8 @@ https://new.rikta.ru/catalog/laser-therapy-devices/rikta-04-4/
 Можно ли при добавлении товары обновлять не весь блок корзины <div class="cart-aside hidden xl_block active">, а только внутреннюю часть <div class="cart__inner">?
 Иначе при обновлении сбрасываются обработчики кликов на корзину и она не открывается.
 
+css,js,font Montserrat, sprite.svg
+
 ====================================
 Главная
 ===================================

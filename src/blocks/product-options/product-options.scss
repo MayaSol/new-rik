@@ -134,6 +134,23 @@
     &--checked {
       background-color: $tw-gray-200;
     }
+
+    .cart-product & {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &:nth-child(2n) {
+        @media (min-width: $screen-lg) {
+          margin-right: 10px;
+        }
+      }
+
+      &:nth-last-child(-n+2) {
+        @media (min-width: $screen-lg) {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   &__check {
@@ -154,7 +171,6 @@
     img {
       width: 100%;
       height: 100%;
-
     }
   }
 
@@ -166,6 +182,10 @@
     span {
       white-space: nowrap;
       font-weight: 700;
+    }
+
+    .cart-page & {
+      @apply text-base;
     }
   }
 
