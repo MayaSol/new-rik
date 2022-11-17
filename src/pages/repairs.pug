@@ -1,0 +1,90 @@
+extends ../pug/layout.pug
+
+block meta
+  title Ваши аппараты
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Ваши аппараты')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--orders.mt-30px.lg_mt-20px.mb-50px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Ваши аппараты
+        .choices-select.choices-select--orders.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/orders.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/orders.html#2' selected) Мои заказы
+            option(value='3' data-icon="device" data-href='/orders.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/orders.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/orders.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/orders.html#6') Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          h2 Зарегистрированные аппараты
+          table.table.table--one-line
+            thead
+              tr
+                th Модель
+                th Серийный номер
+                th Дата сдачи в ремонт
+                th Причина обращения
+                th Дата возврата<br>из ремонта
+                th Результат
+            tbody
+              tr
+                td Рикта&nbsp;04/04
+                td NP-131/2022
+                td 24.02.2022
+                td
+                  +btn('<a href="#">Показать причину</a>','clean')
+                td 14.07.2022
+                td
+                  +btn('<a href="#">Показать причину</a>','clean')

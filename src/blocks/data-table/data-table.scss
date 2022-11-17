@@ -1,0 +1,68 @@
+// В этом файле должны быть стили для БЭМ-блока data-table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.data-table {
+
+  $block-name: &; // #{$block-name}__element
+
+  &--one-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 14px;
+    line-height: 17px;
+    border: 1px solid $tw-gray-200;
+    border-bottom-width: 0;
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1fr 1fr 300px;
+      border-bottom-width: 1px;
+    }
+
+    &>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1px;
+      padding: 7px 10px;
+      text-align: center;
+      border: 1px solid $tw-gray-200;
+
+      @media (min-width: $screen-lg) {
+        border-top: none;
+        margin-left: -1px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      br {
+        display: none;
+
+        @media (min-width: $screen-lg) {
+          display: block;
+        }
+      }
+    }
+
+    #{$block-name}__th {
+      grid-column-start: 1;
+      // grid-column-end: 2;
+      color: $tw-black;
+      border-right-width: 0;
+      margin-left: -1px;
+
+      @media (min-width: $screen-lg) {
+        margin-bottom: -1px;
+      }
+    }
+
+    #{$block-name}__td {
+      grid-column-start: 2;
+      border-right: none;
+      // grid-column-end: 3;
+      @media (min-width: $screen-lg) {
+        border-bottom: none;
+      }
+    }
+  }
+}

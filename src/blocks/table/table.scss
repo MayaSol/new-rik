@@ -10,6 +10,59 @@
   border: 1px solid $border-color;
   border-collapse: collapse;
 
+  &--one-line {
+    td,
+    th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    @media (max-width: $screen-lg - 1) {
+      display: block;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block !important;
+      }
+
+      thead tr {
+        @include hide-text;
+      }
+
+      thead tr th {
+        @include hide-text;
+      }
+
+      td {
+        /* Behave  like a "row" */
+        position: relative;
+        height: 2*26px + 2*11px;
+        padding-left: 52% !important;
+        white-space: normal;
+        text-align: left;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+
+        &::before {
+          content: attr(data-title);
+          /* Now like a table header */
+          position: absolute;
+          /* Top/left values mimic padding */
+          top: 0;
+          left: 0;
+          width: 50%;
+          padding: 8px 9px;
+          text-align: left;
+        }
+      }
+    }
+  }
+
   td,
   th {
     padding: $field-padding-vertical $field-padding-horizontal;

@@ -100,5 +100,27 @@
     }
   }
 
-  .form-special__msg {}
+  &--device {
+    @media (min-width: $screen-xxl) {
+      display: flex;
+    }
+
+    .btn {
+      padding-left: 19px;
+      padding-right: 19px;
+      @media (min-width: $screen-xxl) {
+        flex-shrink: 0;
+      }
+    }
+
+    label {
+      @media (min-width: $screen-xxl) {
+        margin-bottom: 0;
+        margin-right: 10px;
+        width: 0;
+        flex-grow: 1;
+      }
+    }
+  }
+
 }

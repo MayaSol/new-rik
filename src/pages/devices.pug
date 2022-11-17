@@ -1,0 +1,130 @@
+extends ../pug/layout.pug
+
+block meta
+  title Ваши аппараты
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Ваши аппараты')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--orders.mt-30px.lg_mt-20px.lg_mb-64px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Ваши аппараты
+        .choices-select.choices-select--orders.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/orders.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/orders.html#2' selected) Мои заказы
+            option(value='3' data-icon="device" data-href='/orders.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/orders.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/orders.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/orders.html#6') Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          h2.mb-20px.mt-20px.text-xl.lg_text-2xl.lg_mt-0 Зарегистрированные аппараты
+          .data-table.data-table--one-line.mb-20px
+            .data-table__th.row-start-1.lg_row-start-1(class='lg_!col-start-1')
+              span Модель
+            .data-table__th.row-start-2.lg_row-start-1(class='lg_!col-start-2')
+              span Серийный<br> номер
+            .data-table__th.row-start-3.lg_row-start-1(class='lg_!col-start-3')
+              span Дата окончания<br> гарантии
+            .data-table__th.row-start-4.lg_row-start-1(class='lg_!col-start-4')
+              span Проведенный ремонт<br> дата/гарантийный/платный
+            .data-table__td.row-start-1.lg_row-start-2(class='lg_!col-start-1')
+              span Рикта&nbsp;04/04
+            .data-table__td.row-start-2.lg_row-start-2(class='lg_!col-start-2')
+              span NP-131/2022
+            .data-table__td.row-start-3.lg_row-start-2(class='lg_!col-start-3')
+              span 24.02.2023
+            .data-table__td.row-start-4.lg_row-start-2(class='lg_!col-start-4')
+              span Гарантийный<br>14.01.2022
+          .data-table.data-table--one-line
+            .data-table__th.row-start-1.lg_row-start-1(class='lg_!col-start-1')
+              span Модель
+            .data-table__th.row-start-2.lg_row-start-1(class='lg_!col-start-2')
+              span Серийный<br> номер
+            .data-table__th.row-start-3.lg_row-start-1(class='lg_!col-start-3')
+              span Дата окончания<br> гарантии
+            .data-table__th.row-start-4.lg_row-start-1(class='lg_!col-start-4')
+              span Проведенный ремонт<br> дата/гарантийный/платный
+            .data-table__td.row-start-1.lg_row-start-2(class='lg_!col-start-1')
+              span Рикта&nbsp;02/04
+            .data-table__td.row-start-2.lg_row-start-2(class='lg_!col-start-2')
+              span NP-131/2022
+            .data-table__td.row-start-3.lg_row-start-2(class='lg_!col-start-3')
+              span 24.02.2023
+            .data-table__td.row-start-4.lg_row-start-2(class='lg_!col-start-4')
+              span Платный<br>14.01.2022
+          h2.mb-20px.mt-40px.text-xl.lg_text-2xl Зарегистрировать аппарат
+          .form__wrapper
+            form.form.relative.form--device
+              +field-text({
+                attrs: {
+                  name: 'model',
+                  placeholder: 'Модель',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'serial',
+                  placeholder: 'Серийный номер',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                attrs: {
+                  name: 'date',
+                  placeholder: 'Дата покупки ',
+                  type: 'date'
+                }
+              })
+              +btn('Зарегистрировать','regular,blue')(class='rounded-4px')
