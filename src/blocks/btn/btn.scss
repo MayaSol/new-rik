@@ -123,6 +123,13 @@
     }
   }
 
+  &--icon-right {
+
+    svg {
+      margin-left: 8px;
+    }
+  }
+
   &--fav,
   &--compare {
     padding-left: 5px;
@@ -343,6 +350,33 @@
     background-color: $tw-blue_link;
     color: #fff;
     border-color: $tw-blue_link;
+  }
+
+  &--arrow-down {
+
+  }
+
+  &--hover-underline {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      opacity: 0;
+      background-color: currentColor;
+      transition: opacity $transition-time;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
 }

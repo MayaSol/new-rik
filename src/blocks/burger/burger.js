@@ -1,6 +1,8 @@
 /* global document */
 
 const ready = require('../../js/utils/documentReady.js');
+const {mobileSearchOpen} = require('../search-form/search-form.js');
+const {mobileSearchClose} = require('../search-form/search-form.js');
 
 ready(function(){
 
@@ -19,8 +21,23 @@ ready(function(){
         this.classList.toggle('burger--close');
       }
       document.getElementById(targetId).classList.toggle(targetClassToggle);
-      console.log(document.documentElement);
       document.body.classList.toggle('noscroll');
+      // Для формы поиска в открытом мобильном меню
+      if (targetId === 'nav-mobile') {
+        var searchForm = document.getElementsByClassName('search-form')[0];
+        if (searchForm) {
+          if (typeof searchForm.navMobileOpen === 'undefined') {
+            searchForm.navMobileOpen = false;
+          }
+          searchForm.navMobileOpen = !searchForm.navMobileOpen;
+          if (searchForm.navMobileOpen) {
+            mobileSearchOpen(searchForm);
+          }
+          else {
+            mobileSearchClose(searchForm);
+          }
+        }
+      }
     }
   }
 

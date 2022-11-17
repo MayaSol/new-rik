@@ -1,0 +1,72 @@
+// В этом файле должны быть стили для БЭМ-блока scroll-btn, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.scroll-btn {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+
+  .viewing-page-1 & {
+    @media (min-width: $screen-lg) {
+      display: block;
+      position: absolute;
+      bottom: 100px;
+      right: 50%;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        width: 64px;
+        height: 64px;
+        stroke: #14142b;
+
+        #path2629 {
+          animation-name: pulse_scroll_color;
+          animation-duration: 1.5s;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+}
+
+// @keyframes pulse_scroll_color {
+//   0% {
+//     stroke: red !important;
+//     fill: red !important;
+//   }
+//   49% {
+//     stroke: red !important;
+//     fill: red !important;
+//   }
+//   50% {
+//     stroke: #fff !important;
+//     fill: #fff !important;
+//   }
+//   100% {
+//     stroke: #fff !important;
+//     fill: #fff !important;
+//   }
+// }
+
+@keyframes pulse_scroll_color {
+  0% {
+    stroke: red;
+  }
+
+  49% {
+    stroke: red;
+  }
+
+  50% {
+    stroke: #fff;
+  }
+
+  100% {
+    stroke: #fff;
+  }
+}

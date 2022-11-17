@@ -3,7 +3,6 @@ const closest = require('closest');
 const Collapse = require("../../../node_modules/bootstrap/js/dist/collapse.js");
 
 ready(function() {
-  console.log(closest);
   var collapses = document.querySelectorAll('.question__collapse');
   for (var collapse of collapses) {
     collapse.addEventListener('show.bs.collapse', function () {

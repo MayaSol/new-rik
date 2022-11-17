@@ -5,6 +5,7 @@
 .aside-nav {
 
   $block-name: &; // #{$block-name}__element
+  margin-bottom: 30px;
 
   &__item {
     margin-top: -1px;

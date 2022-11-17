@@ -1,0 +1,91 @@
+// В этом файле должны быть стили для БЭМ-блока profile, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.profile {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__form-btns {
+    display: flex;
+    justify-content: space-between;
+
+    @media (min-width: 400px) {
+      justify-content: start;
+    }
+
+    .btn {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
+
+  &__content {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 30px 320px;
+    }
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 48px 400px;
+    }
+  }
+
+  .section__title {
+    @media (min-width: $screen-lg) {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+
+  &__main {
+    @media (min-width: $screen-lg) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  }
+
+  &__form {
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 24px 1fr;
+    }
+
+    .field-radio {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+
+      .profile--company & {
+        @media (min-width: $screen-lg) {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  &__links {
+    @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  }
+
+  .field-toggler {
+    color: $tw-black;
+  }
+
+  .choices__item {
+    display: flex;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+}

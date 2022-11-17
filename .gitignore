@@ -5,6 +5,7 @@ archive/
 test.html
 test.css
 tmp/
+src/misc/
 
 src/pug/mixins.pug
 src/js/entry.js

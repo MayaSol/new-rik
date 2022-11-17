@@ -178,9 +178,6 @@ $cart-transition-time: 0.6s;
         display: none;
       }
     }
-
-    &__inner {
-    }
   }
 
 
@@ -222,14 +219,20 @@ $cart-transition-time: 0.6s;
 
 
 div.bx-basket:not(#tanais-basket-root) {
-  position: absolute;
-  right: 64px;
-  top: 90vh;
+  position: fixed;
+  right: 20px;
+  top: 520px;
   bottom: 0;
   // width: 64px;
   max-width: 64px;
   transition: max-width $cart-transition-time;
   z-index: 999;
+
+  @media (min-width: $screen-lg) {
+    // position: absolute;
+    top: 90vh;
+    right: 64px;
+  }
 
 
   &.cart--show {

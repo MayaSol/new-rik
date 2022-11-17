@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (orders)
+
+mixin orders(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' orders--' + modsList[i].trim();
+      }
+    }
+
+  .orders(class=allMods)&attributes(attributes)
+    block
+
+
+mixin orders-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' orders--' + modsList[i].trim();
+      }
+    }
+
+  .orders__item(class=allMods)&attributes(attributes)
+    .orders__status= props.status
+    .orders__info
+      span.orders__title=props.title
+      span.orders__amount=props.amount
+    +btn('<span class="btn--hover-underline">Подробнее</span><svg width="12" height="6" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-down"></use></svg>','clean,icon,icon-right')(class='inline-flex text-blue-1000 hover_text-blue-1000' href='#')

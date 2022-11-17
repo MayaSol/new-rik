@@ -21,12 +21,13 @@
 
 
   &__inner {
-    width: auto;
-    position: sticky;
-    top: 88vh;
-    left: 64px;
-    transform: translateY(-50%);
-    z-index: 20;
+    min-height: 46px;
+    // width: auto;
+    // position: sticky;
+    // top: 88vh;
+    // left: 64px;
+    // transform: translateY(-50%);
+    // z-index: 20;
   }
 
   .viewing-page-10 & {
@@ -38,7 +39,7 @@
 .page:not(.index) {
   .cart-aside {
     position: fixed;
-    top: 88vh;
+    // top: 88vh;
     width: auto;
     padding-top: 0;
     z-index: 99;

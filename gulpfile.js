@@ -524,7 +524,7 @@ function buildCatalogJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'production',
+      mode: 'development',
       entry: entryList,
       output: {
         filename: '[name].js',
@@ -794,6 +794,7 @@ exports.build = series(
   compileSass,
   // compileTailwind,
   buildJs,
+  buildCatalogJs,
   // concatCss
 );
 
@@ -806,6 +807,7 @@ exports.default = series(
   writeTailwindToSass,
   compileSass,
   buildJs,
+  buildCatalogJs,
   serve,
 );
 

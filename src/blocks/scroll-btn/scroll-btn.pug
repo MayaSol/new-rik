@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (scroll-btn)
+
+mixin scroll-btn(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' scroll-btn--' + modsList[i].trim();
+      }
+    }
+
+  .scroll-btn(class=allMods)&attributes(attributes)
+    include ../../blocks/inline-svg/mouse2.svg
+    .text-center.text-lg.mt-10px Используйте<br> скроллер

@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (choices-select)
+
+mixin choices-select(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' choices-select--' + modsList[i].trim();
+      }
+    }
+
+  .choices-select(class=allMods)&attributes(attributes)
+    .choices-select__inner
+      block

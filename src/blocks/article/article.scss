@@ -93,6 +93,10 @@
           margin-bottom: 0;
         }
       }
+
+      ul {
+        padding-top: 20px;
+      }
     }
 
     ol {
@@ -117,6 +121,16 @@
 
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+
+      ul {
+        padding-top: 20px;
+        li {
+          &::before {
+            content: '';
+            counter-increment: none;
+          }
         }
       }
     }

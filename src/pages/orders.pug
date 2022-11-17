@@ -1,0 +1,97 @@
+extends ../pug/layout.pug
+
+block meta
+  title Мои заказы
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Мои заказы')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--orders.mt-30px.lg_mt-20px.mb-50px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Мои заказы
+        .choices-select.choices-select--orders.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/orders.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/orders.html#2' selected) Мои заказы
+            option(value='3' data-icon="device" data-href='/orders.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/orders.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/orders.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/orders.html#6') Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          +orders
+            +orders-item({
+              status: 'Оплачено',
+              title: 'Заказ NP-88/2022 от 01.06.2022,',
+              amount: '1 товар на сумму 30 600 руб'
+            },'paid')
+            +orders-item({
+              status: 'Новый заказ',
+              title: 'Заказ NP-88/2022 от 01.06.2022,',
+              amount: '1 товар на сумму 30 600 руб'
+            },'new')
+            +orders-item({
+              status: 'Принят в обработку',
+              title: 'Заказ NP-88/2022 от 01.06.2022,',
+              amount: '1 товар на сумму 30 600 руб'
+            },'accepted')
+            +orders-item({
+              status: 'Анулирован',
+              title: 'Заказ NP-88/2022 от 01.06.2022,',
+              amount: '1 товар на сумму 30 600 руб'
+            },'annuled')
+            +orders-item({
+              status: 'Отгружен',
+              title: 'Заказ NP-88/2022 от 01.06.2022,',
+              amount: '1 товар на сумму 30 600 руб'
+            },'shipped')
+

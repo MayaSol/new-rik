@@ -15,10 +15,6 @@
 
   &__input-wrap {
 
-    & + & {
-      margin-top: $typo-margin-vertical;
-    }
-
     &--error {
 
       #{$block-name}__name-text,
@@ -31,16 +27,50 @@
   &__name {
     display: inline-block;
     position: relative;
-    margin-right: 0.6em;
-    padding-left: 1.5em;
     font-weight: 400;
     line-height: $line-height;
+    cursor: pointer;
   }
 
   &__name-text {
-    display: inline-block;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 25px;
+    color: $tw-black;
+
+    &::before {
+      @include field-radio-circle;
+    }
+
+    @at-root input:disabled ~ &:before {
+      border-color: $gray-light;
+      background: $gray-lighter;
+    }
+
+    &::after {
+      @include field-radio-dot;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+
+      @at-root input:checked ~ & {
+        opacity: 1;
+      }
+
+      @at-root input:checked:disabled ~ & {
+        background-color: $gray-light;
+      }
+    }
+
+    .profile__form & {
+      font-size: 18px;
+      line-height: 20px;
+    }
 
     // своя радиокнопка с картинкой
+
+
 
     // &:before {
     //   content: '';
@@ -60,50 +90,46 @@
 
     // своя радиокнопка без картинки
 
-    @at-root input:disabled ~ & {
-      cursor: not-allowed;
-    }
+    // @at-root input:disabled ~ & {
+    //   cursor: not-allowed;
+    // }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 14px;
-      height: 14px;
-      border: 2px solid currentColor;
-      border-radius: 50%;
-    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 5px;
+    //   left: 0;
+    //   width: 14px;
+    //   height: 14px;
+    //   border: 2px solid currentColor;
+    //   border-radius: 50%;
+    // }
 
-    @at-root input:focus ~ &:before {
-      @include field-focus;
-    }
+    // @at-root input:focus ~ &:before {
+    //   @include field-focus;
+    // }
 
-    @at-root input:disabled ~ &:before {
-      border-color: $gray-light;
-      background: $gray-lighter;
-    }
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 9px;
-      left: 4px;
-      width: 6px;
-      height: 6px;
-      opacity: 0;
-      border-radius: 50%;
-      background-color: currentColor;
-      transition: opacity $transition-time;
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 9px;
+    //   left: 4px;
+    //   width: 6px;
+    //   height: 6px;
+    //   opacity: 0;
+    //   border-radius: 50%;
+    //   background-color: currentColor;
+    //   transition: opacity $transition-time;
 
-      @at-root input:checked ~ & {
-        opacity: 1;
-      }
+    //   @at-root input:checked ~ & {
+    //     opacity: 1;
+    //   }
 
-      @at-root input:checked:disabled ~ & {
-        background-color: $gray-light;
-      }
-    }
+    //   @at-root input:checked:disabled ~ & {
+    //     background-color: $gray-light;
+    //   }
+    // }
 
     // / своя радиокнопка без картинки
   }

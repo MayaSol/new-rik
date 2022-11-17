@@ -1,0 +1,220 @@
+extends ../pug/layout.pug
+
+block meta
+  title Профиль пользователя
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Профиль пpользователя')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--company.mt-30px.lg_mt-20px.mb-50px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Профиль пользователя
+        .choices-select.choices-select--profile.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select.profile__page-select.page-select__input.field-select.md_hidden(role='tablist')
+            option(value='/company.html#1' data-icon="person" selected) Личные данные
+            option(value='/company.html#2' data-icon="receipt") Мои заказы
+            option(value='/company.html#3' data-icon="device") Мои аппараты
+            option(value='/company.html#4' data-icon="book") Методики лечения
+            option(value='/company.html#5' data-icon="setting") Сервис
+            option(value='/company.html#6' data-icon="message") Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          form.form.profile__form.mt-20px.lg_mt-0
+            +field-radio([
+              {
+                title: 'Юр.лицо',
+                helpText: '',
+                mods: '',
+                classes: 'mb-10px lg_mb-0 mr-20px',
+                attrs: {
+                  name: 'profile-person-type',
+                  checked: true              }
+              },
+              {
+                title: 'Юр.лицо за переделами РФ',
+                helpText: '',
+                mods: '',
+                classes: 'mb-10px lg_mb-0 mr-20px',
+                attrs: {
+                  name: 'profile-person-type',
+                }
+              },
+              {
+                title: 'ИП (ПБОЮЛ)',
+                helpText: '',
+                mods: '',
+                classes: 'mb-10px lg_mb-0 mr-20px',
+                attrs: {
+                  name: 'profile-person-type',
+                }
+              },
+              {
+                title: 'Обособленное подразделение',
+                helpText: '',
+                mods: '',
+                attrs: {
+                  name: 'profile-person-type',
+                }
+              },
+            ])(class="lg_flex items-center mb-20px lg_mb-35px")
+            +field-text({
+              title: 'ИНН:',
+              mods: 'lbl,inn',
+              attrs: {
+                name: 'inn',
+                type: 'text',
+                placeholder: 'введите 10 цифр'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'КПП:',
+              mods: 'lbl,kpp',
+              attrs: {
+                name: 'kpp',
+                type: 'text',
+                placeholder: 'введите 9 цифр'
+              }
+            })(class='lg_col-start-3 lg_col-end-4')
+            +field-text({
+              title: 'КОД по ОКПО:',
+              mods: 'lbl',
+              attrs: {
+                name: 'okpo',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Полное название компании:',
+              mods: 'lbl',
+              attrs: {
+                name: 'name',
+                type: 'text'
+              }
+            })(class='lg_col-start-3 lg_col-end-4')
+            +field-toggler([
+              {
+                title: 'Юр. и фактический адрес совпадают',
+                attrs: {
+                  name: 'similar_addresses',
+                }
+              },
+            ])(class='lg_col-start-1 lg_col-end-5' data-target='#legal-address' data-toggle='field-text--disabled')
+            +field-text({
+              title: 'Фактический адрес:',
+              mods: 'lbl',
+              attrs: {
+                name: 'fact_address',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Юридический адрес:',
+              mods: 'lbl',
+              attrs: {
+                name: 'legal_address',
+                type: 'text'
+              }
+            })(class='mb-40px lg_mb-0 lg_col-start-3 lg_col-end-4' id='legal-address')
+            +field-text({
+              title: 'Email:',
+              mods: 'lbl,email',
+              attrs: {
+                name: 'email',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Телефон:',
+              mods: 'lbl,phone',
+              attrs: {
+                name: 'phone',
+                type: 'text'
+              }
+            })(class='mb-15px lg_col-start-3 lg_col-end-4')
+            +load-file({
+              id: 'company-card',
+              btn_classes: 'btn--icon btn--regular border-gray-300 mb-5px inline-flex',
+              text: 'Прикрепите файл карточки предприятия'
+            },'profile-company')(class='!mt-0 mt-20px lg_mt-10px lg_col-start-1 lg_col-end-2')
+              +svg('paperclip','',{width: 20,height:19})
+              span Прикрепить файл
+            +field-toggler([
+              {
+                title: 'Указать данные конт. лица',
+                mods: 'contact-person',
+                attrs: {
+                  name: 'is_contact_person',
+                }
+              },
+            ])(class='mb-20px lg_col-start-1 lg_col-end-2' data-target='#contact-person-field' data-toggle='!block')
+            +field-text({
+              title: 'Указать данные конт. лица:',
+              mods: 'lbl',
+              attrs: {
+                name: 'contact_person',
+                type: 'text'
+              }
+            })(class='hidden lg_col-start-1 lg_col-end-5' id='contact-person-field')
+            +field-text({
+              title: 'Комментарий',
+              isTextarea: true,
+              mods: 'lbl,profile-comment',
+              attrs: {
+                name: 'comment',
+                col: '6'
+              }
+            })(class='lg_col-start-1 lg_col-end-5')
+            .profile__form-btns.mt-10px.lg_mt-25px.lg_col-start-1.lg_col-end-4
+              +btn('Сохранить','regular,blue')(class='mr-6px lg_mr-12px')
+              +btn('Сброс','regular')(class='profile__form-clear mr-6px lg_mr-12px')
+              +btn('<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#logout"></use></svg> <span>Выход</span>',
+                'regular,icon')(class='border-gray-300')

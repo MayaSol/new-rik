@@ -17,6 +17,14 @@
     }
   }
 
+  &--profile-company {
+    margin-bottom: 10px;
+
+    span {
+      @apply text-base;
+    }
+  }
+
   &__btn {
     .modal--special & {
       @media (min-width: $screen-lg) {

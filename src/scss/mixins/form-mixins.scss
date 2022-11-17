@@ -71,3 +71,29 @@
   line-height: $line-height;
   font-weight: 700;
 }
+
+
+@mixin field-radio-circle {
+  position: absolute;
+  left: 0;
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid $tw-green-500;
+}
+
+@mixin field-radio-dot {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: $tw-green-500;
+  transform: translate(50%, 50%);
+  opacity: 0;
+}

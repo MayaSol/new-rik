@@ -13,7 +13,8 @@ let config = {
     'sprite-png',
     'page',
     'btn',
-    'icon-svg'
+    'icon-svg',
+    'form'
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [

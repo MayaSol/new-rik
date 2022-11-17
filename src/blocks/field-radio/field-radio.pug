@@ -44,6 +44,9 @@ mixin field-radio(radiobuttons, title)
             allMods = allMods + ' field-radio__input-wrap--' + modsList[i].trim();
           }
         }
+        if (typeof(checkbox.classes) !== 'undefined' && checkbox.classes) {
+          allMods = allMods + ' ' + checkbox.classes;
+        }
       .field-radio__input-wrap(class=allMods)
         label.field-radio__name
           input.field-radio__input(type='radio')&attributes(checkbox.attrs)

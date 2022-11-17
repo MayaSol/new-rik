@@ -177,35 +177,6 @@
       }
     }
 
-    .style-checkbox {
-      position: relative;
-      width: 18px !important;
-      height: 18px !important;
-      margin-top: 0.2em;
-      border-radius: 50% !important;
-      border: 1px solid $tw-gray-300 !important;
-
-      &::after {
-        content: '';
-        width: 8px !important;
-        height: 8px !important;
-        top: 0 !important;
-        left: 0 !important;
-        border-radius: 50% !important;
-        background-color: $tw-green-500 !important;
-        transform: translate(50%, 50%);
-        opacity: 0;
-      }
-    }
-
-    .bx-soa-pp-item-container .bx-selected .style-checkbox {
-      border-color: $tw-green-500;
-
-      &::after {
-        opacity: 1;
-      }
-    }
-
     // .bx-soa-pp-company-smalltitle {
     //   font-family: 'Circe';
     //   font-weight: 400;
@@ -441,9 +412,20 @@
     padding-left: 26px;
   }
 
-  .bx-soa-pp-item-container .bx-soa-pp-company-graf-container .style-checkbox {
+  .bx-soa-pp-item-container .bx-soa-pp-company-graf-container .style-checkbox,
+  .bx-soa-pp-item-container .bx-selected .bx-soa-pp-company-graf-container .style-checkbox {
+    @include field-radio-circle;
+    position: absolute;
     top: 4px;
     left: -26px;
+
+    &::after {
+      @include field-radio-dot;
+    }
+  }
+
+  .bx-soa-pp-item-container .bx-selected .bx-soa-pp-company-graf-container .style-checkbox::after {
+    opacity: 1;
   }
 
   /*!!! Промокод*/

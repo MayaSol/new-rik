@@ -4,7 +4,7 @@
 
 .field-text {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   display: block;
   margin-bottom: 10px;
@@ -47,11 +47,85 @@
     }
   }
 
+
+  &--lbl {
+    position: relative;
+    margin-bottom: 19px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 25px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    #{$block-name}__name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+      padding: 4px;
+      font-weight: 400;
+      background-color: #fff;
+      transform: translateY(-50%);
+      @apply text-sm;
+    }
+
+    #{$block-name}__input-wrap {
+      border-radius: 4px;
+      border: 1px solid $tw-gray-200;
+    }
+
+    #{$block-name}__input {
+      color: $tw-black;
+      background-color: #fff;
+
+      &[disabled],
+      &[readonly] {
+        cursor: not-allowed;
+      }
+    }
+
+    &.field-text--phone {
+      #{$block-name}__input {
+        color: $tw-gray-500;
+      }
+    }
+  }
+
+  &--disabled {
+    opacity:  0.3;
+
+    #{$block-name}__input {
+      cursor: not-allowed;
+    }
+  }
+
+  &--required {
+    #{$block-name}__name {
+      &::after {
+        content: '*';
+        font-family: 'Montserrat';
+        color: $tw-red-900;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &--profile-comment {
+    #{$block-name}__input {
+      min-height: 182px;
+    }
+  }
+
   &--price {
     margin-bottom: 0;
+
     #{$block-name}__input-wrap {
       position: relative;
-        &::after {
+
+      &::after {
         content: '\0440\2E';
         position: absolute;
         right: 20px;
@@ -73,12 +147,12 @@
 
     #{$block-name}__input,
     #{$block-name}__view-input,
-     {
+      {
       position: relative;
       width: 122px;
       padding: 10px 35px 10px 20px;
       color: $tw-gray-500;
-      border :none;
+      border: none;
       background-color: #fff;
       border-radius: 8px;
     }

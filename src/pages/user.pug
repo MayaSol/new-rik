@@ -1,0 +1,167 @@
+extends ../pug/layout.pug
+
+block meta
+  title Профиль пользователя
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'news';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Профиль пpользователя')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--personal.mt-30px.lg_mt-20px.mb-50px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Профиль пользователя
+        .choices-select.choices-select--profile.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select.profile__page-select.page-select__input.field-select(role='tablist')
+            option(value='/company.html#1' data-icon="person" selected) Личные данные
+            option(value='/company.html#2' data-icon="receipt") Мои заказы
+            option(value='/company.html#3' data-icon="device") Мои аппараты
+            option(value='/company.html#4' data-icon="book") Методики лечения
+            option(value='/company.html#5' data-icon="setting") Сервис
+            option(value='/company.html#6' data-icon="message") Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          form.profile__form.mt-20px.lg_mt-0
+            +field-radio([
+              {
+                title: 'Врач',
+                helpText: '',
+                mods: '',
+                classes: 'mr-20px',
+                attrs: {
+                  name: 'profile-person-type',
+                  checked: true              }
+              },
+              {
+                title: 'Пенсионер',
+                helpText: '',
+                mods: '',
+                attrs: {
+                  name: 'profile-person-type',
+                }
+              },
+            ])(class="flex items-center mb-20px lg_mb-25px")
+            +field-text({
+              title: 'Имя:',
+              mods: 'lbl',
+              attrs: {
+                name: 'name',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Фамилия:',
+              mods: 'lbl',
+              attrs: {
+                name: 'surname',
+                type: 'text'
+              }
+            })(class='lg_col-start-3 lg_col-end-4')
+            +field-text({
+              title: 'Отчество:',
+              mods: 'lbl',
+              attrs: {
+                name: 'second-name',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Email:',
+              mods: 'lbl,email',
+              attrs: {
+                name: 'email',
+                type: 'text'
+              }
+            })(class='lg_col-start-3 lg_col-end-4')
+            +field-text({
+              title: 'Телефон:',
+              mods: 'lbl,phone',
+              attrs: {
+                name: 'phone',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-2')
+            +field-text({
+              title: 'Логин (мин. 3 символа):',
+              mods: 'lbl,required',
+              attrs: {
+                name: 'login',
+                type: 'text'
+              }
+            })(class='lg_col-start-3 lg_col-end-4')
+            +field-text({
+              title: 'Адрес доставки:',
+              mods: 'lbl',
+              attrs: {
+                name: 'address',
+                type: 'text'
+              }
+            })(class='lg_col-start-1 lg_col-end-4')
+            +field-text({
+              title: 'Новый пароль:',
+              mods: 'lbl',
+              attrs: {
+                name: 'pass',
+                type: 'password'
+              }
+            })(class='lg_col-start-1 lg_col-end-4')
+            +field-text({
+              title: 'Подтверждение пароля:',
+              mods: 'lbl',
+              attrs: {
+                name: 'pass2',
+                type: 'password'
+              }
+            })(class='lg_col-start-1 lg_col-end-4')
+            .profile__form-btns.mt-10px.lg_mt-30px.lg_col-start-1.lg_col-end-4
+              +btn('Сохранить','regular,blue')(class='mr-6px lg_mr-12px')
+              +btn('Сброс','regular')(class='profile__form-clear mr-6px lg_mr-12px')
+              +btn('<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#logout"></use></svg> <span>Выход</span>',
+                'regular,icon')(class='border-gray-300')

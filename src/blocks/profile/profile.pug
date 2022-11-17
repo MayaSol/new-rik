@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (profile)
+
+mixin profile(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' profile--' + modsList[i].trim();
+      }
+    }
+
+  .profile(class=allMods)&attributes(attributes)
+    .profile__inner
+      block

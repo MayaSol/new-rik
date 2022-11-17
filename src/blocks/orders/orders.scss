@@ -1,0 +1,75 @@
+// В этом файле должны быть стили для БЭМ-блока orders, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.orders {
+
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 20px;
+  background-color: $tw-gray-100;
+  border-radius: 20px;
+
+  @media (min-width: $screen-lg) {
+    padding: 30px;
+  }
+
+  &__item {
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .btn {
+      svg {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 6px;
+    padding: 0 6px;
+    min-height: 22px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+    border-radius: 4px;
+
+    #{$block-name}--paid & {
+      color: #fff;
+      background-color: $tw-green-500;
+    }
+
+    #{$block-name}--new & {
+      color: #fff;
+      background-color: $tw-blue-500;
+    }
+
+    #{$block-name}--accepted & {
+      color: #fff;
+      background-color: $tw-black;
+    }
+
+    #{$block-name}--annuled & {
+      color: #fff;
+      background-color: $tw-red-900;
+    }
+
+    #{$block-name}--shipped & {
+      color: #fff;
+      background-color: $tw-blue-1000;
+    }
+  }
+
+  &__info {
+    line-height: 24px;
+  }
+
+  &__amount {
+    color: $tw-black;
+  }
+}

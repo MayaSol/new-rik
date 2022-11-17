@@ -1,0 +1,44 @@
+//- Все примеси в этом файле должны начинаться c имени блока (profile-links)
+
+mixin profile-links(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' profile-links--' + modsList[i].trim();
+      }
+    }
+
+  .profile-links(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin profile-links-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' profile-links--' + modsList[i].trim();
+      }
+    }
+    if (typeof props.isActive == 'undefined') {
+      props.isActive = false;
+      }
+    if (props.isActive) {
+      allMods = allMods + ' active';
+    }
+
+  a.profile-links__item(class=allMods href='#')&attributes(attributes)
+    .profile-links__icon
+      +svg(props.icon, '', {width: props.icon_width, height: props.icon_height})
+    span!= props.text
+    if (props.isActive)
+
+

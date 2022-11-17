@@ -4,7 +4,6 @@ const closest = require('closest');
 
 ready(function() {
 
-
   var sliderCatalog = document.querySelector('.range-slider--catalog');
   if (sliderCatalog) {
 
@@ -12,6 +11,9 @@ ready(function() {
       'min': +sliderCatalog.dataset.min,
       'max': +sliderCatalog.dataset.max
     };
+
+    console.log('sliderCatalog.noUiSlider 1: ');
+    console.log(sliderCatalog.noUiSlider);
 
 
     if (sliderCatalog) {
@@ -22,6 +24,10 @@ ready(function() {
         step: 1000
       });
     }
+
+    console.log('sliderCatalog.noUiSlider 2: ');
+    console.log(sliderCatalog.noUiSlider);
+
 
     var filterPrice = document.querySelector('.form-filter__item-content--price');
     var inputFrom = filterPrice.querySelector('.field-text--price-from .field-text__input');

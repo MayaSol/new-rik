@@ -32,10 +32,11 @@ mixin news-item(props={}, mods)
   .news__item(class=allMods)&attributes(attributes)
     .news__tags
       .news__tag= props.tag
-    .news__img
+    a(href='#').news__img
       img.lazyload(data-src=props.url data-sizes='auto' data-srcset=props.srcset alt=props.alt)
     .news__date= props.date
-    h2.news__title= props.title
+    h2.news__title
+      a(href='#')= props.title
     .news__text(data-lines='3')
       block
     +btn('Подробнее','simple')(class="text-md")

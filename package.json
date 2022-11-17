@@ -19,7 +19,9 @@
     "lint-staged": "lint-staged"
   },
   "browserslist": [
-    "defaults","ie 11","ff 52"
+    "defaults",
+    "ie 11",
+    "ff 52"
   ],
   "lint-staged": {
     "*.{js,pug,md}": "editorconfig-cli",
@@ -96,6 +98,7 @@
     "choices.js": "^9.1.0",
     "closest": "0.0.1",
     "font-awesome": "^4.7.0",
+    "imask": "^6.4.3",
     "jquery": "^3.4.1",
     "lazysizes": "^5.3.2",
     "lodash.throttle": "^4.1.1",

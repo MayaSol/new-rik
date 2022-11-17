@@ -102,11 +102,12 @@ module.exports = {
         200: '#bfdbfe',
         300: '#93c5fd',
         400: '#60a5fa',
-        500: '#3b82f6',
+        500: '#3F28CF',
         600: '#2563eb',
         700: '#1d4ed8',
         800: '#196f93',
         900: '#0075DA',
+        1000: '#007CD3'
       },
       blue_link: '#007CD3',
       indigo: colors.indigo,
@@ -221,12 +222,16 @@ module.exports = {
         '170px': '170px',
         '200px': '200px',
         '220px': '220px',
+        '285px': '285px',
         '300px': '300px',
+        '350px': '350px',
         '390px': '390px',
         '397px': '397px',
         '400px': '400px',
         '402px': '402px',
+        '450px': '450px',
         '466px': '466px',
+        '600px': '600px',
         '736px': '736px'
       },
       borderRadius: {
@@ -236,6 +241,11 @@ module.exports = {
       },
       gridRow: {
         'span-10': 'span 10 / span 10',
+        'span-20': 'span 20 / span 20',
+        'test': 'span 30 / span 30',
+      },
+      gridTemplateColumns: {
+        '2-300px': 'repeat(2, minmax(0, 300px))',
       }
     },
   },
