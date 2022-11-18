@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (books)
+
+mixin books(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' books--' + modsList[i].trim();
+      }
+    }
+
+  .books(class=allMods)&attributes(attributes)
+    block
+
+
+mixin books-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' books__item--' + modsList[i].trim();
+      }
+    }
+
+  .books__item(class=allMods)&attributes(attributes)
+    .books__img
+      img(src=props.src)
+    .books__title!= props.title
+    .books__desc!= props.desc
+    .books__price!= props.price
+    block
+
+
+

@@ -1,7 +1,7 @@
 extends ../pug/layout.pug
 
 block meta
-  title Сервис
+  title Методики лечения
   meta(name='description', content='')
 
 //- block append head
@@ -18,17 +18,17 @@ block content
       +breadcrumbs-item('Методики лечения')
     #bx_basketFKauiI.bx-basket.bx-opener
       +cart-aside(class='hidden xl_block')
-    section.profile.profile--service.mt-30px.lg_mt-20px.mb-50px
+    section.profile.profile--methods.cure.mt-30px.lg_mt-20px.mb-60px
       .profile__content.container
         h1.section__title.mb-20px.lg_mb-40px Методики лечения
-        .choices-select.choices-select--service.field-select__wrapper.lg_hidden.mb-20px
+        .choices-select.field-select__wrapper.lg_hidden.mb-20px
           select#profile-page-select
-            option(value='1' data-icon="person" data-href='/service.html#1') Личные данные
-            option(value='2' data-icon="receipt" data-href='/service.html#2' selected) Мои заказы
-            option(value='3' data-icon="device" data-href='/service.html#3') Мои аппараты
-            option(value='4' data-icon="book" data-href='/service.html#4') Методики лечения
-            option(value='5' data-icon="setting" data-href='/service.html#5') Сервис
-            option(value='6' data-icon="message" data-href='/service.html#6') Обратная связь
+            option(value='1' data-icon="person" data-href='/methods.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/methods.html#2') Мои заказы
+            option(value='3' data-icon="device" data-href='/methods.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/methods.html#4' selected) Методики лечения
+            option(value='5' data-icon="setting" data-href='/methods.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/methods.html#6') Обратная связь
         .profile-links.profile__links.hidden.lg_block
           +profile-links-item({
             icon: 'person',
@@ -67,3 +67,218 @@ block content
             icon_height: '22',
             text: 'Обратная связь',
           })
+        .profile__main.cure__content.mt-20px.lg_mt-0
+            +article-index()(class='cure__article-index')
+              .p-20px.lg_pl-35px.bg-slate-200.lg_bg-transparent.rounded-10px.lg_border.lg_border-gray-200
+                .article-index__letter-active А
+                +article-index-alphabet()
+                +search-form-articles()
+            .article-index__tabs(class='cure__tabs')
+              .tab-content.article-index__tab-content#article-index-tab-content
+                ul.article-index__tab-pane.tab-pane.article-index__tab-pane.fade.show.active#article-index-tab-01(role="tabpanel")
+                  <li>
+                      <a href="#">Абсцесс</a>
+                  </li>
+                  <li class='active'>
+                      <a href="#">Аденовирусная инфекция</a>
+                  </li>
+                  <li>
+                      <a href="#">Абсцесс</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденовирусная инфекция</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденома щитовидной железы</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергия</a>
+                  </li>
+                  <li>
+                      <a href="#">Амблиопия</a>
+                  </li>
+                  <li>
+                      <a href="#">Абсцесс</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергия</a>
+                  </li>
+                  <li>
+                      <a href="#">Авитаминоз</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденоиды</a>
+                  </li>
+                  <li>
+                      <a href="#">Адреногенитальный синдром</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергологические пробы</a>
+                  </li>
+                  <li>
+                      <a href="#">Аменорея</a>
+                  </li>
+                  <li>
+                      <a href="#">Авитаминоз</a>
+                  </li>
+                  <li>
+                      <a href="#">Абсцесс</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденовирусная инфекция</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденома щитовидной железы</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергия</a>
+                  </li>
+                  <li>
+                      <a href="#">Амблиопия</a>
+                  </li>
+                  <li>
+                      <a href="#">Абсцесс</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергия</a>
+                  </li>
+                  <li>
+                      <a href="#">Авитаминоз</a>
+                  </li>
+                  <li>
+                      <a href="#">Аденоиды</a>
+                  </li>
+                  <li>
+                      <a href="#">Адреногенитальный синдром</a>
+                  </li>
+                  <li>
+                      <a href="#">Аллергологические пробы</a>
+                  </li>
+                  <li>
+                      <a href="#">Аменорея</a>
+                  </li>
+                  <li>
+                      <a href="#">Авитаминоз 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Бореллиоз</a>
+                  </li>
+                  <li>
+                      <a href="#">Зачем пломбировать молочные зубы?</a>
+                  </li>
+                  <li>
+                      <a href="#">Кариес молочных зубов: родителям на заметку</a>
+                  </li>
+                  <li>
+                      <a href="#">Потемнение молочных зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">Шишка на десне у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">Выпал молочный зуб, а новый не растет</a>
+                  </li>
+                  <li>
+                      <a href="#">Ретенция зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Зачем пломбировать молочные зубы?</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Кариес молочных зубов: родителям на заметку</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Потемнение молочных зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Шишка на десне у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Выпал молочный зуб, а новый не растет</a>
+                  </li>
+                  <li>
+                      <a href="#">п2 Ретенция зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Зачем пломбировать молочные зубы?</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Кариес молочных зубов: родителям на заметку</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Потемнение молочных зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Причины неприятного запаха изо рта у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Шишка на десне у ребёнка</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Продукты, полезные для зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Выпал молочный зуб, а новый не растет</a>
+                  </li>
+                  <li>
+                      <a href="#">3 Ретенция зубов</a>
+                  </li>
+                  <li>
+                      <a href="#">4 Зачем пломбировать молочные зубы?</a>
+                  </li>
+                  <li>
+                      <a href="#">4 Кариес молочных зубов: родителям на заметку Кариес молочных зубов: родителям на заметку</a>
+                  </li>
+              .article-index__btns
+                button.article-index__nav-btn.article-index__nav-btn--prev(type="button" tabindex="-1")
+                  +svg('arrow-right','',{width:'26',height: '13'})
+                button.article-index__nav-btn.article-index__nav-btn--next(type="button" tabindex="-1")
+                  +svg('arrow-right','',{width:'26',height: '13'})
+              .books.mt-30px
+                .books__list
+                  +books-item({
+                    src: '/img/books_01.jpg',
+                    title: 'Большая энциклопедия Аменореи',
+                    desc: 'Легко проверить, что лемма последовательно отображает эмпирический ротор векторного поля, как и предполагалось.',
+                    price: 'Бесплатно'
+                  })
+                    +btn('<svg class="icon" width="14" height="19"><use xlink:href="/img/sprite.svg#arrow-down"></use></svg><span>Скачать</span>','regular,icon')
+                  +books-item({
+                    src: '/img/books_02.jpg',
+                    title: 'Аменорея от А до Я',
+                    desc: ' Ротор векторного поля, общеизвестно, концентрирует косвенный разрыв функции. Система координат оправдывает комплексный степенной ряд.',
+                    price: '1 600 ₽'
+                  })
+                    +btn('<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#cart"></use></svg> <span>Добавить в корзину</span>',
+                      'regular, icon, cart-add')(data-content="Добавлено")
+

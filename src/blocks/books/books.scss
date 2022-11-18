@@ -1,0 +1,106 @@
+// В этом файле должны быть стили для БЭМ-блока books, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.books {
+
+  $block-name: &; // #{$block-name}__element
+
+  // .tns-controls {
+  //   margin-bottom: 30px;
+  //   button {
+  //     background-color: $tw-gray-100;
+
+  //     &::before {
+  //       @include sprite($arrow-right-black-long);
+  //     }
+  //   }
+  // }
+
+  &__list {
+    @media (min-width: $screen-lg) {
+      display: grid;
+      grid-template-columns: 1fr 32px 1fr;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    &:nth-child(2n) {
+      @media (min-width: $screen-lg) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+    }
+
+    &:nth-child(2n-1) {
+      @media (min-width: $screen-lg) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-lg) {
+      height: 240px;
+
+      img {
+        @media (min-width: $screen-lg) {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @apply text-lg;
+    color: $tw-black;
+  }
+
+  &__desc {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  &__price {
+    margin-top: 10px;
+    @apply text-lg;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      margin-top: auto;
+    }
+  }
+
+  .btn {
+    margin-top: 15px;
+    @apply text-lg;
+    width: 100%;
+    justify-content: center;
+
+    @media (min-width: $screen-md) {
+      width: auto;
+    }
+
+    @media (min-width: $screen-lg) {
+      align-self: start;
+    }
+  }
+}

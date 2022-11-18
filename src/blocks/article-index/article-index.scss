@@ -15,6 +15,16 @@
     @media (min-width: $screen-lg) {
       font-size: 100px;
     }
+
+    .profile & {
+      font-size: 50px;
+
+      @media (min-width: $screen-lg) {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        font-size: 80px;
+      }
+    }
   }
 
   &__alphabet {
@@ -31,6 +41,18 @@
 
     @media (min-width: $screen-lg) {
       margin-bottom: 20px;
+    }
+
+    .profile & {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        margin-top: 0;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: space-between;
+      }
     }
   }
 
@@ -70,6 +92,10 @@
     @media (min-width: $screen-lg) {
       padding-top: 12px;
     }
+
+    .profile & {
+      padding: 20px;
+    }
   }
 
   &__nav-tabs {
@@ -97,6 +123,19 @@
       line-height: 20px;
       color: $tw-blue_link;
     }
+
+    .profile & {
+      margin-top: 0;
+
+      a {
+        margin-bottom: 0;
+        padding: 6px 10px;
+
+        @media (min-width: $screen-lg) {
+          padding: 10px 0;
+        }
+      }
+    }
   }
 
   &__tab-pane {
@@ -109,40 +148,106 @@
     list-style: none;
     margin: 0;
     padding: 0;
+
     @media (min-width: $screen-md) {
       gap: 0 20px;
     }
+
     @media (min-width: $screen-xxl) {
       gap: 0 21px;
     }
+
     @media (min-width: $screen-4xl) {
       gap: 0 20px;
     }
 
     &.active {
-      display: flex ;
+      display: flex;
+    }
+
+    .profile & {
+      @media (min-width: $screen-xxl) {
+        gap: 0 20px;
+      }
+      @media (min-width: $screen-4xl) {
+        gap: 0 21px;
+      }
     }
 
     li {
       width: 100%;
+
       @media (min-width: $screen-md) {
         width: 328px;
       }
+
       @media (min-width: $screen-lg) {
         padding-left: 15px;
         width: 281px;
       }
+
       @media (min-width: $screen-xl) {
         width: 365px;
       }
+
       @media (min-width: $screen-xxl) {
         width: 409px;
       }
+
       @media (min-width: $screen-3xl) {
         width: 589px;
       }
+
       @media (min-width: $screen-4xl) {
         width: 650px;
+      }
+
+
+      .profile & {
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: $tw-blue_link;
+          border-radius: 10px;
+
+          a {
+            color: #fff;
+          }
+        }
+
+        @media (min-width: $screen-md) {
+          width: 333px;
+        }
+
+        @media (min-width: $screen-lg) {
+          width: 286px;
+        }
+
+        @media (min-width: $screen-xl) {
+          width: 370px;
+        }
+
+        @media (min-width: $screen-xxl) {
+          width: 401px;
+        }
+
+        @media (min-width: $screen-3xl) {
+          width: 581px;
+        }
+
+        @media (min-width: $screen-4xl) {
+          width: 641px;
+        }
+      }
+    }
+
+    .profile & {
+      height: 6*32px;
+
+      @media (min-width: $screen-lg) {
+        height: 3*40px;
       }
     }
   }
@@ -153,8 +258,12 @@
     margin-top: 18px;
 
     @media (min-width: $screen-lg) {
-      margin-top: 30px;
+      margin-top: 40px;
       margin-bottom: 18px;
+    }
+
+    .profile & {
+      margin-top: 30px;
     }
   }
 
@@ -171,9 +280,9 @@
       transform: rotate(180deg);
     }
 
-   &:disabled {
-    opacity: $opacity;
-    pointer-events: none;
-   }
+    &:disabled {
+      opacity: $opacity;
+      pointer-events: none;
+    }
   }
 }

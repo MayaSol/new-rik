@@ -15,7 +15,7 @@
   z-index: 11;
   transition: transform $transition-time-search;
 
-  .main-nav--open ~ & {
+  .main-nav--open~& {
     right: -50px;
   }
 
@@ -55,6 +55,13 @@
 
   &--articles {
     width: 100%;
+
+    .profile & {
+      @media (min-width: $screen-lg) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+      }
+    }
   }
 
   &__input-wrapper {
@@ -92,7 +99,7 @@
     }
 
     #{$block-name}--results &,
-    #{$block-name}--articles &  {
+    #{$block-name}--articles & {
       position: relative;
       width: 100%;
       max-width: none;
@@ -142,6 +149,7 @@
       #{$block-name}--results & {
         color: $tw-black;
       }
+
       #{$block-name}--articles & {
         color: $tw-gray-500;
       }

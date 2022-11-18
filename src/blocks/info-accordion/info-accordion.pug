@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (info-accordion)
+
+mixin info-accordion(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-accordion--' + modsList[i].trim();
+      }
+    }
+
+  .info-accordion(class=allMods)&attributes(attributes)
+    block
+
+
+mixin info-accordion-item(props,mods)
+
+  -
+    var collapseClasses = "info-accordion__collapse collapse";
+    if (props.show) {
+      collapseClasses += " show";
+    }
+
+    var btnClasses = '';
+    if (!props.show) {
+      btnClasses = 'collapsed';
+    }
+
+  .info-accordion__item&attributes(attributes)
+    h3.info-accordion__header(id=props.header_id)
+      button.info-accordion__btn.text-base(class=btnClasses type="button" data-bs-toggle="collapse" data-bs-target="#"+props.target_id aria-expanded="true" aria-controls=props.header_id)
+        span!= props.name
+        include ../../blocks/inline-svg/plus.svg
+    .info-accordion__collapse(id = props.target_id class=collapseClasses aria-labelledby=props.header_id data-bs-parent=(props.parent) ? props.parent : '')
+      .info-accordion__collapse-inner
+        .info-accordion__content
+          block

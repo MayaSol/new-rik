@@ -1,12 +1,17 @@
-// В этом файле должны быть стили для БЭМ-блока choices-select, его элементов,
+// В этом файле должны быть стили для БЭМ-блока my-order, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.choices-select {
+.my-order {
 
   $block-name:                &; // #{$block-name}__element
 
-  .choices {
-    z-index: 30;
+  &__title {
+    @apply text-lg;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      @apply text-2xl;
+    }
   }
 }

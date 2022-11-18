@@ -21,13 +21,13 @@ block content
     section.profile.profile--service.mt-30px.lg_mt-20px.mb-50px
       .profile__content.container
         h1.section__title.mb-20px.lg_mb-40px Сервис
-        .choices-select.choices-select--service.field-select__wrapper.lg_hidden.mb-20px
+        .choices-select.field-select__wrapper.lg_hidden.mb-20px
           select#profile-page-select
             option(value='1' data-icon="person" data-href='/service.html#1') Личные данные
-            option(value='2' data-icon="receipt" data-href='/service.html#2' selected) Мои заказы
+            option(value='2' data-icon="receipt" data-href='/service.html#2') Мои заказы
             option(value='3' data-icon="device" data-href='/service.html#3') Мои аппараты
             option(value='4' data-icon="book" data-href='/service.html#4') Методики лечения
-            option(value='5' data-icon="setting" data-href='/service.html#5') Сервис
+            option(value='5' data-icon="setting" data-href='/service.html#5' selected) Сервис
             option(value='6' data-icon="message" data-href='/service.html#6') Обратная связь
         .profile-links.profile__links.hidden.lg_block
           +profile-links-item({

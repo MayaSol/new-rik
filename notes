@@ -30,6 +30,12 @@ https://new.rikta.ru/catalog/laser-therapy-devices/rikta-04-4/
 ---------------------------------------
 Просьба - в следующий раз когда будите делать верстку, пожалуйста прописывайте все пути абсолютными, а не как сейчас относительными. То есть чтобы путь до файла должен начинатся с / и идти от корня сайта. Это для всех файлов - стили, скрипты, картинки, svg
 
+http://maiiasol.ru/newrikta/user.html
+http://maiiasol.ru/newrikta/company.html
+http://maiiasol.ru/newrikta/service.html
+http://maiiasol.ru/newrikta/devices.html
+http://maiiasol.ru/newrikta/methods.html
+http://maiiasol.ru/newrikta/orders.html
 
 =======================================
 =======================================

@@ -1,6 +1,7 @@
 const ready = require('../../js/utils/documentReady.js');
 
 ready(function() {
+  console.log('anchor-select.js');
 
   //--scroll
   var select = document.querySelector('select[data-select-anchor]');
@@ -17,10 +18,14 @@ ready(function() {
   }
 
   var tabs = document.querySelectorAll('[data-tabs-anchor]');
-  for (var tab of tabs) {
-      tab.addEventListener('click',function(event) {
-        tabScroll(event);
-      });
+  console.log(tabs);
+  var onePage = document.getElementsByClassName('onepage-wrapper');
+  if (onePage.length == 0) {
+    for (var tab of tabs) {
+        tab.addEventListener('click',function(event) {
+          tabScroll(event);
+        });
+    }
   }
 
   function tabScroll(event) {

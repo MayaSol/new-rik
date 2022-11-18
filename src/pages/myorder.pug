@@ -1,0 +1,105 @@
+extends ../pug/layout.pug
+
+block meta
+  title Мой заказ
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'my-order';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Мой заказ')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--my-order.my-order.mt-30px.lg_mt-20px.lg_mb-60px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Мой заказ №Р-131/2022, создан&nbsp;16.08.2022
+        .choices-select.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/methods.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/methods.html#2' selected) Мои заказы
+            option(value='3' data-icon="device" data-href='/methods.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/methods.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/methods.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/methods.html#6') Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main.mt-20px.lg_mt-0
+          +btn-angle-left({text: 'Вернуться в список заказов'})(class='cart-page__back' href='#')
+          .my-order__title.mt-20px Заказ <span class='my-order__num'>№Р-131/2022</span> от <span class='my-order__date'>16.08.2022</span>, <span class="my-order__amount">2</span> товара на&nbsp;сумму <span class='my-order__sum'>22&nbsp;700&nbsp;руб</span>
+          +info-accordion({},'my-order')(id='my-order-info' class='mt-20px')
+            +info-accordion-item({
+              header_id: 'order-info',
+              target_id: 'order-info-content',
+              name: 'Информация о заказе',
+              show: true
+            })
+              .info-accordion__item-pane
+                p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+            +info-accordion-item({
+              header_id: 'order-payment',
+              target_id: 'order-payment-content',
+              name: 'Параметры оплаты',
+              show: false
+            })
+              .info-accordion__item-pane
+                p Параметры оплаты
+            +info-accordion-item({
+              header_id: 'order-shipment',
+              target_id: 'order-shipment-content',
+              name: 'Параметры отгрузки',
+              show: false
+            })
+              .info-accordion__item-pane
+                p Параметры отгрузки
+            +info-accordion-item({
+              header_id: 'order-items',
+              target_id: 'order-items-content',
+              name: 'Содержание заказа',
+              show: false
+            })
+              .info-accordion__item-pane
+                p Содержание заказа

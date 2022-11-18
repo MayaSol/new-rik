@@ -576,6 +576,30 @@ Object.extend = function(orig) {
       style.appendChild(document.createTextNode(css));
     }
 
+    var anchors = document.querySelectorAll('.onepage-wrapper [data-tabs-anchor');
+    console.log('anchors: ');
+    console.log(anchors);
+    for (anchor of anchors) {
+      anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (typeof event.target.dataset.anchor === 'undefined') {
+          console.log('No data-acnhor attribute');
+          return;
+        }
+        var page = document.querySelector(event.target.dataset.anchor);
+        if (!page) {
+          console.log('No element with id: ' + event.target.dataset.anchor);
+          return;
+        }
+        var pageIndex = page.dataset.index;
+        if (!pageIndex) {
+          console.log('No data-index attribute in element');
+          return;
+        }
+        moveTo(".main", pageIndex);
+      })
+    }
+
   }
 
 });
