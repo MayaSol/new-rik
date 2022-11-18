@@ -15,8 +15,19 @@
     border-bottom-width: 0;
 
     @media (min-width: $screen-lg) {
-      grid-template-columns: 1fr 1fr 1fr 300px;
       border-bottom-width: 1px;
+    }
+
+    &#{$block-name}--devices {
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr 1fr 300px;
+      }
+    }
+
+    &#{$block-name}--service {
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr 1fr 200px 1fr 200px;
+      }
     }
 
     &>div {
@@ -29,10 +40,11 @@
       border: 1px solid $tw-gray-200;
 
       @media (min-width: $screen-lg) {
-        border-top: none;
+        min-height: 49px;
         margin-left: -1px;
         padding-top: 10px;
         padding-bottom: 10px;
+        border-top: none;
       }
 
       br {
@@ -65,4 +77,17 @@
       }
     }
   }
+
+  &__link {
+    color: $tw-blue_link;
+    border-bottom: 1px dashed transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-blue_link;
+      border-color: currentColor;
+    }
+  }
+
 }

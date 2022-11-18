@@ -230,8 +230,9 @@ module.exports = {
         '400px': '400px',
         '402px': '402px',
         '450px': '450px',
-        '466px': '466px',
+        '500px': '500px',
         '600px': '600px',
+        '466px': '466px',
         '736px': '736px'
       },
       borderRadius: {

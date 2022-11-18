@@ -1,0 +1,123 @@
+extends ../pug/layout.pug
+
+block meta
+  title Сервис
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'service';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Сервис')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--service.mt-30px.lg_mt-20px.mb-50px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Сервис
+        .choices-select.choices-select--service.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/service.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/service.html#2' selected) Мои заказы
+            option(value='3' data-icon="device" data-href='/service.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/service.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/service.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/service.html#6') Обратная связь
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+            isActive: true
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+        .profile__main
+          h2.mb-20px.mt-20px.text-xl.lg_text-2xl.lg_mt-0 Ваши ремонты
+          .data-table.data-table--one-line.data-table--service.mb-20px
+            .data-table__th.row-start-1.lg_row-start-1(class='lg_!col-start-1')
+              span Модель
+            .data-table__th.row-start-2.lg_row-start-1(class='lg_!col-start-2')
+              span Серийный<br> номер
+            .data-table__th.row-start-3.lg_row-start-1(class='lg_!col-start-3')
+              span Дата сдачи<br> в ремонт
+            .data-table__th.row-start-4.lg_row-start-1(class='lg_!col-start-4')
+              span Причина обращения
+            .data-table__th.row-start-5.lg_row-start-1(class='lg_!col-start-5')
+              span Дата возврата<br> из&nbsp;ремонта
+            .data-table__th.row-start-6.lg_row-start-1(class='lg_!col-start-6')
+              span Результат
+            .data-table__td.row-start-1.lg_row-start-2(class='lg_!col-start-1')
+              span Рикта&nbsp;04/04
+            .data-table__td.row-start-2.lg_row-start-2(class='lg_!col-start-2')
+              span NP-131/2022
+            .data-table__td.row-start-3.lg_row-start-2(class='lg_!col-start-3')
+              span 24.02.2023
+            .data-table__td.row-start-4.lg_row-start-2(class='lg_!col-start-4')
+              +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
+            .data-table__td.row-start-5.lg_row-start-2(class='lg_!col-start-5')
+              span 14.07.2022
+            .data-table__td.row-start-6.lg_row-start-2(class='lg_!col-start-6')
+              +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
+          h2.mb-20px.mt-40px.text-xl.lg_text-2xl Заявка на ремонт
+          .form__wrapper
+            form.form.relative.form--service
+              +field-text({
+                attrs: {
+                  name: 'model',
+                  placeholder: 'Аппарат',
+                  type: 'text'
+                }
+              })
+              +field-text({
+                isTextarea: true,
+                attrs: {
+                  name: 'serial',
+                  placeholder: 'Описание проблемы',
+                  type: 'text',
+                  rows: '5'
+                }
+              })
+              +btn('Подать заявку','regular,blue')
+    +modal({
+      id: 'repair-cause',
+      title: 'Причина обращения. '
+    },'repair-cause')
+      p Служебная записка на ремонт не имеет унифицированной формы, поэтому составляется в произвольном виде. Такая записка, как правило, пишется начальником хозяйственного отдела на имя руководителя организации. Кроме того, служебную записку на ремонт может написать работник, у которого вышла из строя та или иная материальная ценность, используемая им в работе (например, компьютер). Тогда записка пишется на имя непосредственного начальника этого сотрудника, а тот уже доводит информацию о необходимости ремонта до руководителя организации.
+      p В служебной записке на ремонт необходимо указать, что именно нуждается в ремонте, а также причины, по которым не стоит откладывать ремонт в долгий ящик.
+      p Руководителю при принятии решения о необходимости ремонта важно помнить, что работодатель обязан обеспечивать работников оборудованием, инструментами, технической документацией и иными средствами, необходимыми для исполнения ими трудовых обязанностей (ст. 22 ТК РФ). Поэтому мало просто одобрить ремонт (если он в принципе имеет смысл), надо на это время предоставить работнику исправное оборудование. Ведь если этого не сделать и работник не сможет исполнять свои трудовые обязанности, то возникнет простой по вине работодателя.

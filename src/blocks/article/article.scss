@@ -70,7 +70,7 @@
     ul {
       margin: 0 0 25px 0;
       padding: 0 0 0 15px;
-      list-style: none;
+      list-style: inside url('/img/list-circle.svg');
 
       li {
         position: relative;
@@ -78,16 +78,16 @@
         margin-bottom: 16px;
         line-height: 1.375em;
 
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0.7em;
-          width: 4px;
-          height: 4px;
-          border-radius: 10px;
-          background-color: $tw-green-500;
-        }
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0.7em;
+        //   width: 4px;
+        //   height: 4px;
+        //   border-radius: 10px;
+        //   background-color: $tw-green-500;
+        // }
 
         &:last-child {
           margin-bottom: 0;
@@ -133,6 +133,10 @@
           }
         }
       }
+    }
+
+    .mt-0 {
+      margin-top: 0 !important;
     }
   }
 

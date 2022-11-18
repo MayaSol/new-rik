@@ -1,0 +1,43 @@
+// В этом файле должны быть стили для БЭМ-блока sources, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.sources {
+
+  $block-name:                &; // #{$block-name}__element
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 30px;
+  border: 1px solid $tw-gray-200;
+  border-radius: 10px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 60px;
+    padding-top: 40px;
+  }
+
+  h3 {
+    margin-top: 0 !important;
+  }
+
+  ol {
+    padding: 0;
+    @apply text-lg;
+
+    @media (min-width: $screen-lg) {
+      padding-left: 20px;
+    }
+  }
+
+  li {
+    margin-bottom: 10px !important;
+
+    &::before {
+      font-weight: 400 !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

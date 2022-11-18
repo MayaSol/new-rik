@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (sources)
+
+mixin sources(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' sources--' + modsList[i].trim();
+      }
+    }
+
+  .sources(class=allMods)&attributes(attributes)
+    .sources__inner
+      block

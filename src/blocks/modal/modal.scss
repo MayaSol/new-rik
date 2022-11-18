@@ -35,7 +35,7 @@
 
   &__overlay {
     position: fixed;
-    top: 0;
+    top: 61px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -43,6 +43,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9;
+
+    @media (min-width: $screen-lg) {
+      top: 71px;
+    }
   }
 
   &__container {
@@ -106,6 +111,12 @@
         width: 581px;
         // max-height: 626px;
         max-width: none;
+      }
+    }
+
+    #{$block-name}--repair-cause & {
+      @media (min-width: $screen-md) {
+        max-width: 720px;
       }
     }
   }
