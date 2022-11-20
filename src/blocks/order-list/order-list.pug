@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (order-list)
+
+mixin order-list(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' order-list--' + modsList[i].trim();
+      }
+    }
+
+  .order-list(class=allMods)&attributes(attributes)
+    .order-list__inner
+      block

@@ -1,0 +1,62 @@
+// В этом файле должны быть стили для БЭМ-блока order-info, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.order-info {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &__items {
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    @apply text-lg;
+
+    @media (min-width: $screen-lg) {
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      @media (min-width: $screen-lg) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__value {
+    font-weight: 700;
+    color: $tw-black;
+  }
+
+  &__btns {
+    margin-top: 20px;
+    @media (min-width: $screen-lg) {
+      display: flex;
+    }
+
+    .btn {
+      margin-bottom: 10px;
+
+      @media (min-width: $screen-lg) {
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        @media (min-width: $screen-lg) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

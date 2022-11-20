@@ -1,0 +1,169 @@
+// В этом файле должны быть стили для БЭМ-блока order-list, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.order-list {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-lg) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 70px auto 1fr;
+    grid-template-rows: auto 10px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid $tw-gray-200;
+
+    &:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item-title {
+    color: $tw-blue_link;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__item-img {
+    width: 59px;
+    height: 59px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 73px;
+      height: 73px;
+      margin-right: 20px;
+    }
+  }
+
+  &__item-desc {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    min-width: 80px;
+    margin-left: 10px;
+    @apply text-sm;
+
+    @media (min-width: $screen-lg) {
+      margin-left: 0;
+      margin-right: auto;
+      @apply text-lg;
+    }
+  }
+
+  &__item-price {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-right: 20px;
+
+    @media (min-width: $screen-lg) {
+      min-width: 70px;
+      margin-right: 75px;
+      @apply text-lg;
+    }
+  }
+
+  &__item-amount {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-right: 20px;
+
+    @media (min-width: $screen-lg) {
+      min-width: 70px;
+      margin-right: 75px;
+      @apply text-lg;
+
+    }
+  }
+
+  &__item-sum {
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    @media (min-width: $screen-lg) {
+      min-width: 70px;
+      @apply text-lg;
+    }
+  }
+
+  &__item-caption {
+    @apply text-sm;
+
+    @media (min-width: $screen-lg) {
+      @apply text-lg;
+    }
+  }
+
+  &__item-value {
+    @apply text-sm;
+    font-weight: 700;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      @apply text-lg;
+    }
+  }
+
+  &__totals {
+    display: flex;
+    padding: 10px 14px;
+    @apply text-sm;
+    background-color: #fff;
+    border-radius: 10px;
+
+    @media (min-width: $screen-lg) {
+      align-self: end;
+      padding: 20px 14px;
+      @apply text-lg;
+    }
+  }
+
+  &__totals-item {
+    padding-left: 18px;
+    padding-right: 18px;
+    border-right: 1px solid $tw-gray-200;
+
+    @media (min-width: $screen-lg) {
+      padding-right: 20px;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__totals-value {
+    font-weight: 700;
+    color: $tw-black;
+  }
+}

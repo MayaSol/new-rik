@@ -56,7 +56,7 @@ module.exports = {
       red: {
         50: '#FFF5F5',
         100: '#fee2e2',
-        200: '#fecaca',
+        200: '#F9EAEA',
         300: '#fca5a5',
         400: '#f87171',
         500: '#EC6565',
@@ -92,6 +92,7 @@ module.exports = {
         800: '#166534',
         900: '#14532d',
       },
+      brown: '#A95C5C',
       emerald: colors.emerald,
       teal: colors.teal,
       cyan: colors.cyan,

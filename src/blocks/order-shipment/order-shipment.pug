@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (order-shipment)
+
+mixin order-shipment(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' order-shipment--' + modsList[i].trim();
+      }
+    }
+
+  .order-shipment(class=allMods)&attributes(attributes)
+    .order-shipment__inner
+      block

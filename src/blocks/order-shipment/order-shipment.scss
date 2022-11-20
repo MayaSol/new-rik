@@ -1,0 +1,57 @@
+// В этом файле должны быть стили для БЭМ-блока order-shipment, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.order-shipment {
+
+  $block-name:                &; // #{$block-name}__element
+
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+  }
+
+
+  &__title {
+    margin-bottom: 20px;
+    color: $tw-black;
+    font-weight: 700;
+    @apply text-lg;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 10px;
+      grid-column-start: 1;
+      grid-column-end: 4;
+    }
+  }
+
+  &__img {
+    display: inline-block;
+    margin-bottom: 5px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    @media (min-width: $screen-lg) {
+      margin-right: 30px;
+    }
+  }
+
+  &__item-value {
+    font-weight: 700;
+    color: $tw-black;
+  }
+
+  &__item {
+    @apply text-lg;
+    margin-bottom: 10px;
+
+    @media (min-width: $screen-lg) {
+      margin-right: 40px;
+      align-self: center;
+    }
+  }
+
+  &__more {
+    margin-top: 10px;
+  }
+}

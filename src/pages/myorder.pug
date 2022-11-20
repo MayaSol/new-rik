@@ -9,7 +9,7 @@ block meta
 
 block vars
   -
-    var pageName = 'my-order';
+    var pageName = 'order';
 
 block content
   .wrapper
@@ -18,7 +18,7 @@ block content
       +breadcrumbs-item('Мой заказ')
     #bx_basketFKauiI.bx-basket.bx-opener
       +cart-aside(class='hidden xl_block')
-    section.profile.profile--my-order.my-order.mt-30px.lg_mt-20px.lg_mb-60px
+    section.profile.profile--order.order.mt-30px.lg_mt-20px.lg_mb-60px
       .profile__content.container
         h1.section__title.mb-20px.lg_mb-40px Мой заказ №Р-131/2022, создан&nbsp;16.08.2022
         .choices-select.field-select__wrapper.lg_hidden.mb-20px
@@ -69,8 +69,8 @@ block content
           })
         .profile__main.mt-20px.lg_mt-0
           +btn-angle-left({text: 'Вернуться в список заказов'})(class='cart-page__back' href='#')
-          .my-order__title.mt-20px Заказ <span class='my-order__num'>№Р-131/2022</span> от <span class='my-order__date'>16.08.2022</span>, <span class="my-order__amount">2</span> товара на&nbsp;сумму <span class='my-order__sum'>22&nbsp;700&nbsp;руб</span>
-          +info-accordion({},'my-order')(id='my-order-info' class='mt-20px')
+          .order__title.mt-20px Заказ <span class='order__num'>№Р-131/2022</span> от <span class='order__date'>16.08.2022</span>, <span class="order__amount">2</span> товара на&nbsp;сумму <span class='order__sum'>22&nbsp;700&nbsp;руб</span>
+          +info-accordion({},'order')(id='order-info' class='mt-20px')
             +info-accordion-item({
               header_id: 'order-info',
               target_id: 'order-info-content',
@@ -78,28 +78,116 @@ block content
               show: true
             })
               .info-accordion__item-pane
-                p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+                .order-info
+                  .order-info__items
+                    .order-info__item
+                      .order-info__title Ф.И.О.:
+                      .order-info__value alex
+                    .order-info__item
+                      .order-info__title Текущий статус,
+                      .order-info__value от 16.08.2022
+                    .order-info__item
+                      .order-info__title Новый заказ
+                      .order-info__value Сумма: 22 700 руб
+                  +btn('<span class="btn--hover-underline">Подробнее</span><svg width="12" height="6" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-down"></use></svg>','clean,icon,icon-right')(class='inline-flex text-blue-1000 hover_text-blue-1000' href='#')
+                  .order-info__btns
+                    +btn('Повторить заказ','regular,blue')
+                    +btn('<span class="close"></span><span>Отменить заказ</span>','regular,icon-close')
             +info-accordion-item({
               header_id: 'order-payment',
               target_id: 'order-payment-content',
               name: 'Параметры оплаты',
-              show: false
+              show: true
             })
               .info-accordion__item-pane
-                p Параметры оплаты
+                .order-payment
+                  .order-payment__order
+                    .order-payment__icon
+                      +svg('document-text','',{width:'42',height:'42'})
+                    .order-payment__name Заказ NeP-131/2022 от 16.08.2022. Новый заказ
+                    .order-payment__sum Сумма заказа: 22 700 руб
+                  .order-payment__payment
+                    .order-payment__img
+                      img(src='/img/cloud-payment.jpg')
+                    .order-payment__payment-desc
+                      .order-payment__name Счет NP-131/2022/1 от 16.08.2022, CloudPayments банковской картой он-лайн
+                      .order-payment__sum Сумма к оплате по счету: 22 700 руб
+                    .order-payment__status.order-status.order-status--not-paid Не оплачено
+                    +btn('<span class="btn--hover-underline">Сменить способ оплаты</span><svg width="12" height="6" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-down"></use></svg>','clean,icon,icon-right')(class='order-payment__change inline-flex text-blue-1000 hover_text-blue-1000' href='#')
+                  .order-payment__btns
+                    +btn-angle-left({text: 'Назад'},'span-underline')(class='order-payment__back text-blue-1000 hover_text-blue-1000' href='#')
+                    +btn('Оплатить','regular,blue')
+
             +info-accordion-item({
               header_id: 'order-shipment',
               target_id: 'order-shipment-content',
               name: 'Параметры отгрузки',
-              show: false
+              show: true
             })
               .info-accordion__item-pane
-                p Параметры отгрузки
+                .order-shipment
+                  .order-shipment__title Отгрузка NP-131/2022/2, стоимость доставки 0 руб
+                  .order-shipment__img
+                    img(src='/img/order-shipment.jpg')
+                  .order-shipment__item
+                    .order-shipment__item-title Служба доставки:
+                    .order-shipment__item-value Деловые линии
+                  .order-shipment__item
+                    .order-shipment__item-title Статус отгрузки:
+                    .order-shipment__item-value Принят в обработку
+                  +btn('<span class="btn--hover-underline">Подробнее</span><svg width="12" height="6" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-down"></use></svg>','clean,icon,icon-right')(class='inline-flex text-blue-1000 hover_text-blue-1000' href='#')(class='order-shipment__more')
             +info-accordion-item({
               header_id: 'order-items',
               target_id: 'order-items-content',
               name: 'Содержание заказа',
-              show: false
+              show: true
             })
               .info-accordion__item-pane
-                p Содержание заказа
+                .order-list
+                  .order-list__item
+                    .order-list__item-img
+                      a(href='#')
+                        img(src='/img/order-product-1.jpg')
+                    .order-list__item-desc
+                      .order-list__item-title <a href='#'>Защитные очки IZ-11001</a>
+                      .order-list__item-serials Серийные номера:
+                    .order-list__item-price
+                      .order-list__item-caption Цена:
+                      .order-list__item-value 2&nbsp;900&nbsp;р.
+                    .order-list__item-amount
+                      .order-list__item-caption Кол-во:
+                      .order-list__item-value 1&nbsp;шт.
+                    .order-list__item-sum
+                      .order-list__item-caption Сумма:
+                      .order-list__item-value 2&nbsp;900&nbsp;р.
+                  .order-list__item
+                    .order-list__item-img
+                      a(href='#')
+                        img(src='/img/order-product-1.jpg')
+                    .order-list__item-desc
+                      .order-list__item-title Излучатель душ 1-04
+                      .order-list__item-serials Серийные номера:
+                    .order-list__item-price
+                      .order-list__item-caption Цена:
+                      .order-list__item-value 29&nbsp;800&nbsp;р.
+                    .order-list__item-amount
+                      .order-list__item-caption Кол-во:
+                      .order-list__item-value 1&nbsp;шт.
+                    .order-list__item-sum
+                      .order-list__item-caption Сумма:
+                      .order-list__item-value 19&nbsp;800&nbsp;р.
+                  .order-list__totals
+                    .order-list__totals-item.order-list__totals-item--shipment
+                      .order-list__totals-caption Доставка
+                      .order-list__totals-value 0&nbsp;р.
+                    .order-list__totals-item.order-list__totals-item--nds
+                      .order-list__totals-caption НДС:
+                      .order-list__totals-value 483,33&nbsp;р.
+                    .order-list__totals-item.order-list__totals-item--total
+                      .order-list__totals-caption Итого:
+                      .order-list__totals-value 22&nbsp;700&nbsp;р.
+
+
+
+
+

@@ -123,6 +123,28 @@
     }
   }
 
+  &--icon-close {
+    display: flex;
+    align-items: center;
+
+    .close {
+      margin-right: 10px;
+      &::before,
+      &::after {
+        width: 10px;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      .close::before,
+      .close::after {
+        background-color: #fff;
+      }
+    }
+  }
+
   &--icon-right {
 
     svg {
@@ -344,6 +366,16 @@
     &:after {
       display: none;
     }
+
+    // @at-root a#{&} {
+    //   &:hover,
+    //   &:focus,
+    //   &:active {
+    //     span {
+    //       text-decoration: underline;
+    //     }
+    //   }
+    // }
   }
 
   &--blue {
@@ -375,6 +407,23 @@
     &:active {
       &::after {
         opacity: 1;
+      }
+    }
+  }
+
+  &--span-underline {
+
+    span {
+      border-bottom: 1px solid transparent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-blue_link;
+
+      span {
+        border-color: $tw-blue_link;
       }
     }
   }
