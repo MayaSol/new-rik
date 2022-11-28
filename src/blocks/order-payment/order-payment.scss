@@ -98,6 +98,7 @@
 
   &__status {
     @apply text-base #{!important};
+    font-weight: 400 !important;
     order: 2;
 
     @media (min-width: $screen-lg) {

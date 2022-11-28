@@ -109,7 +109,7 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    content: url('../screens/my-orders2-page.jpg');
+    // content: url('../screens/my-orders2-page.jpg');
     opacity: 1;
   }
 
@@ -998,6 +998,10 @@ body {}
     height: 100%;
     object-fit: cover;
   }
+}
+
+.hide-text {
+  @include hide-text;
 }
 
 

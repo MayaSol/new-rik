@@ -1,0 +1,83 @@
+// В этом файле должны быть стили для БЭМ-блока article-table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.article-table {
+
+  $block-name: &; // #{$block-name}__element
+
+  border-collapse: collapse;
+  width: 100%;
+  @apply text-base;
+
+  @media (max-width: 600px) {
+    display: block;
+  }
+
+  tr,
+  thead,
+  tbody {
+    @media (max-width: 600px) {
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  th {
+    padding: 10px;
+    background-color: $tw-gray-75;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  td {
+    padding: 9px 10px;
+    text-align: center;
+    line-height: 1.2;
+
+    @media (max-width: 600px) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: -1px;
+      padding-left: 50%;
+      text-align: left;
+      min-height: 45px;
+    }
+
+    &::before {
+      @media (max-width: 600px) {
+        content: attr(data-content);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45%;
+        min-height: 45px;
+        height: 100%;
+        overflow: hidden;
+        padding: 9px 10px;
+        text-align: center;
+        border-right: 1px solid $tw-gray-200;
+        border-bottom: 1px solid $tw-gray-200;
+        border-top: 1px solid $tw-gray-200;
+        background-color: $tw-gray-75;
+        color: $tw-black;
+      }
+    }
+  }
+
+  th,
+  td {
+    border: 1px solid $tw-gray-200;
+  }
+}
+
+

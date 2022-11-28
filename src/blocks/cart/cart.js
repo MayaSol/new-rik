@@ -59,8 +59,6 @@ ready(function() {
       cartEl.classList.remove('cart--show');
     }
   }
-
-
 });
 
 

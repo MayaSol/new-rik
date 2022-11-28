@@ -79,7 +79,10 @@ let config = {
     'src/webfonts/': 'webfonts/',
     'design/screens/': 'screens/',
     'src/js/': 'js/',
-    'initial/cart-payment.css': 'css/'
+    'initial/cart-payment.css': 'css/',
+    'src/css/': 'css/',
+    'src/pages/tnstest.html': '/',
+    'src/pages/cart3.html': '/'
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

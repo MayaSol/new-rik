@@ -24,6 +24,10 @@
 
   &__list-wrapper {
     position: relative;
+
+    .btn--simple + & {
+      margin-top: 20px;
+    }
   }
 
   &__list {

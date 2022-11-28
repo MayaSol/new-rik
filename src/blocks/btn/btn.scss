@@ -114,7 +114,7 @@
   }
 
   &--icon {
-    display: flex;
+    display: flex !important;
     align-items: center;
 
     svg {
@@ -339,6 +339,7 @@
   }
 
   &--print {
+    padding: 0 !important;
     color: $tw-black;
 
     &:hover,
@@ -351,6 +352,7 @@
   }
 
   &--document-cloud {
+    padding: 0 !important;
     color: $tw-black;
 
     &:hover,
@@ -367,15 +369,9 @@
       display: none;
     }
 
-    // @at-root a#{&} {
-    //   &:hover,
-    //   &:focus,
-    //   &:active {
-    //     span {
-    //       text-decoration: underline;
-    //     }
-    //   }
-    // }
+    svg {
+      width: 100%;
+    }
   }
 
   &--blue {

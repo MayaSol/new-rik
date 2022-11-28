@@ -1,0 +1,97 @@
+extends ../pug/layout.pug
+
+block meta
+  title Информация
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'article';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Информация')
+    section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
+      .article.container.mb-64px
+        h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
+        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
+          img.lazyload(
+          data-sizes="auto",
+          data-src='/img/arthrit_320x160.jpg',
+          data-srcset='/img/arthrit_320x160.jpg 360w,' +
+                  '/img/arthrit_480x240.jpg 361w,' +
+                  '/img/arthrit_800x400.jpg 481w,' +
+                  '/img/arthrit_1151x303.jpg 801w,' +
+                  '/img/arthrit_1312x345.jpg 1280w,' +
+                  '/img/arthrit_1800x473.jpg 1441w',
+          )
+        .article__contents.text-blue.font-bold.mb-24px.lg_hidden
+          .mb-10px.text-xl.text-black.font-normal.lg_text-2xl Содержание
+          ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor)
+            li
+              a.article__contents-link(href='#' data-anchor='#desc') Что собой представляет патология
+            li
+              a.article__contents-link(href='#' data-anchor='#cause') Причины возникновения
+            li
+              a.article__contents-link(href='#' data-anchor='#stad') Стадии развития
+            li
+              a.article__contents-link(href='#' data-anchor='#diag') Диагностика
+            li
+              a.article__contents-link(href='#' data-anchor='#cure') Лечение
+            li
+              a.article__contents-link(href='#' data-anchor='#prof') Профилактика
+        .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
+        +author2({
+          name: 'Катерина Григорьевна',
+          text: 'Врач Физиотерапевт'
+        },'article')(class='mb-18px lg_mb-25px lg_col-start-1 lg_col-span-2 lg-row-start-4')
+          picture
+            source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
+            source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
+            img.lazyload(data-src='/img/author-87x87.jpg', alt='')
+        .article__dates.mb-30px.lg_col-start-1.lg_col-span-2.lg-row-start-5
+          .date-line.flex.items-center.text-gray-300(class='!mb-5px')
+            +svg('calendar','mr-8px',{width: '17',height: '19'})
+            span.text-gray-500 Дата добавления (18.01.2022)
+          .date-line.flex.items-center.text-gray-300
+            +svg('calendar-check','mr-8px',{width: '17',height: '19'})
+            span.text-gray-500 Дата обновления (18.01.2022)
+        .article__main
+          table.article-table
+            thead
+              tr
+                th Заголовок 1
+                th Заголовок 2
+                th Заголовок 3
+                th Заголовок 4
+              tr
+                td(data-content='Заголовок 1') Пример строки 1
+                td(data-content='Заголовок 2') Пример длинной строки длинной строки длинной строки 1
+                td(data-content='Заголовок 3')
+                  p Пример строки 1
+                  p Пример строки 1
+                td(data-content='Заголовок 4') Пример строки 1
+              tr
+                td(data-content='Заголовок 1') Пример строки 2
+                td(data-content='Длинный Заголовок 2') Пример строки 2
+                td(data-content='Заголовок 3') Пример строки 2
+                td(data-content='Заголовок 4') Пример строки 2
+              tr
+                td(data-content='Заголовок 1') Пример строки 3
+                td(data-content=' Очень Длинный Заголовок 2 Очень Длинный Заголовок 2') Пример строки 3
+                td(data-content='Заголовок 3') Пример строки 3
+                td(data-content='Заголовок 4') Пример строки 3
+
+
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+
+

@@ -6,10 +6,8 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  @media (min-width: $screen-lg) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-direction: column;
 
   &__item {
     display: grid;
@@ -87,6 +85,13 @@
       margin-right: 75px;
       @apply text-lg;
     }
+
+    @media (min-width: $screen-xxl) {
+      min-width: 90px;
+    }
+    @media (min-width: $screen-3xl) {
+      min-width: 110px;
+    }
   }
 
   &__item-amount {
@@ -98,8 +103,15 @@
       min-width: 70px;
       margin-right: 75px;
       @apply text-lg;
-
     }
+
+    @media (min-width: $screen-xxl) {
+      min-width: 90px;
+    }
+    @media (min-width: $screen-3xl) {
+      min-width: 110px;
+    }
+
   }
 
   &__item-sum {
@@ -109,6 +121,14 @@
     @media (min-width: $screen-lg) {
       min-width: 70px;
       @apply text-lg;
+    }
+
+    @media (min-width: $screen-xxl) {
+      min-width: 90px;
+    }
+
+    @media (min-width: $screen-3xl) {
+      min-width: 110px;
     }
   }
 
@@ -136,6 +156,7 @@
     @apply text-sm;
     background-color: #fff;
     border-radius: 10px;
+    align-self: end;
 
     @media (min-width: $screen-lg) {
       align-self: end;

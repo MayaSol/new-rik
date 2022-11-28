@@ -78,6 +78,10 @@
     @media (min-width: $screen-xxl) {
       padding-right: 50px;
     }
+
+    .cart-page & {
+      white-space: nowrap;
+    }
   }
 
   &__amount {
@@ -318,4 +322,11 @@
       margin-bottom: 60px;
     }
   }
+}
+
+
+
+#tanais-basket-root .basket-item-block-amount {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

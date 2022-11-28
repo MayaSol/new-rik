@@ -3,11 +3,9 @@ const videoUtils = require('../../js/utils/videoUtils.js');
 const closest = require('closest');
 
 ready(function() {
-
   var playBtns = document.querySelectorAll('.video__btn-play');
   for (btn of playBtns) {
     btn.addEventListener('click',function(event) {
-      console.log('click');
       event.preventDefault();
       var video = closest(this,'.video');
       if (video.classList.contains('playing')) {

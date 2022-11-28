@@ -1,40 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
 <svg
    version="1.1"
-   id="Layer_1"
    x="0px"
    y="0px"
    width="11.646"
    height="23.958"
    viewBox="0 0 11.646 23.958"
    xml:space="preserve"
-   sodipodi:docname="mouse2.svg"
-   inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-   id="defs194" /><sodipodi:namedview
-   id="namedview192"
-   pagecolor="#ffffff"
-   bordercolor="#666666"
-   borderopacity="1.0"
-   inkscape:showpageshadow="2"
-   inkscape:pageopacity="0.0"
-   inkscape:pagecheckerboard="0"
-   inkscape:deskcolor="#d1d1d1"
-   showgrid="false"
-   inkscape:zoom="33.875"
-   inkscape:cx="5.1217712"
-   inkscape:cy="12"
-   inkscape:window-width="1848"
-   inkscape:window-height="1016"
-   inkscape:window-x="72"
-   inkscape:window-y="27"
-   inkscape:window-maximized="1"
-   inkscape:current-layer="Layer_1" />
+   xmlns:svg="http://www.w3.org/2000/svg">
 <path
    style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.478;stroke-dasharray:none;stroke-opacity:1"
    d="m 5.823,22.63 c -2.479,0 -4.494,-2.016 -4.494,-4.495 v -5.326 h 3.595 c 0.2,0.292 0.52,0.495 0.899,0.495 0.379,0 0.699,-0.204 0.899,-0.495 h 3.595 v 5.326 c 0,2.479 -2.015,4.495 -4.494,4.495 z"

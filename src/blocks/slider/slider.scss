@@ -128,3 +128,13 @@
   height: 100%;
   padding-bottom: 1px;
 }
+
+
+.btn--simple + .tns-outer {
+  margin-top: 20px;
+}
+
+.btn--simple.mb-20px + .tns-outer {
+  margin-top: 0;
+}
+

@@ -17,21 +17,40 @@ ready(function() {
 
 
 
+  const autoPlayTimeout = 10000;
+  // const autoPlayTimeout = 57000;
+
+
   var videos = document.querySelectorAll('.slider-main__media--video-bg video');
+  console.log(videos);
   if (videos.length > 0) {
-    for (let video of videos) {
-      var playBtn = getParents(video,'.slider-main__media')[0].querySelector('.slider-main__btn-play');
+    for (let i=0; i<videos.length; i++) {
+      console.log('================================');
+      let video = videos[i];
+      console.log(video.networkState);
+      if (i == 0 && video.networkState == 1) {
+        initMainSlider();
+      }
+      // console.log(video.getElementsByTagName('source'));
+      // console.log(video.getElementsByTagName('source')[0].src);
+      var playBtn = getParents(video, '.slider-main__media')[0].querySelector('.slider-main__btn-play');
       if (playBtn) {
-        playBtn.addEventListener('click',(event) => {
+
+        playBtn.addEventListener('click', (event) => {
+          console.log('playBtn click');
           event.preventDefault();
           if (video.classList.contains('playing')) {
             pauseVideo(video);
-          }
-          else {
+          } else {
             playVideo(video);
           }
         });
       }
+      //Добавить playBtn класс hidden и и убирать после начала проигрывания
+      video.addEventListener('canplaythrough', (event) => {
+        console.log('canplaythrough');
+        initMainSlider();
+      });
       video.addEventListener('pause', function() {
         onStop(video);
       });
@@ -44,12 +63,36 @@ ready(function() {
       video.addEventListener('playing', function() {
         onPlay(video);
       });
+
+      //
+      video.addEventListener('loaded',function() {
+        console.log('loaded');
+      })
+
+  //!!!
+function handleEvent(event) {
+    console.log('-----------');
+    console.log(`${event.type}`);
+    console.log(event.target.getElementsByTagName('source')[0].src);
+    console.log(event.target.networkState);
+}
+
+video.addEventListener('loadstart', handleEvent);
+video.addEventListener('progress', handleEvent);
+video.addEventListener('canplay', handleEvent);
+video.addEventListener('canplaythrough', handleEvent);
+//!!!
     }
   }
 
   function playVideo(videoEl) {
-    var result = videoEl.play();
-    videoEl.controls = true;
+    console.log('playVideo');
+    console.log(videoEl.getElementsByTagName('source'));
+    if (videoEl.getElementsByTagName('source').length > 0) {
+      console.log('source');
+      var result = videoEl.play();
+      videoEl.controls = true;
+    }
   }
 
   function pauseVideo(videoEl) {
@@ -67,12 +110,13 @@ ready(function() {
   }
 
   function onEnded(videoEl) {
-    videoEl.classList.remove('playing');
-    videoEl.controls = false;
-    var info = sliderMain.getInfo();
-    if (info.index < info.slideCount-1) {
-      sliderMain.goTo(info.index + 1);
-    }
+    // videoEl.classList.remove('playing');
+    // videoEl.controls = false;
+    playVideo(videoEl);
+    // var info = sliderMain.getInfo();
+    // if (info.index < info.slideCount-1) {
+    //   sliderMain.goTo(info.index + 1);
+    // }
   }
 
   var pauseAll = function() {
@@ -85,74 +129,53 @@ ready(function() {
     }
   };
 
-  if (document.querySelector('.slider-main')) {
+  var sliderMain;
 
-    var sliderMain = tns({
-      container: '.slider-main',
-      items: 1,
-      slideBy: 1,
-      // mouseDrag: false,
-      controls: true,
-      nav: false,
-      loop: false,
-      onInit: function(info) {
-        console.log('onINit');
-        var video = info.slideItems[0].querySelector('video');
-        playVideo(video);
-      }
-      // preventScrollOnTouch: 'force'
-    });
+  function initMainSlider() {
+    if (document.querySelector('.slider-main')) {
 
-    sliderMain.events.on('transitionEnd', function(info) {
-      pauseAll();
-      var video = info.slideItems[info.index].querySelector('video');
-      if (video) {
-        playVideo(video);
+      if (!sliderMain || !sliderMain.version) {
+
+        sliderMain = tns({
+          container: '.slider-main',
+          items: 1,
+          slideBy: 1,
+          mode: 'gallery',
+          autoplay: true,
+          autoplayHoverPause: false,
+          autoplayTimeout: autoPlayTimeout,
+          autoplayButtonOutput: false,
+          mouseDrag: false,
+          controls: true,
+          speed: 1000,
+          // nav: false,
+          loop: false,
+          onInit: function(info) {
+            console.log('onInit');
+            var video = info.slideItems[0].querySelector('video');
+            console.log(video);
+            playVideo(video);
+          }
+        });
+
+        sliderMain.events.on('transitionEnd', function(info) {
+          // console.log('transitionEnd');
+          // console.log(info);
+          pauseAll();
+          var video = info.slideItems[info.index].querySelector('video');
+          if (video) {
+            playVideo(video);
+          }
+          if (info.index === info.slideCount - 1) {
+            var timerId = setTimeout(function() {
+              sliderMain.goTo(0);
+              sliderMain.play();
+            }, autoPlayTimeout);
+          }
+        });
       }
-    });
-  }
+    }
+  } //function initMainSlider()
 
 
 });
-
-
-// var minW = 300;
-
-
-// function fitVideo(videoEl) {
-
-
-//     var videoWidth = parseInt(videoEl.getAttribute('width'));
-//     var videoHeight = parseInt(videoEl.getAttribute('height'));
-
-//     console.log(videoWidth);
-//     console.log(videoHeight);
-
-//     var videoContainer = getParents(videoEl,'.slider__wrapper')[0];
-//     console.log(videoContainer);
-
-//     console.log(videoContainer.clientWidth);
-
-
-
-//     var scaleH = videoContainer.clientWidth / videoWidth;
-//     var scaleV = videoContainer.clientHeight / videoHeight;
-//     var scale = scaleH > scaleV ? scaleH : scaleV;
-
-//     console.log(scaleH + ', ' + scaleV + ', ' + scale);
-
-//     if (scale * videoWidth < minW) {scale = minW / videoWidth;};
-
-//     console.log(scale);
-
-//     // videoWidth
-
-//     var w = scale * videoWidth + 'px';
-//     console.log(w);
-
-//     videoEl.style.width = scale * videoWidth + 'px';
-//     videoEl.style.height = scale * videoHeight + 'px';
-
-//     console.log(videoEl.style.width);
-
-// };
