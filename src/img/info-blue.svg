@@ -1,0 +1,30 @@
+<svg
+   width="14.8333"
+   height="14.83333"
+   viewBox="0 0 14.8333 14.83333"
+   fill="none"
+     stroke="#007CD3"
+   version="1.1"
+   id="svg166"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+     <g fill='none'>
+  <path
+     d="m 7.41666,14.08333 c 3.66664,0 6.66664,-3 6.66664,-6.66666 C 14.0833,3.75 11.0833,0.75 7.41666,0.75 3.75,0.75 0.75,3.75 0.75,7.41667 c 0,3.66666 3,6.66666 6.66666,6.66666 z"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path160" />
+  <path
+     d="M 7.4165,4.75 V 8.08334"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path162" />
+  <path
+     d="M 7.41259,10.08323 H 7.41858"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path164" /></g>
+</svg>

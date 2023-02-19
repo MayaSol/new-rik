@@ -11,7 +11,7 @@ ready(function() {
     maxWidth: 'none',
     interactive: true,
     hideOnClick: true,
-    delay: [0, 1000],
+    delay: [0, 3000],
     // trigger: 'click' //!!!
   };
 

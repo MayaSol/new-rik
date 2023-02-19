@@ -2,6 +2,7 @@ const ready = require('../../js/utils/documentReady.js');
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 const closest = require('closest');
 var MicroModal = require("../../../node_modules/micromodal/dist/micromodal");
+import lightGallery from 'lightgallery';
 
 
 ready(function() {
@@ -24,6 +25,7 @@ ready(function() {
       controlsContainer: '.product-main__previews-controls',
       nav: false,
       center: true,
+      freezable: false,
       responsive: {
         768: {
           items: 5,
@@ -105,6 +107,11 @@ ready(function() {
     productPreviews.events.on('indexChanged', function(info) {
       // console.log('productPreviews indexChanged');
     });
+
+    var productMainEl = document.getElementById('product-main');
+    lightGallery(productMainEl, {
+      selector: '.product-main__poster',
+    })
   }
 
   var options = {
@@ -145,5 +152,10 @@ ready(function() {
       }
     }
   };
+
+
+    // lightGallery(item, {
+    //   selector: '.cert__img'
+    // });
 
 });

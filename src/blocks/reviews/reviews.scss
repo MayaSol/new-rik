@@ -18,6 +18,12 @@
     }
   }
 
+  p a,
+  ul a,
+  ol a {
+    @include text-link;
+  }
+
   &__container {
     @media (min-width: $screen-xxl) {
       max-width: 1101px;

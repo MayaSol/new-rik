@@ -15,9 +15,9 @@ mixin author(props={}, mods)
   .author(class=allMods)&attributes(attributes)
     .author__img
       picture
-        source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
-        source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
-        img.lazyload(data-src='/img/author-87x87.jpg', alt='')
+        source(media='(max-width: 1023px)' data-srcset='img/author_87x87.jpg')
+        source(media='(min-width: 1024px)' data-srcset='img/author_219x219.jpg')
+        img.lazyload(data-src='img/author-87x87.jpg', alt='')
     .author__info
       if (props.text)
       .author__text!= props.text

@@ -1004,5 +1004,12 @@ body {}
   @include hide-text;
 }
 
+code {
+  display: block;
+  white-space: pre;
+  tab-size: 2;
+}
+
+
 
 @include sprites($spritesheet-sprites);

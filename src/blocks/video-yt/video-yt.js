@@ -15,59 +15,66 @@ ready(function() {
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var player;
+    var players = [];
 
-    function btnGoClick(event) {
-      var videoContainer = this.closest('.video-yt').querySelector('.video-yt__frame');
-      var videoPoster = this.closest('.video-yt').querySelector('.video-yt__poster');
-      if (player.getPlayerState() == YT.PlayerState.PLAYING) {
-        player.stopVideo();
-        videoPoster.classList.remove('video-yt__poster--hidden');
-        videoContainer.classList.add('video-hidden');
-      } else {
-        videoContainer.classList.remove('video-hidden');
-        videoPoster.classList.add('video-yt__poster--hidden');
-        player.playVideo();
+    function btnGoClick(index) {
+      var f = function(event) {
+        var videoContainer = this.closest('.video-yt').querySelector('.video-yt__frame');
+        var videoPoster = this.closest('.video-yt').querySelector('.video-yt__poster');
+        if (players[index].getPlayerState() == YT.PlayerState.PLAYING) {
+          players[index].stopVideo();
+          videoPoster.classList.remove('video-yt__poster--hidden');
+          videoContainer.classList.add('video-hidden');
+        } else {
+          videoContainer.classList.remove('video-hidden');
+          videoPoster.classList.add('video-yt__poster--hidden');
+          players[index].playVideo();
+        }
       }
+      return f;
     }
 
     window.onPlayerReady = function(event) {
-
-      var btnsGo = document.querySelectorAll('.video-yt .btn-play');
-      console.log(btnsGo);
-      for (btn of btnsGo) {
-        btn.classList.add('!opacity-100');
-        btn.addEventListener('click', btnGoClick);
-      }
+      var videoYt = event.target.h.parentNode;
+      var videoContainer = videoYt.querySelector('.video-yt__frame');
+      var index = videoContainer.dataset.index;
+      var btnGo = videoYt.querySelector('.btn-play');
+      console.log(btnGo);
+      btnGo.classList.add('!opacity-100');
+      btnGo.addEventListener('click', btnGoClick(index));
     }
 
     window.onPlayerStateChange = function(event) {
+        var videoYt = event.target.h.closest('.video-yt');
+        var videoContainer = videoYt.querySelector('.video-yt__frame');
+        var videoPoster = videoYt.querySelector('.video-yt__poster');
+        var index=videoContainer.dataset.index;
       if (event.data == YT.PlayerState.ENDED) {
-        var videoYt = event.target.g.closest('.video-yt');
-        var videoContainer = videoYt.getElementsByClassName('video-yt__frame')[0];
-        var videoPoster = videoYt.getElementsByClassName('video-yt__poster')[0];
-        player.stopVideo();
+        players[index].stopVideo();
         videoPoster.classList.remove('video-yt__poster--hidden');
         videoContainer.classList.add('video-hidden');
-      }
-      else if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.BUFFERING) {
-        var videoYt = event.target.g.closest('.video-yt');
-        var videoContainer = videoYt.getElementsByClassName('video-yt__frame')[0];
-        var videoPoster = videoYt.getElementsByClassName('video-yt__poster')[0];
+      } else if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.BUFFERING) {
         videoContainer.classList.remove('video-hidden');
         videoPoster.classList.add('video-yt__poster--hidden');
-        player.playVideo();
+        players[index].playVideo();
       }
     }
 
     window.onYouTubeIframeAPIReady = function() {
 
-      player = new YT.Player('video-yt__frame', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
+      var videos = document.querySelectorAll('.video-yt__frame');
+
+      for (var i = 0; i < videos.length; i++) {
+        videos[i].dataset.index = i;
+        players[i] = new YT.Player(videos[i], {
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+
+      }
+
     }
   }
 

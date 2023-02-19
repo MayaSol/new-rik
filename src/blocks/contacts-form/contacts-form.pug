@@ -1,0 +1,306 @@
+//- Все примеси в этом файле должны начинаться c имени блока (contacts-form)
+
+mixin contacts-form(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-form--' + modsList[i].trim();
+      }
+    }
+
+  <div class="contacts-form">
+    <div id="crf_131bd3e56e4c2d0ec1d0c0f0679fa1e5-wrapper" class="ramform-wrapper" data-ramform-id="7">
+      <div class="ramform ramform-7" id="crf_131bd3e56e4c2d0ec1d0c0f0679fa1e5">
+        <div class="ramform-background"></div>
+        <div class="ramform-foreground">
+          <div class="ramform-content">
+            <div class="ramform-items">
+              <div class="ramform-item ramform-item-10" id="crfi_c33d895cb361c6b7d8c3a033b9b535a4">
+                <div class="ramform-item__body">
+                  <div class="ramform-textblock">
+                    <h3>Мы ответим на все интересующие ваши вопросы<br>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-1 ramform-item_required" id="crfi_88378a252dc566c6fa02e9b89034fa2e">
+                <div class="ramform-item__title ramform-item__title_hidden">Имя</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-2 ramform-item_required" id="crfi_f4ac6a9bff78579e65c311a3f2f30b3f">
+                <div class="ramform-item__title ramform-item__title_hidden">Телефон</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-13 ramform-item_required" id="crfi_59e53563b0bcc18b57ed7347aeb3fe3f">
+                <div class="ramform-item__title ramform-item__title_hidden">Email</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-12" id="crfi_17d857cc6ffc5d7d1f97d94897ba2d6c">
+                <div class="ramform-item__title ramform-item__title_hidden">Тема обращения</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-3 ramform-item_required" id="crfi_1beae004a4cea60be3c7c13587cee4fe">
+                <div class="ramform-item__title ramform-item__title_hidden">Ваше сообщение</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-textarea">
+                    <textarea class="ramform-textarea__input" style="overflow-x: hidden; overflow-wrap: break-word; height: 79px;"></textarea>
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-4" id="crfi_190959c2ab2f09c8c8c2c491fc6ce235">
+                <div class="ramform-item__body">
+                  <button class="ramform-button">
+                    <div class="ramform-button__title">Отправить</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="ramform-close"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+mixin contacts-form-product(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-form--' + modsList[i].trim();
+      }
+    }
+
+
+  <div class="product-actions">
+    <div class="ramform">
+      <div class="ramform-content">
+        <div class="ramform-items">
+          <div class="ramform-item ramform-item-10" id="crfi_303ee799310bcc8512069f8f6d69a260">
+            <div class="ramform-item__body">
+              <div class="ramform-textblock">
+                <h2>Вопрос о товаре: Аппарат магнито-инфракрасный лазерный терапевтический РИКТА-04/4</h2><br>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 20px;">
+            <div class="author author--ask-doctor">
+              <div class="author__img">
+                <picture>
+                  <source media="(max-width: 1023px)" data-srcset="/img/author_87x87.jpg" srcset="/img/author_87x87.jpg">
+                  <source media="(min-width: 1024px)" data-srcset="/img/author_219x219.jpg" srcset="/img/author_219x219.jpg"><img class=" lazyloaded" data-src="/img/author-87x87.jpg" alt="" src="/img/author-87x87.jpg"></picture>
+              </div><br>
+              <div class="author__info">
+                <div class="author__text">Ответит врач</div>
+                <div class="author__name">Осипова Екатерина Григорьевна</div>
+              </div>
+            </div>
+            <div style="flex: 1 1 100%;">
+              <div class="ramform-item ramform-item-1 ramform-item_required" id="crfi_a26e86a5bcfbd6b0345f63be94953911">
+                <div class="ramform-item__title">Имя</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper" style="display: none;"></div>
+                  <div class="ramform-item__error">обязательно для заполнения</div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-2 ramform-item_required" id="crfi_6edc9a5071be32a2c71e7d14fb0b16a0">
+                <div class="ramform-item__title">Телефон</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="" inputmode="text">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper" style="display: none;"></div>
+                  <div class="ramform-item__error">обязательно для заполнения</div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-3 ramform-item_required" id="crfi_3b7fd5a17d738b42006aadd4b96c383a">
+                <div class="ramform-item__title">Сообщение</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-textarea">
+                    <textarea class="ramform-textarea__input" style="overflow-x: hidden; overflow-wrap: break-word; height: 79px;"></textarea>
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-4" id="crfi_39a8c505ee144e137a9ccf545daa26f8">
+                <div class="ramform-item__body">
+                  <button class="ramform-button">
+                    <div class="ramform-button__title">Отправить</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ramform-close"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+mixin contacts-form-consult(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' contacts-form--' + modsList[i].trim();
+      }
+    }
+
+
+  <div class="consult">
+    <div class="ramform" id="crf_1574adfffa2f46ff72d8d2aea763ddf0-wrapper">
+      <div class="ramform-content">
+        <div class="ramform-items">
+          <div class="ramform-item ramform-item-10" id="crfi_f9293ffcf2c71f8754790c05c8bc812e">
+            <div class="ramform-item__body">
+              <div class="ramform-textblock">
+                <h2>Получить консультацию</h2>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 20px;">
+            <div class="author author--ask-doctor">
+              <div class="author__img">
+                <picture>
+                  <source media="(max-width: 1023px)" data-srcset="/img/author_87x87.jpg" srcset="/img/author_87x87.jpg">
+                  <source media="(min-width: 1024px)" data-srcset="/img/author_219x219.jpg" srcset="/img/author_219x219.jpg"><img class=" lazyloaded" data-src="/img/author-87x87.jpg" alt="" src="/img/author-87x87.jpg"></picture>
+              </div><br>
+              <div class="author__info">
+                <div class="author__text">Ответит врач</div>
+                <div class="author__name">Осипова Екатерина Григорьевна</div>
+              </div>
+            </div>
+            <div style="flex: 1 1 100%;">
+              <div class="ramform-item ramform-item-1 ramform-item_required" id="crfi_e200eef928ff1ad75735d70b3b115648">
+                <div class="ramform-item__title">Имя</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper"></div>
+                  <div class="ramform-item__error"></div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-2 ramform-item_required" id="crfi_dbebe8f54097959abd70f67417964418">
+                <div class="ramform-item__title">Телефон</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-text">
+                    <input class="ramform-text__input" type="text" value="" inputmode="text">
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper" style="display: none;"></div>
+                  <div class="ramform-item__error">обязательно для заполнения</div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-3 ramform-item_required" id="crfi_5eef007fdcaf50c11448661758907e7a">
+                <div class="ramform-item__title">Сообщение</div>
+                <div class="ramform-item__body">
+                  <label class="ramform-textarea">
+                    <textarea class="ramform-textarea__input" style="overflow-x: hidden; overflow-wrap: break-word; height: 79px;"></textarea>
+                    <div class="ramform-text__required">*</div>
+                  </label>
+                </div>
+                <div class="ramform-item__bottom">
+                  <div class="ramform-item__helper" style="display: none;"></div>
+                  <div class="ramform-item__error">обязательно для заполнения</div>
+                  <div class="ramform-item__counter"></div>
+                </div>
+              </div>
+              <div class="ramform-item ramform-item-4" id="crfi_6235b972beac3b8eb743c2d7dfb91475">
+                <div class="ramform-item__body">
+                  <button class="ramform-button">
+                    <div class="ramform-button__title">Отправить</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ramform-close"></div>
+      </div>
+    </div>
+  </div>
+

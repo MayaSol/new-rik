@@ -4,19 +4,29 @@ import IMask from 'imask';
 
 ready(function(){
   console.log('form');
-  var maskPhone = {
-    mask: '+{7} (000) 000 - 00 - 00',
-    lazy: false
-  };
-  var phoneFields = document.getElementsByClassName('field-text--phone');
-  console.log(phoneFields);
-  for (let field of phoneFields) {
-    let input = field.getElementsByTagName('input')[0];
-    let mask = IMask(input, maskPhone);
-    mask.on("accept", function() {
-      checkInput('+7 (___) ___ - __ - __','!text-black',input,mask);
-    });
-  }
+  //!!!!
+  // var maskPhone = {
+  //   mask: '+{7} (000) 000 - 00 - 00',
+  //   lazy: false
+  // };
+  // var phoneFields1 = Array.from(document.getElementsByClassName('field-text--phone input'));
+  // console.log(document.getElementsByClassName('field-text--phone'));
+  // console.log(phoneFields1);
+  // var phoneFields2 = Array.from(document.querySelectorAll('.field-text__input[name=phone]'));
+  // console.log(phoneFields2);
+  // var phoneFields3 = Array.from(document.querySelectorAll('.field-text__input[name*=PHONE]'));
+  // console.log(phoneFields3);
+  // var phoneFields = phoneFields1.concat(phoneFields2).concat(phoneFields3);
+  // console.log(phoneFields);
+  // for (let input of phoneFields) {
+  //   console.log(input);
+  //   // let input = field.getElementsByTagName('input')[0];
+  //   let mask = IMask(input, maskPhone);
+  //   mask.on("accept", function() {
+  //     checkInput('+7 (___) ___ - __ - __','!text-black',input,mask);
+  //   });
+  // }
+  //!!!!
   // var maskEmail = {
   //   mask: /^\S*@?\S*$/
   // };

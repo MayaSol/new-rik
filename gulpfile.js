@@ -581,6 +581,76 @@ function buildCatalogJs() {
 exports.buildCatalogJs = buildCatalogJs;
 
 
+function buildCartJs() {
+  const entryList = {
+    'cart': `./${dir.src}js/cart-entry.js`,
+  };
+  if (buildLibrary) entryList['blocks-library'] = `./${dir.blocks}blocks-library/blocks-library.js`;
+  return src(`${dir.src}js/entry.js`)
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.message);
+        this.emit('end');
+      }
+    }))
+    .pipe(webpackStream({
+      mode: 'production',
+      entry: entryList,
+      output: {
+        filename: '[name].js',
+      },
+      module: {
+        rules: [{
+            test: /\.src\/input.css$/i,
+            exclude: /node_modules/,
+            use: [{
+                loader: MiniCssExtractPlugin.loader
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                  url: false
+                }
+              },
+              {
+                loader: 'postcss-loader',
+                options: {
+                  postcssOptions: {
+                    config: path.resolve(__dirname, 'postcss.config.js'),
+                  },
+                },
+              }
+            ]
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  ['@babel/preset-env', { targets: "defaults" }]
+                ]
+              }
+            }
+          }
+        ]
+      },
+      plugins: [
+        new MiniCssExtractPlugin({
+          filename: "css/test.css",
+        })
+      ],
+      // externals: {
+      //   jquery: 'jQuery'
+      // }
+    }))
+    .pipe(dest(`${dir.build}js`));
+}
+exports.buildCartJs = buildCartJs;
+
+
 // These functions loop through the tailwind custom config objects set in your tailwind.config.js file and exposes them as variables in sass
 
 // Usage:
@@ -795,6 +865,7 @@ exports.build = series(
   // compileTailwind,
   buildJs,
   buildCatalogJs,
+  buildCartJs
   // concatCss
 );
 
@@ -808,6 +879,7 @@ exports.default = series(
   compileSass,
   buildJs,
   buildCatalogJs,
+  buildCartJs,
   serve,
 );
 

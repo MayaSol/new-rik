@@ -6,6 +6,14 @@
 
   $block-name: &; // #{$block-name}__element
 
+  .field-text__input.errorInput {
+    background-color: $tw-red-100;
+
+    &::placeholder {
+      color: $tw-red-900;
+    }
+  }
+
   &--ask-doctor {
     @media (min-width: $screen-lg) {
       display: grid;

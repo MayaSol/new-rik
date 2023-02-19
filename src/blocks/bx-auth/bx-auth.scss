@@ -1,0 +1,46 @@
+// В этом файле должны быть стили для БЭМ-блока bx-auth, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.bx-auth {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-left: auto;
+  margin-right: auto;
+
+  &-note {
+    margin-bottom: 30px;
+    @apply text-40px;
+    color: $tw-black;
+  }
+
+  &-label {
+    @apply text-lg;
+    color: $tw-black;
+    text-align: left;
+
+    & ~ td input {
+      @include field-text;
+    }
+  }
+
+  tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form a {
+    @include text-link;
+  }
+
+  noindex:first-of-type p {
+    margin-bottom: 10px;
+  }
+
+}
+
+.authorize-submit-cell input {
+  margin-top: 20px;
+  @include btn-regular;
+}

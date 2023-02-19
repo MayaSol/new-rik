@@ -9,6 +9,11 @@
   position: absolute;
   right: 0;
   top: 0;
+  width: 14px;
+  height: 14px;
+  background-image: url('/img/info.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
 
   svg {
@@ -17,6 +22,7 @@
   }
 
   &:hover {
+    background-image: url('/img/info-blue.svg');
     svg {
       stroke: $tw-blue_link;
     }

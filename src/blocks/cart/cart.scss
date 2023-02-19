@@ -234,6 +234,9 @@ div.bx-basket:not(#tanais-basket-root) {
     right: 64px;
   }
 
+  .modal-open & {
+    display: none;
+  }
 
   &.cart--show {
 

@@ -1,0 +1,54 @@
+//- Все примеси в этом файле должны начинаться c имени блока (bx-auth)
+
+mixin bx-auth(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' bx-auth--' + modsList[i].trim();
+      }
+    }
+
+  <div class="bx-auth">
+    <div class="bx-auth-note">Пожалуйста, авторизуйтесь:</div>
+    <form name="form_auth" method="post" target="_top" action="/personal/?login=yes">
+      <input type="hidden" name="AUTH_FORM" value="Y">
+      <input type="hidden" name="TYPE" value="AUTH">
+      <input type="hidden" name="backurl" value="/personal/">
+      <table class="bx-auth-table">
+        <tbody>
+          <tr>
+            <td class="bx-auth-label">Логин:</td>
+            <td><input class="bx-auth-input form-control" type="text" name="USER_LOGIN" maxlength="255" value="lab01_maya"></td>
+          </tr>
+          <tr>
+            <td class="bx-auth-label">Пароль:</td>
+            <td><input class="bx-auth-input form-control" type="password" name="USER_PASSWORD" maxlength="255" autocomplete="off">
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="checkbox" id="USER_REMEMBER" name="USER_REMEMBER" value="Y"><label for="USER_REMEMBER">&nbsp;Запомнить меня на этом компьютере</label></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="authorize-submit-cell"><input type="submit" class="btn btn-primary" name="Login" value="Войти"></td>
+          </tr>
+        </tbody>
+      </table>
+      <noindex>
+        <p>
+          <a href="/personal/?forgot_password=yes" rel="nofollow">Забыли свой пароль?</a>
+        </p>
+      </noindex>
+      <noindex>
+        <p>
+          <a href="/personal/?register=yes" rel="nofollow">Зарегистрироваться</a><br>
+          | Если вы впервые на сайте, заполните, пожалуйста, регистрационную форму. </p>
+      </noindex>
+    </form>
+  </div>
+

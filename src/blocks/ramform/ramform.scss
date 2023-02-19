@@ -1,0 +1,291 @@
+// В этом файле должны быть стили для БЭМ-блока ramform, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.ramform {
+
+  $block-name: &; // #{$block-name}__element
+
+  $block-name: &; // #{$block-name}__element
+
+  .contacts-form & {
+    position: relative !important;
+
+    .ramform-content {
+      padding: 0 !important;
+    }
+  }
+
+  .ramform-item {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .ramform-item__bottom {
+    position: absolute;
+  }
+
+  .ramform-item__error {
+    margin-top: 0 !important;
+  }
+
+  .ramform-item__title {
+    display: none !important;
+  }
+
+  .ramform-text__required {
+    font-family: 'Montserrat';
+    z-index: 1;
+  }
+
+  .ramform-text,
+  .ramform-textarea {
+    padding: 0 !important;
+  }
+
+  .ramform-text__input,
+  .ramform-textarea__input {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border: 1px solid $tw-gray-100 !important;
+    border-radius: $border-radius !important;
+    padding: 11px 18px !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    font-family: inherit !important;
+    background-color: $tw-gray-100 !important;
+    -moz-appearance: textfield !important; // stylelint-disable-line
+    appearance: textfield !important;
+
+    &::placeholder {
+      color: $tw-gray-500;
+      opacity: 1;
+    }
+  }
+
+  .ramform-textarea__input {
+    height: 230px !important;
+  }
+
+  .ramform-button {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .ramform-button__title {
+    position: relative !important;
+    padding: 0 !important;
+    padding-left: 25px !important;
+    white-space: nowrap;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px !important;
+      height: 20px !important;
+      left: 0 !important;
+      top: 50% !important;
+      background: none !important;
+      background-image: url('/img/btn-send-white.svg') !important;
+      transform: translateY(-50%) !important;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1 !important;
+      }
+    }
+
+    span {
+      padding-left: 5px !important;
+    }
+  }
+
+
+  .ramform-close {
+    position: absolute !important;
+    opacity: 1 !important;
+    width: 23px !important;
+    height: 23px !important;
+    right: 10px !important;
+    top: 10px !important;
+    background-color: transparent !important;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      height: 23px !important;
+      width: 2px !important;
+    }
+
+    &:hover {
+      opacity: 0.4 !important;
+    }
+
+    &:before,
+    &:after {
+      content: ' ';
+      position: absolute !important;
+      top: 0 !important;
+      left: 50% !important;
+      width: 2px !important;
+      height: 23px !important;
+      background-color: $tw-black !important;
+      transform: translateX(-50%) !important;
+    }
+
+    &:before {
+      transform: translateX(-50%) rotate(45deg) !important;
+    }
+
+    &:after {
+      transform: translateX(-50%) rotate(-45deg) !important;
+    }
+  }
+}
+
+
+.consult .ramform-item-2 input,
+.product-main__special .ramform-item-2 input,
+.contacts-form .ramform-item-2 input {
+  color: $tw-gray-500 !important;
+
+  &.text-black {
+    color: #000 !important;
+  }
+}
+
+.aside-form .ramform-item-4,
+.modal-form .ramform-item-4,
+.reviews-section__content .ramform-item-4,
+.consult .ramform-item-4,
+.product-main__special .ramform-item-4,
+.product-actions .ramform-item-4,
+.contacts-form .ramform-item-4 {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 56px !important;
+  height: 40px !important;
+  padding: 0 16px 0 16px !important;
+  color: #fff !important;
+  background-color: #181828 !important;
+  border-radius: 0 !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  transition: max-width .3s;
+  z-index: 1;
+
+  &:hover {
+    max-width: 300px !important;
+  }
+}
+
+.aside-form .ramform-item-4 {
+  right: 0;
+}
+
+.contacts-form .ramform-item-4 {
+  right: 0;
+  bottom: 10px;
+}
+
+.aside-form .ramform-item-4 .ramform-item__body,
+.modal-form .ramform-item-4 .ramform-item__body,
+.consult .ramform-item-4 .ramform-item__body,
+.product-actions .ramform-item-4 .ramform-item__body,
+.product-main__special .ramform-item-4 .ramform-item__body,
+.contacts-form .ramform-item-4 .ramform-item__body,
+.reviews-section__content .ramform-item-4 .ramform-item__body {
+  position: static !important;
+  display: flex !important;
+  align-items: center;
+  max-width: 100% !important;
+}
+
+
+.article__aside .ramform-close,
+.contacts-form .ramform-close,
+.reviews-section__content .ramform-close,
+.ramform-8 .ramform-close,
+.ramform-9 .ramform-close {
+  display: none !important;
+}
+
+.article__aside .ramform-button__title,
+.modal-form .ramform-button__title {
+  @apply text-base #{!important};
+}
+
+
+.article__aside .ramform-content,
+.modal-form .ramform-content {
+  background-color: #fff !important;
+}
+
+.article__aside .ramform-content {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ramform-9 .ramform-item-4 {
+  @include btn-regular;
+  margin-top: 10px;
+
+  .ramform-button__title {
+    color: $tw-black !important;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .ramform-button__title {
+      color: #fff !important;
+    }
+  }
+}
+
+.ramform-8 .ramform-button,
+.ramform-9 .ramform-button {
+  width: 100%;
+}
+
+
+.kp-form .ramform-item-4 {
+  @include btn;
+  @include btn-regular;
+  width: 100%;
+
+  .ramform-button__title {
+    color: $tw-black !important;
+
+    &::before {
+      background-image: url(/img/btn-send-black.svg) !important;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .ramform-button__title {
+      color: #fff !important;
+
+      &::before {
+        background-image: url(/img/btn-send-white.svg) !important;
+      }
+    }
+  }
+}
+
+.ramform .test-drive .ramform-button__title,
+.ramform .tradein .ramform-button__title {
+  padding-left: 0 !important;
+}

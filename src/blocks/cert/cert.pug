@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cert)
+
+mixin cert(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cert--' + modsList[i].trim();
+      }
+    }
+
+  .cert(class=allMods)&attributes(attributes)
+    .cert__inner
+      block
+
+
+mixin cert-item(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cert--' + modsList[i].trim();
+      }
+    }
+
+  .cert__item(class=allMods)&attributes(attributes)
+    a(href=props.url).cert__img
+      img(src=props.thumb)
+    h2.cert__title
+      a(href='#')= props.title
+    .cert__text(data-lines='3')
+      block

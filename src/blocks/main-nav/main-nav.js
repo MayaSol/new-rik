@@ -2,6 +2,7 @@
 
 const ready = require('../../js/utils/documentReady.js');
 const getParents = require('../../js/utils/getParents.js');
+import { OverlayScrollbars } from 'overlayscrollbars';
 
 ready(function(){
 
@@ -67,8 +68,14 @@ ready(function(){
     }
   });
 
+  // Кастомный скролл
 
-
-
-
+  var scrollListNav = document.querySelector('#nav-mobile .main-nav__inner > .main-nav__list');
+  if (scrollListNav) {
+    const osMobileNav = OverlayScrollbars(scrollListNav, {});
+  }
+  var scrollListNav2 = document.querySelector('#nav-mobile .main-nav__sublist-wrapper--lvl-2');
+  if (scrollListNav2) {
+    const osMobileNavLvl2 = OverlayScrollbars(scrollListNav2, {});
+  }
 });

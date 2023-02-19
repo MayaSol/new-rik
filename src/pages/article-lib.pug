@@ -1,0 +1,578 @@
+extends ../pug/layout.pug
+
+block meta
+  title Информация
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'article';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Информация')
+    section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
+      .article.container.mb-64px
+        h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
+        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
+          img.lazyload(
+          data-sizes="auto",
+          data-src='/img/arthrit_320x160.jpg',
+          data-srcset='/img/arthrit_320x160.jpg 360w,' +
+                  '/img/arthrit_480x240.jpg 361w,' +
+                  '/img/arthrit_800x400.jpg 481w,' +
+                  '/img/arthrit_1151x303.jpg 801w,' +
+                  '/img/arthrit_1312x345.jpg 1280w,' +
+                  '/img/arthrit_1800x473.jpg 1441w',
+          )
+        .article__contents.text-blue.font-bold.mb-24px.lg_hidden
+          .mb-10px.text-xl.text-black.font-normal.lg_text-2xl Содержание
+          ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor)
+            li
+              a.article__contents-link(href='#' data-anchor='#desc') Что собой представляет патология
+            li
+              a.article__contents-link(href='#' data-anchor='#cause') Причины возникновения
+            li
+              a.article__contents-link(href='#' data-anchor='#stad') Стадии развития
+            li
+              a.article__contents-link(href='#' data-anchor='#diag') Диагностика
+            li
+              a.article__contents-link(href='#' data-anchor='#cure') Лечение
+            li
+              a.article__contents-link(href='#' data-anchor='#prof') Профилактика
+
+        .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
+        +author2({
+          name: 'Катерина Григорьевна',
+          text: 'Врач Физиотерапевт'
+        },'article')(class='mb-18px lg_mb-25px lg_col-start-1 lg_col-span-2 lg-row-start-4')
+          picture
+            source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
+            source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
+            img.lazyload(data-src='/img/author-87x87.jpg', alt='')
+        .article__dates.mb-30px.lg_col-start-1.lg_col-span-2.lg-row-start-5
+          .date-line.flex.items-center.text-gray-300(class='!mb-5px')
+            +svg('calendar','mr-8px',{width: '17',height: '19'})
+            span.text-gray-500 Дата добавления (18.01.2022)
+          .date-line.flex.items-center.text-gray-300
+            +svg('calendar-check','mr-8px',{width: '17',height: '19'})
+            span.text-gray-500 Дата обновления (18.01.2022)
+        .article__main
+          .fragment-special.text-green.mb-40px.lg_mb-60px
+            .fragment-speical__inner.text-gray-500
+              p Артрит коленных суставов относят к часто встречающимся патологиям воспалительного характера. Причины их развития бывают разнообразными. Суставные патологии при артрите всегда сопровождаются болевыми ощущениями. Из-за болезненности снижается объем движений в суставе.
+          .code
+            code &lt;div class="fragment-special text-green mb-40px lg_mb-60px">
+            code  &lt;div class="fragment-speical__inner text-gray-500">
+            code     &lt;p>Артрит коленных суставов&lt/p>
+            code   &lt;/div>
+            code &lt;/div>
+          .article__img.img-cover.h-200px.lg_h-auto.mb-35px.lg_mb-30px
+            img.lazyload(
+            data-sizes="auto",
+            data-src='/img/arthrit_320x160.jpg',
+            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
+                    '/img/arthrit_480x240.jpg 361w, ' +
+                    '/img/arthrit_800x400.jpg 481w, ' +
+                    '/img/article-2_864x346.jpg 801w'
+            )
+          .code
+            code &lt;div class="article__img img-cover h-200px lg_h-auto mb-35px lg_mb-30px">
+            code   &lt;img class="lazyload"
+            code      data-sizes="auto"
+            code      data-src="/img/arthrit_320x160.jpg"
+            code      data-srcset=
+            code        "/img/arthrit_320x160.jpg 360w,
+            code        /img/arthrit_480x240.jpg 361w,
+            code        /img/arthrit_800x400.jpg 481w,
+            code        /img/article-2_864x346.jpg 801w">
+            code &lt;/div>
+          p
+            .relative.inline-block.pr-15px Артрит коленных суставов
+              +info-tip(class='info-tip--right' data-content='гонартрит')
+            | – воспалительное заболевание с острым или хроническим течением. Воспалительный процесс развивается в суставных структурах и преимущественно поражает хрящи, прилегающие к ним костные фрагменты, а также суставные капсулы.
+          .code
+            code &lt;p>
+            code    &lt;div class="relative inline-block pr-15px">
+            code        Артрит коленных суставов&lt;span class="info-tip info-tip--right" data-content="гонартрит">&lt;/span>
+            code    &lt;/div> – воспалительное заболевание
+            code &lt;/p>
+          div.method-download.mb-40px.lg_mt-65px
+            span Методика лечения артрита аппаратом лазерной терапии Рикта
+            +btn-download-light({
+                text: 'Скачать методику',
+                href: 'http://example.com/files/myfile.pdf',
+                classes: 'mt-10px'
+            })
+          .code
+            code &lt;div class="method-download mb-40px lg_mt-65px">
+            code   &lt;span>Методика лечения артрита аппаратом лазерной терапии Рикта&lt;/span>
+            code     &lt;a class="btn  btn--regular btn--icon btn--download text-black bg-white border-white mt-10px"
+            code       href="http://example.com/files/myfile.pdf" target="_blank">
+            code       &lt;svg class="icon" width="19" height="19">
+            code         &lt;use xlink:href="img/sprite.svg#document-cloud">&lt;/use>
+            code       &lt;/svg>
+            code       &lt;span>Скачать методику&lt;/span>
+            code     &lt;/a>
+            code &lt;/div>
+          p <b class='text-lg lg_text-xl'>Первичный артрит</b> — это последствие травм:
+          .code
+            code &lt;p>&lt;b class='text-lg lg_text-xl'>Первичный артрит&lt;/b> — это последствие травм:
+          p.text-black.lg_text-xl <b class='lg_text-xl'>Вторичное</b> поражение возникает на фоне следующих патологий:
+          .code
+            code &lt;p class="text-black lg_text-xl">&lt;b class='lg_text-xl'>Вторичное&lt;/b> поражение возникает на фоне следующих патологий:&lt;/p>
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.lg_p-40px
+            p.text-black.text-lg.lg_text-2xl Факторами риска, предрасполагающими к развитию болезни, считают следующее:
+            ul.pl-0.mb-0.lg_pl-15px
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+          .code
+            code &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px lg_p-40px">
+            code   &lt;p class="text-black text-lg lg_text-2xl">Факторами риска, предрасполагающими к развитию болезни, считают следующее:&lt;/p>
+            code     &lt;ul class="pl-0 mb-0 lg_pl-15px">
+            code       &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
+            code       &lt;li>воспаление суставной сумки и связок;&lt;/li>
+            code       &lt;li>ожирение;&lt;/li>
+            code &lt;/div>
+          .article__note.bg-yellow-50.mt-30px.mb-40px
+            .article__note-icon.icon-svg.icon-svg--info-thin-yellow
+            //- +svg('info-thin','',{width:38,height:38})(class='article__note-icon text-yellow-400')
+            .text-lg.text-black.mb-5px.lg_text-xl.lg_self-start Рикта рекомендует
+            p(class='!mb-0') При третьей и четвертой стадии болезни суставов требуется немедленно обратиться за медицинской помощью.
+          .code
+            code &lt;div class="article__note bg-yellow-50 mt-30px mb-40px">
+            code   &lt;div class="article__note-icon icon-svg icon-svg--info-thin-yellow">&lt;/div>
+            code   &lt;div class="text-lg text-black mb-5px lg_text-xl lg_self-start">Рикта рекомендует&lt;/div>
+            code   &lt;p class="!mb-0">При третьей и четвертой стадии болезни суставов требуется немедленно обратиться за медицинской помощью.&lt;/p>
+            code &lt;/div>
+          .article__note.bg-red-50.mt-20px.mb-40px
+            .article__note-icon.icon-svg.icon-svg--info-thin-red
+            .text-lg.text-black.mb-5px.lg_text-xl.lg_self-start Обратите внимание
+            p(class='!mb-0') Если диагностика проведена несвоевременно и некачественно, лечение вовремя не назначается. Болезнь приобретает хроническое течение.
+          .code
+            code &lt;div class="article__note bg-red-50 mt-20px mb-40px">
+            code   &lt;div class="article__note-icon icon-svg icon-svg--info-thin-red">&lt;/div>
+            code   &lt;div class="text-lg text-black mb-5px lg_text-xl lg_self-start">Рикта рекомендует&lt;/div>
+            code   &lt;p class="!mb-0">Если диагностика проведена несвоевременно и некачественно, лечение вовремя не назначается. Болезнь приобретает хроническое течение.&lt;/p>
+            code &lt;/div>
+          .article__note.bg-green-50.mt-20px.mb-20px
+            .article__note-icon.icon-svg.icon-svg--info-wallet-green
+            //- +svg('wallet','',{width:48,height:48})(class='article__note-icon text-green-300')
+            p(class='!mb-0') Значимым достоинством этого лечения при артрите считают доступность. Она хорошо сочетается с другими лечебными средствами комплексной терапевтической программы. Физиотерапия бережно воздействует на организм, оказывает длительный эффект. При ее применении почти отсутствуют побочные явления.
+          .code
+            code &lt;div class="article__note bg-green-50 mt-20px mb-20px">
+            code   &lt;div class="article__note-icon icon-svg icon-svg--info-wallet-green">&lt;/div>
+            code   &lt;p class="!mb-0">Значимым достоинством этого лечения при артрите считают доступность. Она хорошо сочетается с другими лечебными средствами комплексной терапевтической программы. Физиотерапия бережно воздействует на организм, оказывает длительный эффект. При ее применении почти отсутствуют побочные явления.&lt;/p>
+            code &lt;/div>
+          .article__imgs-wrapper.lg_flex.mb-20px.lg_mb-40px
+            .article__img.img-cover.h-200px.lg_h-176px.lg_mr-20px
+              img.lazyload(
+              data-sizes="auto",
+              data-src='/img/arthrit_320x160.jpg',
+              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
+                      '/img/arthrit_480x240.jpg 361w, ' +
+                      '/img/arthrit_800x400.jpg 481w, ' +
+                      '/img/article-2_864x346.jpg 801w '
+              )
+            .article__img.img-cover.h-200px.lg_h-176px.hidden.lg_block.lg_mr-20px
+              img.lazyload(
+              data-sizes="auto",
+              data-src='/img/arthrit_320x160.jpg',
+              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
+                      '/img/arthrit_480x240.jpg 361w, ' +
+                      '/img/arthrit_800x400.jpg 481w, ' +
+                      '/img/article-2_864x346.jpg 801w '
+              )
+            .article__img.img-cover.h-200px.lg_h-176px.hidden.lg_block
+              img.lazyload(
+              data-sizes="auto",
+              data-src='/img/arthrit_320x160.jpg',
+              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
+                      '/img/arthrit_480x240.jpg 361w, ' +
+                      '/img/arthrit_800x400.jpg 481w, ' +
+                      '/img/article-2_864x346.jpg 801w '
+              )
+          .code
+            code &lt;div class="article__imgs-wrapper lg_flex mb-20px lg_mb-40px">
+            code   &lt;div class="article__img img-cover h-200px lg_h-176px lg_mr-20px">
+            code     &lt;img class="lazyload"
+            code       data-sizes="auto"
+            code       data-src="/img/arthrit_320x160.jpg"
+            code       data-srcset="/img/arthrit_320x160.jpg 360w,
+            code         /img/arthrit_480x240.jpg 361w,
+            code         /img/arthrit_800x400.jpg 481w,
+            code         /img/article-2_864x346.jpg 801w ">
+            code   &lt;/div>
+            code   &lt;div class="article__img img-cover h-200px lg_h-176px lg_mr-20px">
+            code     &lt;img class="lazyload"
+            code       data-sizes="auto"
+            code       data-src="/img/arthrit_320x160.jpg"
+            code       data-srcset="/img/arthrit_320x160.jpg 360w,
+            code         /img/arthrit_480x240.jpg 361w,
+            code         /img/arthrit_800x400.jpg 481w,
+            code         /img/article-2_864x346.jpg 801w ">
+            code   &lt;/div>
+            code   &lt;div class="article__img img-cover h-200px lg_h-176px lg_mr-20px">
+            code     &lt;img class="lazyload"
+            code       data-sizes="auto"
+            code       data-src="/img/arthrit_320x160.jpg"
+            code       data-srcset="/img/arthrit_320x160.jpg 360w,
+            code         /img/arthrit_480x240.jpg 361w,
+            code         /img/arthrit_800x400.jpg 481w,
+            code         /img/article-2_864x346.jpg 801w ">
+            code   &lt;/div>
+            code &lt;/div>
+          .lg_flex.lg_mb-40px
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
+            div.method-download.method-download--lg-small.mt-35px.mb-20px.lg_mt-0.lg_ml-30px.lg_mb-0
+              span Методика лечения артрита аппаратом лазерной терапии Рикта
+              +btn-download-light({
+                  text: 'Скачать методику',
+                  href: 'http://example.com/files/myfile.pdf',
+                  classes: 'mt-10px'
+              })
+          .code
+            code &lt;div class="lg_flex lg_mb-40px">
+            code   &lt;p>Лечение суставов с применением лазера – это методика.&lt;/p>
+            code   &lt;div class="method-download method-download--lg-small mt-35px mb-20px lg_mt-0 lg_ml-30px lg_mb-0">
+            code     &lt;span>Методика лечения артрита аппаратом лазерной терапии Рикта&lt;/span>
+            code       &lt;a class="btn  btn--regular btn--icon btn--download text-black bg-white border-white mt-10px"
+            code         href="http://example.com/files/myfile.pdf" target="_blank">
+            code         &lt;svg class="icon" width="19" height="19">
+            code           &lt;use xlink:href="img/sprite.svg#document-cloud">&lt;/use>
+            code         &lt;/svg>
+            code         &lt;span>Скачать методику&lt;/span>
+            code       &lt;/a>
+            code    &lt;/div>
+            code &lt;/div>
+
+          .article__note.bg-green-50.mt-20px.mb-20px
+            .article__note-icon.icon-svg.icon-svg--laser-green
+            p(class='!mb-0') Лазеротерапия эффективна при различных формах заболевания. Метод успешно используют при ревматоидном, подагрическом, посттравматическом и других артритах.
+          .code
+            code &lt;div class="article__note bg-green-50 mt-20px mb-20px">
+            code   &lt;div class="article__note-icon icon-svg icon-svg--laser-green">&lt;/div>
+            code   &lt;p class="!mb-0">Лазеротерапия эффективна при различных формах заболевания. Метод успешно используют при ревматоидном, подагрическом, посттравматическом и других артритах.&lt;/p>
+            code &lt;/div>
+          .article__note.bg-blue-50.mt-20px.mb-40px
+            .article__note-icon.icon-svg.icon-svg--laser-device
+            p(class='!mb-0') Сейчас лазеротерапию делают не только с помощью громоздких аппаратов для медицинских учреждений. Теперь не нужно ходить в поликлинику, возможно лечение артрита колена в домашних условиях с помощью портативных аппаратов. Их регулярное применение улучшает функционирование коленного сустава.
+          .code
+            code &lt;div class="article__note bg-blue-50 mt-20px mb-40px">
+            code   &lt;div class="article__note-icon icon-svg icon-svg--laser-device">&lt;/div>
+            code   &lt;p class="!mb-0">Сейчас лазеротерапию делают не только с помощью громоздких аппаратов для медицинских учреждений. Теперь не нужно ходить в поликлинику, возможно лечение артрита колена в домашних условиях с помощью портативных аппаратов. Их регулярное применение улучшает функционирование коленного сустава.&lt;/p>
+            code &lt;/div>
+          .grid.grid-cols-2.gap-x-20px.mb-20px
+            .article__img.img-cover.h-100px(class='lg_h-[248px]')
+              img.lazyload(
+              data-sizes="auto",
+              data-src='/img/arthrit_320x160.jpg',
+              data-srcset='/img/arthrit_320x160.jpg 360w' +
+                      '/img/arthrit_480x240.jpg 361w' +
+                      '/img/arthrit_800x400.jpg 481w' +
+                      '/img/arthrit_1152x303.jpg 801w' +
+                      '/img/arthrit_1312x345.jpg 1280w' +
+                      '/img/arthrit_1800x473.jpg 1441w',
+            )
+            .article__img.img-cover.h-100px(class='lg_h-[248px]')
+              img.lazyload(
+              data-sizes="auto",
+              data-src='/img/arthrit_320x160.jpg',
+              data-srcset='/img/arthrit_320x160.jpg 360w' +
+                      '/img/arthrit_480x240.jpg 361w' +
+                      '/img/arthrit_800x400.jpg 481w' +
+                      '/img/arthrit_1152x303.jpg 801w' +
+                      '/img/arthrit_1312x345.jpg 1280w' +
+                      '/img/arthrit_1800x473.jpg 1441w',
+            )
+          .code
+            code &lt;div class="grid grid-cols-2 gap-x-20px mb-20px">
+            code   &lt;div class="article__img img-cover h-100px lg_h-[248px]">
+            code     &lt;img class="lazyload" data-sizes="auto"
+            code     data-src="/img/arthrit_320x160.jpg"
+            code     data-srcset="/img/arthrit_320x160.jpg 360w/img/arthrit_480x240.jpg 361w/img/arthrit_800x400.jpg 481w/img/arthrit_1152x303.jpg 801w/img/arthrit_1312x345.jpg 1280w/img/arthrit_1800x473.jpg 1441w">
+            code   &lt;/div>
+            code   &lt;div class="article__img img-cover h-100px lg_h-[248px]">
+            code     &lt;img class="lazyload"
+            code     data-sizes="auto"
+            code     data-src="/img/arthrit_320x160.jpg" data-srcset="/img/arthrit_320x160.jpg 360w/img/arthrit_480x240.jpg 361w/img/arthrit_800x400.jpg 481w/img/arthrit_1152x303.jpg 801w/img/arthrit_1312x345.jpg 1280w/img/arthrit_1800x473.jpg 1441w">
+            code   &lt;/div>
+            code &lt;/div>
+          p.article__img.img-cover.w-200px
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-200px">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          p.article__img.img-cover.w-300px
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-300px">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          p.article__img.img-cover.w-400px
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-400px">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          p.article__img.img-cover.w-500px
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-500px">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          p.article__img.img-cover.w-600px
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-600px">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          p.article__img.img-cover(class='w-[75%]')
+           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          .code
+            code &lt;p class="article__img img-cover w-[75%]">
+            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+            code &lt;/p>
+          <div class="flex gap-20px">
+            <div>
+              <div class="article__img img-cover w-200px">
+                <img class="lazyautosizes lazyloaded" data-sizes="auto" data-src="/images/otziv/users/08.08.22/Укус_до.jpg" sizes="200px" src="https://rikta.ru/images/otziv/users/08.08.22/%D0%A3%D0%BA%D1%83%D1%81_%D0%B4%D0%BE.jpg"><br>
+                <span>Укус. До лечения.</span>
+              </div>
+            </div>
+            <div>
+              <div class="article__img img-cover w-200px">
+                <img class="lazyautosizes lazyloaded" data-sizes="auto" data-src="/images/otziv/users/08.08.22/Укус_после.jpg" sizes="200px" src="https://rikta.ru/images/otziv/users/08.08.22/%D0%A3%D0%BA%D1%83%D1%81_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5.jpg"><br>
+                <span> После 5 сеанса лечения с аппаратом РИКТА.</span>
+              </div>
+            </div>
+          </div>
+          .code
+            code  &lt;div class="flex gap-20px">
+            code    &lt;div>
+            code      &lt;div class="article__img img-cover w-200px">
+            code        &lt;img class="lazyload" data-sizes="auto" data-src="/images/otziv/users/08.08.22/Укус_до.jpg">&lt;br>
+            code        &lt;span>Укус. До лечения.&lt;/span>
+            code      &lt;/div>
+            code    &lt;/div>
+            code    &lt;div>
+            code      &lt;div class="article__img img-cover w-200px">
+            code        &lt;img class="lazyload" data-sizes="auto" data-src="/images/otziv/users/08.08.22/Укус_после.jpg">&lt;br>
+            code        &lt;span> После 5 сеанса лечения с аппаратом РИКТА.&lt;/span>
+            code      &lt;/div>
+            code    &lt;/div>
+            code  &lt;/div>
+          .sources
+            h3 Список литературы:
+            ol
+              li Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.
+              li Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.
+              li Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8. <a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank">http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf</a>
+          .code
+            code  &lt;div class="sources">
+            code    &lt;h3>Список литературы:&lt;/h3>
+            code    &lt;ol>
+            code      &lt;li>Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.&lt;/li>
+            code      &lt;li>Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.&lt;/li>
+            code      &lt;li>Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8.
+            code        &lt;a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank"/>
+            code      &lt;/li>
+            code    &lt;/ol>
+            code  &lt;/div>
+          table.article-table
+            thead
+              tr
+                th Заголовок 1
+                th Заголовок 2
+                th Заголовок 3
+                th Заголовок 4
+              tr
+                td(data-content='Заголовок 1') Пример строки 1
+                td(data-content='Заголовок 2') Пример длинной строки длинной строки длинной строки 1
+                td(data-content='Заголовок 3')
+                  p Пример строки 1
+                  p Пример строки 1
+                td(data-content='Заголовок 4') Пример строки 1
+              tr
+                td(data-content='Заголовок 1') Пример строки 2
+                td(data-content='Длинный Заголовок 2') Пример строки 2
+                td(data-content='Заголовок 3') Пример строки 2
+                td(data-content='Заголовок 4') Пример строки 2
+              tr
+                td(data-content='Заголовок 1') Пример строки 3
+                td(data-content=' Очень Длинный Заголовок 2 Очень Длинный Заголовок 2') Пример строки 3
+                td(data-content='Заголовок 3') Пример строки 3
+                td(data-content='Заголовок 4') Пример строки 3
+          .code
+            code &lt;table class="article-table">
+            code   &lt;thead>
+            code     &lt;tr>
+            code       &lt;th>Заголовок 1&lt;/th>
+            code       &lt;th>Заголовок 2&lt;/th>
+            code       &lt;th>Заголовок 3&lt;/th>
+            code       &lt;th>Заголовок 4&lt;/th>
+            code     &lt;/tr>
+            code   &lt;/thead>
+            code     &lt;tr>
+            code       &lt;td data-content="Заголовок 1">Пример строки 1&lt;/td>
+            code       &lt;td data-content="Заголовок 2">Пример длинной строки длинной строки длинной строки 1&lt;/td>
+            code       &lt;td data-content="Заголовок 3">
+            code         &lt;p>Пример строки 1&lt;/p>
+            code         &lt;p>Пример строки 1&lt;/p>
+            code       &lt;/td>
+            code       &lt;td data-content="Заголовок 4">Пример строки 1&lt;/td>
+            code     &lt;/tr>
+            code     &lt;tr>
+            code       &lt;td data-content="Заголовок 1">Пример строки 2&lt;/td>
+            code       &lt;td data-content="Длинный Заголовок 2">Пример строки 2&lt;/td>
+            code       &lt;td data-content="Заголовок 3">Пример строки 2&lt;/td>
+            code       &lt;td data-content="Заголовок 4">Пример строки 2&lt;/td>
+            code     &lt;/tr>
+            code     &lt;tr>
+            code       &lt;td data-content="Заголовок 1">Пример строки 3&lt;/td>
+            code       &lt;td data-content=" Очень Длинный Заголовок 2 Очень Длинный Заголовок 2">Пример строки 3&lt;/td>
+            code       &lt;td data-content="Заголовок 3">Пример строки 3&lt;/td>
+            code       &lt;td data-content="Заголовок 4">Пример строки 3&lt;/td>
+            code     &lt;/tr>
+            code &lt;/table>
+        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-start-3.lg_row-span-10
+          .article__float
+            .article__float-container
+              .article__contents.font-bold.mb-24px
+                .mb-10px.text-xl.text-black.font-normal.lg_text-2xl.lg_mb-15px Содержание
+                ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor data-tab-class='a')
+                  li
+                    a.article__contents-link(href='#' data-anchor='#desc') Что собой представляет патология
+                  li
+                    a.article__contents-link(href='#' data-anchor='#cause') Причины возникновения
+                  li
+                    a.article__contents-link(href='#' data-anchor='#stad') Стадии развития
+                  li
+                    a.article__contents-link(href='#' data-anchor='#diag') Диагностика
+                  li
+                    a.article__contents-link(href='#' data-anchor='#cure') Лечение
+                  li
+                    a.article__contents-link(href='#' data-anchor='#prof') Профилактика
+              // .banner__wrapper.article__banner
+              //   .banner Баннер
+              +consult({
+                url: '/img/author_87x87.jpg',
+                name: 'Иван Фабричный',
+                text: 'Врач кардиолог',
+                phone: '8 800 200 57 30'
+              })(class='article__consult')
+
+        .article__socials.lg_justify-self-start
+          .text-lg.text-black.text-center.mb-7px Поделиться в соц. сетях
+            <div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'></div>
+        .code
+          code &lt;div class="article__socials lg_justify-self-start">
+          code   &lt;div class="text-lg text-black text-center mb-7px">Поделиться в соц. сетях&lt;/div>
+          code   &lt;div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'>&lt;/div>
+          code &lt;/div>
+        .article__rating.rating.rating.text-lg.text-center.mt-20px.lg_justify-self-end
+          .article__rating-text.mb-5-px
+            span.text-black 4.3/5&#32;
+            span (5 286 оценок)
+          .rating__stars--view#rateYo(data-value='4.3')
+        .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px.lg_mt-60px
+          .article__note-icon.icon-svg.icon-svg--warning-slate
+          p(class='!mb-0') Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.
+        .code.lg_col-start-1.lg_col-end-3
+          code &lt;div class="article__note bg-slate-50 mt-20px mb-40px lg_col-start-1 lg_col-end-3 lg_mb-30px lg_mt-60px">
+          code   &lt;div class="article__note-icon icon-svg icon-svg--warning-slate">&lt;/div>
+          code   &lt;p class="!mb-0">Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.&lt;/p>
+          code &lt;/div>
+        .question.article__question#article-question
+          h3.mb-5px Часто задаваемые вопросы по заболеванию
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_01',
+              target_id: 'answer_01',
+              name: 'Бывает ли, что рикта не помогает?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_02',
+              target_id: 'answer_02',
+              name: 'Применяется ли аппарат рикта при отморожениях?',
+              parent: '#article-question',
+              show: false
+            })
+              p Да, применяется. Использование аппарата РИКТА способствует восстановлению микроциркуляции пораженных тканей, купированию или ослаблению болевого синдрома, снижению интоксикации и сокращению сроков лечения. Усиление эффекта наблюдается в комплексе с медикаментозной терапией.
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_03',
+              target_id: 'answer_03',
+              name: 'Как выбрать лазерный аппарат для дома?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+          .question__item-wrapper
+            +question-item({
+              header_id: 'question_04',
+              target_id: 'answer_04',
+              name: 'Можно ли лечить акушерско-гинекологические заболевания самостоятельно?',
+              parent: '#article-question',
+              show: false
+            })
+              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+        +consult({
+          url: '/img/author_87x87.jpg',
+          name: 'Иван Фабричный',
+          text: 'Врач кардиолог',
+          phone: '8 800 200 57 30'
+        })(class='article__consult mt-70px lg_hidden')
+        .banner__wrapper.article__banner.lg_hidden
+          .banner Баннер
+      .container
+        h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
+        +btn('Все статьи','simple').mb-20px.shrink-0
+        .article-preview.article-preview__list-wrapper
+          .article-preview__list.slider
+            .article-preview.slider__item
+              .article-preview__inner.xxl_flex.xxl_flex-col
+                .article-preview__img
+                  img.lazyload(data-src="img/article-1.jpg")
+                .article-preview__text.xxl_pt-30px
+                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                  .article-preview__content.hidden
+                  +btn('Подробнее','simple')(class="text-md mt-10px")
+            .article-preview.slider__item
+              .article-preview__inner.xxl_flex.xxl_flex-col
+                .article-preview__img
+                  img.lazyload(data-src="img/article-2.jpg")
+                .article-preview__text.xxl_pt-30px
+                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                  .article-preview__content.hidden
+                  +btn('Подробнее','simple')(class="text-md mt-10px")
+            .article-preview.slider__item
+              .article-preview__inner.xxl_flex.xxl_flex-col
+                .article-preview__img
+                  img.lazyload(data-src="img/article-2.jpg")
+                .article-preview__text.xxl_pt-30px
+                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                  .article-preview__content.hidden
+                  +btn('Подробнее','simple')(class="text-md mt-10px")
+
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+
+

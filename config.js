@@ -14,7 +14,9 @@ let config = {
     'page',
     'btn',
     'icon-svg',
-    'form'
+    'form',
+    'ramform',
+    'bx-auth'
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
@@ -41,7 +43,9 @@ let config = {
     'src/scss/mixins.scss',
     'src/scss/_nav.scss',
     'src/scss/onepagescroll.scss',
-    'rateyo/lib/iife/rateyo.min.css'
+    'rateyo/lib/iife/rateyo.min.css',
+    'lightgallery/scss/lightgallery-bundle.scss',
+    'overlayscrollbars/styles/overlayscrollbars.css',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -66,6 +70,7 @@ let config = {
   ],
   'addJsAfter': [
     './script.js',
+    './utils/onepagescroll_after.js',
   ],
   'addAssets': {
     'src/fonts/': 'fonts/',
@@ -77,12 +82,14 @@ let config = {
     'src/img/3d/new/3/*.jpg': 'img/3d/3',
     'src/video/*.{mp4,mov,jpg}': 'video/',
     'src/webfonts/': 'webfonts/',
+    'node_modules/lightgallery/fonts/*': 'fonts/',
     'design/screens/': 'screens/',
     'src/js/': 'js/',
     'initial/cart-payment.css': 'css/',
     'src/css/': 'css/',
     'src/pages/tnstest.html': '/',
-    'src/pages/cart3.html': '/'
+    'src/pages/cart3.html': '/',
+
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

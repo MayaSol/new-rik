@@ -69,7 +69,7 @@
         content: '';
         position: absolute;
         top: 50%;
-        left: -8px;
+        left: 10px;
         width: 1px;
         height: 8px;
         background-color: currentColor;
@@ -85,6 +85,10 @@
 
       &:hover {
         color: $tw-black;
+      }
+
+      .btn--clear {
+        padding-left: 20px;
       }
     }
 

@@ -24,3 +24,15 @@
   border: none;
 }
 
+@mixin text-link {
+  color: $tw-blue_link;
+  font-weight: 700;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $tw-blue_link;
+    text-decoration: underline;
+  }
+}
+

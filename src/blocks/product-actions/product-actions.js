@@ -4,7 +4,6 @@ const {Cart} = require('../cart/cart.js');
 // import tippy from 'tippy.js';
 
 ready(function() {
-  console.log(Cart);
   // var tippyOptionsDefault = {
   //   content: 'replace it',
   //   allowHTML: true,

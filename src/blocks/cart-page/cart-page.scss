@@ -13,7 +13,7 @@
   #bx-soa-tanais-order-form {
     @media (min-width: $screen-lg) {
       display: grid;
-      grid-template-columns: 1fr 20px 320px;
+      grid-template-columns: 1fr 20px 365px;
     }
 
     @media (min-width: $screen-xxl) {
@@ -361,6 +361,7 @@
         display: block;
         width: 95%;
         transform: none;
+        z-index: 0;
 
         &::after {
           position: static !important;
@@ -598,6 +599,7 @@
 
   .bx-soa-cart-total {
     padding: 0 !important;
+    box-shadow: none !important;
   }
 
   .bx-soa-cart-total-data,
@@ -605,6 +607,7 @@
     padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 30px;
     border-radius: 5px;
     box-shadow: none;
     background-color: $tw-gray-70;
@@ -612,6 +615,10 @@
     .bx-total-coupon-container {
       margin-top: 20px;
     }
+  }
+
+  .bx-soa-cart-total-data {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 
   .bx-soa-cart-total-line {
@@ -868,13 +875,40 @@
 
   //Купон (промокод)
   .bx-soa-coupon-item {
-    position: relative;
     display: block;
-    padding: 22px 20px;
-    border-radius: 24px;
+    margin-top: 15px;
+  }
+
+  .bx-soa-coupon-item > div {
+    position: relative;
     border: 1px dashed #14142B;
     background-color: #fff;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+
+    &:first-of-type {
+      padding-top: 22px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      border-top-width: 1px;
+    }
+
+    &:last-of-type {
+      padding-bottom: 22px;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      border-bottom-width: 1px;
+
+      .bx-soa-coupon-delete {
+        bottom: 22px;
+      }
+    }
   }
+
 
   .bx-soa-coupon {
 
@@ -886,7 +920,6 @@
 
   .bx-soa-coupon-block {
     padding: 0;
-    background-color: #fff;
     border-radius: 10px;
     border: none;
     overflow: hidden;
@@ -915,12 +948,21 @@
     width: auto;
     margin-left: 0;
     top: auto;
-    bottom: 22px;
+    bottom: 0;
     right: 30px;
     color: $tw-red-900;
     line-height: 1.1;
     border-bottom: 1px dashed $tw-red-900;
     background-image: none;
     background: none;
+  }
+
+  .soa-property-container.has-soa-address-suggest .soa-suggests-container {
+    left: 0;
+    z-index: 15;
+  }
+
+  .bx-soa-cart-total-ghost {
+    display: none !important;
   }
 }

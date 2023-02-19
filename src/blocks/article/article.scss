@@ -21,7 +21,8 @@
     margin-bottom: 20px;
   }
 
-  a {
+  & a
+  {
     color: $tw-blue_link;
     font-weight: 700;
 
@@ -38,6 +39,10 @@
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 6;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 20px;
+    }
 
     h2 {
       margin-bottom: 20px;
@@ -67,14 +72,22 @@
       color: $tw-black;
     }
 
-    ul {
+    & ul.list-dots {
+      &::before {
+        display: none;
+      }
+    }
+
+    @at-root .reviews-section ul,
+    & ul
+    {
       margin: 0 0 25px 0;
-      padding: 0 0 0 15px;
+      padding: 0 0 0 10px;
       list-style: inside url('/img/list-circle.svg');
 
       li {
         position: relative;
-        padding-left: 15px;
+        padding-left: 0;
         margin-bottom: 16px;
         line-height: 1.375em;
 
@@ -99,7 +112,9 @@
       }
     }
 
-    ol {
+    @at-root .reviews-section ol,
+    & ol
+    {
       counter-reset: num;
       margin: 0;
       margin-bottom: 20px;
@@ -107,7 +122,7 @@
 
       li {
         position: relative;
-        padding-left: 21px;
+        padding-left: 25px;
         margin-bottom: 20px;
 
         &::before {
@@ -144,6 +159,10 @@
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
+
+    @media (max-width: $screen-lg - 1) {
+      width: auto !important;
+    }
 
     &--main {
       border-radius: 10px;
@@ -230,6 +249,10 @@
     flex-direction: column;
     align-items: center;
 
+    .ya-share2__list {
+      padding-left: 0;
+    }
+
     .ya-share2__item {
       margin-right: 10px !important;
     }
@@ -254,6 +277,8 @@
       grid-column-end: 2;
       grid-row-start: 7;
       grid-row-end: 8;
+      align-items: start;
+      margin-top: 20px;
     }
   }
 
@@ -267,6 +292,7 @@
       grid-column-end: 3;
       grid-row-start: 7;
       grid-row-end: 8;
+      margin-top: 40px !important;
     }
   }
 

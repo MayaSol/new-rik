@@ -50,6 +50,10 @@ mixin product-main(props={}, mods)
                 span Гарантия 2 года
               span.product-card__top-item
                 span Акция
+          #product-main-item0.product-main__slider-item.tns-item.tns-slide-active(data-slide="0")
+            .video.product-main__video
+              .product-main__poster.video__poster(data-src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg")
+                img(src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg" alt="Фото РИКТА-04/4")
           +product-main-item-video({
             url: '/video/dummy.mov',
             width: '1920',
@@ -94,8 +98,6 @@ mixin product-main(props={}, mods)
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
                 span Гарантия 3 года
-              //- span.product-card__top-item
-              //-   span 6
           +product-main-item-video({
             url: '/video/banana.mp4',
             width: '1920',
@@ -106,8 +108,6 @@ mixin product-main(props={}, mods)
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
                 span Гарантия 3 года
-              //- span.product-card__top-item
-              //-   span 7
           +product-main-item-video({
             url: '/video/banana.mp4',
             width: '1920',
@@ -118,8 +118,9 @@ mixin product-main(props={}, mods)
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
                 span Гарантия 3 года
-              //- span.product-card__top-item
-              //-   span 8
+          +product-main-item-video-preview-only({
+            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
+          })(data-slide='8')
         .product-main__controls.slider__controls.slider__controls--center(aria-label="Carousel Navigation" tabindex="0")
           button.slider__controls-btn.slider__controls-btn--prev(type="button" data-controls="prev" tabindex="-1" aria-controls="tns1")
             +svg('arrow','',{width: 19,height:19})
@@ -142,7 +143,8 @@ mixin product-main(props={}, mods)
             +svg('angle','',{width: 7,height:14})
     .product-main__price-wrapper.mt-12px.mb-25px.lg_mt-0.lg_mb-30px
       .product-main__price.mr-10px.lg_mr-20px 44 800 ₽
-      .product-main__price-old 28 600 ₽
+      p.w-full Внимание! С 1 января 2023 г. повышение цен.
+      .product-main__price-old + <span class="options-sum">0</span> ₽ (дополнительно)
     +product-options({
       title: '<div class="mb-10px text-lg text-black col-start-1 col-end-3">Дополнительно</div>'
     })(class='product-main__options')
@@ -330,6 +332,27 @@ mixin product-main-item-video-yt(props={}, mods)
         img.lazyload(data-src=props.src data-srcset=props.srcset)
         .btn-play.btn-play--product
       <iframe class="video-yt__frame" id="video-yt__frame"  width="560" height="315" src="https://www.youtube.com/embed/5Q2Pc-e-8Qc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+mixin product-main-item-video-preview-only(props={}, mods)
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-main--' + modsList[i].trim();
+      }
+    }
+  .product-main__slider-item(class=allMods)&attributes(attributes)
+    +video-product--img-only({
+      url: props.url,
+      width: props.width,
+      height: props.height,
+      poster: props.poster,
+      btn_mod: 'filled'
+    })(class='product-main__video')
+    block
 
 
 mixin product-main-item-img(props={}, mods)

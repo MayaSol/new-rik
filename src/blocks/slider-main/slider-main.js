@@ -17,17 +17,15 @@ ready(function() {
 
 
 
-  const autoPlayTimeout = 10000;
-  // const autoPlayTimeout = 57000;
+  const autoPlayTimeout = 27000;
 
 
   var videos = document.querySelectorAll('.slider-main__media--video-bg video');
-  console.log(videos);
+  // console.log(videos);
   if (videos.length > 0) {
     for (let i=0; i<videos.length; i++) {
-      console.log('================================');
       let video = videos[i];
-      console.log(video.networkState);
+      // console.log(video.networkState);
       if (i == 0 && video.networkState == 1) {
         initMainSlider();
       }
@@ -37,7 +35,6 @@ ready(function() {
       if (playBtn) {
 
         playBtn.addEventListener('click', (event) => {
-          console.log('playBtn click');
           event.preventDefault();
           if (video.classList.contains('playing')) {
             pauseVideo(video);
@@ -48,7 +45,7 @@ ready(function() {
       }
       //Добавить playBtn класс hidden и и убирать после начала проигрывания
       video.addEventListener('canplaythrough', (event) => {
-        console.log('canplaythrough');
+        // console.log('canplaythrough');
         initMainSlider();
       });
       video.addEventListener('pause', function() {
@@ -70,26 +67,23 @@ ready(function() {
       })
 
   //!!!
-function handleEvent(event) {
-    console.log('-----------');
-    console.log(`${event.type}`);
-    console.log(event.target.getElementsByTagName('source')[0].src);
-    console.log(event.target.networkState);
-}
+// function handleEvent(event) {
+//     console.log('-----------');
+//     console.log(`${event.type}`);
+//     console.log(event.target.getElementsByTagName('source')[0].src);
+//     console.log(event.target.networkState);
+// }
 
-video.addEventListener('loadstart', handleEvent);
-video.addEventListener('progress', handleEvent);
-video.addEventListener('canplay', handleEvent);
-video.addEventListener('canplaythrough', handleEvent);
+// video.addEventListener('loadstart', handleEvent);
+// video.addEventListener('progress', handleEvent);
+// video.addEventListener('canplay', handleEvent);
+// video.addEventListener('canplaythrough', handleEvent);
 //!!!
     }
   }
 
   function playVideo(videoEl) {
-    console.log('playVideo');
-    console.log(videoEl.getElementsByTagName('source'));
     if (videoEl.getElementsByTagName('source').length > 0) {
-      console.log('source');
       var result = videoEl.play();
       videoEl.controls = true;
     }
@@ -151,9 +145,7 @@ video.addEventListener('canplaythrough', handleEvent);
           // nav: false,
           loop: false,
           onInit: function(info) {
-            console.log('onInit');
             var video = info.slideItems[0].querySelector('video');
-            console.log(video);
             playVideo(video);
           }
         });

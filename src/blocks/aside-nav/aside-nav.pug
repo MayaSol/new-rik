@@ -122,3 +122,26 @@ mixin aside-nav-full(mods)
       name: 'Истоки',
       href: '#'
     })
+
+
+
+mixin aside-nav-cert(mods)
+
+
+  +aside-nav(mods)&attributes(attributes)
+    +aside-nav__item({
+      name: 'Патенты и Свидетельства',
+      href: '#'
+    },'active')
+    +aside-nav__item({
+      name: 'Учёный совет',
+      header_id: 'menu-02',
+      target_id: 'submenu-02',
+      href: '#'
+    })
+    +aside-nav__item({
+      name: 'Нематериальные активы',
+      header_id: 'menu-03',
+      target_id: 'submenu-03',
+      href: '#'
+    })

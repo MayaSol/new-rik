@@ -3,6 +3,7 @@ const ready = require('../../js/utils/documentReady.js');
 
 ready(function() {
   if (document.querySelector('#map')) {
+    console.log(ymaps);
     ymaps.ready(function() {
       var myMap = new ymaps.Map('map', {
           center: [55.768355, 37.717474],

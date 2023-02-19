@@ -19,16 +19,16 @@ block content
     section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
       .article.container.mb-64px
         h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
-        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
+        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px.w-600px
           img.lazyload(
           data-sizes="auto",
-          data-src='/img/arthrit_320x160.jpg',
-          data-srcset='/img/arthrit_320x160.jpg 360w,' +
-                  '/img/arthrit_480x240.jpg 361w,' +
-                  '/img/arthrit_800x400.jpg 481w,' +
-                  '/img/arthrit_1151x303.jpg 801w,' +
-                  '/img/arthrit_1312x345.jpg 1280w,' +
-                  '/img/arthrit_1800x473.jpg 1441w',
+          data-src='img/arthrit_320x160.jpg',
+          data-srcset='img/arthrit_320x160.jpg 360w,' +
+                  'img/arthrit_480x240.jpg 361w,' +
+                  'img/arthrit_800x400.jpg 481w,' +
+                  'img/arthrit_1151x303.jpg 801w,' +
+                  'img/arthrit_1312x345.jpg 1280w,' +
+                  'img/arthrit_1800x473.jpg 1441w',
           )
         .article__contents.text-blue.font-bold.mb-24px.lg_hidden
           .mb-10px.text-xl.text-black.font-normal.lg_text-2xl Содержание
@@ -45,15 +45,16 @@ block content
               a.article__contents-link(href='#' data-anchor='#cure') Лечение
             li
               a.article__contents-link(href='#' data-anchor='#prof') Профилактика
+
         .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
         +author2({
           name: 'Катерина Григорьевна',
           text: 'Врач Физиотерапевт'
         },'article')(class='mb-18px lg_mb-25px lg_col-start-1 lg_col-span-2 lg-row-start-4')
           picture
-            source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
-            source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
-            img.lazyload(data-src='/img/author-87x87.jpg', alt='')
+            source(media='(max-width: 1023px)' data-srcset='img/author_87x87.jpg')
+            source(media='(min-width: 1024px)' data-srcset='img/author_219x219.jpg')
+            img.lazyload(data-src='img/author-87x87.jpg', alt='')
         .article__dates.mb-30px.lg_col-start-1.lg_col-span-2.lg-row-start-5
           .date-line.flex.items-center.text-gray-300(class='!mb-5px')
             +svg('calendar','mr-8px',{width: '17',height: '19'})
@@ -71,11 +72,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-35px.lg_mb-30px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w'
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w'
             )
           div
             p
@@ -105,11 +106,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg' ,
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg' ,
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Воспаление коленного сустава бывает первичным и вторичным. При первичном воспалении артрит колена встречается как самостоятельное заболевание. Еще выделяют вторичные воспалительные патологии, которое возникают как следствие других недугов.
           p <b class='text-lg lg_text-xl'>Первичный артрит</b> — это последствие травм: сюда относят ушибы, открытые раны, разрыв коленной капсулы, повреждение мениска. Происходит внедрение инфекционных агентов в суставную полость. Еще эта патология развивается после проведения диагностических пункций или хирургических вмешательств.
@@ -136,16 +137,20 @@ block content
               li роды;
               li болезни опорно-двигательного аппарата;
               li переохлаждение
-          p Развитию артрита способствуют профессиональные и бытовые сверхнагрузки на суставы, включающие перенос тяжестей. Еще на это влияет однообразная работа в неудобной позе.
+            ol.mb-20px
+              li <b>Лабораторные тесты.</b> При наличии острого воспаления сустава во время проведения клинического анализа крови выявляют признаки активной воспалительной реакции. Характерно увеличенное СОЭ, растет число лейкоцитов. При выполнении биохимического анализа крови находят воспалительные маркеры, к которым относят С-реактивный белок (СРБ), ревматоидный фактор, серомукоид. При выполнении иммунологического анализа находят антитела к определенному возбудителю инфекции.
+              li <b>Методы визуализации.</b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.
+              li <b>Инвазивные исследования.</b> Проводится диагностическая пункция сустава с дальнейшим изучением синовиальной жидкости. Если необходимо, проводят артроскопию или биопсию синовиальных оболочек.
+            p Развитию артрита способствуют профессиональные и бытовые сверхнагрузки на суставы, включающие перенос тяжестей. Еще на это влияет однообразная работа в неудобной позе.
           h2 Симптомы
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Всем клиническим формам воспалительного процесса в суставе присущи некоторые общие симптомы. <b>Основными местными признаками артрита</b> считают болевые ощущения, припухлость околосуставных структур и деформацию колена.
           p Боль в зоне коленного сустава имеет разнообразный характер. Их интенсивность у большинства людей нарастает медленно. Сначала болезненность возникает периодически. Боль усиливается в вечернее время или при наличии физических нагрузок. Часть больных, страдающих от воспалительного поражения в коленном суставе, уже с начала заболевания отмечают наличие «стартовой» боли, которая развивается после длительного отдыха.
@@ -165,11 +170,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p.text-xl.text-black.lg_text-2xl Выделяют несколько степеней патологического суставного процесса:
           ol
@@ -186,11 +191,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Основные диагностические мероприятия направляются на выявление причин воспалительного процесса в суставах. Пациентов с артритом сначала направляют к терапевту. Этот врач при необходимости привлекает к диагностике следующих врачей: ревматолога, травматолога-ортопеда, артролога, венеролога, фтизиатра и остальных.
           p Обследование больного с артритом коленного сустава начинают с осмотра. Затем изучают историю болезни, где особое внимание обращают на перенесенные и сопутствующие заболевания. Диагноз подтверждают следующими методами дополнительной диагностики:
@@ -221,11 +226,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Пациенты часто спрашивают, какой врач лечит артрит коленного сустава. Если заболели колени, сначала нужно пойти на прием к участковому терапевту. После проведения расширенного обследования он установит причину воспаления суставов и направит к узкому специалисту. Лечение пациент получает у ревматолога, фтизиатра, ортопеда-травматолога, инфекциониста.
           p При назначении терапии обязательно учитывают причину поражения суставов. Правильно назначенное лечение предотвратит непоправимые последствия. Еще оно сохранит подвижными суставы. Курс лечения занимает длительный промежуток времени.
@@ -242,11 +247,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Физиотерапию считают важной частью лечения. Для этого применяют методы лечения, основанные на физических факторах. Физиотерапия предоставляет максимум эффекта, при этом на организм и суставы оказываются щадящие нагрузки.
           .article__note.bg-green-50.mt-20px.mb-20px
@@ -258,11 +263,11 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Действующей силой этой терапии считают магнитное поле. Оно улучшает кровоснабжение хряща и лучше насыщает сустав питательными веществами. Это лечение при артрите активизирует выведение продуктов распада клеток и воспаления. Оно способствует подавлению аутоиммунных реакций.
           p В результате магнитотерапии уменьшается боль, снимается отечность, улучшается подвижность сустава. Затормаживаются процессы дегенерации в хрящевой ткани при артрите. Повышается проницаемость сосудов области колена, что способствует лучшему проникновению лекарств. Магнитофорез проводят после нанесения на колено наружных лекарственных средств.
@@ -270,88 +275,88 @@ block content
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p УФО, снижая чувствительность в зоне поражения, устраняет боль. Оно в организме активизирует синтез витамина D3, который необходим, чтобы лучше усваивался кальций. Этот минерал важен для повышения крепости костей. УФО стимулирует обмен веществ в суставах.
           h3 Электрофорез
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p При этом методе сквозь кожу в толщу мышц вводятся лекарства под воздействием электрического тока. Он усиливает микроциркуляцию в околосуставных тканях колена. Это снимает воспаление, отечность и болевые ощущения в колене. Устраняются мышечные спазмы и судороги. Электрофорез обладает длительным лечебным действием.
           h3 УВЧ
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Метод воздействует на суставные ткани с помощью ультравысокочастотных волн. Они помогают избавиться от болевых ощущений. Снимают воспаление и отек. Применение УВЧ противопоказано у больных с гипертонией.
           h3 Ультразвуковая терапия
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Ультразвук усиливает всасывание наружных лекарственных средств. Его часто применяют для местного введения гормональных мазей в области колена. Метод не назначают при стенокардии.
           h3 Бальнеотерапия
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Водные процедуры при артрите коленных суставов получили широкое применение. Активно проводят лечебные ванночки и ванны с радоном, солями, нафталаном, растительными экстрактами, сероводородом, йодобромом. Под их воздействием при артрите улучшается кровообращение в области колена, активизируются обменные процессы в суставе. Усиливается трофика тканей, стимулируется регенерация. Снимается воспаление и боль. Хороший отклик получают на ранней стадии артрита.
           h3 Грязелечение
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Ванны, обертывания, аппликации с грязями оказывают на сустав тепловое и механическое воздействие. Они питают ткани минералами и биологически активными веществами. Ликвидируется воспалительный процесс, убираются при артрите даже стойкие болевые ощущения.
           h3 Парафиновые обертывания
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Их применяют как вспомогательный метод. Парафин растапливают на водяной бане. Затем его остужают до комфортной температуры. На колено наносят парафиновую массу. Сверху обматывают полиэтиленовой пленкой и укутывают мягкой тканью. Метод улучшает кровообращение в суставе, уменьшает боль при артрите.
           h3 Массаж
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           p Метод довольно популярен. Его считают высокоэффективной составляющей комплексной терапии. Местный массаж помогает наращивать мышечную силу. После курсового применения укрепляются мышцы, снимаются мышечные спазмы. Массаж усиливает кровоток в тканях и ослабляет болевые ощущения.
           h3 Лазерная терапия
@@ -359,29 +364,29 @@ block content
             .article__img.img-cover.h-200px.lg_h-176px.lg_mr-20px
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                      '/img/arthrit_480x240.jpg 361w, ' +
-                      '/img/arthrit_800x400.jpg 481w, ' +
-                      '/img/article-2_864x346.jpg 801w '
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
               )
             .article__img.img-cover.h-200px.lg_h-176px.hidden.lg_block.lg_mr-20px
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                      '/img/arthrit_480x240.jpg 361w, ' +
-                      '/img/arthrit_800x400.jpg 481w, ' +
-                      '/img/article-2_864x346.jpg 801w '
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
               )
             .article__img.img-cover.h-200px.lg_h-176px.hidden.lg_block
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                      '/img/arthrit_480x240.jpg 361w, ' +
-                      '/img/arthrit_800x400.jpg 481w, ' +
-                      '/img/article-2_864x346.jpg 801w '
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
               )
           .lg_flex.lg_mb-40px
             p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
@@ -396,11 +401,11 @@ block content
             .article__img.img-cover.h-200px.lg_mr-20px(class='lg_h-[306px] lg_w-[416px] lg_mr-32px lg_float-left')
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                      '/img/arthrit_480x240.jpg 361w, ' +
-                      '/img/arthrit_800x400.jpg 481w, ' +
-                      '/img/article-2_864x346.jpg 801w '
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
               )
             p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
             p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,
@@ -409,11 +414,11 @@ block content
             .article__img.img-cover.h-200px.lg_mr-20px(class='lg_h-[306px] lg_w-[416px] lg_ml-32px lg_float-right')
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                      '/img/arthrit_480x240.jpg 361w, ' +
-                      '/img/arthrit_800x400.jpg 481w, ' +
-                      '/img/article-2_864x346.jpg 801w '
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
               )
             p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
             p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,
@@ -426,11 +431,11 @@ block content
           .article__img.img-cover.h-200px.lg_mr-20px(class='lg_h-[306px] lg_w-[416px] lg_ml-32px lg_float-left')
             img.lazyload(
             data-sizes="auto",
-            data-src='/img/arthrit_320x160.jpg',
-            data-srcset='/img/arthrit_320x160.jpg 360w, '  +
-                    '/img/arthrit_480x240.jpg 361w, ' +
-                    '/img/arthrit_800x400.jpg 481w, ' +
-                    '/img/article-2_864x346.jpg 801w '
+            data-src='img/arthrit_320x160.jpg',
+            data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                    'img/arthrit_480x240.jpg 361w, ' +
+                    'img/arthrit_800x400.jpg 481w, ' +
+                    'img/article-2_864x346.jpg 801w '
             )
           ul.mb-30px.list-test
             li активизируется обмен веществ в тканях сустава;
@@ -449,30 +454,30 @@ block content
             p(class='!mb-0') Сейчас лазеротерапию делают не только с помощью громоздких аппаратов для медицинских учреждений. Теперь не нужно ходить в поликлинику, возможно лечение артрита колена в домашних условиях с помощью портативных аппаратов. Их регулярное применение улучшает функционирование коленного сустава.
           h2 Тест
             .img-test
-              img(src='/img/arthrit_800x400.jpg')
+              img(src='img/arthrit_800x400.jpg')
           h2#prof Профилактика
           .grid.grid-cols-2.gap-x-20px.mb-20px
             .article__img.img-cover.h-100px(class='lg_h-[248px]')
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w' +
-                      '/img/arthrit_480x240.jpg 361w' +
-                      '/img/arthrit_800x400.jpg 481w' +
-                      '/img/arthrit_1152x303.jpg 801w' +
-                      '/img/arthrit_1312x345.jpg 1280w' +
-                      '/img/arthrit_1800x473.jpg 1441w',
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w' +
+                      'img/arthrit_480x240.jpg 361w' +
+                      'img/arthrit_800x400.jpg 481w' +
+                      'img/arthrit_1152x303.jpg 801w' +
+                      'img/arthrit_1312x345.jpg 1280w' +
+                      'img/arthrit_1800x473.jpg 1441w',
             )
             .article__img.img-cover.h-100px(class='lg_h-[248px]')
               img.lazyload(
               data-sizes="auto",
-              data-src='/img/arthrit_320x160.jpg',
-              data-srcset='/img/arthrit_320x160.jpg 360w' +
-                      '/img/arthrit_480x240.jpg 361w' +
-                      '/img/arthrit_800x400.jpg 481w' +
-                      '/img/arthrit_1152x303.jpg 801w' +
-                      '/img/arthrit_1312x345.jpg 1280w' +
-                      '/img/arthrit_1800x473.jpg 1441w',
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w' +
+                      'img/arthrit_480x240.jpg 361w' +
+                      'img/arthrit_800x400.jpg 481w' +
+                      'img/arthrit_1152x303.jpg 801w' +
+                      'img/arthrit_1312x345.jpg 1280w' +
+                      'img/arthrit_1800x473.jpg 1441w',
             )
           p Для поддержания устойчивой ремиссии и недопущения развития обострений артрита коленных суставов важно добросовестное выполнение рекомендаций врача. Стоит пересмотреть рацион. Ешьте свежие овощи и фрукты, богатые витаминами и клетчаткой. Надо ограничить потребление животных жиров.
           p Откажитесь от вредных привычек. Важно исключить прием алкоголя и курение табака. Нужно вылечивать все воспалительные заболевания. Особенно это касается острых инфекций. Стоит вести активный образ жизни. Нужно заниматься специально разработанными упражнениями для суставов. Нагрузки подбирают, учитывая возраст, степень и форму заболевания.
@@ -510,7 +515,7 @@ block content
               // .banner__wrapper.article__banner
               //   .banner Баннер
               +consult({
-                url: '/img/author_87x87.jpg',
+                url: 'img/author_87x87.jpg',
                 name: 'Иван Фабричный',
                 text: 'Врач кардиолог',
                 phone: '8 800 200 57 30'
@@ -567,7 +572,7 @@ block content
             })
               p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
         +consult({
-          url: '/img/author_87x87.jpg',
+          url: 'img/author_87x87.jpg',
           name: 'Иван Фабричный',
           text: 'Врач кардиолог',
           phone: '8 800 200 57 30'

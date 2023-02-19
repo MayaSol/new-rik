@@ -20,7 +20,7 @@ mixin video(props={}, mods)
   .video(class=allMods)&attributes(attributes)
     video.video__item(width=props.width height=props.height preload='none' muted)
       source(src=props.url type=props.type)
-    .product-main__poster.video__poster
+    .product-main__poster.video__poster(data-src=props.poster)
       img(src=props.poster)
     .video__btn-play(class=btnClass)
 
@@ -49,3 +49,25 @@ mixin video-product(props={}, mods)
     .product-main__poster.video__poster
       img(src=props.poster)
     .video__btn-play(class=btnClass)
+
+
+mixin video-product--img-only(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' video--' + modsList[i].trim();
+      }
+    }
+
+    var btnClass=''
+    if (typeof(props.btn_mod) != 'undefined') {
+      btnClass='video__btn-play--' + props.btn_mod;
+    }
+
+  .video(class=allMods)&attributes(attributes)
+    .product-main__poster.video__poster
+      img(src='https://rikta.ru/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg')

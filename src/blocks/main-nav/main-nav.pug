@@ -52,19 +52,19 @@ mixin makeMainNav(selectedID,menu,attr,isIndex)
 
   -
     var innerStyle = '';
+    var wrapperAtr= '';
     if (attributes.id === 'nav-mobile') {
       innerStyle = 'display: none;'
+      overlayscrollbarInitialize = 'true';
     }
 
   nav.main-nav&attributes(attr)&attributes(attributes)
     .main-nav__inner(style=innerStyle)
-      // if (attributes.id === 'nav-add')
-      //   +burger('Показать дополнительное меню', 'nav-add', 'main-nav--open')(class='main-nav__toggler')
-      ul.main-nav__list
+      ul.main-nav__list(data-overlayscrollbars-initialize=overlayscrollbarInitialize)
         each menuItem in menu
           +main-nav-item(selectedID, menuItem, 1, attributes.id === 'nav' ? menuItem.name : '' )
             if (typeof(menuItem.childs) !== 'undefined' && menuItem.childs)
-             +main-nav-sublist-wrapper(2)
+             +main-nav-sublist-wrapper(2)(data-overlayscrollbars-initialize=overlayscrollbarInitialize)
                if (attributes.id === 'nav')
                  .main-nav__sublist-header
                     span!= menuItem.name
@@ -134,7 +134,8 @@ mixin main-nav-sublist-wrapper(level)
   -
     var divClass = 'main-nav__sublist-wrapper  main-nav__sublist-wrapper--lvl-' + level;
     var listClass = 'main-nav__list  main-nav__list--lvl-' + level;
-  div(class= divClass)
+
+  div(class= divClass)&attributes(attributes)
     ul(class= listClass)
       block
 
