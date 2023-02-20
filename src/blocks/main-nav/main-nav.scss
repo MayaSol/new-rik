@@ -230,7 +230,8 @@
         transition: transform $transition-time;
 
         .nav--main #{$block-name}__item--show-child>&,
-        .nav--main #{$block-name}__item:hover & {
+        .nav--main #{$block-name}__item:hover &,
+        .nav--main #{$block-name}__item:focus & {
           transform: translateY(-50%) rotate(180deg);
         }
       }
@@ -339,7 +340,8 @@
 
       // stylelint-disable
       .nav--main #{$block-name}__item--show-child>&,
-      .nav--main #{$block-name}__item:hover & {
+      .nav--main #{$block-name}__item:hover &,
+      .nav--main #{$block-name}__link:focus ~ & {
         @media (min-width: $menu-desktop-width) {
           height: auto;
           overflow: visible;

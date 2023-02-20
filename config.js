@@ -71,6 +71,7 @@ let config = {
   'addJsAfter': [
     './script.js',
     './utils/onepagescroll_after.js',
+    './test.js'
   ],
   'addAssets': {
     'src/fonts/': 'fonts/',
