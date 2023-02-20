@@ -1,0 +1,122 @@
+// В этом файле должны быть стили для БЭМ-блока compare-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.compare-card {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: $tw-gray-100;
+
+  .compare-slider & {
+    height: 100%;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    min-height: 60px;
+    @apply text-xl;
+    color: $tw-black;
+
+    @media (min-width: $screen-lg) {
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 36px;
+  }
+
+  &__price-val {
+    font-size: 26px;
+    font-weight: 700;
+    color: $tw-black;
+    text-transform: uppercase;
+  }
+
+  &__price-unit {
+    font-size: 23px;
+    color: $tw-gray-500;
+  }
+
+  &__subtitle {
+    min-height: 56px;
+    @apply text-lg;
+    color: $tw-black;
+    align-self: start;
+  }
+
+  &__list {
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none !important;
+    align-self: start;
+
+    &--minus {
+      #{$block-name}__list-item {
+        &::before {
+          background-color: #F07474;
+          background-image: url('/img/minus.svg');
+        }
+      }
+    }
+
+    &--plus {
+      #{$block-name}__list-item {
+        &::before {
+          background-color: #72CB6B;
+          background-image: url('/img/plus.svg');
+        }
+      }
+    }
+  }
+
+  &__list-item {
+      position: relative;
+      margin-bottom: 18px;
+      padding-left: 32px;
+      font-size: 17px;
+      line-height: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-50%);
+      }
+    }
+
+  &__add {
+    align-self: start;
+    margin-top: auto;
+    @apply text-sm;
+    min-height: 48px;
+
+    @media (min-width: $screen-lg) {
+    }
+  }
+
+}
