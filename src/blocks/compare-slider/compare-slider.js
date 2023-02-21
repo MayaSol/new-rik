@@ -7,14 +7,12 @@ ready(function() {
   console.log(document.documentElement.clientWidth);
   var initialized = 0;
 
-  if (document.documentElement.clientWidth < 1024) {
-    initComparisons();
-  }
+  initComparisons();
 
   window.addEventListener('resize', throttle(initComparisons, 100));
 
   function initComparisons() {
-    if (document.documentElement.clientWidth >= 1024) {
+    if (document.documentElement.clientWidth >= 768) {
       return;
     }
     if (initialized == 1) {
@@ -68,8 +66,8 @@ ready(function() {
       after.style.height = height + 'px';
       before.style.position = 'absolute';
 
-      // img.style.width = (w / 2) + "px";
-      img.style.width = "0px";
+      img.style.width = (w / 2) + "px";
+      // img.style.width = "0px";
 
       // /* Create slider: */
       slider = document.createElement("DIV");
@@ -98,7 +96,7 @@ ready(function() {
 
       initialized = 1;
 
-      // slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+      slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
 
       function slideReady(e) {
         /* Prevent any other actions that may occur when moving over the image: */

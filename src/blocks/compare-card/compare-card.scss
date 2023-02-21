@@ -8,44 +8,75 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
   background-color: $tw-gray-100;
 
   .compare-slider & {
     height: 100%;
   }
 
-  @media (min-width: $screen-lg) {
-    padding: 40px;
-  }
-
   &__title {
-    margin-bottom: 20px;
     min-height: 60px;
+    margin-bottom: 20px;
+    padding: 20px 20px 0;
+    padding-bottom: 0;
     @apply text-xl;
     color: $tw-black;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+      padding: 40px 40px 0;
       font-size: 24px;
       line-height: 32px;
       text-align: center;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 20px 20px 0;
+    }
+  }
+
+  &__content {
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+      padding: 0 40px 40px;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 0 20px 20px;
     }
   }
 
   &__icon {
     flex-shrink: 0;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 32px;
+    }
   }
 
   &__price {
     display: flex;
-    margin-bottom: 20px;
+    align-items: flex-end;
+    margin-bottom: 12px;
     line-height: 36px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 30px;
+    }
   }
 
   &__price-val {
-    font-size: 26px;
+    @apply text-36px;
     font-weight: 700;
     color: $tw-black;
     text-transform: uppercase;
@@ -54,11 +85,13 @@
   &__price-unit {
     font-size: 23px;
     color: $tw-gray-500;
+    white-space: nowrap;
   }
 
   &__subtitle {
     min-height: 56px;
-    @apply text-lg;
+    font-size: 18px;
+    line-height: 22px;
     color: $tw-black;
     align-self: start;
   }
@@ -69,11 +102,20 @@
     list-style: none !important;
     align-self: start;
 
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-top: 10px;
+    }
+
+
     &--minus {
       #{$block-name}__list-item {
         &::before {
           background-color: #F07474;
-          background-image: url('/img/minus.svg');
+          background-image: url('../img/minus.svg');
         }
       }
     }
@@ -82,7 +124,7 @@
       #{$block-name}__list-item {
         &::before {
           background-color: #72CB6B;
-          background-image: url('/img/plus.svg');
+          background-image: url('../img/plus.svg');
         }
       }
     }
@@ -115,7 +157,7 @@
     @apply text-sm;
     min-height: 48px;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-md) {
     }
   }
 
