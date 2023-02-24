@@ -19,7 +19,7 @@ block content
     section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
       .article.container.mb-64px
         h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
-        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px.w-600px
+        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
           img.lazyload(
           data-sizes="auto",
           data-src='img/arthrit_320x160.jpg',
@@ -158,6 +158,47 @@ block content
               li <b>Методы визуализации.</b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.
               li <b>Инвазивные исследования.</b> Проводится диагностическая пункция сустава с дальнейшим изучением синовиальной жидкости. Если необходимо, проводят артроскопию или биопсию синовиальных оболочек.
             p Развитию артрита способствуют профессиональные и бытовые сверхнагрузки на суставы, включающие перенос тяжестей. Еще на это влияет однообразная работа в неудобной позе.
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.lg_p-40px
+            p.text-black.text-lg.lg_text-2xl Факторами риска, предрасполагающими к развитию болезни, считают следующее:
+            ul.pl-0.mb-0.lg_pl-15px.columns-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+              li гипермобильность суставов;
+              li плоскостопие;
+              li эндокринные болезни;
+              li инфекционные заболевания;
+              li вакцинация;
+              li хирургические вмешательства;
+              li аллергические реакции;
+              li роды;
+              li болезни опорно-двигательного аппарата;
+              li переохлаждение
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
+            p.text-black.text-lg.lg_text-2xl.col-span-2 Факторами риска, предрасполагающими к развитию болезни, считают следующее:
+            .article__img.img-contain.mb-20px.col-start-2
+              img.lazyload(
+                data-src='img/arthrit_800x400.jpg'
+              )
+            ul.pl-0.mb-0.lg_pl-15px.row-start-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+              li гипермобильность суставов;
+              li плоскостопие;
+              li эндокринные болезни;
+              li инфекционные заболевания;
+              li вакцинация;
+              li хирургические вмешательства;
+              li аллергические реакции;
+              li роды;
+              li болезни опорно-двигательного аппарата;
+              li переохлаждение
+            ol.mb-20px.col-span-2
+              li <b>Лабораторные тесты.</b> При наличии острого воспаления сустава во время проведения клинического анализа крови выявляют признаки активной воспалительной реакции. Характерно увеличенное СОЭ, растет число лейкоцитов. При выполнении биохимического анализа крови находят воспалительные маркеры, к которым относят С-реактивный белок (СРБ), ревматоидный фактор, серомукоид. При выполнении иммунологического анализа находят антитела к определенному возбудителю инфекции.
+              li <b>Методы визуализации.</b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.
           h2 Симптомы
           .article__img.img-cover.h-200px.lg_h-auto.mb-20px
             img.lazyload(
@@ -595,38 +636,38 @@ block content
         })(class='article__consult mt-70px lg_hidden')
         .banner__wrapper.article__banner.lg_hidden
           .banner Баннер
-      .container
-        h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
-        +btn('Все статьи','simple').mb-20px.shrink-0
-        .article-preview.article-preview__list-wrapper
-          .article-preview__list.slider
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-1.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-2.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-2.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
+    .container
+      h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
+      +btn('Все статьи','simple').mb-20px.shrink-0
+      .article-preview.article-preview__list-wrapper
+        .article-preview__list.slider
+          .article-preview.slider__item
+            .article-preview__inner.xxl_flex.xxl_flex-col
+              .article-preview__img
+                img.lazyload(data-src="img/article-1.jpg")
+              .article-preview__text.xxl_pt-30px
+                .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                .article-preview__content.hidden
+                +btn('Подробнее','simple')(class="text-md mt-10px")
+          .article-preview.slider__item
+            .article-preview__inner.xxl_flex.xxl_flex-col
+              .article-preview__img
+                img.lazyload(data-src="img/article-2.jpg")
+              .article-preview__text.xxl_pt-30px
+                .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                .article-preview__content.hidden
+                +btn('Подробнее','simple')(class="text-md mt-10px")
+          .article-preview.slider__item
+            .article-preview__inner.xxl_flex.xxl_flex-col
+              .article-preview__img
+                img.lazyload(data-src="img/article-2.jpg")
+              .article-preview__text.xxl_pt-30px
+                .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                .article-preview__content.hidden
+                +btn('Подробнее','simple')(class="text-md mt-10px")
 
 
 block prepend page-bottom

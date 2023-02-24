@@ -18,20 +18,26 @@ mixin compare-slider(props={}, mods)
 
 mixin compare-slider-content(props={})
 
+  -
+    var propsAfter;
+    if (!(typeof props.icon === 'undefined')) {
+      propsAfter = {icon: props.icon};
+    }
+
   .compare-slider__after&attributes(attributes)
     .compare-slider__content.compare-slider__content--after
       block
-    +compare-slider-after()
+    +compare-slider-after(propsAfter)
 
 
-mixin compare-slider-after(props={})
+mixin compare-slider-after(props={icon: 'hospital'})
 
   .compare-slider__before&attributes(attributes)
     .compare-slider__content.compare-slider__content--before
       +compare-card()
         .compare-card__title Лечение лазером в&nbsp;стоматологической клинике
         .compare-card__content
-          +svg('hospital','compare-card__icon',{width: 99, height: 88})
+          +svg(props.icon,'compare-card__icon',{width: 99, height: 88})
           .compare-card__price
             span.compare-card__price-val 500-4000₽
             span.compare-card__price-unit /сеанс *

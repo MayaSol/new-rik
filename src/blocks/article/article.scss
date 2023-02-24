@@ -5,6 +5,7 @@
 .article {
 
   $block-name: &; // #{$block-name}__element
+  font-size: 17px;
 
   @media (min-width: $screen-lg) {
     display: grid;
@@ -73,9 +74,15 @@
     }
 
     & ul.list-dots {
-      &::before {
-        display: none;
+      li {
+        &::before {
+          display: none;
+        }
       }
+    }
+
+    .border-dashed > *:last-child {
+      margin-bottom: 0;
     }
 
     @at-root .reviews-section ul,
@@ -115,24 +122,26 @@
     @at-root .reviews-section ol,
     & ol
     {
-      counter-reset: num;
+      // counter-reset: num;
       margin: 0;
       margin-bottom: 20px;
       padding: 0 0 0 10px;
+      list-style: decimal;
+      list-style-position: inside;
 
       li {
         position: relative;
-        padding-left: 25px;
+        // padding-left: 25px;
         margin-bottom: 20px;
 
-        &::before {
-          content: counter(num)'.';
-          counter-increment: num;
-          position: absolute;
-          left: 0;
-          font-weight: 400;
-          color: $tw-gray-500;
-        }
+        // &::before {
+        //   content: counter(num)'.';
+        //   counter-increment: num;
+        //   position: absolute;
+        //   left: 0;
+        //   font-weight: 400;
+        //   color: $tw-gray-500;
+        // }
 
         &:last-child {
           margin-bottom: 0;

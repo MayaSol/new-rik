@@ -4,7 +4,7 @@ const closest = require('closest');
 
 ready(function() {
 
-  let tabsSelect = document.querySelectorAll('.tab__select-wrapper');
+  let tabsSelect = document.querySelectorAll('.tab__select-wrapper select');
   for (tabSelectEl of tabsSelect) {
     initSelectTabsTrigger(tabSelectEl);
   }

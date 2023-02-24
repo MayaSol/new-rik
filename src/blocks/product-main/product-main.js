@@ -9,7 +9,7 @@ ready(function() {
   if (document.querySelector('#product-main') && document.querySelector('#product-previews')) {
 
     var productMain = tns({
-      container: '#product-main',
+      container: '#product-main!!!!',
       items: 1,
       slideBy: 1,
       mouseDrag: false,

@@ -1,0 +1,150 @@
+extends ../pug/layout.pug
+
+block meta
+  title Патенты и Свидетельства
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'certs';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Патенты и Свидетельства')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.news.mt-30px.lg_mt-20px.mb-50px
+      .article.container.mb-64px
+        h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Сертификаты, патенты и свидетельства
+        .article__main.cert
+          +tabs({},'certs')
+            .tabs__select-wrapper.tabs__select-wrapper--certs.field-select__wrapper
+              select.tabs__select.tabs__select--certs.field-select(role='tablist')
+                option(value='tab-button-01' selected="true") Сертификаты
+                option(value='tab-button-02') Патенты
+                option(value='tab-button-03') Регистрационные удостоверения
+            +tabs-nav()
+              +tabs-nav-button({
+                id: 'tab-button-01',
+                target_id: '#tab-content-01',
+                selected: 'true',
+                classes: 'active',
+              })
+                span Сертификаты
+              +tabs-nav-button({
+                id: 'tab-button-02',
+                target_id: '#tab-content-02',
+                selected: 'false',
+              })
+                span Патенты
+              +tabs-nav-button({
+                id: 'tab-button-03',
+                target_id: '#tab-content-03',
+                selected: 'false',
+              })
+                span Регистрационные удостоверения
+            +tabs-content({id: 'certs-tabContent'})
+              +tabs-content-pane({
+                id: 'tab-content-01',
+                link_id: 'tab-button-01',
+                tabindex: '0',
+                classes: 'show active'
+              })
+                .cert__list
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: 'Сертификат ISO',
+                  })
+                    p Сертификат ISO
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: '  Сертификат соответствия ГОСТ Р (Рикта)',
+                  })
+                    p Сертификат соответствия ГОСТ Р (Рикта)
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: '  Сертификат соответствия ГОСТ Р (Рикта)',
+                  })
+                    p Приложение к сертификату соответствия ГОСТ Р (Рикта)
+                    p Способ включает послойное вскрытие брюшной полости, эвакуацию гнойного содержимого, осушение брюшной полости, дренирование полости малого таза и послеоперационную терапию. Послеоперационную терапию проводят путём импульсного лазерного воздействия. Воздействуют на правую подвэдошную область, правую и левую мезогастральные области, область эпигастрия. Импульсное лазерное воздействие осуществляют с частотой следования импульсов 5-79 Гц, при мощности излучения 4-15 Вт, при времени воздействия на каждую область в течение 30-59 или 61-64 секунд. Способ повышает эффективность лечения за счёт выбора индивидуальных параметров лазерного воздействия и исключения сенсибилизации организма.
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: 'Сертификат соответствия ГОСТ Р (Рикта-Эсмил (1А) и Рикта-Эсмил(2А)) ',
+                  })
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: 'Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)',
+                  })
+                    p Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)
+              +tabs-content-pane({
+                id: 'tab-content-02',
+                link_id: 'tab-button-02',
+                tabindex: '1',
+              })
+                .cert__list
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: 'Патент тест',
+                  })
+                    p Патент тест
+              +tabs-content-pane({
+                id: 'tab-content-03',
+                link_id: 'tab-button-03',
+                tabindex: '2',
+              })
+                .cert__list
+                  +cert-item({
+                    url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+                    thumb: 'img/cert-thumb.png',
+                    title: 'Регистрационные удостоверения тест',
+                  })
+                    p Регистрационные удостоверения тест
+        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-start-3.lg_row-span-10
+          .article__float
+            .article__float-container
+              +aside-nav-cert()
+
+        //- .article__main.cert
+        //-   .cert__list
+        //-     +cert-item({
+        //-       url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+        //-       thumb: 'img/cert-thumb.jpg',
+        //-       title: 'Сертификат ISO',
+        //-     })
+        //-       p Сертификат ISO
+        //-     +cert-item({
+        //-       url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+        //-       thumb: 'img/cert-thumb.jpg',
+        //-       title: '  Сертификат соответствия ГОСТ Р (Рикта)',
+        //-     })
+        //-       p Сертификат соответствия ГОСТ Р (Рикта)
+        //-     +cert-item({
+        //-       url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+        //-       thumb: 'img/cert-thumb.jpg',
+        //-       title: '  Сертификат соответствия ГОСТ Р (Рикта)',
+        //-     })
+        //-       p Приложение к сертификату соответствия ГОСТ Р (Рикта)
+        //-     +cert-item({
+        //-       url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+        //-       thumb: 'img/cert-thumb.jpg',
+        //-       title: 'Сертификат соответствия ГОСТ Р (Рикта-Эсмил (1А) и Рикта-Эсмил(2А)) ',
+        //-     })
+        //-     +cert-item({
+        //-       url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
+        //-       thumb: 'img/cert-thumb.jpg',
+        //-       title: 'Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)',
+        //-     })
+        //-       p Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)
+
+

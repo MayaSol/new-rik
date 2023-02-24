@@ -27,15 +27,6 @@ mixin product-main(props={}, mods)
     .product-main__sliders
       .product-main__slider-wrapper.slider__wrapper
         .product-main__slider.slider#product-main
-          +product-main-item-video-yt({
-            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
-          })(data-slide='0')
-            .product-card__top-list
-              span.product-card__top-item
-                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
-                span Гарантия 2 года
-              span.product-card__top-item
-                span Акция
           +product-main-item-img({
             sizes: "auto",
             src: '/img/product_382x.jpg',
@@ -44,6 +35,15 @@ mixin product-main(props={}, mods)
                     '/img/product_732x423.jpg 768w, ' +
                     '/img/product_996x.jpg 1800w, '
           })(data-slide='1')
+            .product-card__top-list
+              span.product-card__top-item
+                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
+                span Гарантия 2 года
+              span.product-card__top-item
+                span Акция
+          +product-main-item-video-yt({
+            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
+          })(data-slide='0')
             .product-card__top-list
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')

@@ -8,7 +8,12 @@ ready(function() {
     for (var link of paginateLinks) {
       if (link.dataset.index == 1) {
         link.dataset.tippyContent = 'Начало страницы';
-      } else {
+      } else
+      if (link.dataset.index == paginateLinks.length) {
+        link.dataset.tippyContent = 'Конец страницы'
+      }
+      else
+      {
         var section = document.querySelector(`section[data-index="${link.dataset.index}"]`);
         if (section) {
           var title = section.querySelector('.section__title');

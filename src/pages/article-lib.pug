@@ -19,17 +19,17 @@ block content
     section.section--article.mt-30px.lg_mt-20px.lg_mb-128px
       .article.container.mb-64px
         h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Артрит коленного сустава
-        .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
-          img.lazyload(
-          data-sizes="auto",
-          data-src='/img/arthrit_320x160.jpg',
-          data-srcset='/img/arthrit_320x160.jpg 360w,' +
-                  '/img/arthrit_480x240.jpg 361w,' +
-                  '/img/arthrit_800x400.jpg 481w,' +
-                  '/img/arthrit_1151x303.jpg 801w,' +
-                  '/img/arthrit_1312x345.jpg 1280w,' +
-                  '/img/arthrit_1800x473.jpg 1441w',
-          )
+        //- .article__img.article__img--main.img-cover.lg_col-span-3.lg_mb-40px
+        //-   img.lazyload(
+        //-   data-sizes="auto",
+        //-   data-src='/img/arthrit_320x160.jpg',
+        //-   data-srcset='/img/arthrit_320x160.jpg 360w,' +
+        //-           '/img/arthrit_480x240.jpg 361w,' +
+        //-           '/img/arthrit_800x400.jpg 481w,' +
+        //-           '/img/arthrit_1151x303.jpg 801w,' +
+        //-           '/img/arthrit_1312x345.jpg 1280w,' +
+        //-           '/img/arthrit_1800x473.jpg 1441w',
+        //-   )
         .article__contents.text-blue.font-bold.mb-24px.lg_hidden
           .mb-10px.text-xl.text-black.font-normal.lg_text-2xl Содержание
           ul.article__contents-list.m-0.p-0.list-none(data-tabs-anchor)
@@ -46,32 +46,32 @@ block content
             li
               a.article__contents-link(href='#' data-anchor='#prof') Профилактика
 
-        .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
-        +author2({
-          name: 'Катерина Григорьевна',
-          text: 'Врач Физиотерапевт'
-        },'article')(class='mb-18px lg_mb-25px lg_col-start-1 lg_col-span-2 lg-row-start-4')
-          picture
-            source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
-            source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
-            img.lazyload(data-src='/img/author-87x87.jpg', alt='')
-        .article__dates.mb-30px.lg_col-start-1.lg_col-span-2.lg-row-start-5
-          .date-line.flex.items-center.text-gray-300(class='!mb-5px')
-            +svg('calendar','mr-8px',{width: '17',height: '19'})
-            span.text-gray-500 Дата добавления (18.01.2022)
-          .date-line.flex.items-center.text-gray-300
-            +svg('calendar-check','mr-8px',{width: '17',height: '19'})
-            span.text-gray-500 Дата обновления (18.01.2022)
-        .article__main
-          .fragment-special.text-green.mb-40px.lg_mb-60px
-            .fragment-speical__inner.text-gray-500
-              p Артрит коленных суставов относят к часто встречающимся патологиям воспалительного характера. Причины их развития бывают разнообразными. Суставные патологии при артрите всегда сопровождаются болевыми ощущениями. Из-за болезненности снижается объем движений в суставе.
-          .code
-            code &lt;div class="fragment-special text-green mb-40px lg_mb-60px">
-            code  &lt;div class="fragment-speical__inner text-gray-500">
-            code     &lt;p>Артрит коленных суставов&lt/p>
-            code   &lt;/div>
-            code &lt;/div>
+        //- .text-2xl.text-black.mb-10px.lg_col-start-1.lg_col-span-2 Автор статьи
+        //- +author2({
+        //-   name: 'Катерина Григорьевна',
+        //-   text: 'Врач Физиотерапевт'
+        //- },'article')(class='mb-18px lg_mb-25px lg_col-start-1 lg_col-span-2 lg-row-start-4')
+        //-   picture
+        //-     source(media='(max-width: 1023px)' data-srcset='/img/author_87x87.jpg')
+        //-     source(media='(min-width: 1024px)' data-srcset='/img/author_219x219.jpg')
+        //-     img.lazyload(data-src='/img/author-87x87.jpg', alt='')
+        //- .article__dates.mb-30px.lg_col-start-1.lg_col-span-2.lg-row-start-5
+        //-   .date-line.flex.items-center.text-gray-300(class='!mb-5px')
+        //-     +svg('calendar','mr-8px',{width: '17',height: '19'})
+        //-     span.text-gray-500 Дата добавления (18.01.2022)
+        //-   .date-line.flex.items-center.text-gray-300
+        //-     +svg('calendar-check','mr-8px',{width: '17',height: '19'})
+        //-     span.text-gray-500 Дата обновления (18.01.2022)
+        .article__main.row-start-2
+          //- .fragment-special.text-green.mb-40px.lg_mb-60px
+          //-   .fragment-speical__inner.text-gray-500
+          //-     p Артрит коленных суставов относят к часто встречающимся патологиям воспалительного характера. Причины их развития бывают разнообразными. Суставные патологии при артрите всегда сопровождаются болевыми ощущениями. Из-за болезненности снижается объем движений в суставе.
+          //- .code
+          //-   code &lt;div class="fragment-special text-green mb-40px lg_mb-60px">
+          //-   code  &lt;div class="fragment-speical__inner text-gray-500">
+          //-   code     &lt;p>Артрит коленных суставов&lt/p>
+          //-   code   &lt;/div>
+          //-   code &lt;/div>
           .article__img.img-cover.h-200px.lg_h-auto.mb-35px.lg_mb-30px
             img.lazyload(
             data-sizes="auto",
@@ -139,7 +139,106 @@ block content
             code       &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
             code       &lt;li>воспаление суставной сумки и связок;&lt;/li>
             code       &lt;li>ожирение;&lt;/li>
+            code     &lt;/ul>
             code &lt;/div>
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
+            p.text-black.text-lg.lg_text-2xl.col-span-2 Факторами риска, предрасполагающими к развитию болезни, считают следующее:
+            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2
+              img.lazyload(
+                data-src='img/arthrit_800x400.jpg'
+              )
+            ul.pl-0.mb-0.lg_pl-15px.row-start-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+              li гипермобильность суставов;
+              li плоскостопие;
+              li эндокринные болезни;
+            ol.mb-20px.col-span-2
+              li <b>Лабораторные тесты.</b> При наличии острого воспаления сустава во время проведения клинического анализа крови выявляют признаки активной воспалительной реакции. Характерно увеличенное СОЭ, растет число лейкоцитов. При выполнении биохимического анализа крови находят воспалительные маркеры, к которым относят С-реактивный белок (СРБ), ревматоидный фактор, серомукоид. При выполнении иммунологического анализа находят антитела к определенному возбудителю инфекции.
+              li <b>Методы визуализации.</b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.
+          .code
+            code  &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px xl_grid xl_grid-cols-[7fr_5fr]">
+            code    &lt;p class="text-black text-lg lg_text-2xl col-span-2">Факторами риска, предрасполагающими к развитию болезни, считают следующее:&lt;/p>
+            code    &lt;div class="article__img img-contain mb-20px xl_mb-0 col-start-2">
+            code      &lt;img class="lazyload" data-src="img/arthrit_800x400.jpg">
+            code    &lt;/div>
+            code    &lt;ul class="pl-0 mb-0 lg_pl-15px row-start-2">
+            code      &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
+            code      &lt;li>воспаление суставной сумки и связок;&lt;/li>
+            code      &lt;li>ожирение;&lt;/li>
+            code      &lt;li>сверхпороговые спортивные нагрузки;&lt;/li>
+            code      &lt;li>гипермобильность суставов;&lt;/li>
+            code      &lt;li>плоскостопие;&lt;/li>
+            code      &lt;li>эндокринные болезни;&lt;/li>
+            code    &lt;/ul>
+            code    &lt;ol class="mb-20px col-span-2">
+            code      &lt;li>&lt;b>Лабораторные тесты.&lt;/b> При наличии острого воспаления сустава во время проведения клинического анализа крови выявляют признаки активной воспалительной реакции. Характерно увеличенное СОЭ, растет число лейкоцитов. При выполнении биохимического анализа крови находят воспалительные маркеры, к которым относят С-реактивный белок (СРБ), ревматоидный фактор, серомукоид. При выполнении иммунологического анализа находят антитела к определенному возбудителю инфекции.&lt;/li>
+            code      &lt;li>&lt;b>Методы визуализации.&lt;/b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.&lt;/li>
+            code    &lt;/ol>
+            code  &lt;/div>
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
+            p.text-black.text-lg.lg_text-2xl.col-start-1.col-span-1 Факторы риска:
+            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2.row-start-1.row-span-3
+              img.lazyload(
+                data-src='img/arthrit_800x400.jpg'
+              )
+            ul.pl-0.mb-0.lg_pl-15px.row-start-2.row-span-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+          .code
+            code  &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px xl_grid xl_grid-cols-[7fr_5fr]">
+            code    &lt;p class="text-black text-lg lg_text-2xl col-start-1 col-span-1">Факторы риска::&lt;/p>
+            code    &lt;div class="article__img img-contain mb-20px xl_mb-0 col-start-2 row-start-1 row-span-3">
+            code      &lt;img class="lazyload" data-src="img/arthrit_800x400.jpg">
+            code    &lt;/div>
+            code    &lt;ul class="pl-0 mb-0 lg_pl-15px row-start-2 row-span-2">
+            code      &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
+            code      &lt;li>воспаление суставной сумки и связок;&lt;/li>
+            code      &lt;li>ожирение;&lt;/li>
+            code      &lt;li>сверхпороговые спортивные нагрузки;&lt;/li>
+            code    &lt;/ul>
+            code  &lt;/div>
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.lg_p-40px
+            p.text-black.text-lg.lg_text-2xl Факторами риска, предрасполагающими к развитию болезни, считают следующее:
+            ul.pl-0.mb-0.lg_pl-15px.md_columns-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+              li гипермобильность суставов;
+              li плоскостопие;
+              li эндокринные болезни;
+              li инфекционные заболевания;
+              li вакцинация;
+              li хирургические вмешательства;
+              li аллергические реакции;
+              li роды;
+              li болезни опорно-двигательного аппарата;
+              li переохлаждение
+          .code
+            code  &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px">
+            code    &lt;p class="text-black text-lg lg_text-2xl">Факторами риска, предрасполагающими к развитию болезни, считают следующее:&lt;/p>
+            code    &lt;ul class="pl-0 mb-0 lg_pl-15px md_columns-2">
+            code      &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
+            code      &lt;li>воспаление суставной сумки и связок;&lt;/li>
+            code      &lt;li>ожирение;&lt;/li>
+            code      &lt;li>сверхпороговые спортивные нагрузки;&lt;/li>
+            code      &lt;li>гипермобильность суставов;&lt;/li>
+            code      &lt;li>плоскостопие;&lt;/li>
+            code      &lt;li>эндокринные болезни;&lt;/li>
+            code      &lt;li>инфекционные заболевания;&lt;/li>
+            code      &lt;li>вакцинация;&lt;/li>
+            code      &lt;li>хирургические вмешательства;&lt;/li>
+            code      &lt;li>аллергические реакции;&lt;/li>
+            code      &lt;li>роды;&lt;/li>
+            code      &lt;li>болезни опорно-двигательного аппарата;&lt;/li>
+            code      &lt;li>переохлаждение&lt;/li>
+            code    &lt;/ul>
+            code  &lt;/div>
           .article__note.bg-yellow-50.mt-30px.mb-40px
             .article__note-icon.icon-svg.icon-svg--info-thin-yellow
             //- +svg('info-thin','',{width:38,height:38})(class='article__note-icon text-yellow-400')
@@ -310,36 +409,38 @@ block content
             code &lt;p class="article__img img-cover w-200px">
             code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
             code &lt;/p>
-          p.article__img.img-cover.w-300px
-           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
-          .code
-            code &lt;p class="article__img img-cover w-300px">
-            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
-            code &lt;/p>
-          p.article__img.img-cover.w-400px
-           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
-          .code
-            code &lt;p class="article__img img-cover w-400px">
-            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
-            code &lt;/p>
-          p.article__img.img-cover.w-500px
-           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
-          .code
-            code &lt;p class="article__img img-cover w-500px">
-            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
-            code &lt;/p>
-          p.article__img.img-cover.w-600px
-           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
-          .code
-            code &lt;p class="article__img img-cover w-600px">
-            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
-            code &lt;/p>
-          p.article__img.img-cover(class='w-[75%]')
-           img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
-          .code
-            code &lt;p class="article__img img-cover w-[75%]">
-            code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
-            code &lt;/p>
+            code <b>Классы для ширины:</b>
+            code .w-300px .w-400px .w-500px .w-600px .w-[75%]
+          //- p.article__img.img-cover.w-300px
+          //-  img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          //- .code
+          //-   code &lt;p class="article__img img-cover w-300px">
+          //-   code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+          //-   code &lt;/p>
+          //- p.article__img.img-cover.w-400px
+          //-  img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          //- .code
+          //-   code &lt;p class="article__img img-cover w-400px">
+          //-   code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+          //-   code &lt;/p>
+          //- p.article__img.img-cover.w-500px
+          //-  img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          //- .code
+          //-   code &lt;p class="article__img img-cover w-500px">
+          //-   code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+          //-   code &lt;/p>
+          //- p.article__img.img-cover.w-600px
+          //-  img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          //- .code
+          //-   code &lt;p class="article__img img-cover w-600px">
+          //-   code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+          //-   code &lt;/p>
+          //- p.article__img.img-cover(class='w-[75%]')
+          //-  img.lazyload(data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg")
+          //- .code
+          //-   code &lt;p class="article__img img-cover w-[75%]">
+          //-   code     &lt;img class="lazyload" data-src="https://rikta.ru/images/news/release/hobl/Phototherapy-1.jpg">
+          //-   code &lt;/p>
           <div class="flex gap-20px">
             <div>
               <div class="article__img img-cover w-200px">
@@ -369,23 +470,79 @@ block content
             code      &lt;/div>
             code    &lt;/div>
             code  &lt;/div>
-          .sources
-            h3 Список литературы:
-            ol
-              li Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.
-              li Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.
-              li Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8. <a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank">http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf</a>
+          //- .sources
+          //-   h3 Список литературы:
+          //-   ol
+          //-     li Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.
+          //-     li Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.
+          //-     li Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8. <a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank">http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf</a>
+          //- .code
+          //-   code  &lt;div class="sources">
+          //-   code    &lt;h3>Список литературы:&lt;/h3>
+          //-   code    &lt;ol>
+          //-   code      &lt;li>Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.&lt;/li>
+          //-   code      &lt;li>Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.&lt;/li>
+          //-   code      &lt;li>Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8.
+          //-   code        &lt;a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank"/>
+          //-   code      &lt;/li>
+          //-   code    &lt;/ol>
+          //-   code  &lt;/div>
+          div
+            .article__img.img-cover.w-300px.lg_mr-32px.lg_float-left
+              img.lazyload(
+              data-sizes="auto",
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
+              )
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
           .code
-            code  &lt;div class="sources">
-            code    &lt;h3>Список литературы:&lt;/h3>
-            code    &lt;ol>
-            code      &lt;li>Клинические рекомендации. Ревматология/ под. ред. Е. Л. Насонова. М.: ГЭОТАР-Медиа, 2006. 288 с.&lt;/li>
-            code      &lt;li>Артриты и артрозы. Диагностика, профилактика, лечение / Ж.А. Ржевская, Е.А. Романова. - М.: Мир Книги Ритейл, 2011. - 160 c.&lt;/li>
-            code      &lt;li>Частота поражений крупных суставов у взрослых. / К.И. Шапиро. Диагностика и лечение повреждений крупных суставов. / Л.,199 : 3–8.
-            code        &lt;a href="http://waltza.co.za/wp-content/uploads/2012/08/Dose_table_780-860nm_for_Low_Level_Laser_Therapy_WALT-2010.pdf" rel="nofollow" target="_blank"/>
-            code      &lt;/li>
-            code    &lt;/ol>
-            code  &lt;/div>
+            code &lt;div>
+            code   &lt;div class="article__img img-cover w-300px lg_mr-32px lg_float-left">
+            code     &lt;img class="lazyload"
+            code         data-sizes="auto"
+            code         data-src="img/arthrit_320x160.jpg"
+            code         data-srcset="img/arthrit_320x160.jpg 360w,
+            code                      img/arthrit_480x240.jpg 361w,
+            code                      img/arthrit_800x400.jpg 481w,
+            code                      img/article-2_864x346.jpg 801w ">
+            code   &lt;/div>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.&lt;/p>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,&lt;/p>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.&lt;/p>
+            code &lt;/div>
+          div
+            .article__img.img-cover.w-300px.lg_ml-32px.lg_float-right
+              img.lazyload(
+              data-sizes="auto",
+              data-src='img/arthrit_320x160.jpg',
+              data-srcset='img/arthrit_320x160.jpg 360w, '  +
+                      'img/arthrit_480x240.jpg 361w, ' +
+                      'img/arthrit_800x400.jpg 481w, ' +
+                      'img/article-2_864x346.jpg 801w '
+              )
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,
+            p Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.
+          .code
+            code &lt;div>
+            code   &lt;div class="article__img img-cover w-300px lg_ml-32px lg_float-right">
+            code     &lt;img class="lazyload"
+            code         data-sizes="auto"
+            code         data-src="img/arthrit_320x160.jpg"
+            code         data-srcset="img/arthrit_320x160.jpg 360w,
+            code                      img/arthrit_480x240.jpg 361w,
+            code                      img/arthrit_800x400.jpg 481w,
+            code                      img/article-2_864x346.jpg 801w ">
+            code   &lt;/div>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.&lt;/p>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия,&lt;/p>
+            code   &lt;p>Лечение суставов с применением лазера – это методика, в основе которой лежит действие на ткани концентрированным пучком световой энергии. Воздействие им оказывают на ограниченный участок тела. Лазерное лечение практикуется как основная терапия, а также совместно с другими методиками.&lt;/p>
+            code &lt;/div>
           table.article-table
             thead
               tr
@@ -442,7 +599,132 @@ block content
             code       &lt;td data-content="Заголовок 4">Пример строки 3&lt;/td>
             code     &lt;/tr>
             code &lt;/table>
-        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-start-3.lg_row-span-10
+          +compare-slider()
+            +compare-slider-content()
+              +compare-card()
+                .compare-card__title Лечение зубов в домашних условиях аппаратом РИКТА
+                .compare-card__content
+                  +svg('home','compare-card__icon',{width: 91, height: 88})
+                  .compare-card__price
+                    span.compare-card__price-val 4 050₽
+                    span.compare-card__price-unit /сеанс *
+                  span.compare-card__subtitle Плюсы лазерной терапии на дому:
+                  .compare-card__list.compare-card__list--plus
+                   .compare-card__list-item Лечение более 200 болезней одним прибором
+                   .compare-card__list-item Проведение процедур в любое удобное время
+                   .compare-card__list-item Можете лечить всю семью
+                  .compare-card__add * рассчитано для аппарата Рикта-Эсмил (2А)-03 при условии проведения 10 сеансов
+          .code
+            code  &lt;div class="compare-slider">
+            code    &lt;div class="compare-slider__after">
+            code      &lt;div class="compare-slider__content compare-slider__content--after">
+            code        &lt;div class="compare-card">
+            code          &lt;div class="compare-card__title">Лечение зубов в домашних условиях аппаратом РИКТА&lt;/div>
+            code            &lt;div class="compare-card__content">&lt;svg class="compare-card__icon" width="91" height="88" aria-hidden="true" focusable="false">
+            code              &lt;use xlink:href="/img/sprite.svg#home">&lt;/use>
+            code            &lt;/svg>
+            code          &lt;div class="compare-card__price">
+            code            &lt;span class="compare-card__price-val">4 050₽&lt;/span>
+            code            &lt;span class="compare-card__price-unit">/сеанс *&lt;/span>
+            code          &lt;/div>
+            code          &lt;span class="compare-card__subtitle">Плюсы лазерной терапии на дому:&lt;/span>
+            code          &lt;div class="compare-card__list compare-card__list--plus">
+            code            &lt;div class="compare-card__list-item">Лечение более 200 болезней одним прибором&lt;/div>
+            code            &lt;div class="compare-card__list-item">Проведение процедур в любое удобное время&lt;/div>
+            code            &lt;div class="compare-card__list-item">Можете лечить всю семью&lt;/div>
+            code          &lt;/div>
+            code          &lt;div class="compare-card__add">* рассчитано для аппарата Рикта-Эсмил (2А)-03 при условии проведения 10 сеансов&lt;/div>
+            code          &lt;/div>
+            code        &lt;/div>
+            code      &lt;/div>
+            code      &lt;div class="compare-slider__before">
+            code        &lt;div class="compare-slider__content compare-slider__content--before">
+            code          &lt;div class="compare-card">
+            code            &lt;div class="compare-card__title">Лечение лазером в&nbsp;стоматологической клинике&lt;/div>
+            code            &lt;div class="compare-card__content">&lt;svg class="compare-card__icon" width="99" height="88" aria-hidden="true" focusable="false">
+            code                &lt;use xlink:href="/img/sprite.svg#hospital">&lt;/use>
+            code              &lt;/svg>
+            code              &lt;div class="compare-card__price">
+            code                &lt;span class="compare-card__price-val">500-4000₽&lt;/span>
+            code                &lt;span class="compare-card__price-unit">/сеанс *&lt;/span>
+            code              &lt;/div>&lt;span class="compare-card__subtitle">Минусы лечения в клинике:&lt;/span>
+            code              &lt;div class="compare-card__list compare-card__list--minus">
+            code                &lt;div class="compare-card__list-item">Закрываете одну конкретную проблему&lt;/div>
+            code                &lt;div class="compare-card__list-item">Надо подгадывать время для визита&lt;/div>
+            code                &lt;div class="compare-card__list-item">Тратите деньги и время на дорогу&lt;/div>
+            code                &lt;div class="compare-card__list-item">Стоять в пробке/толкаться в транспорте&lt;/div>
+            code              &lt;/div>
+            code              &lt;div class="compare-card__add">* в зависимости от заболевания&lt;/div>
+            code            &lt;/div>
+            code          &lt;/div>
+            code        &lt;/div>
+            code      &lt;/div>
+            code    &lt;/div>
+            code  &lt;/div>
+          +compare-slider()
+            +compare-slider-content({icon: 'tooth'})
+              +compare-card()
+                .compare-card__title Лечение зубов в домашних условиях аппаратом РИКТА
+                .compare-card__content
+                  +svg('medical-chair','compare-card__icon',{width: 91, height: 88})
+                  .compare-card__price
+                    span.compare-card__price-val 4 050₽
+                    span.compare-card__price-unit /сеанс *
+                  span.compare-card__subtitle Плюсы лазерной терапии на дому:
+                  .compare-card__list.compare-card__list--plus
+                   .compare-card__list-item Лечение более 200 болезней одним прибором
+                   .compare-card__list-item Проведение процедур в любое удобное время
+                   .compare-card__list-item Можете лечить всю семью
+                  .compare-card__add * рассчитано для аппарата Рикта-Эсмил (2А)-03 при условии проведения 10 сеансов
+          .code
+            code  &lt;div class="compare-slider">
+            code    &lt;div class="compare-slider__after">
+            code      &lt;div class="compare-slider__content compare-slider__content--after">
+            code        &lt;div class="compare-card">
+            code          &lt;div class="compare-card__title">Лечение зубов в домашних условиях аппаратом РИКТА&lt;/div>
+            code            &lt;div class="compare-card__content">&lt;svg class="compare-card__icon" width="91" height="88" aria-hidden="true" focusable="false">
+            code              &lt;use xlink:href="/img/sprite.svg#tooth">&lt;/use>
+            code            &lt;/svg>
+            code          &lt;div class="compare-card__price">
+            code            &lt;span class="compare-card__price-val">4 050₽&lt;/span>
+            code            &lt;span class="compare-card__price-unit">/сеанс *&lt;/span>
+            code          &lt;/div>
+            code          &lt;span class="compare-card__subtitle">Плюсы лазерной терапии на дому:&lt;/span>
+            code          &lt;div class="compare-card__list compare-card__list--plus">
+            code            &lt;div class="compare-card__list-item">Лечение более 200 болезней одним прибором&lt;/div>
+            code            &lt;div class="compare-card__list-item">Проведение процедур в любое удобное время&lt;/div>
+            code            &lt;div class="compare-card__list-item">Можете лечить всю семью&lt;/div>
+            code          &lt;/div>
+            code          &lt;div class="compare-card__add">* рассчитано для аппарата Рикта-Эсмил (2А)-03 при условии проведения 10 сеансов&lt;/div>
+            code          &lt;/div>
+            code        &lt;/div>
+            code      &lt;/div>
+            code      &lt;div class="compare-slider__before">
+            code        &lt;div class="compare-slider__content compare-slider__content--before">
+            code          &lt;div class="compare-card">
+            code            &lt;div class="compare-card__title">Лечение лазером в&nbsp;стоматологической клинике&lt;/div>
+            code            &lt;div class="compare-card__content">&lt;svg class="compare-card__icon" width="99" height="88" aria-hidden="true" focusable="false">
+            code                &lt;use xlink:href="/img/sprite.svg#medical-chair">&lt;/use>
+            code              &lt;/svg>
+            code              &lt;div class="compare-card__price">
+            code                &lt;span class="compare-card__price-val">500-4000₽&lt;/span>
+            code                &lt;span class="compare-card__price-unit">/сеанс *&lt;/span>
+            code              &lt;/div>&lt;span class="compare-card__subtitle">Минусы лечения в клинике:&lt;/span>
+            code              &lt;div class="compare-card__list compare-card__list--minus">
+            code                &lt;div class="compare-card__list-item">Закрываете одну конкретную проблему&lt;/div>
+            code                &lt;div class="compare-card__list-item">Надо подгадывать время для визита&lt;/div>
+            code                &lt;div class="compare-card__list-item">Тратите деньги и время на дорогу&lt;/div>
+            code                &lt;div class="compare-card__list-item">Стоять в пробке/толкаться в транспорте&lt;/div>
+            code              &lt;/div>
+            code              &lt;div class="compare-card__add">* в зависимости от заболевания&lt;/div>
+            code            &lt;/div>
+            code          &lt;/div>
+            code        &lt;/div>
+            code      &lt;/div>
+            code    &lt;/div>
+            code  &lt;/div>
+
+        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-span-10.row-start-2
           .article__float
             .article__float-container
               .article__contents.font-bold.mb-24px
@@ -469,105 +751,105 @@ block content
                 phone: '8 800 200 57 30'
               })(class='article__consult')
 
-        .article__socials.lg_justify-self-start
-          .text-lg.text-black.text-center.mb-7px Поделиться в соц. сетях
-            <div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'></div>
-        .code
-          code &lt;div class="article__socials lg_justify-self-start">
-          code   &lt;div class="text-lg text-black text-center mb-7px">Поделиться в соц. сетях&lt;/div>
-          code   &lt;div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'>&lt;/div>
-          code &lt;/div>
-        .article__rating.rating.rating.text-lg.text-center.mt-20px.lg_justify-self-end
-          .article__rating-text.mb-5-px
-            span.text-black 4.3/5&#32;
-            span (5 286 оценок)
-          .rating__stars--view#rateYo(data-value='4.3')
-        .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px.lg_mt-60px
-          .article__note-icon.icon-svg.icon-svg--warning-slate
-          p(class='!mb-0') Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.
-        .code.lg_col-start-1.lg_col-end-3
-          code &lt;div class="article__note bg-slate-50 mt-20px mb-40px lg_col-start-1 lg_col-end-3 lg_mb-30px lg_mt-60px">
-          code   &lt;div class="article__note-icon icon-svg icon-svg--warning-slate">&lt;/div>
-          code   &lt;p class="!mb-0">Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.&lt;/p>
-          code &lt;/div>
-        .question.article__question#article-question
-          h3.mb-5px Часто задаваемые вопросы по заболеванию
-          .question__item-wrapper
-            +question-item({
-              header_id: 'question_01',
-              target_id: 'answer_01',
-              name: 'Бывает ли, что рикта не помогает?',
-              parent: '#article-question',
-              show: false
-            })
-              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
-          .question__item-wrapper
-            +question-item({
-              header_id: 'question_02',
-              target_id: 'answer_02',
-              name: 'Применяется ли аппарат рикта при отморожениях?',
-              parent: '#article-question',
-              show: false
-            })
-              p Да, применяется. Использование аппарата РИКТА способствует восстановлению микроциркуляции пораженных тканей, купированию или ослаблению болевого синдрома, снижению интоксикации и сокращению сроков лечения. Усиление эффекта наблюдается в комплексе с медикаментозной терапией.
-          .question__item-wrapper
-            +question-item({
-              header_id: 'question_03',
-              target_id: 'answer_03',
-              name: 'Как выбрать лазерный аппарат для дома?',
-              parent: '#article-question',
-              show: false
-            })
-              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
-          .question__item-wrapper
-            +question-item({
-              header_id: 'question_04',
-              target_id: 'answer_04',
-              name: 'Можно ли лечить акушерско-гинекологические заболевания самостоятельно?',
-              parent: '#article-question',
-              show: false
-            })
-              p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
-        +consult({
-          url: '/img/author_87x87.jpg',
-          name: 'Иван Фабричный',
-          text: 'Врач кардиолог',
-          phone: '8 800 200 57 30'
-        })(class='article__consult mt-70px lg_hidden')
-        .banner__wrapper.article__banner.lg_hidden
-          .banner Баннер
-      .container
-        h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
-        +btn('Все статьи','simple').mb-20px.shrink-0
-        .article-preview.article-preview__list-wrapper
-          .article-preview__list.slider
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-1.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-2.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
-            .article-preview.slider__item
-              .article-preview__inner.xxl_flex.xxl_flex-col
-                .article-preview__img
-                  img.lazyload(data-src="img/article-2.jpg")
-                .article-preview__text.xxl_pt-30px
-                  .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                  .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
-                  .article-preview__content.hidden
-                  +btn('Подробнее','simple')(class="text-md mt-10px")
+        //- .article__socials.lg_justify-self-start
+        //-   .text-lg.text-black.text-center.mb-7px Поделиться в соц. сетях
+        //-     <div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'></div>
+        //- .code
+        //-   code &lt;div class="article__socials lg_justify-self-start">
+        //-   code   &lt;div class="text-lg text-black text-center mb-7px">Поделиться в соц. сетях&lt;/div>
+        //-   code   &lt;div class='ya-share2' data-curtain data-services='vkontakte,odnoklassniki,telegram,whatsapp'>&lt;/div>
+        //-   code &lt;/div>
+        //- .article__rating.rating.rating.text-lg.text-center.mt-20px.lg_justify-self-end
+        //-   .article__rating-text.mb-5-px
+        //-     span.text-black 4.3/5&#32;
+        //-     span (5 286 оценок)
+        //-   .rating__stars--view#rateYo(data-value='4.3')
+        //- .article__note.bg-slate-50.mt-20px.mb-40px.lg_col-start-1.lg_col-end-3.lg_mb-30px.lg_mt-60px
+        //-   .article__note-icon.icon-svg.icon-svg--warning-slate
+        //-   p(class='!mb-0') Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.
+        //- .code.lg_col-start-1.lg_col-end-3
+        //-   code &lt;div class="article__note bg-slate-50 mt-20px mb-40px lg_col-start-1 lg_col-end-3 lg_mb-30px lg_mt-60px">
+        //-   code   &lt;div class="article__note-icon icon-svg icon-svg--warning-slate">&lt;/div>
+        //-   code   &lt;p class="!mb-0">Статья для пациентов с диагностированной доктором болезнью. Не заменяет приём врача и не может использоваться для самодиагностики.&lt;/p>
+        //-   code &lt;/div>
+        //- .question.article__question#article-question
+        //-   h3.mb-5px Часто задаваемые вопросы по заболеванию
+        //-   .question__item-wrapper
+        //-     +question-item({
+        //-       header_id: 'question_01',
+        //-       target_id: 'answer_01',
+        //-       name: 'Бывает ли, что рикта не помогает?',
+        //-       parent: '#article-question',
+        //-       show: false
+        //-     })
+        //-       p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+        //-   .question__item-wrapper
+        //-     +question-item({
+        //-       header_id: 'question_02',
+        //-       target_id: 'answer_02',
+        //-       name: 'Применяется ли аппарат рикта при отморожениях?',
+        //-       parent: '#article-question',
+        //-       show: false
+        //-     })
+        //-       p Да, применяется. Использование аппарата РИКТА способствует восстановлению микроциркуляции пораженных тканей, купированию или ослаблению болевого синдрома, снижению интоксикации и сокращению сроков лечения. Усиление эффекта наблюдается в комплексе с медикаментозной терапией.
+        //-   .question__item-wrapper
+        //-     +question-item({
+        //-       header_id: 'question_03',
+        //-       target_id: 'answer_03',
+        //-       name: 'Как выбрать лазерный аппарат для дома?',
+        //-       parent: '#article-question',
+        //-       show: false
+        //-     })
+        //-       p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+        //-   .question__item-wrapper
+        //-     +question-item({
+        //-       header_id: 'question_04',
+        //-       target_id: 'answer_04',
+        //-       name: 'Можно ли лечить акушерско-гинекологические заболевания самостоятельно?',
+        //-       parent: '#article-question',
+        //-       show: false
+        //-     })
+        //-       p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+        //- +consult({
+        //-   url: '/img/author_87x87.jpg',
+        //-   name: 'Иван Фабричный',
+        //-   text: 'Врач кардиолог',
+        //-   phone: '8 800 200 57 30'
+        //- })(class='article__consult mt-70px lg_hidden')
+        //- .banner__wrapper.article__banner.lg_hidden
+        //-   .banner Баннер
+      //- .container
+      //-   h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
+      //-   +btn('Все статьи','simple').mb-20px.shrink-0
+      //-   .article-preview.article-preview__list-wrapper
+      //-     .article-preview__list.slider
+      //-       .article-preview.slider__item
+      //-         .article-preview__inner.xxl_flex.xxl_flex-col
+      //-           .article-preview__img
+      //-             img.lazyload(data-src="img/article-1.jpg")
+      //-           .article-preview__text.xxl_pt-30px
+      //-             .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+      //-             .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+      //-             .article-preview__content.hidden
+      //-             +btn('Подробнее','simple')(class="text-md mt-10px")
+      //-       .article-preview.slider__item
+      //-         .article-preview__inner.xxl_flex.xxl_flex-col
+      //-           .article-preview__img
+      //-             img.lazyload(data-src="img/article-2.jpg")
+      //-           .article-preview__text.xxl_pt-30px
+      //-             .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+      //-             .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+      //-             .article-preview__content.hidden
+      //-             +btn('Подробнее','simple')(class="text-md mt-10px")
+      //-       .article-preview.slider__item
+      //-         .article-preview__inner.xxl_flex.xxl_flex-col
+      //-           .article-preview__img
+      //-             img.lazyload(data-src="img/article-2.jpg")
+      //-           .article-preview__text.xxl_pt-30px
+      //-             .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
+      //-             .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+      //-             .article-preview__content.hidden
+      //-             +btn('Подробнее','simple')(class="text-md mt-10px")
 
 
 block prepend page-bottom

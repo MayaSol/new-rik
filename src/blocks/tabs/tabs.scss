@@ -1,0 +1,51 @@
+// В этом файле должны быть стили для БЭМ-блока tabs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tabs {
+
+  $block-name: &; // #{$block-name}__element
+
+  &__select-wrapper {
+    margin-bottom: 20px;
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $tw-gray-200;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__nav-link {
+    margin: 0 15px !important;
+    padding: 10px 0 !important;
+
+    @media (min-width: $screen-lg) {
+      padding: 20px 0 !important;
+      margin: 0 24px !important;
+    }
+
+    &:first-child {
+      margin-left: 0 !important;
+    }
+  }
+
+  &--certs {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+
+}
