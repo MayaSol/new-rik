@@ -64,6 +64,14 @@ $font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation
 // Georgia, Times New Roman, Times, serif
 
 
+// Путь к шрифтам
+$path-fonts:                '/css/../fonts';
+$path-images:               '/css/../img';
+
+// Путь к шрифтам lightgallery.js
+$lg-path-fonts:             $path-fonts;
+$lg-path-images:            '/css/../images';
+
 // Ширины
 
 $screen-xs:                     0;

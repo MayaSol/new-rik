@@ -16,7 +16,8 @@
     "start": "gulp",
     "wlib": "cross-env BUILD_LIBRARY=yes gulp",
     "build": "gulp build",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "critical": "gulp criticalCss"
   },
   "browserslist": [
     "defaults",
@@ -52,6 +53,7 @@
     "gulp-csso": "^4.0.1",
     "gulp-debug": "^4.0.0",
     "gulp-imagemin": "^6.0.1",
+    "gulp-penthouse": "^0.2.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-pretty-html": "^2.0.10",
@@ -72,6 +74,7 @@
     "mini-css-extract-plugin": "^2.6.1",
     "mkdirp": "^0.5.1",
     "path": "^0.12.7",
+    "penthouse": "^2.3.3",
     "postcss": "^8.4.14",
     "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^4.1.0",

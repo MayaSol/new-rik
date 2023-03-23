@@ -106,7 +106,6 @@
     #{$block-name}__name {
       &::after {
         content: '*';
-        font-family: 'Montserrat';
         color: $tw-red-900;
         padding-left: 5px;
       }

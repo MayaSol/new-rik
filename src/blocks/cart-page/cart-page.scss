@@ -419,7 +419,7 @@
         position: absolute;
         right: 5px;
         top: 0;
-        font-family: 'Montserrat';
+        // font-family: 'Montserrat';
         color: $tw-red-900;
       }
     }
@@ -454,7 +454,7 @@
     height: 40px;
     background-color: $tw-green-500;
     border-radius: 10px;
-    background-image: url('../img/check-2-white.svg');
+    background-image: url('#{$path-images}/check-2-white.svg');
     background-size: 15px 12px;
     transform: translateY(-50%);
 
@@ -701,9 +701,9 @@
       background: $tw-black;
     }
 
-    .bx-soa-cart-total-form-field span i {
-      font-family: 'Montserrat';
-    }
+    // .bx-soa-cart-total-form-field span i {
+    //   font-family: 'Montserrat';
+    // }
   }
 
   .tanais-order .btn.btn-outline-primary {

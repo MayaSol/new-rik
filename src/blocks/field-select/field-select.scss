@@ -17,7 +17,7 @@
 
   &__wrapper {
     position: relative;
-    background-image: url('../img/angle-down.svg');
+    background-image: url('#{$path-images}/angle-down.svg');
     background-size: 7px 5px;
     background-repeat: no-repeat;
     background-color: $tw-gray-100;

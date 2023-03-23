@@ -21,3 +21,27 @@ mixin article-preview(text, mods)
   .article-preview(class=allMods)&attributes(attributes)
     .article-preview__inner
       block
+
+
+
+mixin article-preview-link(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +article-preview('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' article-preview--' + modsList[i].trim();
+      }
+    }
+
+  a.article-preview(class=allMod href="#")&attributes(attributes)
+    .article-preview__inner
+      block

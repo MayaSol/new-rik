@@ -454,7 +454,7 @@ function buildJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'development',
+      mode: 'production',
       entry: entryList,
       output: {
         filename: '[name].js',
@@ -649,6 +649,37 @@ function buildCartJs() {
     .pipe(dest(`${dir.build}js`));
 }
 exports.buildCartJs = buildCartJs;
+
+// function criticalCss() {
+//   penthouse({
+//     url: 'https://rikta.ru/',
+//     css: 'build/css/style.css'
+//   })
+//   .then(criticalCss => {
+//     // use the critical css
+//     fs.writeFileSync('build/css/critical.css', criticalCss);
+//   })
+// }
+
+// exports.criticalCss = criticalCss;
+// gulp.task('criticalCss', gulp.series(criticalCss));
+
+
+var penthouse = require('gulp-penthouse');
+
+function criticalCss() {
+    return src('./build/css/style.css')
+        .pipe(penthouse({
+            out: 'critical.css',
+            url: 'http://maiiasol.ru/newrikta/index-server.html',
+            width: 1300,
+            height: 900,
+            strict: true,
+            userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+        }))
+        .pipe(dest('./build/css/'));
+};
+exports.criticalCss = criticalCss;
 
 
 // These functions loop through the tailwind custom config objects set in your tailwind.config.js file and exposes them as variables in sass

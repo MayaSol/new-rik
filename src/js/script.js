@@ -5,7 +5,28 @@ const throttle = require('lodash.throttle');
 
 ready(function() {
 
+
+//lazy load js scripts
+// document.addEventListener('lazybeforeunveil', function(e){
+//   console.log('lazybeforeunveil');
+//   console.log(e.target);
+//   var scriptId = e.target.dataset && e.target.dataset.scriptId;
+//   console.log(scriptId);
+//   var scriptEl = scriptId && document.getElementById(scriptId);
+//   if (scriptEl) {
+//       var src = scriptEl.getAttribute('delay');
+//       scriptEl.setAttribute('src',src);
+//   }
+// });
+
   // makeEllipsis('.ellipsis');
+
+
+  var delayedScripts = document.querySelectorAll('script[data-src]');
+  for (script of delayedScripts) {
+    console.log(script.getAttribute('data-src'));
+    script.setAttribute('src',script.getAttribute('data-src'));
+  }
 
   function addtouchclass() { // first time user touches the screen
     console.log('touch start');

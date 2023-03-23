@@ -17,8 +17,8 @@
 /* stylelint-disable */
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe_Regular.woff2') format('woff2'),
-    url('../fonts/Circe_Regular.woff') format('woff');
+  src: url('#{$path-fonts}/Circe_Regular.woff2') format('woff2'),
+    url('#{$path-fonts}/Circe_Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,21 +26,21 @@
 
 @font-face {
   font-family: 'Circe';
-  src: url('../fonts/Circe_Bold.woff2') format('woff2'),
-    url('../fonts/Circe_Bold.woff') format('woff');
+  src: url('#{$path-fonts}/Circe_Bold.woff2') format('woff2'),
+    url('#{$path-fonts}/Circe_Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/MontserratRegular.woff2') format('woff2'),
-    url('../fonts/MontserratRegular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('../fonts/MontserratRegular.woff2') format('woff2'),
+//     url('../fonts/MontserratRegular.woff') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 /* stylelint-enable */
 
@@ -709,7 +709,7 @@ body {}
 
 
 
-  &--catalog,
+  @at-root .product-catalog,
   &--info,
   &--reviews,
   &--articles,
@@ -778,13 +778,6 @@ body {}
       max-height: 100%;
     }
 
-    .product-catalog .btn {
-      @media (min-width: $onepage-width) {
-        grid-row-start: 2;
-        grid-row-end: 3;
-        justify-self: flex-start;
-      }
-    }
   }
 
 
@@ -987,6 +980,20 @@ body {}
   .tns-ovh {
     max-height: 100%;
     height: auto;
+  }
+
+  .btn {
+    @media (min-width: $onepage-width) {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      justify-self: flex-start;
+    }
+  }
+
+  .btn--simple {
+    color: $tw-black !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
   }
 }
 

@@ -69,31 +69,32 @@ block content
           })
         .profile__main
           h2.mb-20px.mt-20px.text-xl.lg_text-2xl.lg_mt-0 Ваши ремонты
-          .data-table.data-table--one-line.data-table--service.mb-20px
-            .data-table__th.row-start-1.lg_row-start-1(class='lg_!col-start-1')
-              span Модель
-            .data-table__th.row-start-2.lg_row-start-1(class='lg_!col-start-2')
-              span Серийный<br> номер
-            .data-table__th.row-start-3.lg_row-start-1(class='lg_!col-start-3')
-              span Дата сдачи<br> в ремонт
-            .data-table__th.row-start-4.lg_row-start-1(class='lg_!col-start-4')
-              span Причина обращения
-            .data-table__th.row-start-5.lg_row-start-1(class='lg_!col-start-5')
-              span Дата возврата<br> из&nbsp;ремонта
-            .data-table__th.row-start-6.lg_row-start-1(class='lg_!col-start-6')
-              span Результат
-            .data-table__td.row-start-1.lg_row-start-2(class='lg_!col-start-1')
-              span Рикта&nbsp;04/04
-            .data-table__td.row-start-2.lg_row-start-2(class='lg_!col-start-2')
-              span NP-131/2022
-            .data-table__td.row-start-3.lg_row-start-2(class='lg_!col-start-3')
-              span 24.02.2023
-            .data-table__td.row-start-4.lg_row-start-2(class='lg_!col-start-4')
-              +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
-            .data-table__td.row-start-5.lg_row-start-2(class='lg_!col-start-5')
-              span 14.07.2022
-            .data-table__td.row-start-6.lg_row-start-2(class='lg_!col-start-6')
-              +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
+          .data-table__list
+            .data-table.data-table--one-line.data-table--service.mb-20px
+              .data-table__th.row-start-1.lg_row-start-1(class='lg_!col-start-1')
+                span Модель
+              .data-table__th.row-start-2.lg_row-start-1(class='lg_!col-start-2')
+                span Серийный<br> номер
+              .data-table__th.row-start-3.lg_row-start-1(class='lg_!col-start-3')
+                span Дата сдачи<br> в ремонт
+              .data-table__th.row-start-4.lg_row-start-1(class='lg_!col-start-4')
+                span Причина обращения
+              .data-table__th.row-start-5.lg_row-start-1(class='lg_!col-start-5')
+                span Дата возврата<br> из&nbsp;ремонта
+              .data-table__th.row-start-6.lg_row-start-1(class='lg_!col-start-6')
+                span Результат
+              .data-table__td.row-start-1.lg_row-start-2(class='lg_!col-start-1')
+                span Рикта&nbsp;04/04
+              .data-table__td.row-start-2.lg_row-start-2(class='lg_!col-start-2')
+                span NP-131/2022
+              .data-table__td.row-start-3.lg_row-start-2(class='lg_!col-start-3')
+                span 24.02.2023
+              .data-table__td.row-start-4.lg_row-start-2(class='lg_!col-start-4')
+                +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
+              .data-table__td.row-start-5.lg_row-start-2(class='lg_!col-start-5')
+                span 14.07.2022
+              .data-table__td.row-start-6.lg_row-start-2(class='lg_!col-start-6')
+                +btn('Показать причину','clean')(data-modal-open='repair-cause' class='data-table__link')
           h2.mb-20px.mt-40px.text-xl.lg_text-2xl Заявка на ремонт
           .form__wrapper
             form.form.relative.form--service

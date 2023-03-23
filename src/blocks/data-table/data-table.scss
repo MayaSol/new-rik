@@ -26,6 +26,16 @@
       }
     }
 
+    @media (min-width: $screen-lg) {
+      margin-bottom: 0 !important;
+      margin-top: -1px;
+      &:not(:first-child) {
+        .data-table__th {
+          display: none;
+        }
+      }
+    }
+
     &>div {
       display: flex;
       align-items: center;

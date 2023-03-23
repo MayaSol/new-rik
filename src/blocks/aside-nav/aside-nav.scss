@@ -84,7 +84,7 @@
         top: 50%;
         width: 6px;
         height: 4px;
-        background-image: url(../img/angle-down.svg);
+        background-image: url('#{$path-images}/angle-down.svg');
         background-repeat: no-repeat;
         transform: translateY(-50%) rotate(180deg);
         transition: transform .3s;

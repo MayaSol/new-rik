@@ -21,6 +21,120 @@ admin/123456
 
  WWE88
 
+
+ -------------------------------------------------------------------------------------------------------------------
+ и еще, давай на будущее при случае переносить графику рикты из img в images, а то у нас 2 папки..не люблю когда так
+ -------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+ ==================================================
+ ==================================================
+Изменить src на data-src скриптам
+<script type="text/javascript" data-src="/bitrix/js/main/core/core.min.js?1672918168220366"></script>
+<script type="text/javascript" data-src="/bitrix/js/main/popup/dist/main.popup.bundle.min.js?167291816565492"></script>
+<script type="text/javascript" data-src="/bitrix/cache/js/s1/rikta_catalog/template_67604dc60c7d17cc889547c82ebb67bf/template_67604dc60c7d17cc889547c82ebb67bf_v1.js?1679068267160957"></script>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&load=package.full" type="text/javascript"></script>
+ - остальось, если можно, убрать с главной, оставить только на странице контактов, где карта
+
+ <script src="https://yastatic.net/share2/share.js" defer=""></script>
+  - тоже можно убрать с главной, он нужен только если есть кнопки Поделиться
+
+
+Можно еще выделить критичный css - стили, которые нужны для загрузки первого экрана выделить в тег <style> и они будут загружаться сразу, а остальные загружать с задержкой (добавить им media="print" onload="this.media='all'").
+Я могу определить критичный css каким-нибудь сторонним плагином и вручную вставить на главную. Тогда при изменении шаблона, надо будет его вручную менять.
+Или можно попробовать найти плагин cms, который это делает автоматически.
+
+По рикте еще можно добавить в <head> внутрь тега <style></style> содержимое файла criticalCss.min.css, а в <link href="/bitrix/cache/css/s1/rikta_main/template_5b50f836794c0784487ed44b91e189e5/template_5b50f836794c0784487ed44b91e189e5_v1.css?1679073187337228" type="text/css"  data-template-style="true" rel="stylesheet" /> добавить media="print" onload="this.media='all'"
+
+
+
+===================================
+22.03.2023
+===================================
+https://rikta.ru/scopes/stomatology/ иконки пропали
+
+
+===================================
+17.03.2023
+===================================
+
+
+
+
+
+на другую страницу перенес
+https://rikta.ru/scopes/veterinary/
+цвет ссылок не такой как в блоке http://joxi.ru/http://joxi.ru/Q2KnRjWuwd8Vvm +
+
+
+еще забыл, иногда блоки не на одном уровне http://joxi.ru/L21LK37SgOoX5m можно ли поправить ??? +
+
+можно в этом блоке сделать ссылку на картинке? достаточно добавить тег а или ка кто хитрее надо? +
+<a class="article-preview__img" href="#">
+
+
+http://joxi.ru/Vm6yOkgIjzPVnr уголки изображения и области удаления перекрывают сглаживание, а у стрелки с миниописанием - не хватает отступа..близком слишком +
+
+у товаров вообще отвалились доп фото +
+
+ну и вообще проверь плиз все работы что ты писала, как сделаны
+
+Увеличить разрешение картинки для youtube
+
+http://i3.ytimg.com/vi/erLk59H86ww/hqdefault.jpg
+
+
+<link media="print" onload="this.media='all'" href="/bitrix/cache/css/s1/rikta_main/template_80806a8189c461a93823e75da7f8317b/template_80806a8189c461a93823e75da7f8317b_v1.css?1679030069336086" type="text/css"  data-template-style="true" rel="stylesheet" />
+ - отсюжа убрать media="print" onload="this.media='all'", в этом файле теперь находятся основные стили для страницы и если они не сразу загружатся, то при загрузке сначала мелькает не стилизованная страница
+
+<script type="text/javascript" src="/bitrix/js/main/core/core.min.js?1672918168220366"></script> - два раза загружается
+
+===================================
+01.03.2023
+===================================
+
+1.
+<script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js"></script>
+
+поменять на
+
+<script delay="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js" id="cloudimage-script"></script>
+
+2.
+Этим файлам стилей добавить атрибуты media="print" onload="this.media='all'"
+
+ <link href="/bitrix/cache/css/s1/rikta_main/default_945d78885027dcbb8f1695262bc7aa6e/default_945d78885027dcbb8f1695262bc7aa6e_v1.css?16766547722307" type="text/css"  rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<link href="/bitrix/cache/css/s1/rikta_main/template_1609fbc952c95d35000f429cdda4d967/template_1609fbc952c95d35000f429cdda4d967_v1.css?167665477223854" type="text/css"  data-template-style="true" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;subset=cyrillic" rel="stylesheet" media="print" onload="this.media='all'">
+
+ 3.
+ Эти скрипты лучше убрать с главной страницы, если нельзя, то добавить атрибут defer.
+
+ <script delay="https://yastatic.net/share2/share.js" defer></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&load=package.full" type="text/javascript"></script>
+
+4.
+Поменять разметку youtube в отзывах на главной
+
+<iframe class="video-yt__frame" id="video-yt__frame" width="560" height="315" src="//www.youtube.com/embed/F5eMR0xx9co?enablejsapi=1" title="Валерий Сюткин о лазерной терапии аппаратом РИКТА" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-index="0"></iframe>
+
+поменять на
+
+<div class="video-yt__frame" data-yt-id="F0JM6d28n30" data-index="0"></div>
+
+data-yt-id - id видео
+
+Для youtube-отзывов на главной поменять разметку
+
+Проверить загрузку, если страница перемотана на середину
+ncaught TypeError: can't access property "_viewers", window.CI360 is undefined
+
 ===================================
 23.02.2023
 ===================================

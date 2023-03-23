@@ -13,7 +13,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  background-image: url('../img/play-btn.png');
+  background-image: url('#{$path-images}/play-btn.png');
   background-size: contain;
   z-index: 10;
 
@@ -23,7 +23,7 @@
   }
 
   video.playing~& {
-    background-image: url('../img/stop-btn.png');
+    background-image: url('#{$path-images}/stop-btn.png');
   }
 
   #{$block-name}__media--video-bg:hover & {
@@ -40,8 +40,8 @@
     background-image: none;
   }
 
-  .video-yt & {
-    opacity: 0;
-  }
+  // .video-yt & {
+  //   opacity: 0;
+  // }
 
 }

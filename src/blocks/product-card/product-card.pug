@@ -20,8 +20,8 @@ mixin product-card(props={}, mods)
     .product-card__inner
       a.product-card__img(href="#")
         img.lazyload(data-src=props.url
-        data-srcset= props.srcset,
-        data-sizes= props.sizes)
+        data-srcset= (!typeof(props.srcset) == 'undefined' && props.srcset) ? props.srcset : '',
+        data-sizes= (!typeof(props.sizes) == 'undefined' && props.sizes) ? props.sizes : '')
         if (props.top && props.top.length > 0)
           .product-card__top-list
             each item in props.top

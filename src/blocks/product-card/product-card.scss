@@ -158,6 +158,18 @@
     }
   }
 
+  @at-root .article {
+    #{$block-name}__img {
+      @media (min-width: $screen-lg) {
+        height: 200px;
+      }
+
+      @media (min-width: $screen-xl) {
+        height: 242px;
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -230,11 +242,12 @@
     padding: 0 5px;
     font-size: 18px;
     line-height: 28px;
-    color: $tw-black;
+    color: $tw-black !important;
 
     &:hover,
     &:focus,
     &:active {
+      text-decoration: none !important;
       color: currentColor;
       opacity: 0.7;
     }

@@ -539,6 +539,60 @@ block content
           p Для поддержания устойчивой ремиссии и недопущения развития обострений артрита коленных суставов важно добросовестное выполнение рекомендаций врача. Стоит пересмотреть рацион. Ешьте свежие овощи и фрукты, богатые витаминами и клетчаткой. Надо ограничить потребление животных жиров.
           p Откажитесь от вредных привычек. Важно исключить прием алкоголя и курение табака. Нужно вылечивать все воспалительные заболевания. Особенно это касается острых инфекций. Стоит вести активный образ жизни. Нужно заниматься специально разработанными упражнениями для суставов. Нагрузки подбирают, учитывая возраст, степень и форму заболевания.
           p Успешное лечение воспалительного процесса в коленных суставах зависит от своевременного обращения за медицинской помощью и строгого выполнения врачебных рекомендаций.
+
+          .product-catalog
+            h2.section__title.mb-0.mt-0.xxl_mb-7px Каталог аппаратов
+            +btn('Все аппараты','simple')(href=" /catalog/laser-therapy-devices/" class="pt-3px mb-20px")
+            .product-list
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА-04/4',
+                  desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
+                  price: '44 800 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'РИКТА 04/4 (универсальный)',
+                  desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '74 600 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: './img/product.jpg',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-эсмил(1)а',
+                  desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")
+              +product-card(
+                {
+                  url: 'http://placekitten.com/300/300',
+                  srcset:
+                  'img/product_320x200.jpg 320w,' +
+                  'img/product_345x242.jpg 345w,',
+                  sizes: '(max-width: 1023) 320px,' +
+                        '(min-width: 1024px) 345px,',
+                  title: 'рикта-тест',
+                  desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
+                  price: '98 200 ₽'
+                })(class="slider__item")
+
           // .border.border-gray-200.rounded-10px.p-30px.mt-40px.mb-40px.lg_pt-40px.lg_mb-60px
           //   h3.mt-0 Список литературы:
           //   ol.text-lg.p-0.lg_pl-20px
@@ -628,6 +682,43 @@ block content
               show: false
             })
               p Тогда Ваше дело будет разбирать независимый Арбитр в арбитраже форума. Он потребует оказать качественную услугу или даст распоряжение вернуть Вам средства. Услуги Гаранта оплачивает как правило Покупатель, реже продавец, в исключительных случаях 50 на 50. Это указывается в анкете.
+        .product-catalog.col-start-1.col-span-2.mt-40px
+          h2.section__title.mb-0.mt-0.xxl_mb-7px Похожие товары
+          +btn('Все аппараты','simple')(href=" /catalog/laser-therapy-devices/" class="pt-3px")
+          .product-list.mt-20px
+            +product-card(
+              {
+                url: '/img/product_lg.jpg',
+                title: 'РИКТА-04/4',
+                desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
+                price: '44 800 ₽'
+              })(class="slider__item")
+            +product-card(
+              {
+                url: '/img/product_lg.jpg',
+                title: 'РИКТА 04/4 (универсальный)',
+                desc: 'Комплектация: "Универсальный" Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                price: '74 600 ₽'
+              })(class="slider__item")
+            +product-card(
+              {
+                url: '/img/product_lg.jpg',
+                title: 'рикта-эсмил(1)а',
+                desc: 'Портативный. Работает от аккумулятора Без возрастных ограничений. С&nbsp;регулировкой мощности',
+                price: '98 200 ₽'
+              })(class="slider__item")
+            +product-card(
+              {
+                url: 'http://placekitten.com/300/300',
+                srcset:
+                'img/product_320x200.jpg 320w,' +
+                'img/product_345x242.jpg 345w,',
+                sizes: '(max-width: 1023) 320px,' +
+                      '(min-width: 1024px) 345px,',
+                title: 'рикта-тест',
+                desc: 'Без возрастных ограничений. С регулировкой мощности Без возрастных ограничений. С&nbsp; регулировкой мощности',
+                price: '98 200 ₽'
+              })(class="slider__item")
         +consult({
           url: 'img/author_87x87.jpg',
           name: 'Иван Фабричный',
@@ -636,23 +727,23 @@ block content
         })(class='article__consult mt-70px lg_hidden')
         .banner__wrapper.article__banner.lg_hidden
           .banner Баннер
-    .container
+    .container.section--textpage.mb-40px
       h2.mt-0.mb-5px.lg_mb-0.lg_mt-0.xxl_mb-10px.pr-110px.lg_text-36px Вам может быть интересно
       +btn('Все статьи','simple').mb-20px.shrink-0
       .article-preview.article-preview__list-wrapper
         .article-preview__list.slider
           .article-preview.slider__item
             .article-preview__inner.xxl_flex.xxl_flex-col
-              .article-preview__img
+              a.article-preview__img(href="#")
                 img.lazyload(data-src="img/article-1.jpg")
               .article-preview__text.xxl_pt-30px
                 .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит? Поллиноз, Сенная Лихорадка, Аллергический Ринит?
                 .article-preview__content.hidden
                 +btn('Подробнее','simple')(class="text-md mt-10px")
           .article-preview.slider__item
             .article-preview__inner.xxl_flex.xxl_flex-col
-              .article-preview__img
+              a.article-preview__img(href="#")
                 img.lazyload(data-src="img/article-2.jpg")
               .article-preview__text.xxl_pt-30px
                 .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
@@ -661,11 +752,11 @@ block content
                 +btn('Подробнее','simple')(class="text-md mt-10px")
           .article-preview.slider__item
             .article-preview__inner.xxl_flex.xxl_flex-col
-              .article-preview__img
+              a.article-preview__img(href="#")
                 img.lazyload(data-src="img/article-2.jpg")
               .article-preview__text.xxl_pt-30px
                 .article-preview__date.text-base.text-gray-300.mb-10px 15 марта 2022
-                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз, Сенная Лихорадка, Аллергический Ринит?
+                .article-preview__title.mb-10px.text-lg.text-black(class="min-h-[56px]") Поллиноз
                 .article-preview__content.hidden
                 +btn('Подробнее','simple')(class="text-md mt-10px")
 

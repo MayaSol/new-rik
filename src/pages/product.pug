@@ -237,16 +237,11 @@ block content
         .container
           .product-catalog
             h2.section__title.mb-0.mt-0.xxl_mb-7px Похожие товары
-            +btn('Все аппараты','simple')(class="pt-3px")
+            +btn('Все аппараты','simple')(class="pt-3px" href=" /catalog/laser-therapy-devices/")
             .product-list.mt-20px
               +product-card(
                 {
-                  url: './img/product.jpg',
-                  srcset:
-                  'img/product_320x200.jpg 320w,' +
-                  'img/product_345x242.jpg 345w,',
-                  sizes: '(max-width: 1023) 320px,' +
-                        '(min-width: 1024px) 345px,',
+                  url: './img/product-lg.jpg',
                   title: 'РИКТА-04/4',
                   desc: 'Без возрастных ограничений. С&nbsp;регулировкой мощности Без возрастных ограничений.<br/>С&nbsp;регулировкой мощности.',
                   price: '44 800 ₽'
