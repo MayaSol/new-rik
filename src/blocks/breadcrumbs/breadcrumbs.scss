@@ -3,7 +3,6 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .breadcrumbs {
-  display: none;
   list-style: none;
   margin-top: $typo-margin-vertical;
   margin-bottom: $typo-margin-vertical;
@@ -35,7 +34,7 @@
   }
 
   &__item {
-    display: inline-block;
+    display: none;
     margin-right: 0.8em;
     white-space: nowrap;
 
@@ -44,6 +43,43 @@
       display: inline-block;
       margin-left: 0.9em;
       color: $gray;
+    }
+
+    &:nth-last-child(2) {
+      position: relative;
+      display: inline-block;
+      white-space: normal;
+      padding-left: 12px;
+
+      @media (min-width: $screen-lg) {
+        padding-left: 0;
+      }
+
+      &::after {
+        display: none;
+        @media (min-width: $screen-lg) {
+          display: inline-block;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 7px;
+        left: 0;
+        top: 50%;
+        background-image: url('/img/angle-left.svg');
+        transform: translateY(-50%);
+
+        @media (min-width: $screen-lg) {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      display: inline-block;
     }
   }
 

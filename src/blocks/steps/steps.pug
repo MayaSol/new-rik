@@ -1,0 +1,88 @@
+//- Все примеси в этом файле должны начинаться c имени блока (steps)
+
+
+mixin steps(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' steps--' + modsList[i].trim();
+      }
+    }
+
+  .steps(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin steps-nav(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' steps__nav--' + modsList[i].trim();
+      }
+    }
+
+  .steps__nav.nav.nav-steps(role="tablist" aria-orientation="vertical" class=allMods)&attributes(attributes)
+    block
+
+
+mixin steps-nav-button(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (props.classes) {
+      allMods = props.classes;
+    }
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' steps__nav-link--' + modsList[i].trim();
+      }
+    }
+
+  button.steps__nav-link.nav-link(id = props.id data-bs-toggle="pill" data-bs-target=props.target_id type="button" role="tab" aria-controls=props.id aria-selected=props.selected class=allMods)&attributes(attributes)
+    block
+
+
+mixin steps-content(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' steps__content--' + modsList[i].trim();
+      }
+    }
+
+  .steps__content.tab-content(id=props.id)
+    block
+
+
+mixin steps-content-pane(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (props.classes) {
+      allMods = props.classes;
+    }
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' steps__pane--' + modsList[i].trim();
+      }
+    }
+
+  .steps__pane.tab-pane.fade(id=props.id role="tabpanel" aria-labelledby=props.link_id tabindex=props.tabindex class=allMods)&attributes(attributes)
+    block

@@ -1,0 +1,10 @@
+// В этом файле должны быть стили для БЭМ-блока cart-steps, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cart-steps {
+
+  $block-name:                &; // #{$block-name}__element
+  grid-column-start: 1;
+  grid-column-end: 2;
+}

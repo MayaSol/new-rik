@@ -125,6 +125,26 @@
   &__content {
     flex-grow: 1;
 
+    .bx-auth {
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+
+      noindex {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 20px;
+        max-width: 300px;
+
+        @media (min-width: $screen-md) {
+          min-height: 68px;
+        }
+      }
+    }
+
+    .bx-auth-label {
+      text-align: left;
+    }
   }
 
   &__footer-wrapper {
@@ -1014,8 +1034,8 @@ body {}
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: top;
+    object-fit: scale-down;
+    object-position: top right;
   }
 }
 

@@ -370,4 +370,17 @@
       margin-bottom: 0;
     }
   }
+
+
+  @media (max-width: $screen-xl - 1) {
+    .border.xl_grid-cols-\[7fr_5fr\] {
+      display: flex;
+      flex-direction: column;
+
+      .article__img {
+        align-self: start;
+      }
+    }
+  }
+
 }

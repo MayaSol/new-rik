@@ -48,7 +48,8 @@
 // Tabs
 //
 
-.nav-tabs {
+.nav-tabs,
+.nav-steps {
   // scss-docs-start nav-tabs-css-vars
   --#{$prefix}nav-tabs-border-width: #{$nav-tabs-border-width};
   --#{$prefix}nav-tabs-border-color: #{$nav-tabs-border-color};
@@ -79,6 +80,10 @@
     text-decoration: if($link-decoration==none, null, none);
     @include transition($nav-link-transition);
     border-bottom: var(--#{$prefix}nav-tabs-border-width) solid transparent;
+
+    &.steps__nav-link {
+      margin: 0;
+    }
 
 
     &:hover,

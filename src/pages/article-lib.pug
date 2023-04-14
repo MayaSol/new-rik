@@ -143,7 +143,7 @@ block content
             code &lt;/div>
           div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
             p.text-black.text-lg.lg_text-2xl.col-span-2 Факторами риска, предрасполагающими к развитию болезни, считают следующее:
-            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2
+            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2.self-start
               img.lazyload(
                 data-src='img/arthrit_800x400.jpg'
               )
@@ -178,9 +178,10 @@ block content
             code      &lt;li>&lt;b>Методы визуализации.&lt;/b> На рентген-снимках сустава видны отверстия в суставных поверхностях, через которые выходит гной в костную ткань. Еще при заболевании сужается суставная щель. Выявляется костное или фиброзное заращение сустава. Чтобы провести дифференциальную диагностику при артритах, проводят МРТ. Определение характера и количества внутрисуставной жидкости производят при помощи УЗИ. Вспомогательное значение имеют термография, пневмоартрография и контрастная артрография.&lt;/li>
             code    &lt;/ol>
             code  &lt;/div>
+
           div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
-            p.text-black.text-lg.lg_text-2xl.col-start-1.col-span-1 Факторы риска:
-            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2.row-start-1.row-span-3
+            p.text-black.text-lg.lg_text-2xl.col-start-1.col-span-1 Факторы риска: (старый вариант)
+            .article__img.img-contain.mb-20px.xl_mb-0.col-start-2.row-start-1.row-span-3.self-start
               img.lazyload(
                 data-src='img/arthrit_800x400.jpg'
               )
@@ -189,10 +190,24 @@ block content
               li воспаление суставной сумки и связок;
               li ожирение;
               li сверхпороговые спортивные нагрузки;
+
+          //- div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
+          //-   p.text-black.text-lg.lg_text-2xl.col-start-1.col-span-1 Факторы риска:
+          //-   .article__img.img-contain.mb-20px.xl_mb-0.col-start-2.row-start-1.row-span-3.self-start.justify-self-end
+          //-     img.lazyload(
+          //-       data-src='http://placekitten.com/300/900'
+          //-     )
+          //-   ul.pl-0.mb-0.lg_pl-15px.row-start-2.row-span-2
+          //-     li травматизация прилежащих к суставу связок;
+          //-     li воспаление суставной сумки и связок;
+          //-     li ожирение;
+          //-     li сверхпороговые спортивные нагрузки;
+
           .code
+            code /** Устаревший вариант, плохо работает с картинками ширины меньше 527px
             code  &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px xl_grid xl_grid-cols-[7fr_5fr]">
             code    &lt;p class="text-black text-lg lg_text-2xl col-start-1 col-span-1">Факторы риска::&lt;/p>
-            code    &lt;div class="article__img img-contain mb-20px xl_mb-0 col-start-2 row-start-1 row-span-3">
+            code    &lt;div class="article__img img-contain mb-20px xl_mb-0 col-start-2 row-start-1 row-span-3 self-start">
             code      &lt;img class="lazyload" data-src="img/arthrit_800x400.jpg">
             code    &lt;/div>
             code    &lt;ul class="pl-0 mb-0 lg_pl-15px row-start-2 row-span-2">
@@ -202,6 +217,50 @@ block content
             code      &lt;li>сверхпороговые спортивные нагрузки;&lt;/li>
             code    &lt;/ul>
             code  &lt;/div>
+
+
+
+          div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.xl_p-40px.xl_grid(class="xl_grid-cols-[7fr_5fr]")
+            p.text-black.text-lg.lg_text-2xl.col-start-1.col-span-1 Факторы риска: (Новый вариант)
+            .article__img.mb-20px.xl_mb-0.col-start-2.row-start-1.row-span-3.self-start.justify-self-end
+              img.lazyload(
+                data-src='http://placekitten.com/100/100'
+              )
+            ul.pl-0.mb-0.lg_pl-15px.row-start-2.row-span-2
+              li травматизация прилежащих к суставу связок;
+              li воспаление суставной сумки и связок;
+              li ожирение;
+              li сверхпороговые спортивные нагрузки;
+
+          <div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px xl_grid xl_grid-cols-[7fr_5fr]">
+           <p class="text-black text-lg lg_text-2xl col-start-1 col-span-1">Факторы риска: (Новый вариант)</p>
+           <div class="article__img mb-20px xl_mb-0 col-start-2 row-start-1 row-span-3 self-start justify-self-end">
+             <img class="lazyload" data-src="http://placekitten.com/1200/800">
+           </div>
+           <ul class="pl-0 mb-0 lg_pl-15px row-start-2 row-span-2">
+             <li>травматизация прилежащих к суставу связок;</li>
+             <li>воспаление суставной сумки и связок;</li>
+             <li>ожирение;</li>
+             <li>сверхпороговые спортивные нагрузки;</li>
+           </ul>
+          </div>
+
+          .code
+            code /** Новый вариант
+            code  &lt;div class="border border-black border-dashed rounded-10px p-30px mt-30px mb-30px xl_p-40px xl_grid xl_grid-cols-[7fr_5fr]">
+            code    &lt;p class="text-black text-lg lg_text-2xl col-start-1 col-span-1">Факторы риска::&lt;/p>
+            code    &lt;div class="article__img mb-20px xl_mb-0 col-start-2 row-start-1 row-span-3 self-start justify-self-end">
+            code      &lt;img class="lazyload" data-src="http://placekitten.com/100/100">
+            code    &lt;/div>
+            code    &lt;ul class="pl-0 mb-0 lg_pl-15px row-start-2 row-span-2">
+            code      &lt;li>травматизация прилежащих к суставу связок;&lt;/li>
+            code      &lt;li>воспаление суставной сумки и связок;&lt;/li>
+            code      &lt;li>ожирение;&lt;/li>
+            code      &lt;li>сверхпороговые спортивные нагрузки;&lt;/li>
+            code    &lt;/ul>
+            code  &lt;/div>
+
+
           div.border.border-black.border-dashed.rounded-10px.p-30px.mt-30px.mb-30px.lg_p-40px
             p.text-black.text-lg.lg_text-2xl Факторами риска, предрасполагающими к развитию болезни, считают следующее:
             ul.pl-0.mb-0.lg_pl-15px.md_columns-2

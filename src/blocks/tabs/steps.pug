@@ -1,0 +1,88 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tabs)
+
+
+mixin tabs(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tabs--' + modsList[i].trim();
+      }
+    }
+
+  .tabs(class=allMods)&attributes(attributes)
+    block
+
+
+
+mixin tabs-nav(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tabs__nav--' + modsList[i].trim();
+      }
+    }
+
+  .tabs__nav.nav.nav-tabs(role="tablist" aria-orientation="vertical" class=allMods)&attributes(attributes)
+    block
+
+
+mixin tabs-nav-button(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (props.classes) {
+      allMods = props.classes;
+    }
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tabs__nav-link--' + modsList[i].trim();
+      }
+    }
+
+  button.tabs__nav-link.nav-link(id = props.id data-bs-toggle="pill" data-bs-target=props.target_id type="button" role="tab" aria-controls=props.id aria-selected=props.selected class=allMods)&attributes(attributes)
+    block
+
+
+mixin tabs-content(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tabs__content--' + modsList[i].trim();
+      }
+    }
+
+  .tabs__content.tab-content(id=props.id)
+    block
+
+
+mixin tabs-content-pane(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if (props.classes) {
+      allMods = props.classes;
+    }
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' tabs__pane--' + modsList[i].trim();
+      }
+    }
+
+  .tabs__pane.tab-pane.fade(id=props.id role="tabpanel" aria-labelledby=props.link_id tabindex=props.tabindex class=allMods)&attributes(attributes)
+    block

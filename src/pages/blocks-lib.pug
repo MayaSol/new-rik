@@ -1,0 +1,59 @@
+extends ../pug/layout.pug
+
+block meta
+  title Информация
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'article';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Информация')
+    section
+      .container
+        p regular
+        p
+          +btn('Перейти в каталог','regular')(class='mr-10px border-gray-200')
+        p
+          +btn('На главную','regular')
+        p
+          +btn('Сброс','regular')(class='profile__form-clear mr-6px lg_mr-12px')
+        p regular, blue
+        +btn('Сохранить','regular,blue')(class='mr-6px lg_mr-12px')
+        p regular, icon
+        +btn('<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#logout"></use></svg> <span>Выход</span>',
+          'regular,icon')(class='border-gray-300')
+        p regular, icon-close
+        +btn('<span class="close"></span><span>Отменить заказ</span>','regular,icon-close')
+        p simple
+        p
+          +btn('Подробнее','simple')(class="text-md mt-10px")
+        p
+          +btn('Все статьи','simple').mb-20px.shrink-0
+        p
+          +btn('Все аппараты','simple')(href=" /catalog/laser-therapy-devices/" class="pt-3px mb-20px")
+        p btn-angle-left
+        +btn-angle-left({text: 'Вернуться к покупкам'})(class='cart-page__back' href='#')
+        p clean
+        p
+          +btn('','print,clean')(class='mr-15px')
+            +svg('printer','',{width: '20',height: '22'},'')
+        p
+          +btn('','document-cloud,clean')
+            +svg('document-cloud','',{width: '20',height: '20'},'')
+        p
+          +btn('По цене','clean')(href='#')
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+
+

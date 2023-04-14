@@ -23,6 +23,10 @@
   &__content {
     @media (min-width: $screen-lg) {
       display: grid;
+      grid-template-columns: 1fr 30px 280px;
+      grid-template-rows: auto auto 1fr;
+    }
+    @media (min-width: $screen-xl) {
       grid-template-columns: 1fr 30px 320px;
     }
     @media (min-width: $screen-xxl) {
@@ -40,12 +44,65 @@
   }
 
   &__main {
+    position: relative;
+
     @media (min-width: $screen-lg) {
       grid-row-start: 2;
-      grid-row-end: 3;
+      grid-row-end: 4;
       grid-column-start: 1;
       grid-column-end: 2;
     }
+
+    #{$block-name}--feedback & {
+      @media (min-width: $screen-lg) {
+        grid-row-start: 1;
+        grid-row-end: 4;
+      }
+    }
+
+    .altasib-support-button {
+      min-width: 200px;
+      margin-right: 0 !important;
+      justify-self: start;
+    }
+
+    form[name=form_altasib_support_list] {
+      overflow: auto;
+    }
+
+    .bx-grid-footer tbody {
+      display: block;
+    }
+
+    .bx-grid-footer tr:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .altasib_ticketnform .altasib-form-tab-list {
+      flex-direction: column;
+
+      @media (min-width: $screen-md) {
+        flex-direction: row;
+      }
+    }
+
+    #altasib-support-main-table > tbody tr {
+
+      @media (max-width: $screen-xl - 1) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    #altasib_sidebar_resizer {
+      display: none;
+    }
+
+    .addTicket-titleInputtext input {
+      width: 100%;
+    }
+
   }
 
   &__form {
@@ -76,6 +133,23 @@
     }
   }
 
+  &__consult {
+    margin-top: 30px;
+
+    @media (min-width: $screen-lg) {
+      padding: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 30px;
+    }
+  }
+
+  &__show-all {
+    flex-shrink: 0;
+  }
+
+
   .field-toggler {
     color: $tw-black;
   }
@@ -87,5 +161,7 @@
       margin-right: 10px;
     }
   }
+
+
 
 }

@@ -89,6 +89,7 @@ let config = {
     'src/css/': 'css/',
     'src/pages/tnstest.html': '/',
     'src/pages/cart3.html': '/',
+    'src/pages/feedback.html': '/',
 
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

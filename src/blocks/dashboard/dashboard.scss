@@ -1,0 +1,51 @@
+// В этом файле должны быть стили для БЭМ-блока dashboard, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.dashboard {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .btn {
+      padding: 6px 14px;
+      letter-spacing: -0.5px;
+
+      @media (min-width: $screen-md) {
+        padding: 8px 16px;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+
+    @media (min-width: $screen-md) {
+      letter-spacing: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 24px;
+    }
+  }
+
+  &__section {
+    position: relative;
+  }
+}
