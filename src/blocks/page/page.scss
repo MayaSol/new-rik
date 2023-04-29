@@ -145,6 +145,7 @@
     .bx-auth-label {
       text-align: left;
     }
+
   }
 
   &__footer-wrapper {
@@ -1055,5 +1056,13 @@ ul[class*=columns] li {
   -webkit-column-break-inside: avoid;
 }
 
+.fade:not(.show) {
+  height: 0;
+}
+
+
+.elementReviewList { //Какой-то элемент растягивает сетку на мобиле https://rikta.ru/catalog/laser-therapy-devices/
+  overflow: hidden;
+}
 
 @include sprites($spritesheet-sprites);

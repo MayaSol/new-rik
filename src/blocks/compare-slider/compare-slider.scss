@@ -90,5 +90,11 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .compare-card {
+    &__image {
+      height: 270px;
+    }
+  }
 }
 

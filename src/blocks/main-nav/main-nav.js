@@ -5,6 +5,7 @@ const getParents = require('../../js/utils/getParents.js');
 import { OverlayScrollbars } from 'overlayscrollbars';
 
 ready(function(){
+  console.log('main-nav.js');
 
   // Добавление/удаление модификаторов при фокусировке на ссылочном элементе
   var linkClassName = 'main-nav__link';

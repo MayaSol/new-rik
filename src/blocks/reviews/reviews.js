@@ -8,7 +8,6 @@ const makeEllipsis = require('../../js/utils/ellipsis.js');
 
 ready(function() {
 
-
   var tabSliders = {};
   const tabsSelect = document.getElementById('reviews-tab-select');
   if (tabsSelect) {

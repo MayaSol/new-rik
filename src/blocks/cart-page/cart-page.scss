@@ -21,6 +21,11 @@
     }
   }
 
+  .steps #bx-soa-tanais-order-form {
+      display: block !important;
+  }
+
+
   #bx-soa-tanais-order {
     @media (min-width: $screen-lg) {
       grid-column-start: 1;
@@ -521,6 +526,10 @@
     opacity: 1;
   }
 
+  .bx-soa-pp-item-container .bx-soa-pp-company-graf-container input:checked ~ .style-checkbox::after {
+    opacity: 1;
+  }
+
   /*!!! Промокод*/
   .bx-soa-coupon-input input[type="text"].tanais-form-control {
     padding-left: 18px;
@@ -884,7 +893,7 @@
   //Купон (промокод)
   .bx-soa-coupon-item {
     display: block;
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   .bx-soa-coupon-item > div {
@@ -936,6 +945,7 @@
   .bx-soa-coupon-bonus-name {
     color: $tw-gray-500;
     line-height: 1.2;
+    width: calc(100% - 50px);
   }
 
   .bx-soa-coupon-bonus-value {
@@ -977,4 +987,5 @@
   .bx-soa-cart-total .btn-order-one-click {
     font-size: 16px !important;
   }
+
 }

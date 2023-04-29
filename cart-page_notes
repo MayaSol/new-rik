@@ -1,0 +1,113 @@
+1. init: function(parameters)
+
+2. sendRequest - ajax
+
+--------------------------------------------------------
+2.1
+action: "refreshOrderAjax"
+this.ajaxUrl: "/bitrix/components/bitrix/sale.order.ajax/ajax.php"
+
+Возвращается result:
+
+  locations.output - html поля город
+
+  delivery - поля доставки
+  paysystem - оплата
+
+Запускается:
+------------------------------------------
+2.1.1 this.refreshOrder(result);
+------------------------------------------
+
+2.1.1.1
+
+this.isPriceChanged(result); - ? что изменяет ?
+
+
+this.result = result.order;
+this.prepareLocations(result.locations);
+
+? this.editOrder ?
+
+
+Там есть this.mapsReady && this.initMaps();
+
+  initMaps: function()
+    {
+      this.maps = BX.Sale.OrderAjaxComponent.Maps.init(this);
+
+if (this.params.SHOW_PICKUP_MAP === 'Y' && BX('pickUpMap'))
+
+
+if (activeStores && activeStores.length)
+{
+  var selected = this.getSelectedPickUp();
+  this.maps.initializePickUpMap(selected);
+
+
+--------------------------------------------------------
+initMaps
+--------------------------------------------------------
+if (this.maps)
+
+this.params.SHOW_PICKUP_MAP
+this.params.SHOW_MAP_IN_PROPS
+
+BX('propsMap') ? Как сделать true?
+BX('pickupMap')
+
+this.options.pickUpMap = parameters.pickUpMap;
+------------------------------------------------------------------
+2.2
+action === 'saveOrderAjax')
+
+
+  // called each time form refreshes
+  initDeferredControl: function()
+
+
+  ================================================================
+  Что есть в html
+
+  <a onclick="BX.Sale.OrderAjaxComponent.buyOneClickFormHide();" class="bx-soa-cart-total-form-close-btn"></a>
+
+<a onclick="BX.Sale.OrderAjaxComponent.buyOneClickFormSend(this);" class="btn btn-default">
+                      Купить </a>
+
+
+  <script type="text/javascript">
+  if (!window.BX) window.BX = {};
+  if (!window.BX.message) window.BX.message = function(mess) { if (typeof mess === 'object') { for (let i in mess) { BX.message[i] = mess[i]; } return true; } };
+
+  </script>
+
+
+  <script type="text/javascript">
+  (window.BX || top.BX).message({ 'LOCATION_WIDGET_SOURCE_CODE':
+
+  BX.setJSList([
+
+
+   BX.Sale.OrderAjaxComponent.init({
+
+
+
+=========================================================================
+let object = BX('my_id') // обратиться по ID
+==========================================================================
+
+
+
+
+
+
+  ============================================
+  Что мне надо
+  По клику на нужный пункт достваки показать либо карту, либо поля формы, либо ничего
+
+
+Надо сделать блок с id="pickUpMap"
+===
+
+
+

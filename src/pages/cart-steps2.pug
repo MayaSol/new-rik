@@ -21,18 +21,9 @@ block content
         #bx-soa-tanais-order-form
           h2.section__title.section__title--product-info.mb-20px Оформление заказа
           .cart-page__pane
-            +btn-angle-left({text: 'Вернуться к покупкам'})(class='cart-page__back' href='#')
-            +btn('','print,clean')(class='mr-15px')
-              +svg('printer','',{width: '20',height: '22'},'')
-            +btn('','document-cloud,clean')
-              +svg('document-cloud','',{width: '20',height: '20'},'')
+            +btn-angle-left({text: 'Вернуться в корзину'})(class='cart-page__back' href='#')
           .cart-steps
             +steps({},'cart-steps')
-              //- .tabs__select-wrapper.tabs__select-wrapper--certs.field-select__wrapper
-              //-   select.tabs__select.tabs__select--certs.field-select(role='tablist')
-              //-     option(value='tab-button-01' selected="true") Сертификаты
-              //-     option(value='tab-button-02') Патенты
-              //-     option(value='tab-button-03') Регистрационные удостоверения
               +steps-nav()
                 +steps-nav-button({
                   id: 'tab-button-01',
@@ -46,6 +37,7 @@ block content
                   id: 'tab-button-02',
                   target_id: '#tab-content-02',
                   selected: 'false',
+                  classes: 'disabled'
                 })
                   span.steps__nav-num 02
                   span Доставка
@@ -53,75 +45,218 @@ block content
                   id: 'tab-button-03',
                   target_id: '#tab-content-03',
                   selected: 'false',
+                  classes: 'disabled'
                 })
                   span.steps__nav-num 03
                   span Оплата
-              +steps-content({id: 'certs-tabContent'})
-                +tabs-content-pane({
-                  id: 'tab-content-01',
-                  link_id: 'tab-button-01',
-                  tabindex: '0',
-                  classes: 'show active'
-                })
-                  .cert__list
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: 'Сертификат ISO',
-                    })
-                      p Сертификат ISO
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: '  Сертификат соответствия ГОСТ Р (Рикта)',
-                    })
-                      p Сертификат соответствия ГОСТ Р (Рикта)
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: '  Сертификат соответствия ГОСТ Р (Рикта)',
-                    })
-                      p Приложение к сертификату соответствия ГОСТ Р (Рикта)
-                      p Способ включает послойное вскрытие брюшной полости, эвакуацию гнойного содержимого, осушение брюшной полости, дренирование полости малого таза и послеоперационную терапию. Послеоперационную терапию проводят путём импульсного лазерного воздействия. Воздействуют на правую подвэдошную область, правую и левую мезогастральные области, область эпигастрия. Импульсное лазерное воздействие осуществляют с частотой следования импульсов 5-79 Гц, при мощности излучения 4-15 Вт, при времени воздействия на каждую область в течение 30-59 или 61-64 секунд. Способ повышает эффективность лечения за счёт выбора индивидуальных параметров лазерного воздействия и исключения сенсибилизации организма.
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: 'Сертификат соответствия ГОСТ Р (Рикта-Эсмил (1А) и Рикта-Эсмил(2А)) ',
-                    })
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: 'Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)',
-                    })
-                      p Сертификат соответствия ГОСТ Р Госстандарта РФ (Рикта-05)
-                +tabs-content-pane({
-                  id: 'tab-content-02',
-                  link_id: 'tab-button-02',
-                  tabindex: '1',
-                })
-                  .cert__list
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: 'Патент тест',
-                    })
-                      p Патент тест
-                +tabs-content-pane({
-                  id: 'tab-content-03',
-                  link_id: 'tab-button-03',
-                  tabindex: '2',
-                })
-                  .cert__list
-                    +cert-item({
-                      url: 'https://rikta.ru/upload/medialibrary/8ee/8ee80e53534943dae09b1356c5db7edd.png',
-                      thumb: 'img/cert-thumb.png',
-                      title: 'Регистрационные удостоверения тест',
-                    })
-                      p Регистрационные удостоверения тест
+              +steps-content({id: 'cart-tabContent'})
+                form.tanais-order#bx-soa-tanais-order-form(action="/personal/cart/" method="POST" name="ORDER_FORM" enctype="multipart/form-data")
+                  +tabs-content-pane({
+                    id: 'tab-content-01',
+                    link_id: 'tab-button-01',
+                    tabindex: '0',
+                    classes: 'show active'
+                  })
+                    .steps__content
+                      <div class="bx_soa_location">
+                        <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container">
+                          <label class="bx-soa-custom-label" for="soa-property-4"><span class="bx-authform-starrequired">*</span> Город</label>
+                          <div id="sls-40005" class="bx-sls ">
+                            <div class="dropdown-block bx-ui-sls-input-block tanais-form-control">
+                              <span class="dropdown-icon"></span>
+                              <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
+                              <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
+                              <div class="dropdown-fade2white"></div>
+                              <div class="bx-ui-sls-loader"></div>
+                              <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
+                              <div class="bx-ui-sls-pane" style="overflow: hidden auto;">
+                                <div class="bx-ui-sls-variants"></div>
+                              </div>
+                            </div>
+                            <div class="bx-ui-sls-error-message">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="single-container ">
+                        <!--  DELIVERY BLOCK  -->
+                        <div id="bx-soa-delivery" data-visited="true" class="bx-soa-section bx-active">
+                          <div class="bx-soa-section-content container-fluid">
+                            <div style="display: none;" class="alert alert-danger"></div>
+                            <div class="bx-soa-pp">
+                              <div class="bx-soa-pp-item-container">
+                                <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-inner-block">
+                                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27" checked><span class="style-checkbox"></span>
+                                      <div class="bx-soa-pp-company-smalltitle"><span>Курьерская доставка (Major Express, СДЭК)</span></div>
+                                      <div class="bx-soa-pp-delivery-cost">бесплатно</div>
+                                    </div>
+                                    <div class="bx-soa-pp-company-smalldescr"><b>При 100% предоплате</b>. Курьер нашего партнёра только доставляет Вам заказанный товар. Передача товара от курьера возможна только после оплаты. При обнаружении впоследствии какого-либо дефекта или неисправности действовать следует в соответствии с правилами гарантийного ремонта.</div>
+                                  </div>
+                                  <div class="bx-soa-pp-desc-container">
+                                    <div class="bx-soa-pp-company">
+                                      <div class="bx-soa-pp-company-block"></div>
+                                      <ul class="bx-soa-pp-list">
+                                        <li>
+                                          <div class="bx-soa-pp-list-termin">Срок доставки:</div>
+                                          <div class="bx-soa-pp-list-description"> от 2 до 12 дней </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="bx_soa_item_delivery_id_4" class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-inner-block">
+                                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_4" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="4"><span class="style-checkbox"></span>
+                                      <div class="bx-soa-pp-company-smalltitle"><span>Самовывоз при производстве</span></div>
+                                      <div class="bx-soa-pp-delivery-cost">бесплатно</div>
+                                    </div>
+                                    <div class="bx-soa-pp-company-smalldescr">Самовывоз с нашего центрального склада: 111020, Москва, ул. Боровая, д. 7, стр. 7<br> Подробная схема проезда и карта в разделе "<a href="/contacts/" title="Схема проезда на склад, РИКТАМЕД - адрес" target="_blank">Контакты</a>".</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="bx-soa-properties" data-visited="true" class="bx-soa-section bx-active">
+                        <div class="delivery-data">
+                          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="86"><label for="soa-property-86" class="bx-soa-custom-label">Индекс</label><div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_86" id="soa-property-86" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div></div>
+                          <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="6"><label for="soa-property-6" class="bx-soa-custom-label">Улица, дом</label><div class="soa-property-container has-soa-address-suggest"><input type="text" size="30" name="ORDER_PROP_6" id="soa-property-6" autocomplete="new-password" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"><span class="soa-suggests-container"><span class="soa-suggests-block"></span></span></div></div>
+                        </div>
+                      </div>
+                      <div class="pickup-data">
+                          <div id="pickup-map">
+                          </div>
+                      </div>
+                      +btn('<span>Дальше</span><svg width="8" height="16" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-right"></use></svg>','regular,blue,icon,icon-right')(class='rounded-4px')(class="steps__next-btn")
+                  +tabs-content-pane({
+                    id: 'tab-content-02',
+                    link_id: 'tab-button-02',
+                    tabindex: '1',
+                  })
+                    .steps__content
+                      <div data-property-id-row="4" class="tanais-form-group bx-soa-location-input-container">
+                        <label class="bx-soa-custom-label" for="soa-property-4"><span class="bx-authform-starrequired">*</span> Город</label>
+                        <div id="sls-40005" class="bx-sls ">
+                          <div class="dropdown-block bx-ui-sls-input-block tanais-form-control">
+                            <span class="dropdown-icon"></span>
+                            <input type="text" autocomplete="off" name="ORDER_PROP_4" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
+                            <div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ..."></div>
+                            <div class="dropdown-fade2white"></div>
+                            <div class="bx-ui-sls-loader"></div>
+                            <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
+                            <div class="bx-ui-sls-pane" style="overflow: hidden auto;">
+                              <div class="bx-ui-sls-variants"></div>
+                            </div>
+                          </div>
+                          <div class="bx-ui-sls-error-message">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="single-container ">
+                        <!--  DELIVERY BLOCK  -->
+                        <div id="bx-soa-delivery" data-visited="true" class="bx-soa-section bx-active">
+                          <div class="bx-soa-section-title-container">
+                            <h2 class="bx-soa-section-title">
+                              <span class="bx-soa-section-title-icon">
+                                <svg width="30" height="36" viewBox="0 0 30 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M29.4971 8.61398L15.5025 0.141328C15.1914 -0.0471094 14.8079 -0.0471094 14.4968 0.141328L0.502872 8.61398C0.191762 8.80242 0 9.15047 0 9.52734V26.4727C0 26.8495 0.191762 27.1976 0.502872 27.386L14.4968 35.8587C14.6523 35.9529 14.826 36 14.9997 36C15.1733 36 15.347 35.9529 15.5025 35.8587L29.4965 27.386C29.8076 27.1976 29.9993 26.8495 29.9993 26.4727V9.52734C30 9.15047 29.8082 8.80242 29.4971 8.61398ZM22.3228 6.7057L10.3404 13.9605L7.68724 12.3539L19.6697 5.09977L22.3228 6.7057ZM9.33465 15.7873V18.9907L6.67747 17.382L6.68015 14.1799L9.33465 15.7873ZM14.9997 2.2725L17.6582 3.88195L5.67508 11.1368L3.01723 9.52734L14.9997 2.2725ZM13.9939 33.1186L2.01149 25.8638V11.3541L4.66933 12.9635L4.66531 17.9902C4.66531 18.367 4.85707 18.7158 5.16818 18.9042L9.83685 21.7315C10.3605 22.0486 10.8325 21.7371 10.8426 21.7315C11.1537 21.543 11.3455 21.195 11.3455 20.8181V17.0058L13.9939 18.6089V33.1186ZM14.9997 16.7822L12.3512 15.1791L24.3343 7.92422L26.9828 9.52734L14.9997 16.7822ZM27.9885 25.8638L16.0054 33.1186V18.6089L27.9878 11.3541V25.8638H27.9885Z" fill="#F89A1C"></path>
+                                </svg>
+                              </span>
+                              <div class="bx-soa-section-title-text">Доставка </div>
+                            </h2>
+                          </div>
+                          <div class="bx-soa-section-content container-fluid">
+                            <div style="display: none;" class="alert alert-danger"></div>
+                            <div class="bx-soa-pp">
+                              <div class="bx-soa-pp-item-container">
+                                <div id="bx_soa_item_delivery_id_27" class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-inner-block">
+                                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_27" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="27" checked><span class="style-checkbox"></span>
+                                      <div class="bx-soa-pp-company-smalltitle"><span>Курьерская доставка (Major Express, СДЭК)</span></div>
+                                      <div class="bx-soa-pp-delivery-cost">бесплатно</div>
+                                    </div>
+                                    <div class="bx-soa-pp-company-smalldescr"><b>При 100% предоплате</b>. Курьер нашего партнёра только доставляет Вам заказанный товар. Передача товара от курьера возможна только после оплаты. При обнаружении впоследствии какого-либо дефекта или неисправности действовать следует в соответствии с правилами гарантийного ремонта.</div>
+                                  </div>
+                                  <div class="bx-soa-pp-desc-container">
+                                    <div class="bx-soa-pp-company">
+                                      <div class="bx-soa-pp-company-block"></div>
+                                      <ul class="bx-soa-pp-list">
+                                        <li>
+                                          <div class="bx-soa-pp-list-termin">Срок доставки:</div>
+                                          <div class="bx-soa-pp-list-description"> от 2 до 12 дней </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div id="bx_soa_item_delivery_id_4" class="bx-soa-pp-company">
+                                  <div class="bx-soa-pp-company-inner-block">
+                                    <div class="bx-soa-pp-company-graf-container has-delivery-cost"><input id="ID_DELIVERY_ID_4" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="4"><span class="style-checkbox"></span>
+                                      <div class="bx-soa-pp-company-smalltitle"><span>Самовывоз при производстве</span></div>
+                                      <div class="bx-soa-pp-delivery-cost">бесплатно</div>
+                                    </div>
+                                    <div class="bx-soa-pp-company-smalldescr">Самовывоз с нашего центрального склада: 111020, Москва, ул. Боровая, д. 7, стр. 7<br> Подробная схема проезда и карта в разделе "<a href="/contacts/" title="Схема проезда на склад, РИКТАМЕД - адрес" target="_blank">Контакты</a>".</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="delivery-data">
+                        <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="86"><label for="soa-property-86" class="bx-soa-custom-label">Индекс</label><div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_86" id="soa-property-86" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"></div></div>
+                        <div class="tanais-form-group bx-soa-customer-field" data-property-id-row="6"><label for="soa-property-6" class="bx-soa-custom-label">Улица, дом</label><div class="soa-property-container has-soa-address-suggest"><input type="text" size="30" name="ORDER_PROP_6" id="soa-property-6" autocomplete="new-password" placeholder="" class="tanais-form-control bx-soa-customer-input bx-ios-fix"><span class="soa-suggests-container"><span class="soa-suggests-block"></span></span></div></div>
+                      </div>
+                      <div class="pickup-data">
+                          <div id="pickup-map">
+                          </div>
+                      </div>
+                      +btn('<span>Дальше</span><svg width="8" height="16" aria-hidden="true" focusable="false"><use xlink:href="/img/sprite.svg#angle-right"></use></svg>','regular,blue,icon,icon-right')(class='rounded-4px')(class="steps__next-btn")
+                  +tabs-content-pane({
+                    id: 'tab-content-03',
+                    link_id: 'tab-button-03',
+                    tabindex: '2',
+                  })
+                    <!--  PAY SYSTEMS BLOCK -->
+                    <div id="bx-soa-paysystem" data-visited="true" class="bx-soa-section bx-active">
+                      <div class="bx-soa-section-title-container">
+                        <h2 class="bx-soa-section-title">
+                          <span class="bx-soa-section-title-icon">
+                            <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.2933 13.9379H25.356C26.8712 13.9379 28.1175 12.7184 28.1175 11.1879V2.74999C28.1175 1.23117 26.8835 0 25.3554 0H10.2933C8.76748 0 7.53174 1.22883 7.53174 2.74999V11.1873C7.53115 12.7224 8.78272 13.9379 10.2933 13.9379ZM9.28897 2.74999C9.28897 2.1986 9.73662 1.75047 10.2927 1.75047H25.3554C25.9114 1.75047 26.3591 2.1986 26.3591 2.74999V3.74952H9.28897V2.74999ZM9.28897 5.50057H26.3591V11.1879C26.3591 11.7451 25.9044 12.1874 25.3554 12.1874H10.2933C9.746 12.1874 9.28955 11.7468 9.28955 11.1879L9.28897 5.50057Z" fill="#F89A1C"></path>
+                              <path d="M28.2334 17.8426C27.1605 17.3629 25.899 17.5561 25.0201 18.3339C23.7967 19.4168 22.4906 20.5727 21.5268 21.4258C21.4881 19.9408 20.2693 18.7487 18.7658 18.7487H15.123C14.942 18.6968 14.5658 18.59 14.0812 18.4523C12.5396 18.0135 10.8551 18.3257 9.5748 19.2873C8.59101 20.0266 7.91191 21.0996 7.65 22.2824L5.52246 21.7525V20.5622C5.52246 20.0791 5.12871 19.687 4.64355 19.687H0.878906C0.39375 19.687 0 20.0791 0 20.5622V27.1248C0 27.6079 0.39375 28 0.878906 28H20.9713C22.2117 28 23.3783 27.5192 24.2555 26.6457L29.7422 21.1819C29.9068 21.0179 29.9994 20.7944 29.9994 20.5622C30 19.39 29.3068 18.3234 28.2334 17.8426ZM3.76582 26.2495H1.75781V21.4375H3.76582V26.2495ZM23.0127 25.4075C22.4678 25.9502 21.7424 26.2495 20.9713 26.2495H5.52363V23.5584L8.19726 24.2242C8.45976 24.2896 8.73809 24.2306 8.95137 24.0643C9.16465 23.8986 9.28945 23.6436 9.28945 23.3741C9.28945 22.3238 9.79219 21.3184 10.6342 20.6859C11.4768 20.0534 12.5848 19.848 13.599 20.1363C14.2881 20.3323 14.758 20.4659 14.758 20.4659C14.8365 20.4887 14.918 20.4998 15 20.4998H18.7658C19.3219 20.4998 19.7695 20.9479 19.7695 21.4993V22.4988H15.9416C15.4564 22.4988 15.0627 22.8909 15.0627 23.3741C15.0627 23.8572 15.4564 24.2493 15.9416 24.2493H20.6484H20.6496H20.6508H20.652C20.8764 24.2481 21.0809 24.1635 21.2355 24.0252C21.3404 23.9325 23.9068 21.6603 26.1873 19.6421C26.55 19.3205 27.0709 19.2412 27.5127 19.439C27.8555 19.5925 28.1039 19.8906 28.1994 20.2413L23.0127 25.4075Z" fill="#F89A1C"></path>
+                              <path d="M21.5898 10.1878H23.4725C23.9576 10.1878 24.3514 9.79568 24.3514 9.31255C24.3514 8.82942 23.9576 8.43732 23.4725 8.43732H21.5898C21.1047 8.43732 20.7109 8.82942 20.7109 9.31255C20.7109 9.79568 21.1041 10.1878 21.5898 10.1878Z" fill="#F89A1C"></path>
+                            </svg>
+                          </span>
+                          <div class="bx-soa-section-title-text">Оплата </div>
+                        </h2>
+                      </div>
+                      <div class="bx-soa-section-content container-fluid">
+                        <div style="display: none;" class="alert alert-danger"></div>
+                        <div class="bx-soa-pp">
+                          <div class="bx-soa-pp-item-container">
+                            <div class="bx-soa-pp-company">
+                              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_14" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="14" checked><span class="style-checkbox"></span><div class="bx-soa-pp-company-smalltitle">Онлайн оплата банковской картой</div></div>
+
+                              <div class="bx-soa-pp-company-smalldescr">После нажатия на кнопку ОНЛАЙН ОПЛАТА Вы будете перенаправлены на платежный шлюз ОАО "Сбербанк России" для ввода реквизитов Вашей карты. Пожалуйста, приготовьте Вашу пластиковую карту заранее. Соединение с платежным шлюзом и передача информации осуществляется в защищенном режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa или MasterCard Secure Code для проведения платежа также может потребоваться ввод специального пароля.</div>
+                            </div>
+                            <div class="bx-soa-pp-company">
+                              <div class="bx-soa-pp-company-graf-container"><input id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3"><span class="style-checkbox"></span><div class="bx-soa-pp-company-smalltitle">Счет</div></div>
+
+                              <div class="bx-soa-pp-company-smalldescr">При заказе по электронной почте или по телефону вы получаете на указанный e-mail счет на оплату, который можно оплатить в любом отделении удобного банка или через интернет-банк. Для вашего удобства и простоты на счете имеется QR-код.</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    +btn('<span>Оформить заказ</span>','regular,blue')(class='rounded-4px')(class="steps__submit")
           //- Итого
           .cart-page__aside#bx-soa-total
-            +cart-page-total({style1: 'display: none', style2: 'display: block;'})
-      </div>
+            +cart-page-total()
+              +cart-page-total-data()
+                +cart-page-total-bonus()
 
 
 block prepend page-bottom

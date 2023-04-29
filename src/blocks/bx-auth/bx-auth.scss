@@ -4,10 +4,13 @@
 
 .bx-auth {
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   margin-left: auto;
   margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
 
   &-note {
     margin-bottom: 30px;
@@ -20,7 +23,7 @@
     color: $tw-black;
     text-align: left;
 
-    & ~ td input {
+    &~td input {
       @include field-text;
     }
   }
@@ -30,7 +33,8 @@
     flex-direction: column;
   }
 
-  form a {
+  form a,
+  p a {
     @include text-link;
   }
 
@@ -43,4 +47,94 @@
 .authorize-submit-cell input {
   margin-top: 20px;
   @include btn-regular;
+  cursor: pointer;
+}
+
+
+.bx-registration-table,
+.bx-changepass-table {
+
+  tbody {
+
+    td:first-child {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 700;
+      color: $tw-black;
+    }
+
+    td:last-child {
+      padding-bottom: 10px;
+    }
+
+    input {
+      @include field-text;
+    }
+  }
+
+  thead {
+    margin-bottom: 12px;
+    font-size: 40px;
+    line-height: 48px;
+    color: $tw-black;
+
+    td {
+      margin-bottom: 12px;
+    }
+
+    b {
+      font-weight: 400 !important;
+    }
+  }
+
+
+  tfoot {
+    input {
+      @include btn-regular;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.forgot-password {
+
+  form {
+    p:first-of-type {
+      @apply text-2xl;
+      color: $tw-black;
+
+      @media (min-width: 767px) {
+        @apply text-36px;
+      }
+    }
+
+    & > div {
+
+    }
+  }
+
+  input[type="text"] {
+    @include field-text;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"] {
+    @include btn-regular;
+    cursor: pointer;
+  }
+
+  div b {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    color: $tw-black;
+  }
+
+  a b {
+    @include text-link;
+  }
 }

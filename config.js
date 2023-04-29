@@ -74,6 +74,7 @@ let config = {
   ],
   'addAssets': {
     'src/fonts/': 'fonts/',
+    'src/images/': 'images/',
     'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',

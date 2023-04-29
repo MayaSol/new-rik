@@ -30,9 +30,14 @@
     justify-content: center;
     flex-basis: 32%;
     flex-grow: 1;
+    font-size: 15px;
     margin: 0;
     padding: 10px 0 !important;
     line-height: 1;
+
+    @media (min-width: $screen-md) {
+      font-size: 18px;
+    }
 
     @media (min-width: $screen-lg) {
       padding: 20px 0 !important;
@@ -49,15 +54,142 @@
   }
 
   &__nav-num {
-    display: inline-flex;
-    width: 32px;
-    height: 32px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    line-height: 1;
-    border: 1px solid $tw-gray-300;
-    border-radius: 50%;
+    display: none;
+
+    @media (min-width: $screen-md) {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      line-height: 1;
+      border: 1px solid $tw-gray-300;
+      border-radius: 50%;
+    }
   }
+
+  &__submit {
+    margin-top: 30px;
+  }
+
+  #pickup-map {
+    width: 100%;
+    height: 320px;
+  }
+
+  .pickup-data {
+    display: none;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .delivery-data {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .tanais-order #bx-soa-paysystem,
+  .tanais-order #bx-soa-delivery {
+    width: 100% !important;
+  }
+
+  .tanais-order #bx-soa-delivery .bx-soa-pp-item-container {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bx-soa-pp-company {
+
+      @media (min-width: $screen-md) {
+        width: 49%;
+      }
+    }
+  }
+
+  .cart-page #bx-soa-delivery,
+  .cart-page #bx-soa-paysystem {
+    margin-top: 0;
+
+    @media (min-width: $screen-md) {
+      margin-top: 40px;
+    }
+  }
+
+  #bx-soa-delivery .bx-soa-section-content {
+    padding: 0 !important;
+  }
+
+  #bx-soa-delivery .bx-soa-pp-company {
+    padding: 30px 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+  }
+
+  #bx-soa-delivery {
+    background-color: transparent;
+  }
+
+  #bx-soa-delivery .bx-soa-section {
+
+  }
+
+  #bx-soa-properties .tanais-form-group.bx-soa-customer-field:last-child {
+    display: block !important;
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: auto;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+  }
+
+  #bx-soa-properties .tanais-form-group.bx-soa-customer-field--user-content:last-child {
+    display: flex !important;
+
+    .soa-property-container {
+        flex-shrink: 0;
+    }
+
+    label {
+      position: static !important;
+      transform: none !important;
+    }
+  }
+
+  .bx-soa-location-input-container {
+    position: relative;
+  }
+
+
+  @media (min-width: $screen-md) {
+    .bx-soa-location-input-container {
+        width: 50%;
+    }
+
+    .bx-soa-customer-field {
+      width: 50%;
+    }
+  }
+
+  .tanais-order .bx_soa_location .bx-sls .dropdown-block {
+    border: 1px solid black;
+    background-color: #fff;
+  }
+
 
 }

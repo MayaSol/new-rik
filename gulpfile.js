@@ -454,7 +454,7 @@ function buildJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'production',
+      mode: 'development',
       entry: entryList,
       output: {
         filename: '[name].js',
