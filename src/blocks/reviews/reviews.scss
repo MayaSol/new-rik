@@ -18,6 +18,14 @@
     }
   }
 
+  &--reviews-page {
+    font-size: 17px;
+
+    .reviews__item-text {
+      font-size: 16px;
+    }
+  }
+
   p a,
   ul a,
   ol a {

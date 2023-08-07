@@ -1,0 +1,81 @@
+// В этом файле должны быть стили для БЭМ-блока article-logo, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.article-logo {
+
+  $block-name: &; // #{$block-name}__element
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  &__list-wrapper {
+    position: relative;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: $tw-black;
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    height: 200px;
+    border: 1px dashed black;
+    border-radius: 10px;
+    overflow: hidden;
+    // clip-path: polygon(0 0, 100% 0, 100% 100%, 22% 100%, 0 84%);
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 110%;
+      background: linear-gradient(180deg, #ffffff88 0%, #e0f3ffee 100%);
+    }
+  }
+
+  &__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%);
+  }
+
+  &__logo-img {
+    position: absolute;
+    width: 60%;
+    max-width: 100px;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &__text {
+    padding: 30px 0;
+  }
+
+  .tns-controls {
+    position: absolute;
+    top: -60px;
+    right: 0;
+
+    @media (min-width: $screen-md) {
+      top: -70px;
+    }
+
+    & button {
+      background-color: $tw-gray-100;
+
+      &::before {
+        @include sprite($arrow-right-black-long);
+      }
+    }
+  }
+}

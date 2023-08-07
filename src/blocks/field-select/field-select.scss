@@ -28,21 +28,21 @@
     }
 
     select {
-      width: 100%;
-      display: inline-block;
-      padding: 6px 15px 6px 10px;
-      font-size: 18px;
-      line-height: 28px;
-      color: $tw-black;
-      appearance: none;
-      background-color: transparent;
-
-      .article-index__tabs & {
-        padding-left: 5px;
-      }
     }
   }
 
+  width: 100%;
+  display: inline-block;
+  padding: 6px 15px 6px 10px;
+  font-size: 18px;
+  line-height: 28px;
+  color: $tw-black;
+  appearance: none;
+  background-color: transparent;
+
+  .article-index__tabs & {
+    padding-left: 5px;
+  }
 
   // Оформление штатного селекта
   // &__select {

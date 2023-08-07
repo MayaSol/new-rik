@@ -107,13 +107,14 @@
   }
 
   &__status {
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
     white-space: nowrap;
     margin-bottom: 0 !important;
     margin-left: 8px;
+    margin-top: 35px;
 
     @media (min-width: $screen-lg) {
       grid-column-start: 3;

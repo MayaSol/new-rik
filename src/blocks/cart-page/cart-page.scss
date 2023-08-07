@@ -35,8 +35,11 @@
 
   #bx-soa-total {
     width: 100% !important;
+    clear: both;
+    margin-top: 30px;
 
     @media (min-width: $screen-lg) {
+      margin-top: 0;
       grid-column-start: 3;
       grid-row-start: 2;
       grid-row-end: 4;
@@ -659,6 +662,7 @@
   }
 
   .btn-order-one-click {
+    margin-top: 10px;
     margin-bottom: 10px;
     @include btn-regular;
     order: -1;
@@ -834,6 +838,10 @@
     }
   }
 
+  #bx-soa-orderSave .main-user-consent-request {
+    margin-top: 10px;
+  }
+
   // Поле-счетчик
   #tanais-basket-root .basket-item-amount-filed {
     font-weight: 400 !important;
@@ -866,6 +874,10 @@
     &:active {
       background-color: #14142b !important;
     }
+  }
+
+  #bx-soa-orderSave .checkbox label {
+    align-items: flex-start;
   }
 
   #bx-soa-tanais-order-form .bx-soa-custom-label {
@@ -987,5 +999,10 @@
   .bx-soa-cart-total .btn-order-one-click {
     font-size: 16px !important;
   }
+
+  #bx-soa-tanais-order .person-type input[type="radio"] {
+    display: none !important;
+  }
+
 
 }

@@ -146,6 +146,12 @@
       text-align: left;
     }
 
+    // .wrapper {
+    //   .container:last-child {
+    //     margin-bottom: 40px; //для блока Вам может быть интересно на https://rikta.ru/technology/electrical-stimulation/
+    //   }
+    // }
+
   }
 
   &__footer-wrapper {
@@ -876,8 +882,12 @@ body {}
       top: -110px;
       right: 20px;
 
+       @media (min-width: $screen-md) {
+        top: -80px;
+       }
+
       @media (min-width: $screen-lg) {
-        top: -115px;
+        top: -90px;
       }
 
       @media (min-width: $onepage-width) {
@@ -887,7 +897,7 @@ body {}
       }
 
       @media (min-width: $screen-xxl) {
-        top: -105px;
+        top: -85px;
 
       }
     }
@@ -932,9 +942,9 @@ body {}
       margin-right: -20px;
     }
 
-    .tns-controls {
-      top: -130px;
-    }
+    // .tns-controls {
+    //   top: -130px;
+    // }
 
     .section__subtitle {
       span {
@@ -986,6 +996,12 @@ body {}
 
 .product-catalog {
   position: relative;
+
+  @at-root .article &--inner-page {
+    @media (max-width: 1023px) {
+      margin-bottom: 30px;
+    }
+  }
 
   @media (min-width: $onepage-width) {
     height: 100%;
@@ -1064,5 +1080,7 @@ ul[class*=columns] li {
 .elementReviewList { //Какой-то элемент растягивает сетку на мобиле https://rikta.ru/catalog/laser-therapy-devices/
   overflow: hidden;
 }
+
+
 
 @include sprites($spritesheet-sprites);

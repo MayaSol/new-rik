@@ -7,22 +7,19 @@ ready(function() {
 
   if (document.querySelector('.video-yt')) {
 
-    console.log('video-yt');
-
     var ytApiInserted = false;
     var firstVideoClicked = null;
     var players = [];
 
 
     function btnGoClick(index) {
-      console.log('btnGoClick');
       var f = function(event) {
         console.log('btnGoClick function');
         if (!ytApiInserted) {
           console.log('!ytApiInserted');
           var tag = document.createElement('script');
           tag.id = 'iframe-demo';
-          tag.src = 'http://www.youtube.com/iframe_api';
+          tag.src = 'https://www.youtube.com/iframe_api';
           var firstScriptTag = document.getElementsByTagName('script')[0];
           firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
           ytApiInserted = true;
@@ -34,9 +31,6 @@ ready(function() {
           console.log('ytApiInserted');
           var videoContainer = event.target.closest('.video-yt').querySelector('.video-yt__frame');
           var videoPoster = event.target.closest('.video-yt').querySelector('.video-yt__poster');
-          console.log(players);
-          console.log(index);
-          console.log(players[index]);
           if (players[index].getPlayerState() == YT.PlayerState.PLAYING) {
             players[index].stopVideo();
             videoPoster.classList.remove('video-yt__poster--hidden');
@@ -60,16 +54,30 @@ ready(function() {
         frame.dataset.index = i;
         btn.addEventListener('click', btnGoClick(i));
       }
+      if (frame) {
+        frame.addEventListener('custom-stop-video', function(event) {
+          if (players && players[this.dataset.index]) {
+            players[this.dataset.index].stopVideo();
+          }
+        })
+      }
     }
 
     window.onPlayerReady = function(event) {
       console.log('onPlayerReady');
-      console.log(firstVideoIndexClicked);
-      var btn = firstVideoIndexClicked && firstVideoIndexClicked.querySelector('.btn-play');
-      if (btn) {
-        btn.click();
+      console.log(event.target);
+      if (!firstVideoIndexClicked) {
+        return;
       }
-      firstVideoIndexClicked = null;
+      var frame = firstVideoIndexClicked.querySelector('.video-yt__frame');
+      if (frame && frame.dataset.index == event.target.g.dataset.index) {
+        console.log('go');
+        var btn = firstVideoIndexClicked.querySelector('.btn-play');
+        if (btn) {
+          btn.click();
+        }
+        firstVideoIndexClicked = null;
+      }
       // var videoYt = event.target.h.parentNode;
       // var videoContainer = videoYt.querySelector('.video-yt__frame');
       // var index = videoContainer.dataset.index;
@@ -81,7 +89,8 @@ ready(function() {
 
     window.onPlayerStateChange = function(event) {
       console.log('onPlayerStateChange');
-      var videoYt = event.target.h.closest('.video-yt');
+      console.log(event.target);
+      var videoYt = event.target.g.closest('.video-yt');
       var videoContainer = videoYt.querySelector('.video-yt__frame');
       var videoPoster = videoYt.querySelector('.video-yt__poster');
       var index = videoContainer.dataset.index;
@@ -103,17 +112,11 @@ ready(function() {
 
       for (var i = 0; i < videos.length; i++) {
         var playerOptions = {
-          videoId: id,
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
           },
         };
-        var id = videos[i].dataset.ytId;
-        console.log(id);
-        if (id) {
-          playerOptions.videoId = id;
-        }
         players[i] = new YT.Player(videos[i], playerOptions);
       }
       console.log(players);

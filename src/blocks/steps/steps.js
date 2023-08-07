@@ -67,17 +67,17 @@ ready(function() {
       checkOption(event);
     })
     //!!! УБРАТЬ
-    if (env.mode == 'development') {
-      var deliveryCheckboxList = delivery.querySelectorAll('.bx-soa-pp-company-graf-container');
-      var deliveryInputs = delivery.querySelectorAll('input');
-      for (let container of deliveryCheckboxList) {
-        container.addEventListener('click', function(event) {
-          console.log('checkbox container click');
-          console.log(event.target);
-          checkOptionTest(event, this, deliveryInputs);
-        })
-      }
-    }
+    // if (env.mode == 'development') {
+    //   var deliveryCheckboxList = delivery.querySelectorAll('.bx-soa-pp-company-graf-container');
+    //   var deliveryInputs = delivery.querySelectorAll('input');
+    //   for (let container of deliveryCheckboxList) {
+    //     container.addEventListener('click', function(event) {
+    //       console.log('checkbox container click');
+    //       console.log(event.target);
+    //       checkOptionTest(event, this, deliveryInputs);
+    //     })
+    //   }
+    // }
 
     var deliveryData = document.querySelector('.delivery-data');
     var pickupData = document.querySelector('.pickup-data');
@@ -117,99 +117,99 @@ ready(function() {
   }
 
   //Доставка
-  var paysystem = document.getElementById('bx-soa-paysystem');
-  if (paysystem) {
-    paysystem.addEventListener('change', function(event) {
-      console.log('paysystem onchange');
-      console.log(event);
-      console.log(event.target);
-    })
+  // var paysystem = document.getElementById('bx-soa-paysystem');
+  // if (paysystem) {
+  //   paysystem.addEventListener('change', function(event) {
+  //     console.log('paysystem onchange');
+  //     console.log(event);
+  //     console.log(event.target);
+  //   })
 
     //!!! УБРАТЬ
-    if (env.mode == 'development') {
-      var paysystemCheckboxList = paysystem.querySelectorAll('.bx-soa-pp-company-graf-container');
-      var paysystemInputs = paysystem.querySelectorAll('input');
-      for (let container of paysystemCheckboxList) {
-        container.addEventListener('click', function(event) {
-          console.log('checkbox container click');
-          console.log(event.target);
-          checkOptionTest(event, this, paysystemInputs);
-        })
-      }
-    }
+    // if (env.mode == 'development') {
+    //   var paysystemCheckboxList = paysystem.querySelectorAll('.bx-soa-pp-company-graf-container');
+    //   var paysystemInputs = paysystem.querySelectorAll('input');
+    //   for (let container of paysystemCheckboxList) {
+    //     container.addEventListener('click', function(event) {
+    //       console.log('checkbox container click');
+    //       console.log(event.target);
+    //       checkOptionTest(event, this, paysystemInputs);
+    //     })
+    //   }
+    // }
     //!!!
-  }
+  // }
 
   //!!! УБРАТЬ
   //  Отметить чекбокс
-  if (env.mode == 'development') {
-    function checkOptionTest(event, _this, allInputs) {
-      var thisInput = _this.querySelector('input');
-      var thisInputChecked = thisInput.checked;
-      if (!thisInputChecked) {
-        for (let input of allInputs) {
-          input.removeAttribute('checked');
-        }
-        thisInput.setAttribute('checked', true);
-      }
-    }
-    ymaps.ready(function() {
-      var myMap = new ymaps.Map('pickup-map', {
-          center: [55.751574, 37.573856],
-          zoom: 9
-        }, {
-          searchControlProvider: 'yandex#search'
-        }),
+  // if (env.mode == 'development') {
+  //   function checkOptionTest(event, _this, allInputs) {
+  //     var thisInput = _this.querySelector('input');
+  //     var thisInputChecked = thisInput.checked;
+  //     if (!thisInputChecked) {
+  //       for (let input of allInputs) {
+  //         input.removeAttribute('checked');
+  //       }
+  //       thisInput.setAttribute('checked', true);
+  //     }
+  //   }
+  //   ymaps.ready(function() {
+  //     var myMap = new ymaps.Map('pickup-map', {
+  //         center: [55.751574, 37.573856],
+  //         zoom: 9
+  //       }, {
+  //         searchControlProvider: 'yandex#search'
+  //       }),
 
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-        ),
+  //       // Создаём макет содержимого.
+  //       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+  //         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+  //       ),
 
-        myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-          hintContent: '',
-          balloonContent: ''
-        }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: 'images/pin.png',
-          // Размеры метки.
-          iconImageSize: [30, 43],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-5, -38]
-        }),
+  //       myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+  //         hintContent: '',
+  //         balloonContent: ''
+  //       }, {
+  //         // Опции.
+  //         // Необходимо указать данный тип макета.
+  //         iconLayout: 'default#image',
+  //         // Своё изображение иконки метки.
+  //         iconImageHref: 'images/pin.png',
+  //         // Размеры метки.
+  //         iconImageSize: [30, 43],
+  //         // Смещение левого верхнего угла иконки относительно
+  //         // её "ножки" (точки привязки).
+  //         iconImageOffset: [-5, -38]
+  //       }),
 
-        myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
-          hintContent: '',
-        }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          iconImageHref: 'images/pin.png',
-          // Размеры метки.
-          iconImageSize: [30, 43],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-5, -38],
-          // Смещение слоя с содержимым относительно слоя с картинкой.
-          // iconContentOffset: [15, 15],
-          // Макет содержимого.
-          // iconContentLayout: MyIconContentLayout
-        });
+  //       myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+  //         hintContent: '',
+  //       }, {
+  //         // Опции.
+  //         // Необходимо указать данный тип макета.
+  //         iconLayout: 'default#imageWithContent',
+  //         // Своё изображение иконки метки.
+  //         iconImageHref: 'images/pin.png',
+  //         // Размеры метки.
+  //         iconImageSize: [30, 43],
+  //         // Смещение левого верхнего угла иконки относительно
+  //         // её "ножки" (точки привязки).
+  //         iconImageOffset: [-5, -38],
+  //         // Смещение слоя с содержимым относительно слоя с картинкой.
+  //         // iconContentOffset: [15, 15],
+  //         // Макет содержимого.
+  //         // iconContentLayout: MyIconContentLayout
+  //       });
 
-      myMap.geoObjects
-        .add(myPlacemark)
-        .add(myPlacemarkWithContent);
-    });
-
-
+  //     myMap.geoObjects
+  //       .add(myPlacemark)
+  //       .add(myPlacemarkWithContent);
+  //   });
 
 
-  }
+
+
+  // }
     //!!!
 
 

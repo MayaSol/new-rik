@@ -52,61 +52,82 @@ ready(function() {
       init3dView(info);
     });
     sliderText.events.on('transitionStart', syncView);
+  }
 
-    var scriptInitialized = false;
 
-    document.addEventListener('lazybeforeunveil', function(e) {
-      console.log('lazybeforeunveil');
-      console.log(scriptInitialized);
+  if (document.querySelector('.product-info__view-content.lazyload')) {
+      var scriptInitialized = false;
+      var script = document.getElementById('cloudimage-script');
 
-      var lazeloadedEl = e.target;
-      console.log(e.target);
+      document.addEventListener('lazybeforeunveil', function(e) {
+        console.log('lazybeforeunveil');
+        console.log(e.target);
+        var lazeloadedEl = e.target;
 
-      if (typeof e.target.dataset.folder != 'undefined' && !scriptInitialized) {
-          var script = document.getElementById('cloudimage-script');
-          if (script) {
-            script.addEventListener('load', function(e) {
-              console.log('script loaded');
-              console.log(e.target);
-              console.log(lazeloadedEl);
-              var width = lazeloadedEl.dataset.width;
-              if (width && document.documentElement.clientWidth >= width && closest(lazeloadedEl, '.tns-item').classList.contains('tns-slide-active')) {
-                console.log('1');
-                if (window.CI360._viewers.length = 0) {
-                  window.CI360.init();
+        if (typeof e.target.dataset.folder != 'undefined' && !scriptInitialized && script) {
+          console.log('initialize 3d-view script');
+            console.log(script);
+              script.addEventListener('load', function(e) {
+                console.log('script loaded');
+                scriptInitialized = true;
+                var width = lazeloadedEl.dataset.width;
+                if (width && document.documentElement.clientWidth >= width) {
+                  if (window.CI360._viewers.length == 0) {
+                    window.CI360.init();
+                  }
+                  //Блок Новинки на главной
+                  if (closest(lazeloadedEl,'.product-info')) {
+                    //Сразу после инициализации скрипта запускаем только для активного слайда
+                    if (closest(lazeloadedEl, '.tns-item').classList.contains('tns-slide-active')) {
+                      console.log('1');
+                      lazeloadedEl.classList.add('cloudimage-360');
+                      window.CI360.add(lazeloadedEl.id);
+                    }
+                  }
+                  // Слайдер на странице продукта, запускаем при событии lazybeforeunveil первый раз после инициализации скрипта
+                  else if (closest(lazeloadedEl,'.product-main__slider')) {
+                    load3dProductMain(lazeloadedEl);
+                  }
                 }
-                lazeloadedEl.classList.add('cloudimage-360');
-                window.CI360.add(lazeloadedEl.id);
-              }
-            })
-            var src = script.getAttribute('delay');
-            script.setAttribute('src',src);
-          }
-          scriptInitialized = true;
-      }
-    });
-
-    function init3dView(info) {
-      console.log('init3dView');
-      // console.log(info);
-      // console.log(info.slideItems[info.displayIndex-1]);
-      console.log(info);
-      var viewContents = info.slideItems[info.displayIndex - 1].querySelectorAll('.product-info__view-content');
-      console.log(viewContents);
-      for (var content of viewContents) {
-        if (
-          !content.classList.contains('.cloudimage-360') &&
-          content.dataset.width &&
-          document.documentElement.clientWidth >= content.dataset.width
-        ) {
-          console.log('2');
-          content.classList.add('cloudimage-360');
-          window.CI360.add(content.id);
+              });
+              var src = script.getAttribute('delay');
+              script.setAttribute('src',src);
         }
-      }
-    }
-
-
-
+        // Слайдер на странице продукта, запускаем при событии lazybeforeunveil каждый раз при слайде с 3d view
+        else if (typeof e.target.dataset.folder != 'undefined' && scriptInitialized && closest(lazeloadedEl,'.product-main__slider')) {
+          load3dProductMain(lazeloadedEl);
+        }
+      });
   }
 });
+
+function init3dView(info) {
+  console.log('init3dView');
+  // console.log(info);
+  // console.log(info.slideItems[info.displayIndex-1]);
+  console.log(info);
+  var viewContents = info.slideItems[info.displayIndex - 1].querySelectorAll('.product-info__view-content');
+  console.log(viewContents);
+  for (var content of viewContents) {
+    if (
+      !content.classList.contains('.cloudimage-360') &&
+      content.dataset.width &&
+      document.documentElement.clientWidth >= content.dataset.width
+    ) {
+      console.log('2');
+      content.classList.add('cloudimage-360');
+      window.CI360.add(content.id);
+    }
+  }
+}
+
+
+function load3dProductMain(element) {
+  element.classList.add('cloudimage-360');
+  window.CI360.add(element.id);
+  var parent = closest(element, '.product-main__slider-item');
+  var preloader = parent && parent.querySelector('.product-info__preloader');
+  if (preloader) {
+    preloader.classList.add('loaded');
+  }
+}

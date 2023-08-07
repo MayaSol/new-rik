@@ -442,6 +442,9 @@ block content
           .page-footer__disclaim.xxl_mt-115px
             div.mt-12px.md_mt-0.text-15.xxl_text-2xl.opacity-30 ВСЯ ИНФОРМАЦИЯ, РАЗМЕЩЕННАЯ НА САЙТЕ, НОСИТ ОЗНАКОМИТЕЛЬНЫЙ ХАРАКТЕР И НЕ МОЖЕТ СЛУЖИТЬ ЗАМЕНОЙ ОЧНОЙ КОНСУЛЬТАЦИИ ВРАЧА
             div.mt-10px.xxl_mt-5px.text-base Вся представленная на сайте информация, касающаяся наличия на складе, стоимости товаров, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
+            +btn('Политика конфиденциальности','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
+            +btn('Пользовательское соглашение','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
+            +btn('Публичная оферта','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
           .page-footer__info
             .flex.mt-10px.md_mt-0.xxl_ml-0
               +svg('logo-img','',{width: 63, height: 39})(class="mr-10px")
@@ -449,7 +452,6 @@ block content
                 +switcher-item({name: 'Россия / русский', code: 'ru', value: '', check: true})
                 +switcher-item({name: 'Britain / English', code: 'en', value: '', check: true})
                 +switcher-item({name: 'Китай / китайский', code: 'ch', value: '', check: true})
-            +btn('Политика конфиденциальности','simple')(href="#" class="page-footer__policy mt-10px text-base text-white border-color-gray-500")
             .mt-10px © 2022 ООО «Риктамед»
           +footer-nav({title: 'Каталог'},'catalog')(class="hidden md_block")
             +footer-nav-item({name: 'РИКТА-ЭСМИЛ (2А)-01', url: '#'})
@@ -488,7 +490,7 @@ block content
 block prepend page-bottom
   .inline-svg-sprite
     include ../blocks/sprite-svg-inline/img/sprite-inline.svg
-  script(src='https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js')
+  script(delay='https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js' id="cloudimage-script")
   script(src='https://yastatic.net/share2/share.js' defer)
   //- script
   //-   | (async () => {

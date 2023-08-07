@@ -91,6 +91,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      &.cloudimage-360-view-360-circle {
+        height: auto;
+      }
     }
 
     .video-yt {
@@ -200,6 +204,7 @@
   }
 
   &__preview-img {
+    position: relative;
     width: 80px;
     height: 58px;
     background-color: $tw-gray-200;
@@ -215,6 +220,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-30%);
+      z-index: 1;
     }
 
     .tns-slide-active:first-child+.tns-slide-active &,

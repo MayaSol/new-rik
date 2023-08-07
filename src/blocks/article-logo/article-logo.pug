@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (article-logo)
+
+mixin article-logo(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' article-logo--' + modsList[i].trim();
+      }
+    }
+
+  .article-logo(class=allMods)&attributes(attributes)
+    .article-logo__inner
+      block

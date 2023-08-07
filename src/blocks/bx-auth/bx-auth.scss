@@ -22,6 +22,7 @@
     @apply text-lg;
     color: $tw-black;
     text-align: left;
+    font-weight: 400 !important;
 
     &~td input {
       @include field-text;
@@ -44,6 +45,29 @@
 
 }
 
+.bx-auth-password {
+  display: flex;
+  align-items: stretch;
+}
+
+.bx-auth-password-toggle {
+  display: flex;
+  align-items: center;
+
+  .eye-open {
+    display: none;
+  }
+}
+
+.bx-auth-password .bx-auth-input[type="text"] ~ .bx-auth-password-toggle {
+  .eye-open {
+    display: block;
+  }
+  .eye-close {
+    display: none;
+  }
+}
+
 .authorize-submit-cell input {
   margin-top: 20px;
   @include btn-regular;
@@ -59,7 +83,7 @@
     td:first-child {
       font-size: 18px;
       line-height: 28px;
-      font-weight: 700;
+      font-weight: 400;
       color: $tw-black;
     }
 
@@ -130,11 +154,24 @@
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 28px;
-    font-weight: 700;
+    font-weight: 400;
     color: $tw-black;
   }
 
   a b {
+    @include text-link;
+  }
+}
+
+//forgot password
+.wrapper .breadcrumbs + p {
+  @apply container;
+}
+
+.wrapper .forgot-password + div {
+  @apply container;
+
+  a {
     @include text-link;
   }
 }

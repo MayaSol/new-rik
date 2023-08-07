@@ -16,7 +16,8 @@ let config = {
     'icon-svg',
     'form',
     'ramform',
-    'bx-auth'
+    'bx-auth',
+    'embed-responsive'
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
@@ -75,12 +76,17 @@ let config = {
   'addAssets': {
     'src/fonts/': 'fonts/',
     'src/images/': 'images/',
+    'src/images/partners/': 'images/partners/',
     'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/3d/new/1/*.jpg': 'img/3d/1',
     'src/img/3d/new/2/*.jpg': 'img/3d/2',
     'src/img/3d/new/3/*.jpg': 'img/3d/3',
+    'src/img/3d/product/1/*.jpg': 'img/3d/product/1',
+    'src/img/3d/product/2/*.jpg': 'img/3d/product/2',
+    'src/img/3d/product/3/*.jpg': 'img/3d/product/3',
+    'src/img/3d/product/1-preview/*.jpg': 'img/3d/product/1-preview',
     'src/video/*.{mp4,mov,jpg}': 'video/',
     'src/webfonts/': 'webfonts/',
     'node_modules/lightgallery/fonts/*': 'fonts/',
@@ -91,6 +97,9 @@ let config = {
     'src/pages/tnstest.html': '/',
     'src/pages/cart3.html': '/',
     'src/pages/feedback.html': '/',
+    'src/pages/index-server.html': '/',
+    'src/pages/detskiy-bronkholegochnyy-sanatoriy-15.html': '/',
+    'src/pages/test.html': '/',
 
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

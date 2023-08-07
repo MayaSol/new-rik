@@ -41,7 +41,7 @@ block content
             +page-links-item({ name: 'Комплектация', anchor: '#kit'})
             +page-links-item({ name: 'Документация', anchor: '#doc'})
             +page-links-item({ name: 'Отзывы пользователей', anchor: '#reviews'})
-        .product-data__content
+        .product-data__content.article__main
           h2#desc.product-data__title.mt-20px.mb-20px Настольный аппарат лазерной магнитно-инфракрасной терапии рикта 04/4
           p Воздействие аппаратом происходит на биологические активные зоны человека одновременно четырьмя базовыми факторами: лазер, инфракрасное излучение, красный свет и магнит, за счёт чего стимулируются собственные жизненные силы организма на борьбу с широким кругом заболеваний.
           p Лазерная терапия улучшает кровообращение, активизирует иммунную систему, способствует регенерации тканей, оказывает на организм противовоспалительное и обезболивающее действие.
@@ -51,6 +51,12 @@ block content
           p В приборе есть возможность регулировки мощности излучений, что позволяет применять его для лечения детей, начиная с грудного возраста, а также лиц пожилого возраста (старше восьмидесяти) с некоторыми острыми и хроническими заболеваниями. Внимательно ознакомьтесь с методическими рекомендациями, идущими в комплекте к каждому аппарату!
           h2.product-data__title.mt-30px.mb-20px Терапевтические факторы
           ul.list-regular.pb-10px
+            li Импульсное инфракрасное лазерное излучение (905 нм., 16Вт в импульсе)
+            li Пульсирующее широкополосное инфракрасное излучение (875 нм)
+            li Пульсирующий красный свет (640 нм)
+            li Постоянное магнитное поле (35 мТл).
+          h2.product-data__title.mt-30px.mb-20px Терапевтические факторы
+          ul.pb-10px
             li Импульсное инфракрасное лазерное излучение (905 нм., 16Вт в импульсе)
             li Пульсирующее широкополосное инфракрасное излучение (875 нм)
             li Пульсирующий красный свет (640 нм)
@@ -222,16 +228,16 @@ block content
           .lg_flex
             +btn('Варианты доставки','regular')(class='border-gray-200 w-full lg_w-auto mb-10px lg_mb-0 lg_mr-10px' href='#')
             +btn('Способы оплаты','regular')(class='border-gray-200 w-full lg_w-auto' href='#')
-        section.section.section--reviews.section--reviews-product-page.pt-20px.lg_pt-0
-          .section__header#reviews
-            h2.product-data__title(class='w-[200px] lg_w-auto') Отзывы пользователей <span>о товаре</span>
-            +btn('Все отзывы','simple')(class='')
-          .reviews__tab-select-wrapper.field-select__wrapper.md_after_hidden
-            select#reviews-tab-select.reviews__tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
-              option(value="#profs" role="tab") Профессионалы
-              option(value="#users" role="tab") Пользователи
-              option(value="#videos" role="tab") Видео
-          +reviews('','',false)
+        //- section.section.section--reviews.section--reviews-product-page.pt-20px.lg_pt-0
+        //-   .section__header#reviews
+        //-     h2.product-data__title(class='w-[200px] lg_w-auto') Отзывы пользователей <span>о товаре</span>
+        //-     +btn('Все отзывы','simple')(class='')
+        //-   .reviews__tab-select-wrapper.field-select__wrapper.md_after_hidden
+        //-     select#reviews-tab-select.reviews__tab-select.field-select.md_hidden(name="reviews-tab-select" role="tablist")
+        //-       option(value="#profs" role="tab") Профессионалы
+        //-       option(value="#users" role="tab") Пользователи
+        //-       option(value="#videos" role="tab") Видео
+        //-   +reviews('','',false)
     section.section.section--catalog.pt-50px.lg_pt-0.lg_mb-128px
       .section__inner
         .container

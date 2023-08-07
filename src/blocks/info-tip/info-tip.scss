@@ -29,7 +29,7 @@
   }
 }
 
-.tippy-box[data-theme~='info-tip'] {
+.tippy-box[data-theme|='info-tip'] {
   padding: 5px 10px;
   color: $tw-black;
   border-radius: 4px;
@@ -65,5 +65,12 @@
 
   .article & {
     color: $tw-gray-500;
+  }
+}
+
+
+.tippy-box[data-theme|='info-tip-wide'] {
+  .tippy-content {
+    width: 300px;
   }
 }

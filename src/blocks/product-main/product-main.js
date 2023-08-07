@@ -3,9 +3,12 @@ import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 const closest = require('closest');
 var MicroModal = require("../../../node_modules/micromodal/dist/micromodal");
 import lightGallery from 'lightgallery';
+import lgVideo from 'lightgallery/plugins/video';
 
 
 ready(function() {
+  console.log('!!! product-main.js !!!');
+  console.log(lgVideo);
   if (document.querySelector('#product-main') && document.querySelector('#product-previews')) {
 
     var productMain = tns({
@@ -15,6 +18,13 @@ ready(function() {
       mouseDrag: false,
       controlsContainer: '.product-main__controls',
       nav: false,
+    });
+
+    productMain.events.on('transitionEnd', function(info, eventName) {
+      var videoYtFrame = info.slideItems[info.indexCached].querySelector('.video-yt__frame');
+      if (videoYtFrame) {
+        videoYtFrame.dispatchEvent(new Event('custom-stop-video'));
+      }
     });
 
     var productPreviews = tns({
@@ -110,8 +120,10 @@ ready(function() {
 
     var productMainEl = document.getElementById('product-main');
     lightGallery(productMainEl, {
-      selector: '.product-main__poster',
-    })
+      selector: '.product-main__slider-item:not(.tns-slide-cloned) .product-main__gallery-content',
+      videojs: true,
+      plugins: [lgVideo],
+    });
   }
 
   var options = {

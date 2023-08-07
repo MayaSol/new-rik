@@ -99,6 +99,10 @@
     @media (min-width: $screen-lg) {
       display: flex;
     }
+
+    .btn--download {
+      color: #fff !important;
+    }
   }
 
   &__content {

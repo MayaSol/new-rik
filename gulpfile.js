@@ -454,7 +454,7 @@ function buildJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'development',
+      mode: 'production',
       entry: entryList,
       output: {
         filename: '[name].js',
@@ -524,7 +524,7 @@ function buildCatalogJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'development',
+      mode: 'production',
       entry: entryList,
       output: {
         filename: '[name].js',

@@ -1,13 +1,19 @@
 const ready = require('../../js/utils/documentReady.js');
 var MicroModal = require("../../../node_modules/micromodal/dist/micromodal");
 // var MicroModal = require("../../js/micromodal.js");
-const Collapse = require("../../../node_modules/bootstrap/js/dist/collapse.js");
+const Collapse = require("./catalog-collapse.js");
 
 ready(function() {
 
   if (document.documentElement.clientWidth >= 1280) {
     var filterBtns = document.querySelectorAll('#modal-catalog-filter .form-filter__item-content');
     var bsCollapse = [];
+    for (var i=0; i<filterBtns.length; i++) {
+      filterBtns[i].addEventListener('show.bs.collapse',function() {
+        console.log('show.bs.collapse');
+        console.log(this);
+      })
+    }
     for (var i=0; i<filterBtns.length; i++) {
       bsCollapse[i] = Collapse.getOrCreateInstance(filterBtns[i]);
     }

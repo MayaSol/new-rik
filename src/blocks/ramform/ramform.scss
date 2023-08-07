@@ -162,7 +162,7 @@
 .consult .ramform-item-4,
 .product-main__special .ramform-item-4,
 .product-actions .ramform-item-4,
-.contacts-form .ramform-item-4 {
+.contacts-form .ramform-item-4  {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -233,9 +233,11 @@
   padding-right: 0 !important;
 }
 
-.ramform-9 .ramform-item-4 {
+.ramform-9 .ramform-item-4,
+.test-drive .ramform-item-4 {
   @include btn-regular;
   margin-top: 10px;
+  cursor: pointer;
 
   .ramform-button__title {
     color: $tw-black !important;

@@ -29,7 +29,7 @@ mixin form-filter-item(props={},mods)
     }
 
   .form-filter__item(class=allMods)&attributes(attributes)
-    +btn('','clean,collapse')(class="collapsed form-filter__btn" type='button' data-bs-toggle='collapse' data-bs-target=`#${props.targetId}` aria-expanded="false" aria-controls='collapseExample')
+    +btn('','clean,collapse')(class="collapsed form-filter__btn" type='button' data-bs-catalog-toggle='collapse' data-bs-target=`#${props.targetId}` aria-expanded="false" aria-controls='collapseExample')
       .form-filter__item-info
         span.form-filter__item-title= props.title
         if props.isTip

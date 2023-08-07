@@ -11,10 +11,11 @@ ready(function() {
     if (info.classList.contains('info-tip--right')) {
       placement = 'right';
     }
+    var theme = (info.dataset && info.dataset.theme) ? info.dataset.theme : 'info-tip';
     if (contentId) {
       tippy(info, {
         content: contentId,
-        theme: 'info-tip',
+        theme: theme,
         allowHTML: true,
         interactive: true,
         placement: placement,

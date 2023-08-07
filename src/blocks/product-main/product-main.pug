@@ -41,19 +41,10 @@ mixin product-main(props={}, mods)
                 span Гарантия 2 года
               span.product-card__top-item
                 span Акция
-          +product-main-item-video-yt({
-            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
-          })(data-slide='0')
-            .product-card__top-list
-              span.product-card__top-item
-                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
-                span Гарантия 2 года
-              span.product-card__top-item
-                span Акция
-          #product-main-item0.product-main__slider-item.tns-item.tns-slide-active(data-slide="0")
-            .video.product-main__video
-              .product-main__poster.video__poster(data-src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg")
-                img(src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg" alt="Фото РИКТА-04/4")
+          //- #product-main-item0.product-main__slider-item.tns-item.tns-slide-active(data-slide="0")
+          //-   .video.product-main__video
+          //-     .product-main__poster.video__poster(data-src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg")
+          //-       img(src="/upload/iblock/42f/qy9h2l3021y9551uyy2qlohpafu71p6b.jpg" alt="Фото РИКТА-04/4")
           +product-main-item-video({
             url: '/video/dummy.mov',
             width: '1920',
@@ -98,16 +89,16 @@ mixin product-main(props={}, mods)
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
                 span Гарантия 3 года
-          +product-main-item-video({
-            url: '/video/banana.mp4',
-            width: '1920',
-            height: '1080',
-            poster: '/img/product-main-slider-poster.jpg'
+          +product-main-item-video-yt({
+            src: 'https://img.youtube.com/vi/YdtBEFK_HgI/mqdefault.jpg',
+            id: 'YdtBEFK_HgI'
           })(data-slide='6')
             .product-card__top-list
               span.product-card__top-item
                 +svg('shield','',{width: 16, height: 18})(class='mr-8px')
-                span Гарантия 3 года
+                span Гарантия 2 года
+              span.product-card__top-item
+                span Акция
           +product-main-item-video({
             url: '/video/banana.mp4',
             width: '1920',
@@ -121,6 +112,16 @@ mixin product-main(props={}, mods)
           +product-main-item-video-preview-only({
             src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg'
           })(data-slide='8')
+          +product-main-item-video-yt({
+            src: 'https://img.youtube.com/vi/SS-Qqpkd3ow/mqdefault.jpg',
+            id: 'SS-Qqpkd3ow'
+          })(data-slide='9')
+            .product-card__top-list
+              span.product-card__top-item
+                +svg('shield','',{width: 16, height: 18})(class='mr-8px')
+                span Гарантия 2 года
+              span.product-card__top-item
+                span Акция
         .product-main__controls.slider__controls.slider__controls--center(aria-label="Carousel Navigation" tabindex="0")
           button.slider__controls-btn.slider__controls-btn--prev(type="button" data-controls="prev" tabindex="-1" aria-controls="tns1")
             +svg('arrow','',{width: 19,height:19})
@@ -331,7 +332,7 @@ mixin product-main-item-video-yt(props={}, mods)
       .video-yt__poster
         img.lazyload(data-src=props.src data-srcset=props.srcset)
         .btn-play.btn-play--product
-      <iframe class="video-yt__frame" id="video-yt__frame"  width="560" height="315" src="https://www.youtube.com/embed/5Q2Pc-e-8Qc?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      iframe(class="video-yt__frame" id="video-yt__frame"  width="560" height="315" src=`https://www.youtube.com/embed/${props.id}?enablejsapi=1` title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
 
 mixin product-main-item-video-preview-only(props={}, mods)

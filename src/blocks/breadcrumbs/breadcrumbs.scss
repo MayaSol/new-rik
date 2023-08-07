@@ -70,6 +70,7 @@
         left: 0;
         top: 50%;
         background-image: url('/img/angle-left.svg');
+        background-repeat: no-repeat;
         transform: translateY(-50%);
 
         @media (min-width: $screen-lg) {

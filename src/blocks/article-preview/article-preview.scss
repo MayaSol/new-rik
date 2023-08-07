@@ -19,6 +19,17 @@
       @media (min-width: $items2-width) {
         display: flex !important;
       }
+
+      @media (min-width: $screen-xxl) {
+
+        &.tns-slide-active.xxl_w-397px + .article-preview {
+          width: 370px !important;
+        }
+
+        &.tns-slide-active.xxl_w-397px + .article-preview + .article-preview {
+          width: 370px !important;
+        }
+      }
     }
   }
 

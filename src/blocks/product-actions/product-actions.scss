@@ -222,7 +222,8 @@
   }
 
   //! Кнопки карточки продукта в шаблоне статьи
-  .section--article & {
+  .section--article &,
+  .article & {
     flex-wrap: wrap;
 
     .btn:first-child {
