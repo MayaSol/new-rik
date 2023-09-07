@@ -29,6 +29,7 @@ block content
             option(value='4' data-icon="book" data-href='/methods.html#4' selected) Методики лечения
             option(value='5' data-icon="setting" data-href='/methods.html#5') Сервис
             option(value='6' data-icon="message" data-href='/methods.html#6') Обратная связь
+            option(value='6' data-icon="media" data-href='/methods.html#6') Обратная связь
         .profile-links.profile__links.hidden.lg_block
           +profile-links-item({
             icon: 'person',
@@ -66,6 +67,12 @@ block content
             icon_width: '22',
             icon_height: '22',
             text: 'Обратная связь',
+          })
+          +profile-links-item({
+            icon: 'media',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Медиа',
           })
         .profile__main.cure__content.mt-20px.lg_mt-0
             +article-index()(class='cure__article-index')

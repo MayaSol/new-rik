@@ -1,0 +1,21 @@
+//- Все примеси в этом файле должны начинаться c имени блока (download-link)
+
+mixin download-link(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' download-link--' + modsList[i].trim();
+      }
+    }
+
+  .download-link(class=allMods)&attributes(attributes)
+    a.download-link__title.info-tip.info-tip--link(data-content="Перейти на сайт" data-theme="link-tip")!= props.title
+    .download-link__info
+      a.download-link__icon(href="/images/download.svg" download)
+        +svg('download','',{width:40,height:40})
+      .download-link__authors!= props.authors
+      .download-link__source!= props.source

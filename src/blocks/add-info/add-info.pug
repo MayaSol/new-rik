@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (add-info)
+
+mixin add-info(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' add-info--' + modsList[i].trim();
+      }
+    }
+
+  .add-info(class=allMods)&attributes(attributes)
+    .add-info__inner
+      block

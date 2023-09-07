@@ -20,12 +20,23 @@
   &__list {
     @media (min-width: $screen-lg) {
       display: grid;
-      grid-template-columns: 1fr 32px 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 32px;
+    }
+
+    .profile--media & {
+      @media (min-width: $screen-3xl) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   }
 
   &__item {
     margin-bottom: 40px;
+
+    .profile--media & {
+      margin-bottom: 40px;
+    }
 
     @media (min-width: $screen-lg) {
       display: flex;
@@ -34,19 +45,19 @@
       margin-bottom: 0;
     }
 
-    &:nth-child(2n) {
-      @media (min-width: $screen-lg) {
-      grid-column-start: 3;
-      grid-column-end: 4;
-    }
-    }
+    // &:nth-child(2n) {
+    //   @media (min-width: $screen-lg) {
+    //   grid-column-start: 3;
+    //   grid-column-end: 4;
+    // }
+    // }
 
-    &:nth-child(2n-1) {
-      @media (min-width: $screen-lg) {
-      grid-column-start: 1;
-      grid-column-end: 2;
-    }
-    }
+    // &:nth-child(2n-1) {
+    //   @media (min-width: $screen-lg) {
+    //   grid-column-start: 1;
+    //   grid-column-end: 2;
+    // }
+    // }
 
     &:last-child {
       margin-bottom: 0;
@@ -54,6 +65,8 @@
   }
 
   &__img {
+    position: relative;
+    display: block;
     margin-bottom: 20px;
 
     @media (min-width: $screen-lg) {
@@ -102,5 +115,17 @@
     @media (min-width: $screen-lg) {
       align-self: start;
     }
+  }
+
+  .icon-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/play-btn.png);
+    background-size: contain;
+    transform: translate(-50%, -50%);
   }
 }

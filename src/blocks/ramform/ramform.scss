@@ -43,10 +43,12 @@
   }
 
   .ramform-text__input,
-  .ramform-textarea__input {
+  .ramform-textarea__input,
+  .ramform-select__input {
     display: inline-block !important;
     vertical-align: middle !important;
     width: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     border: 1px solid $tw-gray-100 !important;
     border-radius: $border-radius !important;
@@ -162,7 +164,7 @@
 .consult .ramform-item-4,
 .product-main__special .ramform-item-4,
 .product-actions .ramform-item-4,
-.contacts-form .ramform-item-4  {
+.contacts-form .ramform-item-4 {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -290,3 +292,286 @@
 .ramform .tradein .ramform-button__title {
   padding-left: 0 !important;
 }
+
+
+.test-drive .ramform-text__input::placeholder,
+.tradein .ramform-text__input::placeholder {
+  opacity: 0;
+}
+
+.test-drive,
+.tradein {
+  .ramform-item {
+    position: relative;
+    padding-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ramform-item__title {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15px 0 4px !important;
+    margin-bottom: 0 !important;
+    font-size: 14px;
+    font-weight: 500 !important;
+    line-height: 24px;
+    color: #686868;
+    background-color: #fff;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .ramform-text__input,
+  .ramform-select__input {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    border: 1px solid #f5f5f5 !important;
+    border-radius: 4px !important;
+    padding: 10px;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    font-family: inherit;
+    color: #14142b;
+    background-color: #fff !important;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+  }
+
+  .ramform-item_required .ramform-item__title::after {
+    content: '*';
+    position: absolute;
+    color: #f00;
+    right: 5px;
+    top: 0;
+  }
+
+  .ramform-item-15 {
+    cursor: pointer;
+  }
+
+  .ramform-item-4 {
+    padding-bottom: 0 !important;
+  }
+
+  .ramform-text__required {
+    display: none !important;
+  }
+
+  .ramform-textblock h3 {
+    font-size: 100%;
+    line-height: 1.5;
+  }
+
+  .ramform-button {
+    min-height: 40px;
+  }
+}
+
+/*!!!*/
+.article-form .ramform-content,
+.article-map-form .ramform-content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+}
+
+.article-map-form {
+  order: -1;
+}
+
+.contacts__map {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: $screen-xl) and (max-width: $screen-xxl - 1) {
+  .contacts__map {
+    display: flex;
+    flex-direction: row;
+    height: 482px;
+
+    .map {
+      width: 70%;
+      height: 100%;
+    }
+  }
+  .article-map-form .aside-nav {
+    height: 100%;
+    margin-bottom:  0 !important;
+  }
+  .article-map-form {
+    padding-bottom: 0 !important;
+    height: 100%;
+    align-self: stretch;
+
+    .ramform-wrapper,
+    .ramform,
+    .ramform-foreground,
+    .ramform-content,
+    .ramform-items {
+      height: 100%;
+    }
+
+   .ramform-content {
+      width: 320px;
+      padding: 20px !important;
+      // background-color: $tw-slate-200 !important;
+      // border-radius: 20px !important;
+      @apply shadow-default;
+    }
+
+    .ramform-items {
+      margin-top: 0 !important;
+    }
+
+    .test-drive {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .ramform-item-10 {
+        margin-bottom: 40px !important;
+      }
+
+      .ramform-item-4 {
+        // margin-top: auto !important;
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+}
+
+
+@media (min-width: $screen-xxl) {
+  .article-map-form {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+
+    .ramform-content {
+      width: 320px;
+      padding: 20px !important;
+      border-radius: 20px !important;
+      // background-color: $tw-slate-200 !important;
+      @apply shadow-default;
+    }
+
+    // .ramform-item__title {
+    //   background-color: $tw-slate-200;
+    // }
+
+    // .ramform-item__select {
+    //   background-color: $tw-slate-200 !important;
+    // }
+
+    .ramform-item__select-wrapper {
+      border: 1px solid $tw-slate-200 !important;
+      overflow: hidden;
+    }
+
+    // .ramform-text {
+    //   border: 1px solid $tw-slate-400;
+    // }
+
+    // .ramform-text__input {
+    //   background-color: $tw-slate-200 !important;
+    // }
+  }
+
+  .contacts__map {
+    height: 482px;
+    .map {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+}
+
+
+// @media (min-width: $screen-xxl) {
+//   .test-drive {
+//     display: flex;
+//     flex-wrap: wrap;
+
+//     .ramform-item {
+//       flex-basis: 0;
+//       flex-grow: 1;
+//       margin-right: 10px !important;
+
+//       &:nth-last-child(2),
+//       &:nth-last-child {
+//         margin-right: 0 !important;
+//       }
+//     }
+
+//     .ramform-item-10 {
+//       flex-basis: 100%;
+//     }
+
+//     .ramform-item-4 {
+//       flex-basis: 100%;
+//       padding-bottom: 0 !important;
+//     }
+//   }
+// }
+
+
+.ramform-item__select-wrapper {
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  @apply text-base;
+  background-color: #fff;
+  border: 1px solid #f5f5f5 !important;
+  border-radius: 4px !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    width: 6px;
+    height: 4px;
+    background-image: url(../img/angle-down.svg);
+    background-size: contain;
+    transform: translateY(-50%);
+    border: 0;
+    z-index: 10
+  }
+}
+
+.ramform-item__select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 11px 18px !important;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  background: none;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  outline: none;
+  z-index: 1;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+

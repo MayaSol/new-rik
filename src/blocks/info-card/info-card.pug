@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (info-card)
+
+mixin info-card(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-card--' + modsList[i].trim();
+      }
+    }
+
+  .info-card(class=allMods)&attributes(attributes)
+    .info-card__image-wrapper
+      .info-card__image
+        img(src=props.src alt=props.alt)
+      .info-card__plate-top != props.plate-top-text
+      if (props.video)
+        .info-card__video-btn
+      if (props.plate-bottom-text)
+        .info-card__plate-bottom!= props.plate-bottom-text
+      .info-card__title = props.title
+      .info-card__text = props.text
+      .info-card__btn-link Перейти к врачу
+      .info-card__btn-review Отзыв о враче
+
+
+

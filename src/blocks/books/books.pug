@@ -29,12 +29,19 @@ mixin books-item(props={}, mods)
     }
 
   .books__item(class=allMods)&attributes(attributes)
-    .books__img
-      img(src=props.src)
+    if (props.href)
+      a.books__img(href=props.href)
+        img(src=props.src)
+        if (props.isVideo)
+          span.icon-video
+    else
+      .books__img
+        img(src=props.src)
     .books__title!= props.title
-    .books__desc!= props.desc
-    .books__price!= props.price
+    if (props.desc)
+      .books__desc!= props.desc
+    if (props.price)
+      .books__price!= props.price
     block
-
 
 

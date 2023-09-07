@@ -1,0 +1,100 @@
+extends ../pug/layout.pug
+
+block meta
+  title Медиа
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'media';
+
+block content
+  .wrapper
+    +breadcrumbs(class="container")
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Методики лечения')
+    #bx_basketFKauiI.bx-basket.bx-opener
+      +cart-aside(class='hidden xl_block')
+    section.profile.profile--media.cure.mt-30px.lg_mt-20px.mb-60px
+      .profile__content.container
+        h1.section__title.mb-20px.lg_mb-40px Медиа
+        .choices-select.field-select__wrapper.lg_hidden.mb-20px
+          select#profile-page-select
+            option(value='1' data-icon="person" data-href='/methods.html#1') Личные данные
+            option(value='2' data-icon="receipt" data-href='/methods.html#2') Мои заказы
+            option(value='3' data-icon="device" data-href='/methods.html#3') Мои аппараты
+            option(value='4' data-icon="book" data-href='/methods.html#4') Методики лечения
+            option(value='5' data-icon="setting" data-href='/methods.html#5') Сервис
+            option(value='6' data-icon="message" data-href='/methods.html#6') Обратная связь
+            option(value='6' data-icon="media" data-href='/methods.html#6' selected) Медиа
+        .profile-links.profile__links.hidden.lg_block
+          +profile-links-item({
+            icon: 'person',
+            icon_width: '20',
+            icon_height: '20',
+            text: 'Личные данные',
+          })
+          +profile-links-item({
+            icon: 'receipt',
+            icon_width: '19',
+            icon_height: '22',
+            text: 'Мои заказы',
+          })
+          +profile-links-item({
+            icon: 'device',
+            icon_width: '24',
+            icon_height: '25',
+            text: 'Мои аппараты',
+          })
+          +profile-links-item({
+            icon: 'book',
+            icon_width: '21',
+            icon_height: '20',
+            text: 'Методики лечения',
+          })
+          +profile-links-item({
+            icon: 'setting',
+            icon_width: '22',
+            icon_height: '21',
+            text: 'Сервис',
+          })
+          +profile-links-item({
+            icon: 'message',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Обратная связь',
+          })
+          +profile-links-item({
+            icon: 'media',
+            icon_width: '22',
+            icon_height: '22',
+            text: 'Медиа',
+            isActive: true
+          })
+        .profile__main.mt-20px.lg_mt-0
+          .books
+            .books__list
+              +books-item({
+                src: '/img/books_01.jpg',
+                title: 'Большая энциклопедия Аменореи',
+                desc: 'Легко проверить, что лемма последовательно отображает эмпирический ротор векторного поля, как и предполагалось.',
+                href: '#'
+              })
+              +books-item({
+                src: '/img/books_02.jpg',
+                title: 'Аменорея от А до Я',
+                desc: ' Ротор векторного поля, общеизвестно, концентрирует косвенный разрыв функции. Система координат оправдывает комплексный степенной ряд.',
+                href: '#'
+              })
+              +books-item({
+                src: '/img/books_01.jpg',
+                title: 'Большая энциклопедия Аменореи',
+                desc: 'Легко проверить, что лемма последовательно отображает эмпирический ротор векторного поля, как и предполагалось.',
+                href: '#',
+                isVideo: true
+              })
+
+

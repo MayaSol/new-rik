@@ -16,6 +16,13 @@
   background-repeat: no-repeat;
   cursor: pointer;
 
+  &--link {
+    position: static;
+    width: auto;
+    height: auto;
+    background-image: none !important;
+  }
+
   svg {
     fill: none;
     stroke: $tw-gray-300;
@@ -29,14 +36,19 @@
   }
 }
 
+
 .tippy-box[data-theme|='info-tip'] {
   padding: 5px 10px;
   color: $tw-black;
   border-radius: 4px;
   background-color: #fff;
   color: $tw-gray-400;
-  @apply shadow-default;
   @apply text-base;
+  @apply shadow-default;
+
+  .tippy-arrow {
+      color: #fff !important;
+  }
 
   &[data-placement^="top"] {
     .tippy-arrow {
@@ -48,6 +60,7 @@
 
   &[data-placement^="right"] {
     .tippy-arrow {
+      color: #fff;
       &::before {
         border-right-color: #fff;
         border-width: 8px 8px 0px 0;
@@ -65,6 +78,32 @@
 
   .article & {
     color: $tw-gray-500;
+  }
+}
+
+.tippy-box[data-theme|='link-tip'] {
+  padding: 0 7px;
+  @apply text-sm;
+  font-weight: 700;
+  border-radius: 4px;
+  background-color: $tw-green-500;
+  @apply shadow-dark;
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  .tippy-arrow {
+    color: $tw-green-500;
+    right: 0;
+    left:  auto !important;
+
+    &::before {
+      right: 30px !important;
+      left: auto !important;
+      bottom: -6px !important;
+      border-width: 12px 8px 0 !important;
+    }
   }
 }
 

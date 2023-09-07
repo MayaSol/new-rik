@@ -6,6 +6,10 @@
 
   $block-name: &; // #{$block-name}__element
 
+  @media (min-width: $screen-lg) and (max-width: $screen-xl - 1) {
+    max-width: 634px;
+  }
+
   h2 {
     font-size: 24px !important;
   }
@@ -48,8 +52,7 @@
 
   &__logo-img {
     position: absolute;
-    width: 60%;
-    max-width: 100px;
+    max-width: 120px;
     height: auto;
     left: 50%;
     top: 50%;

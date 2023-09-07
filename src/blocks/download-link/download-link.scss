@@ -1,0 +1,75 @@
+// В этом файле должны быть стили для БЭМ-блока download-link, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.download-link {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 20px;
+
+    @media (min-width: $screen-xxl) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0 12px;
+  }
+
+  &__icon {
+    display: block;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: center;
+    color: $tw-green-500 !important;
+    transition-property: transform, color;
+    transition-duration: $transition-time;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: darken($tw-green-500, 10%) !important;
+      transform: scale(1.07);
+    }
+  }
+
+  &__authors {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__source {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 14px;
+    line-height: 22px;
+    color: $tw-black;
+  }
+
+  .add-info & {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}

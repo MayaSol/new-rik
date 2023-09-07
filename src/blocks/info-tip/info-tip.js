@@ -12,6 +12,10 @@ ready(function() {
       placement = 'right';
     }
     var theme = (info.dataset && info.dataset.theme) ? info.dataset.theme : 'info-tip';
+    var offset;
+    if (theme == 'link-tip') {
+      offset = [70, 0];
+    }
     if (contentId) {
       tippy(info, {
         content: contentId,
@@ -21,7 +25,8 @@ ready(function() {
         placement: placement,
         maxWidth: 468,
         // delay: [null, 10000],
-        // trigger: 'click'
+        // trigger: 'click',
+        offset: offset,
       })
     }
   }

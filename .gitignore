@@ -1,10 +1,12 @@
 design/
+old/
 build/*
 archive/
 !build/readme.md
 test.html
 test.css
 temp.*
+temp2.*
 notes
 tmp/
 src/misc/
