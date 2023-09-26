@@ -1,0 +1,148 @@
+extends ../pug/layout.pug
+
+block meta
+  title Осипова Екатерина Григорьевна
+  meta(name='description', content='')
+
+//- block append head
+  //- link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'doctors';
+
+block content
+  .wrapper
+    +breadcrumbs(class='container')
+      +breadcrumbs-item('Главная','#')
+      +breadcrumbs-item('Врачи')
+    section.section--textpage.mt-30px.lg_mt-20px.lg_mb-128px
+      .article.article--doctor.container.mb-64px
+        h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Осипова Екатерина Григорьевна
+        .article__main
+          +info-card-short({
+            src: '/images/doctors/doctor.jpg',
+            alt: 'Осипова Екатерина Григорьевна',
+            title: 'Осипова Екатерина Григорьевна',
+            video: {
+              src: "//www.youtube.com/watch?v=sUwD3GRPJos",
+              size: "1280-720",
+              poster: "https://img.youtube.com/vi/sUwD3GRPJos/maxresdefault.jpg",
+              sub: "<p>Осипова Екатерина Григорьевна</p>"
+            },
+          },'doctor')
+            .info-card__main
+              .info-card__lead ГБУ «Научно-практический центр медицинской помощи детям» Департамента здравоохранения Москвы им. Войно-Ясенецкого
+              .info-card__fragment
+                p к.м.н., педиатр, врач-физиотерапевт, ведущий научный специалист по лазерной медицине, лектор ГНЦЛМ, академик АМТН РФ.
+                p В 1982 году окончила Среднеазиатский медицинский педиатрический институт (САМПИ), проходила обучение в интернатуре, клинической ординатуре и аспирантуре по специальности «Педиатрия».
+                p В 1997 г. защитила кандидатскую диссертацию на тему: «Клинико-патогенетическое обоснование лазеротерапии при тяжелых пневмониях у детей раннего возраста» (работа проведена в отделении детской реанимации и интенсивной терапии, где Екатерина Григорьевна работала детским реаниматологом в течение 15 лет).
+                .info-card__textplate Стаж практической работы более 40 лет.
+          .info-card__add
+            .info-card__add-inner
+              .info-card__lead Специализируется на лечении методом низкоинтенсивной лазерной терапии аппаратами РИКТА, консультирует и лечит пациентов с заболеваниями:
+              ul(class="max-w-[520px]")
+                li опорно-двигательного аппарата,
+                li нервной и сердечно-сосудистой системы,
+                li ЛОР-органов,
+                li дыхательной системы,
+                li пищеварительной системы,
+                li мочеполовой системы,
+                li у детей: часто болеющих, с аденоидитом, задержкой психоречевого развития, логоневрозом, энурезом и пр.
+              .fragment-special.text-green
+                .fragment-speical__inner.text-gray-500
+                  p Автор и разработчик методических рекомендаций по применению лазерного медицинского оборудования. Выступает на конференциях, симпозиумах в России и за рубежом, по радио и телевидению. Проводит обучающие семинары и вебинары по лазерной терапии.
+              .info-card__lead Курсы повышения квалификации:
+              ul.li_mb-lg.info-card__fragment
+                li 1983 г., 1990 г. – специализация по детской реаниматологии, интенсивной терапии и усовершенствование по детской реанимации и интенсивной терапии.
+                li 2000 г., 2017 г. – спец. курсы по лазерной медицине по специальности: терапия, педиатрия, хирургия при Государственном центре лазерной медицины им. Скобелкина
+                li 2010 г. – повышение квалификации по квантовой терапии на факультете повышения квалификации мед. работников при РУДН.
+                li 2015 г. – повышение квалификации по программе «Лазерная медицина», факультет повышения квалификации мед. работников Медицинского института РУДН.
+                li 2015 г. – участник научно-практического семинара по применению современных методов физиотерапии в ортопедии «Лазер высокой интенсивности. Ударно-волновая терапия».
+                li 2019 г. – повышение квалификации на факультете усовершенствования врачей МОНИКИ «Актуальные вопросы медицинской реабилитации».
+                li 2020 г. - профессиональная переподготовка в Межрегиональном институте подготовки кадров на факультете усовершенствования врачей, имеет сертификат по физиотерапии, действующий до 2025 г.
+          .info-card__outer.cert-slider__wrapper
+            h2 Сертификаты
+            .cert-slider
+              a.cert-slider__item(href="/images/doctors-certs/doctor-cert_01.png")
+                .cert-slider__img
+                  img(src='/images/doctors-certs/doctor-cert_01.png' alt='Сертификат об аккредитации Осиповой Е.Г. 2020')
+                  +btn('','clean')(class="cert-slider__btn-show")
+                .cert-slider__caption Сертификат об аккредитации Осиповой Е.Г. 2020
+              a.cert-slider__item(href="/images/doctors-certs/doctor-cert_02.png")
+                .cert-slider__img
+                  img(src='/images/doctors-certs/doctor-cert_02.png' alt='Сертификат об аккредитации Осиповой Е.Г. 2020')
+                  +btn('','clean')(class="cert-slider__btn-show")
+                .cert-slider__caption Сертификат об аккредитации Осиповой Е.Г. 2020
+              a.cert-slider__item(href="/images/doctors-certs/doctor-cert_01.png")
+                .cert-slider__img
+                  img(src='/images/doctors-certs/doctor-cert_01.png' alt='Сертификат об аккредитации Осиповой Е.Г. 2020')
+                  +btn('','clean')(class="cert-slider__btn-show")
+                .cert-slider__caption Сертификат об аккредитации Осиповой Е.Г. 2020
+        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-start-3.lg_row-span-10
+          .article__float
+            .article__float-container
+              .social-list__title Страницы врача на:
+              .social-list
+                +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Meds</span>','icon,regular')(href="#" class="social-list__item")
+                +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Одноклассники</span>','icon,regular')(href="#" class="social-list__item")
+                +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Youtube</span>','icon,regular')(href="#" class="social-list__item")
+                +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Вконтакте</span>','icon,regular')(href="#" class="social-list__item")
+              .add-info
+                h2.add-info__title Публикации врача
+                ul.add-info__list
+                  li.add-info__item
+                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
+                  li.add-info__item
+                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии 2
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 2
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 2
+                  li.add-info__item
+                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии 3
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 3
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 3
+                .pagination#app
+                  <uib-pagination :total-items="bigTotalItems" v-model="pagination2" :max-size="maxSize" class="pagination-sm" :boundary-link-numbers="true" :rotate="false" :items-per-page="3"></uib-pagination>
+                +pagination('add-info-list')
+                  +pagination-item('Пред.','#','','prev')(disabled)
+                  +pagination-item('1','#1',true,'num')
+                  +pagination-item('2','#2','','num')
+                  +pagination-item('3','#3','','num')
+                  +pagination-item('...')
+                  +pagination-item('9','#9','','num')
+                  +pagination-item('След.','#','','next')
+              .add-info
+                h2.add-info__title Авторские статьи на РИКТА
+                ul.add-info__list
+                  li.add-info__item
+                    .add-info__subtitle Обзор статьи «Применение лазерной терапии при остеоартрите»
+                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                  li.add-info__item
+                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
+                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                  li.add-info__item
+                    .add-info__subtitle Лазерная терапия: перспективы развития на отечественном рынке
+                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                +pagination('add-info-list')
+                  +pagination-item('Пред.','#','','prev')(disabled)
+                  +pagination-item('1','#1',true,'num')
+                  +pagination-item('2','#2','','num')
+                  +pagination-item('3','#3','','num')
+                  +pagination-item('...')
+                  +pagination-item('9','#9','','num')
+                  +pagination-item('След.','#','','next')
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+
+

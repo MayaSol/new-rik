@@ -7,8 +7,6 @@ import lgVideo from 'lightgallery/plugins/video';
 
 
 ready(function() {
-  console.log('!!! product-main.js !!!');
-  console.log(lgVideo);
   if (document.querySelector('#product-main') && document.querySelector('#product-previews')) {
 
     var productMain = tns({

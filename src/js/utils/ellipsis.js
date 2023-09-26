@@ -33,6 +33,10 @@ var getLineHeight = function getLineHeight(element) {
   }
 };
 
+var getContentHeight = function getContentHeight(element) {
+  return element.clientHeight - parseFloat(window.getComputedStyle(element)['padding-top']) - parseFloat(window.getComputedStyle(element)['padding-bottom']);
+};
+
 var truncateElement = function(element, lines) {
   // console.log('truncateElement');
   // console.log(element);
@@ -49,9 +53,11 @@ var truncateElement = function(element, lines) {
 
 
   // console.log('------------while-------------------');
-  while (element.clientHeight > maxHeight && truncateTextParts.length > 0) {
+  var contentHeight = getContentHeight(element);
+  while (contentHeight > maxHeight && truncateTextParts.length > 0) {
     truncateTextParts.pop();
     element.innerHTML = truncateTextParts.join(' ') + '...';
+    contentHeight = getContentHeight(element);
     //   console.log('element.clientHeight = ' + element.clientHeight);
     //   console.log(element.clientHeight > maxHeight && truncateTextParts.length > 0);
     // console.log(element.innerHTML);

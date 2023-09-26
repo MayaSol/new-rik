@@ -46,6 +46,7 @@ const concat = require('gulp-concat');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
+const { VueLoaderPlugin } = require('vue-loader')
 // import imagemin from 'imagemin';
 
 // Глобальные настройки этого запуска
@@ -101,7 +102,11 @@ exports.writePugMixinsFile = writePugMixinsFile;
 
 function compilePug() {
   const fileList = [
-    `${dir.src}pages/**/*.pug`
+    // `${dir.src}pages/**/*.pug`,
+    // `${dir.src}pages/**/doctors.pug`,
+    `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/article-lib.pug`,
+    // `${dir.src}pages/**/article.pug`,
   ];
   if (!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
   return src(fileList)
@@ -125,7 +130,11 @@ exports.compilePug = compilePug;
 
 function compilePugFast() {
   const fileList = [
-    `${dir.src}pages/**/*.pug`
+    // `${dir.src}pages/**/*.pug`
+    // `${dir.src}pages/**/doctors.pug`,
+    `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/article-lib.pug`,
+    // `${dir.src}pages/**/article.pug`,
   ];
   if (!buildLibrary) fileList.push(`!${dir.src}pages/blocks-demo.pug`);
   return src(fileList, { since: lastRun(compilePugFast) })
@@ -145,6 +154,7 @@ function compilePugFast() {
     .pipe(dest(dir.build));
 }
 exports.compilePugFast = compilePugFast;
+
 
 
 function copyAssets(cb) {
@@ -213,7 +223,7 @@ exports.copyImg = copyImg;
 
 function minifyImgs(cb) {
   (async () => {
-     const files = await imagemin(['src/img/*.{png,jpg}'], {
+    const files = await imagemin(['src/img/*.{png,jpg}'], {
       destination: 'src/img/test/',
       plugins: [
         imageminJpegtran(),
@@ -222,7 +232,7 @@ function minifyImgs(cb) {
         })
       ]
     });
-       // console.log(files);
+    // console.log(files);
 
   })();
   cb();
@@ -441,6 +451,8 @@ function writeJsRequiresFile(cb) {
 exports.writeJsRequiresFile = writeJsRequiresFile;
 
 
+const modulesDir = path.join(__dirname, '..', 'node_modules');
+
 function buildJs() {
   const entryList = {
     'bundle': `./${dir.src}js/entry.js`,
@@ -454,53 +466,74 @@ function buildJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'production',
+      mode: 'development',
       entry: entryList,
       output: {
         filename: '[name].js',
       },
-      module: {
-        rules: [{
-            test: /\.src\/input.css$/i,
-            exclude: /node_modules/,
-            use: [{
-                loader: MiniCssExtractPlugin.loader
-              },
-              {
-                loader: 'css-loader',
-                options: {
-                  importLoaders: 1,
-                  url: false
-                }
-              },
-              {
-                loader: 'postcss-loader',
-                options: {
-                  postcssOptions: {
-                    config: path.resolve(__dirname, 'postcss.config.js'),
-                  },
-                },
-              }
-            ]
+      resolve: {
+          alias: {
+              'vue$': 'vue/dist/vue.common.js',
+              // 'vuejs-paginate': 'vuejs-paginate/dist/index.js'
+              // 'vue$': path.join(modulesDir, 'vue/dist/vue.common.js')
+              // 'vue$': path.join(modulesDir, 'vue/dist/vue.js')
           },
-          {
-            test: /\.m?js$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
+      },
+      module: {
+        rules: [
+        {
+          test: /\.vue$/,
+          use: [
+            {
+              loader: 'vue-loader'
+            },
+            {
+              loader: 'vue-style-loader',
+            }
+          ]
+        },
+        {
+          test: /\.src\/input.css$/i,
+          exclude: /node_modules/,
+          use: [{
+              loader: MiniCssExtractPlugin.loader
+            },
+            {
+              loader: 'css-loader',
               options: {
-                presets: [
-                  ['@babel/preset-env', { targets: "defaults" }]
-                ]
+                importLoaders: 1,
+                url: false
               }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  config: path.resolve(__dirname, 'postcss.config.js'),
+                },
+              },
+            }
+          ]
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', { targets: "defaults" }]
+              ]
             }
           }
+        },
         ]
       },
       plugins: [
         new MiniCssExtractPlugin({
           filename: "css/test.css",
-        })
+        }),
+        new VueLoaderPlugin()
       ],
       // externals: {
       //   jquery: 'jQuery'
@@ -509,6 +542,45 @@ function buildJs() {
     .pipe(dest(`${dir.build}js`));
 }
 exports.buildJs = buildJs;
+
+
+function buildVueJs() {
+  const entryList = {
+    'bundle-vue': `./${dir.src}js/vue-blocks-entry.js`,
+  };
+  return src(`${dir.src}js/vue-blocks-entry.js`)
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.message);
+        this.emit('end');
+      }
+    }))
+    .pipe(webpackStream({
+      mode: 'development',
+      entry: entryList,
+      output: {
+        filename: '[name].js',
+      },
+      module: {
+        rules: [
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
+        },
+        ]
+      },
+      plugins: [
+        // make sure to include the plugin!
+        new VueLoaderPlugin()
+      ]
+      // externals: {
+      //   jquery: 'jQuery'
+      // }
+    }))
+    .pipe(dest(`${dir.build}js`));
+}
+exports.buildVueJs = buildVueJs;
+
 
 
 function buildCatalogJs() {
@@ -564,7 +636,7 @@ function buildCatalogJs() {
                 ]
               }
             }
-          }
+          },
         ]
       },
       plugins: [
@@ -668,16 +740,16 @@ exports.buildCartJs = buildCartJs;
 var penthouse = require('gulp-penthouse');
 
 function criticalCss() {
-    return src('./build/css/style.css')
-        .pipe(penthouse({
-            out: 'critical.css',
-            url: 'http://maiiasol.ru/newrikta/index-server.html',
-            width: 1300,
-            height: 900,
-            strict: true,
-            userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
-        }))
-        .pipe(dest('./build/css/'));
+  return src('./build/css/style.css')
+    .pipe(penthouse({
+      out: 'critical.css',
+      url: 'http://maiiasol.ru/newrikta/index-server.html',
+      width: 1300,
+      height: 900,
+      strict: true,
+      userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+    }))
+    .pipe(dest('./build/css/'));
 };
 exports.criticalCss = criticalCss;
 
@@ -786,6 +858,7 @@ function serve() {
     parallel(writeSassImportsFile, writeJsRequiresFile),
     compileSass,
     buildJs,
+    // buildVueJs,
     // compileTailwind,
     // concatCss,
     reload
@@ -861,6 +934,7 @@ function serve() {
   watch([`${dir.src}js/**/*.js`, `!${dir.src}js/entry.js`, `${dir.blocks}**/*.js`], { events: ['all'], delay: 100 }, series(
     writeJsRequiresFile,
     buildJs,
+    // buildVueJs,
     reload
   ));
 
@@ -895,6 +969,7 @@ exports.build = series(
   compileSass,
   // compileTailwind,
   buildJs,
+  // buildVueJs,
   buildCatalogJs,
   buildCartJs
   // concatCss
@@ -909,6 +984,7 @@ exports.default = series(
   writeTailwindToSass,
   compileSass,
   buildJs,
+  // buildVueJs,
   buildCatalogJs,
   buildCartJs,
   serve,

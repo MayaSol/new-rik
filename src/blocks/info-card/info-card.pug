@@ -13,18 +13,65 @@ mixin info-card(props={}, mods)
     }
 
   .info-card(class=allMods)&attributes(attributes)
-    .info-card__image-wrapper
-      .info-card__image
-        img(src=props.src alt=props.alt)
-      .info-card__plate-top != props.plate-top-text
-      if (props.video)
-        .info-card__video-btn
-      if (props.plate-bottom-text)
-        .info-card__plate-bottom!= props.plate-bottom-text
-      .info-card__title = props.title
-      .info-card__text = props.text
-      .info-card__btn-link Перейти к врачу
-      .info-card__btn-review Отзыв о враче
+    .info-card__inner
+      .info-card__image-wrapper
+        .info-card__image
+          img(src=props.src alt=props.alt)
+        if (props.video)
+          .info-card__video-wrapper
+            a.info-card__video-btn(
+              data-lg-size=props.video.size,
+              data-src=props.video.src,
+              data-poster=props.video.poster,
+              data-sub-html=props.video.sub
+            )
+              +svg('play','', {width: 12, height: 15})
+        if (props.plate_bottom_text)
+          .info-card__plate-bottom!=props.plate_bottom_text
+      if (props.plate_top_text)
+        .info-card__plate-top!=props.plate_top_text
+      a(href="#").info-card__title=props.title
+      .info-card__text=props.text
+      +btn('Перейти к врачу','regular')(class='info-card__btn-link')
+      +btn(
+        '<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#reviews"></use></svg><span>Отзывы о враче</span>',
+        'light-blue, icon'
+      )(class='info-card__btn-review')
 
 
 
+mixin info-card-short(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' info-card--' + modsList[i].trim();
+      }
+    }
+
+  .info-card(class=allMods)&attributes(attributes)
+    .info-card__inner
+      .info-card__image-wrapper
+        .info-card__image
+          img(src=props.src alt=props.alt)
+        if (props.video)
+          .info-card__video-wrapper
+            a.info-card__video-btn(
+              data-lg-size=props.video.size,
+              data-src=props.video.src,
+              data-poster=props.video.poster,
+              data-sub-html=props.video.sub
+            )
+              +svg('play','', {width: 12, height: 15})
+        if (props.plate_bottom_text)
+          .info-card__plate-bottom!=props.plate_bottom_text
+      if (props.plate_top_text)
+        .info-card__plate-top!=props.plate_top_text
+      +btn(
+        '<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#reviews"></use></svg><span>Отзывы о враче</span>',
+        'light-blue, icon'
+      )(class='info-card__btn-review')
+    block

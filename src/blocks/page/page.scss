@@ -98,7 +98,7 @@
     top: -6px; //contacts mobile
     // top: -162px;
     top: -205px;
-    top: 2px;
+    top: -26px;
     left: 12px; //product.jpg
     // top: -252px;
     // top: -58px;
@@ -109,10 +109,13 @@
     // top: -815px; //vacancies
     // top: -275px;
     //top: -5280px;
-    top: -418px; //article-mobile
-    top: -128px; //article-page
+    // top: -418px; //article-mobile
+    // top: -128px; //article-page
+    top: 0; //doctors-mobile
+    top: -44px; //doctors-wide
+    top: 0;
     left: 0;
-    // content: url('../screens/article-page.jpg');
+    // content: url('../screens/doctor-wide.jpg');
     opacity: 1;
   }
 
@@ -737,6 +740,7 @@ body {}
 
 
   @at-root .product-catalog,
+  .cert-slider__wrapper,
   &--info,
   &--reviews,
   &--articles,
@@ -929,6 +933,13 @@ body {}
       }
     }
 
+    @at-root .cert-slider__wrapper {
+      .tns-controls {
+        right: 30px;
+        top: 30px;
+      }
+    }
+
   }
 
 
@@ -992,6 +1003,20 @@ body {}
 }
 
 //section
+
+.article {
+  &--doctor {
+    margin-bottom: 0 !important;
+
+    .article__aside {
+      margin-bottom: 0 !important;
+
+       @media (min-width: $screen-lg) {
+        margin-top: 10px;
+       }
+    }
+  }
+}
 
 
 .product-catalog {

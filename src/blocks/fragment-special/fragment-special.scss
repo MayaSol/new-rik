@@ -23,4 +23,10 @@
     padding-left: 40px;
     @apply text-xl;
   }
+
+  .info-card__add & {
+    margin-top: 48px;
+    margin-bottom: 40px;
+    @apply text-xl;
+  }
 }

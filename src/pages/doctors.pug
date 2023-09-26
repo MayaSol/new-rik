@@ -1,0 +1,100 @@
+extends ../pug/layout.pug
+
+block meta
+  title Врачи
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'doctors';
+
+block content
+  .wrapper
+    //- +breadcrumbs(class='container')
+    //-   +breadcrumbs-item('Главная','#')
+    //-   +breadcrumbs-item('Врачи')
+    section.section--textpage.mt-30px.lg_mt-20px.lg_mb-128px
+      .article.article--doctors.container.mb-64px
+        h1.text-2xl.mb-20px.lg_text-48px.lg_col-span-3.lg_mt-0.lg_mb-30px Врачи
+        .article__main
+          .info-card__list.info-card__list--doctors
+            +info-card({
+              src: '/images/doctors/doctor.jpg',
+              alt: 'Осипова Екатерина Григорьевна',
+              title: 'Осипова Екатерина Григорьевна',
+              text: 'к.м.н., педиатр, врач-физиотерапевт, ведущий научный специалист по лазерной медицине, лектор ГНЦЛМ, академик АМТН РФ.',
+              video: {
+                src: "//www.youtube.com/watch?v=sUwD3GRPJos",
+                size: "1280-720",
+                poster: "https://img.youtube.com/vi/sUwD3GRPJos/maxresdefault.jpg",
+                sub: "<p>Осипова Екатерина Григорьевна</p>"
+              },
+              'plate_top_text': 'Стаж 40 лет',
+              'plate_bottom_text': '25 публикаций'
+            })
+            +info-card({
+              src: '/images/doctors/doctor-derbenev.jpg',
+              alt: 'Дербенёв Валентин Аркадьевич',
+              title: 'Дербенёв Валентин Аркадьевич',
+              text: 'д.м.н., профессор, руководитель секции (научного направления) хирургии НОУ «Институт квантовой медицины», руководитель отдела неотложной гнойной хирургии и учёный секретарь учёного совета Государственного Научного Центра Лазерной Медицины.',
+              video: {
+                src: "//www.youtube.com/watch?v=sUwD3GRPJos",
+                size: "1280-720",
+                poster: "https://img.youtube.com/vi/sUwD3GRPJos/maxresdefault.jpg",
+                sub: "<p>Дербенёв Валентин Аркадьевич</p>"
+              },
+              'plate_top_text': 'Стаж 22 года',
+              'plate_bottom_text': '49 публикаций'
+            })
+            +info-card({
+              src: '/images/doctors/doctor-derbenev.jpg',
+              alt: 'Ерёмушкин Михаил Анатольевич',
+              title: 'Ерёмушкин Михаил Анатольевич',
+              text: 'д.м.н., руководитель секции (научного направление) спортивной медицины НОУ «Институт квантовой медицины», профессор ЦИТО им. Н.Н. Приорова, профессор научно-практического центра спортивной медицины ФМБА.',
+              video: {
+                src: "//www.youtube.com/watch?v=sUwD3GRPJos",
+                size: "1280-720",
+                poster: "https://img.youtube.com/vi/sUwD3GRPJos/maxresdefault.jpg",
+                sub: "<p>Дербенёв Валентин Аркадьевич</p>"
+              },
+              'plate_top_text': 'Стаж 40 лет',
+              'plate_bottom_text': '49 публикаций'
+            })
+            +info-card({
+              src: '/images/doctors/doctor-derbenev.jpg',
+              alt: 'Брилль Григорий Ефимович',
+              title: 'Брилль Григорий Ефимович',
+              text: 'д.м.н., профессор, зав. кафедрой патологической физиологии Саратовского медицинского университета. Соросовский профессор, академик Лазерной Академии наук РФ.',
+              video: {
+                src: "//www.youtube.com/watch?v=sUwD3GRPJos",
+                size: "1280-720",
+                poster: "https://img.youtube.com/vi/sUwD3GRPJos/maxresdefault.jpg",
+                sub: "<p>Дербенёв Валентин Аркадьевич</p>"
+              },
+              'plate_top_text': 'Стаж 40 лет',
+              'plate_bottom_text': '49 публикаций'
+            })
+          +pagination('info-card-list')(class='mt-20px mb-20px')
+            +pagination-item('Пред.','#','','prev')(disabled)
+            +pagination-item('1','#1',true,'num')
+            +pagination-item('2','#2','','num')
+            +pagination-item('3','#3','','num')
+            +pagination-item('...')
+            +pagination-item('9','#9','','num')
+            +pagination-item('След.','#','','next')
+
+        .article__aside.hidden.lg_block.lg_col-start-3.lg_row-start-3.lg_row-span-10
+          .article__float
+            .article__float-container
+              .banner__wrapper.article__banner
+                .banner Баннер
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src='https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e')
+
+

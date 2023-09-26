@@ -77,6 +77,8 @@ let config = {
     'src/fonts/': 'fonts/',
     'src/images/': 'images/',
     'src/images/partners/': 'images/partners/',
+    'src/images/doctors/': 'images/doctors/',
+    'src/images/doctors-certs/': 'images/doctors-certs/',
     'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',

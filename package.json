@@ -89,6 +89,8 @@
     "tailwindcss": "^3.1.6",
     "through2": "^3.0.1",
     "vinyl-buffer": "^1.0.1",
+    "vue-loader": "^15.0.0",
+    "vue-template-compiler": "^2.7.14",
     "webpack": "^5.0.0",
     "webpack-stream": "^7.0.0"
   },
@@ -119,7 +121,9 @@
     "slim-select": "^2.6.0",
     "svg4everybody": "^2.1.8",
     "tiny-slider": "^2.9.4",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "vue": "^2.1.10",
+    "vuejs-uib-pagination": "^1.0.6"
   },
   "husky": {
     "hooks": {

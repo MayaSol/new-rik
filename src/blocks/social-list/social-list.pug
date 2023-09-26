@@ -1,0 +1,17 @@
+//- Все примеси в этом файле должны начинаться c имени блока (social-list)
+
+mixin social-list(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' social-list--' + modsList[i].trim();
+      }
+    }
+
+  .social-list(class=allMods)&attributes(attributes)
+    .social-list__inner
+      block

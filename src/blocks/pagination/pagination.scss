@@ -11,8 +11,20 @@
   justify-content: center;
   padding: 15px 0;
 
+  &--info-card-list {
+    margin-top: 55px !important;
+  }
+
   .profile__main & {
     padding: 0;
+  }
+
+  .add-info & {
+    margin-top: 5px;
+
+    @media (min-width: $screen-xxl) {
+      padding-bottom: 0;
+    }
   }
 
   &__inner {
@@ -22,9 +34,16 @@
     padding: 10px 20px;
     @apply shadow-default;
     border-radius: 34px;
+    background-color: $tw-white;
 
     .profile__main & {
       padding: 5px 10px;
+    }
+
+    .add-info & {
+      width: 100%;
+      font-size: 16px;
+      padding: 8px 14px;
     }
 
     @media (min-width: $screen-lg) {
@@ -64,9 +83,18 @@
       color: #000;
     }
 
+    .add-info & {
+      margin-right: auto;
+    }
+
+
     &--active {
       background-color: $tw-blue_link;
       color: #fff;
+
+      @at-root a#{$block-name}__item--num#{&} {
+        color: #fff;
+      }
 
       &::after,
       &::before {
@@ -95,6 +123,10 @@
 
       &+a {
         margin-left: 5px;
+
+        .add-info & {
+          margin-left: auto;
+        }
       }
     }
 
@@ -104,13 +136,32 @@
       @media (min-width: $screen-lg) {
         margin-right: 20px;
       }
+
+      .add-info & {
+        margin-right: auto;
+      }
     }
 
     &--next {
       margin-left: 5px;
 
+      @at-root a#{&} {
+        color: $tw-black;
+        font-weight: 400;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $tw-black;
+        }
+      }
+
       @media (min-width: $screen-lg) {
         margin-left: 15px;
+      }
+
+      .add-info & {
+        margin-left: auto;
       }
     }
 
@@ -119,11 +170,14 @@
 
       padding: 0.15em;
       border-radius: 50%;
+      color: $tw-black;
+      font-weight: 400;
 
       &:hover,
       &:focus {
+        text-decoration: none;
         background-color: $tw-blue_link;
-        color: #fff;
+        color: $tw-white;
 
         &:before {
           display: none;

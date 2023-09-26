@@ -4,7 +4,7 @@ const throttle = require('lodash.throttle');
 
 
 ready(function() {
-
+  console.log('script.js');
 
 //lazy load js scripts
 // document.addEventListener('lazybeforeunveil', function(e){
@@ -19,8 +19,7 @@ ready(function() {
 //   }
 // });
 
-  // makeEllipsis('.ellipsis');
-
+  makeEllipsis('.add-info__text.ellipsis');
 
   var delayedScripts = document.querySelectorAll('script[data-src]');
   for (script of delayedScripts) {

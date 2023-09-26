@@ -380,6 +380,19 @@
     border-color: $tw-blue_link;
   }
 
+  &--light-blue {
+    color: $tw-blue_link;
+    background-color: rgba(229, 242, 251, 0.50);
+    border-radius: 10px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $tw-blue_link;
+      background-color: rgba(150, 163, 187, 0.50);
+    }
+  }
+
   &--arrow-down {
 
   }

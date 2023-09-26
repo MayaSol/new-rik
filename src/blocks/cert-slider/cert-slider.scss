@@ -1,0 +1,74 @@
+// В этом файле должны быть стили для БЭМ-блока cert-slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cert-slider {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__item {
+    display: inline-flex !important;
+    flex-direction: column;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none !important;
+    }
+  }
+
+  &__caption {
+    margin-top: 20px;
+    @apply text-lg;
+    color: $tw-black;
+  }
+
+  &__img {
+    position: relative;
+    flex-grow: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__btn-show {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: 21px;
+    top: 16px;
+    border-radius: 16px;
+    background-color: $tw-white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 1px;
+      background-color: $tw-black;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 12px;
+      height: 1px;
+      background-color: $tw-black;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}
