@@ -1,0 +1,132 @@
+// В этом файле должны быть стили для БЭМ-блока buy-on-ozon, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.buy-on-ozon {
+
+  $block-name:                &; // #{$block-name}__element
+  grid-column-start: 1;
+  grid-column-end: 3;
+  min-width: 300px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: 'Roboto', 'sans-serif';
+  border-radius: 20px;
+  box-shadow: 0 20px 12px -16px #001e551a,0 8px 24px 18px #001e550d;
+
+  @media (min-width: $screen-lg) {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-self: start;
+  }
+
+  a {
+    color: #000;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #005bff;
+    }
+  }
+
+  .section--product-main & {
+    margin-top: 20px;
+  }
+
+  &__price-val {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 2px 8px;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 700;
+    background-color: #10c44c;
+    color: $tw-white;
+    white-space: nowrap;
+    border-radius: 8px;
+  }
+
+  &__price-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    color: #000;
+  }
+
+  &__price-full {
+    margin-top: 6px;
+    line-height: 24px;
+    color: #001a3499;
+  }
+
+  &__price-full-val {
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: -1px;
+  }
+
+  &__price-old {
+    margin-left: 4px;
+    text-decoration: line-through;
+    white-space: nowrap;
+    letter-spacing: -1px;
+  }
+
+  &__price-full-text {
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+
+  &__plan {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #f5f7fa;
+    border-radius: 12px;
+  }
+
+  &__payment {
+    margin-right: 4px;
+    padding: 2px 6px;
+    color: #001a34;
+    font-weight: 500;
+    background-color: #ffd540;
+    letter-spacing: -1px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  &__plan-link {
+    display: flex;
+    line-height: 18px;
+
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__btn-buy {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+    background-color: #005bff;
+    border-radius: 12px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: #0050e0;
+    }
+  }
+
+}

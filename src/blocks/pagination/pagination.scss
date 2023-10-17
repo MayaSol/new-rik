@@ -220,4 +220,72 @@
       grid-row-end: 3;
     }
   }
+
+  .pagination-prev,
+  .pagination-page,
+  .pagination-next {
+    .add-info & {
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        min-width: 38px;
+        margin-right: auto;
+        text-align: center;
+        color: #14142b;
+        font-weight: 400;
+        font-size: 16px;
+
+        &[disabled] {
+          color: #d3d3d3;
+          pointer-events: none;
+        }
+      }
+
+      &.active {
+        a {
+          padding: .15em;
+          font-weight: 400;
+          color: #fff;
+          background-color: #007cd3;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .pagination-page:not(.page-ellipsis) {
+    .add-info & {
+        a:hover,
+        a:focus,
+        a:active {
+          font-weight: 400;
+          color: #fff;
+          background-color: #007cd3;
+          border-radius: 50%;
+          text-decoration: none;
+        }
+    }
+  }
+
+  .pagination-prev {
+    margin-right: auto;
+  }
+  .pagination-next {
+    margin-left: auto;
+  }
+
+  .uib-pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 8px 14px;
+    @apply shadow-default;
+    border-radius: 34px;
+    background-color: $tw-white;
+  }
+
 }

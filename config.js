@@ -101,6 +101,8 @@ let config = {
     'src/pages/feedback.html': '/',
     'src/pages/index-server.html': '/',
     'src/pages/detskiy-bronkholegochnyy-sanatoriy-15.html': '/',
+    'src/pages/artrit-tazobedrennogo-sustava.html': '/',
+    'src/pages/rikta-03-2.html': '/',
     'src/pages/test.html': '/',
 
     // 'fullpage.js/fullpage.min.css.map': 'css/'

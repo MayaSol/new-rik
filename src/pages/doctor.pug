@@ -88,57 +88,98 @@ block content
                 +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Одноклассники</span>','icon,regular')(href="#" class="social-list__item")
                 +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Youtube</span>','icon,regular')(href="#" class="social-list__item")
                 +btn('<svg class="icon" width="22" height="22"><use xlink:href="/img/sprite.svg#link"></use></svg><span>Вконтакте</span>','icon,regular')(href="#" class="social-list__item")
-              .add-info
+              .add-info#pagination1
                 h2.add-info__title Публикации врача
+                //- ul.add-info__list(style="display: none")
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#1") Лекция: Лазерная терапия в педиатрии
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#2") Электротерапия в физиотерапевтическом лечении
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#3") Электротерапия в физиотерапевтическом лечении
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#4") Лекция: Лазерная терапия в педиатрии 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#5") Электротерапия в физиотерапевтическом лечении 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#6") Электротерапия в физиотерапевтическом лечении 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#7") Лекция: Лазерная терапия в педиатрии 3
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#8") Электротерапия в физиотерапевтическом лечении 3
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#9") Электротерапия в физиотерапевтическом лечении 3
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#1") Лекция: Лазерная терапия в педиатрии
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#2") Электротерапия в физиотерапевтическом лечении
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#3") Электротерапия в физиотерапевтическом лечении
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#4") Лекция: Лазерная терапия в педиатрии 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#5") Электротерапия в физиотерапевтическом лечении 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#6") Электротерапия в физиотерапевтическом лечении 2
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#7") Лекция: Лазерная терапия в педиатрии 3
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#8") Электротерапия в физиотерапевтическом лечении 3
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#9") Электротерапия в физиотерапевтическом лечении 3
                 ul.add-info__list
-                  li.add-info__item
-                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
-                  li.add-info__item
-                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии 2
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 2
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 2
-                  li.add-info__item
-                    .add-info__subtitle Лекция: Лазерная терапия в педиатрии 3
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 3
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении 3
-                .pagination#app
-                  <uib-pagination :total-items="bigTotalItems" v-model="pagination2" :max-size="maxSize" class="pagination-sm" :boundary-link-numbers="true" :rotate="false" :items-per-page="3"></uib-pagination>
-                +pagination('add-info-list')
-                  +pagination-item('Пред.','#','','prev')(disabled)
-                  +pagination-item('1','#1',true,'num')
-                  +pagination-item('2','#2','','num')
-                  +pagination-item('3','#3','','num')
-                  +pagination-item('...')
-                  +pagination-item('9','#9','','num')
-                  +pagination-item('След.','#','','next')
-              .add-info
+                  <li v-for="item in itemsVisible" class="add-info__item">
+                    <div class="add-info__subtitle">
+                      <a v-bind:href="item.href">{{ item.title }}</a></div>
+                  </li>
+                  .pagination
+                    <uib-pagination class="uib-pagination" :total-items="totalItems" v-model="pagination" previous-text="Пред" next-text="След" :max-size="maxSize" :boundary-link-numbers="true" :rotate="false" :force-ellipses="true" :items-per-page="itemsPerPage" @change="pageChanged()"></uib-pagination>
+                //- +pagination('add-info-list')
+                //-   +pagination-item('Пред.','#','','prev')(disabled)
+                //-   +pagination-item('1','#1',true,'num')
+                //-   +pagination-item('2','#2','','num')
+                //-   +pagination-item('3','#3','','num')
+                //-   +pagination-item('...')
+                //-   +pagination-item('9','#9','','num')
+                //-   +pagination-item('След.','#','','next')
+              .add-info#pagination2
                 h2.add-info__title Авторские статьи на РИКТА
+                //- ul.add-info__list(style="display: none")
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 1 Обзор статьи «Применение лазерной терапии при остеоартрите»
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 1 Электротерапия в физиотерапевтическом лечении
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 1 Лазерная терапия: перспективы развития на отечественном рынке
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 2 Обзор статьи «Применение лазерной терапии при остеоартрите»
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 2 Электротерапия в физиотерапевтическом лечении
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
+                //-   li.add-info__item
+                //-     a.add-info__subtitle(href="#") 2 Лазерная терапия: перспективы развития на отечественном рынке
+                //-     .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
                 ul.add-info__list
-                  li.add-info__item
-                    .add-info__subtitle Обзор статьи «Применение лазерной терапии при остеоартрите»
-                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
-                  li.add-info__item
-                    .add-info__subtitle Электротерапия в физиотерапевтическом лечении
-                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
-                  li.add-info__item
-                    .add-info__subtitle Лазерная терапия: перспективы развития на отечественном рынке
-                    .add-info__text.ellipsis(data-lines="2") В конце июля на одной из клинических баз Межрегионального института подготовки кадров (МИПК), кафедре «Реабилитологии и инновационных медицинских технологий» – «МЕДЭП-регионы» – прошли практические занятия в рамках семинара (вебинара)
-                +pagination('add-info-list')
-                  +pagination-item('Пред.','#','','prev')(disabled)
-                  +pagination-item('1','#1',true,'num')
-                  +pagination-item('2','#2','','num')
-                  +pagination-item('3','#3','','num')
-                  +pagination-item('...')
-                  +pagination-item('9','#9','','num')
-                  +pagination-item('След.','#','','next')
+                  <li v-for="item in itemsVisible" class="add-info__item">
+                    <div class="add-info__subtitle">
+                      <a v-bind:href="item.href">{{ item.title }}</a>
+                    </div>
+                    <div class="add-info__text ellipsis" data-lines="2">{{ item.text }}</div>
+                  </li>
+                  .pagination
+                    <uib-pagination class="uib-pagination" :total-items="totalItems" v-model="pagination" previous-text="Пред" next-text="След" :max-size="maxSize" :boundary-link-numbers="true" :rotate="false" :force-ellipses="true" :items-per-page="itemsPerPage" @change="pageChanged()"></uib-pagination>
+                //- +pagination('add-info-list')
+                //-   +pagination-item('Пред.','#','','prev')(disabled)
+                //-   +pagination-item('1','#1',true,'num')
+                //-   +pagination-item('2','#2','','num')
+                //-   +pagination-item('3','#3','','num')
+                //-   +pagination-item('...')
+                //-   +pagination-item('9','#9','','num')
+                //-   +pagination-item('След.','#','','next')
 
 block prepend page-bottom
   .inline-svg-sprite

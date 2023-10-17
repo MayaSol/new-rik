@@ -144,8 +144,8 @@ mixin product-main(props={}, mods)
             +svg('angle','',{width: 7,height:14})
     .product-main__price-wrapper.mt-12px.mb-25px.lg_mt-0.lg_mb-30px
       .product-main__price.mr-10px.lg_mr-20px 44 800 ₽
-      p.w-full Внимание! С 1 января 2023 г. повышение цен.
-      .product-main__price-old + <span class="options-sum">0</span> ₽ (дополнительно)
+      //- p.w-full Внимание! С 1 января 2023 г. повышение цен.
+      //- .product-main__price-old + <span class="options-sum">0</span> ₽ (дополнительно)
     +product-options({
       title: '<div class="mb-10px text-lg text-black col-start-1 col-end-3">Дополнительно</div>'
     })(class='product-main__options')
@@ -160,6 +160,7 @@ mixin product-main(props={}, mods)
       +btn(
         '<svg class="icon" width="18" height="18"><use xlink:href="/img/sprite.svg#mouse-square"></use></svg> <span>Задать вопрос врачу</span>',
         'regular, icon, question')(class='product-main__question mt-10px lg_mt-0' data-modal-open='modal-ask-doctor')
+      +buy-on-ozon
     .product-main__special.mt-20px
       div.text-sm.lg_text-base Спец. условия для юр лиц. Скидка 10% от 5 шт.
       +btn('Запросить КП','small,special')(data-modal-open='modal-special-offer')

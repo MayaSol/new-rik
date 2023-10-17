@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (buy-on-ozon)
+
+mixin buy-on-ozon(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' buy-on-ozon--' + modsList[i].trim();
+      }
+    }
+
+  .buy-on-ozon(class=allMods)&attributes(attributes)
+    .buy-on-ozon__price
+      span.buy-on-ozon__price-val 706 ₽
+      a(href="#").buy-on-ozon__price-text c Ozon картой
+    .buy-on-ozon__price-full
+      span.buy-on-ozon__price-full-val 735 ₽
+      span.buy-on-ozon__price-old 1 050 ₽
+      span.buy-on-ozon__price-full-text без Ozon Карты
+    .buy-on-ozon__plan
+      span.buy-on-ozon__payment 138 ₽
+      a.buy-on-ozon__plan-link(href="#")
+        span × 6 месяцев&nbsp;
+        span в Ozon Рассрочку
+    +btn('Купить на ОЗОН')(class="buy-on-ozon__btn-buy")
+    block

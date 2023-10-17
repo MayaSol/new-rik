@@ -1,27 +1,53 @@
   const makeEllipsis = function(selector) {
-    // console.log('makeEllipsis');
-    // console.log(selector);
-    var ellipsisEls = document.querySelectorAll(selector);
+    console.log('makeEllipsis');
+    console.log(selector);
+    var ellipsisEls;
+    if (typeof selector == 'string') {
+      ellipsisEls = document.querySelectorAll(selector);
+    }
+    else if (typeof selector == 'object') {
+      ellipsisEls = [selector];
+    }
+    console.log('ellipsisEls');
+    console.log(ellipsisEls);
+    if (!ellipsisEls) {
+      return;
+    }
     // console.log(ellipsisEls);
     for (var el of ellipsisEls) {
-      var lines;
-      if (document.documentElement.clientWidth >= 1024 && el.dataset.lgLines) {
-        lines=el.dataset.lgLines;
-      }
-      else {
-        lines = el.dataset.lines;
-        if (!lines) {
-          var lineHeight = getLineHeight(el);
-          var elHeight = el.clientHeight;
-          lines = parseInt(elHeight / lineHeight);
-        }
-      }
+      var lines = getLines(el);
+      // if (document.documentElement.clientWidth >= 1024 && el.dataset.lgLines) {
+      //   lines=el.dataset.lgLines;
+      // }
+      // else {
+      //   lines = el.dataset.lines;
+      //   if (!lines) {
+      //     var lineHeight = getLineHeight(el);
+      //     var elHeight = el.clientHeight;
+      //     lines = parseInt(elHeight / lineHeight);
+      //   }
+      // }
+      console.log(lines);
       if (lines) {
         truncateElement(el, lines);
       }
     }
   }
 
+var getLines = function(el) {
+  if (document.documentElement.clientWidth >= 1024 && el.dataset.lgLines) {
+    lines=el.dataset.lgLines;
+  }
+  else {
+    lines = el.dataset.lines;
+    if (!lines) {
+      var lineHeight = getLineHeight(el);
+      var elHeight = el.clientHeight;
+      lines = parseInt(elHeight / lineHeight);
+    }
+  }
+  return lines;
+}
 
 var getLineHeight = function getLineHeight(element) {
   var lineHeight = window.getComputedStyle(element)['line-height'];

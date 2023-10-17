@@ -102,9 +102,11 @@ exports.writePugMixinsFile = writePugMixinsFile;
 
 function compilePug() {
   const fileList = [
-    // `${dir.src}pages/**/*.pug`,
+    `${dir.src}pages/**/*.pug`,
     // `${dir.src}pages/**/doctors.pug`,
-    `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/product.pug`,
+    // `${dir.src}pages/**/article-lib-new.pug`,
     // `${dir.src}pages/**/article-lib.pug`,
     // `${dir.src}pages/**/article.pug`,
   ];
@@ -130,9 +132,11 @@ exports.compilePug = compilePug;
 
 function compilePugFast() {
   const fileList = [
-    // `${dir.src}pages/**/*.pug`
+    `${dir.src}pages/**/*.pug`
     // `${dir.src}pages/**/doctors.pug`,
-    `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/doctor.pug`,
+    // `${dir.src}pages/**/product.pug`,
+    // `${dir.src}pages/**/article-lib-new.pug`,
     // `${dir.src}pages/**/article-lib.pug`,
     // `${dir.src}pages/**/article.pug`,
   ];
