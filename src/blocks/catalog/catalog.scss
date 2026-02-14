@@ -87,10 +87,27 @@
       margin: 0 32px;
     }
   }
+
+.bx-section-desc {
+ 
+  a {
+    color: #007cd3;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
 }
 
 
 .bx-section-desc {
   grid-column-start: 1;
   grid-column-end: 3;
+
 }

@@ -1,0 +1,6 @@
+{
+  "cssWhitespaceSensitivity": "ignore",
+  "singleQuote": true,
+  "semi": true,
+  "endOfLine": "lf"
+}

@@ -1,0 +1,53 @@
+//- Все примеси в этом файле должны начинаться c имени блока (medical)
+
+mixin medical(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +medical('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' medical--' + modsList[i].trim();
+      }
+    }
+
+  .medical(class=allMods)&attributes(attributes)
+    .medical__inner
+      .medical__header 
+        +svg('location','',{width:'30',height:'30'})
+        span.medical__list-text <span class="hidden md:block">Посмотреть список</span> ЛПУ в вашем регионе 
+        btn.medical__list-link(data-modal-open="modal-cities") Калининград
+      .medical__list(id='medical-list-main')
+        block
+
+
+
+mixin medical-card(props={}, mods)
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-card--' + modsList[i].trim();
+      }
+    }
+
+    if (props.status_class) {
+      var statusClass = 'product-card__status--' + props.status_class;
+    }
+
+  a.medical-card(class=allMods)&attributes(attributes)
+    .medical-card__inner
+        img.lazyload(data-src=props.url)
+    .medical-card__title= props.title
+
+    

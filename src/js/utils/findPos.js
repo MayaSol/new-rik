@@ -6,7 +6,7 @@ const findPos = function(element) {
       console.log(element);
       curLeft += element.offsetLeft;
       curTop += element.offsetTop;
-    } while (element = element.offsetParent)
+    } while (element.offsetParent && (element = element.offsetParent))
   }
   return [curLeft, curTop];
 }

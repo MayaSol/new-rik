@@ -104,7 +104,7 @@ ready(function() {
 
     if (screenWidth < 1024) {
       var offsetLeft = findPos(searchFormEl)[0];
-      var closeBtn = document.getElementsByClassName('main-nav__toggler')[0];
+      var closeBtn = document.getElementsByClassName('off-canvas__toggler')[0];
       var offsetCloseBtn = findPos(closeBtn)[0];
       console.log(screenWidth);
       console.log(offsetCloseBtn);

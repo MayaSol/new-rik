@@ -252,12 +252,15 @@ body {
 
 .wrapper {
 
-  padding-top: 60px;
+  padding-top: 15px;
 
   @media (min-width: $onepage-width) {
     height: 100% !important;
     margin: 0 auto;
     overflow: hidden;
+  }
+
+  @media (min-width: 1280px) {
     padding-top: 70px;
   }
 

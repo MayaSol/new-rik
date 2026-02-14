@@ -1,0 +1,3 @@
+.main-nav__item--has-child > .main-nav__link span::after {
+    background-image: url(css/../img/angle-down.svg) !important;
+  }

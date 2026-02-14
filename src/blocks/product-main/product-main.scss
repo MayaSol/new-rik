@@ -21,6 +21,7 @@
 
   @media (min-width: $screen-xxl) {
     grid-template-rows: auto auto auto auto auto auto 1fr;
+    grid-template-columns: 1fr 528px;
   }
 
   &__title {
@@ -75,7 +76,8 @@
     }
 
     @media (min-width: $screen-xxl) {
-      height: 423px;
+      // height: 423px;
+      height: 725px;
     }
 
     &:first-child {

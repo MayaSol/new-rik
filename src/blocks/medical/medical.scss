@@ -1,0 +1,217 @@
+// В этом файле должны быть стили для БЭМ-блока medical, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.medical {
+
+    $block-name: &; // #{$block-name}__element
+
+    padding-top: 16px;
+
+    @media (min-width: $screen-xl) {
+        padding-top: 30px;
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__header {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        min-height: 50px;
+        padding-bottom: 72px;
+        font-size: 16px; 
+        line-height: 24px;
+        color: #14142B;
+
+        @media (min-width: $screen-xl) {
+            display: flex;     
+            align-items: center;
+            padding-bottom: 0;
+        }
+        
+        svg {
+            width: 35px;
+            height: 40px;
+            margin-right: 12px; 
+            fill: none;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+
+            @media (min-width: $screen-xl) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &__list-text {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        @media (max-width: ($screen-xxl - 1)) {
+            display: block;
+        }
+    }
+
+    &__list-link {
+        margin-left: 5px;
+        color: rgba(36, 96, 212, 1);
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        cursor: pointer;
+    }
+
+
+    &__list {
+        margin-top: 20px;
+    }
+
+    .tns-controls {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 72px;
+
+      @media (min-width: $screen-xl) {
+        left: auto;
+        top: 0;
+      }
+
+      & button {
+        background-color: $tw-gray-100;
+        width: 155px;
+        height: 50px;
+
+        @media (min-width: $screen-xl) {
+            width: 57px;
+            height: 50px;
+        }
+
+
+        &::before {
+          @include sprite($arrow-right-black-long);
+        }
+      }
+    }
+
+}
+
+.medical-card {
+    
+    &__inner {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        height: 240px;        
+        box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+
+        @media (min-width: 600px) {
+            width: 248px;
+            height: 248px;
+        }
+    }
+
+    &__title {
+        margin-top: 16px;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+
+.medical-catalog .section__title {
+    font-size: 18px;
+    line-height: 24px;
+
+    @media (min-width: 600px) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 48px;
+        line-height: 58px;
+    }
+}
+
+.modal--cities .modal__container {
+    min-height: 424px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.modal--cities .modal__title {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.modal--cities .modal__header {
+    margin-bottom: 10px;
+}
+
+.cities-form {
+    &__input-wrapper {
+        position: relative;
+        height: 42px;
+    }
+
+    &__input {
+        min-height: 42px;
+        padding: 6px 18px;
+        font-size: 16px;
+        line-height: 30px;
+        border-radius: 24px;
+        background-color: #F5F5F5;
+        outline: none;
+        border-style: none;
+
+        &::placeholder {
+            color: #686868;
+            opacity: 1;
+        }
+    }
+
+    &__btn {
+        margin-top: -4px;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+    }
+}
+
+.cities__list {
+    height: 297px;
+    padding: 0;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 19px;
+    color: #686868;
+    overflow: auto;
+}
+
+.cities__item {
+    display: flex;
+    align-items: center;
+    height: 39px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #EBEBEB;
+    cursor: pointer;
+
+    &:hover,
+    &--selected {
+        color: #686868;
+        font-weight: 700;
+    }
+}

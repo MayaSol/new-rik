@@ -474,3 +474,35 @@
   }
 
 }
+
+
+.product-catalog {
+  &.product-catalog--inner-page {
+    overflow: hidden;
+
+    .section__title {
+      margin-right: 130px;
+
+      @media (max-width: 767px) {
+        margin-right: 100px;
+      }
+    }
+
+      .tns-controls {
+        position: relative;
+        top: 20px;
+
+        @media (max-width: 500px) {
+          right: auto;
+          left: auto;
+          right: 0;
+          top: 45px;
+        }
+        @media (max-width: 400px) {
+          top: 75px;
+        }
+      }
+    }
+
+}
+

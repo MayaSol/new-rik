@@ -136,6 +136,7 @@ ready(function() {
 
   var modalOnShow = function() {
     document.body.classList.add('modal-open');
+    document.body.classList.add('disabled-onepage-scroll');
   };
 
   const LABEL_CLEAR_SELECTOR = '.product-options__label--clear';
@@ -146,6 +147,8 @@ ready(function() {
 
   var modalOnClose = function(modal) {
     document.body.classList.remove('modal-open');
+    document.body.classList.remove('disabled-onepage-scroll');
+
     if (modal.id == 'modal-options') {
       var checkedOptionsCount = modal.querySelectorAll('.product-options__item--checked').length;
       var labelAmount = document.querySelector('.product-options__amount');

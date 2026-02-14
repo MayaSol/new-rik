@@ -287,6 +287,14 @@ mixin product-main(props={}, mods)
                 desc: 'Комплект насадок для урологии и проктологии <span>(+9 600.00р.)</span>'
               })
           +btn('<span>Добавить</span>','regular, options-add')(class='product-options__add self-center' data-modal-close)
+    .modal.modal--cities#modal-cities
+      .modal__overlay(tabindex='-1' data-modal-close)
+        .modal__container(role='dialog' aria-modal='true' aria-labelledby= props.title)
+          header.modal__header
+            .modal__title Дополнительные опции
+            +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-modal-close)
+          .modal__inner.mb-15px
+          +btn('<span>Добавить</span>','regular, options-add')(class='product-options__add self-center' data-modal-close)
     //- +modal({
     //-   id: 'modal-options',
     //-   title: 'Дополнительные опции'

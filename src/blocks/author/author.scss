@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
 
-
   &__img {
     width: 87px;
     height: 87px;
@@ -43,6 +42,16 @@
   &__phone {
     @apply text-xl;
     color: $tw-black;
+
+    a {
+      color: $tw-black;
+    }
+  }
+
+  &__email {
+    a {
+      color: $tw-black;
+    }
   }
 
   &--ask-doctor {

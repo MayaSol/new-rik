@@ -9,7 +9,7 @@ block meta
 
 block off-canvas
   +main-nav-aside()
-  +burger('Закрыть дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__close burger--closed burger--closed')
+  +burger('Закрыть дополнительное меню 1', 'off-canvas', 'off-canvas--open')(class='off-canvas__close burger--closed burger--closed')
 
 block nav
   +burger('Показать дополнительное меню', 'off-canvas', 'off-canvas--open')(class='off-canvas__toggler hidden lg_block mr-15px')
@@ -43,7 +43,7 @@ block content
               p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
               .slider-main__text-bottom.xxl_mt-25px(data-tabs-anchor)
                 +btn('Подробнее','regular')(data-anchor="#structure")
-          +slider-item--main({url: '/video/SampleVideo_360x240_5mb.mp4', width: 360, height: 240, type: 'video/mp4', poster: 'poster_002.jpg'})
+          +slider-item--main({url: '/video/sample-5s.mp4', width: 360, height: 240, type: 'video/mp4', poster: 'poster_002.jpg'})
             .slider-main__text.mt-30px.lg_mt-0
               h2.mt-0.md_text-40px.lg_text-48px slide 2
               p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
@@ -61,228 +61,259 @@ block content
               p Разрабатываем с нуля или оптимизируем ваш страховой договор так, чтобы вы получили лучшие условия за меньшие деньги.
               .slider-main__text-bottom.xxl_mt-25px
                 +btn('Подробнее','regular')(href="#")
-      section.section.section-main.section--features.mt-35px.lg_mt-0(data-page='features' id='features')
-        .section__inner
-          .section__content
-            .section__container.xl_container
-              .section__header
-                h2.section__title Почему РИКТА?
-            +features(class='section__container xl_container')
-              +features-item({
-                title: 'Эффективность',
-                text: "<ul class='m-0 p-0 list-none'><li>Аппараты используются свыше чем 5&nbsp;000 ведущих клиник</li>" +
-                  "<li>Входят в стандарты оснащения ЛПУ (коды 317670, 317660)</li>" +
-                  "<li>Сотни инновационных запатентованных методик лечения</li></ul>",
-                icon: 'graph'
-               })
-              +features-item({
-                title: 'Удобство',
-                text: "<ul class='m-0 p-0 list-none'><li>Медико-консультативная поддержка</li>" +
-                  "<li>Оперативный прием заявок на гарантийный ремонт</li>" +
-                  "<li>Бесплатный «пробный сеанс» у врача в офисе при производстве</li></ul>",
-                icon: 'chair'
-              })
-              +features-item({
-                title: 'Безопасность',
-                text: "<ul class='m-0 p-0 list-none'><li>Соответствуют всем требованиям и стандартам</li>" +
-                  "<li>Относятся к классу полной безопасности применения согласно IEC 60825-1</li>" +
-                  "<li>Без возрастных ограничений</li></ul>",
-                icon: 'lock'
-              })
-              +features-item({
-                title: 'Качество',
-                text: "<ul class='m-0 p-0 list-none'><li>Производство соответствует требованиями мировых стандартов&nbsp;(сертификат ISO)</li>" +
-                  "<li>Наша аппаратура поставляется в 38 стран мира</li>" +
-                  "<li>Двойной контроль качества обеспечивает высокую надежность и&nbsp;долговечность</li></ul>",
-                icon: 'star'
-              })
-      section.section.section-main.section--structure.mt-35px.lg_mt-0(data-page='structure' id='structure')
-        .section__inner
-          .section__content.section__container.container.structure
-              .section__header
-                h2.section__title Доказано. Безопасно. Эффективно
-              .structure__main.mt-20px
-                .structure__img
-                  img.structure__img-mobile.lazyload(data-src="img/structure-mobile.png" width="640" height="360")
-                  img.structure__img-main.lazyload(data-src="img/structure.png" width="640" height="360")
-                  .structure__device
-                    .structure__item
-                      img(src="img/device.png")
-                    .structure__rays
-                      .structure__ray.structure__ray-blue#blue_ray
-                        include ../blocks/inline-svg/blue_ray.svg
-                      .structure__ray.structure__ray-red#red_ray
-                        include ../blocks/inline-svg/red_ray.svg
-                      .structure__ray.structure__ray-infrared#infrared_ray
-                        include ../blocks/inline-svg/lilac_ray.svg
-                      .structure__ray.structure__ray-laser#laser_ray
-                        include ../blocks/inline-svg/laser_ray.svg
-                      .structure__ray-icon.structure__ray-icon--blue(data-bs-target="#collapse-04" data-animate="#blue_ray")
-                        include ../blocks/inline-svg/blue-light.svg
-                      .structure__ray-icon.structure__ray-icon--red(data-bs-target="#collapse-03" data-animate="#red_ray")
-                        include ../blocks/inline-svg/red-light.svg
-                      .structure__ray-icon.structure__ray-icon--infrared(data-bs-target="#collapse-02" data-animate="#infrared_ray")
-                        include ../blocks/inline-svg/infrared.svg
-                      .structure__ray-icon.structure__ray-icon--laser(data-bs-target="#collapse-01" data-animate="#laser_ray")
-                        include ../blocks/inline-svg/laser.svg
-                    .structure__ray-icon.tens.tens_1(data-bs-target="#collapse-06")
-                      include ../blocks/inline-svg/tens.svg
-                    .structure__ray-icon.magnet(data-bs-target="#collapse-05")
-                      include ../blocks/inline-svg/magnet.svg
-                    .structure__icon.electricity
-                      include ../blocks/inline-svg/electricity.svg
-                    .electrodes
-                      include ../blocks/inline-svg/electr.svg
-                  .structure__waves
-                    .layer.wave.wave0
-                      include ../blocks/sprite-svg-inline/svg/radiation.svg
-                    .layer.wave.wave1
-                      include ../blocks/sprite-svg-inline/svg/radiation.svg
-                    .layer.wave.wave2
-                      include ../blocks/sprite-svg-inline/svg/radiation.svg
-                    .layer.wave.wave3
-                      include ../blocks/sprite-svg-inline/svg/radiation.svg
-                .structure__text.mt-20px.text-sm.text-gray-500(id="structureText")
-                  p РИКТА — результат 30-летних научных изысканий, реализованный в новаторском подходе к светотерапии. Инновационность заключена в применении мультиволновой энергетической комбинации излучений. Эти излучения усиливают эффективность действия терапевтического лазера, который остается безопасным для пациента и врача.
-              +structure(class="mt-30px")
-      section.section.section-main.section--info(data-page='info' id='info')
-        .section__inner
-         .section__content.section__container.container
-            +product-info
-              .section__header
-                h2.section__title Новинки
-                +btn('Все аппараты','simple')(class="pt-3px")
-              .product-info__views-wrapper
-                .product-info__views-list.slider
-                  +product-info-view({id: 'product_info_001',folder: 'img/3d/1/'})
-                  +product-info-view({id: 'product_info_002',folder: 'img/3d/2/'})
-                  +product-info-view({id: 'product_info_003',folder: 'img/3d/3/'})
-                //- input.product-info__range.field-range(type="range" class="mt-10px")
-              .product-info__text-wrapper
-                .product-info__text-list.slider
-                  +product-info-text(
-                    {
-                      title: 'РИКТА-ЭСМИЛ (2А)-03',
-                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
-                      price: '37 800 ₽'
-                    })
-                    div
-                      h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
-                      ul.pl-0.text-sm.leading-6
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('laser','',{width:41, height: 26})
-                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('blue-light','',{width:41, height: 40})
-                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('cert','',{width:41, height: 37})
-                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
-                  +product-info-text(
-                    {
-                      title: '2. РИКТА-ЭСМИЛ (2А)-03',
-                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
-                      price: '37 800 ₽'
-                    })
-                    div
-                      h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
-                      ul.pl-0.text-sm.leading-6
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('laser','',{width:41, height: 26})
-                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('blue-light','',{width:41, height: 40})
-                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('cert','',{width:41, height: 37})
-                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
-                  +product-info-text(
-                    {
-                      title: '3. РИКТА-ЭСМИЛ (2А)-03',
-                      desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии. Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
-                      price: '37 800 ₽'
-                    })
-                    div
-                      h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
-                      ul.pl-0.text-sm.leading-6
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('laser','',{width:41, height: 26})
-                          span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('blue-light','',{width:41, height: 40})
-                          span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
-                        li.flex.items-center.mb-10px.lg_mb-16px
-                          .shrink-0.mr-18px.fill-transparent
-                            +svg('cert','',{width:41, height: 37})
-                          span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
-      section.section.section-main.section--area.pt-35px.lg_pt-0(data-page='area' id='area')
+      //- section.section.section-main.section--features.mt-35px.lg_mt-0(data-page='features' id='features')
+      //-   .section__inner
+      //-     .section__content
+      //-       .section__container.xl_container
+      //-         .section__header
+      //-           h2.section__title Почему РИКТА?
+      //-       +features(class='section__container xl_container')
+      //-         +features-item({
+      //-           title: 'Эффективность',
+      //-           text: "<ul class='m-0 p-0 list-none'><li>Аппараты используются свыше чем 5&nbsp;000 ведущих клиник</li>" +
+      //-             "<li>Входят в стандарты оснащения ЛПУ (коды 317670, 317660)</li>" +
+      //-             "<li>Сотни инновационных запатентованных методик лечения</li></ul>",
+      //-           icon: 'graph'
+      //-          })
+      //-         +features-item({
+      //-           title: 'Удобство',
+      //-           text: "<ul class='m-0 p-0 list-none'><li>Медико-консультативная поддержка</li>" +
+      //-             "<li>Оперативный прием заявок на гарантийный ремонт</li>" +
+      //-             "<li>Бесплатный «пробный сеанс» у врача в офисе при производстве</li></ul>",
+      //-           icon: 'chair'
+      //-         })
+      //-         +features-item({
+      //-           title: 'Безопасность',
+      //-           text: "<ul class='m-0 p-0 list-none'><li>Соответствуют всем требованиям и стандартам</li>" +
+      //-             "<li>Относятся к классу полной безопасности применения согласно IEC 60825-1</li>" +
+      //-             "<li>Без возрастных ограничений</li></ul>",
+      //-           icon: 'lock'
+      //-         })
+      //-         +features-item({
+      //-           title: 'Качество',
+      //-           text: "<ul class='m-0 p-0 list-none'><li>Производство соответствует требованиями мировых стандартов&nbsp;(сертификат ISO)</li>" +
+      //-             "<li>Наша аппаратура поставляется в 38 стран мира</li>" +
+      //-             "<li>Двойной контроль качества обеспечивает высокую надежность и&nbsp;долговечность</li></ul>",
+      //-           icon: 'star'
+      //-         })
+      //- section.section.section-main.section--structure.mt-35px.lg_mt-0(data-page='structure' id='structure')
+      //-   .section__inner
+      //-     .section__content.section__container.container.structure
+      //-         .section__header
+      //-           h2.section__title Доказано. Безопасно. Эффективно
+      //-         .structure__main.mt-20px
+      //-           .structure__img
+      //-             img.structure__img-mobile.lazyload(data-src="img/structure-mobile.png" width="640" height="360")
+      //-             img.structure__img-main.lazyload(data-src="img/structure.png" width="640" height="360")
+      //-             .structure__device
+      //-               .structure__item
+      //-                 img(src="img/device.png")
+      //-               .structure__rays
+      //-                 .structure__ray.structure__ray-blue#blue_ray
+      //-                   include ../blocks/inline-svg/blue_ray.svg
+      //-                 .structure__ray.structure__ray-red#red_ray
+      //-                   include ../blocks/inline-svg/red_ray.svg
+      //-                 .structure__ray.structure__ray-infrared#infrared_ray
+      //-                   include ../blocks/inline-svg/lilac_ray.svg
+      //-                 .structure__ray.structure__ray-laser#laser_ray
+      //-                   include ../blocks/inline-svg/laser_ray.svg
+      //-                 .structure__ray-icon.structure__ray-icon--blue(data-bs-target="#collapse-04" data-animate="#blue_ray")
+      //-                   include ../blocks/inline-svg/blue-light.svg
+      //-                 .structure__ray-icon.structure__ray-icon--red(data-bs-target="#collapse-03" data-animate="#red_ray")
+      //-                   include ../blocks/inline-svg/red-light.svg
+      //-                 .structure__ray-icon.structure__ray-icon--infrared(data-bs-target="#collapse-02" data-animate="#infrared_ray")
+      //-                   include ../blocks/inline-svg/infrared.svg
+      //-                 .structure__ray-icon.structure__ray-icon--laser(data-bs-target="#collapse-01" data-animate="#laser_ray")
+      //-                   include ../blocks/inline-svg/laser.svg
+      //-               .structure__ray-icon.tens.tens_1(data-bs-target="#collapse-06")
+      //-                 include ../blocks/inline-svg/tens.svg
+      //-               .structure__ray-icon.magnet(data-bs-target="#collapse-05")
+      //-                 include ../blocks/inline-svg/magnet.svg
+      //-               .structure__icon.electricity
+      //-                 include ../blocks/inline-svg/electricity.svg
+      //-               .electrodes
+      //-                 include ../blocks/inline-svg/electr.svg
+      //-             .structure__waves
+      //-               .layer.wave.wave0
+      //-                 include ../blocks/sprite-svg-inline/svg/radiation.svg
+      //-               .layer.wave.wave1
+      //-                 include ../blocks/sprite-svg-inline/svg/radiation.svg
+      //-               .layer.wave.wave2
+      //-                 include ../blocks/sprite-svg-inline/svg/radiation.svg
+      //-               .layer.wave.wave3
+      //-                 include ../blocks/sprite-svg-inline/svg/radiation.svg
+      //-           .structure__text.mt-20px.text-sm.text-gray-500(id="structureText")
+      //-             p РИКТА — результат 30-летних научных изысканий, реализованный в новаторском подходе к светотерапии. Инновационность заключена в применении мультиволновой энергетической комбинации излучений. Эти излучения усиливают эффективность действия терапевтического лазера, который остается безопасным для пациента и врача.
+      //-         +structure(class="mt-30px")
+      //- section.section.section-main.section--info(data-page='info' id='info')
+      //-   .section__inner
+      //-    .section__content.section__container.container
+      //-       +product-info
+      //-         .section__header
+      //-           h2.section__title Новинки
+      //-           +btn('Все аппараты','simple')(class="pt-3px")
+      //-         .product-info__views-wrapper
+      //-           .product-info__views-list.slider
+      //-             +product-info-view({id: 'product_info_001',folder: 'img/3d/1/'})
+      //-             +product-info-view({id: 'product_info_002',folder: 'img/3d/2/'})
+      //-             +product-info-view({id: 'product_info_003',folder: 'img/3d/3/'})
+      //-           //- input.product-info__range.field-range(type="range" class="mt-10px")
+      //-         .product-info__text-wrapper
+      //-           .product-info__text-list.slider
+      //-             +product-info-text(
+      //-               {
+      //-                 title: 'РИКТА-ЭСМИЛ (2А)-03',
+      //-                 desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+      //-                 price: '37 800 ₽'
+      //-               })
+      //-               div
+      //-                 h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
+      //-                 ul.pl-0.text-sm.leading-6
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('laser','',{width:41, height: 26})
+      //-                     span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('blue-light','',{width:41, height: 40})
+      //-                     span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('cert','',{width:41, height: 37})
+      //-                     span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+      //-             +product-info-text(
+      //-               {
+      //-                 title: '2. РИКТА-ЭСМИЛ (2А)-03',
+      //-                 desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+      //-                 price: '37 800 ₽'
+      //-               })
+      //-               div
+      //-                 h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
+      //-                 ul.pl-0.text-sm.leading-6
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('laser','',{width:41, height: 26})
+      //-                     span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('blue-light','',{width:41, height: 40})
+      //-                     span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('cert','',{width:41, height: 37})
+      //-                     span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+      //-             +product-info-text(
+      //-               {
+      //-                 title: '3. РИКТА-ЭСМИЛ (2А)-03',
+      //-                 desc: 'Аппарат электро-свето-магнито-инфракрасной лазерной терапии. Аппарат электро-свето-магнито-инфракрасной лазерной терапии',
+      //-                 price: '37 800 ₽'
+      //-               })
+      //-               div
+      //-                 h4.product-info__features-title.text-xl.leading-7.text-black.mb-15px Преимущества
+      //-                 ul.pl-0.text-sm.leading-6
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('laser','',{width:41, height: 26})
+      //-                     span Повышенная мощность лазера (45 Вт) в импульсе —более выраженный и быстрый эффект терапии при заболеваниях костно-мышечной системы. Ускоренное восстановление при спортивных перегрузках и разнообразных травмах.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('blue-light','',{width:41, height: 40})
+      //-                     span Синий свет (длина волны 400-500 нм) – подавление воспалительных процессов, эффекты разжижения крови и ускоренного купирования проявлений инфекции.  Обладает метаболическим и психоэмоциональным действием.
+      //-                   li.flex.items-center.mb-10px.lg_mb-16px
+      //-                     .shrink-0.mr-18px.fill-transparent
+      //-                       +svg('cert','',{width:41, height: 37})
+      //-                     span Сертификат Росздравнадзора – гарантия качества и безопасности применения медицинского аппарата.
+      //- section.section.section-main.section--area.pt-35px.lg_pt-0(data-page='area' id='area')
+      //-   .section__inner
+      //-     .section__content.section__container.container
+      //-       +areas
+      //-         +areas-item({url: 'img/area-physio_340x.jpg',caption: 'Физиотерапия',
+      //-           srcset:
+      //-           'img/area-physio_340x.jpg 340w,' +
+      //-           'img/area-physio_440x.jpg 440w,' +
+      //-           'img/area-physio_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'
+      //-         })
+      //-         +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия',
+      //-           srcset:
+      //-           'img/area-pediatr_340x.jpg 340w,' +
+      //-           'img/area-pediatr_440x.jpg 440w,' +
+      //-           'img/area-pediatr_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'              })
+      //-         +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология',
+      //-           srcset:
+      //-           'img/area-cosmo_340x.jpg 340w,' +
+      //-           'img/area-cosmo_440x.jpg 440w,' +
+      //-           'img/area-cosmo_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'              })
+      //-         +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология',
+      //-           srcset:
+      //-           'img/area-stomatol_340x.jpg 340w,' +
+      //-           'img/area-stomatol_440x.jpg 440w,' +
+      //-           'img/area-stomatol_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'              })
+      //-         +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт',
+      //-           srcset:
+      //-           'img/area-sport_340x.jpg 340w,' +
+      //-           'img/area-sport_440x.jpg 440w,' +
+      //-           'img/area-sport_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'              })
+      //-         +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария',
+      //-           srcset:
+      //-           'img/area-vet_340x.jpg 340w,' +
+      //-           'img/area-vet_440x.jpg 440w,' +
+      //-           'img/area-vet_700x.jpg 700w,',
+      //-           sizes: '(max-width: 380px) 340px,' +
+      //-                 '(max-width: 479px) 440px,' +
+      //-                 '(max-width: 699px) 700px,' +
+      //-                 '(min-width: 700px) 440px,'              })
+      //-       input.areas__range.field-range(type="range" class="mt-10px")
+      section.section.section-main.section--medical.pt-50px.lg_pt-0(data-page='medical' id='medical')
         .section__inner
           .section__content.section__container.container
-            +areas
-              +areas-item({url: 'img/area-physio_340x.jpg',caption: 'Физиотерапия',
-                srcset:
-                'img/area-physio_340x.jpg 340w,' +
-                'img/area-physio_440x.jpg 440w,' +
-                'img/area-physio_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'
-              })
-              +areas-item({url: 'img/area-pediatr.jpg',caption: 'Педиатрия',
-                srcset:
-                'img/area-pediatr_340x.jpg 340w,' +
-                'img/area-pediatr_440x.jpg 440w,' +
-                'img/area-pediatr_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'              })
-              +areas-item({url: 'img/area-cosmo.jpg',caption: 'Косметология',
-                srcset:
-                'img/area-cosmo_340x.jpg 340w,' +
-                'img/area-cosmo_440x.jpg 440w,' +
-                'img/area-cosmo_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'              })
-              +areas-item({url: 'img/area-stomatol.jpg',caption: 'Стоматология',
-                srcset:
-                'img/area-stomatol_340x.jpg 340w,' +
-                'img/area-stomatol_440x.jpg 440w,' +
-                'img/area-stomatol_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'              })
-              +areas-item({url: 'img/area-sport.jpg',caption: 'Спорт',
-                srcset:
-                'img/area-sport_340x.jpg 340w,' +
-                'img/area-sport_440x.jpg 440w,' +
-                'img/area-sport_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'              })
-              +areas-item({url: 'img/area-vet.jpg',caption: 'Ветеринария',
-                srcset:
-                'img/area-vet_340x.jpg 340w,' +
-                'img/area-vet_440x.jpg 440w,' +
-                'img/area-vet_700x.jpg 700w,',
-                sizes: '(max-width: 380px) 340px,' +
-                      '(max-width: 479px) 440px,' +
-                      '(max-width: 699px) 700px,' +
-                      '(min-width: 700px) 440px,'              })
-            input.areas__range.field-range(type="range" class="mt-10px")
+            .medical-catalog
+              h2.section__title.mb-0.mt-0.xxl_mb-7px Нам доверяют лечебно-профилактические учреждения по всей России
+              +medical()
+                +medical-card(
+                  {
+                    url: './images/medical/medical_01.jpg',
+                    title: 'НАКФ'
+                  })(class="slider__item")
+                +medical-card(
+                  {
+                    url: './images/medical/medical_02.jpg',
+                    title: 'Стоматолог рядом'
+                  })(class="slider__item")
+                +medical-card(
+                  {
+                    url: './images/medical/medical_03.jpg',
+                    title: 'Медси'
+                  })(class="slider__item")
+                +medical-card(
+                  {
+                    url: './images/medical/medical_04.jpg',
+                    title: 'Счастливый доктор'
+                  })(class="slider__item")
+                +medical-card(
+                  {
+                    url: './images/medical/medical_01.jpg',
+                    title: 'НАКФ'
+                  })(class="slider__item")
       section.section.section-main.section--catalog.pt-50px.lg_pt-0(data-page='catalog' id='catalog')
         .section__inner
           .section__content.section__container.container
@@ -484,6 +515,61 @@ block content
             +footer-nav-item({name: 'Комплектование ЛПУ', url: '#'})
           .page-footer__h-line.hidden.xxl__block
 
+    .modal.modal--cities#modal-cities
+      .modal__overlay(tabindex='-1' data-modal-close)
+        .modal__container(role='dialog' aria-modal='true' aria-labelledby= 'test')
+          header.modal__header
+            .modal__title Выберите регион
+            +close({title: 'Закрыть'})(class="modal__close" aria-label="Close modal" data-modal-close)
+          .modal__inner.mb-15px
+            form.cities-form__input-wrapper
+              input.cities-form__input(type="text" placeholder="Я ищу город..." name="q")
+              +action-btn-svg('search', {w: '21', h: '20'}, 'search-city')(id="btnSearchCity" class="cities-form__btn" type="button")
+              ul.cities__list 
+                li.cities__item.cities__item--selected Калининград
+                li.cities__item Анапа
+                li.cities__item Архангельск
+                li.cities__item Астрахань
+                li.cities__item Барнаул
+                li.cities__item Белгород
+                li.cities__item Березники
+                li.cities__item Березняки
+                li.cities__item Бийск
+                li.cities__item Благовещенск
+                li.cities__item Бобров
+                li.cities__item Богогородицк
+                li.cities__item Братск
+                li.cities__item Брянск
+                li.cities__item Великие Луки
+                li.cities__item Видное
+                li.cities__item Владивосток
+                li.cities__item Волгоград
+                li.cities__item Воронеж
+                li.cities__item Горно-Алтайск
+                li.cities__item Грозный
+                li.cities__item Дегень
+                li.cities__item Дмитров
+                li.cities__item Екатеринбург
+                li.cities__item Елец
+                li.cities__item Иваново
+                li.cities__item Ижевск
+                li.cities__item Иркутск
+                li.cities__item Ишимбул
+                li.cities__item Казань
+                li.cities__item Калуга
+                li.cities__item Каменск-Уральский
+                li.cities__item Кемерово
+                li.cities__item Киров
+                li.cities__item Кирово-Чепецк
+                li.cities__item Клин
+                li.cities__item Клинцы
+                li.cities__item Когалым
+                li.cities__item Коломна
+                li.cities__item Кострома
+                li.cities__item Котлас
+                li.cities__item Ковров
+                li.cities__item Краснодар
+                li.cities__item Курган
 //- block footer
 //-   p footer
 

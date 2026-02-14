@@ -1,0 +1,33 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+//- block append head
+//-   link(rel='stylesheet', href='css/some.css')
+
+block vars
+  -
+    var pageName = 'error-404';
+
+block content
+  .wrapper
+    .flex.items-center.justify-center.mt-65px.xl_mt-130px.mb-60px.lg_mb-35px.lg_mb-64px.xl_mb-130px
+      .flex.flex-col.items-center
+        img.mb-20px(class="w-[75%] md_w-350px" src='/img/404.jpg')
+        .mb-10px.text-2xl.text-black Страница не найдена
+        .mb-20px(class="w-[75%] md_w-450px").text-center К сожалению, по указанному адресу страницы не существует, возможно она была удалена или перенесена.
+        .flex
+          +btn('Перейти в каталог','regular')(class='mr-10px border-gray-200')
+          +btn('На главную','regular')
+
+
+//- block footer
+//-   p footer
+
+block prepend page-bottom
+  .inline-svg-sprite
+    include ../blocks/sprite-svg-inline/img/sprite-inline.svg
+  script(src="https://api-maps.yandex.ru/2.1/?lang=en_RU&amp;apikey=bd455aa8-6a1c-4570-a04d-5a21c9e76f7e")
+

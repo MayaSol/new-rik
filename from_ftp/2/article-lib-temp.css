@@ -1,0 +1,23 @@
+.method-download::before {
+    background-image: url(../images/method.jpg) !important;
+}
+
+.icon-svg--info-thin-red {
+    background-image: url(../images/info-thin-red-500.svg) !important;
+}
+
+.icon-svg--info-wallet-green {
+	background-image: url(../images/wallet-green-300.svg) !important;
+}  
+
+.icon-svg--info-thin-yellow {
+	background-image: url(../images/info-thin-yellow-400.svg);
+}
+
+.icon-svg--laser-green {
+	background-image: url(../images/laser-green-300.svg);
+}
+
+.icon-svg--laser-device {
+	background-image: url(../images/laser-device.svg);
+}

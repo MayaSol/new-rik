@@ -9,6 +9,15 @@
   position: relative;
   z-index: 10;
 
+  &.nav--mobile {
+    //!!! Ещё не переделано на новую
+    display: none;
+    //!!!
+    overflow-y: auto;
+    height: 100%;
+    font-size: 24px;
+  }
+
 
   &--main {
     .page-header__inner & {
@@ -62,10 +71,12 @@
 
     .nav--mobile & {
       padding-top: 60px;
-      max-height: 400px;
+      max-height: 460px;
       overflow-y: scroll;
 
       &--lvl-2 {
+        font-size: 20px;
+        line-height: 1;
         padding-top: 0;
         overflow-y: hidden;
       }
@@ -285,6 +296,8 @@
 
       .nav--mobile & {
         padding-left: 2em;
+        white-space: normal;
+        line-height: 1;
       }
     }
 
@@ -429,6 +442,50 @@
       display: none;
     }
   }
+
+  &__btn-cart {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    width: 48px;
+    height: 48px;
+    margin-left: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  &__container {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;    
+
+    @media (min-width: 1280px) {
+      width: 345px;
+    }
+  }
+
+  &__banners {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+
+    @media (min-width: 680px) {
+      .main-nav__banners {
+        flex-direction: row;
+      }
+    }    
+
+    @media (min-width: 1280px) {
+      .main-nav__banners {
+        flex-direction: column;
+      }
+    }
+
+  }
+
 }
 
 

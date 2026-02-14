@@ -48,6 +48,7 @@ $cart-transition-time: 0.6s;
   }
 
   &--has-goods {
+    position: relative;
     #{$block-name}__inner {
       &::before {
         @include has-goods;

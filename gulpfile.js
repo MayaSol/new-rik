@@ -79,7 +79,7 @@ let prettyOption = {
 let postCssPlugins = [
   atImport(),
   tailwindcss(),
-  autoprefixer({ grid: true }),
+  // autoprefixer({ grid: true }),
   // mqpacker({
   //   sort: true
   // }),
@@ -371,9 +371,9 @@ function compileSass() {
     .pipe(debug({ title: 'Compiles:' }))
     .pipe(sass({ includePaths: [__dirname + '/', 'node_modules'] }))
     .pipe(postcss(postCssPlugins))
-    .pipe(csso({
-      restructure: false,
-    }))
+    // .pipe(csso({
+    //   restructure: false,
+    // }))
     .pipe(rename('style.css'))
     .pipe(dest(`${dir.build}css`, { sourcemaps: '.' }))
     .pipe(browserSync.stream());
@@ -460,9 +460,16 @@ const modulesDir = path.join(__dirname, '..', 'node_modules');
 function buildJs() {
   const entryList = {
     'bundle': `./${dir.src}js/entry.js`,
+    'bundle6_index': `./${dir.src}js/entry6_index.js`,
+    'bundle6_others': `./${dir.src}js/entry6_others.js`
   };
   if (buildLibrary) entryList['blocks-library'] = `./${dir.blocks}blocks-library/blocks-library.js`;
-  return src(`${dir.src}js/entry.js`)
+
+  // Массив входных файлов
+  const srcFiles = Object.values(entryList);
+
+  // return src(`${dir.src}js/entry.js`)
+  return src(srcFiles)
     .pipe(plumber({
       errorHandler: function(err) {
         console.log(err.message);
@@ -470,7 +477,7 @@ function buildJs() {
       }
     }))
     .pipe(webpackStream({
-      mode: 'development',
+      mode: 'production',
       entry: entryList,
       output: {
         filename: '[name].js',
@@ -981,21 +988,19 @@ exports.build = series(
 
 
 exports.default = series(
-  parallel(clearBuildDir, writePugMixinsFile),
-  parallel(compilePugFast, copyAssets, generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
+  // parallel(clearBuildDir, writePugMixinsFile),
+  writePugMixinsFile,
+  // parallel(compilePugFast, copyAssets, generateSvgSprite, generateInlineSvgSprite, generatePngSprite),
+  parallel(compilePugFast, copyAssets),
   parallel(copyImg, writeSassImportsFile, writeJsRequiresFile),
-  clearCssDir,
+  // clearCssDir,
   writeTailwindToSass,
   compileSass,
-  buildJs,
-  // buildVueJs,
-  buildCatalogJs,
-  buildCartJs,
+  // buildJs,
+  // buildCatalogJs,
+  // buildCartJs,
   serve,
 );
-
-
-
 
 
 // Функции, не являющиеся задачами Gulp ----------------------------------------

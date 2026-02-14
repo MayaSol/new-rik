@@ -17,7 +17,8 @@ let config = {
     'form',
     'ramform',
     'bx-auth',
-    'embed-responsive'
+    'embed-responsive',
+    'test-version'
     // 'object-fit-polyfill',
   ],
   'addStyleBefore': [
@@ -79,6 +80,7 @@ let config = {
     'src/images/partners/': 'images/partners/',
     'src/images/doctors/': 'images/doctors/',
     'src/images/doctors-certs/': 'images/doctors-certs/',
+    'src/images/medical/': 'images/medical/',
     'src/img/temp/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/content/*.{png,svg,jpg,jpeg}': 'img/',
     'src/img/*.{png,svg,jpg,jpeg}': 'img/',
@@ -103,7 +105,12 @@ let config = {
     'src/pages/detskiy-bronkholegochnyy-sanatoriy-15.html': '/',
     'src/pages/artrit-tazobedrennogo-sustava.html': '/',
     'src/pages/rikta-03-2.html': '/',
-    'src/pages/test.html': '/',
+    'src/pages/index2.html': '/',
+    'src/pages/index.html': '/',
+    'src/pages/rikta-04-4.html': '/',
+    'src/pages/catalog.html': '/',
+    'src/pages/catalog2.html': '/',
+    'src/pages/index_orig.html': '/',
 
     // 'fullpage.js/fullpage.min.css.map': 'css/'
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',

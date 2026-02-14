@@ -6,32 +6,19 @@ var closest = require('closest');
 ready(function() {
   //!!! В <video> должен быть атрибут muted, чтобы разешить автозапуск и play из js
 
-  // var videos = document.querySelectorAll('.slider__bg-video video');
+  const autoPlayTimeout = 5000;
 
-  // console.log(videos);
+  const videos = document.querySelectorAll('.slider-main__media--video-bg video');
 
-  // for (var el of videos) {
-  //   console.log(el);
-  //   fitVideo(el);
-  // }
+  let sliderMain;
 
-
-
-  const autoPlayTimeout = 27000;
-
-
-  var videos = document.querySelectorAll('.slider-main__media--video-bg video');
-  // console.log(videos);
   if (videos.length > 0) {
     for (let i=0; i<videos.length; i++) {
-      let video = videos[i];
-      // console.log(video.networkState);
+      const video = videos[i];
       if (i == 0 && video.networkState == 1) {
         initMainSlider();
       }
-      // console.log(video.getElementsByTagName('source'));
-      // console.log(video.getElementsByTagName('source')[0].src);
-      var playBtn = getParents(video, '.slider-main__media')[0].querySelector('.slider-main__btn-play');
+      const playBtn = getParents(video, '.slider-main__media')[0].querySelector('.slider-main__btn-play');
       if (playBtn) {
 
         playBtn.addEventListener('click', (event) => {
@@ -45,47 +32,28 @@ ready(function() {
       }
       //Добавить playBtn класс hidden и и убирать после начала проигрывания
       video.addEventListener('canplaythrough', (event) => {
-        // console.log('canplaythrough');
         initMainSlider();
       });
       video.addEventListener('pause', function() {
-        onStop(video);
-      });
-      video.addEventListener('ended', function() {
-        onEnded(video);
-      });
-      video.addEventListener('play', function() {
-        onPlay(video);
+        onPause(video);
       });
       video.addEventListener('playing', function() {
         onPlay(video);
       });
 
-      //
-      video.addEventListener('loaded',function() {
-        console.log('loaded');
-      })
+      // Длительность видео
+      video.addEventListener('loadedmetadata', function() {
 
-  //!!!
-// function handleEvent(event) {
-//     console.log('-----------');
-//     console.log(`${event.type}`);
-//     console.log(event.target.getElementsByTagName('source')[0].src);
-//     console.log(event.target.networkState);
-// }
-
-// video.addEventListener('loadstart', handleEvent);
-// video.addEventListener('progress', handleEvent);
-// video.addEventListener('canplay', handleEvent);
-// video.addEventListener('canplaythrough', handleEvent);
-//!!!
+        video._duration = this.duration * 1000; // в ms
+        console.log('video._duration: ', video._duration);
+      });      
     }
   }
 
   function playVideo(videoEl) {
     if (videoEl.getElementsByTagName('source').length > 0) {
-      var result = videoEl.play();
       videoEl.controls = true;
+      var result = videoEl.play();
     }
   }
 
@@ -93,24 +61,36 @@ ready(function() {
     videoEl.pause();
     videoEl.controls = false;
   }
-
+  
   function onPlay(videoEl) {
     videoEl.classList.add('playing');
+    // Запускаем переход к следующему слайду по окончании видео
+    if (sliderMain && videoEl._duration) {
+      const info = sliderMain.getInfo();
+      
+      // Останавливаем текущий таймер слайдера
+      sliderMain.pause();
+      
+      // Запускаем переход через длительность видео
+      clearTimeout(videoEl._slideTimeout);
+      videoEl._slideTimeout = setTimeout(() => {
+        console.log('videoEl ended slider play',info.index,info.slideCount);
+        if (info.index < info.slideCount - 1) {
+          sliderMain.goTo('next');
+        } else {
+          sliderMain.goTo(0);
+        }        
+        sliderMain.play();
+      }, videoEl._duration);
+    }       
   }
 
-  function onStop(videoEl) {
+  function onPause(videoEl) {
+    console.log('onPause');
     videoEl.classList.remove('playing');
     videoEl.controls = false;
-  }
-
-  function onEnded(videoEl) {
-    // videoEl.classList.remove('playing');
-    // videoEl.controls = false;
-    playVideo(videoEl);
-    // var info = sliderMain.getInfo();
-    // if (info.index < info.slideCount-1) {
-    //   sliderMain.goTo(info.index + 1);
-    // }
+    clearTimeout(videoEl._slideTimeout); 
+    sliderMain.play();
   }
 
   var pauseAll = function() {
@@ -123,7 +103,6 @@ ready(function() {
     }
   };
 
-  var sliderMain;
 
   function initMainSlider() {
     if (document.querySelector('.slider-main')) {
@@ -145,25 +124,27 @@ ready(function() {
           // nav: false,
           loop: false,
           onInit: function(info) {
-            var video = info.slideItems[0].querySelector('video');
+            const video = info.slideItems[0].querySelector('video');
             playVideo(video);
           }
         });
 
         sliderMain.events.on('transitionEnd', function(info) {
-          // console.log('transitionEnd');
-          // console.log(info);
+          console.log('transitionEnd info.index',info.index);
           pauseAll();
           var video = info.slideItems[info.index].querySelector('video');
+          console.log('!!! SLIDER-MAIN video', video);
+          video.setAttribute('autoplay', 'autoplay');
+      
           if (video) {
             playVideo(video);
           }
-          if (info.index === info.slideCount - 1) {
-            var timerId = setTimeout(function() {
-              sliderMain.goTo(0);
-              sliderMain.play();
-            }, autoPlayTimeout);
-          }
+          // if (info.index === info.slideCount - 1) {
+          //   var timerId = setTimeout(function() {
+          //     sliderMain.goTo(0);
+          //     sliderMain.play();
+          //   }, autoPlayTimeout);
+          // }
         });
       }
     }

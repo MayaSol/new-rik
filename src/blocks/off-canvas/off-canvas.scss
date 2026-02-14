@@ -108,4 +108,16 @@ $off-canvas-width:            320px !default; // ширина этого бло�
     right: 32px;
     top: 32px;
   }
+
+  &__toggler {
+    margin-right: 15px;
+    min-width: 30px;
+
+    @media (max-width: 1279px) {
+      order: 3;
+      padding: 0;
+      margin: 0;
+      width: 30px;
+    }
+  }
 }
